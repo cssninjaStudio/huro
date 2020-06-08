@@ -1,0 +1,129 @@
+/*! _datepicker.scss | Huro | Css ninja 2020-2021 */
+
+/*
+    1. Pickaday Datepicker
+    2. Pickaday Datepicker Dark mode
+*/
+
+/* ==========================================================================
+1. Pickaday Datepicker
+========================================================================== */
+
+.pika-single {
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid darken($fade-grey, 3%);
+    transition: all .3s;
+
+    &.is-bound {
+        box-shadow: $light-box-shadow;
+    }
+
+    .pika-lendar {
+        padding: 16px;
+
+        .pika-title {
+            font-family: $font;
+            color: $dark-text;
+
+            .pika-prev, .pika-next {
+                height: 30px;
+                width: 30px;
+                font-size: 0;
+            }
+        }
+
+        .pika-table {
+            thead {
+                th {
+                    font-weight: 400;
+                    font-family: $font;
+                    color: $dark-text;
+                }
+            }
+
+            tbody {
+
+                td {
+                    &.is-selected {
+                        .pika-day, .pika-button {
+                            box-shadow: none;
+                            background: $primary;
+                            box-shadow: $primary-box-shadow;
+                            color: $white;
+                        }
+                    }
+
+                    &:hover {
+                        .pika-day, .pika-button {
+                            box-shadow: none;
+                            background: $fade-grey;
+                            color: $dark-text;
+                        }
+                    }
+
+                    .pika-day, .pika-button {
+                        text-align: center;
+                        background: $white;
+                        border-radius: 50%;
+                        width: 26px;
+                        height: 26px;
+                        color: $light-text;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+2. Pickaday Datepicker Dark mode
+========================================================================== */
+
+body {
+    &.is-dark {
+        .pika-single {
+            background: $dark-sidebar !important;
+            border-color: lighten($dark-sidebar, 8%) !important;
+
+            .pika-title {
+                color: $dark-dark-text;
+
+                .pika-label {
+                    background: $dark-sidebar !important;
+                }
+            }
+
+            .pika-table {
+                thead {
+                    th {
+                        color: $dark-dark-text;
+                    }
+                }
+
+                tbody {
+
+                    td {
+                        &.is-selected {
+                            .pika-day, .pika-button {
+                                background: $accent;
+                                box-shadow: $accent-box-shadow;
+                            }
+                        }
+    
+                        &:hover {
+                            .pika-day, .pika-button {
+                                background: lighten($dark-sidebar, 8%) !important;
+                                color: $white;
+                            }
+                        }
+    
+                        .pika-day, .pika-button {
+                            background: $dark-sidebar;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

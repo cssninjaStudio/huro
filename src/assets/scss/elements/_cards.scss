@@ -1,0 +1,85 @@
+/*! _cards.scss | Huro | Css ninja 2020-2021 */
+
+/* ==========================================================================
+Cards
+========================================================================== */
+
+.r-card {
+    flex: 1;
+    display: inline-block;
+    width: 100%;
+    padding: 20px;
+    background-color: $white;
+    border-radius: 10px;
+    box-shadow: $light-box-shadow;
+    border: 1px solid $fade-grey;
+}
+
+.s-card {
+    flex: 1;
+    display: inline-block;
+    width: 100%;
+    padding: 20px;
+    background-color: $white;
+    border-radius: 6px;
+    box-shadow: $light-box-shadow;
+    border: 1px solid $fade-grey;
+}
+
+.r-card, .s-card {
+
+    &.has-margin-bottom {
+        margin-bottom: 1.5rem;
+    }
+
+    .card-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .left, .right {
+            display: flex;
+            align-items: center;
+        }
+
+        .left {
+            .title {
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+        }
+
+        .right {
+            justify-content: flex-end;
+        }
+    }
+
+    .card-inner {
+        padding-top: 1.75rem;
+    }
+}
+
+/* ==========================================================================
+Cards Dark mode
+========================================================================== */
+
+body {
+    &.is-dark {
+        .r-card, .s-card {
+            background: lighten($dark-sidebar, 6%);
+            border-color: lighten($dark-sidebar, 12%);
+
+            .h-avatar {
+                img {
+                    border-color: lighten($dark-sidebar, 6%) !important;
+                }
+            }
+
+            .avatar-stack {
+                .h-avatar {
+                    border-color: lighten($dark-sidebar, 6%) !important;
+                }
+            }
+        }
+    }
+}

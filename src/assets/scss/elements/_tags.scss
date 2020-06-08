@@ -1,0 +1,113 @@
+/*! _tags.scss | Koder PLatform | © Koder Inc. 2018 */
+
+/*
+    1. Tags
+*/
+
+/* ==========================================================================
+1. Tags
+========================================================================== */
+
+.tag:not(body) {
+    line-height: 2;
+
+    &.is-rounded {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    &.is-elevated {
+        box-shadow: $light-box-shadow;
+    }
+
+    &.is-solid {
+        background: $white;
+        border: 1px solid darken($fade-grey, 3%);
+        color: $light-text;
+    }
+
+    &.is-primary {
+        &.is-elevated {
+            box-shadow: $primary-box-shadow;
+        }
+
+        &.is-outlined {
+            background: none !important;
+            color: $primary;
+            border: 1px solid $primary;
+        }
+    }
+
+    &.is-success {
+        &.is-elevated {
+            box-shadow: $success-box-shadow;
+        }
+
+        &.is-outlined {
+            background: none !important;
+            color: $success;
+            border: 1px solid $success;
+        }
+    }
+
+    &.is-info {
+        &.is-elevated {
+            box-shadow: $info-box-shadow;
+        }
+
+        &.is-outlined {
+            background: none !important;
+            color: $info;
+            border: 1px solid $info;
+        }
+    }
+
+    &.is-warning {
+        &.is-elevated {
+            box-shadow: $warning-box-shadow;
+        }
+
+        &.is-outlined {
+            background: none !important;
+            color: $warning;
+            border: 1px solid $warning;
+        }
+    }
+
+    &.is-danger {
+        &.is-elevated {
+            box-shadow: $danger-box-shadow;
+        }
+
+        &.is-outlined {
+            background: none !important;
+            color: $danger;
+            border: 1px solid $danger;
+        }
+    }
+}
+
+/* ==========================================================================
+2. Tags Dark mode
+========================================================================== */
+
+body {
+    &.is-dark {
+        .tag {
+            &:not(.is-primary):not(.is-success):not(.is-info):not(.is-warning):not(.is-danger) {
+                background: lighten($dark-sidebar, 10%);
+                border-color: lighten($dark-sidebar, 10%);
+                color: $dark-dark-text;
+            }
+
+            &.is-primary {
+                
+
+                &.is-outlined {
+                    border-color: $accent;
+                    color: $accent;
+                }
+            }
+        }
+    }
+}

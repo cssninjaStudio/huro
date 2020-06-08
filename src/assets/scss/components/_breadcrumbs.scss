@@ -1,0 +1,46 @@
+.breadcrumb {
+    ul {
+        li {
+            a {
+                font-family: $font;
+                color: $light-text;
+
+                &:hover {
+                    color: $primary;
+                }
+
+                .icon {
+
+                    &.is-solo {
+                        svg {
+                            top: 2px;
+                        }
+                    }
+
+                    svg {
+                        position: relative;
+                        top: 0;
+                        height: 16px;
+                        min-width: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+body {
+    &.is-dark {
+        .breadcrumb {
+            ul {
+                li {
+                    a {
+                        &:hover {
+                            color: $accent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

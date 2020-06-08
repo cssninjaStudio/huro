@@ -1,0 +1,24 @@
+/*! _media.scss | Huro | Css ninja 2020-2021 */
+
+
+/*
+    1. Light Gallery (Lightbox plugin)
+*/
+
+/* ==========================================================================
+1. Light Gallery (Lightbox plugin)
+========================================================================== */
+
+.light-gallery-wrap {
+    display: flex;
+    flex-wrap: wrap;
+
+    > a {
+        margin: 8px;
+        max-width: calc(33.3% - 16px);
+
+        img {
+            border-radius: 12px;
+        }
+    }
+}

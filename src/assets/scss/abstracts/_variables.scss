@@ -1,0 +1,59 @@
+/*! _variables.scss | Huro | Css ninja 2020-2021 */
+
+/*
+    1. Main Colors
+    2. Global colors
+*/
+
+/* ==========================================================================
+1. Main Colors
+========================================================================== */
+
+$primary: #7105ff;
+$accent: #797bf2;
+
+/* ==========================================================================
+2. Global colors
+========================================================================== */
+
+$body-color: #f9f9f9;
+
+//Whites
+$white: #fff;
+$smoke-white: #fcfcfc;
+$light-white: #f9f9f9;
+
+//Greys
+$placeholder: #cecece;
+$muted-grey: #999;
+$fade-grey: #ededed;
+$accent-grey: #ccc;
+$background-grey: #f0f0f0;
+$section-grey: #fcfcfc;
+$medium-grey: #ddd;
+$light-grey: #eee;
+$lighter-grey: #e5e5e5;
+
+//Text
+$dark-text: #283252;
+$light-text: #a2a5b9;
+$title-grey: #A9ABAC;
+
+//Web colors
+$danger: #e62965;
+$info: #039BE5;
+$success: #06d6a0;
+$warning: #faae42;
+
+//States
+$active: #6DCFF6;
+
+//Darks
+$sidebar: #344258;
+
+//Dark Theme
+$dark-sidebar: #232326;
+$dark-dark-text: lighten($accent-grey, 3%);
+
+
+

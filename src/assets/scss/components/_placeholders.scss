@@ -1,0 +1,48 @@
+/*! _placeholders.scss | Huro | Css ninja 2020-2021 */
+
+/*
+    1. Section Placeholder
+*/
+
+/* ==========================================================================
+1 Section Placeholder
+========================================================================== */
+
+.section-placeholder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    .placeholder-content {
+        text-align: center;
+
+        > img {
+            display: block;
+            max-width: 280px;
+            margin: 0 auto;
+        }
+
+        .h-avatar {
+            margin: 0 auto 10px auto;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: $dark-text;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: $light-text;
+            max-width: 280px;
+            margin: 0 auto 12px auto;
+        }
+
+        .button {
+            min-width: 140px;
+        }
+    }
+}

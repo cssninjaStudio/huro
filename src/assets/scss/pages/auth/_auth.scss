@@ -1,0 +1,956 @@
+/*! _auth.scss | Huro | Css ninja 2020-2021 */
+
+/*
+    1. Login page
+    2. Remember me toggle
+    3. Signup page
+*/
+
+/* ==========================================================================
+1. Login page
+========================================================================== */
+
+.modern-login {
+    position: relative;
+    background: $white;
+
+    .column {
+        &.is-relative {
+            position: relative;
+        }
+    }
+
+    .hero {
+        &.has-background-image {
+            position: relative;
+
+            .koder-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #5d4298 !important;
+                opacity: .6;
+            }
+        }
+    }
+
+    .underlay {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 66.6%;
+        height: 100%;
+        background: lighten(#fafafa, 1%);
+        z-index: 0;
+    }
+
+    .shape {
+        display: block;
+        position: absolute;
+
+        &.is-first {
+            bottom: 0;
+            left: 5%;
+            width: 400px;
+            height: auto;
+            z-index: 1;
+        }
+
+        &.is-second {
+            right: 15%;
+            top: 5%;
+            width: 180px;
+            height: auto;
+            z-index: 1;
+        }
+
+        &.is-third {
+            left: 25%;
+            top: 25%;
+            width: 100px;
+            height: auto;
+            z-index: 1;
+        }
+
+        &.is-fourth {
+            right: 5%;
+            bottom: 10%;
+            width: 80px;
+            height: auto;
+            z-index: 1;
+        }
+    }
+
+    .top-logo {
+        display: block;
+        position: absolute;
+        top: -30px;
+        left: 42px;
+        max-width: 120px;
+        height: auto;
+        z-index: 1;
+    }
+
+    .is-image {
+        position: relative;
+        border-right: 1px solid $fade-grey;
+
+        .hero-image {
+            position: relative;
+            z-index: 2;
+            display: block;
+            margin: 0 auto;
+            max-width: 60%;
+            width: 60%;
+        }
+
+        .bubbles {
+            .bubble {
+                position: absolute;
+                z-index: 1;
+
+                &.is-js {
+                    top: 14%;
+                    left: 16%;
+                    height: 65px;
+                    width: 65px;
+
+                    img {
+                        border-radius: 50%;
+                        box-shadow: $js-box-shadow;
+                    }
+                }
+
+                &.is-angular {
+                    top: 23%;
+                    right: -12px;
+                    height: 54px;
+                    width: 54px;
+                    animation-delay: 1.2s;
+
+                    img {
+                        border-radius: 50%;
+                        box-shadow: $angular-box-shadow;
+                    }
+                }
+
+                &.is-csharp {
+                    bottom: 24%;
+                    right: 12%;
+                    height: 48px;
+                    width: 48px;
+                    animation-delay: .8s;
+
+                    img {
+                        border-radius: 50%;
+                        box-shadow: $csharp-box-shadow;
+                    }
+                }
+
+                &.is-android {
+                    top: 7%;
+                    left: 24%;
+                    height: 46px;
+                    width: 46px;
+                    animation-delay: 1.5s;
+
+                    img {
+                        border-radius: 50%;
+                        box-shadow: $android-box-shadow;
+                    }
+                }
+
+                &.is-swift {
+                    bottom: 13%;
+                    left: 38%;
+                    height: 52px;
+                    width: 52px;
+                    animation-delay: .1s;
+
+                    img {
+                        border-radius: 50%;
+                        box-shadow: $swift-box-shadow;
+                    }
+                }
+
+                &.is-python {
+                    top: 32%;
+                    right: 7%;
+                    height: 42px;
+                    width: 42px;
+                    animation-delay: 1.6s;
+
+                    img {
+                        border-radius: 50%;
+                        box-shadow: 0px 5px 43px rgba(0, 0, 0, 0.18) !important;
+                    }
+                }
+
+                &.is-wp {
+                    bottom: 8%;
+                    left: 27%;
+                    height: 36px;
+                    width: 36px;
+                    animation-delay: 2.1s;
+
+                    img {
+                        border-radius: 50%;
+                        box-shadow: $wordpress-box-shadow;
+                    }
+                }
+            }
+        }
+    }
+
+    .is-form {
+        position: relative;
+
+        form {
+            animation: fadeInLeft .5s;
+        }
+
+        .form-text {
+            padding: 0 20px;
+            animation: fadeInLeft .5s;
+
+            h2 {
+                font-size: 2rem;
+                color: $primary;
+            }
+
+            p {
+                color: $muted-grey;
+                margin-top: 10px;
+            }
+        }
+
+        .recover-text {
+            font-size: .9rem;
+            color: $dark-text;
+        }
+
+        .login-wrapper {
+            padding: 30px 20px;
+
+            .control {
+                position: relative;
+                width: 100%;
+                margin-top: 16px;
+
+                .input {
+                    padding-top: 10px;
+                    height: 60px;
+                    padding-left: 67px;
+                    transition: all .3s;
+
+                    &:focus {
+                        background: lighten($fade-grey, 6%);
+                        border-color: $placeholder;
+
+                        ~ .auth-label, ~ .auth-icon i {
+                            color: $muted-grey;
+                        }
+                    }
+                }
+
+                .error-text {
+                    color: $danger;
+                    font-size: .8rem;
+                    display: none;
+                    padding: 2px 6px;
+                }
+
+                .auth-label {
+                    position: absolute;
+                    top: 6px;
+                    left: 68px;
+                    font-size: .8rem;
+                    color: $dark-text;
+                    font-weight: 500;
+                    z-index: 2;
+                    transition: all .3s;
+                }
+
+                .auth-icon {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 60px;
+                    width: 60px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    i {
+                        font-size: 24px;
+                        color: $placeholder;
+                        transition: all .3s;
+                    }
+                }
+
+                &.has-validation {
+                    .validation-icon {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        height: 60px;
+                        width: 60px;
+                        display: none;
+                        justify-content: center;
+                        align-items: center;
+
+                        .icon-wrapper {
+                            height: 20px;
+                            width: 20px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 50%;
+
+                            svg {
+                                height: 10px;
+                                width: 10px;
+                                stroke-width: 3px;
+                                stroke: $white;
+                            }
+                        }
+
+                        &.is-success {
+                            .icon-wrapper {
+                                background: $success;
+                            }
+                        }
+
+                        &.is-error {
+                            .icon-wrapper {
+                                background: $danger;
+                            }
+                        }
+                    }
+
+                    &.has-success {
+                        .validation-icon {
+                            &.is-success {
+                                display: flex;
+                            }
+
+                            &.is-error {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    &.has-error {
+                        .input {
+                            border-color: $danger;
+                        }
+
+                        .error-text {
+                            display: block;
+                        }
+
+                        .validation-icon {
+                            &.is-error {
+                                display: flex;
+                            }
+
+                            &.is-success {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+
+                &.is-flex {
+                    display: flex;
+                    align-items: center;
+
+                    a {
+                        display: block;
+                        margin-left: auto;
+                        color: $muted-grey;
+                        font-weight: 500;
+                        font-size: .9rem;
+                        transition: color .3s;
+
+                        &:hover {
+                            color: $primary;
+                        }
+                    }
+
+                    .remember-me {
+                        font-size: .9rem;
+                        color: $muted-grey;
+                        font-weight: 500;
+                    }
+                }
+            }
+
+            .button-wrap {
+                margin: 40px 0;
+
+                .button {
+                    height: 46px;
+                    width: 140px;
+                    margin-left: 6px;
+
+                    &:first-child {
+                        &:hover {
+                            opacity: .8;
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        color: $dark-text;
+                        border-color: $placeholder;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+2. Remember me toggle
+========================================================================== */
+
+.remember-toggle {
+    width: 65px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transform: scale(0.9);
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+
+        &:checked ~ .toggler {
+            border-color: $primary;
+
+            .active, .inactive {
+                transform: translateX(100%) rotate(360deg);
+            }
+
+            .active {
+                opacity: 1;
+            }
+
+            .inactive {
+                opacity: 0;
+            }
+        }
+    }
+
+    .toggler {
+        position: relative;
+        display: block;
+        height: 34px;
+        width: 61px;
+        border: 2px solid $placeholder;
+        border-radius: 100px;
+        transition: all .3s;
+
+        .active, .inactive {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            height: 26px;
+            width: 26px;
+            border-radius: 50%;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(0) rotate(0);
+            transition: all .3s ease;
+
+            svg {
+                stroke: $white;
+                height: 14px;
+                width: 14px;
+                stroke-width: 3px;
+            }
+        }
+
+        .inactive {
+            background: $placeholder;
+            border-color: $placeholder;
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .active {
+            background: $primary;
+            border-color: $primary;
+            opacity: 0;
+            z-index: 0;
+        }
+    }
+}
+
+/* ==========================================================================
+3. Sign up
+========================================================================== */
+
+.signup-steps {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 480px;
+
+    .steps-container {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .progress {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            height: .35rem !important;
+            z-index: 0;
+
+            &::-webkit-progress-value {
+                background-color: $primary;
+                transition: width 0.5s ease;
+            }
+
+            &::-moz-progress-bar {
+                background-color: $primary;
+                transition: width 0.5s ease;
+            }
+
+            &::-ms-fill {
+                background-color: $primary;
+                transition: width 0.5s ease;
+            }
+        }
+
+        .step-icon {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 46px;
+            width: 46px;
+            border-radius: 50%;
+            background: $fade-grey;
+            cursor: pointer;
+            z-index: 1;
+
+            &.is-active {
+                .inner {
+                    background: $white;
+                    border-color: $primary;
+
+                    svg {
+                        stroke: $primary;
+                    }
+                }
+            }
+
+            &.is-done {
+                .inner {
+                    background: $primary;
+                    border-color: $primary;
+
+                    svg {
+                        stroke: $smoke-white;
+                    }
+                }
+            }
+
+            &.is-inactive {
+                pointer-events: none;
+            }
+
+            .inner {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                border: 2px solid $accent-grey;
+                background: $accent-grey;
+            }
+
+            .step-label {
+                position: absolute;
+                top: 45px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                text-align: center;
+                min-width: 100px;
+                transform: translateX(-25%);
+                font-size: .8rem;
+                font-weight: 500;
+                color: $dark-text;
+            }
+
+            svg {
+                height: 16px;
+                width: 16px;
+                stroke: $muted-grey;
+            }
+        }
+    }
+}
+
+.signup-columns {
+    animation: fadeInLeft .5s;
+}
+
+.signup-wrapper {
+    position: relative;
+    min-height: 100vh;
+    background: $fade-grey;
+
+    .card-bg {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: block;
+        width: 90%;
+        transition: all .3s;
+
+        &.faded {
+            opacity: 0;
+        }
+    }
+
+    .logo {
+        position: absolute;
+        top: 30px;
+        right: 0;
+        left: 0;
+        display: block;
+        margin: 0 auto;
+        width: 130px;
+        z-index: 1;
+
+        img {
+            display: block;
+        }
+    }
+
+    .signup-title {
+        margin-top: 100px;
+        color: $primary;
+    }
+
+    .signup-subtitle {
+        padding-top: 6px;
+        padding-bottom: 12px;
+        color: $muted-grey;
+        font-size: 1rem;
+    }
+
+    .hero {
+        .signup-form {
+            .control {
+                position: relative;
+                width: 100%;
+                margin-top: 16px;
+
+                &.has-switch {
+                    display: flex;
+                    align-items: center;
+
+                    span {
+                        display: block;
+                        color: $muted-grey;
+                    }
+                }
+
+                &.is-agree {
+                    span {
+                        color: darken($placeholder, 8%);
+
+                        a {
+                            color: $muted-grey;
+                            font-weight: 500;
+                            transition: color .3s;
+
+                            &:hover {
+                                color: $primary;
+                            }
+                        }
+                    }
+                }
+
+                .input {
+                    padding-top: 10px;
+                    height: 60px;
+                    padding-left: 10px;
+                    transition: all .3s;
+
+                    &:focus {
+                        background: lighten($fade-grey, 6%);
+                        border-color: $placeholder;
+
+                        ~ .auth-label, ~ .auth-icon i {
+                            color: $muted-grey;
+                        }
+                    }
+                }
+
+                .error-text {
+                    color: $danger;
+                    font-size: .8rem;
+                    display: none;
+                    padding: 2px 6px;
+                }
+
+                .auth-label {
+                    position: absolute;
+                    top: 6px;
+                    left: 10px;
+                    font-size: .8rem;
+                    color: $dark-text;
+                    font-weight: 500;
+                    z-index: 2;
+                    transition: all .3s;
+                }
+
+                .auth-icon {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 60px;
+                    width: 60px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    i {
+                        font-size: 24px;
+                        color: $placeholder;
+                        transition: all .3s;
+                    }
+                }
+
+                &.has-validation {
+                    .validation-icon {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        height: 60px;
+                        width: 60px;
+                        display: none;
+                        justify-content: center;
+                        align-items: center;
+
+                        .icon-wrapper {
+                            height: 20px;
+                            width: 20px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 50%;
+
+                            svg {
+                                height: 10px;
+                                width: 10px;
+                                stroke-width: 3px;
+                                stroke: $white !important;
+                            }
+                        }
+
+                        &.is-success {
+                            .icon-wrapper {
+                                background: $success;
+                            }
+                        }
+
+                        &.is-error {
+                            .icon-wrapper {
+                                background: $danger;
+                            }
+                        }
+                    }
+
+                    &.has-success {
+                        .validation-icon {
+                            &.is-success {
+                                display: flex;
+                            }
+
+                            &.is-error {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    &.has-error {
+                        .input {
+                            border-color: $danger;
+                        }
+
+                        .error-text {
+                            display: block;
+                        }
+
+                        .validation-icon {
+                            &.is-error {
+                                display: flex;
+                            }
+
+                            &.is-success {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+
+                &.is-flex {
+                    display: flex;
+                    align-items: center;
+
+                    a {
+                        display: block;
+                        margin-left: auto;
+                        color: $muted-grey;
+                        font-weight: 500;
+                        font-size: .9rem;
+                        transition: color .3s;
+
+                        &:hover {
+                            color: $primary;
+                        }
+                    }
+
+                    .remember-me {
+                        font-size: .9rem;
+                        color: $muted-grey;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+
+        .button-wrap {
+            margin: 20px 0 0 0;
+
+            &.is-centered {
+                margin-top: 40px;
+
+                .button {
+                    min-width: 180px;
+                    margin-left: 0 !important;
+                }
+            }
+
+            .button {
+                height: 46px;
+                width: 190px;
+                margin-left: 6px;
+
+                &:first-child {
+                    &:hover {
+                        opacity: .95;
+                        box-shadow: $primary-box-shadow;
+                    }
+                }
+
+                &:nth-child(2) {
+                    color: $dark-text;
+                    border-color: $placeholder;
+                }
+            }
+        }
+
+        .signup-type {
+            display: flex;
+            align-items: center;
+            margin-top: 16px;
+
+            .box-wrap {
+                width: 100%;
+                position: relative;
+
+                input {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    cursor: pointer;
+
+                    &:checked + .signup-box {
+                        border-color: $primary;
+
+                        i {
+                            color: $primary;
+                        }
+
+                        .meta {
+                            span:first-child {
+                                color: $primary;
+                            }
+                        }
+                    }
+                }
+
+                .signup-box {
+                    display: flex;
+                    align-items: center;
+                    padding: 8px;
+                    background: $white;
+                    border: 1px solid darken($fade-grey, 3%);
+                    border-radius: 6px;
+
+                    i {
+                        font-size: 2rem;
+                        color: $muted-grey;
+                    }
+
+                    .meta {
+                        margin-left: 10px;
+
+                        span {
+                            display: block;
+
+                            &:first-child {
+                                font-size: .85rem;
+                                font-weight: 500;
+                                color: $dark-text;
+                            }
+
+                            &:nth-child(2) {
+                                font-size: .8rem;
+                                color: $muted-grey;
+                            }
+                        }
+                    }
+                }
+
+                &:first-child {
+                    margin-right: 6px;
+                }
+
+                &:nth-child(2) {
+                    margin-left: 6px;
+                }
+            }
+        }
+    }
+}

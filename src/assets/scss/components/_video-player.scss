@@ -1,0 +1,468 @@
+/*! _video-player.scss | Huro | Css ninja 2020-2021 */
+
+/*
+    1. Video Player
+    2. Video Block
+*/
+
+/* ==========================================================================
+1. Video Player
+========================================================================== */
+
+$color: $primary;
+$size: 13px;
+
+article.video {
+    position: relative; display: block;
+    width: 100%;
+    margin: 10px auto;
+    height: 100%;
+    background: rgb(52,59,74); font-size: $size;
+    border-radius: 3px; overflow: hidden;
+    font-family: Arial;
+    &.is-popup {
+        width: 75%;
+    }
+
+    video {
+        cursor: pointer;
+        width: 100%; opacity:0;
+        &.visible {
+            opacity: 1;
+            transition: opacity 1s ease-out 0.8s;
+        }
+    }
+
+    .control-bar {
+        width: 100%; height: 2.2em; padding-bottom: 1px;
+        position: absolute; bottom: -2.2em; left: 0;
+        transition: bottom 0.3s ease-out;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: -moz-none;
+        -ms-user-select: none;
+        user-select: none;
+
+        .button-bar {
+            width: 100%; height: 100%; position: absolute;
+            background: linear-gradient(to bottom,
+                rgba(52,59,74,0.8) 0%,
+                rgba(34,41,58,0.8) 100%);
+            border-radius: 3px;
+            z-index:2;
+
+            i {
+                font-family: "FontAwesome";
+                font-style: normal; font-weight: 100;
+                color: white; position: absolute;
+                width: 2em; height: 1.6em; line-height: 1.6em;
+                text-align: center; top: 50%; margin-top: -0.75em;
+                opacity: 0.6; cursor: pointer;
+                transition: all 0.2s ease;
+                text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+                z-index: 2;
+                &:hover {
+                    opacity: 1;
+                }
+                &.hidden { 
+                    opacity: 0;
+                    z-index: 1;
+                }
+
+                &.play,
+                &.pause,
+                &.replay {
+                    width: 2.5em;
+                    border-right: 1px solid rgba(255, 255, 255, 0.2);
+                }
+
+                &.fullscreen {
+                    left: auto; right: 0.3em;
+                }
+            }
+
+            .volume {
+                font-family: "FontAwesome";
+                font-style: normal; font-weight: 100;
+                color: $white; position: absolute;
+                width: 2em; height: 1.6em; line-height: 1.6em;
+                text-align: center; top: 50%; margin-top: -0.75em;
+                opacity: 0.6; cursor: pointer;
+                text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+                z-index: 2; overflow: hidden;
+                left: 2.3em; font-size: 1.2em;
+                transition: all 0.8s ease-out;
+                &.shift {
+                    width: 7.5em;
+                    transition: all 0.2s ease-in;
+                }
+                .toggle {
+                    left: 0;
+                }
+                .rail {
+                    position: absolute;
+                    left: 2.5em; top: 0;
+                    width: 3em; height: 100%; margin-top: 0;
+                    overflow: hidden;
+                    .grip {
+                        position: absolute;
+                        width: 0.4em; height: 1em; margin-left: -0.2em;
+                        left: 100%; top: 50%; margin-top: -0.5em;
+                        background: white;
+                    }
+                    .audible, .inaudible {
+                        position: absolute;
+                        width: 100%; height: 0.3em;
+                        left: 0; top: 50%; margin-top: -0.15em;
+                        background: $color;
+                    }
+                    .inaudible {
+                        background: #ccc;
+                    }
+                }
+            }
+            .time {
+                color: #eee; font-size: 0.8em;
+                text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+                position: absolute; left: 7em; height: 2.2em;
+                line-height: 2.8em; opacity: 0.9;
+                transition: all 0.7s ease-in 0.2s;
+                &.shift {
+                    left: 13em;
+                    transition: all 0.2s ease-out;
+                }
+            }
+        }
+
+        .seek {
+            position: absolute;
+            width: 100%; height: 3px;
+            background-color: rgba(255,255,255,0.2);
+            top: -2px; opacity: 0.5;
+            transition: all 0.2s ease;
+            cursor: pointer; z-index: 7;
+            .buffer {
+                position: absolute; top:0; left:0;
+                width: 0%; height: 100%;
+                background: rgba(255,255,255,0.3);
+                border-radius: 3px; z-index: 8;
+            }
+            .watched {
+                position: absolute; top:0; left:0;
+                width: 0%; height: 100%; z-index: 8;
+                background: $color; overflow: visible!important;
+                &:before, &:after {
+                    content: ""; position: absolute;
+                    right: 10px; height: 100%; width: 10px;
+                    background: lighten($color,10%);
+                    border-radius: 6px/3px;
+                    box-shadow: 0 0 2px lighten($color,10%);
+                }
+                &:after {
+                    right: 0px;
+                    box-shadow: 0px 0 3px 0px lighten($color,20%);
+                    background: lighten($color,20%);
+                }
+                .handle {
+                    position: absolute; display: block;
+                    right: -2px; top: -1px; width: 0px; height: 0px;
+                    border: 2px solid $white;
+                    z-index: 9; background: transparent;
+                    border-radius: 100%;
+                    transition: all 0.3s ease;
+                    box-shadow:
+                        inset 0 0 1px rgba(0,0,0,0.8),
+                        0 0 4px 1px lighten($color,20%);
+                    -webkit-touch-callout: none;
+                    -webkit-user-select: none;
+                    -khtml-user-select: none;
+                    -moz-user-select: -moz-none;
+                    -ms-user-select: none;
+                    user-select: none;
+
+                    &.active {
+                        background: #666;
+                    }
+                    &:after {
+                        content: "";
+                        width: 26px; height: 22px;
+                        position: absolute;
+                        left: 50%; margin-left: -13px;
+                        top: 50%; margin-top: -15px;
+                    }
+                }
+            }
+            &:after {
+                content: ""; position: absolute;
+                height: 20px; width: 100%;
+                bottom: -5px; left: 0; z-index: 6;
+            }
+            &:hover {
+                height: 6px;
+                top: -6px;
+            }
+        }
+    }
+
+    &.active {
+        .control-bar {
+            bottom: 0;
+            transition: bottom 0.05s ease-out;
+            &.active {
+                .seek {
+                    &:hover {
+                        .handle {
+                            top: -3px;
+                        }
+                    }
+                    .handle {
+                        width: 4px; height: 4px;
+                        right: -5px; top: -6px;
+                        border-width: 5px;
+                        transition: all 0.1s ease;
+                        box-shadow:
+                            inset 0 0 1px rgba(0,0,0,0.8),
+                            0 0 4px 0px lighten($color,20%);
+                    }
+                }
+            }
+        }
+        .seek { opacity: 1; }
+    }
+
+    .loading {
+        position: absolute;
+        width: 100%; text-align: center; left: 0;
+        top: 50%; height: 100px; margin-top: 20px;
+        color: $white; font-size: 0.8em; opacity: 0.1;
+        transition:  all 0.4s ease;
+        &.hidden {
+            opacity:0;
+            top: 120%;
+            height: 0;
+        }
+
+        &:hover, &.error {
+            opacity: 1;
+        }
+    }
+
+    .large-play {
+        text-align: center;
+        display: block;
+        width: 50px;
+        height: 50px;
+        font-family: "FontAwesome";
+        font-style: normal;
+        font-weight: 100;
+        font-size: 3em;
+        color: white;
+        position: absolute;
+        left: 50%;
+        top:50%;
+        margin-top: -25px;
+        margin-left: -25px;
+        cursor: pointer;
+        opacity: 0.8;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        transition: 0.3s ease;
+        &.hidden {
+            top: 45%;
+            opacity: 0;
+        }
+    }
+
+    .adjust-huener {
+        display: block; overflow: visible;
+        text-indent: -999em; position: absolute;
+        border-radius: 100% 0; z-index: 2;
+        background: $white;
+        top: 50%; left: 50%;
+        width: 4px; height: 2px;
+        margin-left: -10px; margin-top: -10px;
+        box-shadow:
+            0px 0px 3px 2px fade($color,40%),
+            0 0 5px 3px fade($color,40%) inset;
+
+        border: none;
+        transform-origin: 9px 9px;
+        animation:
+            adjust-hue 13s cubic-bezier(0.435, -0.165, 0.560, 1.170) infinite;
+        transition:
+            top 1s cubic-bezier(0.600, -0.280, 0.735, 0.045);
+
+        &.hidden {
+            top: 120%;
+        }
+
+        &:after {
+            content: ""; display: block;
+            position: absolute; border-radius: 100% 0; z-index: 10;
+            background: $white;
+            top: 0px; left: 0px;
+            width: 5px; height: 3px;
+            transform: rotate(140deg);
+            box-shadow: 0px 0px 3px 2px fade(adjust-hue($color,-10),40%), 0 0 5px 2px fade(adjust-hue($color,-10),40%) inset;
+            animation: adjust-hue2 17s linear infinite;
+            transform-origin: 9px 9px;
+        }
+        &:before {
+            content: ""; display: block;  position: absolute; border-radius: 100% 0; z-index: 10;
+            background: $white;
+            top: 0px; left: 0px;
+            width: 6px; height: 4px;
+            transform: rotate(70deg);
+            box-shadow: 0px 0px 5px 3px fade(adjust-hue($color,10),40%), 0 0 5px 1px fade(adjust-hue($color,10),40%) inset;
+            animation: adjust-hue2 13s linear infinite;
+            transform-origin: 9px 9px;
+        }
+    }
+}
+
+@media screen and ( max-width: 800px ) {
+
+    article.video {
+        font-size: 12px;
+    }
+}
+
+@keyframes adjust-hue {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(360deg); }
+    14% { transform: rotate(470deg); }
+    18% { transform: rotate(490deg); }
+    20% { transform: rotate(520deg); }
+    22% { transform: rotate(540deg); }
+    26% { transform: rotate(940deg); }
+    30% { transform: rotate(1080deg); }
+    40% { transform: rotate(1340deg); }
+    45% { transform: rotate(1440deg); }
+    55% { transform: rotate(1500deg); }
+    56% { transform: rotate(1500deg); }
+    86% { transform: rotate(3220deg); }
+    100% { transform: rotate(3600deg); }
+}
+
+@keyframes adjust-hue2 {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(3600deg); }
+}
+
+
+/* ==========================================================================
+2. Video Block
+========================================================================== */
+
+.video-intro {
+    position: relative;
+    padding: 0;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 6px;
+    background-color: $dark-sidebar;
+    * {
+        transition: all .25s ease-in-out;
+    }
+
+    .video-inner {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        &.hide {
+            opacity: 0;
+        }
+        & img {
+            width: 100%;
+            height: 100%;
+            border-radius: 6px;
+            z-index: 0;
+        }
+
+        .video-overlay {
+            background: linear-gradient(to bottom, transparentize($dark-sidebar, 1) 50%, transparentize($dark-sidebar, 0) 100%);
+            pointer-events: none;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            border-radius: 6px;
+        }
+
+        .playpause {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            height: 40px;
+            width: 40px;
+            background: $primary;
+            border-radius: 50%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            cursor: pointer;
+            transition: all .3s;
+
+            img {
+                position: relative;
+                display: block;
+                width: 18px;
+                height: 18px;
+                left: 2px;
+                z-index: 3;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: calc(50% - 12px);
+                left: calc(50% - 12px);
+                height: 24px;
+                width: 24px;
+                border-radius: 50%;
+                background: $primary; 
+                animation: wave 1.6s infinite;
+                animation-duration: 2s;
+                transform-origin: center center ;
+                z-index: 0;
+            }
+            &:hover {
+                background: $danger;
+                &:after {
+                    background: $danger;
+                }
+            }
+        }
+    }
+
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 0;
+        height: 0;
+        overflow: hidden;
+        z-index: 0;
+        &.show {
+            z-index: 1;
+        }
+        & iframe,
+        & object,
+        & embed {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+        }
+    }
+}

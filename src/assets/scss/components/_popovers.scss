@@ -1,0 +1,420 @@
+/*! _popovers.scss | Huro | Css ninja 2020-2021 */
+
+/*
+    1. Web UI Popover
+    2. User profile popovers
+    3. Simple popover
+*/
+
+/* ==========================================================================
+1. Web UI Popover
+========================================================================== */
+
+.webui-popover {
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 10px 4px !important;
+    background: $white !important;
+    color: $dark-text !important;
+    border: none !important;
+    margin-top: -20px !important;
+
+    &.top > .webui-arrow {
+        border-top-color: $white !important;
+    }
+
+    &.bottom-right > .webui-arrow {
+        border-right-color: transparent !important;
+        border-bottom-color: transparent !important;
+    }
+
+    &.top-right > .webui-arrow {
+        border-right-color: transparent !important;
+
+        &:after {
+            border-top-color: $white !important;
+        }
+    }
+
+    &.top-left > .webui-arrow {
+        border-top-color: $white !important;
+    }
+
+    &.left > .webui-arrow {
+        border-left-color: transparent !important;
+    }
+
+    .webui-arrow {
+        border-top-color: transparent !important;
+        border-right-color: transparent !important;
+
+        &:after {
+            border-top-color: transparent !important;
+        }
+    }
+
+    .webui-popover-title {
+        background-color: $white !important;
+        border-bottom: none !important;
+        font-weight: 500;
+    }
+
+    .webui-popover-content {
+        font-size: .75rem !important;
+
+        .popover-flex-block {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 5px 0;
+
+            .staff-avatar {
+                height: 38px;
+                width: 38px;
+                border-radius: 50%;
+            }
+
+            .content-block {
+                margin-left: 10px;
+
+                label, span {
+                    display: block;
+                }
+
+                label {
+                    color: lighten($dark-text, 35%);
+                    text-transform: uppercase;
+                    font-size: 70%;
+                }
+            }
+
+            .fa.fa-star, .fa.fa-star-half {
+                color: #FFD700;
+            }
+
+            .icon-block {
+                height: 38px;
+                width: 38px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                svg {
+                    height: 18px;
+                    width: 18px;
+                    stroke: $dark-text;
+                    stroke-width: 1.3px;
+
+                    &.is-medium {
+                        height: 26px;
+                        width: 26px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+1. Web UI Popover Dark mode
+========================================================================== */
+
+body {
+    &.is-dark {
+        .webui-popover {
+            background: $dark-sidebar !important;
+
+            &.top {
+                .webui-arrow {
+                    border-top-color: $dark-sidebar !important;
+                }
+            }
+
+            &.right {
+                .webui-arrow {
+                    border-top-color: transparent !important;
+                    border-right-color: $dark-sidebar !important;
+
+                    &:after {
+                        border-right-color: $dark-sidebar !important;
+                    }
+                }
+            }
+
+            &.left {
+                .webui-arrow {
+                    &:after {
+                        border-left-color: $dark-sidebar !important;
+                    }
+                }
+            }
+
+            &.bottom {
+                .webui-arrow {
+                    &:after {
+                        border-bottom-color: $dark-sidebar !important;
+                    }
+                }
+            }
+
+            &.bottom-right, &.bottom-left {
+                .webui-arrow {
+                    &:after {
+                        border-bottom-color: $dark-sidebar !important;
+                    }
+                }
+            }
+
+            &.top-right {
+                .webui-arrow {
+                    &:after {
+                        border-top-color: $dark-sidebar !important;
+                    }
+                }
+            }
+
+            &.top-left {
+                .webui-arrow {
+                    border-top-color: $dark-sidebar !important;
+                }
+            }
+
+            .webui-popover-inner {
+                background: $dark-sidebar !important;
+                border-color: $dark-sidebar !important;
+            }
+
+            .title {
+                color: darken($accent-grey, 5%) !important;
+            }
+
+            .country img, .primary-skill img {
+                border-color: $dark-sidebar !important;
+            }
+
+            .notification-content {
+                a {
+                    color: $accent !important;
+                }
+
+                span {
+                    color: darken($accent-grey, 10%) !important;
+                }
+            }
+
+            .media + .media {
+                border-top-color: lighten($dark-sidebar, 10%) !important;
+            }
+
+            .loader-overlay {
+                background: rgba(42, 42, 44, 0.95) !important;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+2. User profile popovers
+========================================================================== */
+
+.profile-popover-block, .skill-popover-block {
+    .profile-popover-wrapper, .skill-popover-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        padding: 16px;
+
+        .popover-avatar {
+            position: relative;
+            width: 44px;
+            height: 44px;
+            min-width: 44px;
+            z-index: 0;
+
+            img {
+                display: block;
+            }
+
+            .avatar {
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+            }
+
+            .badge {
+                position: absolute;
+                right: -10px;
+                bottom: 0;
+                width: 24px;
+                height: 24px;
+                border: 2px solid $white;
+                border-radius: 50%;
+            }
+        }
+
+        .popover-meta {
+            margin-left: 16px;
+
+            span {
+                display: block;
+
+                &.user-meta, &.skill-meta {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .username, .skill-name {
+                        display: block;
+                        font-size: .9rem;
+                        font-weight: 500;
+                    }
+
+                    .location {
+                        font-size: .75rem;
+                        color: $muted-grey;
+                    }
+                }
+
+                &.job-title, &.skill-type {
+                    font-size: .8rem;
+                    color: $primary;
+                    font-weight: 500;
+                }
+
+                &.bio, &.skill-description {
+                    font-size: .8rem;
+                    color: $muted-grey;
+                }
+            }
+        }
+    }
+
+    .popover-actions {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 8px 12px 12px 12px;
+
+        .button {
+            height: 26px;
+        }
+
+        .popover-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            max-width: 30px;
+            margin: 0 2px;
+            border-radius: 50%;
+            transition: all .3s;
+            cursor: pointer;
+
+            &:hover {
+                background: lighten($fade-grey, 3%);
+
+                svg {
+                    stroke: $light-text;
+                }
+            }
+
+            svg {
+                width: 16px;
+                height: 16px;
+                stroke: $light-text;
+            }
+        }
+    }
+
+    .loader-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        display: flex;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.95);
+        opacity: 0;
+        transition: all .3s;
+        z-index: 0;
+
+        &.is-active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .loader {
+            &.is-loading {
+                height: 24px;
+                width: 24px;
+                min-height: 24px;
+                min-width: 24px;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+2. User profile popovers Dark mode
+========================================================================== */
+
+body {
+    &.is-dark {
+        .profile-popover-block {
+            .badge {
+                border-color: $dark-sidebar !important;
+            }
+
+            .user-meta, .skill-meta {
+                .username, .skill-name {
+                    color: darken($accent-grey, 5%);
+                }
+            }
+
+            .job-title, .skill-type {
+                color: $accent !important;
+            }
+
+            .popover-actions .popover-icon:hover {
+                background: lighten($dark-sidebar, 6%) !important;
+
+                svg {
+                    stroke: $accent;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+3. Simple popover
+========================================================================== */
+
+.webui-popover-is-simple-popover {
+    max-height: 26px !important;
+
+    .webui-popover-content {
+        position: relative;
+        top: 2px;
+        padding: 4px 16px !important;
+        font-weight: 500;
+    }
+}
+
+.ggtooltip {
+    &.in {
+        opacity: 1 !important;
+    }
+
+    .ggtooltip-inner {
+        box-shadow: none !important;
+        padding: 4px 10px 6px 10px !important;
+    }
+}
+
+

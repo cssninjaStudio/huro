@@ -1,0 +1,665 @@
+---
+layout: default
+title: Flex Table Advanced
+---
+
+{{> components-sidebar}}
+{{> components-mobile-subsidebar}}
+
+<!-- Content Wrapper -->
+<div id="huro-demo" class="view-wrapper" data-naver-offset="342" data-menu-item="#components-sidebar-menu"
+    data-mobile-item="#home-sidebar-menu-mobile">
+
+    <div class="page-content-wrapper">
+        <div class="page-content is-relative">
+
+            <div class="page-title has-text-centered">
+                <!-- Sidebar Trigger -->
+                <div class="huro-hamburger nav-trigger push-resize" data-sidebar="components-sidebar">
+                    <span class="menu-toggle has-chevron">
+                        <span class="icon-box-toggle">
+                            <span class="rotate">
+                                <i class="icon-line-top"></i>
+                                <i class="icon-line-center"></i>
+                                <i class="icon-line-bottom"></i>
+                            </span>
+                        </span>
+                    </span>
+                </div>
+
+                <div class="title-wrap">
+                    <h1 class="title is-4">Advanced Table</h1>
+                </div>
+
+                {{> toolbar}}
+            </div>
+
+            <div class="page-content-inner">
+
+                <nav class="breadcrumb has-bullet-separator" aria-label="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="/">
+                                <span class="icon is-small is-solo">
+                                    <i data-feather="home"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/components-hub.html">
+                                <span>Components</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <span>Advanced Table</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="columns">
+                    <div class="column is-12">
+
+                        <!--Flex Table-->
+                        <div class="demo-card has-more-margin">
+                            <div class="demo-title">
+                                <h3 class="title is-thin is-5">Advanced Table </h3>
+                                <p>Huro provides a custom table component called flex table. It looks like a table but
+                                    is not a Html5 table. Instead, it uses the flexbox technology and is fully
+                                    responsive. The below example, adds more controls and a wrapper to the table. Check the markup for more details.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex-table-wrapper">
+                            <div class="flex-table-toolbar">
+                                <div class="left">
+                                    <div class="control has-icon">
+                                        <input class="input is-rounded" placeholder="Filter...">
+                                        <div class="form-icon">
+                                            <i data-feather="search"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="right">
+                                    <div class="control">
+                                        <div class="h-select is-rounded">
+                                            <div class="select-box">
+                                                <span>10 results per page</span>
+                                            </div>
+                                            <div class="select-icon">
+                                                <i data-feather="chevron-down"></i>
+                                            </div>
+                                            <div class="select-drop has-slimscroll-sm">
+                                                <div class="drop-inner">
+                                                    <div class="option-row">
+                                                        <input type="radio" name="table_results">
+                                                        <div class="option-meta">
+                                                            <span>10 results per page</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="option-row">
+                                                        <input type="radio" name="table_results">
+                                                        <div class="option-meta">
+                                                            <span>25 results per page</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="option-row">
+                                                        <input type="radio" name="table_results">
+                                                        <div class="option-meta">
+                                                            <span>50 results per page</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="option-row">
+                                                        <input type="radio" name="table_results">
+                                                        <div class="option-meta">
+                                                            <span>100 results per page</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="advanced-flex-table" class="flex-table">
+
+                                <!--Table header-->
+                                <div class="flex-table-header">
+                                    <span class="is-checkbox">
+                                        <label class="checkbox">
+                                            <input type="checkbox">
+                                            <span></span>
+                                        </label>
+                                    </span>
+                                    <span class="is-grow">User</span>
+                                    <span>Location</span>
+                                    <span>Industry</span>
+                                    <span>Status</span>
+                                    <span>Relations</span>
+                                    <span class="cell-end">Actions</span>
+                                </div>
+    
+                                <!--Table item-->
+                                <div class="flex-table-item">
+                                    <div class="flex-table-cell is-checkbox">
+                                        <label class="checkbox">
+                                            <input type="checkbox">
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                    <div class="flex-table-cell is-media is-grow" data-th="">
+                                        <div class="h-avatar is-medium">
+                                            <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                data-demo-src="assets/img/avatars/svg/1.gif" alt="">
+                                            <img class="badge"
+                                                src="assets/img/icons/flags/united-states-of-america.svg">
+                                        </div>
+                                        <div>
+                                            <span class="item-name">John Himburg</span>
+                                            <span class="item-meta">
+                                                <span>Software Engineer</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Location">
+                                        <span class="light-text">Seattle, US</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Industry">
+                                        <span class="light-text">Software</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Status">
+                                        <span class="tag is-success is-rounded">Online</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Relations">
+                                        <div class="avatar-stack is-pushed-mobile">
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/svg/3.gif" alt="">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <span class="avatar is-fake is-info">
+                                                    <span>JD</span>
+                                                </span>
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/svg/5.gif" alt="">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <span class="avatar is-more">
+                                                    <span class="inner">
+                                                        <span>+2</span>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-table-cell cell-end" data-th="Actions">
+                                        {{> flex-table-context-menu-alt}}
+                                    </div>
+                                </div>
+    
+                                <!--Table item-->
+                                <div class="flex-table-item">
+                                    <div class="flex-table-cell is-checkbox">
+                                        <label class="checkbox">
+                                            <input type="checkbox">
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                    <div class="flex-table-cell is-media is-grow" data-th="">
+                                        <div class="h-avatar is-medium">
+                                            <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                data-demo-src="assets/img/avatars/svg/3.gif" alt="">
+                                            <img class="badge"
+                                                src="assets/img/icons/flags/canada.svg">
+                                        </div>
+                                        <div>
+                                            <span class="item-name">Mark Shepherd</span>
+                                            <span class="item-meta">
+                                                <span>Team Manager</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Location">
+                                        <span class="light-text">Toronto, CA</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Industry">
+                                        <span class="light-text">Business</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Status">
+                                        <span class="tag is-rounded">Offline</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Relations">
+                                        <div class="avatar-stack is-pushed-mobile">
+                                            <div class="h-avatar is-small">
+                                                <span class="avatar is-fake is-danger">
+                                                    <span>SC</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-table-cell cell-end" data-th="Actions">
+                                        {{> flex-table-context-menu-alt}}
+                                    </div>
+                                </div>
+
+                                <!--Table item-->
+                                <div class="flex-table-item">
+                                    <div class="flex-table-cell is-checkbox">
+                                        <label class="checkbox">
+                                            <input type="checkbox">
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                    <div class="flex-table-cell is-media is-grow" data-th="">
+                                        <div class="h-avatar is-medium">
+                                            <span class="avatar is-fake is-success">
+                                                <span>KL</span>
+                                            </span>
+                                            <img class="badge" src="assets/img/icons/flags/united-states-of-america.svg">
+                                        </div>
+                                        <div>
+                                            <span class="item-name">Karen Langley</span>
+                                            <span class="item-meta">
+                                                <span>Sale Manager</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Location">
+                                        <span class="light-text">Boston, US</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Industry">
+                                        <span class="light-text">Business</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Status">
+                                        <span class="tag is-rounded">Offline</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Relations">
+                                        <div class="avatar-stack is-pushed-mobile">
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/svg/8.gif" alt="">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/svg/5.gif" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-table-cell cell-end" data-th="Actions">
+                                        {{> flex-table-context-menu-alt}}
+                                    </div>
+                                </div>
+    
+                                <!--Table item-->
+                                <div class="flex-table-item">
+                                    <div class="flex-table-cell is-checkbox">
+                                        <label class="checkbox">
+                                            <input type="checkbox">
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                    <div class="flex-table-cell is-media is-grow" data-th="">
+                                        <div class="h-avatar is-medium">
+                                            <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                data-demo-src="assets/img/avatars/svg/4.gif" alt="">
+                                            <img class="badge"
+                                                src="assets/img/icons/flags/united-states-of-america.svg">
+                                        </div>
+                                        <div>
+                                            <span class="item-name">Donovan Biggs</span>
+                                            <span class="item-meta">
+                                                <span>UX Designer</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Location">
+                                        <span class="light-text">New York, US</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Industry">
+                                        <span class="light-text">Design</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Status">
+                                        <span class="tag is-success is-rounded">Online</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Relations">
+                                        <div class="avatar-stack is-pushed-mobile">
+                                            <div class="h-avatar is-small">
+                                                <span class="avatar is-fake is-success">
+                                                    <span>BT</span>
+                                                </span>
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/svg/5.gif" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-table-cell cell-end" data-th="Actions">
+                                        {{> flex-table-context-menu-alt}}
+                                    </div>
+                                </div>
+    
+                                <!--Table item-->
+                                <div class="flex-table-item">
+                                    <div class="flex-table-cell is-checkbox">
+                                        <label class="checkbox">
+                                            <input type="checkbox">
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                    <div class="flex-table-cell is-media is-grow" data-th="">
+                                        <div class="h-avatar is-medium">
+                                            <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                data-demo-src="assets/img/avatars/svg/8.gif" alt="">
+                                            <img class="badge"
+                                                src="assets/img/icons/flags/united-states-of-america.svg">
+                                        </div>
+                                        <div>
+                                            <span class="item-name">Tara Smith</span>
+                                            <span class="item-meta">
+                                                <span>Accountant</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Location">
+                                        <span class="light-text">Houston, US</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Industry">
+                                        <span class="light-text">Accounting</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Status">
+                                        <span class="tag is-danger is-rounded">Busy</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Relations">
+                                        <div class="avatar-stack is-pushed-mobile">
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/svg/6.gif" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-table-cell cell-end" data-th="Actions">
+                                        {{> flex-table-context-menu-alt}}
+                                    </div>
+                                </div>
+
+                                <!--Table item-->
+                                <div class="flex-table-item">
+                                    <div class="flex-table-cell is-checkbox">
+                                        <label class="checkbox">
+                                            <input type="checkbox">
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                    <div class="flex-table-cell is-media is-grow" data-th="">
+                                        <div class="h-avatar is-medium">
+                                            <span class="avatar is-fake is-warning">
+                                                <span>SD</span>
+                                            </span>
+                                            <img class="badge" src="assets/img/icons/flags/united-states-of-america.svg">
+                                        </div>
+                                        <div>
+                                            <span class="item-name">Sam Davenport</span>
+                                            <span class="item-meta">
+                                                <span>Accountant</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Location">
+                                        <span class="light-text">Los Angeles, US</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Industry">
+                                        <span class="light-text">Business</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Status">
+                                        <span class="tag is-rounded">Offline</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Relations">
+                                        <div class="avatar-stack is-pushed-mobile">
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/svg/8.gif" alt="">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/svg/5.gif" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-table-cell cell-end" data-th="Actions">
+                                        {{> flex-table-context-menu-alt}}
+                                    </div>
+                                </div>
+    
+                                <!--Table item-->
+                                <div class="flex-table-item">
+                                    <div class="flex-table-cell is-checkbox">
+                                        <label class="checkbox">
+                                            <input type="checkbox">
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                    <div class="flex-table-cell is-media is-grow" data-th="">
+                                        <div class="h-avatar is-medium">
+                                            <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                data-demo-src="assets/img/avatars/svg/7.gif" alt="">
+                                            <img class="badge"
+                                                src="assets/img/icons/flags/united-states-of-america.svg">
+                                        </div>
+                                        <div>
+                                            <span class="item-name">Mike Kerry</span>
+                                            <span class="item-meta">
+                                                <span>Business Analyst</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Location">
+                                        <span class="light-text">Los Angeles, US</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Industry">
+                                        <span class="light-text">Finance</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Status">
+                                        <span class="tag is-danger is-rounded">Busy</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Relations">
+                                        <div class="avatar-stack is-pushed-mobile">
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/svg/6.gif" alt="">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/svg/3.gif" alt="">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/svg/2.gif" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-table-cell cell-end" data-th="Actions">
+                                        {{> flex-table-context-menu-alt}}
+                                    </div>
+                                </div>
+
+                                <!--Table item-->
+                                <div class="flex-table-item">
+                                    <div class="flex-table-cell is-checkbox">
+                                        <label class="checkbox">
+                                            <input type="checkbox">
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                    <div class="flex-table-cell is-media is-grow" data-th="">
+                                        <div class="h-avatar is-medium">
+                                            <span class="avatar is-fake is-info">
+                                                <span>LK</span>
+                                            </span>
+                                            <img class="badge" src="assets/img/icons/flags/united-states-of-america.svg">
+                                        </div>
+                                        <div>
+                                            <span class="item-name">Lindsey Kohl</span>
+                                            <span class="item-meta">
+                                                <span>Software Engineer</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Location">
+                                        <span class="light-text">San Francisco, US</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Industry">
+                                        <span class="light-text">Business</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Status">
+                                        <span class="tag is-rounded is-success">Online</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Relations">
+                                        <div class="avatar-stack is-pushed-mobile">
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/svg/8.gif" alt="">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/svg/5.gif" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-table-cell cell-end" data-th="Actions">
+                                        {{> flex-table-context-menu-alt}}
+                                    </div>
+                                </div>
+
+                                <!--Table item-->
+                                <div class="flex-table-item">
+                                    <div class="flex-table-cell is-checkbox">
+                                        <label class="checkbox">
+                                            <input type="checkbox">
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                    <div class="flex-table-cell is-media is-grow" data-th="">
+                                        <div class="h-avatar is-medium">
+                                            <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                data-demo-src="assets/img/avatars/svg/6.gif" alt="">
+                                            <img class="badge"
+                                                src="assets/img/icons/flags/united-states-of-america.svg">
+                                        </div>
+                                        <div>
+                                            <span class="item-name">Esteban Caleta</span>
+                                            <span class="item-meta">
+                                                <span>Business Analyst</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Location">
+                                        <span class="light-text">Washington DC, US</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Industry">
+                                        <span class="light-text">Finance</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Status">
+                                        <span class="tag is-danger is-rounded">Busy</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Relations">
+                                        <div class="avatar-stack is-pushed-mobile">
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/svg/6.gif" alt="">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/svg/3.gif" alt="">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/svg/2.gif" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-table-cell cell-end" data-th="Actions">
+                                        {{> flex-table-context-menu-alt}}
+                                    </div>
+                                </div>
+
+                                <!--Table item-->
+                                <div class="flex-table-item">
+                                    <div class="flex-table-cell is-checkbox">
+                                        <label class="checkbox">
+                                            <input type="checkbox">
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                    <div class="flex-table-cell is-media is-grow" data-th="">
+                                        <div class="h-avatar is-medium">
+                                            <span class="avatar is-fake is-danger">
+                                                <span>HM</span>
+                                            </span>
+                                            <img class="badge" src="assets/img/icons/flags/united-states-of-america.svg">
+                                        </div>
+                                        <div>
+                                            <span class="item-name">Helen Miller</span>
+                                            <span class="item-meta">
+                                                <span>Head of Marketing</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Location">
+                                        <span class="light-text">Boston, US</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Industry">
+                                        <span class="light-text">Marketing</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Status">
+                                        <span class="tag is-rounded">Offline</span>
+                                    </div>
+                                    <div class="flex-table-cell" data-th="Relations">
+                                        <div class="avatar-stack is-pushed-mobile">
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/svg/8.gif" alt="">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/svg/5.gif" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-table-cell cell-end" data-th="Actions">
+                                        {{> flex-table-context-menu-alt}}
+                                    </div>
+                                </div>
+    
+                            </div>
+                        </div>
+
+                        <!--Table Pagination-->
+                        <nav class="flex-pagination pagination is-rounded" role="navigation" aria-label="pagination">
+                            <a class="pagination-previous">Previous</a>
+                            <a class="pagination-next">Next</a>
+                            <ul class="pagination-list">
+                                <li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
+                                <li><span class="pagination-ellipsis">&hellip;</span></li>
+                                <li><a class="pagination-link" aria-label="Goto page 45">45</a></li>
+                                <li><a class="pagination-link is-current" aria-label="Page 46"
+                                        aria-current="page">46</a></li>
+                                <li><a class="pagination-link" aria-label="Goto page 47">47</a></li>
+                                <li><span class="pagination-ellipsis">&hellip;</span></li>
+                                <li><a class="pagination-link" aria-label="Goto page 86">86</a></li>
+                            </ul>
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+<div class="dropdown is-right dropdown-trigger">
+
+    <div class="is-trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+        <i data-feather="more-vertical"></i>
+    </div>
+
+    <div class="dropdown-menu" role="menu">
+        <div class="dropdown-content">
+            <a href="#" class="dropdown-item kanban-rename kill-drop">
+                Rename
+            </a>
+            <a class="dropdown-item kanban-collapse kill-drop">
+                Collapse
+            </a>
+            <hr class="dropdown-divider">
+            <a href="#" class="dropdown-item has-child">
+                Settings
+                <i data-feather="chevron-right"></i>
+                <div class="child-dropdown">
+                    <div class="inner">
+                        <ul>
+                            <li>
+                                <div class="column-setting">
+                                    <label class="form-switch">
+                                        <input type="checkbox" id="lock-column" class="is-switch">
+                                        <i></i>
+                                    </label>
+                                    <div class="text">
+                                        <span>Lock</span>
+                                        <span>Locks the column</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="column-setting">
+                                    <label class="form-switch">
+                                        <input type="checkbox" id="column-notifications" class="is-switch" checked>
+                                        <i></i>
+                                    </label>
+                                    <div class="text">
+                                        <span>Notifications</span>
+                                        <span>Enables or disables notifications</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="column-setting">
+                                    <label class="form-switch">
+                                        <input type="checkbox" id="column-notifications" class="is-switch">
+                                        <i></i>
+                                    </label>
+                                    <div class="text">
+                                        <span>Sorting</span>
+                                        <span>Enables or disables sorting</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

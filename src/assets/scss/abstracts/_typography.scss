@@ -1,0 +1,50 @@
+/*! _typography.scss | Huro | Css ninja 2020-2021 */
+
+/*
+    1. Titles
+*/
+
+/* ==========================================================================
+1. Titles
+========================================================================== */
+
+$font: 'Roboto', sans-serif;
+
+.title, .subtitle {
+    font-family: $font;
+    color: $dark-text;
+
+    &.is-narrow {
+        margin-bottom: 0;
+    }
+
+    &.is-thin {
+        font-weight: 300;
+    }
+}
+
+p {
+    font-family: $font;
+    font-weight: 300;
+    color: $light-text;
+
+    &.white-text {
+        color: $white;
+    }
+}
+
+body {
+    &.is-dark {
+        .title, .dark-inverted {
+            color: $dark-dark-text !important;
+        }
+
+        .subtitle {
+            color: $light-text;
+        }
+    }
+}
+
+.font-size-base {
+    font-size: 1rem;
+}
