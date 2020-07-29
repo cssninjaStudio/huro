@@ -65,6 +65,7 @@
         }
 
         a {
+            font-family: $font;
             border-bottom-width: 2px;
             color: $placeholder;
             border-bottom-color: transparent;
@@ -259,6 +260,7 @@ body {
 
             a {
                 color: $muted-grey;
+                font-family: $font;
                 height: 40px;
                 border-bottom: none;
                 position: relative;
@@ -364,6 +366,7 @@ body {
 
             a {
                 color: $muted-grey;
+                font-family: $font;
                 font-weight: 400;
                 height: 40px;
                 border-bottom: none;

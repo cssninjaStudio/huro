@@ -33,6 +33,10 @@ p {
     }
 }
 
+div {
+    color: $dark-text;
+}
+
 body {
     &.is-dark {
         .title, .dark-inverted {

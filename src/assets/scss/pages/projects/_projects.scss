@@ -1,0 +1,102 @@
+/*! _projects.scss | Huro | Css ninja 2020-2021 */
+
+/*
+    1. Projects Toolbar
+    2. Projects Grid
+    3. Projects Grid Dark mode
+*/
+
+/* ==========================================================================
+1. Projects Toolbar
+========================================================================== */
+
+.projects-toolbar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .avatar-stack {
+        margin-left: 16px;
+    }
+
+    .button {
+        margin-left: auto;
+    }
+}
+
+
+/* ==========================================================================
+2. Projects Grid
+========================================================================== */
+
+.all-projects {
+
+    .section-heading {
+        font-family: $font;
+        font-size: .9rem;
+        text-transform: uppercase;
+        color: $light-text;
+        margin-bottom: 1rem;
+    }
+
+    .project-grid {
+        margin-bottom: 1.5rem;
+
+        .project-grid-item {
+            @extend .s-card;
+            text-align: center;
+            box-shadow: none;
+
+            &:hover {
+                border-color: darken($fade-grey, 6%);
+                box-shadow: $light-box-shadow;
+
+                .project-avatar {
+                    filter: grayscale(0);
+                    opacity: 1;
+                }
+            }
+
+            .project-avatar {
+                display: block;
+                height: 40px;
+                width: 40px;
+                border-radius: 10px;
+                margin: 0 auto 10px auto;
+                filter: grayscale(1);
+                opacity: .6;
+                transition: all .3s;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+                font-family: $font;
+                font-weight: 500;
+                color: $dark-text;
+            }
+
+            p {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+
+/* ==========================================================================
+3. Projects Grid dark mode
+========================================================================== */
+
+body {
+    &.is-dark {
+        .all-projects {
+            .project-grid {
+                .project-grid-item {
+                    h3 {
+                        color: $dark-dark-text;
+                    }
+                }
+            }
+        }
+    }
+}

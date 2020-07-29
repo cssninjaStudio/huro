@@ -1,4 +1,9 @@
 .breadcrumb {
+
+    &.is-narrow {
+        margin-bottom: 10px;
+    }
+
     ul {
         li {
             a {

@@ -11,8 +11,9 @@ Cards
     padding: 20px;
     background-color: $white;
     border-radius: 10px;
-    box-shadow: $light-box-shadow;
-    border: 1px solid $fade-grey;
+    //box-shadow: $light-box-shadow;
+    border: 1px solid darken($fade-grey, 3%);
+    transition: all .3s;
 }
 
 .s-card {
@@ -22,14 +23,23 @@ Cards
     padding: 20px;
     background-color: $white;
     border-radius: 6px;
-    box-shadow: $light-box-shadow;
-    border: 1px solid $fade-grey;
+    //box-shadow: $light-box-shadow;
+    border: 1px solid darken($fade-grey, 3%);
+    transition: all .3s;
 }
 
 .r-card, .s-card {
 
     &.has-margin-bottom {
         margin-bottom: 1.5rem;
+    }
+
+    &.is-flat {
+        box-shadow: none;
+    }
+
+    &.is-raised {
+        box-shadow: $light-box-shadow;
     }
 
     .card-head {

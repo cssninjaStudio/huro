@@ -47,6 +47,9 @@ $(document).ready(function () {
     //Mobile Dropdowns
     initMobileDropdowns();
 
+    //Adjust Dropdowns
+    adjustDropdowns()
+
     //Chosen Selects
     initChosenSelects();
 

@@ -24,6 +24,10 @@
         border-radius: 50px;
     }
 
+    &.is-smaller {
+        height: .5rem !important;
+    }
+
     &.is-tiny {
         height: .35rem !important;
     }

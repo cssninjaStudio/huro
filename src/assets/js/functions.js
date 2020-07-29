@@ -263,6 +263,33 @@ function initMobileDropdowns() {
     })
 }
 
+//Adjust dropdowns
+function adjustDropdowns() {
+    $('.dropdown').each(function () {
+        var $this = $(this);
+
+        if (($(this).offset().top + $(this).height()) >= ($(window).height() - 250)) {
+            $($this).addClass("is-up");
+        }
+        else {
+            $($this).removeClass("is-up");
+        }
+    })
+
+    $(window).on('scroll', function(){
+        $('.dropdown').each(function () {
+            var $this = $(this);
+    
+            if (($(this).offset().top + $(this).height()) >= ($(window).height() - 250)) {
+                $($this).addClass("is-up");
+            }
+            else {
+                $($this).removeClass("is-up");
+            }
+        })
+    })
+}
+
 //Chosen Selects
 function initChosenSelects() {
     if ($('.chosen-select-no-single').length) {

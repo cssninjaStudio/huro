@@ -1,0 +1,112 @@
+---
+layout: default
+title: Master Layout
+---
+
+{{> layouts-sidebar}}
+{{> layouts-mobile-subsidebar}}
+
+<!-- Content Wrapper -->
+<div id="app-project" class="view-wrapper" data-naver-offset="214" data-menu-item="#layouts-sidebar-menu"
+    data-mobile-item="#home-sidebar-menu-mobile">
+
+    <div class="page-content-wrapper">
+        <div class="page-content is-relative">
+
+            <div class="page-title has-text-centered">
+                <!-- Sidebar Trigger -->
+                <div class="huro-hamburger nav-trigger push-resize" data-sidebar="layouts-sidebar">
+                    <span class="menu-toggle has-chevron">
+                        <span class="icon-box-toggle">
+                            <span class="rotate">
+                                <i class="icon-line-top"></i>
+                                <i class="icon-line-center"></i>
+                                <i class="icon-line-bottom"></i>
+                            </span>
+                        </span>
+                    </span>
+                </div>
+
+                <div class="title-wrap">
+                    <h1 class="title is-4">Project</h1>
+                </div>
+
+                {{> toolbar}}
+            </div>
+
+            <div class="page-content-inner project-details">
+
+                <nav class="breadcrumb has-bullet-separator is-narrow" aria-label="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="/">
+                                <span class="icon is-small is-solo">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/projects-projects.html">
+                                <span>Projects</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <span>Project details</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="columns">
+                    <div class="column is-8">
+                        <div class="s-card">
+                            <div class="project-toolbar">
+                                <div class="h-avatar is-large">
+                                    <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="https://mir-s3-cdn-cf.behance.net/project_modules/source/cb69c179990165.5d160f0315d61.png" alt="">
+                                    <img class="badge" src="assets/img/icons/logos/slicer.svg">
+                                </div>
+                                <div class="project-meta">
+                                    <h2 class="title is-5">The slicer project redesign <span>8 days left</span></h2>
+                                    <progress class="progress is-primary is-smaller" value="31" max="100">31%</progress>
+                                </div>
+            
+                                <div class="actions">
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-content">
+                            <div class="s-card">
+                                <div class="tabs-wrapper">
+                                    <div class="tabs-inner">
+                                        <div class="tabs">
+                                            <ul>
+                                                <li class="is-active"><a>Overview</a></li>
+                                                <li ><a>Team</a></li>
+                                                <li ><a>Tasks</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column is-4">
+                        <div class="s-card">
+
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                
+
+            </div>
+
+        </div>
+    </div>
+</div>

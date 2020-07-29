@@ -131,6 +131,7 @@
     &.is-small {
         max-width: 32px;
         min-width: 32px;
+        max-height: 32px;
 
         .avatar {
             width: 32px;
@@ -273,11 +274,9 @@
     display: flex;
 
     .h-avatar {
-        border: 3px solid $white;
         border-radius: 50%;
 
         &.is-small {
-            border: 2px solid $white;
             border-radius: 50%;
 
             &:not(:first-child) {
@@ -289,10 +288,14 @@
                     }
                 }
             }
+
+            img {
+                border: 2px solid $white;
+            }
         }
 
         &.is-medium {
-            border: 4px solid $white;
+            
             border-radius: 50%;
 
             &:not(:first-child) {
@@ -304,6 +307,10 @@
                     }
                 }
             }
+
+            img {
+                border: 4px solid $white;
+            }
         }
 
         &:not(:first-child) {
@@ -314,6 +321,10 @@
                     margin-left: -#{$var}px;
                 }
             }
+        }
+
+        img {
+            border: 2px solid $white;
         }
     }
 }
