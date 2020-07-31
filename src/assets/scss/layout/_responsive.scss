@@ -95,6 +95,10 @@ Responsive styles
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
 
+    .mobile-navbar {
+        display: flex;
+    }
+
     .navbar-brand {
         align-items: center;
         justify-content: space-between;
@@ -150,6 +154,12 @@ Responsive styles
 
     .huro-hamburger:not(.is-visible) {
         display: none !important;
+    }
+
+    .toolbar {
+        .toolbar-notifications {
+            display: none;
+        }
     }
 
     .sidebar-panel {
@@ -245,6 +255,10 @@ Responsive styles
 
 @media (max-width: 767px) {
 
+    .mobile-navbar {
+        display: flex;
+    }
+
     .navbar-brand {
         align-items: center;
         justify-content: space-between;
@@ -299,6 +313,12 @@ Responsive styles
 
     .huro-hamburger:not(.is-visible) {
         display: none !important;
+    }
+
+    .toolbar {
+        .toolbar-notifications {
+            display: none;
+        }
     }
 
     .sidebar-panel {

@@ -402,4 +402,12 @@ $(document).ready(function () {
         $("#autocomplete-demo-advanced").easyAutocomplete(demoAdvancedOptions);
     }
 
+    if ($('.circle-chart-wrapper').length) {
+        $('.circle-chart-wrapper').each(function(){
+            var $this = $(this)
+            var completion = $this.attr('data-completion');
+            $this.find('.circle-chart__circle').attr('stroke-dasharray', completion + ',100');
+        })
+    }
+
 })
