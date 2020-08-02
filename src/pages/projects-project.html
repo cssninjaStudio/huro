@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Master Layout
+title: Project Details
 ---
 
 {{> layouts-sidebar}}
@@ -36,57 +36,234 @@ title: Master Layout
 
             <div class="page-content-inner project-details">
 
-                <nav class="breadcrumb has-bullet-separator is-narrow" aria-label="breadcrumbs">
-                    <ul>
-                        <li>
-                            <a href="/">
-                                <span class="icon is-small is-solo">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/projects-projects.html">
-                                <span>Projects</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                                <span>Project details</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                <div class="tabs-wrapper  is-triple-slider">
+                    <div class="tabs-inner">
+                        <div class="tabs">
+                            <ul>
+                                <li data-tab="project-tab" class="is-active"><a><span>Project</span></a></li>
+                                <li data-tab="team-tab"><a><span>Team</span></a></li>
+                                <li data-tab="tasks-tab"><a><span>Tasks</span></a></li>
+                                <li class="tab-naver"></li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                
+                    <div id="project-tab" class="tab-content is-active">
+                        <div class="columns project-details-inner">
+                            <div class="column is-8">
+                                <div class="project-details-card">
+                                    <div class="card-head">
+                                        <div class="title-wrap">
+                                            <h3>Brand and Website Redesign</h3>
+                                            <p>UI/UX Design</p>
+                                        </div>
+                                        <button class="button">
+                                            <span class="icon is-small">
+                                                <i data-feather="edit-3"></i>
+                                            </span>
+                                        </button>
+                                    </div>
+        
+                                    <div class="project-overview">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid iudicant sensus? Primum quid tu dicis breve? Etiam beatissimum? Ne discipulum abducam, times.</p>
+                                        <div class="avatar-stack">
+                                            <div class="h-avatar">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/7.jpg" alt="" data-user-popover="0">
+                                            </div>
+                                            <div class="h-avatar">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/9.jpg" alt="" data-user-popover="1">
+                                            </div>
+                                            <div class="h-avatar">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/12.jpg" alt="" data-user-popover="2">
+                                            </div>
+                                            <div class="h-avatar">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/8.jpg" alt="" data-user-popover="3">
+                                            </div>
+                                            <div class="h-avatar">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/25.jpg" alt="" data-user-popover="4">
+                                            </div>
+                                            <div class="h-avatar">
+                                                <span class="avatar is-more">
+                                                    <span class="inner">
+                                                        <span>+3</span>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                <div class="columns">
-                    <div class="column is-8">
-                        <div class="s-card">
-                            <div class="project-toolbar">
-                                <div class="h-avatar is-large">
-                                    <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="https://mir-s3-cdn-cf.behance.net/project_modules/source/cb69c179990165.5d160f0315d61.png" alt="">
-                                    <img class="badge" src="assets/img/icons/logos/slicer.svg">
-                                </div>
-                                <div class="project-meta">
-                                    <h2 class="title is-5">The slicer project redesign <span>8 days left</span></h2>
-                                    <progress class="progress is-primary is-smaller" value="31" max="100">31%</progress>
-                                </div>
-            
-                                <div class="actions">
-                                    
+                                    <div class="project-features">
+                                        <div class="project-feature">
+                                            <i class="lnil lnil-vector-pen"></i>
+                                            <h4>UI/UX Design</h4>
+                                            <p>Designing a perfect user experience is in the scope of this project.</p>
+                                        </div>
+                                        <div class="project-feature">
+                                            <i class="lnil lnil-alarm-clock"></i>
+                                            <h4>1 Week Sprints</h4>
+                                            <p>This project development iterations follow a 1 week sprint pattern.</p>
+                                        </div>
+                                        <div class="project-feature">
+                                            <i class="lnil lnil-calendar"></i>
+                                            <h4>3 Months</h4>
+                                            <p>This project and all related tasks should completed within 3 months.</p>
+                                        </div>
+                                        <div class="project-feature">
+                                            <i class="lnil lnil-diamond-alt"></i>
+                                            <h4>Fixed</h4>
+                                            <p>This project's budget planning is based on an imutable fixed bid.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="project-files">
+                                        <h4>Recent Files</h4>
+                                        <div class="columns is-multiline">
+                                            <div class="column is-6">
+                                                <div class="file-box">
+                                                    <img src="assets/img/icons/files/zip-format.svg" alt="">
+                                                    <div class="meta">
+                                                        <span>Preliminary Sketches</span>
+                                                        <span>3MB <i class="fas fa-circle"></i> 5 days ago</span>
+                                                    </div>
+                                                    {{> file-card-dropdown}}
+                                                </div>
+                                            </div>
+                                            <div class="column is-6">
+                                                <div class="file-box">
+                                                    <img src="assets/img/icons/files/pdf.svg" alt="">
+                                                    <div class="meta">
+                                                        <span>Project Scope</span>
+                                                        <span>0.8MB <i class="fas fa-circle"></i> 7 days ago</span>
+                                                    </div>
+                                                    {{> file-card-dropdown}}
+                                                </div>
+                                            </div>
+                                            <div class="column is-6">
+                                                <div class="file-box">
+                                                    <img src="assets/img/icons/files/presentation.svg" alt="">
+                                                    <div class="meta">
+                                                        <span>Project Presentation</span>
+                                                        <span>2.4MB <i class="fas fa-circle"></i> 7 days ago</span>
+                                                    </div>
+                                                    {{> file-card-dropdown}}
+                                                </div>
+                                            </div>
+                                            <div class="column is-6">
+                                                <div class="file-box">
+                                                    <img src="assets/img/icons/files/sheet.svg" alt="">
+                                                    <div class="meta">
+                                                        <span>Project Budget</span>
+                                                        <span>0.6MB <i class="fas fa-circle"></i> 8 days ago</span>
+                                                    </div>
+                                                    {{> file-card-dropdown}}
+                                                </div>
+                                            </div>
+                                            <div class="column is-6">
+                                                <div class="file-box">
+                                                    <img src="assets/img/icons/files/doc.svg" alt="">
+                                                    <div class="meta">
+                                                        <span>Project Notes</span>
+                                                        <span>0.4MB <i class="fas fa-circle"></i> 8 days ago</span>
+                                                    </div>
+                                                    {{> file-card-dropdown}}
+                                                </div>
+                                            </div>
+                                            <div class="column is-6">
+                                                <div class="file-box">
+                                                    <img src="assets/img/icons/files/video.svg" alt="">
+                                                    <div class="meta">
+                                                        <span>POC Demo</span>
+                                                        <span>8.75MB <i class="fas fa-circle"></i> 8 days ago</span>
+                                                    </div>
+                                                    {{> file-card-dropdown}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="project-content">
-                            <div class="s-card">
-                                <div class="tabs-wrapper">
-                                    <div class="tabs-inner">
-                                        <div class="tabs">
-                                            <ul>
-                                                <li class="is-active"><a>Overview</a></li>
-                                                <li ><a>Team</a></li>
-                                                <li ><a>Tasks</a></li>
-                                            </ul>
+                            <div class="column is-4">
+                                <div class="side-card">
+                                    <h4>Project Tools</h4>
+
+                                    <div class="media-flex-center">
+                                        <div class="h-avatar is-small">
+                                            <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/stacks/sketch.svg" alt="">
+                                        </div>
+                                        <div class="flex-meta">
+                                            <span>Sketch</span>
+                                            <span>Design Software</span>
+                                        </div>
+                                    </div>
+                                    <div class="media-flex-center">
+                                        <div class="h-avatar is-small">
+                                            <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/stacks/illustrator.svg" alt="">
+                                        </div>
+                                        <div class="flex-meta">
+                                            <span>Illustrator</span>
+                                            <span>Design Software</span>
+                                        </div>
+                                    </div>
+                                    <div class="media-flex-center">
+                                        <div class="h-avatar is-small">
+                                            <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/stacks/photoshop.svg" alt="">
+                                        </div>
+                                        <div class="flex-meta">
+                                            <span>Photoshop</span>
+                                            <span>Design Software</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="side-card">
+                                    <h4>Project Stacks</h4>
+
+                                    <div class="media-flex-center">
+                                        <div class="h-avatar is-small">
+                                            <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/stacks/html5.svg" alt="">
+                                        </div>
+                                        <div class="flex-meta">
+                                            <span>Html5</span>
+                                            <span>Hypertext Markup</span>
+                                        </div>
+                                    </div>
+                                    <div class="media-flex-center">
+                                        <div class="h-avatar is-small">
+                                            <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/stacks/css3.svg" alt="">
+                                        </div>
+                                        <div class="flex-meta">
+                                            <span>CSS3</span>
+                                            <span>Cascading Stylesheets</span>
+                                        </div>
+                                    </div>
+                                    <div class="media-flex-center">
+                                        <div class="h-avatar is-small">
+                                            <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/stacks/vuejs.svg" alt="">
+                                        </div>
+                                        <div class="flex-meta">
+                                            <span>VueJS</span>
+                                            <span>Javascript Framework</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="side-card">
+                                    <h4>Customer</h4>
+
+                                    <div class="media-flex-center">
+                                        <div class="h-avatar is-small">
+                                            <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/illustrations/dashboards/flights/company1.svg" alt="">
+                                        </div>
+                                        <div class="flex-meta">
+                                            <span>VFlights</span>
+                                            <span>Transportation company</span>
                                         </div>
                                     </div>
                                 </div>
@@ -94,14 +271,159 @@ title: Master Layout
                         </div>
                     </div>
 
-                    <div class="column is-4">
-                        <div class="s-card">
-
+                    <!--Project Team-->
+                    <div id="team-tab" class="tab-content">
+                        <div class="project-details-inner">
+                            <div class="project-team-card">
+                                <div class="columns is-multiline">
+                                    <!--Team Member-->
+                                    <div class="column is-6 has-border-bottom">
+                                        <div class="media-flex-center">
+                                            <div class="h-avatar is-medium">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                data-demo-src="assets/img/avatars/photos/7.jpg" alt="">
+                                            </div>
+                                            <div class="flex-meta">
+                                                <span>Alice C.</span>
+                                                <span>Software Engineer</span>
+                                            </div>
+                                            <div class="flex-end">
+                                                {{> file-card-dropdown}}
+                                            </div>
+                                        </div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si enim ad populum me vocas, eum. Quod cum dixissent, ille contra. Cur id non ita fit? Duo Reges: constructio interrete. </p>
+                                    </div>
+                                    <!--Team Member-->
+                                    <div class="column is-6 has-border-bottom">
+                                        <div class="media-flex-center">
+                                            <div class="h-avatar is-medium">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                data-demo-src="assets/img/avatars/photos/9.jpg" alt="">
+                                            </div>
+                                            <div class="flex-meta">
+                                                <span>Anna B.</span>
+                                                <span>UX Designer</span>
+                                            </div>
+                                            <div class="flex-end">
+                                                {{> file-card-dropdown}}
+                                            </div>
+                                        </div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si enim ad populum me vocas, eum. Quod cum dixissent, ille contra. Cur id non ita fit? Duo Reges: constructio interrete. </p>
+                                    </div>
+                                    <!--Team Member-->
+                                    <div class="column is-6 has-border-bottom">
+                                        <div class="media-flex-center">
+                                            <div class="h-avatar is-medium">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                data-demo-src="assets/img/avatars/photos/12.jpg" alt="">
+                                            </div>
+                                            <div class="flex-meta">
+                                                <span>Joshua S.</span>
+                                                <span>Backend Developer</span>
+                                            </div>
+                                            <div class="flex-end">
+                                                {{> file-card-dropdown}}
+                                            </div>
+                                        </div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si enim ad populum me vocas, eum. Quod cum dixissent, ille contra. Cur id non ita fit? Duo Reges: constructio interrete. </p>
+                                    </div>
+                                    <!--Team Member-->
+                                    <div class="column is-6 has-border-bottom">
+                                        <div class="media-flex-center">
+                                            <div class="h-avatar is-medium">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                data-demo-src="assets/img/avatars/photos/8.jpg" alt="">
+                                            </div>
+                                            <div class="flex-meta">
+                                                <span>Erik K.</span>
+                                                <span>Product Manager</span>
+                                            </div>
+                                            <div class="flex-end">
+                                                {{> file-card-dropdown}}
+                                            </div>
+                                        </div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si enim ad populum me vocas, eum. Quod cum dixissent, ille contra. Cur id non ita fit? Duo Reges: constructio interrete. </p>
+                                    </div>
+                                    <!--Team Member-->
+                                    <div class="column is-6 has-border-bottom">
+                                        <div class="media-flex-center">
+                                            <div class="h-avatar is-medium">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                data-demo-src="assets/img/avatars/photos/25.jpg" alt="">
+                                            </div>
+                                            <div class="flex-meta">
+                                                <span>Melany W.</span>
+                                                <span>Web Developer</span>
+                                            </div>
+                                            <div class="flex-end">
+                                                {{> file-card-dropdown}}
+                                            </div>
+                                        </div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si enim ad populum me vocas, eum. Quod cum dixissent, ille contra. Cur id non ita fit? Duo Reges: constructio interrete. </p>
+                                    </div>
+                                    <!--Team Member-->
+                                    <div class="column is-6 has-border-bottom">
+                                        <div class="media-flex-center">
+                                            <div class="h-avatar is-medium">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                data-demo-src="assets/img/avatars/photos/13.jpg" alt="">
+                                            </div>
+                                            <div class="flex-meta">
+                                                <span>Tara S.</span>
+                                                <span>UI/UX Designer</span>
+                                            </div>
+                                            <div class="flex-end">
+                                                {{> file-card-dropdown}}
+                                            </div>
+                                        </div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si enim ad populum me vocas, eum. Quod cum dixissent, ille contra. Cur id non ita fit? Duo Reges: constructio interrete. </p>
+                                    </div>
+                                    <!--Team Member-->
+                                    <div class="column is-6">
+                                        <div class="media-flex-center">
+                                            <div class="h-avatar is-medium">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                data-demo-src="assets/img/avatars/photos/18.jpg" alt="">
+                                            </div>
+                                            <div class="flex-meta">
+                                                <span>Esteban C.</span>
+                                                <span>UI/UX Designer</span>
+                                            </div>
+                                            <div class="flex-end">
+                                                {{> file-card-dropdown}}
+                                            </div>
+                                        </div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si enim ad populum me vocas, eum. Quod cum dixissent, ille contra. Cur id non ita fit? Duo Reges: constructio interrete. </p>
+                                    </div>
+                                    <!--Team Member-->
+                                    <div class="column is-6">
+                                        <div class="media-flex-center">
+                                            <div class="h-avatar is-medium">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                data-demo-src="assets/img/avatars/photos/5.jpg" alt="">
+                                            </div>
+                                            <div class="flex-meta">
+                                                <span>Mary L.</span>
+                                                <span>Project Manager</span>
+                                            </div>
+                                            <div class="flex-end">
+                                                {{> file-card-dropdown}}
+                                            </div>
+                                        </div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si enim ad populum me vocas, eum. Quod cum dixissent, ille contra. Cur id non ita fit? Duo Reges: constructio interrete. </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-
                 
+                    <div id="tasks-tab" class="tab-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid iudicant
+                            sensus? Primum quid tu dicis breve? Etiam beatissimum? Ne discipulum
+                            abducam, times. Quae diligentissime contra Aristonem dicuntur a Chryippo.
+                            Duo Reges: constructio interrete.</p>
+                    </div>
+                </div>
 
                 
 

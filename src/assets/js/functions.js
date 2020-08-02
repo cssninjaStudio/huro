@@ -309,10 +309,10 @@ function initChosenSelects() {
 
 //Tabs
 function initTabs() {
-    $('.tabs li').on('click', function () {
+    $('.tabs-wrapper .tabs li').on('click', function () {
         var tab_id = $(this).attr('data-tab');
 
-        $(this).closest('.tabs-wrapper').find('.tabs li.is-active').removeClass('is-active');
+        $(this).closest('.tabs-wrapper').find('> .tabs li.is-active').removeClass('is-active');
         $(this).addClass('is-active');
 
         $(this).siblings('li').removeClass('is-active');
