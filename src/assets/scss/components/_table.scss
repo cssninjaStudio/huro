@@ -228,12 +228,24 @@ body {
     .pagination-next, .pagination-previous {
         background: $white;
         min-width: 85px;
+
+        &.has-chevron {
+            min-width: 55px;
+
+            svg {
+                height: 16px;
+                width: 16px;
+                stroke-width: 3px;
+                stroke: $primary;
+            }
+        }
     }
 
     .pagination-list {
         li {
             .pagination-link {
                 background: $white;
+                font-family: $font;
                 font-size: .9em;
 
                 &.is-current {

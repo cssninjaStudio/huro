@@ -164,7 +164,6 @@ function jsLint() {
 function watchFiles() {
   watch('src/**/*.html', compileHTML);
   watch(['src/assets/scss/**/*', 'src/assets/scss/*'], compileSCSS);
-  //watch(['src/assets/js/*.js', 'src/assets/js/**/*'], compileJS);
   watch('src/assets/js/**/*.js', compileJS);
   watch('src/assets/img/**/*', copyImages);
 }
@@ -229,6 +228,7 @@ function concatPlugins() {
     nodepath + 'alertifyjs/build/alertify.min.js',
     nodepath + 'notyf/notyf.min.js',
     nodepath + 'pikaday/pikaday.js',
+    nodepath + 'simplebar/dist/simplebar.min.js',
     nodepath + 'choices.js/public/assets/scripts/choices.min.js',
     nodepath + 'lightgallery.js/dist/js/lightgallery.min.js',
     nodepath + 'lg-thumbnail.js/dist/lg-thumbnail.min.js',
@@ -267,6 +267,7 @@ function concatCssPlugins() {
     nodepath + 'alertifyjs/build/css/themes/default.min.css',
     nodepath + 'notyf/notyf.min.css',
     nodepath + 'pikaday/css/pikaday.css',
+    nodepath + 'simplebar/dist/simplebar.min.css',
     nodepath + 'choices.js/public/assets/styles/choices.min.css',
     nodepath + 'lightgallery.js/dist/css/lightgallery.min.css',
     nodepath + 'filepond/dist/filepond.min.css',

@@ -95,6 +95,10 @@ Responsive styles
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
 
+    .webapp-navbar {
+        display: none;
+    }
+
     .mobile-navbar {
         display: flex;
     }
@@ -226,6 +230,11 @@ Responsive styles
         padding-left: 40px;
         padding-right: 40px;
 
+        &.is-webapp {
+            padding-top: 70px !important;
+            margin-top: 0 !important;
+        }
+
         &.is-explore {
             padding-left: 0 !important;
             padding-right: 0 !important;
@@ -233,6 +242,11 @@ Responsive styles
     }
 
     .page-title {
+        &.is-webapp {
+            display: flex !important;
+            margin-top: 0;
+        }
+
         &.is-project-details {
             .huro-hamburger {
                 margin-left: 7px !important;
@@ -257,6 +271,10 @@ Responsive styles
 
     .mobile-navbar {
         display: flex;
+    }
+
+    .webapp-navbar {
+        display: none;
     }
 
     .navbar-brand {
@@ -351,10 +369,19 @@ Responsive styles
         width: 100% !important;
         margin-left: 0 !important;
         margin-top: 60px !important;
+
+        &.is-webapp {
+            padding-top: 0 !important;
+        }
     }
 
     .page-title {
         margin-top: 20px;
+
+        &.is-webapp {
+            display: flex !important;
+            margin-top: 0;
+        }
 
         &.is-project-details {
             .huro-hamburger {

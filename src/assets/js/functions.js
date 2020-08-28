@@ -79,6 +79,18 @@ function setActivelink() {
             $(this).closest("li").find('a').addClass("is-selected");
         }
     });
+
+    $('.webapp-subnavbar-inner .center ul li a').each(function () {
+        var linkPage = this.href;
+
+        if (activePage == linkPage) {
+            $(this).closest("li").addClass("is-active");
+            $(this).closest(".tab-content").addClass("is-active").siblings('.tab-content').removeClass('is-active');
+            var tabId = $(this).closest('.tab-content').attr('id');
+            $(this).closest(".webapp-subnavbar-inner").find('.tabs ul li').removeClass('is-active');
+            $('[data-tab=' + tabId + ']').addClass('is-active');
+        }
+    });
 }
 
 //Main Sidebar
@@ -146,15 +158,15 @@ function initSidebar() {
         }
     });
     //Minimal layout arrow hamburger
-    $('#back-hamburger').on('click', function () {
+    /*$('#back-hamburger').on('click', function () {
         window.location.replace("http://localhost:8080/bounties-board.html");
-    })
+    })*/
     //Toggle search input in subsidebars
-    $('.toggle-search').on('click', function () {
+    /*$('.toggle-search').on('click', function () {
         $(this).css('display', 'none');
         $('.is-search').css('display', 'block');
         $('.docked-action').addClass('has-search');
-    })
+    })*/
     //User menu naver position
     $('#user-menu').on('click', function () {
         $('.naver').addClass('from-bottom');
@@ -309,22 +321,23 @@ function initChosenSelects() {
 
 //Tabs
 function initTabs() {
-    $('.tabs-wrapper .tabs li').on('click', function () {
+    $('.tabs-wrapper > .tabs-inner .tabs li').on('click', function () {
         var tab_id = $(this).attr('data-tab');
 
-        $(this).closest('.tabs-wrapper').find('> .tabs li.is-active').removeClass('is-active');
-        $(this).addClass('is-active');
+        //$(this).closest('.tabs-wrapper').find('> .tabs-inner > .tabs > li.is-active').removeClass('is-active');
+        //$(this).addClass('is-active');
 
         $(this).siblings('li').removeClass('is-active');
-        $(this).closest('.tabs-wrapper').find('.tab-content').removeClass('is-active');
-
         $(this).addClass('is-active');
-        $("#" + tab_id).addClass('is-active');
-    })
 
-    $('.tabs-wrapper.is-slider .tabs a').on('click', function () {
+        $(this).closest('.tabs-wrapper').find('.tab-content').removeClass('is-active');
+        $("#" + tab_id).addClass('is-active');
+    });
+    
+
+    /*$('.tabs-wrapper.is-slider .tabs a').on('click', function () {
         $(this).closest('.tabs-wrapper').find('.tab-naver').toggleClass('is-active');
-    })
+    })*/
 }
 
 //H Select

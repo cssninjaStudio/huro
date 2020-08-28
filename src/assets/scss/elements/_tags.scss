@@ -9,7 +9,9 @@
 ========================================================================== */
 
 .tag:not(body) {
-    line-height: 2;
+    display: inline-block;
+    line-height: 2.3;
+    height: 2.4em;
 
     &.is-rounded {
         padding-left: 1em;
@@ -85,6 +87,51 @@
             border: 1px solid $danger;
         }
     }
+
+    &.is-secondary {
+        background: $secondary;
+        color: $white;
+
+        &.is-elevated {
+            box-shadow: $secondary-box-shadow;
+        }
+
+        &.is-outlined {
+            background: none !important;
+            color: $secondary;
+            border: 1px solid $secondary;
+        }
+    }
+
+    &.is-green {
+        background: $h-green;
+        color: $white;
+
+        &.is-elevated {
+            box-shadow: $green-box-shadow;
+        }
+
+        &.is-outlined {
+            background: none !important;
+            color: $h-green;
+            border: 1px solid $h-green;
+        }
+    }
+
+    &.is-orange {
+        background: $h-orange;
+        color: $white;
+
+        &.is-elevated {
+            box-shadow: $orange-box-shadow;
+        }
+
+        &.is-outlined {
+            background: none !important;
+            color: $h-orange;
+            border: 1px solid $h-orange;
+        }
+    }
 }
 
 /* ==========================================================================
@@ -94,7 +141,7 @@
 body {
     &.is-dark {
         .tag {
-            &:not(.is-primary):not(.is-success):not(.is-info):not(.is-warning):not(.is-danger) {
+            &:not(.is-primary):not(.is-secondary):not(.is-success):not(.is-info):not(.is-warning):not(.is-danger):not(.is-orange):not(.is-green) {
                 background: lighten($dark-sidebar, 10%);
                 border-color: lighten($dark-sidebar, 10%);
                 color: $dark-dark-text;

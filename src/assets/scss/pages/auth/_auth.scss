@@ -85,13 +85,19 @@
     }
 
     .top-logo {
-        display: block;
         position: absolute;
-        top: -30px;
-        left: 42px;
-        max-width: 120px;
-        height: auto;
+        top: -70px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
         z-index: 1;
+
+        img {
+            display: block;
+            width: 100%;
+            max-width: 50px;
+            margin: 0 auto;
+        }
     }
 
     .is-image {
@@ -102,7 +108,7 @@
             position: relative;
             z-index: 2;
             display: block;
-            margin: 0 auto;
+            margin: -80px auto 0 auto;
             max-width: 60%;
             width: 60%;
         }
@@ -243,7 +249,8 @@
                 .input {
                     padding-top: 10px;
                     height: 60px;
-                    padding-left: 67px;
+                    border-radius: 10px;
+                    padding-left: 55px;
                     transition: all .3s;
 
                     &:focus {
@@ -266,7 +273,7 @@
                 .auth-label {
                     position: absolute;
                     top: 6px;
-                    left: 68px;
+                    left: 55px;
                     font-size: .8rem;
                     color: $dark-text;
                     font-weight: 500;
@@ -392,6 +399,22 @@
             .button-wrap {
                 margin: 40px 0;
 
+                &.has-help {
+                    display: flex;
+                    align-items: center;
+    
+                    > span {
+                        margin-left: 12px;
+                        font-family: $font;
+    
+                        a {
+                            color: $primary;
+                            font-weight: 500;
+                            padding: 0 2px;
+                        }
+                    }
+                }
+
                 .button {
                     height: 46px;
                     width: 140px;
@@ -502,13 +525,39 @@
 3. Sign up
 ========================================================================== */
 
+.signup-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    z-index: 99;
+
+    .signup-nav-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .logo {
+            img {
+                display: block;
+                min-width: 48px;
+                max-width: 48px;
+            }
+        }
+    }
+}
+
 .signup-steps {
     position: absolute;
     top: 80px;
     left: 0;
     right: 0;
     margin: 0 auto;
-    max-width: 480px;
+    max-width: 380px;
 
     .steps-container {
         position: relative;
@@ -520,9 +569,13 @@
         .progress {
             position: absolute;
             top: 50%;
+            left: 0;
+            right: 0;
             transform: translateY(-50%);
-            width: 100%;
+            width: calc(100% - 80px);
+            margin: 0 auto;
             height: .35rem !important;
+            background-color: $white;
             z-index: 0;
 
             &::-webkit-progress-value {
@@ -636,7 +689,7 @@
         }
     }
 
-    .logo {
+    /*.logo {
         position: absolute;
         top: 30px;
         right: 0;
@@ -649,18 +702,18 @@
         img {
             display: block;
         }
-    }
+    }*/
 
     .signup-title {
-        margin-top: 100px;
-        color: $primary;
+        //margin-top: 100px;
+        font-family: $font;
+        color: $dark-text;
     }
 
     .signup-subtitle {
-        padding-top: 6px;
-        padding-bottom: 12px;
+        font-family: $font;
         color: $muted-grey;
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     .hero {
@@ -668,7 +721,8 @@
             .control {
                 position: relative;
                 width: 100%;
-                margin-top: 16px;
+
+                //margin-top: 16px;
 
                 &.has-switch {
                     display: flex;
@@ -700,6 +754,7 @@
                     padding-top: 10px;
                     height: 60px;
                     padding-left: 10px;
+                    border-radius: 8px;
                     transition: all .3s;
 
                     &:focus {
@@ -849,8 +904,25 @@
         .button-wrap {
             margin: 20px 0 0 0;
 
+            &.has-help {
+                display: flex;
+                align-items: center;
+
+                > span {
+                    margin-left: 12px;
+                    font-family: $font;
+
+                    a {
+                        color: $primary;
+                        font-weight: 500;
+                        padding: 0 3px;
+                    }
+                }
+            }
+
             &.is-centered {
                 margin-top: 40px;
+                text-align: center;
 
                 .button {
                     min-width: 180px;
@@ -880,7 +952,8 @@
         .signup-type {
             display: flex;
             align-items: center;
-            margin-top: 16px;
+
+            //margin-top: 16px;
 
             .box-wrap {
                 width: 100%;
@@ -913,10 +986,11 @@
                 .signup-box {
                     display: flex;
                     align-items: center;
-                    padding: 8px;
+                    padding: 12px;
                     background: $white;
                     border: 1px solid darken($fade-grey, 3%);
                     border-radius: 6px;
+                    transition: all .3s;
 
                     i {
                         font-size: 2rem;
@@ -951,6 +1025,210 @@
                     margin-left: 6px;
                 }
             }
+        }
+    }
+}
+
+.signup-profile-wrapper {
+    padding: 80px 60px 10px 60px;
+
+    //Title
+    .title, .subtitle {
+        font-family: $font;
+        text-align: center;
+    }
+
+    //selector
+    .picture-selector, .skill-picture-selector {
+        width: 100%;
+        text-align: center;
+
+        //Image container
+        .image-container {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            margin: 10px auto;
+            border-radius: 50%;
+
+            img {
+                width: 140px;
+                height: 140px;
+                border-radius: 50%;
+                display: block;
+                border: 4px solid #e8e8e8;
+                margin-left: -1px;
+            }
+
+            //Upload button
+            .upload-button {
+                position: absolute;
+                bottom: 18px;
+                right: 0;
+                width: 36px;
+                height: 36px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: $white;
+                border-radius: 50%;
+                border: 1px solid darken($fade-grey, 4%);
+                z-index: 5;
+                transition: all .3s;
+                cursor: pointer;
+
+                &:hover {
+                    box-shadow: $light-box-shadow;
+                }
+
+                svg {
+                    height: 16px;
+                    width: 16px;
+                    stroke: $dark-text;
+                }
+            }
+        }
+    }
+}
+
+.avatar-carousel {
+    text-align: center;
+    max-width: 550px;
+    margin: 0 auto 20px auto;
+
+    &:hover .slick-custom {
+        opacity: 1;
+    }
+
+    //item
+    .carousel-item {
+        margin: 0 10x;
+    }
+
+    .image-wrapper {
+        position: relative;
+
+        &.is-smaller img {
+            height: 70px;
+            width: 70px;
+        }
+
+        img {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            margin: 0 auto;
+            transition: all .3s;
+        }
+    }
+
+    //Carousel slide
+    .slick-slide {
+        max-width: 120px;
+        text-align: center;
+        cursor: pointer;
+
+        //Focus state
+        &:focus {
+            outline: none !important;
+        }
+
+        img {
+            opacity: 0.6;
+            border: 4px solid transparent;
+            transform: scale(0.75);
+        }
+
+        &.slick-current {
+            img {
+                opacity: 1;
+                transform: scale(1);
+                border: 2px solid $primary;
+            }
+        }
+    }
+
+    //Carousel navigation position
+    .slick-custom {
+        opacity: 0;
+
+        &.is-prev {
+            left: -45px;
+        }
+
+        &.is-next {
+            right: -45px;
+        }
+    }
+
+    //Navigation dots
+    .slick-dots {
+        bottom: -60px !important;
+    }
+
+    .slick-prev:before, .slick-next:before {
+        color: $muted-grey;
+    }
+
+    .slick-custom {
+        position: absolute;
+        top: calc(50% - 15px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $fade-grey;
+        width: 30px;
+        height: 30px;
+        background: $white;
+        border-radius: 100px;
+        cursor: pointer;
+        color: $dark-text;
+        transition: all 0.3s;
+        z-index: 25;
+
+        //Icon
+        svg {
+            height: 16px;
+            width: 16px;
+            stroke: $primary;
+            transition: all .3s;
+        }
+
+        //Hover state
+        &:hover {
+            border-color: darken($fade-grey, 4%);
+            color: $white;
+            box-shadow: $light-box-shadow;
+        }
+
+        //previous arrow
+        &.is-prev {
+            left: -6px;
+        }
+
+        //next arrow
+        &.is-next {
+            right: -6px;
+        }
+    }
+}
+
+.username-form {
+    padding-top: 80px;
+}
+
+@media only screen and (max-width: 767px) {
+    .avatar-carousel {
+        &.resized-mobile {
+            max-width: 300px;
+        }
+
+        .slick-custom {
+            display: none !important;
+        }
+
+        .image-wrapper img {
+            height: auto;
         }
     }
 }

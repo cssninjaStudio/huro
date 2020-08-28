@@ -484,7 +484,6 @@ body {
         }
 
         .is-notification {
-
             &.is-active {
                 .navbar-link {
                     svg {
@@ -526,10 +525,637 @@ body {
 }
 
 /* ==========================================================================
+3. Webapp Navbar
+========================================================================== */
+
+.webapp-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: $white;
+    transition: all .3s;
+
+    &.is-transparent {
+        background: transparent;
+
+        &.is-solid, &.is-scrolled {
+            background: $white;
+        }
+
+        &.is-solid {
+            box-shadow: none !important;
+        }
+
+        &.is-scrolled {
+            box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.12);
+        }
+    }
+
+    //border-bottom: 1px solid darken($fade-grey, 3%);
+    z-index: 100;
+
+    .webapp-navbar-inner {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+
+        .left {
+            display: flex;
+            align-items: center;
+            width: 25%;
+
+            .brand {
+                display: flex;
+                align-items: center;
+
+                img {
+                    display: block;
+                    min-width: 38px;
+                    height: 38px;
+                }
+
+                span {
+                    font-family: $font;
+                    font-size: .95rem;
+                    color: $muted-grey;
+                    letter-spacing: 1px;
+                    max-width: 50px;
+                    line-height: 1.2;
+                    margin-left: 8px;
+                }
+            }
+
+            .separator {
+                height: 38px;
+                width: 2px;
+                border-right: 1px solid darken($fade-grey, 4%);
+                margin: 0 20px 0 16px;
+            }
+
+            .company-dropdown {
+                margin-right: 12px;
+
+                > img {
+                    height: 32px;
+                    width: 32px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+
+                .h-avatar {
+                    cursor: pointer;
+                }
+
+                .dropdown-menu {
+                    margin-top: 28px;
+
+                    .dropdown-content {
+                        padding-top: 0;
+                        overflow: hidden;
+
+                        .dropdown-head {
+                            display: flex;
+                            align-items: center;
+                            padding: 20px 16px 20px 16px;
+                            margin-bottom: 12px;
+                            background: #fafafa;
+
+                            .meta {
+                                margin-left: 12px;
+                                font-family: $font;
+
+                                span {
+                                    display: block;
+
+                                    &:first-child {
+                                        font-size: 1.1rem;
+                                        font-weight: 500;
+                                        color: $dark-text;
+                                        line-height: 1.2;
+                                    }
+
+                                    &:nth-child(2) {
+                                        text-transform: uppercase;
+                                        color: $light-text;
+                                        font-size: .7rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 2;
+            width: 50%;
+
+            .centered-links {
+                display: flex;
+                width: 100%;
+                max-width: 580px;
+
+                .centered-link {
+                    flex: 1 1 0px;
+                    text-align: center;
+                    padding: 10px 0;
+                    border-radius: 8px;
+                    border: 1px solid transparent;
+                    margin: 0 4px;
+                    transition: all .3s;
+
+                    &:hover {
+                        background: lighten($fade-grey, 4%);
+                    }
+
+                    &.is-active {
+                        background: $white;
+                        border-color: darken($fade-grey, 3%);
+                        box-shadow: $light-box-shadow;
+
+                        &:hover {
+                            background: $white;
+                        }
+
+                        svg {
+                            stroke: $primary;
+                        }
+
+                        span {
+                            color: darken($primary, 8%);
+                        }
+                    }
+
+                    svg {
+                        height: 20px;
+                        width: 20px;
+                        stroke: lighten($light-text, 6%);
+                        stroke-width: 1.6px;
+                        transition: stroke .3s;
+                    }
+
+                    span {
+                        display: block;
+                        font-family: $font;
+                        font-size: .65rem;
+                        color: $muted-grey;
+                        text-transform: uppercase;
+
+                        //padding: 8px 16px;
+                        //border: 1px solid transparent;
+                        //border-radius: 100px;
+                        transition: all .3s;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .centered-search {
+                width: 100%;
+                max-width: 580px;
+
+                .field {
+                    margin-bottom: 0;
+
+                    .control {
+                        .form-icon {
+                            &.is-right {
+                                left: unset !important;
+                                right: 6px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 25%;
+
+            .profile-dropdown {
+                > img {
+                    height: 32px;
+                    width: 32px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+
+                .dropdown-menu {
+                    margin-top: 28px;
+
+                    .dropdown-content {
+                        padding-top: 0;
+                        overflow: hidden;
+
+                        .dropdown-head {
+                            display: flex;
+                            align-items: center;
+                            padding: 20px 16px 20px 16px;
+                            margin-bottom: 12px;
+                            background: #fafafa;
+
+                            .meta {
+                                margin-left: 12px;
+                                font-family: $font;
+
+                                span {
+                                    display: block;
+
+                                    &:first-child {
+                                        font-size: 1.1rem;
+                                        font-weight: 500;
+                                        color: $dark-text;
+                                        line-height: 1.2;
+                                    }
+
+                                    &:nth-child(2) {
+                                        text-transform: uppercase;
+                                        color: $light-text;
+                                        font-size: .7rem;
+                                    }
+                                }
+                            }
+                        }
+
+                        .logout-button {
+                            svg {
+                                stroke: $smoke-white !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+body {
+    &.is-dark {
+        .webapp-navbar {
+            background: darken($dark-sidebar, 2%);
+            border-color: lighten($dark-sidebar, 1%);
+
+            .webapp-navbar-inner {
+                .left {
+                    .separator {
+                        border-color: lighten($dark-sidebar, 12%);
+                    }
+
+                    .company-dropdown {
+                        .dropdown-menu {
+                            .dropdown-content {
+                                .dropdown-head {
+                                    background: lighten($dark-sidebar, 2%) !important;
+            
+                                    &:hover {
+                                        background: lighten($dark-sidebar, 2%) !important;
+                                    }
+            
+                                    .meta {
+                                        &:hover {
+                                            background: lighten($dark-sidebar, 2%) !important;
+                                        }
+            
+                                        span {
+                                            &:first-child {
+                                                color: $dark-dark-text !important;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .center {
+                    .centered-links {
+                        .centered-link {
+                            &:hover {
+                                background: lighten($dark-sidebar, 3%);
+                            }
+
+                            &.is-active {
+                                background: lighten($dark-sidebar, 2%);
+                                border-color: lighten($dark-sidebar, 12%);
+
+                                &:hover {
+                                    background: lighten($dark-sidebar, 2%);
+                                }
+
+                                span {
+                                    color: $accent;
+                                }
+
+                                svg {
+                                    stroke: $accent;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .right {
+                    .profile-dropdown {
+                        .dropdown-menu {
+                            .dropdown-content {
+                                .dropdown-head {
+                                    background: lighten($dark-sidebar, 2%) !important;
+            
+                                    &:hover {
+                                        background: lighten($dark-sidebar, 2%) !important;
+                                    }
+            
+                                    .meta {
+                                        &:hover {
+                                            background: lighten($dark-sidebar, 2%) !important;
+                                        }
+            
+                                        span {
+                                            &:first-child {
+                                                color: $dark-dark-text !important;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .webapp-subnavbar {
+            background: lighten($dark-sidebar, 2%);
+            border-color: lighten($dark-sidebar, 4%);
+
+            .webapp-subnavbar-inner {
+                .tabs {
+                    li {
+                        &.is-active {
+                            a {
+                                border-color: lighten($dark-sidebar, 1%);
+                                background: darken($dark-sidebar, 2%);
+                                color: $accent;
+                                opacity: 1;
+                            }
+
+                            &:hover {
+                                a {
+                                    background: darken($dark-sidebar, 2%);
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            a {
+                                background: lighten($dark-sidebar, 8%);
+                            }
+                        }
+
+                        a {
+                            opacity: .6;
+                        }
+                    }
+                }
+
+                .tab-content {
+                    .tab-content-inner {
+                        .center {
+                            ul {
+                                li {
+                                    &:hover {
+                                        background: darken($dark-sidebar, 2%);
+
+                                        a {
+                                            opacity: 1;
+                                            color: $accent;
+                                        }
+                                    }
+
+                                    &.is-active {
+                                        border-color: $accent;
+
+                                        &:hover {
+                                            background: lighten($dark-sidebar, 2%);
+                                        }
+
+                                        a {
+                                            opacity: 1;
+                                            color: $accent;
+                                        }
+                                    }
+
+                                    a {
+                                        opacity: .6;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.webapp-subnavbar {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: #fafafa;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 99;
+    transform: translateY(10px);
+    border-top: 1px solid $fade-grey;
+    border-bottom: 1px solid darken($fade-grey, 3%);
+    transition: all .3s;
+
+    &.is-active {
+        height: 250px;
+        opacity: 1;
+        pointer-events: all;
+        transform: translateY(0);
+    }
+
+    .webapp-subnavbar-inner {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: none;
+
+        &.is-active {
+            display: block;
+        }
+
+        //display: flex;
+        //justify-content: space-between;
+
+        .tabs {
+            //background: #fafafa;
+
+            margin: 0 auto 10px auto;
+
+            &.is-3 {
+                max-width: 410px;
+            }
+
+            &.is-2 {
+                max-width: 280px;
+            }
+
+            &.is-4 {
+                max-width: 460px;
+            }
+
+            ul {
+                display: flex;
+                border: none !important;
+                padding: 10px 0;
+
+                li {
+                    flex: 1 1 0px;
+
+                    &.is-active {
+                        a {
+                            font-weight: 600;
+                            color: $primary;
+                            background: $white;
+                            border-color: darken($fade-grey, 3%);
+                            box-shadow: $light-box-shadow;
+                        }
+
+                        &:hover {
+                            a {
+                                background: $white;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        a {
+                            background: lighten($fade-grey, 4%);
+                        }
+                    }
+
+                    a {
+                        text-transform: uppercase;
+                        font-size: .7rem;
+                        letter-spacing: 1px;
+                        padding: 10px 16px;
+                        border: 1px solid transparent;
+                        border-radius: 100px;
+                        margin: 0 10px;
+                        transition: all .3s;
+                    }
+                }
+            }
+        }
+
+        .tab-content {
+            padding: 0 40px;
+
+            .tab-content-inner {
+                display: flex;
+                align-items: stretch;
+                min-height: 220px;
+
+                .center {
+                    flex-grow: 2;
+                    max-width: 940px;
+                    max-height: 155px;
+                    margin: 0 auto;
+                    padding: 10px 20px 0 20px;
+
+                    .column {
+                        padding-top: 0;
+                        padding-bottom: 0;
+                    }
+
+                    ul {
+                        li {
+                            padding: 8px 20px;
+
+                            //text-align: center;
+                            transition: all .3s;
+                            border-radius: 100px;
+
+                            &:hover {
+                                background: lighten($primary, 51%);
+
+                                a {
+                                    color: darken($primary, 15%);
+
+                                    svg {
+                                        opacity: 1;
+                                        transform: translate(5px);
+                                    }
+                                }
+                            }
+
+                            &.is-active {
+                                border-radius: 0;
+                                border-left: 1.6px solid $primary;
+
+                                a {
+                                    color: darken($primary, 14%);
+                                }
+
+                                &:hover {
+                                    background: $white;
+                                }
+                            }
+
+                            a {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                color: lighten($light-text, 5%);
+
+                                span {
+                                    font-family: $font;
+                                }
+
+                                svg {
+                                    opacity: 0;
+                                    position: relative;
+
+                                    //top: 3px;
+                                    height: 16px;
+                                    width: 16px;
+                                    stroke-width: 3px;
+                                    transition: all .3s;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
 2. Centered Navbar
 ========================================================================== */
 
-.centered-nav {
+/*.centered-nav {
     position: relative;
     width: 100%;
     display: flex;
@@ -618,13 +1244,13 @@ body {
             }
         }
     }
-}
+}*/
 
 /* ==========================================================================
 3. Wizard Navbar
 ========================================================================== */
 
-.wizard-nav {
+/*.wizard-nav {
     position: fixed;
     width: 100%;
     display: flex;
@@ -746,6 +1372,4 @@ body {
             }
         }
     }
-}
-
-
+}*/

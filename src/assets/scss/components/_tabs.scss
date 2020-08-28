@@ -268,7 +268,7 @@ body {
 
                 span {
                     position: relative;
-                    top: -2px;
+                    top: -1px;
                     display: block;
                 }
             }
@@ -375,7 +375,7 @@ body {
 
                 span {
                     position: relative;
-                    top: -2px;
+                    top: -1px;
                     display: block;
                 }
             }
@@ -418,6 +418,10 @@ body {
                 .tabs {
                     border: 1px solid lighten($dark-sidebar, 16%) !important;
                     background: lighten($dark-sidebar, 2%) !important;
+
+                    .tab-naver {
+                        background: $accent !important;
+                    }
 
                     ul {
                         border: none;

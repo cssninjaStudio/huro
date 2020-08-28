@@ -212,7 +212,7 @@ $(document).ready(function () {
             $('.step-icon.is-inactive').removeClass('is-inactive').trigger('click');
             setTimeout(function () {
                 $this.removeClass('is-loading');
-                window.location.href = '/';
+                window.location.href = '/webapp-welcome.html';
             }, 1400);
         })
 

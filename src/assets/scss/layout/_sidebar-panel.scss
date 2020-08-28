@@ -77,13 +77,62 @@ body {
 
 .sidebar-panel {
     &.is-generic {
-
         .subpanel-header {
             height: 60px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             padding: 0 20px;
+
+            .company-dropdown {
+                margin-right: 12px;
+                cursor: pointer !important;
+
+                > img {
+                    height: 32px;
+                    width: 32px;
+                    border-radius: 50%;
+                }
+
+                .dropdown-menu {
+                    margin-top: 12px;
+
+                    .dropdown-content {
+                        padding-top: 0;
+                        overflow: hidden;
+
+                        .dropdown-head {
+                            display: flex;
+                            align-items: center;
+                            padding: 20px 16px 20px 16px;
+                            margin-bottom: 12px;
+                            background: #fafafa;
+
+                            .meta {
+                                margin-left: 12px;
+                                font-family: $font;
+
+                                span {
+                                    display: block;
+
+                                    &:first-child {
+                                        font-size: 1.1rem;
+                                        font-weight: 500;
+                                        color: $dark-text;
+                                        line-height: 1.2;
+                                    }
+
+                                    &:nth-child(2) {
+                                        text-transform: uppercase;
+                                        color: $light-text;
+                                        font-size: .7rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
             h3 {
                 color: $muted-grey;
@@ -91,6 +140,7 @@ body {
             }
 
             .panel-close {
+                margin-left: auto;
                 display: block;
                 width: 18px;
                 height: 18px;
@@ -99,26 +149,6 @@ body {
                     width: 18px;
                     height: 18px;
                 }
-            }
-
-            .toggle-search {
-                width: 22px;
-                height: 22px;
-                cursor: pointer;
-
-                &:hover {
-                    svg {
-                        stroke: $primary;
-                    }
-                }
-
-                svg {
-                    width: 22px;
-                    height: 22px;
-                    stroke: $muted-grey;
-                }
-
-                
             }
         }
 
@@ -154,9 +184,12 @@ body {
                     display: block;
                     height: unset;
                     min-height: 36px;
+                    margin-bottom: 4px;
 
                     &.active {
                         .collapse-wrap a {
+                            color: darken($light-text, 18%);
+
                             svg {
                                 transform: rotate(90deg);
                             }
@@ -167,7 +200,7 @@ body {
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
-    
+
                         .tag {
                             margin-left: auto;
                             margin-right: 20px;
@@ -188,6 +221,8 @@ body {
                         > a {
                             display: flex;
                             align-items: center;
+                            font-size: .95rem;
+                            color: $light-text;
 
                             svg {
                                 position: relative;
@@ -207,6 +242,15 @@ body {
 
                         li {
                             height: 32px;
+                            font-family: $font;
+
+                            &.is-active {
+                                .is-submenu {
+                                    svg {
+                                        display: block;
+                                    }
+                                }
+                            }
 
                             .is-submenu {
                                 display: flex;
@@ -214,25 +258,43 @@ body {
                                 padding-left: 32px;
                                 font-size: .9rem;
 
-                                &.is-active {
+                                &.is-active, &:hover {
                                     font-weight: 500;
                                     color: $primary;
                                 }
 
+                                .lnil, .lnir {
+                                    font-size: 1.2rem;
+                                    margin-right: 10px;
+                                }
+
+                                > span {
+                                    font-family: $font;
+                                }
+
                                 svg {
+                                    display: none;
                                     height: 8px;
                                     width: 8px;
                                     max-width: 8px;
                                     min-width: 8px;
                                     stroke-width: 2px;
                                     margin-right: 8px;
+
+                                    &.is-auto {
+                                        margin-left: auto;
+                                        height: 15px;
+                                        width: 15px;
+                                        max-width: 15px;
+                                        min-width: 15px;
+                                        stroke-width: 2px;
+                                        margin-right: 4px;
+                                    }
                                 }
                             }
                         }
                     }
                 }
-
-                
 
                 a {
                     font-family: 'Roboto', sans-serif;
@@ -282,7 +344,6 @@ body {
     }
 }
 
-
 /* ==========================================================================
 3. Generic Panel Dark Mode
 ========================================================================== */
@@ -294,7 +355,6 @@ body {
                 .inner {
                     ul {
                         li {
-
                             &.is-active {
                                 a {
                                     color: $accent !important;
@@ -304,6 +364,12 @@ body {
                             a {
                                 &:hover {
                                     color: $dark-dark-text;
+                                }
+                            }
+
+                            .is-submenu {
+                                &:hover {
+                                    color: $accent;
                                 }
                             }
                         }
@@ -320,7 +386,6 @@ body {
 
 .sidebar-panel {
     &.is-messages {
-
         .messages-header {
             height: 60px;
             display: flex;
@@ -723,41 +788,41 @@ body {
                 li {
                     &.is-active {
                         background: lighten($dark-sidebar, 10%) !important;
-    
+
                         &:hover {
                             background: lighten($dark-sidebar, 10%) !important;
                         }
-    
+
                         img, .more-indicator {
                             border-color: lighten($dark-sidebar, 10%) !important;
                         }
                     }
-    
+
                     &:hover {
                         background: lighten($dark-sidebar, 6%) !important;
                     }
-    
+
                     img, .more-indicator {
                         border-color: lighten($dark-sidebar, 6%) !important;
                     }
-    
+
                     .more-indicator {
                         background: $accent !important;
                     }
-    
+
                     .recipient-meta {
                         span {
                             &:first-child {
                                 color: lighten($accent-grey, 6%) !important;
                             }
-    
+
                             &.is-unread {
                                 color: lighten($accent-grey, 6%) !important;
                             }
                         }
                     }
                 }
-    
+
                 .start-conversation {
                     background: $accent !important;
                     border: 1px solid $accent !important;

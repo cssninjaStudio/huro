@@ -208,7 +208,7 @@
                     height: 48px;
                     width: 48px !important;
 
-                    img {
+                    > img {
                         height: 48px;
                         width: 48px;
                         border-radius: 50%;
@@ -232,38 +232,50 @@
             }
 
             .profile-dropdown {
-                &.is-push-notifications {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    .sidebar-icon {
-                        height: 36px;
-                        width: 36px;
-                        transform: rotate(-15deg);
-                        transition: all .3s;
-
-                        .path {
-                            fill: $title-grey !important;
-                            stroke: none;
-                        }
-                    }
-
-                    .status-indicator {
-                        top: 4px;
-                        right: 10px;
-                    }
-
-                    &:hover {
-                        svg {
-                            stroke: $primary;
-                        }
-                    }
-                }
-
                 .dropdown-menu {
                     bottom: 0;
                     left: 145%;
+
+                    .dropdown-content {
+                        padding-top: 0;
+                        overflow: hidden;
+
+                        .dropdown-head {
+                            display: flex;
+                            align-items: center;
+                            padding: 20px 16px 20px 16px;
+                            margin-bottom: 12px;
+                            background: #fafafa;
+
+                            .meta {
+                                margin-left: 12px;
+                                font-family: $font;
+
+                                span {
+                                    display: block;
+
+                                    &:first-child {
+                                        font-size: 1.1rem;
+                                        font-weight: 500;
+                                        color: $dark-text;
+                                        line-height: 1.2;
+                                    }
+
+                                    &:nth-child(2) {
+                                        text-transform: uppercase;
+                                        color: $light-text;
+                                        font-size: .7rem;
+                                    }
+                                }
+                            }
+                        }
+
+                        .logout-button {
+                            svg {
+                                stroke: $smoke-white !important;
+                            }
+                        }
+                    }
 
                     .dropdown-item {
                         display: flex;
@@ -271,8 +283,8 @@
                         align-items: center;
                         width: 100% !important;
 
-                        &:hover {
-                            background: $fade-grey;
+                        &:hover:not(.is-button) {
+                            background: lighten($fade-grey, 3%);
                         }
                     }
 
@@ -368,16 +380,42 @@ body {
                 .dropdown-content {
                     background: $dark-sidebar;
 
+                    .dropdown-head {
+                        background: lighten($dark-sidebar, 2%) !important;
+
+                        &:hover {
+                            background: lighten($dark-sidebar, 2%) !important;
+                        }
+
+                        .meta {
+                            &:hover {
+                                background: lighten($dark-sidebar, 2%) !important;
+                            }
+
+                            span {
+                                &:first-child {
+                                    color: $dark-dark-text !important;
+                                }
+                            }
+                        }
+                    }
+
                     .dropdown-item {
                         color: $white;
+
+                        &:not(.is-button):hover {
+                            background: lighten($dark-sidebar, 5%);
+                        }
+
+                        &.is-button {
+                            &:hover {
+                                background: lighten($dark-sidebar, 2%) !important;
+                            }
+                        }
                     }
 
                     .dropdown-divider {
                         background: lighten($dark-sidebar, 5%);
-                    }
-
-                    a:hover, div:hover {
-                        background: lighten($dark-sidebar, 5%) !important;
                     }
                 }
             }

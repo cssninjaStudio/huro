@@ -258,6 +258,11 @@ body {
 ========================================================================== */
 
 .all-projects {
+
+    &.is-webapp {
+        padding-top: 20px;
+    }
+    
     .illustration-header {
         display: flex;
         justify-content: space-between;

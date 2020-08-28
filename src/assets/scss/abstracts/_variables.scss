@@ -9,7 +9,9 @@
 1. Main Colors
 ========================================================================== */
 
-$primary: #7105ff;
+//$primary: #7105ff;
+$primary: #671cc9;
+$secondary: #ff227d;
 $accent: #797bf2;
 
 /* ==========================================================================
@@ -45,6 +47,16 @@ $info: #039BE5;
 $success: #06d6a0;
 $warning: #faae42;
 
+//Additional Colors
+$h-purple: #8269B2;
+$h-blue: #37C3FF;
+$h-red: #F92B60;
+$h-orange: #FFA981;
+$h-yellow: #FFD66E;
+$h-green: #93E088;
+$h-pink: #FF9EB8;
+$h-light-blue: #77D2F3;
+
 //States
 $active: #6DCFF6;
 
@@ -53,7 +65,7 @@ $sidebar: #344258;
 
 //Dark Theme
 $dark-sidebar: #232326;
-$dark-dark-text: lighten($accent-grey, 3%);
+$dark-dark-text: #868791;
 
 
 

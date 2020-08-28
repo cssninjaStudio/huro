@@ -52,6 +52,10 @@ var {
     font-style: inherit;
 }
 
+.has-text-centered {
+    text-align: center;
+}
+
 /* ==========================================================================
 2. Divider
 ========================================================================== */
@@ -741,4 +745,23 @@ body {
             margin-left: 1rem;
         }
     }
+}
+
+body {
+    &.is-dark {
+        .media-flex-center {
+            .flex-meta {
+                span {
+                    &:first-child {
+                        color: $dark-dark-text;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.simplebar-scrollbar:before {
+    background: rgba(0, 0, 0, 0.2) !important;
 }
