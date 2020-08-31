@@ -14,6 +14,8 @@ $(document).ready(function () {
             $('.is-night').addClass('is-hidden');
             $('.is-day').removeClass('is-hidden');
 
+            $('.dark-mode input').prop('checked', true);
+
             setTimeout(function () {
                 //$('#profile-menu').removeClass('is-active');
             }, 800);
@@ -36,6 +38,8 @@ $(document).ready(function () {
             $('.navbar-item > img, .centered-brand img').attr('src', 'assets/img/logos/logo/logo-light.svg');
             $('.is-day').addClass('is-hidden');
             $('.is-night').removeClass('is-hidden');
+
+            $('.dark-mode input').prop('checked', false);
 
             setTimeout(function () {
                 //$('#profile-menu').removeClass('is-active');

@@ -1,0 +1,43 @@
+/*! _loader.scss | Huro | Css Ninja 2020-2021 */
+
+/*
+    1. Infinite Srcoll Loader
+    2. Infinite Srcoll Loader Dark mode
+*/
+
+/* ==========================================================================
+1. Infinite Srcoll Loader
+========================================================================== */
+
+.infinite-scroll-loader {
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .3s;
+
+    &.is-active {
+        pointer-events: all;
+        opacity: 1;
+    }
+
+    .infinite-scroll-loader-inner {
+        height: 180px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        .loader {
+            height: 5rem;
+            width: 5rem;
+        }
+
+        .loader-end {
+            span {
+                font-family: $font;
+                color: $light-text;
+            }
+        }
+    }
+}

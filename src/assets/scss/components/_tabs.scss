@@ -17,7 +17,6 @@
 
     &.is-toggle {
         li {
-
             &:first-child {
                 a {
                     border-right: none;
@@ -104,13 +103,11 @@
 body {
     &.is-dark {
         .tabs {
-
             &.is-boxed {
                 li {
                     &.is-active {
                         a, a:hover {
                             background: lighten($dark-sidebar, 1%) !important;
-                            
                         }
                     }
 
@@ -131,7 +128,6 @@ body {
                             background: $accent !important;
                             border-color: $accent;
                             color: $white;
-                            
                         }
                     }
 
@@ -192,8 +188,12 @@ body {
 ========================================================================== */
 
 .tabs-wrapper, .tabs-wrapper-alt {
-
     &.is-slider {
+        &.is-inverted {
+            .tabs {
+                background: $white;
+            }
+        }
 
         &.is-squared {
             .tabs, .tab-naver {
@@ -209,6 +209,58 @@ body {
             height: 35px;
             border-bottom: none;
             border-radius: 500px;
+
+            ul {
+                border-bottom: none;
+
+                &.is-profile {
+                    li {
+                        a {
+                            color: $smoke-white !important;
+                        }
+
+                        &.is-active a {
+                            color: $dark-text !important;
+                        }
+                    }
+                }
+            }
+
+            li {
+                width: 50%;
+
+                a {
+                    color: $muted-grey;
+                    font-family: $font;
+                    height: 40px;
+                    border-bottom: none;
+                    position: relative;
+                    z-index: 5;
+
+                    span {
+                        position: relative;
+                        top: -1px;
+                        display: block;
+                    }
+                }
+
+                &.is-active a {
+                    color: $white;
+                    font-weight: 400;
+                }
+
+                &:first-child {
+                    &.is-active ~ .tab-naver {
+                        margin-left: 0;
+                    }
+                }
+
+                &:nth-child(2) {
+                    &.is-active ~ .tab-naver {
+                        margin-left: 50% !important;
+                    }
+                }
+            }
         }
 
         .tab-naver {
@@ -238,58 +290,6 @@ body {
                 margin-left: 50%;
             }
         }
-
-        ul {
-            border-bottom: none;
-
-            &.is-profile {
-                li {
-                    a {
-                        color: $smoke-white !important;
-                    }
-
-                    &.is-active a {
-                        color: $dark-text !important;
-                    }
-                }
-            }
-        }
-
-        li {
-            width: 50%;
-
-            a {
-                color: $muted-grey;
-                font-family: $font;
-                height: 40px;
-                border-bottom: none;
-                position: relative;
-                z-index: 5;
-
-                span {
-                    position: relative;
-                    top: -1px;
-                    display: block;
-                }
-            }
-
-            &.is-active a {
-                color: $white;
-                font-weight: 400;
-            }
-
-            &:first-child {
-                &.is-active ~ .tab-naver {
-                    margin-left: 0;
-                }
-            }
-
-            &:nth-child(2) {
-                &.is-active ~ .tab-naver {
-                    margin-left: 50% !important;
-                }
-            }
-        }
     }
 }
 
@@ -298,8 +298,12 @@ body {
 ========================================================================== */
 
 .tabs-wrapper, .tabs-wrapper-alt {
-
     &.is-triple-slider {
+        &.is-inverted {
+            .tabs {
+                background: $white;
+            }
+        }
 
         &.is-squared {
             .tabs, .tab-naver {
@@ -315,6 +319,65 @@ body {
             height: 35px;
             border-bottom: none;
             border-radius: 500px;
+
+            ul {
+                border-bottom: none;
+
+                &.is-profile {
+                    li {
+                        a {
+                            color: $smoke-white !important;
+                        }
+
+                        &.is-active a {
+                            color: $dark-text !important;
+                        }
+                    }
+                }
+            }
+
+            li {
+                width: 33.3%;
+
+                a {
+                    color: $muted-grey;
+                    font-family: $font;
+                    font-weight: 400;
+                    height: 40px;
+                    border-bottom: none;
+                    position: relative;
+                    z-index: 5;
+
+                    span {
+                        position: relative;
+                        top: -1px;
+                        display: block;
+                    }
+                }
+
+                &.is-active a {
+                    color: $white;
+                    font-weight: 400;
+                }
+
+                &:first-child {
+                    &.is-active ~ .tab-naver {
+                        margin-left: 0;
+                    }
+                }
+
+                &:nth-child(2) {
+                    &.is-active ~ .tab-naver {
+                        margin-left: 33% !important;
+                    }
+                }
+
+                &:nth-child(3) {
+                    &.is-active ~ .tab-naver {
+                        margin-left: 66.6%;
+                    }
+                }
+            }
         }
 
         .tab-naver {
@@ -327,9 +390,11 @@ body {
             background: $primary;
             z-index: 1;
             position: absolute;
+
             //top: 2px;
             left: 0;
             display: block;
+
             //width: 48%;
             height: 32px;
             transition: all .3s;
@@ -344,68 +409,8 @@ body {
                 margin-left: 48%;
             }
         }
-
-        ul {
-            border-bottom: none;
-
-            &.is-profile {
-                li {
-                    a {
-                        color: $smoke-white !important;
-                    }
-
-                    &.is-active a {
-                        color: $dark-text !important;
-                    }
-                }
-            }
-        }
-
-        li {
-            width: 33.3%;
-
-            a {
-                color: $muted-grey;
-                font-family: $font;
-                font-weight: 400;
-                height: 40px;
-                border-bottom: none;
-                position: relative;
-                z-index: 5;
-
-                span {
-                    position: relative;
-                    top: -1px;
-                    display: block;
-                }
-            }
-
-            &.is-active a {
-                color: $white;
-                font-weight: 400;
-            }
-
-            &:first-child {
-                &.is-active ~ .tab-naver {
-                    margin-left: 0;
-                }
-            }
-
-            &:nth-child(2) {
-                &.is-active ~ .tab-naver {
-                    margin-left: 33% !important;
-                }
-            }
-
-            &:nth-child(3) {
-                &.is-active ~ .tab-naver {
-                    margin-left: 66.6%;
-                }
-            }
-        }
     }
 }
-
 
 /* ==========================================================================
 4. Sliding tabs 3X Dark mode
@@ -415,6 +420,13 @@ body {
     &.is-dark {
         .tabs-wrapper {
             &.is-slider, &.is-triple-slider {
+                &.is-inverted {
+                    .tabs {
+                        border: 1px solid lighten($dark-sidebar, 16%) !important;
+                        background: lighten($dark-sidebar, 2%) !important;
+                    }
+                }
+
                 .tabs {
                     border: 1px solid lighten($dark-sidebar, 16%) !important;
                     background: lighten($dark-sidebar, 2%) !important;

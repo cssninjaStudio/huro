@@ -105,7 +105,7 @@
                     line-height: 1;
                     position: relative;
                     top: -1px;
-                    left: -1px;
+                    left: -3px;
                     display: block;
                     font-size: .9rem;
                     font-weight: 600;
@@ -345,6 +345,8 @@ body {
     &.is-dark {
         .h-avatar {
             .avatar {
+                border-color: lighten($dark-sidebar, 6%);
+
                 &.is-fake {
                     &.is-primary {
                         background: $primary;
@@ -400,6 +402,10 @@ body {
                         background: lighten($dark-sidebar, 10%);
                         border-color: darken($dark-sidebar, 2%);
                     }
+                }
+
+                &.is-fake {
+                    border-color: lighten($dark-sidebar, 6%);
                 }
             }
         }

@@ -36,7 +36,8 @@ title: List Views
 
             <div class="list-view-toolbar">
                 <div class="control has-icon">
-                    <input class="input" placeholder="Search...">
+                    <input class="input custom-text-filter" placeholder="Search..."
+                        data-filter-target=".list-view-item">
                     <div class="form-icon">
                         <i data-feather="search"></i>
                     </div>
@@ -60,651 +61,677 @@ title: List Views
                 <!--List-->
                 <div class="list-view list-view-v1">
 
-                    <!--Item-->
-                    <div class="list-view-item">
-                        <div class="list-view-item-inner">
-                            <div class="h-avatar is-large">
-                                <img class="avatar" src="https://via.placeholder.com/150x150"
-                                    data-demo-src="assets/img/avatars/photos/5.jpg" alt="" data-user-popover="9">
-                                <img class="badge" src="assets/img/icons/flags/united-states-of-america.svg">
-                            </div>
-                            <div class="meta-left">
-                                <h3>Mary Lebowski</h3>
-                                <span>
-                                    <i data-feather="map-pin"></i>
-                                    <span>San Diego, CA</span>
-                                </span>
-                            </div>
-                            <div class="meta-right">
-
-                                <div class="tags">
-                                    <span class="tag is-rounded is-primary is-elevated">Project Manager</span>
-                                </div>
-
-                                <div class="stats">
-                                    <div class="stat">
-                                        <span>24</span>
-                                        <span>Projects</span>
-                                    </div>
-                                    <div class="separator"></div>
-                                    <div class="stat">
-                                        <span>167</span>
-                                        <span>Replies</span>
-                                    </div>
-                                    <div class="separator"></div>
-                                    <div class="stat">
-                                        <span>72</span>
-                                        <span>Posts</span>
-                                    </div>
-                                </div>
-
-                                <div class="network">
-                                    <div class="avatar-stack">
-                                        <div class="h-avatar is-small">
-                                            <img class="avatar" src="https://via.placeholder.com/150x150"
-                                                data-demo-src="assets/img/avatars/photos/9.jpg" alt=""
-                                                data-user-popover="1">
-                                        </div>
-                                        <div class="h-avatar is-small">
-                                            <img class="avatar" src="https://via.placeholder.com/150x150"
-                                                data-demo-src="assets/img/avatars/photos/8.jpg" alt=""
-                                                data-user-popover="3">
-                                        </div>
-                                    </div>
-                                    <span>in Team</span>
-                                </div>
-
-                                <!--Dropdown-->
-                                {{> list-view-v1-dropdown}}
-                            </div>
+                    <!--List Empty Search Placeholder -->
+                    <div class="page-placeholder custom-text-filter-placeholder is-hidden">
+                        <div class="placeholder-content">
+                            <img class="light-image" src="assets/img/illustrations/placeholders/search-1.svg" alt="" />
+                            <img class="dark-image" src="assets/img/illustrations/placeholders/search-1-dark.svg"
+                                alt="" />
+                            <h3>We couldn't find any matching results.</h3>
+                            <p class="is-larger">Too bad. Looks like we couldn't find any matching results for the
+                                search terms you've entered. Please try different search terms or criteria.</p>
                         </div>
                     </div>
 
-                    <!--Item-->
-                    <div class="list-view-item">
-                        <div class="list-view-item-inner">
-                            <div class="h-avatar is-large">
-                                <img class="avatar" src="https://via.placeholder.com/150x150"
-                                    data-demo-src="assets/img/avatars/photos/34.jpg" alt="" data-user-popover="12">
-                                <img class="badge" src="assets/img/icons/flags/canada.svg">
-                            </div>
-                            <div class="meta-left">
-                                <h3>Daniel Redbird</h3>
-                                <span>
-                                    <i data-feather="map-pin"></i>
-                                    <span>Toronto, Canada</span>
-                                </span>
-                            </div>
-                            <div class="meta-right">
-
-                                <div class="tags">
-                                    <span class="tag is-rounded is-orange is-elevated">Web Developer</span>
+                    <div class="list-view-inner">
+                        <!--Item-->
+                        <div class="list-view-item">
+                            <div class="list-view-item-inner">
+                                <div class="h-avatar is-large">
+                                    <img class="avatar" src="https://via.placeholder.com/150x150"
+                                        data-demo-src="assets/img/avatars/photos/5.jpg" alt="" data-user-popover="9">
+                                    <img class="badge" src="assets/img/icons/flags/united-states-of-america.svg">
                                 </div>
-
-                                <div class="stats">
-                                    <div class="stat">
-                                        <span>45</span>
-                                        <span>Projects</span>
-                                    </div>
-                                    <div class="separator"></div>
-                                    <div class="stat">
-                                        <span>12</span>
-                                        <span>Replies</span>
-                                    </div>
-                                    <div class="separator"></div>
-                                    <div class="stat">
-                                        <span>5</span>
-                                        <span>Posts</span>
-                                    </div>
+                                <div class="meta-left">
+                                    <h3 data-filter-match>Mary Lebowski</h3>
+                                    <span>
+                                        <i data-feather="map-pin"></i>
+                                        <span data-filter-match>San Diego, CA</span>
+                                    </span>
                                 </div>
+                                <div class="meta-right">
 
-                                <div class="network">
-                                    <div class="avatar-stack">
-                                        <div class="h-avatar is-small">
-                                            <img class="avatar" src="https://via.placeholder.com/150x150"
-                                                data-demo-src="assets/img/avatars/photos/12.jpg" alt=""
-                                                data-user-popover="2">
+                                    <div class="tags">
+                                        <span class="tag is-rounded is-primary is-elevated" data-filter-match>Project
+                                            Manager</span>
+                                    </div>
+
+                                    <div class="stats">
+                                        <div class="stat">
+                                            <span>24</span>
+                                            <span>Projects</span>
                                         </div>
-                                        <div class="h-avatar is-small">
-                                            <img class="avatar" src="https://via.placeholder.com/150x150"
-                                                data-demo-src="assets/img/avatars/photos/22.jpg" alt=""
-                                                data-user-popover="5">
+                                        <div class="separator"></div>
+                                        <div class="stat">
+                                            <span>167</span>
+                                            <span>Replies</span>
                                         </div>
-                                        <div class="h-avatar is-small">
-                                            <img class="avatar" src="https://via.placeholder.com/150x150"
-                                                data-demo-src="assets/img/avatars/photos/40.jpg" alt=""
-                                                data-user-popover="11">
+                                        <div class="separator"></div>
+                                        <div class="stat">
+                                            <span>72</span>
+                                            <span>Posts</span>
                                         </div>
-                                        <div class="h-avatar is-small">
-                                            <span class="avatar is-more">
-                                                <span class="inner">
-                                                    <span>+5</span>
+                                    </div>
+
+                                    <div class="network">
+                                        <div class="avatar-stack">
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/9.jpg" alt=""
+                                                    data-user-popover="1">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/8.jpg" alt=""
+                                                    data-user-popover="3">
+                                            </div>
+                                        </div>
+                                        <span>in Team</span>
+                                    </div>
+
+                                    <!--Dropdown-->
+                                    {{> list-view-v1-dropdown}}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Item-->
+                        <div class="list-view-item">
+                            <div class="list-view-item-inner">
+                                <div class="h-avatar is-large">
+                                    <img class="avatar" src="https://via.placeholder.com/150x150"
+                                        data-demo-src="assets/img/avatars/photos/34.jpg" alt="" data-user-popover="12">
+                                    <img class="badge" src="assets/img/icons/flags/canada.svg">
+                                </div>
+                                <div class="meta-left">
+                                    <h3 data-filter-match>Daniel Redbird</h3>
+                                    <span>
+                                        <i data-feather="map-pin"></i>
+                                        <span data-filter-match>Toronto, Canada</span>
+                                    </span>
+                                </div>
+                                <div class="meta-right">
+
+                                    <div class="tags">
+                                        <span class="tag is-rounded is-orange is-elevated" data-filter-match>Web
+                                            Developer</span>
+                                    </div>
+
+                                    <div class="stats">
+                                        <div class="stat">
+                                            <span>45</span>
+                                            <span>Projects</span>
+                                        </div>
+                                        <div class="separator"></div>
+                                        <div class="stat">
+                                            <span>12</span>
+                                            <span>Replies</span>
+                                        </div>
+                                        <div class="separator"></div>
+                                        <div class="stat">
+                                            <span>5</span>
+                                            <span>Posts</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="network">
+                                        <div class="avatar-stack">
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/12.jpg" alt=""
+                                                    data-user-popover="2">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/22.jpg" alt=""
+                                                    data-user-popover="5">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/40.jpg" alt=""
+                                                    data-user-popover="11">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <span class="avatar is-more">
+                                                    <span class="inner">
+                                                        <span>+5</span>
+                                                    </span>
                                                 </span>
-                                            </span>
+                                            </div>
                                         </div>
+                                        <span>in Team</span>
                                     </div>
-                                    <span>in Team</span>
-                                </div>
 
-                                <!--Dropdown-->
-                                {{> list-view-v1-dropdown}}
+                                    <!--Dropdown-->
+                                    {{> list-view-v1-dropdown}}
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!--Item-->
-                    <div class="list-view-item">
-                        <div class="list-view-item-inner">
-                            <div class="h-avatar is-large">
-                                <img class="avatar" src="https://via.placeholder.com/150x150"
-                                    data-demo-src="assets/img/avatars/photos/8.jpg" alt="" data-user-popover="3">
-                                <img class="badge" src="assets/img/icons/flags/united-states-of-america.svg">
-                            </div>
-                            <div class="meta-left">
-                                <h3>Erik Kovalsky</h3>
-                                <span>
-                                    <i data-feather="map-pin"></i>
-                                    <span>New York, NY</span>
-                                </span>
-                            </div>
-                            <div class="meta-right">
-
-                                <div class="tags">
-                                    <span class="tag is-rounded is-secondary is-elevated">Product Manager</span>
+                        <!--Item-->
+                        <div class="list-view-item">
+                            <div class="list-view-item-inner">
+                                <div class="h-avatar is-large">
+                                    <img class="avatar" src="https://via.placeholder.com/150x150"
+                                        data-demo-src="assets/img/avatars/photos/8.jpg" alt="" data-user-popover="3">
+                                    <img class="badge" src="assets/img/icons/flags/united-states-of-america.svg">
                                 </div>
-
-                                <div class="stats">
-                                    <div class="stat">
-                                        <span>14</span>
-                                        <span>Projects</span>
-                                    </div>
-                                    <div class="separator"></div>
-                                    <div class="stat">
-                                        <span>97</span>
-                                        <span>Replies</span>
-                                    </div>
-                                    <div class="separator"></div>
-                                    <div class="stat">
-                                        <span>16</span>
-                                        <span>Posts</span>
-                                    </div>
+                                <div class="meta-left">
+                                    <h3 data-filter-match>Erik Kovalsky</h3>
+                                    <span>
+                                        <i data-feather="map-pin"></i>
+                                        <span data-filter-match>New York, NY</span>
+                                    </span>
                                 </div>
+                                <div class="meta-right">
 
-                                <div class="network">
-                                    <div class="avatar-stack">
-                                        <div class="h-avatar is-small">
-                                            <img class="avatar" src="https://via.placeholder.com/150x150"
-                                                data-demo-src="assets/img/avatars/photos/7.jpg" alt=""
-                                                data-user-popover="0">
+                                    <div class="tags">
+                                        <span class="tag is-rounded is-secondary is-elevated" data-filter-match>Product
+                                            Manager</span>
+                                    </div>
+
+                                    <div class="stats">
+                                        <div class="stat">
+                                            <span>14</span>
+                                            <span>Projects</span>
                                         </div>
-                                        <div class="h-avatar is-small">
-                                            <img class="avatar" src="https://via.placeholder.com/150x150"
-                                                data-demo-src="assets/img/avatars/photos/23.jpg" alt=""
-                                                data-user-popover="21">
+                                        <div class="separator"></div>
+                                        <div class="stat">
+                                            <span>97</span>
+                                            <span>Replies</span>
+                                        </div>
+                                        <div class="separator"></div>
+                                        <div class="stat">
+                                            <span>16</span>
+                                            <span>Posts</span>
                                         </div>
                                     </div>
-                                    <span>in Team</span>
-                                </div>
 
-                                <!--Dropdown-->
-                                {{> list-view-v1-dropdown}}
+                                    <div class="network">
+                                        <div class="avatar-stack">
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/7.jpg" alt=""
+                                                    data-user-popover="0">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/23.jpg" alt=""
+                                                    data-user-popover="21">
+                                            </div>
+                                        </div>
+                                        <span>in Team</span>
+                                    </div>
+
+                                    <!--Dropdown-->
+                                    {{> list-view-v1-dropdown}}
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!--Item-->
-                    <div class="list-view-item">
-                        <div class="list-view-item-inner">
-                            <div class="h-avatar is-large">
-                                <img class="avatar" src="https://via.placeholder.com/150x150"
-                                    data-demo-src="assets/img/avatars/photos/40.jpg" alt="" data-user-popover="11">
-                                <img class="badge" src="assets/img/icons/flags/france.svg">
-                            </div>
-                            <div class="meta-left">
-                                <h3>Jeanne Marchand</h3>
-                                <span>
-                                    <i data-feather="map-pin"></i>
-                                    <span>Paris, France</span>
-                                </span>
-                            </div>
-                            <div class="meta-right">
-
-                                <div class="tags">
-                                    <span class="tag is-rounded is-orange is-elevated">Mobile Developer</span>
+                        <!--Item-->
+                        <div class="list-view-item">
+                            <div class="list-view-item-inner">
+                                <div class="h-avatar is-large">
+                                    <img class="avatar" src="https://via.placeholder.com/150x150"
+                                        data-demo-src="assets/img/avatars/photos/40.jpg" alt="" data-user-popover="11">
+                                    <img class="badge" src="assets/img/icons/flags/france.svg">
                                 </div>
-
-                                <div class="stats">
-                                    <div class="stat">
-                                        <span>6</span>
-                                        <span>Projects</span>
-                                    </div>
-                                    <div class="separator"></div>
-                                    <div class="stat">
-                                        <span>12</span>
-                                        <span>Replies</span>
-                                    </div>
-                                    <div class="separator"></div>
-                                    <div class="stat">
-                                        <span>8</span>
-                                        <span>Posts</span>
-                                    </div>
+                                <div class="meta-left">
+                                    <h3 data-filter-match>Jeanne Marchand</h3>
+                                    <span>
+                                        <i data-feather="map-pin"></i>
+                                        <span data-filter-match>Paris, France</span>
+                                    </span>
                                 </div>
+                                <div class="meta-right">
 
-                                <div class="network">
-                                    <div class="avatar-stack">
-                                        <div class="h-avatar is-small">
-                                            <img class="avatar" src="https://via.placeholder.com/150x150"
-                                                data-demo-src="assets/img/avatars/photos/18.jpg" alt=""
-                                                data-user-popover="7">
+                                    <div class="tags">
+                                        <span class="tag is-rounded is-orange is-elevated" data-filter-match>Mobile
+                                            Developer</span>
+                                    </div>
+
+                                    <div class="stats">
+                                        <div class="stat">
+                                            <span>6</span>
+                                            <span>Projects</span>
                                         </div>
-                                        <div class="h-avatar is-small">
-                                            <img class="avatar" src="https://via.placeholder.com/150x150"
-                                                data-demo-src="assets/img/avatars/photos/13.jpg" alt=""
-                                                data-user-popover="6">
+                                        <div class="separator"></div>
+                                        <div class="stat">
+                                            <span>12</span>
+                                            <span>Replies</span>
                                         </div>
-                                        <div class="h-avatar is-small">
-                                            <img class="avatar" src="https://via.placeholder.com/150x150"
-                                                data-demo-src="assets/img/avatars/photos/8.jpg" alt=""
-                                                data-user-popover="3">
+                                        <div class="separator"></div>
+                                        <div class="stat">
+                                            <span>8</span>
+                                            <span>Posts</span>
                                         </div>
-                                        <div class="h-avatar is-small">
-                                            <span class="avatar is-more">
-                                                <span class="inner">
-                                                    <span>+5</span>
+                                    </div>
+
+                                    <div class="network">
+                                        <div class="avatar-stack">
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/18.jpg" alt=""
+                                                    data-user-popover="7">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/13.jpg" alt=""
+                                                    data-user-popover="6">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/8.jpg" alt=""
+                                                    data-user-popover="3">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <span class="avatar is-more">
+                                                    <span class="inner">
+                                                        <span>+5</span>
+                                                    </span>
                                                 </span>
-                                            </span>
+                                            </div>
                                         </div>
+                                        <span>in Team</span>
                                     </div>
-                                    <span>in Team</span>
-                                </div>
 
-                                <!--Dropdown-->
-                                {{> list-view-v1-dropdown}}
+                                    <!--Dropdown-->
+                                    {{> list-view-v1-dropdown}}
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!--Item-->
-                    <div class="list-view-item">
-                        <div class="list-view-item-inner">
-                            <div class="h-avatar is-large">
-                                <img class="avatar" src="https://via.placeholder.com/150x150"
-                                    data-demo-src="assets/img/avatars/photos/27.jpg" alt="" data-user-popover="10">
-                                <img class="badge" src="assets/img/icons/flags/spain.svg">
-                            </div>
-                            <div class="meta-left">
-                                <h3>Carmen Escudero</h3>
-                                <span>
-                                    <i data-feather="map-pin"></i>
-                                    <span>Madrid, Spain</span>
-                                </span>
-                            </div>
-                            <div class="meta-right">
-
-                                <div class="tags">
-                                    <span class="tag is-rounded is-primary is-elevated">HR Manager</span>
+                        <!--Item-->
+                        <div class="list-view-item">
+                            <div class="list-view-item-inner">
+                                <div class="h-avatar is-large">
+                                    <img class="avatar" src="https://via.placeholder.com/150x150"
+                                        data-demo-src="assets/img/avatars/photos/27.jpg" alt="" data-user-popover="10">
+                                    <img class="badge" src="assets/img/icons/flags/spain.svg">
                                 </div>
-
-                                <div class="stats">
-                                    <div class="stat">
-                                        <span>8</span>
-                                        <span>Projects</span>
-                                    </div>
-                                    <div class="separator"></div>
-                                    <div class="stat">
-                                        <span>158</span>
-                                        <span>Replies</span>
-                                    </div>
-                                    <div class="separator"></div>
-                                    <div class="stat">
-                                        <span>54</span>
-                                        <span>Posts</span>
-                                    </div>
+                                <div class="meta-left">
+                                    <h3 data-filter-match>Carmen Escudero</h3>
+                                    <span>
+                                        <i data-feather="map-pin"></i>
+                                        <span data-filter-match>Madrid, Spain</span>
+                                    </span>
                                 </div>
+                                <div class="meta-right">
 
-                                <div class="network">
-                                    <div class="avatar-stack">
-                                        <div class="h-avatar is-small">
-                                            <img class="avatar" src="https://via.placeholder.com/150x150"
-                                                data-demo-src="assets/img/avatars/photos/18.jpg" alt=""
-                                                data-user-popover="7">
+                                    <div class="tags">
+                                        <span class="tag is-rounded is-primary is-elevated" data-filter-match>HR
+                                            Manager</span>
+                                    </div>
+
+                                    <div class="stats">
+                                        <div class="stat">
+                                            <span>8</span>
+                                            <span>Projects</span>
+                                        </div>
+                                        <div class="separator"></div>
+                                        <div class="stat">
+                                            <span>158</span>
+                                            <span>Replies</span>
+                                        </div>
+                                        <div class="separator"></div>
+                                        <div class="stat">
+                                            <span>54</span>
+                                            <span>Posts</span>
                                         </div>
                                     </div>
-                                    <span>in Team</span>
-                                </div>
 
-                                <!--Dropdown-->
-                                {{> list-view-v1-dropdown}}
+                                    <div class="network">
+                                        <div class="avatar-stack">
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/18.jpg" alt=""
+                                                    data-user-popover="7">
+                                            </div>
+                                        </div>
+                                        <span>in Team</span>
+                                    </div>
+
+                                    <!--Dropdown-->
+                                    {{> list-view-v1-dropdown}}
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!--Item-->
-                    <div class="list-view-item">
-                        <div class="list-view-item-inner">
-                            <div class="h-avatar is-large">
-                                <img class="avatar" src="https://via.placeholder.com/150x150"
-                                    data-demo-src="assets/img/avatars/photos/9.jpg" alt="" data-user-popover="1">
-                                <img class="badge" src="assets/img/icons/flags/united-states-of-america.svg">
-                            </div>
-                            <div class="meta-left">
-                                <h3>Anna Baker</h3>
-                                <span>
-                                    <i data-feather="map-pin"></i>
-                                    <span>San Francisco, CA</span>
-                                </span>
-                            </div>
-                            <div class="meta-right">
-
-                                <div class="tags">
-                                    <span class="tag is-rounded is-green is-elevated">UI/UX Designer</span>
+                        <!--Item-->
+                        <div class="list-view-item">
+                            <div class="list-view-item-inner">
+                                <div class="h-avatar is-large">
+                                    <img class="avatar" src="https://via.placeholder.com/150x150"
+                                        data-demo-src="assets/img/avatars/photos/9.jpg" alt="" data-user-popover="1">
+                                    <img class="badge" src="assets/img/icons/flags/united-states-of-america.svg">
                                 </div>
-
-                                <div class="stats">
-                                    <div class="stat">
-                                        <span>19</span>
-                                        <span>Projects</span>
-                                    </div>
-                                    <div class="separator"></div>
-                                    <div class="stat">
-                                        <span>28</span>
-                                        <span>Replies</span>
-                                    </div>
-                                    <div class="separator"></div>
-                                    <div class="stat">
-                                        <span>12</span>
-                                        <span>Posts</span>
-                                    </div>
+                                <div class="meta-left">
+                                    <h3 data-filter-match>Anna Baker</h3>
+                                    <span>
+                                        <i data-feather="map-pin"></i>
+                                        <span data-filter-match>San Francisco, CA</span>
+                                    </span>
                                 </div>
+                                <div class="meta-right">
 
-                                <div class="network">
-                                    <div class="avatar-stack">
-                                        <div class="h-avatar is-small">
-                                            <img class="avatar" src="https://via.placeholder.com/150x150"
-                                                data-demo-src="assets/img/avatars/photos/8.jpg" alt=""
-                                                data-user-popover="3">
+                                    <div class="tags">
+                                        <span class="tag is-rounded is-green is-elevated" data-filter-match>UI/UX
+                                            Designer</span>
+                                    </div>
+
+                                    <div class="stats">
+                                        <div class="stat">
+                                            <span>19</span>
+                                            <span>Projects</span>
                                         </div>
-                                        <div class="h-avatar is-small">
-                                            <img class="avatar" src="https://via.placeholder.com/150x150"
-                                                data-demo-src="assets/img/avatars/photos/5.jpg" alt=""
-                                                data-user-popover="9">
+                                        <div class="separator"></div>
+                                        <div class="stat">
+                                            <span>28</span>
+                                            <span>Replies</span>
+                                        </div>
+                                        <div class="separator"></div>
+                                        <div class="stat">
+                                            <span>12</span>
+                                            <span>Posts</span>
                                         </div>
                                     </div>
-                                    <span>in Team</span>
-                                </div>
 
-                                <!--Dropdown-->
-                                {{> list-view-v1-dropdown}}
+                                    <div class="network">
+                                        <div class="avatar-stack">
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/8.jpg" alt=""
+                                                    data-user-popover="3">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/5.jpg" alt=""
+                                                    data-user-popover="9">
+                                            </div>
+                                        </div>
+                                        <span>in Team</span>
+                                    </div>
+
+                                    <!--Dropdown-->
+                                    {{> list-view-v1-dropdown}}
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!--Item-->
-                    <div class="list-view-item">
-                        <div class="list-view-item-inner">
-                            <div class="h-avatar is-large">
-                                <img class="avatar" src="https://via.placeholder.com/150x150"
-                                    data-demo-src="assets/img/avatars/photos/18.jpg" alt="" data-user-popover="7">
-                                <img class="badge" src="assets/img/icons/flags/united-states-of-america.svg">
-                            </div>
-                            <div class="meta-left">
-                                <h3>Esteban Castellanos</h3>
-                                <span>
-                                    <i data-feather="map-pin"></i>
-                                    <span>Miami, FL</span>
-                                </span>
-                            </div>
-                            <div class="meta-right">
-
-                                <div class="tags">
-                                    <span class="tag is-rounded is-green is-elevated">UI/UX Designer</span>
+                        <!--Item-->
+                        <div class="list-view-item">
+                            <div class="list-view-item-inner">
+                                <div class="h-avatar is-large">
+                                    <img class="avatar" src="https://via.placeholder.com/150x150"
+                                        data-demo-src="assets/img/avatars/photos/18.jpg" alt="" data-user-popover="7">
+                                    <img class="badge" src="assets/img/icons/flags/united-states-of-america.svg">
                                 </div>
-
-                                <div class="stats">
-                                    <div class="stat">
-                                        <span>59</span>
-                                        <span>Projects</span>
-                                    </div>
-                                    <div class="separator"></div>
-                                    <div class="stat">
-                                        <span>158</span>
-                                        <span>Replies</span>
-                                    </div>
-                                    <div class="separator"></div>
-                                    <div class="stat">
-                                        <span>16</span>
-                                        <span>Posts</span>
-                                    </div>
+                                <div class="meta-left">
+                                    <h3 data-filter-match>Esteban Castellanos</h3>
+                                    <span>
+                                        <i data-feather="map-pin"></i>
+                                        <span data-filter-match>Miami, FL</span>
+                                    </span>
                                 </div>
+                                <div class="meta-right">
 
-                                <div class="network">
-                                    <div class="avatar-stack">
-                                        <div class="h-avatar is-small">
-                                            <img class="avatar" src="https://via.placeholder.com/150x150"
-                                                data-demo-src="assets/img/avatars/photos/27.jpg" alt=""
-                                                data-user-popover="10">
+                                    <div class="tags">
+                                        <span class="tag is-rounded is-green is-elevated" data-filter-match>UI/UX
+                                            Designer</span>
+                                    </div>
+
+                                    <div class="stats">
+                                        <div class="stat">
+                                            <span>59</span>
+                                            <span>Projects</span>
                                         </div>
-                                        <div class="h-avatar is-small">
-                                            <img class="avatar" src="https://via.placeholder.com/150x150"
-                                                data-demo-src="assets/img/avatars/photos/16.jpg" alt=""
-                                                data-user-popover="16">
+                                        <div class="separator"></div>
+                                        <div class="stat">
+                                            <span>158</span>
+                                            <span>Replies</span>
                                         </div>
-                                        <div class="h-avatar is-small">
-                                            <img class="avatar" src="https://via.placeholder.com/150x150"
-                                                data-demo-src="assets/img/avatars/photos/29.jpg" alt=""
-                                                data-user-popover="25">
+                                        <div class="separator"></div>
+                                        <div class="stat">
+                                            <span>16</span>
+                                            <span>Posts</span>
                                         </div>
-                                        <div class="h-avatar is-small">
-                                            <span class="avatar is-more">
-                                                <span class="inner">
-                                                    <span>+7</span>
+                                    </div>
+
+                                    <div class="network">
+                                        <div class="avatar-stack">
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/27.jpg" alt=""
+                                                    data-user-popover="10">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/16.jpg" alt=""
+                                                    data-user-popover="16">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/29.jpg" alt=""
+                                                    data-user-popover="25">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <span class="avatar is-more">
+                                                    <span class="inner">
+                                                        <span>+7</span>
+                                                    </span>
                                                 </span>
-                                            </span>
+                                            </div>
                                         </div>
+                                        <span>in Team</span>
                                     </div>
-                                    <span>in Team</span>
-                                </div>
 
-                                <!--Dropdown-->
-                                {{> list-view-v1-dropdown}}
+                                    <!--Dropdown-->
+                                    {{> list-view-v1-dropdown}}
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!--Item-->
-                    <div class="list-view-item">
-                        <div class="list-view-item-inner">
-                            <div class="h-avatar is-large">
-                                <img class="avatar" src="https://via.placeholder.com/150x150"
-                                    data-demo-src="assets/img/avatars/photos/10.jpg" alt="" data-user-popover="8">
-                                <img class="badge" src="assets/img/icons/flags/united-states-of-america.svg">
-                            </div>
-                            <div class="meta-left">
-                                <h3>Henry Grobstone</h3>
-                                <span>
-                                    <i data-feather="map-pin"></i>
-                                    <span>Miami, FL</span>
-                                </span>
-                            </div>
-                            <div class="meta-right">
-
-                                <div class="tags">
-                                    <span class="tag is-rounded is-primary is-elevated">Business Analyst</span>
+                        <!--Item-->
+                        <div class="list-view-item">
+                            <div class="list-view-item-inner">
+                                <div class="h-avatar is-large">
+                                    <img class="avatar" src="https://via.placeholder.com/150x150"
+                                        data-demo-src="assets/img/avatars/photos/10.jpg" alt="" data-user-popover="8">
+                                    <img class="badge" src="assets/img/icons/flags/united-states-of-america.svg">
                                 </div>
-
-                                <div class="stats">
-                                    <div class="stat">
-                                        <span>42</span>
-                                        <span>Projects</span>
-                                    </div>
-                                    <div class="separator"></div>
-                                    <div class="stat">
-                                        <span>15</span>
-                                        <span>Replies</span>
-                                    </div>
-                                    <div class="separator"></div>
-                                    <div class="stat">
-                                        <span>2</span>
-                                        <span>Posts</span>
-                                    </div>
+                                <div class="meta-left">
+                                    <h3 data-filter-match>Henry Grobstone</h3>
+                                    <span>
+                                        <i data-feather="map-pin"></i>
+                                        <span data-filter-match>Miami, FL</span>
+                                    </span>
                                 </div>
+                                <div class="meta-right">
 
-                                <div class="network">
-                                    <div class="avatar-stack">
-                                        <div class="h-avatar is-small">
-                                            <img class="avatar" src="https://via.placeholder.com/150x150"
-                                                data-demo-src="assets/img/avatars/photos/32.jpg" alt=""
-                                                data-user-popover="28">
+                                    <div class="tags">
+                                        <span class="tag is-rounded is-primary is-elevated" data-filter-match>Business
+                                            Analyst</span>
+                                    </div>
+
+                                    <div class="stats">
+                                        <div class="stat">
+                                            <span>42</span>
+                                            <span>Projects</span>
                                         </div>
-                                        <div class="h-avatar is-small">
-                                            <img class="avatar" src="https://via.placeholder.com/150x150"
-                                                data-demo-src="assets/img/avatars/photos/22.jpg" alt=""
-                                                data-user-popover="20">
+                                        <div class="separator"></div>
+                                        <div class="stat">
+                                            <span>15</span>
+                                            <span>Replies</span>
+                                        </div>
+                                        <div class="separator"></div>
+                                        <div class="stat">
+                                            <span>2</span>
+                                            <span>Posts</span>
                                         </div>
                                     </div>
-                                    <span>in Team</span>
-                                </div>
 
-                                <!--Dropdown-->
-                                {{> list-view-v1-dropdown}}
+                                    <div class="network">
+                                        <div class="avatar-stack">
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/32.jpg" alt=""
+                                                    data-user-popover="28">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/22.jpg" alt=""
+                                                    data-user-popover="20">
+                                            </div>
+                                        </div>
+                                        <span>in Team</span>
+                                    </div>
+
+                                    <!--Dropdown-->
+                                    {{> list-view-v1-dropdown}}
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!--Item-->
-                    <div class="list-view-item">
-                        <div class="list-view-item-inner">
-                            <div class="h-avatar is-large">
-                                <img class="avatar" src="https://via.placeholder.com/150x150"
-                                    data-demo-src="assets/img/avatars/photos/25.jpg" alt="" data-user-popover="4">
-                                <img class="badge" src="assets/img/icons/flags/united-states-of-america.svg">
-                            </div>
-                            <div class="meta-left">
-                                <h3>Melany Wallace</h3>
-                                <span>
-                                    <i data-feather="map-pin"></i>
-                                    <span>San Jose, CA</span>
-                                </span>
-                            </div>
-                            <div class="meta-right">
-
-                                <div class="tags">
-                                    <span class="tag is-rounded is-orange is-elevated">Web Developer</span>
+                        <!--Item-->
+                        <div class="list-view-item">
+                            <div class="list-view-item-inner">
+                                <div class="h-avatar is-large">
+                                    <img class="avatar" src="https://via.placeholder.com/150x150"
+                                        data-demo-src="assets/img/avatars/photos/25.jpg" alt="" data-user-popover="4">
+                                    <img class="badge" src="assets/img/icons/flags/united-states-of-america.svg">
                                 </div>
-
-                                <div class="stats">
-                                    <div class="stat">
-                                        <span>17</span>
-                                        <span>Projects</span>
-                                    </div>
-                                    <div class="separator"></div>
-                                    <div class="stat">
-                                        <span>22</span>
-                                        <span>Replies</span>
-                                    </div>
-                                    <div class="separator"></div>
-                                    <div class="stat">
-                                        <span>4</span>
-                                        <span>Posts</span>
-                                    </div>
+                                <div class="meta-left">
+                                    <h3 data-filter-match>Melany Wallace</h3>
+                                    <span>
+                                        <i data-feather="map-pin"></i>
+                                        <span data-filter-match>San Jose, CA</span>
+                                    </span>
                                 </div>
+                                <div class="meta-right">
 
-                                <div class="network">
-                                    <div class="avatar-stack">
-                                        <div class="h-avatar is-small">
-                                            <img class="avatar" src="https://via.placeholder.com/150x150"
-                                                data-demo-src="assets/img/avatars/photos/26.jpg" alt=""
-                                                data-user-popover="23">
+                                    <div class="tags">
+                                        <span class="tag is-rounded is-orange is-elevated" data-filter-match>Web
+                                            Developer</span>
+                                    </div>
+
+                                    <div class="stats">
+                                        <div class="stat">
+                                            <span>17</span>
+                                            <span>Projects</span>
                                         </div>
-                                        <div class="h-avatar is-small">
-                                            <img class="avatar" src="https://via.placeholder.com/150x150"
-                                                data-demo-src="assets/img/avatars/photos/38.jpg" alt=""
-                                                data-user-popover="32">
+                                        <div class="separator"></div>
+                                        <div class="stat">
+                                            <span>22</span>
+                                            <span>Replies</span>
                                         </div>
-                                        <div class="h-avatar is-small">
-                                            <img class="avatar" src="https://via.placeholder.com/150x150"
-                                                data-demo-src="assets/img/avatars/photos/21.jpg" alt=""
-                                                data-user-popover="19">
+                                        <div class="separator"></div>
+                                        <div class="stat">
+                                            <span>4</span>
+                                            <span>Posts</span>
                                         </div>
-                                        <div class="h-avatar is-small">
-                                            <span class="avatar is-more">
-                                                <span class="inner">
-                                                    <span>+2</span>
+                                    </div>
+
+                                    <div class="network">
+                                        <div class="avatar-stack">
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/26.jpg" alt=""
+                                                    data-user-popover="23">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/38.jpg" alt=""
+                                                    data-user-popover="32">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/21.jpg" alt=""
+                                                    data-user-popover="19">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <span class="avatar is-more">
+                                                    <span class="inner">
+                                                        <span>+2</span>
+                                                    </span>
                                                 </span>
-                                            </span>
+                                            </div>
+                                        </div>
+                                        <span>in Team</span>
+                                    </div>
+
+                                    <!--Dropdown-->
+                                    {{> list-view-v1-dropdown}}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Item-->
+                        <div class="list-view-item">
+                            <div class="list-view-item-inner">
+                                <div class="h-avatar is-large">
+                                    <img class="avatar" src="https://via.placeholder.com/150x150"
+                                        data-demo-src="assets/img/avatars/photos/7.jpg" alt="" data-user-popover="0">
+                                    <img class="badge" src="assets/img/icons/flags/united-states-of-america.svg">
+                                </div>
+                                <div class="meta-left">
+                                    <h3 data-filter-match>Alice Carasca</h3>
+                                    <span>
+                                        <i data-feather="map-pin"></i>
+                                        <span data-filter-match>San Diego, CA</span>
+                                    </span>
+                                </div>
+                                <div class="meta-right">
+
+                                    <div class="tags">
+                                        <span class="tag is-rounded is-orange is-elevated" data-filter-match>Software
+                                            Engineer</span>
+                                    </div>
+
+                                    <div class="stats">
+                                        <div class="stat">
+                                            <span>31</span>
+                                            <span>Projects</span>
+                                        </div>
+                                        <div class="separator"></div>
+                                        <div class="stat">
+                                            <span>82</span>
+                                            <span>Replies</span>
+                                        </div>
+                                        <div class="separator"></div>
+                                        <div class="stat">
+                                            <span>14</span>
+                                            <span>Posts</span>
                                         </div>
                                     </div>
-                                    <span>in Team</span>
-                                </div>
 
-                                <!--Dropdown-->
-                                {{> list-view-v1-dropdown}}
+                                    <div class="network">
+                                        <div class="avatar-stack">
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/9.jpg" alt=""
+                                                    data-user-popover="1">
+                                            </div>
+                                            <div class="h-avatar is-small">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                    data-demo-src="assets/img/avatars/photos/8.jpg" alt=""
+                                                    data-user-popover="3">
+                                            </div>
+                                        </div>
+                                        <span>in Team</span>
+                                    </div>
+
+                                    <!--Dropdown-->
+                                    {{> list-view-v1-dropdown}}
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!--Item-->
-                    <div class="list-view-item">
-                        <div class="list-view-item-inner">
-                            <div class="h-avatar is-large">
-                                <img class="avatar" src="https://via.placeholder.com/150x150"
-                                    data-demo-src="assets/img/avatars/photos/7.jpg" alt="" data-user-popover="0">
-                                <img class="badge" src="assets/img/icons/flags/united-states-of-america.svg">
-                            </div>
-                            <div class="meta-left">
-                                <h3>Alice Carasca</h3>
-                                <span>
-                                    <i data-feather="map-pin"></i>
-                                    <span>San Diego, CA</span>
-                                </span>
-                            </div>
-                            <div class="meta-right">
-
-                                <div class="tags">
-                                    <span class="tag is-rounded is-orange is-elevated">Software Engineer</span>
-                                </div>
-
-                                <div class="stats">
-                                    <div class="stat">
-                                        <span>31</span>
-                                        <span>Projects</span>
-                                    </div>
-                                    <div class="separator"></div>
-                                    <div class="stat">
-                                        <span>82</span>
-                                        <span>Replies</span>
-                                    </div>
-                                    <div class="separator"></div>
-                                    <div class="stat">
-                                        <span>14</span>
-                                        <span>Posts</span>
-                                    </div>
-                                </div>
-
-                                <div class="network">
-                                    <div class="avatar-stack">
-                                        <div class="h-avatar is-small">
-                                            <img class="avatar" src="https://via.placeholder.com/150x150"
-                                                data-demo-src="assets/img/avatars/photos/9.jpg" alt=""
-                                                data-user-popover="1">
-                                        </div>
-                                        <div class="h-avatar is-small">
-                                            <img class="avatar" src="https://via.placeholder.com/150x150"
-                                                data-demo-src="assets/img/avatars/photos/8.jpg" alt=""
-                                                data-user-popover="3">
-                                        </div>
-                                    </div>
-                                    <span>in Team</span>
-                                </div>
-
-                                <!--Dropdown-->
-                                {{> list-view-v1-dropdown}}
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
-                <nav class="flex-pagination pagination is-rounded" role="navigation" aria-label="pagination">
+                <nav class="flex-pagination pagination is-rounded" role="navigation" aria-label="pagination"
+                    data-filter-hide>
                     <a class="pagination-previous has-chevron"><i data-feather="chevron-left"></i></a>
                     <a class="pagination-next has-chevron"><i data-feather="chevron-right"></i></a>
                     <ul class="pagination-list">

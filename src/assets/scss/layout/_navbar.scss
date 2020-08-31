@@ -96,14 +96,53 @@
                 }
             }
 
-            .dropdown {
-                .dropdown-menu {
-                    right: -12px;
-                    margin-top: 20px;
+            .dropdown-menu {
+                right: -12px;
+                margin-top: 20px;
 
-                    .dropdown-item {
-                        font-size: .9rem;
+                .dropdown-content {
+                    padding-top: 0;
+                    overflow: hidden;
+
+                    .dropdown-head {
+                        display: flex;
+                        align-items: center;
+                        padding: 20px 16px 20px 16px;
+                        margin-bottom: 12px;
+                        background: #fafafa;
+
+                        .meta {
+                            margin-left: 12px;
+                            font-family: $font;
+
+                            span {
+                                display: block;
+
+                                &:first-child {
+                                    font-size: 1.1rem;
+                                    font-weight: 500;
+                                    color: $dark-text;
+                                    line-height: 1.2;
+                                }
+
+                                &:nth-child(2) {
+                                    text-transform: uppercase;
+                                    color: $light-text;
+                                    font-size: .7rem;
+                                }
+                            }
+                        }
                     }
+
+                    .logout-button {
+                        svg {
+                            stroke: $smoke-white !important;
+                        }
+                    }
+                }
+
+                .dropdown-item {
+                    font-size: .9rem;
                 }
             }
 
@@ -536,9 +575,12 @@ body {
     height: 80px;
     background: $white;
     transition: all .3s;
+    border-bottom: 1px solid $fade-grey;
+    //box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.12);
 
     &.is-transparent {
         background: transparent;
+        box-shadow: none;
 
         &.is-solid, &.is-scrolled {
             background: $white;

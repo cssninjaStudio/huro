@@ -269,6 +269,10 @@ body {
                 background: lighten($dark-sidebar, 2%);
                 border-color: lighten($dark-sidebar, 4%);
                 color: $dark-dark-text;
+
+                svg {
+                    stroke: $accent;
+                }
             }
 
             .pagination-list {
@@ -280,6 +284,7 @@ body {
 
                         &.is-current {
                             background: $accent;
+                            color: $smoke-white;
                             border-color: $accent;
                             box-shadow: $accent-box-shadow;
                         }
@@ -523,6 +528,13 @@ body {
             }
         }
     }
+
+    .pagination-next, .pagination-previous {
+        &.has-chevron {
+            min-width: 55px;
+            max-width: 55px;
+        }
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
@@ -534,5 +546,16 @@ body {
                 }
             }
         }
+    }
+
+    .pagination-next, .pagination-previous {
+        &.has-chevron {
+            min-width: 55px;
+            max-width: 55px;
+        }
+    }
+
+    .pagination-next {
+        margin-right: auto;
     }
 }

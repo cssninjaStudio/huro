@@ -238,7 +238,7 @@ body {
 
                         .heading-left {
                             h6 {
-                                font-size: .9rem;
+                                font-size: .8rem;
                                 font-weight: 500;
                                 color: $light-text;
                                 line-height: 1.1;
@@ -261,7 +261,7 @@ body {
 
                         .notification-item {
                             display: flex;
-                            align-items: flex-start;
+                            align-items: center;
                             padding: 0.65rem 0;
 
                             .img-left {
@@ -278,10 +278,11 @@ body {
 
                             .user-content {
                                 text-align: left;
+                                font-family: $font;
 
                                 .user-info {
                                     color: $dark-text;
-                                    margin: 0.15rem 0 0;
+                                    font-size: .95rem;
 
                                     span {
                                         font-weight: 500;
@@ -290,6 +291,7 @@ body {
 
                                 .time {
                                     margin: 0;
+                                    font-size: .85rem;
                                     color: $light-text;
                                 }
                             }
@@ -319,6 +321,7 @@ body {
         svg {
             height: 18px;
             width: 18px;
+            stroke-width: 1.6px;
             stroke: $light-text;
             transition: stroke .3s;
         }
@@ -364,6 +367,193 @@ body {
         }*/
     }
 }
+
+/* ==========================================================================
+5. Circular Menu
+========================================================================== */
+
+.circular-menu {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    z-index: 70;
+    transform: translateY(-80px);
+    pointer-events: none;
+    transition: transform .3s;
+
+    &.is-active {
+        pointer-events: all;
+        transform: translateY(0);
+    }
+
+    &.active {
+        &:after {
+            transform: scale3d(5.5, 5.5, 1);
+            transition-timing-function: cubic-bezier(0.68, 1.55, 0.265, 1);
+        }
+
+        .floating-btn {
+            box-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, 0.3);
+
+            i {
+                //transform: rotate(-45deg);
+
+                &:first-child {
+                    display: none;
+                }
+
+                &:nth-child(2) {
+                    display: block;
+                }
+            }
+        }
+
+        .menu-item {
+            transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+            &:nth-child(1) {
+                transform: translate3d(-7em, -0.5em, 0);
+            }
+
+            &:nth-child(2) {
+                transform: translate3d(-6.25em, 3.25em, 0);
+            }
+
+            &:nth-child(3) {
+                transform: translate3d(-3.45em, 6.25em, 0);
+            }
+
+            &:nth-child(4) {
+                transform: translate3d(0.5em, 7em, 0);
+            }
+        }
+    }
+
+    &:after {
+        display: block;
+        content: ' ';
+        width: 3.5em;
+        height: 3.5em;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -2;
+        background-color: darken($primary, 5%);
+        box-shadow: $primary-box-shadow;
+        transition: all .3s ease;
+    }
+
+    .floating-btn {
+        display: block;
+        width: 3.5em;
+        height: 3.5em;
+        border-radius: 50%;
+        background-color: lighten($primary, 3%);
+        box-shadow: $primary-box-shadow;
+        color: $smoke-white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        outline: 0;
+
+        i {
+            font-size: .9rem;
+            transition: transform .2s;
+
+            &:first-child {
+                display: block;
+            }
+
+            &:nth-child(2) {
+                display: none;
+            }
+        }
+    }
+
+    .items-wrapper {
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu-item {
+        position: absolute;
+        top: .2em;
+        right: .2em;
+        z-index: -1;
+        display: block;
+        text-decoration: none;
+        color: hsl(0, 0%, 100%);
+        font-size: 1em;
+        width: 3em;
+        height: 3em;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 3;
+        background-color: hsla(0, 0%, 0%, 0.2);
+        transition: transform .3s ease, background-color .2s ease;
+
+        &:hover {
+            background-color: hsla(0, 0%, 0%, 0.3);
+        }
+
+        &.is-flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .dark-mode {
+                transform: scale(0.5);
+            }
+
+            > img {
+                display: block;
+                height: 24px;
+                width: 24px;
+                min-width: 24px;
+                border-radius: 50%;
+            }
+
+            svg {
+                height: 18px;
+                width: 18px;
+                stroke: $smoke-white;
+                stroke-width: 1.6px;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+5. Circular Menu Dark Mode
+========================================================================== */
+
+body {
+    &.is-dark {
+        .circular-menu {
+
+            &:after {
+                background: darken($accent, 4%);
+            }
+
+            &.active {
+                .floating-btn {
+                    box-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, 0.3);
+                }
+            }
+        
+            .floating-btn {
+                background: $accent;
+                box-shadow: $accent-box-shadow;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+6. Media Queries
+========================================================================== */
 
 @media (max-width: 767px) {
     .page-title {

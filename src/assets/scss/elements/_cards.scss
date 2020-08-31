@@ -88,6 +88,14 @@ body {
             .avatar-stack {
                 .h-avatar {
                     border-color: lighten($dark-sidebar, 6%) !important;
+
+                    .avatar {
+                        &.is-more {
+                            .inner {
+                                border-color: lighten($dark-sidebar, 6%) !important;
+                            }
+                        }
+                    }
                 }
             }
         }
