@@ -2,7 +2,8 @@
 
 /*
     1. Mobile Sidebar
-    2. Mobile subsidebar
+    2. Mobile Subsidebar
+    3. Mobile Subsidebar Dark mode
 */
 
 /* ==========================================================================
@@ -67,7 +68,6 @@
                         transition: all .3s;
                     }
 
-                    //Modifiers
                     &:hover svg, &.is-active svg {
                         stroke: $primary;
                     }
@@ -93,7 +93,6 @@
                     }
                 }
 
-                //Open filters
                 #open-filters {
                     svg {
                         transform: rotate(0);
@@ -107,7 +106,6 @@
                     }
                 }
 
-                //Active state
                 &.is-active {
                     a svg {
                         stroke: $primary;
@@ -125,7 +123,7 @@
 }
 
 /* ==========================================================================
-2. Mobile sub sidebar
+2. Mobile Subsidebar
 ========================================================================== */
 
 .mobile-subsidebar {
@@ -292,7 +290,6 @@
         }
     }
 
-    //Messaging
     &.is-messaging {
         ul {
             overflow: auto;
@@ -593,7 +590,7 @@
 
 
 /* ==========================================================================
-2. Mobile sub sidebar Dark mode
+3. Mobile Subsidebar Dark mode
 ========================================================================== */
 
 body {

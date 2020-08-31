@@ -2,7 +2,14 @@
 
 /*
     1. Right Panel Base
+    2. Right Panel Base Dark mode
+    3. Languages Panel
+    4. Languages Panel Dark mode
+    5. Activity Panel
+    6. Activity Panel Dark mode
+    7. Task Panel
     8. Task Panel Dark Mode
+    9. Media Queries
 
 */
 
@@ -874,6 +881,10 @@ body {
     }
 }
 
+
+/* ==========================================================================
+9. Media Queries
+========================================================================== */
 
 @media only screen and (max-width: 767px) {
 

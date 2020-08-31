@@ -2,8 +2,10 @@
 
 /*
     1. Mobile Navbar
-    2. Centered Navbar
-    3. Wizard Navbar
+    2. Mobile Navbar Dark mode
+    3. Webapp Navbar
+    4. Webapp Navbar Dark mode
+    5. Webapp Subnavbar
 */
 
 /* ==========================================================================
@@ -41,7 +43,6 @@
             }
         }
 
-        //User menu
         .user-dropdown {
             margin-left: auto;
             width: 32px;
@@ -473,7 +474,7 @@
 }
 
 /* ==========================================================================
-1. Mobile Navbar Dark mode
+2. Mobile Navbar Dark mode
 ========================================================================== */
 
 body {
@@ -576,7 +577,7 @@ body {
     background: $white;
     transition: all .3s;
     border-bottom: 1px solid $fade-grey;
-    //box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.12);
+    z-index: 100;
 
     &.is-transparent {
         background: transparent;
@@ -594,9 +595,6 @@ body {
             box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.12);
         }
     }
-
-    //border-bottom: 1px solid darken($fade-grey, 3%);
-    z-index: 100;
 
     .webapp-navbar-inner {
         position: relative;
@@ -751,10 +749,6 @@ body {
                         font-size: .65rem;
                         color: $muted-grey;
                         text-transform: uppercase;
-
-                        //padding: 8px 16px;
-                        //border: 1px solid transparent;
-                        //border-radius: 100px;
                         transition: all .3s;
                         cursor: pointer;
                     }
@@ -844,6 +838,11 @@ body {
     }
 }
 
+
+/* ==========================================================================
+4. Webapp Navbar Dark mode
+========================================================================== */
+
 body {
     &.is-dark {
         .webapp-navbar {
@@ -861,16 +860,16 @@ body {
                             .dropdown-content {
                                 .dropdown-head {
                                     background: lighten($dark-sidebar, 2%) !important;
-            
+
                                     &:hover {
                                         background: lighten($dark-sidebar, 2%) !important;
                                     }
-            
+
                                     .meta {
                                         &:hover {
                                             background: lighten($dark-sidebar, 2%) !important;
                                         }
-            
+
                                         span {
                                             &:first-child {
                                                 color: $dark-dark-text !important;
@@ -916,16 +915,16 @@ body {
                             .dropdown-content {
                                 .dropdown-head {
                                     background: lighten($dark-sidebar, 2%) !important;
-            
+
                                     &:hover {
                                         background: lighten($dark-sidebar, 2%) !important;
                                     }
-            
+
                                     .meta {
                                         &:hover {
                                             background: lighten($dark-sidebar, 2%) !important;
                                         }
-            
+
                                         span {
                                             &:first-child {
                                                 color: $dark-dark-text !important;
@@ -1014,6 +1013,11 @@ body {
     }
 }
 
+
+/* ==========================================================================
+5. Webapp Subnavbar
+========================================================================== */
+
 .webapp-subnavbar {
     position: fixed;
     top: 80px;
@@ -1046,12 +1050,8 @@ body {
             display: block;
         }
 
-        //display: flex;
-        //justify-content: space-between;
 
         .tabs {
-            //background: #fafafa;
-
             margin: 0 auto 10px auto;
 
             &.is-3 {
@@ -1133,8 +1133,6 @@ body {
                     ul {
                         li {
                             padding: 8px 20px;
-
-                            //text-align: center;
                             transition: all .3s;
                             border-radius: 100px;
 
@@ -1193,225 +1191,3 @@ body {
     }
 }
 
-/* ==========================================================================
-2. Centered Navbar
-========================================================================== */
-
-/*.centered-nav {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
-    background: transparent;
-    padding: 0 20px;
-    transition: all .3s;
-
-    &.is-resized {
-        margin-left: 240px;
-        width: calc(100% - 240px);
-    }
-
-    .centered-brand {
-        img {
-            display: block;
-            height: 30px;
-            margin: 0 auto;
-        }
-    }
-
-    //User menu
-    .user-dropdown {
-        &.is-active {
-            svg {
-                stroke: $muted-grey;
-            }
-        }
-
-        .is-trigger {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            cursor: pointer;
-
-            .profile-avatar {
-                position: relative;
-
-                .avatar {
-                    display: block;
-                    width: 38px;
-                    height: 38px;
-                    border-radius: 50%;
-                }
-            }
-
-            svg {
-                margin-left: 3px;
-                width: 22px;
-                height: 22px;
-                stroke: $dark-sidebar;
-                transition: all .3s;
-            }
-        }
-
-        .dropdown {
-            .dropdown-item {
-                font-size: .9rem;
-            }
-        }
-
-        .flex-item {
-            display: flex !important;
-            justify-content: space-between;
-            align-items: center;
-            background: transparent !important;
-            margin: 0 15px;
-
-            .toggle-title {
-                font-size: .8rem;
-                color: $muted-grey;
-
-                &:hover {
-                    background: transparent !important;
-                }
-            }
-
-            .sliding-toggle svg {
-                stroke: $white !important;
-            }
-
-            &:hover {
-                background: transparent !important;
-            }
-        }
-    }
-}*/
-
-/* ==========================================================================
-3. Wizard Navbar
-========================================================================== */
-
-/*.wizard-nav {
-    position: fixed;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 60px;
-    background: $white;
-    padding: 0 20px;
-    transition: all .3s;
-    z-index: 99;
-
-    .centered-brand {
-        margin-left: 10px;
-
-        img {
-            display: block;
-            height: 24px;
-            margin: 0 auto;
-        }
-    }
-
-    .navbar-item {
-        &.is-wizard-title {
-            margin-left: 15px;
-            border-left: 1px solid lighten($muted-grey, 15%);
-            padding-bottom: 6px;
-            padding-top: 6px;
-
-            .title-wrap {
-                position: relative;
-                top: -2px;
-                display: block;
-                font-size: 1.3rem;
-                font-weight: 500;
-
-                span {
-                    font-weight: 400;
-                }
-            }
-        }
-    }
-
-    .wizard-dropdown {
-        cursor: pointer;
-
-        .is-trigger {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 30px;
-            height: 30px;
-
-            svg {
-                height: 18px;
-                width: 18px;
-            }
-        }
-    }
-
-    //User menu
-    .user-dropdown {
-        margin-left: auto;
-
-        &.is-active {
-            svg {
-                stroke: $muted-grey;
-            }
-        }
-
-        .is-trigger {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            cursor: pointer;
-
-            .profile-avatar {
-                position: relative;
-
-                .avatar {
-                    display: block;
-                    width: 38px;
-                    height: 38px;
-                    border-radius: 50%;
-                }
-            }
-
-            svg {
-                margin-left: 3px;
-                width: 22px;
-                height: 22px;
-                stroke: $dark-sidebar;
-                transition: all .3s;
-            }
-        }
-
-        .dropdown {
-            .dropdown-item {
-                font-size: .9rem;
-            }
-        }
-
-        .flex-item {
-            display: flex !important;
-            justify-content: space-between;
-            align-items: center;
-            margin: 0 15px;
-
-            .toggle-title {
-                font-size: .8rem;
-                color: $muted-grey;
-
-                &:hover {
-                    background: transparent !important;
-                }
-            }
-
-            &:hover {
-                background: transparent !important;
-            }
-        }
-    }
-}*/

@@ -4,6 +4,7 @@
     1. Login page
     2. Remember me toggle
     3. Signup page
+    4. Media Queries
 */
 
 /* ==========================================================================
@@ -689,23 +690,7 @@
         }
     }
 
-    /*.logo {
-        position: absolute;
-        top: 30px;
-        right: 0;
-        left: 0;
-        display: block;
-        margin: 0 auto;
-        width: 130px;
-        z-index: 1;
-
-        img {
-            display: block;
-        }
-    }*/
-
     .signup-title {
-        //margin-top: 100px;
         font-family: $font;
         color: $dark-text;
     }
@@ -721,8 +706,6 @@
             .control {
                 position: relative;
                 width: 100%;
-
-                //margin-top: 16px;
 
                 &.has-switch {
                     display: flex;
@@ -1032,18 +1015,15 @@
 .signup-profile-wrapper {
     padding: 80px 60px 10px 60px;
 
-    //Title
     .title, .subtitle {
         font-family: $font;
         text-align: center;
     }
 
-    //selector
     .picture-selector, .skill-picture-selector {
         width: 100%;
         text-align: center;
 
-        //Image container
         .image-container {
             position: relative;
             width: 140px;
@@ -1060,7 +1040,6 @@
                 margin-left: -1px;
             }
 
-            //Upload button
             .upload-button {
                 position: absolute;
                 bottom: 18px;
@@ -1100,7 +1079,6 @@
         opacity: 1;
     }
 
-    //item
     .carousel-item {
         margin: 0 10x;
     }
@@ -1122,13 +1100,11 @@
         }
     }
 
-    //Carousel slide
     .slick-slide {
         max-width: 120px;
         text-align: center;
         cursor: pointer;
 
-        //Focus state
         &:focus {
             outline: none !important;
         }
@@ -1148,7 +1124,6 @@
         }
     }
 
-    //Carousel navigation position
     .slick-custom {
         opacity: 0;
 
@@ -1161,7 +1136,6 @@
         }
     }
 
-    //Navigation dots
     .slick-dots {
         bottom: -60px !important;
     }
@@ -1186,7 +1160,6 @@
         transition: all 0.3s;
         z-index: 25;
 
-        //Icon
         svg {
             height: 16px;
             width: 16px;
@@ -1194,19 +1167,16 @@
             transition: all .3s;
         }
 
-        //Hover state
         &:hover {
             border-color: darken($fade-grey, 4%);
             color: $white;
             box-shadow: $light-box-shadow;
         }
 
-        //previous arrow
         &.is-prev {
             left: -6px;
         }
 
-        //next arrow
         &.is-next {
             right: -6px;
         }
@@ -1216,6 +1186,11 @@
 .username-form {
     padding-top: 80px;
 }
+
+
+/* ==========================================================================
+4. Media Queries
+========================================================================== */
 
 @media only screen and (max-width: 767px) {
     .avatar-carousel {

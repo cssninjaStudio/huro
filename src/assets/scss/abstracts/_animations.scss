@@ -407,7 +407,6 @@
 12. Levitate
 ========================================================================== */
 
-//Keyframes
 @-webkit-keyframes levitate {
     from {
         -webkit-transform: translate(0, 0);
@@ -442,7 +441,6 @@
     }
 }
 
-//Settings
 .levitate {
     -webkit-animation-name: levitate;
     animation-name: levitate;
@@ -476,11 +474,10 @@
     }
 }
 
-  /* ==========================================================================
+/* ==========================================================================
 14. Translate Left
 ========================================================================== */
 
-//Keyframes
 @-webkit-keyframes translateLeft {
     from {
         -webkit-transform: translate3d(100%, 0, 0);
@@ -505,7 +502,6 @@
     }
 }
 
-//Settings
 .translateLeft {
     -webkit-animation-name: translateLeft;
     animation-name: translateLeft;

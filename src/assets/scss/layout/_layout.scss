@@ -6,6 +6,9 @@
     3. Page Content
     4. Page Title
     5. Minimal Wrapper
+    6. Circular Menu
+    7. Circular Menu Dark mode
+    8. Media Queries
 */
 
 /* ==========================================================================
@@ -352,24 +355,11 @@ body {
 
     .minimal-wrap {
         min-height: calc(100vh - 60px);
-
-        /*&.has-content {
-            display: flex;
-            align-items: center;
-        }
-
-        &.has-sidebar {
-            width: 80%;
-        }
-
-        &.is-fixed {
-            padding-top: 60px;
-        }*/
     }
 }
 
 /* ==========================================================================
-5. Circular Menu
+6. Circular Menu
 ========================================================================== */
 
 .circular-menu {
@@ -396,8 +386,6 @@ body {
             box-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, 0.3);
 
             i {
-                //transform: rotate(-45deg);
-
                 &:first-child {
                     display: none;
                 }
@@ -526,7 +514,7 @@ body {
 }
 
 /* ==========================================================================
-5. Circular Menu Dark Mode
+7. Circular Menu Dark Mode
 ========================================================================== */
 
 body {
@@ -552,7 +540,7 @@ body {
 }
 
 /* ==========================================================================
-6. Media Queries
+8. Media Queries
 ========================================================================== */
 
 @media (max-width: 767px) {
