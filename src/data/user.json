@@ -338,5 +338,45 @@
         "badge":"assets/img/icons/flags/united-states-of-america.svg",
         "position": "Business Analyst",
         "bio": "This is a nice user description that we can use as demo content"
+    },
+    {
+        "id":"34",
+        "name":"John D.",
+        "initials": "JD",
+        "location":"New York, NY",
+        "pic": null,
+        "badge":"assets/img/icons/flags/united-states-of-america.svg",
+        "position": "Web Developer",
+        "bio": "This is a nice user description that we can use as demo content"
+    },
+    {
+        "id":"35",
+        "name":"Sara C.",
+        "initials": "SC",
+        "location":"Los Angeles, CA",
+        "pic": null,
+        "badge":"assets/img/icons/flags/united-states-of-america.svg",
+        "position": "UI/UX Designer",
+        "bio": "This is a nice user description that we can use as demo content"
+    },
+    {
+        "id":"36",
+        "name":"Betty T.",
+        "initials": "BT",
+        "location":"San Diego, CA",
+        "pic": null,
+        "badge":"assets/img/icons/flags/united-states-of-america.svg",
+        "position": "Product Manager",
+        "bio": "This is a nice user description that we can use as demo content"
+    },
+    {
+        "id":"37",
+        "name":"Alan T.",
+        "initials": "AT",
+        "location":"San Francisco, CA",
+        "pic": null,
+        "badge":"assets/img/icons/flags/united-states-of-america.svg",
+        "position": "Software Engineer",
+        "bio": "This is a nice user description that we can use as demo content"
     }
 ]

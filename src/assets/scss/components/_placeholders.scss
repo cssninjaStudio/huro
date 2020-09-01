@@ -30,13 +30,14 @@
         }
 
         h3 {
-            font-size: 1.3rem;
+            font-family: $font;
+            font-size: 1.2rem;
             font-weight: 500;
             color: $dark-text;
         }
 
         p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: $light-text;
             max-width: 280px;
             margin: 0 auto 12px auto;

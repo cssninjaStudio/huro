@@ -227,7 +227,7 @@ body {
         align-items: stretch;
         padding: 16px;
 
-        .popover-avatar {
+        .popover-avatar, .popover-fake-avatar {
             position: relative;
             width: 44px;
             height: 44px;
@@ -246,12 +246,76 @@ body {
 
             .badge {
                 position: absolute;
-                right: -10px;
+                right: -2px;
                 bottom: 0;
-                width: 24px;
-                height: 24px;
-                border: 2px solid $white;
+                width: 20px;
+                height: 20px;
+                border: 1.6px solid $white;
                 border-radius: 50%;
+            }
+        }
+
+        .popover-fake-avatar {
+            background: lighten($fade-grey, 3%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+
+            &.is-primary {
+                background: lighten($primary, 42%);
+
+                span {
+                    color: $primary;
+                }
+            }
+
+            &.is-accent {
+                background: lighten($accent, 36%);
+
+                span {
+                    color: $accent;
+                }
+            }
+
+            &.is-success {
+                background: lighten($success, 45%);
+
+                span {
+                    color: $success;
+                }
+            }
+
+            &.is-info {
+                background: lighten($info, 45%);
+
+                span {
+                    color: $info;
+                }
+            }
+
+            &.is-warning {
+                background: lighten($warning, 32%);
+
+                span {
+                    color: $warning;
+                }
+            }
+
+            &.is-danger {
+                background: lighten($danger, 36%);
+
+                span {
+                    color: $danger;
+                }
+            }
+
+            span {
+                font-size: 1.1rem;
+                font-family: $font;
+                text-transform: uppercase;
+                font-weight: 500;
+                color: $dark-text;
             }
         }
 

@@ -46,7 +46,7 @@
             flex: 1 1 0px;
             display: flex;
             align-items: center;
-            font-size: .9rem;
+            font-size: .8rem;
             font-weight: 600;
             color: $muted-grey;
             text-transform: uppercase;
@@ -103,6 +103,7 @@
             display: flex;
             align-items: center;
             padding: 0 10px;
+            font-family: $font;
 
             &.is-grow {
                 flex-grow: 2;
@@ -148,6 +149,8 @@
                 }
 
                 > div {
+                    line-height: 1.2;
+
                     .item-name {
                         font-weight: 500;
                         color: $dark;
@@ -159,6 +162,7 @@
                         span {
                             display: inline-block;
                             margin-left: 0;
+                            font-size: .9rem;
                         }
 
                         .separator {
@@ -186,8 +190,10 @@
                 }
             }
 
-            .badge {
+            .tag {
                 margin-bottom: 0 !important;
+                line-height: 1.8;
+                height: 1.8em;
             }
         }
     }
@@ -205,6 +211,15 @@ body {
                 border-color: lighten($dark-sidebar, 12%);
 
                 .flex-table-cell {
+
+                    &.is-user, &.is-media {
+                        .h-avatar {
+                            .badge {
+                                border-color: lighten($dark-sidebar, 6%) !important;
+                            }
+                        }
+                    }
+
                     .dark-text {
                         color: $dark-dark-text !important;
                     }
@@ -212,6 +227,12 @@ body {
                     .avatar-stack {
                         .h-avatar {
                             border-color: lighten($dark-sidebar, 6%);
+
+                            .is-more {
+                                .inner {
+                                    border-color: lighten($dark-sidebar, 6%) !important;
+                                }
+                            }
                         }
                     }
                 }

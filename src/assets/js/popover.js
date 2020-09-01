@@ -37,7 +37,7 @@ $(document).ready(function () {
                                 $('.loader-overlay').removeClass('is-active');
                             }, 500);
 
-                            if (data.badge != null) {
+                            if (data[userRef].pic != null) {
                                 var html = `
                                     <div class="profile-popover-block">
 
@@ -64,15 +64,19 @@ $(document).ready(function () {
                                                 ${phoneIcon}
                                             </a>
                                             <a class="popover-icon">
-                                                ${profileIcon}
+                                                ${mailIcon}
                                             </a>
                                             <a class="popover-icon">
-                                                ${mailIcon}
+                                                ${profileIcon}
                                             </a>
                                         </div>
                                     </div>
                                 `;
                             } else {
+                                var classes = new Array('is-danger', 'is-info', 'is-primary', 'is-success', 'is-warning');
+                                var length = classes.length;
+                                var randomClass = classes[ Math.floor ( Math.random() * length )];
+
                                 var html = `
 
                                     <div class="profile-popover-block">
@@ -82,8 +86,11 @@ $(document).ready(function () {
                                         </div>
 
                                         <div class="profile-popover-wrapper">
-                                            <div class="popover-avatar">
-                                                <img class="avatar" src="${data[userRef].pic}">
+                                            <div class="popover-fake-avatar ${randomClass}">
+                                                <div class="fake-avatar">
+                                                    <span>${data[userRef].initials}</span>
+                                                </div>
+                                                <img class="badge" src="${data[userRef].badge}">
                                             </div>
                                             <div class="popover-meta">
                                                 <span class="user-meta">
@@ -222,6 +229,8 @@ $(document).ready(function () {
         33. Alejandro Badajoz
         <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/39.jpg" alt="" data-user-popover="33">
 
+        34. John Daniels (no pic)
+        data-user-popover="34"
     */
 
 })

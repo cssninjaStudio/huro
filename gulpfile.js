@@ -110,6 +110,7 @@ function compileJS() {
     'src/assets/js/dashboards/stocks.js',
     'src/assets/js/dashboards/charts/apex.js',
     'src/assets/js/layouts/list-views/list-view.js',
+    'src/assets/js/layouts/datatables/datatables.js',
     'src/assets/js/layouts/projects/board.js',
     'src/assets/js/messaging.js',
   ])
