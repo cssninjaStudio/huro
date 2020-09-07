@@ -76,12 +76,16 @@ SCSS Imports
 @import "pages/dashboards/hub";
 @import "pages/lists/list-view";
 @import "pages/lists/list-flex";
+@import "pages/grids/grid-users";
+@import "pages/grids/grid-cards";
+@import "pages/grids/grid-tiles";
 @import "pages/demo/demo";
 @import "pages/projects/board";
 @import "pages/projects/projects";
 @import "pages/projects/project";
 @import "pages/messaging/messaging";
 @import "pages/auth/auth";
+@import "pages/profile/_user-profile";
 @import "pages/generic/onboarding";
 
 @import "layout/responsive";

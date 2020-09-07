@@ -73,7 +73,7 @@ $(document).ready(function () {
                                     </div>
                                 `;
                             } else {
-                                var classes = new Array('is-danger', 'is-info', 'is-primary', 'is-success', 'is-warning');
+                                var classes = new Array('is-danger', 'is-info', 'is-primary', 'is-success', 'is-warning', 'is-h-purple', 'is-h-blue', 'is-h-green', 'is-h-orange', 'is-h-red', 'is-h-green');
                                 var length = classes.length;
                                 var randomClass = classes[ Math.floor ( Math.random() * length )];
 
@@ -191,7 +191,7 @@ $(document).ready(function () {
         <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/22.jpg" alt="" data-user-popover="20">
 
         21. Irina Vierbovsky
-        <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/23.jpg" alt="" data-user-popover="23">
+        <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/23.jpg" alt="" data-user-popover="21">
 
         22. Sandrine Coulart
         <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/24.jpg" alt="" data-user-popover="22">
@@ -231,6 +231,15 @@ $(document).ready(function () {
 
         34. John Daniels (no pic)
         data-user-popover="34"
+
+        35. Sara Connor (no pic)
+        data-user-popover="35"
+
+        36. Betty Trejo (no pic)
+        data-user-popover="36"
+
+        37. Alan Thorne (no pic)
+        data-user-popover="37"
     */
 
 })

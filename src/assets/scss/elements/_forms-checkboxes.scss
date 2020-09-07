@@ -609,3 +609,122 @@ body {
         }
     }
 }
+
+/* ==========================================================================
+6. H Toggle
+========================================================================== */
+
+.h-toggle {
+    margin: 0 auto;
+    width: 76px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+
+        &:checked ~ .toggler {
+            background: lighten($placeholder, 10%);
+            border-color: lighten($placeholder, 10%);
+
+            .active, .inactive {
+                transform: translateX(80%) rotate(360deg);
+            }
+
+            .active {
+                opacity: 1;
+            }
+
+            .inactive {
+                opacity: 0;
+            }
+        }
+    }
+
+    .toggler {
+        position: relative;
+        display: block;
+        height: 16px;
+        width: 50px;
+        border: 1.6px solid $placeholder;
+        border-radius: 100px;
+        transition: all .3s;
+
+        .active, .inactive {
+            position: absolute;
+            top: -14px;
+            left: -10px;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background: $white;
+            border: 1.6px solid transparent;
+            box-shadow: $light-box-shadow;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(0) rotate(0);
+            transition: all .3s ease;
+
+            i {
+                color: $white;
+                font-size: 18px;
+            }
+
+            svg {
+                height: 16px;
+                width: 16px;
+            }
+        }
+
+        .inactive {
+            background: $white;
+            border-color: $success;
+            color: $success;
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .active {
+            background: $white;
+            border-color: $light-text;
+            color: $light-text;
+            opacity: 0;
+            z-index: 0;
+        }
+    }
+}
+
+
+/* ==========================================================================
+7. H Toggle Dark mode
+========================================================================== */
+
+body {
+    &.is-dark {
+        .h-toggle {
+
+            input {
+                &:checked ~ .toggler {
+                    background: lighten($dark-sidebar, 2%);
+                }
+            }
+
+            .toggler {
+                border-color: lighten($dark-sidebar, 25%);
+
+                .active, .inactive {
+                    background: lighten($dark-sidebar, 2%);
+                }
+            }
+        }
+    }
+}

@@ -14,10 +14,65 @@
     display: inline-block;
     vertical-align: bottom;
 
+    &.has-dot {
+        &:after {
+            content: '';
+            position: absolute;
+            top: 1px;
+            right: 1px;
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            background: $success;
+            border: 1.8px solid $white;
+        }
+
+        &.has-dot-squared {
+            &:after {
+                top: -3px;
+                right: -3px;
+            }
+        }
+
+        &.dot-primary {
+            &:after {
+                background: $primary;
+            }
+        }
+
+        &.dot-info {
+            &:after {
+                background: $info;
+            }
+        }
+
+        &.dot-warning {
+            &:after {
+                background: $warning;
+            }
+        }
+
+        &.dot-danger {
+            &:after {
+                background: $danger;
+            }
+        }
+
+        &.dot-grey {
+            &:after {
+                background: $light-text;
+            }
+        }
+    }
+
     .avatar {
         width: 40px;
         min-width: 40px;
         height: 40px;
+
+        &.is-squared {
+            border-radius: 10px !important;
+        }
 
         &.is-fake {
             display: flex;
@@ -74,8 +129,57 @@
                 }
             }
 
+            &.is-h-purple {
+                background: lighten($h-purple, 36%);
+
+                span {
+                    color: $h-purple;
+                }
+            }
+
+            &.is-h-orange {
+                background: lighten($h-orange, 18%);
+
+                span {
+                    color: $h-orange;
+                }
+            }
+
+            &.is-h-blue {
+                background: lighten($h-blue, 32%);
+
+                span {
+                    color: $h-blue;
+                }
+            }
+
+            &.is-h-red {
+                background: lighten($h-red, 38%);
+
+                span {
+                    color: $h-red;
+                }
+            }
+
+            &.is-h-green {
+                background: lighten($h-green, 22%);
+
+                span {
+                    color: $h-green;
+                }
+            }
+
+            &.is-h-yellow {
+                background: lighten($h-yellow, 22%);
+
+                span {
+                    color: darken($h-yellow, 8%);
+                }
+            }
+
             span {
                 position: relative;
+
                 //top: -1px;
                 display: block;
                 font-size: 1rem;
@@ -104,6 +208,7 @@
                 span {
                     line-height: 1;
                     position: relative;
+
                     //top: -1px;
                     left: -3px;
                     display: block;
@@ -134,10 +239,32 @@
         min-width: 32px;
         max-height: 32px;
 
+        &.has-dot {
+            &:after {
+                content: '';
+                top: 0;
+                right: 0;
+                height: 8px;
+                width: 8px;
+                border-width: 1.4px;
+            }
+
+            &.has-dot-squared {
+                &:after {
+                    top: -2px;
+                    right: -2px;
+                }
+            }
+        }
+
         .avatar {
             width: 32px;
             min-width: 32px;
             height: 32px;
+
+            &.is-squared {
+                border-radius: 8px !important;
+            }
 
             &.is-fake, &.is-more {
                 width: 32px;
@@ -167,10 +294,32 @@
         max-width: 50px;
         min-width: 50px;
 
+        &.has-dot {
+            &:after {
+                content: '';
+                top: 1px;
+                right: 1px;
+                height: 12px;
+                width: 12px;
+                border-width: 2px;
+            }
+
+            &.has-dot-squared {
+                &:after {
+                    top: -3px;
+                    right: -3px;
+                }
+            }
+        }
+
         .avatar {
             width: 50px;
             min-width: 50px;
             height: 50px;
+
+            &.is-squared {
+                border-radius: 12px !important;
+            }
 
             &.is-fake, &.is-more {
                 width: 50px;
@@ -200,10 +349,32 @@
         max-width: 68px;
         min-width: 68px;
 
+        &.has-dot {
+            &:after {
+                content: '';
+                top: 4px;
+                right: 4px;
+                height: 14px;
+                width: 14px;
+                border-width: 2.6px;
+            }
+
+            &.has-dot-squared {
+                &:after {
+                    top: -4px;
+                    right: -1px;
+                }
+            }
+        }
+
         .avatar {
             width: 68px;
             min-width: 68px;
             height: 68px;
+
+            &.is-squared {
+                border-radius: 16px !important;
+            }
 
             &.is-fake {
                 width: 68px;
@@ -227,10 +398,32 @@
         max-width: 80px;
         min-width: 80px;
 
+        &.has-dot {
+            &:after {
+                content: '';
+                top: 4px;
+                right: 4px;
+                height: 16px;
+                width: 16px;
+                border-width: 2.8px;
+            }
+
+            &.has-dot-squared {
+                &:after {
+                    top: -4px;
+                    right: -1px;
+                }
+            }
+        }
+
         .avatar {
             width: 80px;
             min-width: 80px;
             height: 80px;
+
+            &.is-squared {
+                border-radius: 18px !important;
+            }
 
             &.is-fake {
                 width: 80px;
@@ -244,7 +437,7 @@
         }
 
         .badge {
-            border-width: 3px;
+            border-width: 2.4px;
             height: 28px;
             width: 28px;
         }
@@ -254,10 +447,32 @@
         max-width: 100px;
         min-width: 100px;
 
+        &.has-dot {
+            &:after {
+                content: '';
+                top: 6px;
+                right: 5px;
+                height: 18px;
+                width: 18px;
+                border-width: 2.8px;
+            }
+
+            &.has-dot-squared {
+                &:after {
+                    top: -3px;
+                    right: -3px;
+                }
+            }
+        }
+
         .avatar {
             width: 100px;
             min-width: 100px;
             height: 100px;
+
+            &.is-squared {
+                border-radius: 22px !important;
+            }
 
             &.is-fake {
                 width: 100px;
@@ -303,7 +518,6 @@
         }
 
         &.is-medium {
-            
             border-radius: 50%;
 
             &:not(:first-child) {
@@ -390,6 +604,54 @@ body {
 
                     &.is-danger {
                         background: $danger;
+
+                        span {
+                            color: $white;
+                        }
+                    }
+
+                    &.is-h-purple {
+                        background: $h-purple;
+
+                        span {
+                            color: $white;
+                        }
+                    }
+
+                    &.is-h-orange {
+                        background: $h-orange;
+
+                        span {
+                            color: $white;
+                        }
+                    }
+
+                    &.is-h-blue {
+                        background: $h-blue;
+
+                        span {
+                            color: $white;
+                        }
+                    }
+
+                    &.is-h-red {
+                        background: $h-red;
+
+                        span {
+                            color: $white;
+                        }
+                    }
+
+                    &.is-h-green {
+                        background: $h-green;
+
+                        span {
+                            color: $white;
+                        }
+                    }
+
+                    &.is-h-yellow {
+                        background: $h-yellow;
 
                         span {
                             color: $white;

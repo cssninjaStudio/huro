@@ -9,6 +9,7 @@ Responsive styles
     2. Tablet portrait
     3. Mobile Only
     4. Custom
+    5. Responsive Helpers
 */
 
 /* ==========================================================================
@@ -401,6 +402,7 @@ Responsive styles
             padding: 0 16px;
         }
     }
+
 }
 
 /* ==========================================================================
@@ -411,4 +413,33 @@ Responsive styles
     .panel-close {
         display: none !important;
     }
+}
+
+
+/* ==========================================================================
+5. Responsive Helpers
+========================================================================== */
+
+@media only screen and (max-width: 767px) {
+
+    .h-hidden-mobile {
+        display: none !important;
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+
+    .h-hidden-tablet-p {
+        display: none !important;
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+    .h-hidden-tablet-l {
+        display: none !important;
+    }
+
 }

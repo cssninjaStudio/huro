@@ -79,6 +79,10 @@
             &.is-grow {
                 flex-grow: 2;
             }
+
+            &.is-grow-lg {
+                flex-grow: 3;
+            }
         }
     }
 
@@ -115,6 +119,17 @@
 
             &.cell-end {
                 justify-content: flex-end;
+
+                .button {
+                    &.has-dot {
+                        .dot {
+                            position: relative;
+                            top: 1px;
+                            font-size: 4px;
+                            margin: 0 6px;
+                        }
+                    }
+                }
             }
 
             &.is-bold {
@@ -143,6 +158,10 @@
                     flex-grow: 2;
                 }
 
+                &.is-grow-lg {
+                    flex-grow: 3;
+                }
+
                 > div span:not(.avatar) {
                     display: block;
                     margin-left: 10px;
@@ -159,10 +178,36 @@
                     .item-meta {
                         color: $light-text;
 
+                        svg {
+                            position: relative;
+                            top: 2px;
+                            height: 14px;
+                            width: 14px;
+                            stroke-width: 1.6px;
+                            margin-right: 4px;
+                        }
+
                         span {
                             display: inline-block;
                             margin-left: 0;
                             font-size: .9rem;
+                        }
+
+                        .flex-media {
+                            margin-left: 10px;
+                            margin-top: 4px;
+
+                            .h-avatar {
+                                width: 26px !important;
+                                min-width: 26px !important;
+                                height: 26px !important;
+
+                                .avatar {
+                                    width: 26px !important;
+                                    min-width: 26px !important;
+                                    height: 26px !important;
+                                }
+                            }
                         }
 
                         .separator {
@@ -179,6 +224,15 @@
                     }
                 }
 
+                .media {
+                    display: block;
+                    width: 100%;
+                    max-width: 130px;
+                    min-height: 95px;
+                    object-fit: cover;
+                    border-radius: 8px;
+                }
+
                 .cell-image {
                     display: block;
                     width: 100%;
@@ -190,10 +244,47 @@
                 }
             }
 
+            .cell-icon {
+                margin-right: 4px;
+                color: $light-text;
+            }
+
             .tag {
                 margin-bottom: 0 !important;
                 line-height: 1.8;
                 height: 1.8em;
+            }
+
+            .flex-media {
+                display: flex;
+                align-items: center;
+
+                .meta {
+                    margin-left: 6px;
+                    line-height: 1.3;
+
+                    span {
+                        display: block !important;
+                        font-size: .8rem;
+                        color: $light-text;
+                        font-family: $font;
+                    }
+                }
+            }
+
+            .dot-levels {
+                display: flex;
+                align-items: center;
+
+                .dot {
+                    font-size: 8px;
+                    color: lighten($light-text, 6%);
+                    margin: 0 6px;
+
+                    &.active {
+                        color: $primary;
+                    }
+                }
             }
         }
     }
@@ -211,11 +302,21 @@ body {
                 border-color: lighten($dark-sidebar, 12%);
 
                 .flex-table-cell {
-
                     &.is-user, &.is-media {
                         .h-avatar {
                             .badge {
                                 border-color: lighten($dark-sidebar, 6%) !important;
+                            }
+                        }
+                    }
+
+                    &.cell-end {
+                        .button {
+                            &.dark-outlined {
+                                &:hover {
+                                    border-color: $accent !important;
+                                    color: $accent !important;
+                                }
                             }
                         }
                     }
@@ -232,6 +333,14 @@ body {
                                 .inner {
                                     border-color: lighten($dark-sidebar, 6%) !important;
                                 }
+                            }
+                        }
+                    }
+
+                    .dot-levels {
+                        .dot {
+                            &.active {
+                                color: $accent;
                             }
                         }
                     }
@@ -532,6 +641,10 @@ body {
 
             > span, > .is-pushed-mobile {
                 margin-left: auto;
+
+                &.no-push {
+                    margin-left: 0 !important;
+                }
             }
         }
 

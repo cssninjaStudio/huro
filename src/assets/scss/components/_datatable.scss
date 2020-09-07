@@ -45,6 +45,11 @@
 
     .buttons {
         margin-left: auto;
+        margin-bottom: 0;
+
+        .h-button {
+            margin-bottom: 0;
+        }
     }
 }
 

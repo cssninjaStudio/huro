@@ -59,6 +59,16 @@ body {
         .subtitle {
             color: $light-text;
         }
+
+        a {
+            &.dark-inverted {
+                color: $accent !important;
+            }
+
+            &.dark-inverted-hover:hover {
+                color: $accent !important;
+            }
+        }
     }
 }
 

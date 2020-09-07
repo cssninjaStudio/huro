@@ -192,7 +192,7 @@ body {
 
                     &.active {
                         .collapse-wrap a {
-                            color: darken($light-text, 18%);
+                            //color: darken($primary, 8%);
 
                             svg {
                                 transform: rotate(90deg);

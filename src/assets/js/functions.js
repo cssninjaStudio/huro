@@ -3,8 +3,11 @@
 "use strict";
 
 var themeColors = {
-    primary: '#7105ff',
-    accent: '#5f80c9',
+    primary: '#671cc9',
+    primaryMedium: '#d4b3ff',
+    primaryLight: '#f4edfd',
+    secondary: '#ff227d',
+    accent: '#797bf2',
     success: '#06d6a0',
     info: '#039BE5',
     warning: '#faae42',

@@ -28,7 +28,7 @@ $(document).ready(function () {
         if ($('.infinite-scroll-loader').length) {
             var counter = 0;
 
-            //Inifnite Scroll
+            //Infinite Scroll
             $(window).on('scroll', function () {
                 if ($(window).scrollTop() >= $('body').offset().top + $('body').outerHeight() - window.innerHeight) {
                     var clones = $('.list-view .list-view-inner').html();
@@ -63,7 +63,7 @@ $(document).ready(function () {
         if ($('.infinite-scroll-loader').length) {
             var counter = 0;
 
-            //Inifnite Scroll
+            //Infinite Scroll
             $(window).on('scroll', function () {
                 if ($(window).scrollTop() >= $('body').offset().top + $('body').outerHeight() - window.innerHeight) {
                     var clones = $('.list-view .tab-content.is-active .list-view-inner').html();
@@ -98,7 +98,7 @@ $(document).ready(function () {
         if ($('.infinite-scroll-loader').length) {
             var counter = 0;
 
-            //Inifnite Scroll
+            //Infinite Scroll
             $(window).on('scroll', function () {
                 if ($(window).scrollTop() >= $('body').offset().top + $('body').outerHeight() - window.innerHeight) {
                     var clones = $('.list-view .tab-content.is-active .list-view-inner').html();
@@ -133,7 +133,7 @@ $(document).ready(function () {
         if ($('.infinite-scroll-loader').length) {
             var counter = 0;
 
-            //Inifnite Scroll
+            //Infinite Scroll
             $(window).on('scroll', function () {
                 if ($(window).scrollTop() >= $('body').offset().top + $('body').outerHeight() - window.innerHeight) {
                     var clones = $('.list-view .tab-content.is-active .list-view-inner').html();

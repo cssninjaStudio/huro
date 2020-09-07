@@ -276,6 +276,13 @@ body {
                 border-color: $muted-grey !important;
                 color: $muted-grey !important;
             }
+
+            &.is-dark-outlined {
+                &:hover {
+                    border-color: $accent !important;
+                    color: $accent !important;
+                }
+            }
         }
 
         .button {

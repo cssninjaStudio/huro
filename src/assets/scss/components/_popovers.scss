@@ -310,6 +310,54 @@ body {
                 }
             }
 
+            &.is-h-purple {
+                background: lighten($h-purple, 36%);
+
+                span {
+                    color: $h-purple;
+                }
+            }
+
+            &.is-h-orange {
+                background: lighten($h-orange, 18%);
+
+                span {
+                    color: $h-orange;
+                }
+            }
+
+            &.is-h-blue {
+                background: lighten($h-blue, 32%);
+
+                span {
+                    color: $h-blue;
+                }
+            }
+
+            &.is-h-red {
+                background: lighten($h-red, 38%);
+
+                span {
+                    color: $h-red;
+                }
+            }
+
+            &.is-h-green {
+                background: lighten($h-green, 22%);
+
+                span {
+                    color: $h-green;
+                }
+            }
+
+            &.is-h-yellow {
+                background: lighten($h-yellow, 22%);
+
+                span {
+                    color: darken($h-yellow, 8%);
+                }
+            }
+
             span {
                 font-size: 1.1rem;
                 font-family: $font;

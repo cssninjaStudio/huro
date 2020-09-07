@@ -81,6 +81,7 @@
     "lightgallery.js": "^1.2.0",
     "moment": "^2.22.2",
     "notyf": "^3.7.0",
+    "peity": "^3.3.0",
     "numeral": "^2.0.6",
     "pikaday": "^1.8.0",
     "scrollreveal": "^3.4.0",

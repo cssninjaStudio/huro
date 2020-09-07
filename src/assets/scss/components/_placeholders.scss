@@ -78,6 +78,10 @@
             display: block;
             max-width: 340px;
             margin: 0 auto 12px auto;
+
+            &.is-larger {
+                max-width: 440px;
+            }
         }
 
         h3 {
