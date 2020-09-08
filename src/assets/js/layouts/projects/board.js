@@ -69,7 +69,9 @@ $(document).ready(function () {
                     </div>
                 `);
 
-                changeDemoImages();
+                if (env === 'development') {
+                    changeDemoImages();
+                }
             }, 400);
             setTimeout(function () {
                 $('.kanban-column').each(function () {

@@ -1980,12 +1980,27 @@ body {
 
         .choices__list {
             .choices__item {
-                background-color: $primary;
-                border-color: $primary;
+                position: relative !important;
+                background-color: darken($fade-grey, 2%);
+                border-color: darken($fade-grey, 2%);
+                color: $dark-text;
+                font-family: $font;
                 padding: 4px 10px 5px 10px;
+
+                &:before {
+                    content: '\f00d';
+                    position: absolute;
+                    top: 4.5px;
+                    right: 14px;
+                    font-family: 'Font Awesome\ 5 Free';
+                    font-weight: 900;
+                    color: $light-text;
+                }
 
                 button {
                     border: none;
+                    background-image: none;
+                    margin: 0 -4px 0 4px;
                 }
             }
         }
@@ -2026,8 +2041,9 @@ body {
 
                 .choices__list {
                     .choices__item {
-                        background-color: $accent;
-                        border-color: $accent;
+                        background-color: lighten($dark-sidebar, 8%);
+                        border-color: lighten($dark-sidebar, 8%);
+                        color: $dark-dark-text;
                     }
                 }
             }
@@ -2136,7 +2152,6 @@ body {
     }
 }
 
-
 /* ==========================================================================
 24. Autocomplete Dark mode
 ========================================================================== */
@@ -2160,9 +2175,8 @@ body {
                             .template-wrapper {
                                 .entry-text {
                                     color: $dark-text;
-                
-                                    span {
 
+                                    span {
                                         &:first-child {
                                             color: $dark-dark-text;
                                         }

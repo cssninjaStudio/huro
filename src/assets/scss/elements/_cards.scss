@@ -1,7 +1,12 @@
 /*! _cards.scss | Huro | Css ninja 2020-2021 */
 
+/*
+    1. Simple Cards
+    2. Simple Cards Dark mode
+*/
+
 /* ==========================================================================
-Cards
+1. Simple Cards
 ========================================================================== */
 
 .r-card {
@@ -11,7 +16,6 @@ Cards
     padding: 20px;
     background-color: $white;
     border-radius: 10px;
-    //box-shadow: $light-box-shadow;
     border: 1px solid darken($fade-grey, 3%);
     transition: all .3s;
 }
@@ -23,13 +27,11 @@ Cards
     padding: 20px;
     background-color: $white;
     border-radius: 6px;
-    //box-shadow: $light-box-shadow;
     border: 1px solid darken($fade-grey, 3%);
     transition: all .3s;
 }
 
 .r-card, .s-card {
-
     &.has-margin-bottom {
         margin-bottom: 1.5rem;
     }
@@ -40,6 +42,15 @@ Cards
 
     &.is-raised {
         box-shadow: $light-box-shadow;
+    }
+
+    &.is-primary {
+        background: $primary;
+        border-color: $primary;
+
+        .title, .subtitle, h1, h2, h3, h4, p {
+            color: $smoke-white;
+        }
     }
 
     .card-head {
@@ -70,7 +81,7 @@ Cards
 }
 
 /* ==========================================================================
-Cards Dark mode
+2. Simple Cards Dark mode
 ========================================================================== */
 
 body {
@@ -99,5 +110,34 @@ body {
                 }
             }
         }
+    }
+}
+
+/* ==========================================================================
+3. Cards
+========================================================================== */
+
+.r-card-advanced {
+    border-radius: 10px;
+}
+
+.s-card-advanced {
+    border-radius: 6px;
+}
+
+.r-card-advanced, .s-card-advanced {
+    flex: 1;
+    display: inline-block;
+    width: 100%;
+    background-color: $white;
+    border: 1px solid darken($fade-grey, 3%);
+    transition: all .3s;
+
+    .card-header {
+        padding: 10px 20px;
+    }
+
+    .card-body {
+        padding: 20px;
     }
 }

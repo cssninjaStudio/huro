@@ -121,7 +121,7 @@ title: Avatars
                         <div class="demo-card">
                             <div class="demo-title">
                                 <h3 class="title is-thin is-5">Square Avatar</h3>
-                                <p>Huro Avatars are rounded images used for media and personal pages. Avatar sizes can be controled with css classes. Available modifier classes are <code>is-small</code>, <code>is-medium</code>, <code>is-large</code>, <code>is-big</code> and <code>is-xl</code>. See code for more details about usage.
+                                <p>Avatars can have a square shape instead of a circle shape by adding the <code>is-squared</code> class to the target <code>.avatar</code> element. See code for more details about usage.
                                 </p>
                                 <a class="code-trigger">
                                     <i class="open" data-feather="code"></i>
@@ -177,7 +177,7 @@ title: Avatars
                         <div class="demo-card">
                             <div class="demo-title">
                                 <h3 class="title is-thin is-5">Avatar Dot</h3>
-                                <p>Huro Avatars are rounded images used for media and personal pages. Avatar sizes can be controled with css classes. Available modifier classes are <code>is-small</code>, <code>is-medium</code>, <code>is-large</code>, <code>is-big</code> and <code>is-xl</code>. See code for more details about usage.
+                                <p>Avatars can have a small dot attached to them, if you'd like to show a user status for example. Add the <code>has-dot</code> class to the target <code>.h-avatar</code> element. See code for more details about usage.
                                 </p>
                                 <a class="code-trigger">
                                     <i class="open" data-feather="code"></i>
@@ -206,22 +206,22 @@ title: Avatars
 
                                 <div class="highlight highlight-block">
                                     <pre><code class="code-highlight">
-&#x3C;div class=&#x22;h-avatar is-small&#x22;&#x3E;
+&#x3C;div class=&#x22;h-avatar is-small has-dot&#x22;&#x3E;
     &#x3C;img class=&#x22;avatar&#x22; src=&#x22;https://via.placeholder.com/150x150&#x22; alt=&#x22;&#x22;&#x3E;
 &#x3C;/div&#x3E;
-&#x3C;div class=&#x22;h-avatar&#x22;&#x3E;
+&#x3C;div class=&#x22;h-avatar has-dot&#x22;&#x3E;
     &#x3C;img class=&#x22;avatar&#x22; src=&#x22;https://via.placeholder.com/150x150&#x22; alt=&#x22;&#x22;&#x3E;
 &#x3C;/div&#x3E;
-&#x3C;div class=&#x22;h-avatar is-medium&#x22;&#x3E;
+&#x3C;div class=&#x22;h-avatar is-medium has-dot&#x22;&#x3E;
     &#x3C;img class=&#x22;avatar&#x22; src=&#x22;https://via.placeholder.com/150x150&#x22; alt=&#x22;&#x22;&#x3E;
 &#x3C;/div&#x3E;
-&#x3C;div class=&#x22;h-avatar is-large&#x22;&#x3E;
+&#x3C;div class=&#x22;h-avatar is-large has-dot&#x22;&#x3E;
     &#x3C;img class=&#x22;avatar&#x22; src=&#x22;https://via.placeholder.com/150x150&#x22; alt=&#x22;&#x22;&#x3E;
 &#x3C;/div&#x3E;
-&#x3C;div class=&#x22;h-avatar is-big&#x22;&#x3E;
+&#x3C;div class=&#x22;h-avatar is-big has-dot&#x22;&#x3E;
     &#x3C;img class=&#x22;avatar&#x22; src=&#x22;https://via.placeholder.com/150x150&#x22; alt=&#x22;&#x22;&#x3E;
 &#x3C;/div&#x3E;
-&#x3C;div class=&#x22;h-avatar is-xl&#x22;&#x3E;
+&#x3C;div class=&#x22;h-avatar is-xl has-dot&#x22;&#x3E;
     &#x3C;img class=&#x22;avatar&#x22; src=&#x22;https://via.placeholder.com/150x150&#x22; alt=&#x22;&#x22;&#x3E;
 &#x3C;/div&#x3E;
 </code></pre>
@@ -233,7 +233,7 @@ title: Avatars
                         <div class="demo-card">
                             <div class="demo-title">
                                 <h3 class="title is-thin is-5">Square Avatar Dot</h3>
-                                <p>Huro Avatars are rounded images used for media and personal pages. Avatar sizes can be controled with css classes. Available modifier classes are <code>is-small</code>, <code>is-medium</code>, <code>is-large</code>, <code>is-big</code> and <code>is-xl</code>. See code for more details about usage.
+                                <p>Squared avatars can also have dots. Add the <code>has-dot</code> class to the target <code>.h-avatar</code> element,  as well as the <code>has-dot-squared</code> class to the target <code>.h-avatar</code> parent element. See code for more details about usage.
                                 </p>
                                 <a class="code-trigger">
                                     <i class="open" data-feather="code"></i>
@@ -262,23 +262,23 @@ title: Avatars
 
                                 <div class="highlight highlight-block">
                                     <pre><code class="code-highlight">
-&#x3C;div class=&#x22;h-avatar is-small&#x22;&#x3E;
-    &#x3C;img class=&#x22;avatar&#x22; src=&#x22;https://via.placeholder.com/150x150&#x22; alt=&#x22;&#x22;&#x3E;
+&#x3C;div class=&#x22;h-avatar is-small has-dot has-dot-squared&#x22;&#x3E;
+    &#x3C;img class=&#x22;avatar is-squared&#x22; src=&#x22;https://via.placeholder.com/150x150&#x22; alt=&#x22;&#x22;&#x3E;
 &#x3C;/div&#x3E;
-&#x3C;div class=&#x22;h-avatar&#x22;&#x3E;
-    &#x3C;img class=&#x22;avatar&#x22; src=&#x22;https://via.placeholder.com/150x150&#x22; alt=&#x22;&#x22;&#x3E;
+&#x3C;div class=&#x22;h-avatar has-dot has-dot-squared&#x22;&#x3E;
+    &#x3C;img class=&#x22;avatar is-squared&#x22; src=&#x22;https://via.placeholder.com/150x150&#x22; alt=&#x22;&#x22;&#x3E;
 &#x3C;/div&#x3E;
-&#x3C;div class=&#x22;h-avatar is-medium&#x22;&#x3E;
-    &#x3C;img class=&#x22;avatar&#x22; src=&#x22;https://via.placeholder.com/150x150&#x22; alt=&#x22;&#x22;&#x3E;
+&#x3C;div class=&#x22;h-avatar is-medium has-dot has-dot-squared&#x22;&#x3E;
+    &#x3C;img class=&#x22;avatar is-squared&#x22; src=&#x22;https://via.placeholder.com/150x150&#x22; alt=&#x22;&#x22;&#x3E;
 &#x3C;/div&#x3E;
-&#x3C;div class=&#x22;h-avatar is-large&#x22;&#x3E;
-    &#x3C;img class=&#x22;avatar&#x22; src=&#x22;https://via.placeholder.com/150x150&#x22; alt=&#x22;&#x22;&#x3E;
+&#x3C;div class=&#x22;h-avatar is-large has-dot has-dot-squared&#x22;&#x3E;
+    &#x3C;img class=&#x22;avatar is-squared&#x22; src=&#x22;https://via.placeholder.com/150x150&#x22; alt=&#x22;&#x22;&#x3E;
 &#x3C;/div&#x3E;
-&#x3C;div class=&#x22;h-avatar is-big&#x22;&#x3E;
-    &#x3C;img class=&#x22;avatar&#x22; src=&#x22;https://via.placeholder.com/150x150&#x22; alt=&#x22;&#x22;&#x3E;
+&#x3C;div class=&#x22;h-avatar is-big has-dot has-dot-squared&#x22;&#x3E;
+    &#x3C;img class=&#x22;avatar is-squared&#x22; src=&#x22;https://via.placeholder.com/150x150&#x22; alt=&#x22;&#x22;&#x3E;
 &#x3C;/div&#x3E;
-&#x3C;div class=&#x22;h-avatar is-xl&#x22;&#x3E;
-    &#x3C;img class=&#x22;avatar&#x22; src=&#x22;https://via.placeholder.com/150x150&#x22; alt=&#x22;&#x22;&#x3E;
+&#x3C;div class=&#x22;h-avatar is-xl has-dot has-dot-squared&#x22;&#x3E;
+    &#x3C;img class=&#x22;avatar is-squared&#x22; src=&#x22;https://via.placeholder.com/150x150&#x22; alt=&#x22;&#x22;&#x3E;
 &#x3C;/div&#x3E;
 </code></pre>
                                 </div>
@@ -289,7 +289,7 @@ title: Avatars
                         <div class="demo-card">
                             <div class="demo-title">
                                 <h3 class="title is-thin is-5">Avatar Dot Colors</h3>
-                                <p>Huro Avatars are rounded images used for media and personal pages. Avatar sizes can be controled with css classes. Available modifier classes are <code>is-small</code>, <code>is-medium</code>, <code>is-large</code>, <code>is-big</code> and <code>is-xl</code>. See code for more details about usage.
+                                <p>Avatar dots can have different colors. Available modifier classes are <code>dot-primary</code>, <code>dot-info</code>, <code>dot-warning</code>, <code>dot-danger</code> and <code>dot-grey</code>. See code for more details about usage.
                                 </p>
                                 <a class="code-trigger">
                                     <i class="open" data-feather="code"></i>
@@ -300,7 +300,7 @@ title: Avatars
                                 <div class="h-avatar is-medium has-dot">
                                     <img class="avatar" src="https://via.placeholder.com/150x150"data-demo-src="assets/img/avatars/photos/7.jpg" alt="">
                                 </div>
-                                <div class="h-avatar is-medium has-dot dot-primary">
+                                <div class="h-avatar is-medium has-dot  dot-primary">
                                     <img class="avatar" src="https://via.placeholder.com/150x150"data-demo-src="assets/img/avatars/photos/8.jpg" alt="">
                                 </div>
                                 <div class="h-avatar is-medium has-dot dot-info">
@@ -318,22 +318,22 @@ title: Avatars
 
                                 <div class="highlight highlight-block">
                                     <pre><code class="code-highlight">
-&#x3C;div class=&#x22;h-avatar is-medium&#x22;&#x3E;
+&#x3C;div class=&#x22;h-avatar is-medium has-dot&#x22;&#x3E;
     &#x3C;img class=&#x22;avatar&#x22; src=&#x22;https://via.placeholder.com/150x150&#x22; alt=&#x22;&#x22;&#x3E;
 &#x3C;/div&#x3E;
-&#x3C;div class=&#x22;h-avatar is-medium&#x22;&#x3E;
+&#x3C;div class=&#x22;h-avatar is-medium has-dot dot-primary&#x22;&#x3E;
     &#x3C;img class=&#x22;avatar&#x22; src=&#x22;https://via.placeholder.com/150x150&#x22; alt=&#x22;&#x22;&#x3E;
 &#x3C;/div&#x3E;
-&#x3C;div class=&#x22;h-avatar is-medium&#x22;&#x3E;
+&#x3C;div class=&#x22;h-avatar is-medium has-dot dot-info&#x22;&#x3E;
     &#x3C;img class=&#x22;avatar&#x22; src=&#x22;https://via.placeholder.com/150x150&#x22; alt=&#x22;&#x22;&#x3E;
 &#x3C;/div&#x3E;
-&#x3C;div class=&#x22;h-avatar is-medium&#x22;&#x3E;
+&#x3C;div class=&#x22;h-avatar is-medium has-dot dot-warning&#x22;&#x3E;
     &#x3C;img class=&#x22;avatar&#x22; src=&#x22;https://via.placeholder.com/150x150&#x22; alt=&#x22;&#x22;&#x3E;
 &#x3C;/div&#x3E;
-&#x3C;div class=&#x22;h-avatar is-medium&#x22;&#x3E;
+&#x3C;div class=&#x22;h-avatar is-medium has-dot dot-danger&#x22;&#x3E;
     &#x3C;img class=&#x22;avatar&#x22; src=&#x22;https://via.placeholder.com/150x150&#x22; alt=&#x22;&#x22;&#x3E;
 &#x3C;/div&#x3E;
-&#x3C;div class=&#x22;h-avatar is-medium&#x22;&#x3E;
+&#x3C;div class=&#x22;h-avatar is-medium has-dot dot-grey&#x22;&#x3E;
     &#x3C;img class=&#x22;avatar&#x22; src=&#x22;https://via.placeholder.com/150x150&#x22; alt=&#x22;&#x22;&#x3E;
 &#x3C;/div&#x3E;
 </code></pre>
@@ -494,8 +494,8 @@ title: Avatars
                         <!--Fake Squared Avatar-->
                         <div class="demo-card">
                             <div class="demo-title">
-                                <h3 class="title is-thin is-5">Fake Avatar</h3>
-                                <p>When no default image is provided, you can use a fake avatar. Same size mofifiers are available. See the code examples for more details about usage.
+                                <h3 class="title is-thin is-5">Square Fake Avatar</h3>
+                                <p>Avatars can have a square shape instead of a circle shape by adding the <code>.is-squared</code> class to the target <code>.avatar</code> element. See code for more details about usage.
                                 </p>
                                 <a class="code-trigger">
                                     <i class="open" data-feather="code"></i>
@@ -667,7 +667,7 @@ title: Avatars
                         <div class="demo-card">
                             <div class="demo-title">
                                 <h3 class="title is-thin is-5">Fake Colors</h3>
-                                <p>Fake avatars can have different colors to break monotony. Available color classes are <code>is-primary</code>, <code>is-success</code>, <code>is-info</code>, <code>is-warning</code>, <code>is-danger</code>. Supports dark mode.
+                                <p>Fake avatars can have different colors to break monotony. Available color classes are <code>is-primary</code>, <code>is-success</code>, <code>is-info</code>, <code>is-warning</code>, <code>is-danger</code>, <code>is-h-purple</code>, <code>is-h-orange</code>, <code>is-h-blue</code>, <code>is-h-green</code>, <code>is-h-red</code>, <code>is-h-yellow</code>. Supports dark mode.
                                 </p>
                                 <a class="code-trigger">
                                     <i class="open" data-feather="code"></i>

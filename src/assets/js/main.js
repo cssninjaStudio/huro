@@ -6,6 +6,15 @@ Main initialization file
 
 "use strict";
 
+//Set environment variable (Used for development and demo)
+/* 
+    Possible values:
+    1. development
+    2. customization
+*/
+
+var env = 'development';
+
 //Init Pageloader
 initPageLoader();
 
@@ -14,8 +23,10 @@ $(document).ready(function () {
     //Swicth to Admin / Webapp
     switchLayouts();
 
-    //Change demo images
-    changeDemoImages();
+    if (env === 'development') {
+		//Change demo images
+        changeDemoImages();
+	}
 
     //JS background images
     initBgImages()

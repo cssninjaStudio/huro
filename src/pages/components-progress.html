@@ -65,7 +65,7 @@ title: Progress
                         <div class="demo-card">
                             <div class="demo-title">
                                 <h3 class="title is-thin is-5">Progress Bars</h3>
-                                <p>Huro provides styled navigation tabs that you can use to build nice looking and optimized layouts. Tabs work with a javascript implementation. Check the markup for more details.
+                                <p>Huro provides a very versatile progress bar component that can be used almost anywhere, across a wide variety of layouts. 3 size modifier classes are available: <code>.is-small</code>, <code>.is-smaller</code> and <code>.is-tiny</code>.
                                 </p>
                                 <a class="code-trigger">
                                     <i class="open" data-feather="code"></i>
@@ -75,35 +75,16 @@ title: Progress
                             <div class="card-inner">
 
                                 <progress class="progress is-primary is-tiny" value="65" max="100">65%</progress>
+                                <progress class="progress is-primary is-smaller" value="90" max="100">90%</progress>
                                 <progress class="progress is-primary is-small" value="31" max="100">31%</progress>
                                 <progress class="progress is-primary" value="15" max="100">15%</progress>
 
                                 <div class="highlight highlight-block">
                                     <pre><code class="code-highlight">
-&#x3C;div class=&#x22;tabs-wrapper&#x22;&#x3E;
-    &#x3C;div class=&#x22;tabs-inner&#x22;&#x3E;
-        &#x3C;div class=&#x22;tabs&#x22;&#x3E;
-            &#x3C;ul&#x3E;
-                &#x3C;li data-tab=&#x22;team-tab&#x22; class=&#x22;is-active&#x22;&#x3E;&#x3C;a&#x3E;Team&#x3C;/a&#x3E;&#x3C;/li&#x3E;
-                &#x3C;li data-tab=&#x22;projects-tab&#x22;&#x3E;&#x3C;a&#x3E;Projects&#x3C;/a&#x3E;&#x3C;/li&#x3E;
-                &#x3C;li data-tab=&#x22;tasks-tab&#x22;&#x3E;&#x3C;a&#x3E;Tasks&#x3C;/a&#x3E;&#x3C;/li&#x3E;
-            &#x3C;/ul&#x3E;
-        &#x3C;/div&#x3E;
-    &#x3C;/div&#x3E;
-    
-
-    &#x3C;div id=&#x22;team-tab&#x22; class=&#x22;tab-content is-active&#x22;&#x3E;
-        &#x3C;p&#x3E;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid iudicant sensus? Primum quid tu dicis breve? Etiam beatissimum? Ne discipulum abducam, times. Quae diligentissime contra Aristonem dicuntur a Chryippo. Duo Reges: constructio interrete.&#x3C;/p&#x3E;
-    &#x3C;/div&#x3E;
-
-    &#x3C;div id=&#x22;projects-tab&#x22; class=&#x22;tab-content&#x22;&#x3E;
-        &#x3C;p&#x3E;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid iudicant sensus? Primum quid tu dicis breve? Etiam beatissimum? Ne discipulum abducam, times. Quae diligentissime contra Aristonem dicuntur a Chryippo. Duo Reges: constructio interrete.&#x3C;/p&#x3E;
-    &#x3C;/div&#x3E;
-
-    &#x3C;div id=&#x22;tasks-tab&#x22; class=&#x22;tab-content&#x22;&#x3E;
-        &#x3C;p&#x3E;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid iudicant sensus? Primum quid tu dicis breve? Etiam beatissimum? Ne discipulum abducam, times. Quae diligentissime contra Aristonem dicuntur a Chryippo. Duo Reges: constructio interrete.&#x3C;/p&#x3E;
-    &#x3C;/div&#x3E;
-&#x3C;/div&#x3E;
+&#x3C;progress class=&#x22;progress is-primary is-tiny&#x22; value=&#x22;65&#x22; max=&#x22;100&#x22;&#x3E;65%&#x3C;/progress&#x3E;
+&#x3C;progress class=&#x22;progress is-primary is-smaller&#x22; value=&#x22;90&#x22; max=&#x22;100&#x22;&#x3E;90%&#x3C;/progress&#x3E;
+&#x3C;progress class=&#x22;progress is-primary is-small&#x22; value=&#x22;31&#x22; max=&#x22;100&#x22;&#x3E;31%&#x3C;/progress&#x3E;
+&#x3C;progress class=&#x22;progress is-primary&#x22; value=&#x22;15&#x22; max=&#x22;100&#x22;&#x3E;15%&#x3C;/progress&#x3E;
 </code></pre>
                                 </div>
                             </div>
@@ -113,7 +94,7 @@ title: Progress
                         <div class="demo-card">
                             <div class="demo-title">
                                 <h3 class="title is-thin is-5">Progress Bars</h3>
-                                <p>Huro provides styled navigation tabs that you can use to build nice looking and optimized layouts. Tabs work with a javascript implementation. Check the markup for more details.
+                                <p>Huro progress bars can also have different colors. Available modifier classes are: <code>.is-primary</code>, <code>.is-success</code> <code>.is-info</code>, <code>.is-warning</code>, and <code>.is-danger</code>. 
                                 </p>
                                 <a class="code-trigger">
                                     <i class="open" data-feather="code"></i>
@@ -130,30 +111,11 @@ title: Progress
 
                                 <div class="highlight highlight-block">
                                     <pre><code class="code-highlight">
-&#x3C;div class=&#x22;tabs-wrapper&#x22;&#x3E;
-    &#x3C;div class=&#x22;tabs-inner&#x22;&#x3E;
-        &#x3C;div class=&#x22;tabs&#x22;&#x3E;
-            &#x3C;ul&#x3E;
-                &#x3C;li data-tab=&#x22;team-tab&#x22; class=&#x22;is-active&#x22;&#x3E;&#x3C;a&#x3E;Team&#x3C;/a&#x3E;&#x3C;/li&#x3E;
-                &#x3C;li data-tab=&#x22;projects-tab&#x22;&#x3E;&#x3C;a&#x3E;Projects&#x3C;/a&#x3E;&#x3C;/li&#x3E;
-                &#x3C;li data-tab=&#x22;tasks-tab&#x22;&#x3E;&#x3C;a&#x3E;Tasks&#x3C;/a&#x3E;&#x3C;/li&#x3E;
-            &#x3C;/ul&#x3E;
-        &#x3C;/div&#x3E;
-    &#x3C;/div&#x3E;
-    
-
-    &#x3C;div id=&#x22;team-tab&#x22; class=&#x22;tab-content is-active&#x22;&#x3E;
-        &#x3C;p&#x3E;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid iudicant sensus? Primum quid tu dicis breve? Etiam beatissimum? Ne discipulum abducam, times. Quae diligentissime contra Aristonem dicuntur a Chryippo. Duo Reges: constructio interrete.&#x3C;/p&#x3E;
-    &#x3C;/div&#x3E;
-
-    &#x3C;div id=&#x22;projects-tab&#x22; class=&#x22;tab-content&#x22;&#x3E;
-        &#x3C;p&#x3E;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid iudicant sensus? Primum quid tu dicis breve? Etiam beatissimum? Ne discipulum abducam, times. Quae diligentissime contra Aristonem dicuntur a Chryippo. Duo Reges: constructio interrete.&#x3C;/p&#x3E;
-    &#x3C;/div&#x3E;
-
-    &#x3C;div id=&#x22;tasks-tab&#x22; class=&#x22;tab-content&#x22;&#x3E;
-        &#x3C;p&#x3E;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid iudicant sensus? Primum quid tu dicis breve? Etiam beatissimum? Ne discipulum abducam, times. Quae diligentissime contra Aristonem dicuntur a Chryippo. Duo Reges: constructio interrete.&#x3C;/p&#x3E;
-    &#x3C;/div&#x3E;
-&#x3C;/div&#x3E;
+&#x3C;progress class=&#x22;progress is-primary is-tiny&#x22; value=&#x22;70&#x22; max=&#x22;100&#x22;&#x3E;70%&#x3C;/progress&#x3E;
+&#x3C;progress class=&#x22;progress is-success is-tiny&#x22; value=&#x22;55&#x22; max=&#x22;100&#x22;&#x3E;55%&#x3C;/progress&#x3E;
+&#x3C;progress class=&#x22;progress is-info is-tiny&#x22; value=&#x22;45&#x22; max=&#x22;100&#x22;&#x3E;45%&#x3C;/progress&#x3E;
+&#x3C;progress class=&#x22;progress is-warning is-tiny&#x22; value=&#x22;60&#x22; max=&#x22;100&#x22;&#x3E;60%&#x3C;/progress&#x3E;
+&#x3C;progress class=&#x22;progress is-danger is-tiny&#x22; value=&#x22;38&#x22; max=&#x22;100&#x22;&#x3E;38%&#x3C;/progress&#x3E;
 </code></pre>
                                 </div>
                             </div>
@@ -163,7 +125,7 @@ title: Progress
                         <div class="demo-card">
                             <div class="demo-title">
                                 <h3 class="title is-thin is-5">Indeterminate Progress</h3>
-                                <p>Huro provides styled navigation tabs that you can use to build nice looking and optimized layouts. Tabs work with a javascript implementation. Check the markup for more details.
+                                <p>In some particular use cases, you might want to show an undetermined progress. If you want your progress bars to show an undetermined state, you just need to omit the <code>value=""</code> attribute. The CSS will take care of the rest.
                                 </p>
                                 <a class="code-trigger">
                                     <i class="open" data-feather="code"></i>
@@ -180,30 +142,11 @@ title: Progress
 
                                 <div class="highlight highlight-block">
                                     <pre><code class="code-highlight">
-&#x3C;div class=&#x22;tabs-wrapper&#x22;&#x3E;
-    &#x3C;div class=&#x22;tabs-inner&#x22;&#x3E;
-        &#x3C;div class=&#x22;tabs&#x22;&#x3E;
-            &#x3C;ul&#x3E;
-                &#x3C;li data-tab=&#x22;team-tab&#x22; class=&#x22;is-active&#x22;&#x3E;&#x3C;a&#x3E;Team&#x3C;/a&#x3E;&#x3C;/li&#x3E;
-                &#x3C;li data-tab=&#x22;projects-tab&#x22;&#x3E;&#x3C;a&#x3E;Projects&#x3C;/a&#x3E;&#x3C;/li&#x3E;
-                &#x3C;li data-tab=&#x22;tasks-tab&#x22;&#x3E;&#x3C;a&#x3E;Tasks&#x3C;/a&#x3E;&#x3C;/li&#x3E;
-            &#x3C;/ul&#x3E;
-        &#x3C;/div&#x3E;
-    &#x3C;/div&#x3E;
-    
-
-    &#x3C;div id=&#x22;team-tab&#x22; class=&#x22;tab-content is-active&#x22;&#x3E;
-        &#x3C;p&#x3E;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid iudicant sensus? Primum quid tu dicis breve? Etiam beatissimum? Ne discipulum abducam, times. Quae diligentissime contra Aristonem dicuntur a Chryippo. Duo Reges: constructio interrete.&#x3C;/p&#x3E;
-    &#x3C;/div&#x3E;
-
-    &#x3C;div id=&#x22;projects-tab&#x22; class=&#x22;tab-content&#x22;&#x3E;
-        &#x3C;p&#x3E;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid iudicant sensus? Primum quid tu dicis breve? Etiam beatissimum? Ne discipulum abducam, times. Quae diligentissime contra Aristonem dicuntur a Chryippo. Duo Reges: constructio interrete.&#x3C;/p&#x3E;
-    &#x3C;/div&#x3E;
-
-    &#x3C;div id=&#x22;tasks-tab&#x22; class=&#x22;tab-content&#x22;&#x3E;
-        &#x3C;p&#x3E;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid iudicant sensus? Primum quid tu dicis breve? Etiam beatissimum? Ne discipulum abducam, times. Quae diligentissime contra Aristonem dicuntur a Chryippo. Duo Reges: constructio interrete.&#x3C;/p&#x3E;
-    &#x3C;/div&#x3E;
-&#x3C;/div&#x3E;
+&#x3C;progress class=&#x22;progress is-primary is-tiny&#x22;  max=&#x22;100&#x22;&#x3E;70%&#x3C;/progress&#x3E;
+&#x3C;progress class=&#x22;progress is-success is-tiny&#x22; max=&#x22;100&#x22;&#x3E;55%&#x3C;/progress&#x3E;
+&#x3C;progress class=&#x22;progress is-info is-tiny&#x22; max=&#x22;100&#x22;&#x3E;45%&#x3C;/progress&#x3E;
+&#x3C;progress class=&#x22;progress is-warning is-tiny&#x22; max=&#x22;100&#x22;&#x3E;60%&#x3C;/progress&#x3E;
+&#x3C;progress class=&#x22;progress is-danger is-tiny&#x22; max=&#x22;100&#x22;&#x3E;38%&#x3C;/progress&#x3E;
 </code></pre>
                                 </div>
                             </div>

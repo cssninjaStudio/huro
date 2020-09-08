@@ -139,6 +139,15 @@
 body {
     &.is-dark {
         .card-hub {
+
+            .hub-header {
+                .h-avatar {
+                    .badge {
+                        border-color: lighten($dark-sidebar, 6%) !important;
+                    }
+                }
+            }
+
             .hub-body {
                 .body-inner {
                     .hub-card {

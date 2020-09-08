@@ -3,6 +3,7 @@
 /*
     1. Pickaday Datepicker
     2. Pickaday Datepicker Dark mode
+    3. Bulma Datetimepickers
 */
 
 /* ==========================================================================
@@ -43,7 +44,6 @@
             }
 
             tbody {
-
                 td {
                     &.is-selected {
                         .pika-day, .pika-button {
@@ -87,10 +87,11 @@ body {
             border-color: lighten($dark-sidebar, 8%) !important;
 
             .pika-title {
-                color: $dark-dark-text;
+                color: $dark-dark-text !important;
 
                 .pika-label {
                     background: $dark-sidebar !important;
+                    color: $dark-dark-text !important;
                 }
             }
 
@@ -102,7 +103,6 @@ body {
                 }
 
                 tbody {
-
                     td {
                         &.is-selected {
                             .pika-day, .pika-button {
@@ -110,20 +110,252 @@ body {
                                 box-shadow: $accent-box-shadow;
                             }
                         }
-    
+
                         &:hover {
                             .pika-day, .pika-button {
                                 background: lighten($dark-sidebar, 8%) !important;
                                 color: $white;
                             }
                         }
-    
+
                         .pika-day, .pika-button {
                             background: $dark-sidebar;
                         }
                     }
                 }
             }
+        }
+    }
+}
+
+/* ==========================================================================
+3. Bulma Datetimepickers
+========================================================================== */
+
+.datetimepicker-dummy {
+    height: 38px;
+
+    &:before {
+        content: '\f133';
+        mask: none !important;
+        background-color: transparent;
+        font-family: 'Font Awesome\ 5 Free';
+        font-weight: 900;
+        color: $light-text;
+    }
+
+    .datetimepicker-dummy-wrapper {
+        border-color: #e3e3e3;
+        border-radius: 4px;
+    }
+
+    .datetimepicker-clear-button {
+        height: 28px;
+        margin: .3rem .2rem 0 0 !important;
+        color: $light-text !important;
+    }
+}
+
+.datetimepicker-wrapper {
+    .is-datetimepicker-default {
+        .datetimepicker-container {
+            .datepicker {
+                .datepicker-body {
+                    .datepicker-years, .datepicker-months, .datepicker-dates {
+                        &::-webkit-scrollbar {
+                            width: 6px !important;
+                        }
+
+                        &::-webkit-scrollbar-thumb {
+                            border-radius: 10px !important;
+                            background: rgba(0, 0, 0, 0.2) !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        
+    }
+
+    .datetimepicker-footer {
+        padding: 20px 10px !important;
+    }
+}
+
+/* ==========================================================================
+4. Bulma Datetimepickers Dark mode
+========================================================================== */
+
+body {
+    &.is-dark {
+        .datetimepicker-dummy {
+            .datetimepicker-dummy-wrapper {
+                background: lighten($dark-sidebar, 2%);
+                border-color: lighten($dark-sidebar, 6%);
+
+                .datetimepicker-dummy-input {
+                    color: $dark-dark-text;
+                }
+            }
+        }
+
+        .datetimepicker-container {
+            background: darken($dark-sidebar, 2%);
+
+            &:after {
+                border-bottom-color: darken($dark-sidebar, 2%) !important;
+            }
+
+            .datetimepicker-header {
+                .datetimepicker-selection-details {
+                    .datetimepicker-selection-start {
+                        .datetimepicker-selection-wrapper {
+                            .datetimepicker-selection-day {
+                                color: $accent;
+                            }
+
+                            .datetimepicker-selection-date {
+                                .datetimepicker-selection-month {
+                                    color: $dark-dark-text;
+                                }
+
+                                .datetimepicker-selection-weekday {
+                                    color: $accent;
+                                }
+                            }
+                        }
+
+                        .datetimepicker-selection-time {
+                            .datetimepicker-selection-hour {
+                                color: $dark-dark-text;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .datepicker {
+                .datepicker-nav {
+                    background: $accent !important;
+
+                    .button {
+                        background: $accent !important;
+                        border-color: $accent !important;
+                        color: $smoke-white !important;
+                    }
+                }
+
+                .datepicker-body {
+                    .datepicker-years {
+                        .datepicker-year {
+                            &:hover {
+                                border-color: lighten($dark-sidebar, 4%) !important;
+                                background: lighten($dark-sidebar, 4%) !important;
+                            }
+
+                            &.is-active {
+                                border-color: $accent !important;
+                                background: $accent !important;
+
+                                .item {
+                                    color: $white !important;
+                                }
+                            }
+
+                            .item {
+                                color: $dark-dark-text;
+                            }
+                        }
+                    }
+
+                    .datepicker-months {
+                        .datepicker-month {
+                            color: $dark-dark-text;
+
+                            &:hover {
+                                border-color: lighten($dark-sidebar, 4%) !important;
+                                background: lighten($dark-sidebar, 4%) !important;
+                            }
+
+                            &.is-active {
+                                border-color: $accent !important;
+                                background: $accent !important;
+                                color: $white !important;
+                            }
+                        }
+                    }
+
+                    .datepicker-dates {
+                        .datepicker-days {
+                            .datepicker-date {
+                                &:not(.is-current-month) {
+                                    border-color: lighten($dark-sidebar, 8%) !important;
+                                    background: lighten($dark-sidebar, 8%) !important;
+
+                                    .date-item {
+                                        color: $light-text !important;
+                                    }
+                                }
+
+                                .date-item {
+                                    color: $dark-dark-text;
+
+                                    &:hover {
+                                        border-color: $accent !important;
+                                        color: $accent !important;
+                                        background: lighten($dark-sidebar, 8%) !important;
+                                    }
+
+                                    &.is-today {
+                                        border-color: $accent !important;
+                                        color: $accent !important;
+                                    }
+
+                                    &.is-active {
+                                        border-color: $accent !important;
+                                        background: $accent !important;
+                                        color: $white !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .timepicker {
+                .timepicker-start, .timepicker-end {
+                    .timepicker-hours, .timepicker-minutes {
+                        .timepicker-input {
+                            .timepicker-input-number {
+                                color: $dark-dark-text;
+                            }
+                        }
+
+                        .timepicker-next, .timepicker-previous {
+                            &:hover {
+                                border-color: lighten($dark-sidebar, 4%) !important;
+                                background: lighten($dark-sidebar, 4%) !important;
+                            }
+                        }
+                    }
+
+                    .timepicker-time-divider {
+                        color: $accent !important;
+                    }
+                }
+
+                .timepicker-end {
+                    &:before {
+                        background: lighten($dark-sidebar, 12%) !important;
+                    }
+                }
+            }
+        }
+
+        .datetimepicker-footer {
+            background: darken($dark-sidebar, 2%);
         }
     }
 }

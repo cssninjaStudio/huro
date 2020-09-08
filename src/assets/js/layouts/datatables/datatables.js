@@ -179,7 +179,9 @@ $(document).ready(function () {
             nextPage: '<i class="fas fa-angle-right"></i>',
             prevPage: '<i class="fas fa-angle-left"></i>',
             afterRefresh: function () {
-                changeDemoImages();
+                if (env === 'development') {
+                    changeDemoImages();
+                }
                 initDropdowns();
             },
             data: [
@@ -581,7 +583,9 @@ $(document).ready(function () {
 
         setTimeout(function () {
             //Change demo images
-            changeDemoImages();
+            if (env === 'development') {
+                changeDemoImages();
+            }
 
             //initUserPopovers();
             adjustDropdowns();
@@ -631,7 +635,9 @@ $(document).ready(function () {
             nextPage: '<i class="fas fa-angle-right"></i>',
             prevPage: '<i class="fas fa-angle-left"></i>',
             afterRefresh: function () {
-                changeDemoImages();
+                if (env === 'development') {
+                    changeDemoImages();
+                }
                 initDropdowns();
             },
             data: [
@@ -1514,7 +1520,9 @@ $(document).ready(function () {
 
         setTimeout(function () {
             //Change demo images
-            changeDemoImages();
+            if (env === 'development') {
+                changeDemoImages();
+            }
 
             //initUserPopovers();
             adjustDropdowns();
@@ -1562,7 +1570,9 @@ $(document).ready(function () {
             nextPage: '<i class="fas fa-angle-right"></i>',
             prevPage: '<i class="fas fa-angle-left"></i>',
             afterRefresh: function () {
-                changeDemoImages();
+                if (env === 'development') {
+                    changeDemoImages();
+                }
                 initDropdowns();
             },
             data: [
@@ -2083,7 +2093,9 @@ $(document).ready(function () {
 
         setTimeout(function () {
             //Change demo images
-            changeDemoImages();
+            if (env === 'development') {
+                changeDemoImages();
+            }
 
             //initUserPopovers();
             adjustDropdowns();
@@ -2130,7 +2142,9 @@ $(document).ready(function () {
             nextPage: '<i class="fas fa-angle-right"></i>',
             prevPage: '<i class="fas fa-angle-left"></i>',
             afterRefresh: function () {
-                changeDemoImages();
+                if (env === 'development') {
+                    changeDemoImages();
+                }
                 initDropdowns();
             },
             data: []
@@ -2138,7 +2152,9 @@ $(document).ready(function () {
 
         setTimeout(function () {
             //Change demo images
-            changeDemoImages();
+            if (env === 'development') {
+                changeDemoImages();
+            }
 
             adjustDropdowns();
 

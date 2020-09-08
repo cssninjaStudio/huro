@@ -51,6 +51,42 @@ $(document).ready(function () {
                     tagName: 'i',
                     text: ''
                 }
+            },
+            {
+                type: 'purple',
+                background: themeColors.purple,
+                icon: {
+                    className: 'fas fa-check',
+                    tagName: 'i',
+                    text: ''
+                }
+            },
+            {
+                type: 'blue',
+                background: themeColors.blue,
+                icon: {
+                    className: 'fas fa-check',
+                    tagName: 'i',
+                    text: ''
+                }
+            },
+            {
+                type: 'green',
+                background: themeColors.green,
+                icon: {
+                    className: 'fas fa-check',
+                    tagName: 'i',
+                    text: ''
+                }
+            },
+            {
+                type: 'orange',
+                background: themeColors.orange,
+                icon: {
+                    className: 'fas fa-check',
+                    tagName: 'i',
+                    text: ''
+                }
             }
         ]
     });
@@ -77,6 +113,34 @@ $(document).ready(function () {
             notyf.open({
                 type: 'warning',
                 message: 'Please be careful when driving back to home.'
+            });
+        })
+
+        $('#purple-toast-demo').on('click', function () {
+            notyf.open({
+                type: 'purple',
+                message: 'This is a nice looking purple toast notification.'
+            });
+        })
+
+        $('#blue-toast-demo').on('click', function () {
+            notyf.open({
+                type: 'blue',
+                message: 'This is a nice looking blue toast notification.'
+            });
+        })
+
+        $('#green-toast-demo').on('click', function () {
+            notyf.open({
+                type: 'green',
+                message: 'This is a nice looking green toast notification.'
+            });
+        })
+
+        $('#orange-toast-demo').on('click', function () {
+            notyf.open({
+                type: 'orange',
+                message: 'This is a nice looking orange toast notification.'
             });
         })
 
@@ -270,6 +334,65 @@ $(document).ready(function () {
             }
         });
     }
+
+    //Bulma datepicker extension
+    if ($('#bulma-datepicker-1').length) {
+        bulmaCalendar.attach('#bulma-datepicker-1', {
+            color: themeColors.primary,
+            lang: 'en'
+        });
+    }
+
+    if ($('#bulma-datepicker-2').length) {
+        bulmaCalendar.attach('#bulma-datepicker-2', {
+            displayMode: 'dialog',
+            startDate: new Date('02/11/2018'),
+            minDate: '01/01/2018',
+            maxDate: '12/31/2018',
+            color: themeColors.primary,
+            lang: 'en'
+        });
+    }
+
+    if ($('#bulma-datepicker-3').length) {
+        bulmaCalendar.attach('#bulma-datepicker-3', {
+            displayMode: 'inline',
+            startDate: new Date('02/11/2018'),
+            minDate: '01/01/2018',
+            maxDate: '12/31/2018',
+            color: themeColors.primary,
+            lang: 'en'
+        });
+    }
+
+    if ($('#bulma-datepicker-4').length) {
+        bulmaCalendar.attach('#bulma-datepicker-4', {
+            color: themeColors.primary,
+            lang: 'en'
+        });
+    }
+
+    if ($('#bulma-datepicker-5').length) {
+        bulmaCalendar.attach('#bulma-datepicker-5', {
+            color: themeColors.primary,
+            lang: 'en'
+        });
+    }
+
+    if ($('#bulma-datepicker-6').length) {
+        bulmaCalendar.attach('#bulma-datepicker-6', {
+            color: themeColors.primary,
+            lang: 'en'
+        });
+    }
+
+    if ($('#bulma-datepicker-7').length) {
+        bulmaCalendar.attach('#bulma-datepicker-7', {
+            color: themeColors.primary,
+            lang: 'en'
+        });
+    }
+    
 
     //Choices js
     if ($('#choices-text-remove-button').length) {

@@ -12,6 +12,11 @@ var themeColors = {
     info: '#039BE5',
     warning: '#faae42',
     danger: '#FF7273',
+    purple: '#8269B2',
+    blue: '#37C3FF',
+    green: '#93E088',
+    yellow: '#FFD66E',
+    orange: '#FFA981'
 }
 
 //Switch Layouts
