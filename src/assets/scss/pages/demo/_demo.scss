@@ -22,6 +22,14 @@
         margin-bottom: 3rem;
     }
 
+    &.has-margin-top {
+        margin-top: 3rem;
+    }
+
+    &.is-narrow {
+        margin-bottom: 0;
+    }
+
     .demo-title {
         h3 {
             margin-bottom: .75rem;
@@ -230,6 +238,30 @@
         &.is-light-text {
             background: $light-text;
         }
+
+        &.is-h-purple {
+            background: $h-purple;
+        }
+
+        &.is-h-blue {
+            background: $h-blue;
+        }
+
+        &.is-h-green {
+            background: $h-green;
+        }
+
+        &.is-h-red {
+            background: $h-red;
+        }
+
+        &.is-h-yellow {
+            background: $h-yellow;
+        }
+
+        &.is-h-orange {
+            background: $h-orange;
+        }
     }
 
     .meta {
@@ -251,7 +283,7 @@
     }
 }
 
-.demo-s-card {
+.demo-s-card, .demo-r-card, .demo-l-card {
     .title {
         margin-bottom: 6px;
     }

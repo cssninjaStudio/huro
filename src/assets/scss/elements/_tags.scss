@@ -119,12 +119,57 @@
         }
     }
 
+    &.is-blue {
+        background: $h-blue;
+        color: $white;
+
+        &.is-elevated {
+            box-shadow: $h-blue-box-shadow;
+        }
+
+        &.is-outlined {
+            background: none !important;
+            color: $h-blue;
+            border: 1px solid $h-blue;
+        }
+    }
+
+    &.is-green {
+        background: $h-green;
+        color: $white;
+
+        &.is-elevated {
+            box-shadow: $green-box-shadow;
+        }
+
+        &.is-outlined {
+            background: none !important;
+            color: $h-green;
+            border: 1px solid $h-green;
+        }
+    }
+
+    &.is-purple {
+        background: $h-purple;
+        color: $white;
+
+        &.is-elevated {
+            box-shadow: $h-purple-box-shadow;
+        }
+
+        &.is-outlined {
+            background: none !important;
+            color: $h-purple;
+            border: 1px solid $h-purple;
+        }
+    }
+
     &.is-orange {
         background: $h-orange;
         color: $white;
 
         &.is-elevated {
-            box-shadow: $orange-box-shadow;
+            box-shadow: $h-orange-box-shadow;
         }
 
         &.is-outlined {
