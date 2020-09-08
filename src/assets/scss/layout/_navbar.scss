@@ -582,9 +582,11 @@ body {
     &.is-transparent {
         background: transparent;
         box-shadow: none;
+        border-bottom-color: transparent;
 
         &.is-solid, &.is-scrolled {
             background: $white;
+            border-bottom-color: $fade-grey;
         }
 
         &.is-solid {
@@ -838,7 +840,6 @@ body {
     }
 }
 
-
 /* ==========================================================================
 4. Webapp Navbar Dark mode
 ========================================================================== */
@@ -848,6 +849,17 @@ body {
         .webapp-navbar {
             background: darken($dark-sidebar, 2%);
             border-color: lighten($dark-sidebar, 1%);
+
+            &.is-transparent {
+                background: transparent;
+                box-shadow: none;
+                border-bottom-color: transparent;
+
+                &.is-solid, &.is-scrolled {
+                    background: darken($dark-sidebar, 2%);
+                    border-color: lighten($dark-sidebar, 1%);
+                }
+            }
 
             .webapp-navbar-inner {
                 .left {
@@ -1013,7 +1025,6 @@ body {
     }
 }
 
-
 /* ==========================================================================
 5. Webapp Subnavbar
 ========================================================================== */
@@ -1049,7 +1060,6 @@ body {
         &.is-active {
             display: block;
         }
-
 
         .tabs {
             margin: 0 auto 10px auto;
@@ -1190,4 +1200,3 @@ body {
         }
     }
 }
-

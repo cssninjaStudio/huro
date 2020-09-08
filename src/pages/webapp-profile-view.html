@@ -1,31 +1,18 @@
 ---
-layout: default
-title: User profile
+layout: webapp-v2
+title: User Profile
 ---
 
-{{> layouts-sidebar}}
 {{> layouts-mobile-subsidebar}}
 
 <!-- Content Wrapper -->
-<div id="user-profile" class="view-wrapper" data-naver-offset="214" data-menu-item="#layouts-sidebar-menu"
-    data-mobile-item="#home-sidebar-menu-mobile">
+<div id="user-profile" class="view-wrapper is-webapp" data-page-title="User Profile" data-naver-offset="214"
+    data-menu-item="#layouts-navbar-menu" data-mobile-item="#home-sidebar-menu-mobile">
 
     <div class="page-content-wrapper">
         <div class="page-content is-relative">
 
-            <div class="page-title has-text-centered">
-                <!-- Sidebar Trigger -->
-                <div class="huro-hamburger nav-trigger push-resize" data-sidebar="layouts-sidebar">
-                    <span class="menu-toggle has-chevron">
-                        <span class="icon-box-toggle">
-                            <span class="rotate">
-                                <i class="icon-line-top"></i>
-                                <i class="icon-line-center"></i>
-                                <i class="icon-line-bottom"></i>
-                            </span>
-                        </span>
-                    </span>
-                </div>
+            <div class="page-title has-text-centered is-webapp">
 
                 <div class="title-wrap">
                     <h1 class="title is-4">User Profile</h1>
@@ -34,10 +21,10 @@ title: User profile
                 {{> toolbar}}
             </div>
 
-            <div class="page-content-inner">
+            <div class="page-content-inner is-webapp">
 
                 <!--User profile-->
-                <div class="profile-wrapper">
+                <div class="profile-wrapper is-webapp">
                     <div class="profile-header has-text-centered">
                         <div class="h-avatar is-xl">
                             <img class="avatar" src="https://via.placeholder.com/150x150"
@@ -623,5 +610,4 @@ title: User profile
 
         </div>
     </div>
-
 </div>

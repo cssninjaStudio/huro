@@ -522,18 +522,19 @@ body {
         .circular-menu {
 
             &:after {
-                background: darken($accent, 4%);
+                background: darken($dark-sidebar, 2%);
+                box-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, 0.3) !important;
             }
 
             &.active {
                 .floating-btn {
-                    box-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, 0.3);
+                    box-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, 0.3) !important;
                 }
             }
         
             .floating-btn {
-                background: $accent;
-                box-shadow: $accent-box-shadow;
+                background: lighten($dark-sidebar, 2%);
+                box-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, 0.3) !important;
             }
         }
     }
