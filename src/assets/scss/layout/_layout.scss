@@ -77,6 +77,11 @@ body {
     &.is-pushed-full {
         margin-left: 320px;
         width: calc(100% - 320px);
+
+        .is-stuck {
+            margin-left: 320px;
+            width: calc(100% - 320px);
+        }
     }
 
     &.is-pushed-messages {
@@ -84,7 +89,7 @@ body {
         width: calc(100% - 160px) !important;
     }
 
-    &.is-pushed-search {
+    /*&.is-pushed-search {
         margin-left: 380px;
         width: calc(100% - 380px);
     }
@@ -96,12 +101,21 @@ body {
     &.is-pushed-invites {
         margin-right: 340px;
         width: calc(100% - 340px);
-    }
+    }*/
 
     &.is-webapp {
         padding-top: 80px;
         margin-left: 0 !important;
         width: 100% !important;
+    }
+
+    .is-stuck {
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin-left: 80px;
+        width: calc(100% - 80px);
+        z-index: 69;
     }
 }
 
@@ -364,7 +378,7 @@ body {
 
 .circular-menu {
     position: fixed;
-    top: 1em;
+    top: .4em;
     right: 1em;
     z-index: 70;
     transform: translateY(-80px);
@@ -520,7 +534,6 @@ body {
 body {
     &.is-dark {
         .circular-menu {
-
             &:after {
                 background: darken($dark-sidebar, 2%);
                 box-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, 0.3) !important;
@@ -531,7 +544,7 @@ body {
                     box-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, 0.3) !important;
                 }
             }
-        
+
             .floating-btn {
                 background: lighten($dark-sidebar, 2%);
                 box-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, 0.3) !important;

@@ -23,4 +23,18 @@ $(document).ready(function () {
 
     }
 
+    //Edit profile
+    if ($('#edit-profile').length) {
+           
+        $(window).on('scroll', function () {
+            var height = $(window).scrollTop();
+            if (height > 200) {
+                $(".stuck-header").addClass('is-stuck');
+            } else {
+                $(".stuck-header").removeClass('is-stuck');
+            }
+        });
+
+    }
+
 })
