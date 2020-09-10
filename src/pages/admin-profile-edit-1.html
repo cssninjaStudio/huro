@@ -57,28 +57,28 @@ title: Edit profile
                                 </div>
 
                                 <div class="account-menu">
-                                    <a class="account-menu-item is-active">
+                                    <a href="/admin-profile-edit-1.html" class="account-menu-item is-active">
                                         <i class="lnil lnil-user-alt"></i>
                                         <span>General</span>
                                         <span class="end">
                                             <i class="fas fa-arrow-right"></i>
                                         </span>
                                     </a>
-                                    <a class="account-menu-item">
+                                    <a href="/admin-profile-edit-2.html" class="account-menu-item">
                                         <i class="lnil lnil-crown-alt"></i>
                                         <span>Experience</span>
                                         <span class="end">
                                             <i class="fas fa-arrow-right"></i>
                                         </span>
                                     </a>
-                                    <a class="account-menu-item">
+                                    <a href="/admin-profile-edit-3.html" class="account-menu-item">
                                         <i class="lnil lnil-quill"></i>
                                         <span>Skills</span>
                                         <span class="end">
                                             <i class="fas fa-arrow-right"></i>
                                         </span>
                                     </a>
-                                    <a class="account-menu-item">
+                                    <a href="/admin-profile-edit-4.html" class="account-menu-item">
                                         <i class="lnil lnil-cog"></i>
                                         <span>Settings</span>
                                         <span class="end">
@@ -91,16 +91,23 @@ title: Edit profile
 
                         <!--Form-->
                         <div class="column is-8">
-                            <div class="account-box is-form">
+                            <div class="account-box is-form is-footerless">
                                 <div class="form-head stuck-header">
-                                    <div class="left">
-                                        <h3>General Info</h3>
-                                        <p>Edit your account's general information</p>
-                                    </div>
-                                    <div class="right">
-                                        <div class="buttons">
-                                            <button class="button">Cancel</button>
-                                            <button class="button">Save Changes</button>
+                                    <div class="form-head-inner">
+                                        <div class="left">
+                                            <h3>General Info</h3>
+                                            <p>Edit your account's general information</p>
+                                        </div>
+                                        <div class="right">
+                                            <div class="buttons">
+                                                <a href="/admin-profile-view.html" class="button h-button is-light is-dark-outlined">
+                                                    <span class="icon">
+                                                        <i class="lnir lnir-arrow-left rem-1"></i>
+                                                    </span>
+                                                    <span>Go Back</span>
+                                                </a>
+                                                <button id="save-button" class="button h-button is-primary is-raised">Save Changes</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -112,9 +119,23 @@ title: Edit profile
                                             <p>This is how others will recognize you</p>
                                         </div>
                                         
-                                        <div class="h-avatar is-xl">
+                                        <div class="h-avatar profile-h-avatar is-xl">
                                             <img class="avatar" src="https://via.placeholder.com/150x150"
                                                 data-demo-src="assets/img/avatars/photos/8.jpg" alt="">
+                                            <div class="filepond-profile-wrap is-hidden">
+                                                <input type="file" class="profile-filepond" name="profile_filepond"
+                                                accept="image/png, image/jpeg, image/gif">
+                                            </div>
+                                            <button class="button is-circle edit-button is-edit">
+                                                <span class="icon is-small">
+                                                    <i data-feather="edit-2"></i>
+                                                </span>
+                                            </button>
+                                            <button class="button is-circle edit-button is-back is-hidden">
+                                                <span class="icon is-small">
+                                                    <i data-feather="arrow-left"></i>
+                                                </span>
+                                            </button>
                                         </div>
                                     </div>
                                     <!--Fieldset-->
@@ -345,11 +366,76 @@ title: Edit profile
                                     <!--Fieldset-->
                                     <div class="fieldset">
                                         <div class="fieldset-heading">
-                                            <h4>Work Experiences</h4>
-                                            <p>This can help you to win some opportunities</p>
+                                            <h4>Social Profiles</h4>
+                                            <p>This can help others finding you on social media</p>
                                         </div>
                                         <div class="columns is-multiline">
-
+                                            <!--Field-->
+                                            <div class="column is-6">
+                                                <div class="field">
+                                                    <div class="control has-icon">
+                                                        <input type="text" class="input" placeholder="Facebook URL">
+                                                        <div class="form-icon">
+                                                            <i class="fab fa-facebook-f"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Field-->
+                                            <div class="column is-6">
+                                                <div class="field">
+                                                    <div class="control has-icon">
+                                                        <input type="text" class="input" placeholder="Twitter URL">
+                                                        <div class="form-icon">
+                                                            <i class="fab fa-twitter"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Field-->
+                                            <div class="column is-6">
+                                                <div class="field">
+                                                    <div class="control has-icon">
+                                                        <input type="text" class="input" placeholder="Dribbble URL">
+                                                        <div class="form-icon">
+                                                            <i class="fab fa-dribbble"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Field-->
+                                            <div class="column is-6">
+                                                <div class="field">
+                                                    <div class="control has-icon">
+                                                        <input type="text" class="input" placeholder="Instagram URL">
+                                                        <div class="form-icon">
+                                                            <i class="fab fa-instagram"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Field-->
+                                            <div class="column is-6">
+                                                <div class="field">
+                                                    <div class="control has-icon">
+                                                        <input type="text" class="input" placeholder="Github URL">
+                                                        <div class="form-icon">
+                                                            <i class="fab fa-github"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Field-->
+                                            <div class="column is-6">
+                                                <div class="field">
+                                                    <div class="control has-icon">
+                                                        <input type="text" class="input" placeholder="Gitlab URL">
+                                                        <div class="form-icon">
+                                                            <i class="fab fa-gitlab"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 

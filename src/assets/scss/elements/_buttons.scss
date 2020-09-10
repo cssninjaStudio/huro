@@ -279,6 +279,10 @@ body {
             }
 
             &.is-dark-outlined {
+                background: lighten($dark-sidebar, 10%);
+                border-color: lighten($dark-sidebar, 12%);
+                color: $dark-dark-text;
+                
                 &:hover {
                     border-color: $accent !important;
                     color: $accent !important;

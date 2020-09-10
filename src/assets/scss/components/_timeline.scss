@@ -1,0 +1,88 @@
+/*! _timeline.scss | Huro | Css ninja 2020-2021 */
+
+/*
+    1. Timeline
+    2. Timeline Dark mode
+*/
+
+/* ==========================================================================
+1. Timeline
+========================================================================== */
+
+.timeline-wrapper {
+    max-width: 940px;
+    margin: 0 auto;
+
+    .timeline-header {}
+
+    .timeline-wrapper-inner {
+        .timeline-container {
+            .timeline-item {
+                position: relative;
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 50.5px;
+                    left: 111px;
+                    height: 100%;
+                    width: 2px;
+                    background: $light-text;
+                }
+
+                .date {
+                    width: 80px;
+                }
+
+                .dot {
+                    height: 14px;
+                    width: 14px;
+                    border-radius: 50%;
+                    border: 2px solid $primary;
+                    margin: 0 25px;
+                }
+
+                .content-wrap {
+                    flex-grow: 2;
+
+                    .content-box {
+                        @extend .s-card;
+
+                        display: flex;
+                        align-items: center;
+
+                        .status {
+                            height: 10px;
+                            width: 10px;
+                            border-radius: 50%;
+                            background: $light-text;
+                            margin: 0 16px 0 0;
+                        }
+
+                        .h-avatar {}
+
+                        .box-text {
+                            margin-left: 12px;
+                            flex-grow: 2;
+
+                            .meta-text {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+
+                                p {}
+
+                                span {}
+                            }
+
+                            .meta-content {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

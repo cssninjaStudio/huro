@@ -69,6 +69,13 @@ Responsive styles
             margin-left: 140px !important;
             width: calc(100% - 140px) !important;
         }
+
+        &.is-webapp {
+            .is-stuck {
+                margin-left: 0 !important;
+                width: 100% !important;
+            }
+        }
     }
 
     .page-title {
@@ -87,6 +94,11 @@ Responsive styles
 
     .page-content {
         padding: 0 30px !important;
+    }
+
+    .is-stuck {
+        margin-left: 60px !important;
+        width: calc(100% - 60px) !important;
     }
 }
 
@@ -262,6 +274,13 @@ Responsive styles
             padding: 0 !important;
         }
     }
+
+    .is-stuck {
+        top: 60px !important;
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding-right: 20px !important;
+    }
 }
 
 /* ==========================================================================
@@ -401,6 +420,13 @@ Responsive styles
         &.projects-content {
             padding: 0 16px;
         }
+    }
+
+    .is-stuck {
+        top: 59px !important;
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding-right: 20px !important;
     }
 
 }

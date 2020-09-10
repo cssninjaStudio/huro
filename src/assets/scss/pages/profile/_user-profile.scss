@@ -688,8 +688,8 @@ body {
 .account-wrapper {
     padding-bottom: 60px;
 
-    .columns {
-        width: 100%;
+    &.is-webapp {
+        margin-top: 30px;
     }
 
     .account-box {
@@ -698,6 +698,14 @@ body {
         &.is-navigation {
             .media-flex-center {
                 padding-bottom: 20px;
+
+                .flex-meta {
+                    span {
+                        &:first-child {
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
             }
 
             .account-menu {
@@ -756,11 +764,18 @@ body {
         &.is-form {
             padding: 0;
 
+            &.is-footerless {
+                padding-bottom: 20px;
+            }
+
             .form-head, .form-foot {
-                padding: 10px 20px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
+                padding: 12px 20px;
+
+                .form-head-inner, .form-foot-inner {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
             }
 
             .form-head {
@@ -771,6 +786,17 @@ body {
                     background: $white;
                     padding-right: 80px;
                     border-left: 1px solid darken($fade-grey, 3%);
+                }
+
+                .left {
+                    h3 {
+                        font-size: 1.3rem;
+                        line-height: 1.3;
+                    }
+
+                    p {
+                        font-size: .95rem;
+                    }
                 }
             }
 
@@ -795,8 +821,181 @@ body {
                     }
 
                     .h-avatar {
+                        position: relative;
                         display: block;
                         margin: 0 auto;
+
+                        .edit-button {
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                        }
+                    }
+
+                    .setting-list {
+                        .setting-form {
+                            text-align: center;
+
+                            .filepond-profile-wrap {
+                                margin: 0 auto 10px auto !important;
+                            }
+                        }
+
+                        .setting-item {
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 24px;
+
+                            .icon-wrap {
+                                position: relative;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 50px;
+                                min-width: 50px;
+                                height: 50px;
+                                border-radius: 50%;
+                                background: lighten($fade-grey, 2%);
+                                border: 1px solid darken($fade-grey, 3%);
+                                color: $light-text;
+
+                                &.has-img {
+                                    border-color: $primary;
+
+                                    img {
+                                        width: 36px;
+                                        min-width: 36px;
+                                        height: 36px;
+                                    }
+                                }
+
+                                i {
+                                    font-size: 1.4rem;
+                                }
+                            }
+
+                            img {
+                                display: block;
+                                width: 50px;
+                                min-width: 50px;
+                                height: 50px;
+                                border-radius: 50%;
+                                border: 1px solid darken($fade-grey, 4%);
+                            }
+
+                            .meta {
+                                margin-left: 10px;
+
+                                > span {
+                                    font-family: $font;
+                                    display: block;
+
+                                    &:first-child {
+                                        font-weight: 500;
+                                        color: $dark-text;
+                                        font-size: .9rem;
+                                    }
+
+                                    &:nth-child(2), &:nth-child(3) {
+                                        font-size: .85rem;
+                                        color: $light-text;
+
+                                        i {
+                                            position: relative;
+                                            top: -2px;
+                                            font-size: 4px;
+                                            margin: 0 6px;
+                                        }
+                                    }
+
+                                    span {
+                                        display: inline-block;
+                                    }
+                                }
+                            }
+
+                            .end {
+                                margin-left: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+4. User Profile Edit Dark mode
+========================================================================== */
+
+body {
+    &.is-dark {
+        .account-wrapper {
+            .account-box {
+                &.is-navigation {
+                    .account-menu {
+                        .account-menu-item {
+                            &.is-active {
+                                background: lighten($dark-sidebar, 8%);
+                                border-color: lighten($dark-sidebar, 12%);
+
+                                i, span {
+                                    color: $accent;
+                                }
+                            }
+
+                            &:not(.is-active) {
+                                &:hover {
+                                    background: lighten($dark-sidebar, 10%);
+                                }
+                            }
+
+                            span {
+                                color: $dark-dark-text;
+                            }
+                        }
+                    }
+                }
+
+                &.is-form {
+                    .form-head, .form-foot {
+                        border-color: lighten($dark-sidebar, 12%);
+                    }
+
+                    .form-head {
+                        &.is-stuck {
+                            background: $dark-sidebar;
+                            border-color: lighten($dark-sidebar, 6%);
+                        }
+
+                        .left {
+                            h3 {
+                                color: $dark-dark-text;
+                            }
+                        }
+                    }
+
+                    .form-body {
+                        .fieldset {
+                            .fieldset-heading {
+                                h4 {
+                                    color: $dark-dark-text;
+                                }
+                            }
+
+                            .setting-list {
+                                .setting-item {
+                                    > img, > .icon-wrap, > .icon-wrap img {
+                                        border-color: lighten($dark-sidebar, 12%);
+                                    }
+
+                                    > .icon-wrap {
+                                        background: lighten($dark-sidebar, 2%);
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -831,6 +1030,32 @@ body {
                                         }
                                     }
                                 }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .account-wrapper {
+        .account-box {
+            &.is-form {
+                .form-head {
+                    .left {
+                        display: none;
+                    }
+
+                    .right {
+                        flex-grow: 2;
+
+                        .buttons {
+                            display: flex;
+                            justify-content: space-between;
+                            width: 100% !important;
+
+                            .button {
+                                width: calc(50% - 6px);
                             }
                         }
                     }

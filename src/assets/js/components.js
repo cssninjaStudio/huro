@@ -6,10 +6,12 @@ Demo Components initialization file
 
 "use strict";
 
+var notyf;
+
 $(document).ready(function () {
 
     //Notyf Toasts Configuration
-    var notyf = new Notyf({
+    notyf = new Notyf({
         duration: 2000,
         position: {
             x: 'right',
