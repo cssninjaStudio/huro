@@ -203,6 +203,8 @@ body {
     }
 
     input + span {
+        position: relative;
+        top: -1px;
         background: $white;
         content: "";
         display: inline-block;
@@ -211,7 +213,7 @@ body {
         vertical-align: middle;
         width: 1.4em;
         height: 1.4em;
-        border: 1px solid darken($fade-grey, 6%);
+        border: 1px solid darken($fade-grey, 8%);
         transform: translate3d(0, 0, 0);
         backface-visibility: hidden;
 
@@ -573,7 +575,6 @@ body {
 
 body {
     &.is-dark {
-
         %controller {
             input + span {
                 background-color: lighten($dark-sidebar, 2%);
@@ -703,7 +704,6 @@ body {
     }
 }
 
-
 /* ==========================================================================
 7. H Toggle Dark mode
 ========================================================================== */
@@ -711,7 +711,6 @@ body {
 body {
     &.is-dark {
         .h-toggle {
-
             input {
                 &:checked ~ .toggler {
                     background: lighten($dark-sidebar, 2%);

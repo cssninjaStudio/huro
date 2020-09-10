@@ -1,0 +1,64 @@
+/*! _subpages.scss | Huro | Css ninja 2020-2021 */
+
+/* ==========================================================================
+Subpages UI Elements
+========================================================================== */
+
+/*
+    1. SaaS Billing
+    2. SaaS Billing Dark mode
+*/
+
+/* ==========================================================================
+1. SaaS Billing
+========================================================================== */
+
+.saas-billing-wrapper {
+    .plans-wrapper {
+        display: flex;
+
+        .left {
+            width: 50%;
+
+            .inner-wrap {
+
+            }
+
+            .plans {
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: -8px;
+                margin-right: -8px;
+
+                .plan {
+                    @extend .s-card;
+
+                    flex: none;
+                    display: block;
+                    width: calc(50% - 16px);
+                    max-width: calc(50% - 16px);
+                    margin: 8px;
+                }
+            }
+        }
+
+        .right {
+            width: 40%;
+            margin-left: auto;
+
+            .plan-details {
+            }
+        }
+    }
+
+    .billing-options-wrapper {
+        .left {
+            width: 50%;
+        }
+
+        .right {
+            width: 40%;
+            margin-left: auto;
+        }
+    }
+}
