@@ -7,7 +7,7 @@ title: SaaS Billing
 {{> layouts-mobile-subsidebar}}
 
 <!-- Content Wrapper -->
-<div id="app-search" class="view-wrapper" data-naver-offset="214" data-menu-item="#layouts-sidebar-menu"
+<div id="app-billing" class="view-wrapper" data-naver-offset="214" data-menu-item="#layouts-sidebar-menu"
     data-mobile-item="#home-sidebar-menu-mobile">
 
     <div class="page-content-wrapper">
@@ -42,58 +42,105 @@ title: SaaS Billing
                     <div class="plans-wrapper">
                         <div class="left">
                             <div class="inner-wrap">
-                                <h3>Huro plans</h3>
+                                <h3>Select a Plan</h3>
                                 <div class="plans">
                                     <div class="plan">
-                                        <span>Huro Bronze</span>
+                                        <input type="radio" name="plan_selection">
+                                        <div class="plan-inner">
+                                            <img src="assets/img/logos/logo/logo.svg" alt="">
+                                            <div class="meta">
+                                                <span>Huro Starter</span>
+                                                <span>Plan for starters</span>
+                                            </div>
+                                            <div class="checkmark">
+                                                <i data-feather="check"></i>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="plan">
-                                        <span>Huro Silver</span>
+                                        <input type="radio" name="plan_selection" checked>
+                                        <div class="plan-inner">
+                                            <img src="assets/img/logos/logo/logo-secondary.svg" alt="">
+                                            <div class="meta">
+                                                <span>Huro Pro</span>
+                                                <span>For professionals</span>
+                                            </div>
+                                            <div class="checkmark">
+                                                <i data-feather="check"></i>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="plan">
-                                        <span>Huro Gold</span>
+                                        <input type="radio" name="plan_selection">
+                                        <div class="plan-inner">
+                                            <img src="assets/img/logos/logo/logo-accent.svg" alt="">
+                                            <div class="meta">
+                                                <span>Huro Business</span>
+                                                <span>For serious people</span>
+                                            </div>
+                                            <div class="checkmark">
+                                                <i data-feather="check"></i>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="plan">
-                                        <span>Huro Platinum</span>
+                                        <input type="radio" name="plan_selection">
+                                        <div class="plan-inner">
+                                            <img src="assets/img/logos/logo/logo-platinum.svg" alt="">
+                                            <div class="meta">
+                                                <span>Huro Enterprise</span>
+                                                <span>For big companies</span>
+                                            </div>
+                                            <div class="checkmark">
+                                                <i data-feather="check"></i>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="right">
                             <div class="plan-details">
-                                <h3>This is some plan description</h3>
 
                                 <div class="plan-details-inner">
                                     <div class="plan-description">
                                         <div class="left">
-
+                                            <img src="assets/img/illustrations/pricing/huro-pro.svg" alt="">
                                         </div>
                                         <div class="right">
-
+                                            <div class="plan-pricing">
+                                                <span><b>$99</b> per month</span>
+                                                <span>Billed $1080 yearly</span>
+                                            </div>
+                                            <div class="plan-moto">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Utilitatis
+                                                    causa
+                                                    amicitia est quaesita.</p>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="plan-summary">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Utilitatis causa
-                                            amicitia est quaesita. Scaevolam M. Itaque contra est, ac dicitis; Sed tamen
-                                            intellego quid velit. Sed plane dicit quod intellegit. Praeteritis, inquit,
-                                            gaudeo.</p>
+                                        <p>Huro has incredible features and each plan perfectly adapts to your company,
+                                            wether it is a small business or a bigger one. Huro can also scale with you,
+                                            as your business grows.
+                                        </p>
                                         <div class="plan-features">
                                             <div class="columns">
                                                 <div class="column is-6">
                                                     <div class="content">
                                                         <ul>
-                                                            <li>Feature 1</li>
-                                                            <li>Feature 2</li>
-                                                            <li>Feature 3</li>
+                                                            <li>5 seats</li>
+                                                            <li>150 projects</li>
+                                                            <li>100GB storage</li>
                                                         </ul>
                                                     </div>
                                                 </div>
                                                 <div class="column is-6">
                                                     <div class="content">
                                                         <ul>
-                                                            <li>Feature 4</li>
-                                                            <li>Feature 5</li>
-                                                            <li>Feature 6</li>
+                                                            <li>Live updates</li>
+                                                            <li>Payments</li>
+                                                            <li>3 Addons</li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -108,21 +155,154 @@ title: SaaS Billing
                     <div class="billing-options-wrapper">
                         <div class="left">
                             <div class="option-block">
-                                <h3>Option Title</h3>
-                                <div class="options">
-                                    <div class="content">
-                                        <ul>
-                                            <li>Option 1</li>
-                                            <li>Option 2</li>
-                                            <li>Option 3</li>
-                                        </ul>
+                                <div class="block-header">
+                                    <h3>Team Seats</h3>
+                                    <span>3 remaining</span>
+                                </div>
+                                <div class="block-body is-seats">
+                                    <div class="h-avatar">
+                                        <img class="avatar" src="https://via.placeholder.com/150x150"
+                                            data-demo-src="assets/img/avatars/photos/8.jpg" alt=""
+                                            data-user-popover="3">
+                                    </div>
+                                    <div class="h-avatar">
+                                        <span class="avatar is-fake is-warning" data-user-popover="36">
+                                            <span>BT</span>
+                                        </span>
+                                    </div>
+                                    <div class="h-avatar">
+                                        <img class="avatar" src="https://via.placeholder.com/150x150"
+                                            data-demo-src="assets/img/avatars/photos/18.jpg" alt=""
+                                            data-user-popover="7">
+                                    </div>
+                                    <div class="h-avatar">
+                                        <span class="avatar is-fake is-info" data-user-popover="34">
+                                            <span>JD</span>
+                                        </span>
+                                    </div>
+                                    <div class="h-avatar">
+                                        <img class="avatar" src="https://via.placeholder.com/150x150"
+                                            data-demo-src="assets/img/avatars/photos/7.jpg" alt=""
+                                            data-user-popover="0">
+                                    </div>
+                                    <button class="add-seat">
+                                        <i data-feather="plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="option-block">
+                                <div class="block-header">
+                                    <h3>Options</h3>
+                                </div>
+                                <div class="block-body">
+                                    <div class="switch-block">
+                                        <label class="form-switch is-primary">
+                                            <input type="checkbox" class="is-switch" checked>
+                                            <i></i>
+                                        </label>
+                                        <div class="text">
+                                            <span>Send new invoices to my inbox</span>
+                                        </div>
+                                    </div>
+                                    <div class="switch-block">
+                                        <label class="form-switch is-primary">
+                                            <input type="checkbox" class="is-switch">
+                                            <i></i>
+                                        </label>
+                                        <div class="text">
+                                            <span>Warn me before the end of the billing period</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="option-block">
+                                <div class="block-header">
+                                    <h3>Billing Cycle</h3>
+                                </div>
+                                <div class="block-body">
+                                    <div class="field">
+                                        <div class="control">
+                                            <label class="radio">
+                                                <input type="radio" name="billing_radio" checked>
+                                                <span></span>
+                                                Monthly
+                                            </label>
+
+                                            <label class="radio is-outlined is-primary">
+                                                <input type="radio" name="billing_radio">
+                                                <span></span>
+                                                Yearly
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="right">
-                            <span>Credit Card and User info</span>
+                            <div class="payment-form">
+                                <div class="form-header">
+                                    <h3>Payment information</h3>
+                                    <span id="generatecard">Randomize</span>
+                                </div>
+
+                                {{> credit-card}}
+
+                                <div class="form-container">
+                                    <div class="columns is-multiline">
+                                        <div class="column is-12">
+                                            <div class="field">
+                                                <label for="name">Name</label>
+                                                <div class="control">
+                                                    <input id="name" class="input" maxlength="20" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column is-12">
+                                            <div class="field">
+                                                <label for="cardnumber">Card Number</label>
+                                                <div class="control">
+                                                    <input id="cardnumber" class="input" type="text" pattern="[0-9]*"
+                                                        inputmode="numeric">
+                                                    <svg id="ccicon" class="ccicon" width="750" height="471"
+                                                        viewBox="0 0 750 471" version="1.1"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column is-6">
+                                            <div class="field">
+                                                <label for="expirationdate">Expiration (mm/yy)</label>
+                                                <div class="control">
+                                                    <input id="expirationdate" class="input" type="text"
+                                                        pattern="[0-9]*" inputmode="numeric">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column is-6">
+                                            <div class="field">
+                                                <label for="securitycode">CVC</label>
+                                                <div class="control">
+                                                    <input id="securitycode" class="input" type="text" pattern="[0-9]*"
+                                                        inputmode="numeric">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column is-12">
+                                            <div class="button-wrap">
+                                                <button type="button"
+                                                    class="button h-button is-primary is-raised is-fullwidth">Save
+                                                    Payment Method</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 

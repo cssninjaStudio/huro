@@ -14,14 +14,27 @@ Subpages UI Elements
 ========================================================================== */
 
 .saas-billing-wrapper {
+    max-width: 980px;
+    margin: 0 auto;
+
     .plans-wrapper {
         display: flex;
+        align-items: center;
+        border-bottom: 1px solid darken($fade-grey, 4%);
+        padding-bottom: 20px;
+        margin-bottom: 20px;
 
         .left {
             width: 50%;
 
             .inner-wrap {
-
+                > h3 {
+                    font-family: $font;
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    color: $dark-text;
+                    margin-bottom: 10px;
+                }
             }
 
             .plans {
@@ -31,34 +44,554 @@ Subpages UI Elements
                 margin-right: -8px;
 
                 .plan {
-                    @extend .s-card;
-
-                    flex: none;
-                    display: block;
+                    position: relative;
                     width: calc(50% - 16px);
                     max-width: calc(50% - 16px);
                     margin: 8px;
+
+                    input {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 100%;
+                        opacity: 0;
+                        cursor: pointer;
+
+                        &:checked + .plan-inner {
+                            border-color: $primary;
+                            box-shadow: $light-box-shadow;
+
+                            img {
+                                filter: grayscale(0);
+                                opacity: 1;
+                            }
+
+                            .checkmark {
+                                display: flex;
+                            }
+                        }
+                    }
+
+                    .plan-inner {
+                        @extend .s-card;
+
+                        width: 100%;
+                        flex: 0;
+                        display: flex;
+                        align-items: center;
+                        transition: all .3s;
+
+                        img {
+                            display: block;
+                            height: 32px;
+                            width: 32px;
+                            min-width: 32px;
+                            filter: grayscale(1);
+                            opacity: .6;
+                            transition: all .3s;
+                        }
+
+                        .meta {
+                            margin-left: 12px;
+                            line-height: 1.3;
+
+                            span {
+                                display: block;
+                                font-family: $font;
+
+                                &:first-child {
+                                    font-weight: 500;
+                                    color: $dark-text;
+                                }
+
+                                &:nth-child(2) {
+                                    color: $light-text;
+                                    font-size: .9rem;
+                                }
+                            }
+                        }
+
+                        .checkmark {
+                            margin-left: auto;
+                            display: none;
+                            justify-content: center;
+                            align-items: center;
+                            height: 32px;
+                            width: 32x;
+                            min-width: 32px;
+                            border-radius: 50%;
+                            border: 1px solid darken($fade-grey, 3%);
+                            box-shadow: $light-box-shadow;
+                            color: $success;
+
+                            svg {
+                                width: 16px;
+                                height: 16px;
+                                stroke-width: 3px;
+                            }
+                        }
+                    }
                 }
             }
         }
 
         .right {
-            width: 40%;
+            width: 45%;
+            padding: 20px 0;
             margin-left: auto;
 
             .plan-details {
+                //max-width: 390px;
+
+                > h3 {
+                    font-family: $font;
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    color: $dark-text;
+                    margin-bottom: 10px;
+                }
+
+                .plan-details-inner {
+                    .plan-description {
+                        display: flex;
+                        align-items: center;
+
+                        .left {
+                            max-width: 200px;
+
+                            img {
+                                display: block;
+                                height: 160px;
+                                width: 160px;
+                                min-width: 160px;
+                                margin: 0 auto;
+                            }
+                        }
+
+                        .right {
+                            flex-grow: 2;
+
+                            .plan-pricing {
+                                padding: 5px 0 10px 0;
+                                font-family: $font;
+                                line-height: 1.3;
+
+                                span {
+                                    display: block;
+                                    font-size: .9rem;
+                                    font-weight: 500;
+                                    color: $primary;
+
+                                    &:first-child {
+                                        color: $dark-text;
+                                    }
+
+                                    b {
+                                        font-size: 2rem;
+                                    }
+                                }
+                            }
+
+                            .plan-moto {
+                                p {
+                                    font-size: .9rem;
+                                }
+                            }
+                        }
+                    }
+
+                    .plan-summary {
+                        .plan-features {
+                            ul {
+                                font-family: $font;
+                                color: $dark-text;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
 
     .billing-options-wrapper {
+        display: flex;
+        align-items: flex-start;
+
         .left {
             width: 50%;
+
+            .option-block {
+                @extend .s-card;
+
+                margin-bottom: 20px;
+
+                .block-header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 16px;
+
+                    h3 {
+                        font-family: $font;
+                        font-size: 1.1rem;
+                        font-weight: 500;
+                        color: $dark-text;
+                    }
+
+                    span {
+                        font-family: $font;
+                        color: $light-text;
+                    }
+                }
+
+                .block-body {
+                    &.is-seats {
+                        display: flex;
+                        padding-bottom: 10px;
+
+                        .h-avatar {
+                            margin-right: 8px;
+                        }
+
+                        .add-seat {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 40px;
+                            width: 40px;
+                            min-width: 40px;
+                            border-radius: 50%;
+                            border: 1.6px dashed $light-text;
+                            color: $light-text;
+                            outline: none;
+                            padding: 0;
+                            background: none;
+                            cursor: pointer;
+
+                            svg {
+                                height: 16px;
+                                width: 16px;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         .right {
-            width: 40%;
+            width: 45%;
             margin-left: auto;
+
+            .payment-form {
+                padding: 20px 30px;
+                background: $white;
+                border-radius: 4px;
+                border: 1px solid darken($fade-grey, 3%);
+
+                //max-width: 410px;
+
+                .form-header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    //margin-bottom: 16px;
+
+                    h3 {
+                        font-family: $font;
+                        font-size: 1.1rem;
+                        font-weight: 500;
+                        color: $dark-text;
+                    }
+
+                    span {
+                        font-family: $font;
+                        color: $light-text;
+                        cursor: pointer;
+                    }
+                }
+
+                .form-container {
+                    padding: 30px 0 20px 0;
+                    max-width: 330px;
+                    margin: 0 auto;
+                    color: #707070;
+
+                    .column {
+                        padding: .25rem .75rem;
+                    }
+
+                    .field {
+                        margin-bottom: 0;
+
+                        .control {
+                            position: relative;
+
+                            .ccicon {
+                                height: 30px;
+                                position: absolute;
+                                right: -2px;
+                                top: 4px;
+                                width: 60px;
+                            }
+                        }
+                    }
+
+                    .button-wrap {
+                        padding-top: 16px;
+
+                        .h-button {
+                            min-height: 50px;
+                        }
+                    }
+                }
+
+                .card-container {
+                    width: 100%;
+                    height: 170px;
+                    padding: 20px 0;
+                    perspective: 1000px;
+
+                    &.preload * {
+                        transition: none !important;
+                    }
+
+                    .creditcard {
+                        width: 100%;
+                        max-width: 260px;
+                        transform-style: preserve-3d;
+                        transition: transform 0.6s;
+                        margin: 0 auto;
+                        cursor: pointer;
+
+                        &.flipped {
+                            -webkit-transform: rotateY(180deg);
+                            transform: rotateY(180deg);
+                        }
+
+                        .front,
+                        .back {
+                            position: absolute;
+                            width: 100%;
+                            max-width: 260px;
+                            backface-visibility: hidden;
+                            -webkit-font-smoothing: antialiased;
+                            color: #47525d;
+                        }
+
+                        .back {
+                            transform: rotateY(180deg);
+                        }
+
+                        svg#cardfront,
+                        svg#cardback {
+                            width: 100%;
+                            box-shadow: $light-box-shadow;
+                            border-radius: 18px;
+                        }
+
+                        #cardfront {
+                            .st2 {
+                                fill: #FFFFFF;
+                            }
+
+                            .st3 {
+                                font-family: 'Source Code Pro', monospace;
+                                font-weight: 600;
+                            }
+
+                            .st4 {
+                                font-size: 54.7817px;
+                            }
+
+                            .st5 {
+                                font-family: 'Source Code Pro', monospace;
+                                font-weight: 400;
+                            }
+
+                            .st6 {
+                                font-size: 33.1112px;
+                            }
+
+                            .st7 {
+                                opacity: 0.6;
+                                fill: #FFFFFF;
+                            }
+
+                            .st8 {
+                                font-size: 24px;
+                            }
+
+                            .st9 {
+                                font-size: 36.5498px;
+                            }
+
+                            .st10 {
+                                font-family: 'Source Code Pro', monospace;
+                                font-weight: 300;
+                            }
+
+                            .st11 {
+                                font-size: 16.1716px;
+                            }
+
+                            .st12 {
+                                fill: #4C4C4C;
+                            }
+                        }
+
+                        #cardback {
+                            .st0 {
+                                fill: none;
+                                stroke: #0F0F0F;
+                                stroke-miterlimit: 10;
+                            }
+
+                            .st2 {
+                                fill: #111111;
+                            }
+
+                            .st3 {
+                                fill: #F2F2F2;
+                            }
+
+                            .st4 {
+                                fill: #D8D2DB;
+                            }
+
+                            .st5 {
+                                fill: #C4C4C4;
+                            }
+
+                            .st6 {
+                                font-family: 'Source Code Pro', monospace;
+                                font-weight: 400;
+                            }
+
+                            .st7 {
+                                font-size: 27px;
+                            }
+
+                            .st8 {
+                                opacity: 0.6;
+                            }
+
+                            .st9 {
+                                fill: #FFFFFF;
+                            }
+
+                            .st10 {
+                                font-size: 24px;
+                            }
+
+                            .st11 {
+                                fill: #EAEAEA;
+                            }
+
+                            .st12 {
+                                font-family: 'Rock Salt', cursive;
+                            }
+
+                            .st13 {
+                                font-size: 37.769px;
+                            }
+                        }
+
+                        #svgname {
+                            text-transform: uppercase;
+                        }
+
+                        #ccsingle {
+                            position: absolute;
+                            right: 15px;
+                            top: 20px;
+
+                            svg {
+                                width: 100px;
+                                max-height: 60px;
+                            }
+                        }
+
+                        .lightcolor,
+                        .darkcolor {
+                            transition: fill .5s;
+                        }
+
+                        .lightblue {
+                            fill: #03A9F4;
+                        }
+
+                        .lightbluedark {
+                            fill: #0288D1;
+                        }
+
+                        .red {
+                            fill: #ef5350;
+                        }
+
+                        .reddark {
+                            fill: #d32f2f;
+                        }
+
+                        .purple {
+                            fill: #ab47bc;
+                        }
+
+                        .purpledark {
+                            fill: #7b1fa2;
+                        }
+
+                        .cyan {
+                            fill: #26c6da;
+                        }
+
+                        .cyandark {
+                            fill: #0097a7;
+                        }
+
+                        .green {
+                            fill: #66bb6a;
+                        }
+
+                        .greendark {
+                            fill: #388e3c;
+                        }
+
+                        .lime {
+                            fill: #d4e157;
+                        }
+
+                        .limedark {
+                            fill: #afb42b;
+                        }
+
+                        .yellow {
+                            fill: #ffeb3b;
+                        }
+
+                        .yellowdark {
+                            fill: #f9a825;
+                        }
+
+                        .orange {
+                            fill: #ff9800;
+                        }
+
+                        .orangedark {
+                            fill: #ef6c00;
+                        }
+
+                        .grey {
+                            fill: #bdbdbd;
+                        }
+
+                        .greydark {
+                            fill: #616161;
+                        }
+                    }
+                }
+            }
         }
     }
 }

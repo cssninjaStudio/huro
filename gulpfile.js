@@ -117,6 +117,7 @@ function compileJS() {
     'src/assets/js/layouts/tile-grids/tile-grid.js',
     'src/assets/js/layouts/user-pages/profile.js',
     'src/assets/js/layouts/projects/board.js',
+    'src/assets/js/layouts/generic/saas-billing.js',
     'src/assets/js/messaging.js',
   ])
     .pipe(babel())
@@ -229,6 +230,7 @@ function concatPlugins() {
     nodepath + 'easy-autocomplete/dist/jquery.easy-autocomplete.min.js',
     nodepath + 'dragula/dist/dragula.min.js',
     nodepath + 'vivus/dist/vivus.min.js',
+    nodepath + 'imask/dist/imask.min.js',
     nodepath + 'numeral/min/numeral.min.js',
     nodepath + 'moment/min/moment.min.js',
     nodepath + 'peity/jquery.peity.min.js',
