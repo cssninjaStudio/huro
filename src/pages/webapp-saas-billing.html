@@ -1,31 +1,18 @@
 ---
-layout: default
+layout: webapp
 title: SaaS Billing
 ---
 
-{{> layouts-sidebar}}
 {{> layouts-mobile-subsidebar}}
 
 <!-- Content Wrapper -->
-<div id="app-billing" class="view-wrapper" data-naver-offset="214" data-menu-item="#layouts-sidebar-menu"
-    data-mobile-item="#home-sidebar-menu-mobile">
+<div id="app-search" class="view-wrapper is-webapp" data-naver-offset="214" data-page-title="SaaS Billing"
+    data-menu-item="#layouts-navbar-menu" data-mobile-item="#home-sidebar-menu-mobile">
 
     <div class="page-content-wrapper">
-        <div class="page-content is-relative tabs-wrapper is-triple-slider is-squared is-inverted">
+        <div class="page-content is-relative">
 
-            <div class="page-title has-text-centered">
-                <!-- Sidebar Trigger -->
-                <div class="huro-hamburger nav-trigger push-resize" data-sidebar="layouts-sidebar">
-                    <span class="menu-toggle has-chevron">
-                        <span class="icon-box-toggle">
-                            <span class="rotate">
-                                <i class="icon-line-top"></i>
-                                <i class="icon-line-center"></i>
-                                <i class="icon-line-bottom"></i>
-                            </span>
-                        </span>
-                    </span>
-                </div>
+            <div class="page-title has-text-centered is-webapp">
 
                 <div class="title-wrap">
                     <h1 class="title is-4">SaaS Billing</h1>
@@ -34,7 +21,7 @@ title: SaaS Billing
                 {{> toolbar}}
             </div>
 
-            <div class="page-content-inner">
+            <div class="page-content-inner is-webapp">
 
                 <!--SaaS Billing-->
                 <div class="saas-billing-wrapper">
@@ -117,8 +104,10 @@ title: SaaS Billing
                                 <div class="plan-details-inner">
                                     <div class="plan-description">
                                         <div class="left">
-                                            <img id="plan-logo-light" class="light-image" src="assets/img/illustrations/pricing/huro-pro.svg" alt="">
-                                            <img id="plan-logo-dark" class="dark-image" src="assets/img/illustrations/pricing/huro-pro-dark.svg" alt="">
+                                            <img id="plan-logo-light" class="light-image"
+                                                src="assets/img/illustrations/pricing/huro-pro.svg" alt="">
+                                            <img id="plan-logo-dark" class="dark-image"
+                                                src="assets/img/illustrations/pricing/huro-pro-dark.svg" alt="">
                                         </div>
                                         <div class="right">
                                             <div class="plan-pricing">
@@ -270,7 +259,8 @@ title: SaaS Billing
                                             <div class="field">
                                                 <label for="name">Name</label>
                                                 <div class="control">
-                                                    <input id="name" class="input" maxlength="20" type="text" placeholder="The name on the card">
+                                                    <input id="name" class="input" maxlength="20" type="text"
+                                                        placeholder="The name on the card">
                                                 </div>
                                             </div>
                                         </div>

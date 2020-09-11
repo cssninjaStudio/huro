@@ -385,6 +385,10 @@ body {
         background: $smoke-white;
     }
 
+    &.darker {
+        background: #f2f2f2;
+    }
+
     .minimal-wrap {
         min-height: calc(100vh - 60px);
     }

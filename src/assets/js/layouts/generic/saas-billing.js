@@ -315,7 +315,28 @@ $(document).ready(function () {
     //SaaS Billing
     if ($('#app-billing').length) {
 
+        $('.plans .plan input').on('change', function(){
+            //Collect demo data
+            var $container = $(this).closest('.plan');
+            var monthlyPrice = $container.attr('data-monthly');
+            var yearlyPrice = $container.attr('data-yearly');
+            var planSeats = $container.attr('data-seats');
+            var planProjects = $container.attr('data-projects');
+            var planStorage = $container.attr('data-storage');
+            var planAddons = $container.attr('data-addons');
+            var lightLogo = $container.attr('data-logo-light');
+            var darkLogo = $container.attr('data-logo-dark'); 
 
+            //Update UI
+            $('#plan-monthly').html(monthlyPrice);
+            $('#plan-yearly').html(yearlyPrice);
+            $('#plan-seats').html(planSeats);
+            $('#plan-projects').html(planProjects);
+            $('#plan-storage').html(planStorage);
+            $('#plan-addons').html(planAddons);
+            $('#plan-logo-light').attr('src', lightLogo);
+            $('#plan-logo-dark').attr('src', darkLogo);
+        })
 
     }
 

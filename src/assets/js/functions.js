@@ -1046,3 +1046,7 @@ function initCollapse() {
     })
 }
 
+//Go back in history
+function goBack() {
+    window.history.go(-1);
+}

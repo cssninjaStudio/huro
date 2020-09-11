@@ -7,6 +7,10 @@ Subpages UI Elements
 /*
     1. SaaS Billing
     2. SaaS Billing Dark mode
+    3. SaaS Billing Media Queries
+    4. Action Page V1
+    5. Action Page V2
+    6. Media Queries
 */
 
 /* ==========================================================================
@@ -57,6 +61,7 @@ Subpages UI Elements
                         width: 100%;
                         opacity: 0;
                         cursor: pointer;
+                        z-index: 1;
 
                         &:checked + .plan-inner {
                             border-color: $primary;
@@ -89,6 +94,7 @@ Subpages UI Elements
                             min-width: 32px;
                             filter: grayscale(1);
                             opacity: .6;
+                            pointer-events: none;
                             transition: all .3s;
                         }
 
@@ -121,6 +127,7 @@ Subpages UI Elements
                             width: 32x;
                             min-width: 32px;
                             border-radius: 50%;
+                            background: $white;
                             border: 1px solid darken($fade-grey, 3%);
                             box-shadow: $light-box-shadow;
                             color: $success;
@@ -243,6 +250,15 @@ Subpages UI Elements
                         font-family: $font;
                         color: $light-text;
                     }
+
+                    a {
+                        font-family: $font;
+                        color: $light-text;
+
+                        &:hover {
+                            color: $primary;
+                        }
+                    }
                 }
 
                 .block-body {
@@ -267,7 +283,14 @@ Subpages UI Elements
                             outline: none;
                             padding: 0;
                             background: none;
+                            margin-left: 4px;
                             cursor: pointer;
+                            transition: all .3s;
+
+                            &:hover {
+                                border: 1.6px solid $primary;
+                                color: $primary;
+                            }
 
                             svg {
                                 height: 16px;
@@ -289,14 +312,10 @@ Subpages UI Elements
                 border-radius: 4px;
                 border: 1px solid darken($fade-grey, 3%);
 
-                //max-width: 410px;
-
                 .form-header {
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-
-                    //margin-bottom: 16px;
 
                     h3 {
                         font-family: $font;
@@ -590,6 +609,523 @@ Subpages UI Elements
                             fill: #616161;
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+2. SaaS Billing Dark mode
+========================================================================== */
+
+body {
+    &.is-dark {
+        .saas-billing-wrapper {
+            .plans-wrapper {
+                border-color: lighten($dark-sidebar, 20%);
+
+                .left {
+                    .inner-wrap {
+                        > h3 {
+                            color: $dark-dark-text;
+                        }
+                    }
+
+                    .plans {
+                        .plan {
+                            input {
+                                &:checked + .plan-inner {
+                                    border-color: $accent !important;
+                                }
+                            }
+
+                            .plan-inner {
+                                .meta span {
+                                    &:first-child {
+                                        color: $dark-dark-text;
+                                    }
+                                }
+
+                                .checkmark {
+                                    background: lighten($dark-sidebar, 2%);
+                                    border-color: lighten($dark-sidebar, 12%);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .right {
+                    .plan-details {
+                        .plan-details-inner {
+                            .plan-description {
+                                .right {
+                                    .plan-pricing span {
+                                        &:first-child {
+                                            color: $dark-dark-text;
+                                        }
+
+                                        &:nth-child(2) {
+                                            color: $accent;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .plan-summary {
+                                .plan-features {
+                                    ul {
+                                        color: $dark-dark-text;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .billing-options-wrapper {
+                .left {
+                    .option-block {
+                        .block-header {
+                            h3 {
+                                color: $dark-dark-text;
+                            }
+
+                            a:hover {
+                                color: $accent;
+                            }
+                        }
+
+                        .block-body {
+                            &.is-seats {
+                                .add-seat:hover {
+                                    border-color: $accent;
+                                    color: $accent;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .right {
+                    .payment-form {
+                        background: lighten($dark-sidebar, 6%);
+                        border-color: lighten($dark-sidebar, 12%);
+
+                        .form-header {
+                            h3 {
+                                color: $dark-dark-text;
+                            }
+
+                            span:hover, a:hover {
+                                color: $accent;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+3. SaaS Billing Media Queries
+========================================================================== */
+
+@media only screen and (max-width: 767px) {
+    .saas-billing-wrapper {
+        .plans-wrapper {
+            flex-direction: column;
+
+            .left, .right {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .left {
+                .plans {
+                    .plan {
+                        .plan-inner {
+                            position: relative;
+                            flex-direction: column;
+                            text-align: center;
+
+                            .checkmark {
+                                position: absolute;
+                                top: 10px;
+                                right: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .right {
+                .plan-details {
+                    .plan-details-inner {
+                        .plan-summary {
+                            .plan-features {
+                                .columns {
+                                    display: flex;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .billing-options-wrapper {
+            flex-direction: column;
+
+            .left, .right {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .saas-billing-wrapper {
+        max-width: 490px;
+
+        .plans-wrapper {
+            flex-direction: column;
+
+            .left, .right {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .left {
+                .plans {
+                    .plan {
+                        .plan-inner {
+                            position: relative;
+                            flex-direction: column;
+                            text-align: center;
+
+                            .checkmark {
+                                position: absolute;
+                                top: 10px;
+                                right: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .right {
+                .plan-details {
+                    .plan-details-inner {
+                        .plan-summary {
+                            .plan-features {
+                                .columns {
+                                    display: flex;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .billing-options-wrapper {
+            flex-direction: column;
+
+            .left, .right {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .saas-billing-wrapper {
+        .plans-wrapper {
+            .left {
+                .plans {
+                    .plan {
+                        .plan-inner {
+                            .checkmark {
+                                position: absolute;
+                                top: 10px;
+                                right: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+4. Action Page V1
+========================================================================== */
+
+.action-page-wrapper {
+    &.action-page-v1, &.action-page-v2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 540px;
+        min-height: 560px;
+        margin: 0 auto;
+
+        .wrapper-inner {
+            .action-box {
+                @extend .s-card;
+
+                padding: 40px;
+
+                .box-content {
+                    text-align: center;
+                    font-family: $font;
+
+                    .h-avatar {
+                        display: block;
+                        margin: 0 auto 8px auto;
+                    }
+
+                    h3 {
+                        font-weight: 500;
+                        max-width: 320px;
+                        margin: 0 auto 16px auto;
+
+                        span {
+                            color: $primary;
+                        }
+                    }
+
+                    .sender-message {
+                        text-align: left;
+                        padding: 20px;
+                        border: 1px solid darken($fade-grey, 3%);
+                        max-width: 360px;
+                        margin: 0 auto;
+                        border-radius: 6px;
+                        box-shadow: $light-box-shadow;
+
+                        h4 {
+                            font-size: .7rem;
+                            font-weight: 500;
+                            color: $dark-text;
+                            text-transform: uppercase;
+                        }
+
+                        p {
+                            font-size: .9rem;
+                        }
+                    }
+
+                    .people-wrap {
+                        .people {
+                            display: flex;
+                            justify-content: center;
+                            padding: 16px 0 8px 0;
+
+                            .h-avatar {
+                                margin: 0 4px;
+                            }
+                        }
+
+                        .people-text {
+                            p {
+                                font-size: .9rem;
+                            }
+                        }
+                    }
+
+                    .buttons {
+                        margin: 0 auto;
+                        display: flex;
+                        justify-content: center;
+                        padding-top: 30px;
+
+                        .button {
+                            margin: 0 4px;
+                            min-width: 150px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+5. Action Page V2
+========================================================================== */
+
+.action-page-wrapper {
+    &.action-page-v2 {
+        max-width: 840px;
+
+        .wrapper-outer {
+            @extend .s-card;
+
+            display: flex;
+            padding: 0;
+
+            .wrapper-inner {
+                .action-box {
+                    border: none;
+                    background: none;
+                    border-radius: 0;
+                    border-right: 1px solid darken($fade-grey, 3%);
+                }
+            }
+
+            .side-wrapper {
+                flex-grow: 2;
+                padding: 40px;
+
+                .side-inner {
+                    .side-title {
+                        font-family: $font;
+                        margin-bottom: 16px;
+
+                        h3 {
+                            font-weight: 500;
+                            color: $dark-text;
+                        }
+
+                        p {
+                            font-size: .9rem;
+                        }
+                    }
+
+                    .action-list {
+                        .media-flex {
+                            .icon-wrap {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                height: 32px;
+                                width: 32x;
+                                min-width: 32px;
+                                border-radius: 50%;
+                                background: $white;
+                                border: 1px solid darken($fade-grey, 3%);
+                                box-shadow: $light-box-shadow;
+                                color: $primary;
+
+                                svg {
+                                    width: 16px;
+                                    height: 16px;
+                                    stroke-width: 3px;
+                                }
+                            }
+
+                            .flex-meta {
+                                span {
+                                    font-weight: 400;
+                                    font-size: .9rem;
+                                }
+
+                                p {
+                                    font-size: .9rem;
+                                    max-width: 240px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+6. Media Queries
+========================================================================== */
+
+@media only screen and (max-width: 767px) {
+    .action-page-wrapper {
+        &.action-page-v1 {
+            .wrapper-inner {
+                .action-box {
+                    padding: 20px;
+
+                    .box-content {
+                        .buttons {
+                            .button {
+                                min-width: 130px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.action-page-v2 {
+            .wrapper-outer {
+                flex-direction: column;
+
+                .wrapper-inner {
+                    .action-box {
+                        padding: 20px 20px 40px 20px;
+                        border-right: none;
+                        border-bottom: 1px solid darken($fade-grey, 3%);
+
+                        .box-content {
+                            .buttons {
+                                .button {
+                                    min-width: 130px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .side-wrapper {
+                    padding: 40px 20px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .action-page-wrapper {
+        &.action-page-v1 {
+            .wrapper-inner {
+                .action-box {
+                    .box-content {
+                        .buttons {
+                            .button {
+                                min-width: 130px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.action-page-v2 {
+            .wrapper-outer {
+                .wrapper-inner {
+                    .action-box {
+                        padding: 30px;
+
+                        .box-content {
+                            .buttons {
+                                .button {
+                                    min-width: 130px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .side-wrapper {
+                    padding: 30px;
                 }
             }
         }

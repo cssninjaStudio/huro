@@ -3,6 +3,7 @@
 /*
     1. Spacing helpers
     2. Color helpers
+    3. Dark helpers
 */
 
 /* ==========================================================================
@@ -52,4 +53,41 @@ $colors: (primary: $primary, secondary: $secondary, accent: $accent, info: $info
 
 .bg {
     @include color-modifiers($attribute: "background", $prefix: "-");
+}
+
+/* ==========================================================================
+3. Dark helpers
+========================================================================== */
+
+body {
+    &.is-dark {
+
+        //Card border helper
+        .is-dark-card-bordered {
+            border-color: lighten($dark-sidebar, 12%) !important;
+        }
+
+        //Primary Helper
+        .is-dark-primary {
+            color: $accent !important;
+        }
+
+        //BG Helpers
+        .is-dark-bg-2 {
+            background: lighten($dark-sidebar, 2%) !important;
+        }
+
+        .is-dark-bg-3 {
+            background: lighten($dark-sidebar, 3%) !important;
+        }
+
+        .is-dark-bg-4 {
+            background: lighten($dark-sidebar, 4%) !important;
+        }
+
+        .is-dark-bg-6 {
+            background: lighten($dark-sidebar, 6%) !important;
+        }
+
+    }
 }
