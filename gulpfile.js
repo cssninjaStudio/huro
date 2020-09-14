@@ -99,7 +99,6 @@ function compileJS() {
     'src/assets/js/functions.js',
     'src/assets/js/main.js',
     'src/assets/js/auth.js',
-    
     'src/assets/js/theme.js',
     'src/assets/js/touch.js',
     'src/assets/js/tour.js',
@@ -109,6 +108,9 @@ function compileJS() {
     'src/assets/js/dashboards/flights.js',
     'src/assets/js/dashboards/stocks.js',
     'src/assets/js/dashboards/charts/apex.js',
+    'src/assets/js/dashboards/charts/billboardjs.js',
+    'src/assets/js/dashboards/charts/apex-data.js',
+    'src/assets/js/dashboards/widgets/widgets.js',
     'src/assets/js/layouts/list-views/list-view.js',
     'src/assets/js/layouts/flex-lists/flex-list.js',
     'src/assets/js/layouts/datatables/datatables.js',
@@ -254,6 +256,7 @@ function concatPlugins() {
     nodepath + 'filepond-plugin-image-resize/dist/filepond-plugin-image-resize.min.js',
     nodepath + 'filepond-plugin-image-transform/dist/filepond-plugin-image-transform.min.js',
     nodepath + 'apexcharts/dist/apexcharts.min.js',
+    nodepath + 'billboard.js/dist/billboard.min.js',
     nodepath + 'hopscotch/dist/js/hopscotch.min.js',
     'src/assets/vendor/js/*',
   ])
@@ -284,6 +287,7 @@ function concatCssPlugins() {
     nodepath + 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css',
     nodepath + 'filepond-plugin-image-edit/dist/filepond-plugin-image-edit.min.css',
     nodepath + 'hopscotch/dist/css/hopscotch.min.css',
+    nodepath + 'billboard.js/dist/billboard.min.css',
     'src/assets/vendor/css/*',
   ])
     .pipe(sourcemaps.init())

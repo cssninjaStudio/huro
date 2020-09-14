@@ -1,4 +1,5 @@
 <!-- Concatenated plugins -->
+<script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="{{ root }}assets/js/app.js"></script>
 
 <!-- Huro js -->
@@ -24,7 +25,17 @@
 
 <!-- Charts js -->
 {{#ifpage 'admin-dashboards-charts-apex'}}
+<script src="{{ root }}assets/js/apex-data.js"></script>
 <script src="{{ root }}assets/js/apex.js"></script>
+{{/ifpage}}
+
+{{#ifpage 'admin-dashboards-charts-billboardjs'}}
+<script src="{{ root }}assets/js/billboardjs.js"></script>
+{{/ifpage}}
+
+<!-- Widgets js -->
+{{#ifpage 'admin-dashboards-widgets-data'}}
+<script src="{{ root }}assets/js/widgets.js"></script>
 {{/ifpage}}
 
 <!-- Layouts js -->

@@ -16,7 +16,9 @@ var themeColors = {
     blue: '#37C3FF',
     green: '#93E088',
     yellow: '#FFD66E',
-    orange: '#FFA981'
+    orange: '#FFA981',
+    lightText: '#a2a5b9',
+    fadeGrey: '#ededed',
 }
 
 //Switch Layouts

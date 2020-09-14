@@ -19,6 +19,14 @@
         padding-right: 1em;
     }
 
+    &.is-curved {
+        padding-left: 0.85em;
+        padding-right: 0.85em;
+        line-height: 2.5;
+        height: 2.6em;
+        border-radius: 8px;
+    }
+
     &.is-elevated {
         box-shadow: $light-box-shadow;
     }

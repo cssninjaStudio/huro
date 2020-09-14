@@ -1,0 +1,178 @@
+---
+layout: default
+title: Widgets
+---
+
+{{> generic-sidebar}}
+{{> generic-mobile-subsidebar}}
+
+<!-- Content Wrapper -->
+<div class="view-wrapper" data-naver-offset="150" data-menu-item="#home-sidebar-menu"
+    data-mobile-item="#home-sidebar-menu-mobile">
+
+    <div class="page-content-wrapper">
+        <div class="page-content is-relative">
+
+            <div class="page-title has-text-centered">
+                <!-- Sidebar Trigger -->
+                <div class="huro-hamburger nav-trigger push-resize" data-sidebar="home-sidebar">
+                    <span class="menu-toggle has-chevron">
+                        <span class="icon-box-toggle">
+                            <span class="rotate">
+                                <i class="icon-line-top"></i>
+                                <i class="icon-line-center"></i>
+                                <i class="icon-line-bottom"></i>
+                            </span>
+                        </span>
+                    </span>
+                </div>
+
+                <div class="title-wrap">
+                    <h1 class="title is-4">Widgets</h1>
+                </div>
+
+                {{> toolbar}}
+            </div>
+
+            <div class="page-content-inner">
+
+                <!--Data Widgets-->
+                <div class="columns is-multiline">
+
+                    <!--Widget Column-->
+                    <div class="column is-3">
+
+                        <!--Widget-->
+                        <div class="widget gauge-widget">
+                            <div class="widget-toolbar">
+                                <div class="left">
+                                    <h3>Gauge Widget</h3>
+                                </div>
+                                <div class="right">
+                                    {{> widget-dropdown}}
+                                </div>
+                            </div>
+                            <div class="gauge-wrap">
+                                <div id="gauge-holder" class="gauge-holder"></div>
+                            </div>
+                            <div class="widget-content">
+                                <p>Your score has been calculated based on the latest metrics</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Widget Column-->
+                    <div class="column is-3">
+
+                        <!--Widget-->
+                        <div class="widget icon-toolbar-widget">
+                            <div class="icon-toolbar">
+                                <div class="toolbar-icon">
+                                    <a class="inner-icon is-active">
+                                        <i data-feather="activity"></i>
+                                    </a>
+                                </div>
+                                <div class="toolbar-icon">
+                                    <a class="inner-icon">
+                                        <i data-feather="search"></i>
+                                    </a>
+                                </div>
+                                <div class="toolbar-icon">
+                                    <a class="inner-icon">
+                                        <i data-feather="file-text"></i>
+                                    </a>
+                                </div>
+                                <div class="toolbar-icon">
+                                    <a class="inner-icon">
+                                        <i data-feather="home"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Widget-->
+                        <div class="widget calendar-widget">
+                            <div class="calendar-widget-inner">
+                                <div class="calendar-square">
+                                    <div class="date">
+                                        <span>22</span>
+                                        <span>Monday</span>
+                                    </div>
+                                </div>
+                                <div class="calendar-square">
+                                    <div class="date">
+                                        <span>23</span>
+                                        <span>Tuesday</span>
+                                    </div>
+                                </div>
+                                <div class="calendar-square">
+                                    <div class="date">
+                                        <span>24</span>
+                                        <span>Wednesday</span>
+                                    </div>
+                                </div>
+                                <div class="calendar-square">
+                                    <div class="date">
+                                        <span>25</span>
+                                        <span>Thursday</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Widget Column-->
+                    <div class="column is-3">
+
+                        <!--Widget-->
+                        <div class="widget text-widget">
+                            <div class="widget-toolbar">
+                                <div class="left">
+                                    <h3>Payment</h3>
+                                </div>
+                                <div class="right">
+                                    <a class="right-icon has-indicator">
+                                        <i data-feather="bell"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="widget-content">
+                                <p>You have an upcoming payment for your recurring subscription fee due on <span>Sept 20, 2020</span>.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Widget Column-->
+                    <div class="column is-3">
+
+                        <!--Widget-->
+                        <div class="widget tags-widget">
+                            <div class="widget-toolbar">
+                                <div class="left">
+                                    <h3>Labels</h3>
+                                </div>
+                                <div class="right">
+                                    {{> widget-dropdown}}
+                                </div>
+                            </div>
+                            <div class="widget-content">
+                                <div class="tags">
+                                    <span class="tag is-primary is-outlined is-curved">Family</span>
+                                    <span class="tag is-primary is-curved">Home</span>
+                                    <span class="tag is-primary is-outlined is-curved">Health</span>
+                                    <span class="tag is-primary is-outlined is-curved">Business</span>
+                                    <span class="tag is-primary is-outlined is-curved">Personal</span>
+                                    <span class="tag is-primary is-curved">Utility</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
