@@ -11,6 +11,14 @@ Widget Styles
     4. Text Widget
     5. Tags Widget
     6. Calendar Widget
+    7. Image Widget
+    8. List Widget
+    9. Picker Widget
+    10. Stat Widget
+    11. Search Widget
+    12. Icon List Widget
+    13. Video Widget
+    14. Inbox Widget
 */
 
 /* ==========================================================================
@@ -30,12 +38,12 @@ Widget Styles
     .left {
         display: flex;
         align-items: center;
+    }
 
-        h3 {
-            font-family: $font;
-            color: $dark-text;
-            font-weight: 500;
-        }
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .right {
@@ -73,6 +81,51 @@ Widget Styles
                 height: 18px;
                 width: 18px;
                 transition: stroke .3s;
+            }
+        }
+    }
+
+    h3 {
+        font-family: $font;
+        color: $dark-text;
+        font-weight: 500;
+    }
+
+    .action-icon {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 32px;
+        width: 32px;
+        min-width: 32px;
+        border-radius: 50%;
+        color: lighten($light-text, 12%);
+        transition: all .3s;
+
+        svg {
+            height: 18px;
+            width: 18px;
+            transition: stroke .3s;
+        }
+    }
+}
+
+body {
+    &.is-dark {
+        .widget-toolbar {
+            h3 {
+                color: $dark-dark-text;
+            }
+
+            .right {
+                .right-icon {
+                    &.has-indicator {
+                        &:after {
+                            border-color: lighten($dark-sidebar, 6%);
+                        }
+                    }
+                }
             }
         }
     }
@@ -140,6 +193,28 @@ Widget Styles
     }
 }
 
+body {
+    &.is-dark {
+        .icon-toolbar-widget {
+            .icon-toolbar {
+                .toolbar-icon {
+                    .inner-icon {
+                        color: darken($light-text, 12%);
+
+                        &:hover:not(.is-active) {
+                            background: lighten($dark-sidebar, 3%);
+                        }
+
+                        &.is-active {
+                            color: $accent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 /* ==========================================================================
 4. Text Widget
 ========================================================================== */
@@ -159,6 +234,20 @@ Widget Styles
     }
 }
 
+body {
+    &.is-dark {
+        .text-widget {
+            .widget-content {
+                p {
+                    span {
+                        color: $dark-dark-text;
+                    }
+                }
+            }
+        }
+    }
+}
+
 /* ==========================================================================
 5. Tags Widget
 ========================================================================== */
@@ -167,11 +256,9 @@ Widget Styles
     @extend .l-card;
 
     .widget-content {
-        .tags {
-        }
+        .tags {}
     }
 }
-
 
 /* ==========================================================================
 6. Calendar Widget
@@ -210,6 +297,585 @@ Widget Styles
                         text-transform: uppercase;
                         color: $light-text;
                     }
+                }
+            }
+        }
+    }
+}
+
+body {
+    &.is-dark {
+        .calendar-widget {
+            .calendar-widget-inner {
+                .calendar-square {
+                    .date {
+                        span {
+                            &:first-child {
+                                color: $dark-dark-text;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+7. Image Widget
+========================================================================== */
+
+.image-widget {
+    @extend .l-card;
+
+    position: relative;
+    padding: 10px;
+    height: 310px;
+
+    > img {
+        display: block;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 14px;
+    }
+
+    .progress-wrap {
+        position: absolute;
+        bottom: 30px;
+        left: 0;
+        right: 0;
+        padding: 0 30px;
+
+        .progress {
+            background-color: #000;
+            background-image: linear-gradient(to right, $primary 30%, #000 30%);
+            height: .15rem !important;
+        }
+    }
+}
+
+body {
+    &.is-dark {
+        .image-widget {
+            .progress-wrap {
+                .progress {
+                    background-image: linear-gradient(to right, $accent 30%, #000 30%) !important;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+8. List Widget
+========================================================================== */
+
+.list-widget {
+    @extend .l-card;
+
+    ul {
+        li {
+            &:not(:last-child) {
+                margin-bottom: 12px;
+            }
+
+            a {
+                font-family: $font;
+                display: flex;
+                justify-content: space-between;
+                color: $light-text;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
+body {
+    &.is-dark {
+        .list-widget {
+            ul {
+                li {
+                    a {
+                        &:hover {
+                            color: $accent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+9. Picker Widget
+========================================================================== */
+
+.picker-widget {
+    @extend .l-card;
+
+    .calendar {
+        color: $dark-text;
+        font-size: 12px;
+        font-family: $font;
+        width: 100%;
+        margin-bottom: 5px;
+
+        thead, tbody {
+            width: 100%;
+        }
+    }
+
+    .calendar thead {
+        color: $primary;
+        font-weight: 600;
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+
+    .calendar td {
+        padding: .5em 0;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+
+    .calendar tbody td:hover {
+        background: lighten($fade-grey, 3%);
+        color: $primary;
+    }
+
+    .current-day {
+        color: $primary;
+        font-weight: 600;
+    }
+
+    .prev-month,
+    .next-month {
+        color: #cacaca;
+    }
+}
+
+body {
+    &.is-dark {
+        .picker-widget {
+            .calendar {
+                color: $dark-dark-text;
+
+                thead {
+                    color: $accent;
+                }
+
+                td:hover {
+                    background: lighten($dark-sidebar, 3%);
+                    color: $accent;
+                }
+            }
+
+            .current-day {
+                color: $accent;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+10. Stat Widget
+========================================================================== */
+
+.stats-widget {
+    @extend .l-card;
+
+    padding: 20px 0 0 0;
+
+    .widget-toolbar {
+        padding: 0 20px;
+    }
+
+    .stat-number {
+        span {
+            display: block;
+            font-family: $font;
+
+            &:first-child {
+                font-size: 2rem;
+                font-weight: 700;
+                color: $dark-text;
+
+                svg {
+                    stroke: $success;
+                }
+            }
+
+            &:nth-child(2) {
+                font-size: .8rem;
+                text-transform: uppercase;
+                color: $light-text;
+            }
+        }
+    }
+}
+
+body {
+    &.is-dark {
+        .stats-widget {
+            .stat-number {
+                span {
+                    &:first-child {
+                        color: $dark-dark-text;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+11. Search Widget
+========================================================================== */
+
+.search-widget {
+    @extend .l-card;
+
+    .field {
+        .control {
+            position: relative;
+
+            .input {
+                height: 42px;
+                border-radius: 8px;
+                background: $widget-grey;
+                border-color: $widget-grey;
+
+                &:focus {
+                    border-color: darken($fade-grey, 3%);
+                    background: $white;
+                }
+            }
+
+            .search-button {
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 42px;
+                width: 42px;
+                border-radius: 8px;
+                background: $primary;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                outline: none;
+                color: $white;
+                cursor: pointer;
+
+                svg {
+                    height: 18px;
+                    width: 18px;
+                }
+            }
+        }
+
+        .topics {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            padding-top: 12px;
+
+            a {
+                font-family: $font;
+                color: $light-text;
+                font-size: .95rem;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
+body {
+    &.is-dark {
+        .search-widget {
+            .field {
+                .control {
+                    .input {
+                        background: lighten($dark-sidebar, 3%);
+                        border-color: lighten($dark-sidebar, 12%);
+                    }
+
+                    .search-button {
+                        background: $accent;
+                    }
+                }
+
+                .topics {
+                    a:hover {
+                        color: $accent;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+12. Icon List Widget
+========================================================================== */
+
+.icon-list-widget {
+    @extend .l-card;
+
+    .icon-list {
+        .icon-list-item {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+
+            &:hover {
+                .icon-wrap {
+                    background: $primary;
+                    color: $white;
+                    box-shadow: $primary-box-shadow;
+                }
+
+                .item-meta {
+                    span {
+                        color: $dark-text;
+                    }
+                }
+            }
+
+            .icon-wrap {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 42px;
+                width: 42px;
+                border-radius: 8px;
+                background: darken($widget-grey, 2%);
+                color: darken($light-text, 6%);
+                transition: all .3s;
+
+                svg {
+                    height: 18px;
+                    width: 18px;
+                    transition: stroke .3s;
+                }
+            }
+
+            .item-meta {
+                margin-left: 12px;
+
+                span {
+                    font-family: $font;
+                    color: $light-text;
+                }
+            }
+        }
+    }
+}
+
+body {
+    &.is-dark {
+        .icon-list-widget {
+            .icon-list {
+                .icon-list-item {
+                    &:hover {
+                        .icon-wrap {
+                            background: $accent;
+                            box-shadow: $accent-box-shadow;
+                            color: $smoke-white;
+                        }
+
+                        .item-meta {
+                            span {
+                                color: $accent !important;
+                            }
+                        }
+                    }
+
+                    .icon-wrap {
+                        background: lighten($dark-sidebar, 3%);
+                        color: lighten($light-text, 2%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+13. Video Widget
+========================================================================== */
+
+.video-widget {
+    @extend .l-card;
+
+    padding: 10px;
+
+    .widget-content {
+        display: flex;
+
+        > img {
+            height: 100px;
+            width: 100px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .widget-meta {
+            margin-left: 10px;
+            display: flex;
+            flex-direction: column;
+            font-family: $font;
+
+            > svg {
+                height: 20px;
+                width: 20px;
+                stroke-width: 1.6px;
+                stroke: $primary;
+                margin-bottom: 6px;
+            }
+
+            h4 {
+                font-weight: 500;
+                font-size: .95rem;
+                line-height: 1.3;
+                color: $dark-text;
+            }
+
+            .views {
+                display: flex;
+                align-items: center;
+                margin-top: auto;
+                color: $light-text;
+
+                svg {
+                    height: 14px;
+                    width: 14px;
+                    stroke-width: 1.4px;
+                    margin-right: 6px;
+                }
+
+                span {
+                    font-size: .85rem;
+                }
+            }
+        }
+    }
+}
+
+body {
+    &.is-dark {
+        .video-widget {
+            .widget-meta {
+                > svg {
+                    stroke: $accent;
+                }
+
+                h4 {
+                    color: $dark-dark-text;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+14. Inbox Widget
+========================================================================== */
+
+.inbox-widget {
+    @extend .l-card;
+
+    .sender-block {
+        h4 {
+            font-family: $font;
+            font-weight: 500;
+            color-interpolation-filters: $dark-text;
+            font-size: .95rem;
+        }
+
+        .sender-block-inner {
+            display: flex;
+            align-items: center;
+            padding: 16px 0;
+
+            .meta {
+                margin-left: 10px;
+                line-height: 1.2;
+
+                span {
+                    font-family: $font;
+                    font-size: .9rem;
+                }
+            }
+        }
+
+        .exerpt {
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid darken($fade-grey, 3%);
+            font-family: $font;
+
+            h5 {
+                display: flex;
+                align-items: center;
+                font-size: .85rem;
+                font-weight: 500;
+                color: $primary;
+                margin-bottom: 6px;
+
+                i {
+                    font-size: 6px;
+                    margin-right: 6px;
+                }
+            }
+
+            p {
+                font-size: .9rem;
+                color: $dark-text;
+                margin-bottom: 6px;
+            }
+
+            small {
+                color: $light-text;
+            }
+        }
+    }
+}
+
+body {
+    &.is-dark {
+        .inbox-widget {
+            .sender-block {
+                .sender-block-inner {
+                    .meta {
+                        span {
+                            color: $dark-dark-text;
+                        }
+                    }
+                }
+            }
+
+            .exerpt {
+                background: lighten($dark-sidebar, 4%);
+                border-color: lighten($dark-sidebar, 12%);
+
+                h5 {
+                    color: $accent;
+                }
+
+                p {
+                    color: $dark-dark-text;
                 }
             }
         }
