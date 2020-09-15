@@ -156,4 +156,10 @@ $(document).ready(function () {
 
     }
 
+    $('.social-buttons-widget .inner-button').on('click', function(){
+        var $container = $(this).closest('.social-buttons-widget');
+        $container.find('.inner-button').removeClass('is-active');
+        $(this).addClass('is-active');
+    });
+
 })

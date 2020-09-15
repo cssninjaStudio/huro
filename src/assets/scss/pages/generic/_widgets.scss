@@ -51,6 +51,10 @@ Widget Styles
         align-items: center;
         justify-content: flex-end;
 
+        .tag {
+            font-family: $font;
+        }
+
         .right-icon {
             position: relative;
             display: flex;
@@ -231,6 +235,16 @@ body {
                 font-weight: 500;
             }
         }
+
+        .hashtags {
+            padding-top: 8px;
+            font-family: $font;
+
+            a {
+                color: $primary;
+                margin: 0 2px;
+            }
+        }
     }
 }
 
@@ -242,6 +256,12 @@ body {
                     span {
                         color: $dark-dark-text;
                     }
+                }
+            }
+
+            .hashtags {
+                a {
+                    color: $accent;
                 }
             }
         }
@@ -659,7 +679,7 @@ body {
                 align-items: center;
                 height: 42px;
                 width: 42px;
-                border-radius: 8px;
+                border-radius: 10px;
                 background: darken($widget-grey, 2%);
                 color: darken($light-text, 6%);
                 transition: all .3s;
@@ -876,6 +896,738 @@ body {
 
                 p {
                     color: $dark-dark-text;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+15. Illustration Widget
+========================================================================== */
+
+.illustration-widget {
+    &.illustration-widget-v1 {
+        @extend .l-card;
+
+        padding: 40px 30px;
+        text-align: center;
+        font-family: $font;
+
+        .img-container {
+            position: relative;
+            margin: 0 auto 12px auto;
+            max-width: 180px;
+
+            .main {
+                display: block;
+            }
+
+            .badge {
+                position: absolute;
+
+                &.badge-1 {
+                    height: 70px;
+                    width: 70px;
+                    top: 0;
+                    right: 0;
+                }
+
+                &.badge-2 {
+                    height: 50px;
+                    width: 50px;
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
+
+        h3 {
+            font-weight: 500;
+            color: $dark-text;
+            margin-bottom: 4px;
+        }
+
+        p {
+            font-size: .9rem;
+        }
+    }
+
+    &.illustration-widget-v2 {
+        @extend .l-card;
+
+        padding: 16px;
+
+        img {
+            border-radius: 14px;
+            margin-bottom: 4px;
+        }
+
+        h3 {
+            font-weight: 500;
+            color: $dark-text;
+        }
+
+        p {
+            font-size: .9rem;
+        }
+    }
+
+    &.illustration-widget-v3 {
+        @extend .l-card;
+
+        padding: 24px;
+
+        img {
+            border-radius: 18px;
+            margin-bottom: 4px;
+        }
+
+        h3 {
+            font-weight: 500;
+            line-height: 1.3;
+            color: $dark-text;
+        }
+
+        p {
+            font-size: .9rem;
+        }
+    }
+}
+
+body {
+    &.is-dark {
+        .illustration-widget {
+            &.illustration-widget-v1, &.illustration-widget-v2, &.illustration-widget-v3 {
+                h3 {
+                    color: $dark-dark-text;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+16. Creative List Widget
+========================================================================== */
+
+.creative-list-widget {
+    @extend .l-card;
+
+    .creative-list {
+        .creative-list-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background: lighten($fade-grey, 3%);
+            margin-bottom: 8px;
+
+            &.is-orange {
+                background: lighten($h-orange, 20%);
+            }
+
+            &.is-purple {
+                background: lighten($h-purple, 38%);
+            }
+
+            &.is-green {
+                background: lighten($success, 48%);
+            }
+
+            .meta {
+                font-family: $font;
+                font-size: .95rem;
+                color: $dark-text;
+                font-weight: 500;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+body {
+    &.is-dark {
+        .creative-list-widget {
+            .creative-list {
+                .creative-list-item {
+                    background: lighten($dark-sidebar, 2%);
+                    border: 1px solid lighten($dark-sidebar, 12%);
+
+                    .meta {
+                        color: $smoke-white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+17. Social Buttons Widget
+========================================================================== */
+
+.social-buttons-widget {
+    @extend .l-card;
+
+    padding: 16px;
+
+    .social-buttons {
+        display: flex;
+
+        .social-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1 1 0px;
+
+            .inner-button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 32px;
+                width: 32px;
+                min-width: 32px;
+                border-radius: 8px;
+                color: lighten($light-text, 12%);
+                transition: all .3s;
+
+                &:hover:not(.is-active) {
+                    background: lighten($fade-grey, 3%);
+                    color: $light-text;
+                }
+
+                &.is-rounded {
+                    border-radius: 50%;
+                }
+
+                &.is-active {
+                    &.is-facebook {
+                        background: $facebook;
+                        color: $smoke-white;
+                        box-shadow: $facebook-box-shadow;
+                    }
+
+                    &.is-linkedin {
+                        background: $linkedin;
+                        color: $smoke-white;
+                        box-shadow: $facebook-box-shadow;
+                    }
+
+                    &.is-twitter {
+                        background: $twitter;
+                        color: $smoke-white;
+                        box-shadow: $twitter-box-shadow;
+                    }
+
+                    &.is-instagram {
+                        background: $instagram;
+                        color: $smoke-white;
+                        box-shadow: $angular-box-shadow;
+                    }
+
+                    &.is-github {
+                        background: $github;
+                        color: $smoke-white;
+                        box-shadow: $github-box-shadow;
+                    }
+
+                    &.is-invision {
+                        background: $invision;
+                        color: $smoke-white;
+                        box-shadow: $invision-box-shadow;
+                    }
+
+                    &.is-atlassian {
+                        background: $linkedin;
+                        color: $smoke-white;
+                        box-shadow: $linkedin-box-shadow;
+                    }
+
+                    &.is-bootstrap {
+                        background: $h-purple;
+                        color: $smoke-white;
+                        box-shadow: $h-purple-box-shadow;
+                    }
+                }
+
+                svg {
+                    height: 18px;
+                    width: 18px;
+                    transition: stroke .3s;
+                }
+            }
+        }
+    }
+}
+
+body {
+    &.is-dark {
+        .social-buttons-widget {
+            .social-buttons {
+                .social-button {
+                    .inner-button {
+                        &:hover:not(.is-active) {
+                            background: lighten($dark-sidebar, 2%);
+                            color: $light-text;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+18. Call Widget
+========================================================================== */
+
+.call-widget {
+    @extend .l-card;
+
+    padding: 40px 30px;
+    text-align: center;
+    font-family: $font;
+
+    .img-container {
+        position: relative;
+        margin: 0 auto 12px auto;
+        max-width: 180px;
+        max-height: 180px;
+
+        .main {
+            display: block;
+        }
+
+        .badge {
+            position: absolute;
+            height: 60px;
+            width: 60px;
+            bottom: 0;
+            right: 2px;
+            border-radius: 50%;
+            border: 6px solid $white;
+        }
+    }
+
+    h3 {
+        font-weight: 500;
+        color: $dark-text;
+        margin-bottom: 4px;
+    }
+
+    p {
+        font-size: .9rem;
+    }
+
+    .actions {
+        display: flex;
+        justify-content: center;
+        padding-top: 12px;
+
+        .action {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 36px;
+            width: 36px;
+            min-width: 36px;
+            border-radius: 50%;
+            color: lighten($light-text, 12%);
+            transition: all .3s;
+            margin: 0 6px;
+            border: 1px solid darken($fade-grey, 3%);
+            box-shadow: $light-box-shadow;
+            transition: all .3s;
+
+            &:hover {
+                background: $primary;
+                border-color: $primary;
+                color: $smoke-white;
+                box-shadow: $primary-box-shadow;
+            }
+
+            svg {
+                height: 16px;
+                width: 16px;
+                transition: stroke .3s;
+            }
+        }
+    }
+}
+
+body {
+    &.is-dark {
+        .call-widget {
+            h3 {
+                color: $dark-dark-text;
+            }
+
+            .img-container {
+                .badge {
+                    border-color: lighten($dark-sidebar, 6%);
+                }
+            }
+
+            .actions {
+                .action {
+                    background: lighten($dark-sidebar, 2%);
+                    border: 1px solid lighten($dark-sidebar, 12%);
+                    color: $dark-dark-text;
+
+                    &:hover {
+                        border-color: $accent;
+                        color: $accent;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+16. Avatar List Widget
+========================================================================== */
+
+.avatar-list-widget {
+    @extend .l-card;
+
+    padding: 14px;
+
+    .field {
+        .control {
+            position: relative;
+
+            .input {
+                height: 42px;
+                border-radius: 8px;
+                background: $widget-grey;
+                border-color: $widget-grey;
+
+                &:focus {
+                    border-color: darken($fade-grey, 3%);
+                    background: $white;
+                }
+            }
+
+            .search-button {
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 42px;
+                width: 42px;
+                border-radius: 8px;
+                background: $primary;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                outline: none;
+                color: $white;
+                cursor: pointer;
+
+                svg {
+                    height: 18px;
+                    width: 18px;
+                }
+            }
+        }
+    }
+
+    .avatar-list {
+        .avatar-list-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            transition: all .3s;
+
+            &:hover {
+                background: lighten($fade-grey, 3%);
+            }
+
+            .meta {
+                font-family: $font;
+                font-size: .95rem;
+                color: $dark-text;
+                font-weight: 500;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+body {
+    &.is-dark {
+        .avatar-list-widget {
+            .field {
+                .control {
+                    .input {
+                        background: lighten($dark-sidebar, 3%);
+                        border-color: lighten($dark-sidebar, 12%);
+                    }
+
+                    .search-button {
+                        background: $accent;
+                    }
+                }
+
+                .topics {
+                    a:hover {
+                        color: $accent;
+                    }
+                }
+            }
+
+            .avatar-list {
+                .avatar-list-item {
+
+                    &:hover {
+                        background: lighten($dark-sidebar, 8%);
+                    }
+
+                    .meta {
+                        color: $dark-dark-text;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+17. Contact Widget
+========================================================================== */
+
+.contact-widget {
+    @extend .l-card;
+
+    &.is-reversed {
+        .widget-content {
+            flex-direction: row-reverse;
+        }
+    }
+
+    .widget-content {
+        display: flex;
+        border-bottom: 1px solid darken($fade-grey, 3%);
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+
+        .left {
+            text-align: center;
+            width: 40%;
+
+            .h-avatar {
+                display: block;
+                margin: 0 auto;
+
+                .avatar {
+                    margin: 0;
+                }
+            }
+        }
+
+        .right {
+            width: 60%;
+            font-family: $font;
+
+            > h3 {
+                color: $dark-text;
+                font-weight: 500;
+                margin-bottom: 4px;
+            }
+
+            .company {
+                font-size: .9rem;
+                line-height: 1.2;
+                margin-bottom: 4px;
+
+                span {
+                    color: $primary;
+                }
+
+                p {}
+            }
+
+            .contact-info {
+                font-size: .85rem;
+
+                > span {
+                    display: flex;
+                    align-items: center;
+
+                    svg {
+                        height: 14px;
+                        width: 14px;
+                        margin-right: 4px;
+                        stroke-width: 1.4px;
+                        stroke: $light-text;
+                    }
+                }
+            }
+        }
+    }
+
+    .email {
+        text-align: center;
+        font-size: .9rem;
+    }
+}
+
+body {
+    &.is-dark {
+        .contact-widget {
+            .widget-content {
+                border-color: lighten($dark-sidebar, 12%);
+
+                .right {
+                    h3 {
+                        color: $dark-dark-text;
+                    }
+
+                    .company {
+                        span:first-child {
+                            color: $accent;
+                        }
+                    }
+
+                    .contact-info {
+                        span span {
+                            color: $dark-dark-text;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+18. Followers Widget
+========================================================================== */
+
+.followers-widget {
+    @extend .l-card;
+
+    .channels {
+        display: flex;
+        margin-left: -8px;
+        margin-right: -8px;
+        width: 100%;
+
+        .channel {
+            width: calc(33.3% - 16px);
+            text-align: center;
+            margin: 0 8px;
+
+            .channel-icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 36px;
+                width: 36px;
+                border-radius: 10px;
+                background: $widget-grey;
+                margin: 0 auto 4px auto;
+
+                i {
+                    font-size: 14px;
+                    color: $light-text;
+                }
+            }
+
+            .channel-stats {
+                span {
+                    font-family: $font;
+                    display: block;
+
+                    &:first-child {
+                        font-weight: 500;
+                        color: $light-text;
+                    }
+                }
+            }
+        }
+    }
+}
+
+body {
+    &.is-dark {
+        .followers-widget {
+            .channels {
+                .channel {
+                    .channel-icon {
+                        background: lighten($dark-sidebar, 2%);
+                        border: 1px solid lighten($dark-sidebar, 12%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+18. Cart Widget
+========================================================================== */
+
+.cart-widget {
+    @extend .l-card;
+
+    .cart-items {
+        .cart-item {
+            display: flex;
+            margin: 8px 0;
+
+            .meta {
+                margin-left: 12px;
+                display: flex;
+                flex-direction: column;
+
+                span {
+                    display: block;
+                    font-family: $font;
+
+                    &:first-child {
+                        font-size: .9rem;
+                        color: $light-text;
+                    }
+
+                    &:nth-child(2) {
+                        color: $dark-text;
+                        margin-top: auto;
+                        font-weight: 600;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .cart-button {
+        padding-top: 16px;
+
+        .button {
+            min-height: 50px;
+            border-radius: 10px;
+        }
+    }
+}
+
+
+body {
+    &.is-dark {
+        .cart-widget {
+            .cart-items {
+                .cart-item {
+                    .meta {
+                        span {
+                            &:nth-child(2) {
+                                color: $accent;
+                            }
+                        }
+                    }
                 }
             }
         }
