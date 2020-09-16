@@ -202,6 +202,27 @@
 4. Controls
 ========================================================================== */
 
+.form-fieldset {
+    padding: 20px 0;
+    max-width: 480px;
+    margin: 0 auto;
+
+    .fieldset-heading {
+        margin-bottom: 20px;
+
+        h4 {
+            font-family: $font;
+        }
+    }
+
+    .columns {
+        .column {
+            padding-top: .5rem;
+            padding-bottom: .5rem;
+        }
+    }
+}
+
 .select:not(.is-multiple):not(.is-loading)::after {
     border-color: lighten($muted-grey, 14%);
     border-width: 1.4px;
@@ -681,7 +702,6 @@ select {
         }
     }
 }
-
 
 /* ==========================================================================
 14. Switch
@@ -1271,14 +1291,13 @@ body {
 
         .control {
             &.has-icon {
-
                 .input {
                     &:focus {
                         ~ .form-icon {
                             svg {
                                 stroke: $accent;
                             }
-        
+
                             .fas, .fal, .far, .fab, .lnir, .lnil {
                                 color: $accent;
                             }

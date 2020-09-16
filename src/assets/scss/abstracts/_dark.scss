@@ -10,7 +10,7 @@
 
 html, body {
     &.is-dark {
-        background: $dark-sidebar;
+        background: lighten($dark-sidebar, 10%);
 
         &.is-chat-side-collapsed {
             background: lighten($dark-sidebar, 5%) !important;

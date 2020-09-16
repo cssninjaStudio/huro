@@ -22,11 +22,12 @@
     width: 240px;
     background: $white;
     transform: translateX(-100%);
-    z-index: 31;
+    z-index: -1;
     transition: all .3s;
 
     &.is-active {
         transform: translateX(0) !important;
+        z-index: 31;
     }
 
     .inner {

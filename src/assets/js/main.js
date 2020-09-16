@@ -67,6 +67,9 @@ $(document).ready(function () {
         initWebapp();
     }
 
+    //Stuck form header
+    initStuckHeader();
+
     //Navbar Dropdowns
     initNavbarDropdowns();
 

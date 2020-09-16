@@ -30,6 +30,10 @@ body {
         top: 0;
         overflow: hidden;
     }
+
+    &.is-curved {
+        background: #f2f2f2;
+    }
 }
 
 .app-wrapper {
@@ -71,7 +75,7 @@ body {
     margin-left: 80px;
     background: $background-grey;
     background: #f2f2f2;
-    border: 1px solid $medium-grey;
+    //border: 1px solid $medium-grey;
     transition: all .3s;
 
     &.is-pushed-full {

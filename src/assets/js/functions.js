@@ -334,6 +334,20 @@ function openSidebar() {
     $('.main-sidebar, .sidebar-brand').addClass('is-bordered');
 }
 
+//Stuck form header
+function initStuckHeader() {
+    if ($('.stuck-header').length) {
+        $(window).on('scroll', function () {
+            var height = $(window).scrollTop();
+            if (height > 80) {
+                $(".stuck-header").addClass('is-stuck');
+            } else {
+                $(".stuck-header").removeClass('is-stuck');
+            }
+        });
+    }
+}
+
 //Navbar Dropdowns
 function initNavbarDropdowns() {
     $('.has-dropdown').on('click', function () {

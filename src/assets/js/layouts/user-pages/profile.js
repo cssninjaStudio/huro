@@ -26,14 +26,14 @@ $(document).ready(function () {
     //Edit profile
     if ($('#edit-profile').length) {
            
-        $(window).on('scroll', function () {
+        /*$(window).on('scroll', function () {
             var height = $(window).scrollTop();
             if (height > 80) {
                 $(".stuck-header").addClass('is-stuck');
             } else {
                 $(".stuck-header").removeClass('is-stuck');
             }
-        });
+        });*/
 
         $('.profile-h-avatar .edit-button').on('click', function(){
             var $container = $(this).closest('.profile-h-avatar');
