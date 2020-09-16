@@ -38,7 +38,7 @@ html, body {
             background: $accent;
         }
 
-        .view-wrapper {
+        .view-wrapper, .minimal-wrapper {
             background: lighten($dark-sidebar, 10%);
             border-color: lighten($dark-sidebar, 10%);
         }

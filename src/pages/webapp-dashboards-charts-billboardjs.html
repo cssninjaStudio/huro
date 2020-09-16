@@ -1,31 +1,18 @@
 ---
-layout: default
+layout: webapp
 title: Billboard Js
 ---
 
-{{> generic-sidebar}}
-{{> elements-mobile-subsidebar}}
+{{> generic-mobile-subsidebar}}
 
 <!-- Content Wrapper -->
-<div id="app-home" class="view-wrapper" data-naver-offset="150" data-menu-item="#home-sidebar-menu"
+<div id="app-apex-charts" class="view-wrapper is-webapp" data-page-title="Billboard Js" data-naver-offset="150" data-menu-item="#dashboards-navbar-menu"
     data-mobile-item="#home-sidebar-menu-mobile">
 
     <div class="page-content-wrapper">
         <div class="page-content is-relative">
 
-            <div class="page-title has-text-centered">
-                <!-- Sidebar Trigger -->
-                <div class="huro-hamburger nav-trigger push-resize" data-sidebar="home-sidebar">
-                    <span class="menu-toggle has-chevron">
-                        <span class="icon-box-toggle">
-                            <span class="rotate">
-                                <i class="icon-line-top"></i>
-                                <i class="icon-line-center"></i>
-                                <i class="icon-line-bottom"></i>
-                            </span>
-                        </span>
-                    </span>
-                </div>
+            <div class="page-title has-text-centered is-webapp">
 
                 <div class="title-wrap">
                     <h1 class="title is-4">Billboard Js</h1>
@@ -34,7 +21,7 @@ title: Billboard Js
                 {{> toolbar}}
             </div>
 
-            <div class="page-content-inner">
+            <div class="page-content-inner p-t-30">
                 <div class="columns is-multiline">
                     <div class="column is-6">
                         <div class="s-card">
@@ -111,4 +98,5 @@ title: Billboard Js
 
         </div>
     </div>
+
 </div>

@@ -1276,6 +1276,15 @@ body {
 
 body {
     &.is-dark {
+
+        .form-fieldset {
+            .fieldset-heading {
+                h4 {
+                    color: $dark-dark-text;
+                }
+            }
+        }
+
         .field {
             &.has-textarea-addon {
                 .textarea {

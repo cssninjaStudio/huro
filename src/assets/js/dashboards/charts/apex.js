@@ -7,8 +7,8 @@ $(document).ready(function () {
     if ($('#apex-chart-1').length) {
         var options = {
             series: [{
-                name: "Desktops",
-                data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+                name: "Sales",
+                data: [105, 414, 357, 511, 497, 621, 695, 912, 748]
             }],
             chart: {
                 height: 280,
@@ -103,8 +103,8 @@ $(document).ready(function () {
                 }
             },
             xaxis: {
-                categories: ['Jan', 'Jan', 'Jan', 'Jan', 'Feb', 'Feb', 'Feb', 'Feb', 'Mar',
-                    'Mar', 'Mar', 'Mar'
+                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
+                    'Oct', 'Nov', 'Dec'
                 ],
             },
             tooltip: {
@@ -146,7 +146,8 @@ $(document).ready(function () {
 
         var options4 = {
             series: [{
-                data: [34, 44, 54, 21, 12, 43, 33, 23, 66, 66, 58]
+                name: 'New members',
+                data: [34, 44, 54, 21, 12, 43, 33, 23, 66, 66, 58, 79]
             }],
             chart: {
                 type: 'line',
@@ -171,7 +172,12 @@ $(document).ready(function () {
                 hover: {
                     sizeOffset: 4
                 }
-            }
+            },
+            xaxis: {
+                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
+                    'Oct', 'Nov', 'Dec'
+                ],
+            },
         };
 
         var chart4 = new ApexCharts(document.querySelector("#apex-chart-4"), options4);
@@ -183,7 +189,7 @@ $(document).ready(function () {
 
         var options5 = {
             series: [{
-                name: "STOCK ABC",
+                name: "Balance",
                 data: series.monthDataSeries1.prices
             }],
             chart: {
@@ -229,10 +235,10 @@ $(document).ready(function () {
 
         var options6 = {
             series: [{
-                name: 'series1',
+                name: 'Completed',
                 data: [31, 40, 28, 51, 42, 109, 100]
             }, {
-                name: 'series2',
+                name: 'Pending',
                 data: [11, 32, 45, 32, 34, 52, 41]
             }],
             chart: {
@@ -299,13 +305,13 @@ $(document).ready(function () {
 
         var options7 = {
             series: [{
-                name: 'PRODUCT A',
+                name: 'Desktops',
                 data: dataSet[0]
             }, {
-                name: 'PRODUCT B',
+                name: 'Phones',
                 data: dataSet[1]
             }, {
-                name: 'PRODUCT C',
+                name: 'Tablets',
                 data: dataSet[2]
             }],
             chart: {
@@ -530,7 +536,7 @@ $(document).ready(function () {
             tooltip: {
                 y: {
                     formatter: function (val) {
-                        return "$ " + val + " thousands"
+                        return "$ " + val + "K"
                     }
                 }
             }
@@ -545,16 +551,16 @@ $(document).ready(function () {
 
         var options10 = {
             series: [{
-                name: 'PRODUCT A',
+                name: 'Desktops',
                 data: [44, 55, 41, 67, 22, 43]
             }, {
-                name: 'PRODUCT B',
+                name: 'Phones',
                 data: [13, 23, 20, 8, 13, 27]
             }, {
-                name: 'PRODUCT C',
+                name: 'Tablets',
                 data: [11, 17, 15, 15, 21, 14]
             }, {
-                name: 'PRODUCT D',
+                name: 'Hybrid',
                 data: [21, 7, 25, 13, 22, 8]
             }],
             chart: {
@@ -610,6 +616,7 @@ $(document).ready(function () {
 
         var options11 = {
             series: [{
+                name: 'Corporate',
                 data: [{
                     x: 'Team A',
                     y: [1, 5]
@@ -624,6 +631,7 @@ $(document).ready(function () {
                     y: [3, 11]
                 }]
             }, {
+                name: 'Service',
                 data: [{
                     x: 'Team A',
                     y: [2, 6]
@@ -673,6 +681,7 @@ $(document).ready(function () {
 
         var options12 = {
             series: [{
+                name: 'Spaceships',
                 data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380]
             }],
             chart: {
@@ -711,8 +720,10 @@ $(document).ready(function () {
 
         var options13 = {
             series: [{
+                name: 'Completed',
                 data: [44, 55, 41, 64, 22, 43, 21]
             }, {
+                name: 'Pending',
                 data: [53, 32, 33, 52, 13, 44, 32]
             }],
             chart: {
@@ -962,35 +973,35 @@ $(document).ready(function () {
 
         var options16 = {
             series: [{
-                name: 'TEAM 1',
+                name: 'Team 1',
                 data: generateDayWiseTimeSeries(new Date('11 Feb 2017 GMT').getTime(), 20, {
                     min: 10,
                     max: 60
                 })
             },
             {
-                name: 'TEAM 2',
+                name: 'Team 2',
                 data: generateDayWiseTimeSeries(new Date('11 Feb 2017 GMT').getTime(), 20, {
                     min: 10,
                     max: 60
                 })
             },
             {
-                name: 'TEAM 3',
+                name: 'Team 3',
                 data: generateDayWiseTimeSeries(new Date('11 Feb 2017 GMT').getTime(), 30, {
                     min: 10,
                     max: 60
                 })
             },
             {
-                name: 'TEAM 4',
+                name: 'Team 4',
                 data: generateDayWiseTimeSeries(new Date('11 Feb 2017 GMT').getTime(), 10, {
                     min: 10,
                     max: 60
                 })
             },
             {
-                name: 'TEAM 5',
+                name: 'Team 5',
                 data: generateDayWiseTimeSeries(new Date('11 Feb 2017 GMT').getTime(), 30, {
                     min: 10,
                     max: 60
@@ -1089,6 +1100,7 @@ $(document).ready(function () {
                 width: 405,
                 type: 'donut',
             },
+            labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
             colors: [themeColors.accent, themeColors.secondary, themeColors.orange, themeColors.purple, themeColors.info],
             responsive: [{
                 breakpoint: 480,
@@ -1137,7 +1149,7 @@ $(document).ready(function () {
                     }
                 },
             },
-            labels: ['Cricket'],
+            labels: ['Power'],
         };
 
         var chart19 = new ApexCharts(document.querySelector("#apex-chart-19"), options19);

@@ -1,0 +1,377 @@
+/*! _wizard.scss | Huro | Css ninja 2020-2021 */
+
+/* ==========================================================================
+Wizard Styles
+========================================================================== */
+
+/*
+    1. Wizard V1 Navigation
+    2. Wizard V1 Navigation Dark mode
+    3. Wizard V1 Title
+    4. Wizard V1 Step 1
+    5. Wizard V1 Step 1 Dark mode
+*/
+
+/* ==========================================================================
+1. Wizard V1 Navigation
+========================================================================== */
+
+.wizard-navigation {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 60px;
+    background: $white;
+    padding: 0 20px;
+    transition: all .3s;
+    z-index: 99;
+
+    .wizard-brand {
+
+        img {
+            display: block;
+            height: 34px;
+            margin: 0 auto;
+        }
+    }
+
+    .navbar-item {
+        &.is-wizard-title {
+            margin-left: 15px;
+            border-left: 1px solid lighten($muted-grey, 15%);
+            padding-bottom: 6px;
+            padding-top: 6px;
+            font-family: $font;
+
+            .title-wrap {
+                position: relative;
+                display: block;
+                font-size: 1.3rem;
+                font-weight: 500;
+
+                span {
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+    .wizard-dropdown {
+        cursor: pointer;
+
+        .is-trigger {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+
+            svg {
+                height: 18px;
+                width: 18px;
+                stroke: $light-text;
+            }
+        }
+    }
+
+    .is-dark-mode {
+        margin-left: auto;
+        background: transparent !important;
+
+        .navbar-icon {
+            height: 38px;
+            width: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid darken($fade-grey, 3%);
+            box-shadow: $light-box-shadow;
+            background: $white;
+            transition: all .3s;
+
+            .dark-mode {
+                transform: scale(.6);
+            }
+        }
+    }
+
+    .user-dropdown {
+        
+
+        .is-trigger {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            cursor: pointer;
+
+            .profile-avatar {
+                position: relative;
+
+                .avatar {
+                    display: block;
+                    width: 38px;
+                    height: 38px;
+                    border-radius: 50%;
+                }
+
+                .badge {
+                    position: absolute;
+                    right: -8px;
+                    bottom: 0;
+                    width: 20px;
+                    height: 20px;
+                    border: 2px solid $white;
+                    border-radius: 50%;
+                }
+            }
+
+            svg {
+                margin-left: 3px;
+                width: 22px;
+                height: 22px;
+                stroke: $light-text;
+                transition: all .3s;
+            }
+        }
+
+        .dropdown {
+            .dropdown-item {
+                font-size: .9rem;
+            }
+        }
+
+        &.is-active {
+            svg {
+                stroke: $muted-grey;
+            }
+        }
+
+        .flex-item {
+            display: flex !important;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 15px;
+
+            .toggle-title {
+                font-size: .8rem;
+                color: $muted-grey;
+
+                &:hover {
+                    background: transparent !important;
+                }
+            }
+
+            &:hover {
+                background: transparent !important;
+            }
+        }
+    }
+}
+
+.wizard-progress {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    z-index: 19;
+    width: 100%;
+    height: .5rem;
+
+    &::-webkit-progress-value {
+        //background-color: $primary;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        transition: width 0.5s ease;
+    }
+
+    &::-moz-progress-bar {
+        //background-color: $primary;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        transition: width 0.5s ease;
+    }
+
+    &::-ms-fill {
+        //background-color: $primary;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        transition: width 0.5s ease;
+    }
+}
+
+
+/* ==========================================================================
+2. Wizard V1 Navigation Dark mode
+========================================================================== */
+
+body {
+    &.is-dark {
+        .wizard-navigation {
+            background: darken($dark-sidebar, 2%);
+            border-color: lighten($dark-sidebar, 12%);
+
+            .navbar-item {
+                &.is-wizard-title {
+                    border-color: lighten($dark-sidebar, 12%);
+
+                    .title-wrap {
+                        color: $dark-dark-text;
+                    }
+                }
+
+                &.is-dark-mode {
+                    
+
+                    .navbar-icon {
+                        background: lighten($dark-sidebar, 6%);
+                        border-color: lighten($dark-sidebar, 12%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* ==========================================================================
+3. Wizard V1 Title
+========================================================================== */
+
+.wizard-v1-wrapper {
+    padding-top: 60px;
+
+    .inner-wrapper {
+        padding: 30px 20px;
+
+        .step-title {
+            margin-bottom: 30px;
+    
+            h2 {
+                font-family: $font;
+                font-size: 1.4rem;
+                font-weight: 500;
+                color: $dark-text;
+                text-align: center;
+            }
+        }
+    
+        
+    }
+}
+
+/* ==========================================================================
+4. Wizard V1 Step 1
+========================================================================== */
+
+.wizard-v1-wrapper {
+    .step-content {
+    
+        .wizard-types {
+            max-width: 1100px;
+            margin: 0 auto;
+
+            .wizard-card {
+                @extend .l-card;
+                text-align: center;
+                background: none;
+                border: 1px solid transparent;
+                padding: 30px;
+                transition: all .3s;
+
+                &:hover {
+                    background: $white;
+                    border-color: lighten($fade-grey, 3%);
+                    box-shadow: $light-box-shadow;
+
+                    .learn-more-link {
+                        a {
+                            opacity: 1;
+                            pointer-events: all;
+                        }
+                    }
+                }
+
+                img {
+                    display: block;
+                    max-width: 100%;
+                    margin: 0 auto;
+                    border-radius: 14px;
+                    //max-height: 170px;
+                }
+
+                h3 {
+                    font-family: $font;
+                    font-weight: 400;
+                    color: $dark-text;
+                    text-align: center;
+                    margin: 16px 0 0 0;
+                }
+
+                p {
+                    font-size: 1.1rem;
+                    font-family: $font;
+                    color: $light-text;
+                    text-align: center;
+                    max-width: 240px;
+                    margin: 0 auto 20px auto;
+                }
+
+                .button-wrap {
+                    text-align: center;
+
+                    .button {
+                        margin: 0 auto;
+                        min-width: 140px;
+                    }
+                }
+
+                .learn-more-link {
+                    text-align: center;
+                    padding: 16px 0;
+
+                    a {
+                        text-transform: uppercase;
+                        font-size: .8rem;
+                        font-weight: 500;
+                        font-family: $font;
+                        color: $light-text;
+                        opacity: 0;
+                        pointer-events: none;
+                        transition: all .3s;
+
+                        &:hover {
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* ==========================================================================
+5. Wizard V1 Step 1 Dark mode
+========================================================================== */
+
+body {
+    &.is-dark {
+        .wizard-v1-wrapper {
+            .step-content {
+                .wizard-types {
+                    .wizard-card {
+                        background: none;
+                        border-color: transparent;
+
+                        &:hover {
+                            background: lighten($dark-sidebar, 6%);
+                            border-color: lighten($dark-sidebar, 12%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

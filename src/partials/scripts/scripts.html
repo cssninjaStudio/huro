@@ -24,18 +24,28 @@
 {{/ifpage}}
 
 <!-- Charts js -->
-{{#ifpage 'admin-dashboards-charts-apex'}}
+{{#ifpage 'admin-dashboards-charts-apex' 'webapp-dashboards-charts-apex'}}
 <script src="{{ root }}assets/js/apex-data.js"></script>
 <script src="{{ root }}assets/js/apex.js"></script>
 {{/ifpage}}
 
-{{#ifpage 'admin-dashboards-charts-billboardjs'}}
+{{#ifpage 'admin-dashboards-charts-billboardjs' 'webapp-dashboards-charts-billboardjs'}}
 <script src="{{ root }}assets/js/billboardjs.js"></script>
 {{/ifpage}}
 
 <!-- Widgets js -->
-{{#ifpage 'admin-dashboards-widgets-ui' 'admin-dashboards-widgets-creative'}}
+{{#ifpage 'admin-dashboards-widgets-ui' 'admin-dashboards-widgets-creative' 'webapp-dashboards-widgets-ui' 'webapp-dashboards-widgets-creative'}}
 <script src="{{ root }}assets/js/widgets.js"></script>
+{{/ifpage}}
+
+<!--Forms-->
+{{#ifpage 'admin-form-layouts-4'}}
+<script src="{{ root }}assets/js/forms.js"></script>
+{{/ifpage}}
+
+<!--Wizard-->
+{{#ifpage 'wizard-v1'}}
+<script src="{{ root }}assets/js/wizard-v1.js"></script>
 {{/ifpage}}
 
 <!-- Layouts js -->

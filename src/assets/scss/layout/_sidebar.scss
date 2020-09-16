@@ -18,7 +18,7 @@
     background-color: #f9f9f9;
     box-shadow: none;
     z-index: 35;
-    transition: all .3s;
+    transition: border-radius .3s;
 
     &.is-bordered {
         border-right: 1px solid $fade-grey !important;

@@ -242,9 +242,9 @@ body {
 
 .is-combo {
     .combo-label {
-        font-weight: 500;
+        font-family: $font;
         font-size: .9rem;
-        color: $muted-grey;
+        color: $light-text;
     }
 
     .combo-box, .image-combo-box, .stacked-combo-box, .user-combo-box {
