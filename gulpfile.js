@@ -113,6 +113,7 @@ function compileJS() {
     'src/assets/js/dashboards/widgets/widgets.js',
     'src/assets/js/forms/forms.js',
     'src/assets/js/wizard/wizard-v1.js',
+    'src/assets/js/wizard/wizard-dropzone.js',
     'src/assets/js/layouts/list-views/list-view.js',
     'src/assets/js/layouts/flex-lists/flex-list.js',
     'src/assets/js/layouts/datatables/datatables.js',

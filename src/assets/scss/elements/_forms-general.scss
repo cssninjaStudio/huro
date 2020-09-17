@@ -1623,27 +1623,26 @@ body {
 
             .template-wrapper {
                 display: flex !important;
-                justify-content: flex-start;
                 align-items: center;
 
                 .avatar-wrapper {
                     position: relative;
-                    width: 40px !important;
-                    height: 40px !important;
-                    margin-right: 12px;
+                    //width: 32px !important;
+                    //height: 32px !important;
+                    margin-right: 10px;
 
                     .autocpl-avatar {
-                        width: 40px !important;
-                        height: 40px !important;
+                        width: 32px !important;
+                        height: 32px !important;
                         border-radius: 50% !important;
                     }
 
                     .avatar-badge {
                         position: absolute;
                         bottom: 0;
-                        right: -3px;
-                        width: 18px;
-                        height: 18px;
+                        right: -2px;
+                        width: 16px;
+                        height: 16px;
                         border: 1px solid $white;
                         border-radius: 50%;
                     }
@@ -1651,18 +1650,21 @@ body {
 
                 .entry-text {
                     color: $dark-text;
+                    line-height: 1.2;
 
                     span {
+                        font-family: $font;
                         display: block;
 
                         &:first-child {
                             font-family: $font;
+                            font-size: .9rem;
                             font-weight: 500;
                             color: $dark-text;
                         }
 
                         &:nth-child(2) {
-                            font-size: .9rem;
+                            font-size: .85rem;
                             color: $light-text;
                         }
                     }

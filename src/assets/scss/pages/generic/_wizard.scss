@@ -29,7 +29,6 @@ Wizard Styles
     z-index: 99;
 
     .wizard-brand {
-
         img {
             display: block;
             height: 34px;
@@ -93,14 +92,12 @@ Wizard Styles
             transition: all .3s;
 
             .dark-mode {
-                transform: scale(.6);
+                transform: scale(0.6);
             }
         }
     }
 
     .user-dropdown {
-        
-
         .is-trigger {
             display: flex;
             justify-content: flex-end;
@@ -180,27 +177,65 @@ Wizard Styles
     height: .5rem;
 
     &::-webkit-progress-value {
-        //background-color: $primary;
         border-top-right-radius: 50px;
         border-bottom-right-radius: 50px;
         transition: width 0.5s ease;
     }
 
     &::-moz-progress-bar {
-        //background-color: $primary;
         border-top-right-radius: 50px;
         border-bottom-right-radius: 50px;
         transition: width 0.5s ease;
     }
 
     &::-ms-fill {
-        //background-color: $primary;
         border-top-right-radius: 50px;
         border-bottom-right-radius: 50px;
         transition: width 0.5s ease;
     }
 }
 
+.wizard-buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 306px;
+    background: $white;
+    border: 1px solid darken($fade-grey, 3%);
+    border-radius: 14px;
+    transform: translateY(120px);
+    transition: all .3s;
+
+    &.is-active {
+        transform: translateY(0);
+    }
+
+    .wizard-buttons-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+
+        .button {
+            min-width: 130px;
+            margin: 0 4px;
+            border-radius: 8px;
+        }
+    }
+}
+
+.wizard-v1-wrapper {
+    .inner-wrapper {
+        display: none;
+        animation: fadeInLeft .5s;
+
+        &.is-active {
+            display: block;
+        }
+    }
+}
 
 /* ==========================================================================
 2. Wizard V1 Navigation Dark mode
@@ -222,8 +257,6 @@ body {
                 }
 
                 &.is-dark-mode {
-                    
-
                     .navbar-icon {
                         background: lighten($dark-sidebar, 6%);
                         border-color: lighten($dark-sidebar, 12%);
@@ -234,20 +267,21 @@ body {
     }
 }
 
-
 /* ==========================================================================
 3. Wizard V1 Title
 ========================================================================== */
 
 .wizard-v1-wrapper {
     padding-top: 60px;
+    padding-bottom: 60px;
 
     .inner-wrapper {
-        padding: 30px 20px;
+        padding: 40px 20px;
 
         .step-title {
             margin-bottom: 30px;
-    
+            text-align: center;
+
             h2 {
                 font-family: $font;
                 font-size: 1.4rem;
@@ -255,9 +289,11 @@ body {
                 color: $dark-text;
                 text-align: center;
             }
+
+            p {
+                font-size: 1.2rem;
+            }
         }
-    
-        
     }
 }
 
@@ -267,13 +303,13 @@ body {
 
 .wizard-v1-wrapper {
     .step-content {
-    
         .wizard-types {
             max-width: 1100px;
             margin: 0 auto;
 
             .wizard-card {
                 @extend .l-card;
+
                 text-align: center;
                 background: none;
                 border: 1px solid transparent;
@@ -298,7 +334,9 @@ body {
                     max-width: 100%;
                     margin: 0 auto;
                     border-radius: 14px;
+
                     //max-height: 170px;
+               
                 }
 
                 h3 {
@@ -351,7 +389,6 @@ body {
     }
 }
 
-
 /* ==========================================================================
 5. Wizard V1 Step 1 Dark mode
 ========================================================================== */
@@ -368,6 +405,783 @@ body {
                         &:hover {
                             background: lighten($dark-sidebar, 6%);
                             border-color: lighten($dark-sidebar, 12%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+6. Wizard V1 Step 2
+========================================================================== */
+
+.wizard-v1-wrapper {
+    .step-content {
+        .project-info {
+            .project-info-head {
+                .project-avatar-upload {
+                    text-align: center;
+
+                    .filepond-profile-wrap {
+                        display: block;
+                        margin: 0 auto 4px auto;
+
+                        .filepond--drop-label {
+                            background: $white;
+                            cursor: pointer;
+                        }
+                    }
+
+                    p {
+                        span {
+                            display: block;
+
+                            &:nth-child(2) {
+                                font-size: .9rem;
+                            }
+                        }
+                    }
+                }
+
+                .project-info {
+                    max-width: 480px;
+                    margin: 10px auto;
+
+                    .project-name {
+                        margin-bottom: 10px;
+
+                        .field {
+                            .control {
+                                .input {
+                                    font-family: $font;
+                                    text-align: center;
+                                    font-size: 1.2rem;
+                                    height: 50px;
+                                    padding: 0;
+                                    border-radius: 10px;
+                                }
+                            }
+                        }
+                    }
+
+                    .project-description {
+                        .field {
+                            .control {
+                                .textarea {
+                                    border-radius: 10px;
+                                    resize: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+8. Wizard V1 Step 3
+========================================================================== */
+
+.wizard-v1-wrapper {
+    .step-content {
+        .project-dates {
+            background: $white;
+            padding: 16px;
+            border: 1px solid darken($fade-grey, 3%);
+            border-radius: 14px;
+            max-width: 380px;
+            margin: 20px auto;
+
+            > h4 {
+                font-family: $font;
+                font-size: .8rem;
+                text-transform: uppercase;
+                text-align: center;
+                margin-bottom: 8px;
+                color: $light-text;
+            }
+
+            .project-dates-inner {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .separator {
+                    height: 25px;
+                    width: 2px;
+                    border-right: 1px solid darken($fade-grey, 3%);
+                    margin: 0 12px;
+                }
+
+                .project-date {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-grow: 2;
+
+                    .date-icon {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 28px;
+                        width: 28px;
+                        color: $light-text;
+
+                        svg {
+                            height: 18px;
+                            width: 18px;
+                        }
+                    }
+
+                    .control {
+                        max-width: 100px;
+
+                        .input {
+                            border: none;
+                            background: none;
+                            box-shadow: none;
+                            padding-left: 4px;
+                            font-family: $font;
+                        }
+                    }
+                }
+            }
+        }
+
+        .project-budget {
+            background: $white;
+            padding: 16px;
+            border: 1px solid darken($fade-grey, 3%);
+            border-radius: 14px;
+            max-width: 380px;
+            margin: 20px auto;
+
+            > h4 {
+                font-family: $font;
+                font-size: .8rem;
+                text-transform: uppercase;
+                text-align: center;
+                margin-bottom: 16px;
+                color: $light-text;
+            }
+
+            .project-budget-inner {
+                display: flex;
+
+                .budget-item {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex: 1 1 0px;
+
+                    .budget-item-inner {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 32px;
+                        width: 65px;
+                        min-width: 50px;
+                        border: 1px solid darken($fade-grey, 3%);
+                        border-radius: 12px;
+                        font-family: $font;
+                        font-size: .9rem;
+                        color: lighten($light-text, 12%);
+                        margin: 0 8px;
+                        transition: all .3s;
+
+                        &:hover:not(.is-active) {
+                            //background: lighten($fade-grey, 3%);
+                            color: $light-text;
+                        }
+
+                        &.is-active {
+                            background: $primary;
+                            border-color: $primary;
+                            color: $smoke-white;
+                            box-shadow: $primary-box-shadow;
+                        }
+                    }
+                }
+            }
+        }
+
+        .project-customer {
+            background: $white;
+            padding: 16px;
+            border: 1px solid darken($fade-grey, 3%);
+            border-radius: 14px;
+            max-width: 380px;
+            margin: 20px auto;
+
+            > h4 {
+                font-family: $font;
+                font-size: .8rem;
+                text-transform: uppercase;
+                text-align: center;
+                margin-bottom: 16px;
+                color: $light-text;
+            }
+
+            .field {
+                .control {
+                    width: 100%;
+
+                    .input {
+                        width: 100%;
+                        border: none;
+                        background: none;
+                        box-shadow: none;
+                    }
+                }
+            }
+
+            .media-flex, .media-flex-center {
+                .h-avatar {
+                    .avatar {
+                        border: 1px solid darken($fade-grey, 3%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+10. Wizard V1 Step 4
+========================================================================== */
+
+.wizard-v1-wrapper {
+    .step-content {
+        .page-placeholder {
+            align-items: flex-start;
+
+            img {
+                max-width: 210px;
+
+                &.is-rounded {
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        .uploader {
+            max-width: 640px;
+            margin: 0 auto;
+
+            progress {
+                vertical-align: baseline;
+            }
+
+            .progress {
+                display: flex;
+                height: .5rem;
+                overflow: hidden;
+                font-size: 0.75rem;
+                background-color: #e9ecef;
+                border-radius: 0.25rem;
+
+                .progress-bar {
+                    display: flex;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                    flex-direction: column;
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    justify-content: center;
+                    color: $white;
+                    text-align: center;
+                    background-color: $secondary;
+                    transition: width 0.6s ease;
+                }
+
+                .progress-bar-striped {
+                    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+                    background-size: 1rem 1rem;
+                }
+
+                .progress-bar-animated {
+                    -webkit-animation: progress-bar-stripes 1s linear infinite;
+                    animation: progress-bar-stripes 1s linear infinite;
+                }
+
+                @keyframes progress-bar-stripes {
+                    from {
+                        background-position: 1rem 0;
+                    }
+
+                    to {
+                        background-position: 0 0;
+                    }
+                }
+            }
+
+            .uploader-toolbar {
+                display: flex;
+                justify-content: space-between;
+                margin: 0 0 20px 0;
+
+                .left {
+                    .uploader-actions {
+                        @extend .l-card;
+
+                        display: flex;
+                        padding: 10px 16px;
+                        min-width: 180px;
+
+                        .uploader-action {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex: 1 1 0px;
+
+                            .inner-action {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                height: 32px;
+                                width: 32px;
+                                min-width: 32px;
+                                border-radius: 50%;
+                                color: lighten($light-text, 12%);
+                                border: none;
+                                background: none;
+                                cursor: pointer;
+                                outline: none;
+                                transition: all .3s;
+
+                                &:hover:not(.is-active) {
+                                    background: lighten($fade-grey, 3%);
+                                    color: $light-text;
+                                }
+
+                                svg {
+                                    height: 18px;
+                                    width: 18px;
+                                    transition: stroke .3s;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .right {
+                    .fileupload-process {
+                        #total-progress {
+                            opacity: 0;
+                            transition: opacity 0.3s linear;
+                        }
+                    }
+                }
+            }
+
+            .uploader-container {
+                margin-bottom: 20px;
+
+                .upload-wrapper {
+                    position: relative;
+
+                    .upload-box {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background: $white;
+                        height: 120px;
+                        border-radius: 3px;
+                        padding: 8px;
+                        border: 2px dashed darken($fade-grey, 4%);
+                        cursor: pointer;
+                        transition: all .3s;
+
+                        &:hover {
+                            border-color: $primary;
+
+                            .uploader-label {
+                                .lnil {
+                                    color: $primary;
+                                }
+                            }
+                        }
+
+                        .uploader-label {
+                            margin: 0 auto;
+                            text-align: center;
+
+                            h3 {
+                                font-family: $font;
+                                color: $light-text;
+                            }
+
+                            .lnil {
+                                font-size: 2.4rem;
+                                color: $placeholder;
+                                transition: all .3s;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .template-list {
+                .template-list-item {
+                    /* Hide the progress bar when finished */
+                    &.dz-success {
+                        .preview-box {
+                            .list-item-progress {
+                                .progress {
+                                    //opacity: 0;
+                                    transition: opacity 0.3s linear;
+                                }
+                            }
+
+                            .list-item-actions {
+                                /* Hide the start and cancel buttons and show the delete button */
+                                .start, .cancel {
+                                    display: none;
+                                }
+
+                                .delete {
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+
+                    .preview-box {
+                        display: flex;
+                        align-items: center;
+                        background: #fff;
+                        width: 100%;
+                        border-radius: 12px;
+                        padding: 12px;
+                        border: 1px solid #ededed;
+                        margin-bottom: 16px;
+
+                        .preview {
+                            img {
+                                height: 50px;
+                                min-width: 50px;
+                                max-width: 50px;
+                                min-width: 50px;
+                                border-radius: 50%;
+                                object-fit: cover;
+                            }
+
+                            .icon {
+                                height: 50px;
+                                width: 50px;
+                                min-width: 50px;
+                                max-width: 50px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                margin: 0 auto;
+
+                                svg {
+                                    width: 28px;
+                                    height: 28px;
+                                }
+                            }
+                        }
+
+                        .list-item-meta {
+                            margin-left: 12px;
+
+                            p {
+                                font-family: $font;
+
+                                &:first-child {
+                                    font-weight: 500;
+                                    font-size: 1.1rem;
+                                    color: $dark-text;
+                                }
+                            }
+                        }
+
+                        .list-item-progress {
+                            margin-left: auto;
+                            min-width: 120px;
+                        }
+
+                        .list-item-actions {
+                            margin-left: auto;
+                            display: flex;
+
+                            .list-item-action {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                height: 32px;
+                                width: 32px;
+                                min-width: 32px;
+                                border-radius: 50%;
+                                color: lighten($light-text, 12%);
+                                border: none;
+                                background: none;
+                                cursor: pointer;
+                                outline: none;
+                                transition: all .3s;
+
+                                &:hover:not(.is-active) {
+                                    background: lighten($fade-grey, 3%);
+                                    color: $light-text;
+                                }
+
+                                svg {
+                                    height: 18px;
+                                    width: 18px;
+                                    transition: stroke .3s;
+                                }
+                            }
+
+                            /* Hide the delete button initially */
+                            .delete {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.wizard-v1-wrapper {
+    .step-content {
+        .project-team-wrapper {
+            .project-team-header {
+                text-align: center;
+                max-width: 320px;
+                margin: 0 auto;
+
+                .field {
+                    text-align: left;
+
+                    .control {
+                        .input {
+                            border-radius: 10px;
+                        }
+                    }
+                }
+
+                > img {
+                    display: block;
+                    margin: 0 auto;
+                    max-width: 300px;
+                }
+
+                .h-avatar {
+                    margin: 0 auto 12px auto;
+                }
+
+                p {
+                    font-size: 1rem;
+                    max-width: 540px;
+                    margin: 0 auto;
+                    line-height: 1.3;
+                }
+            }
+
+            .project-team-body {
+                max-width: 540px;
+                margin: 20px auto;
+
+                .members-list {
+                    .empty-wrap {
+                        height: 110px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        span {
+                            font-family: $font;
+                            color: $light-text;
+                        }
+                    }
+
+                    .invited-member {
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        background: $white;
+                        padding: 12px;
+                        border: 1px solid darken($fade-grey, 3%);
+                        border-radius: 12px;
+                        margin-bottom: 12px;
+                        text-align: left;
+
+                        > img {
+                            display: block;
+                            width: 80px;
+                            height: 80px;
+                            border-radius: 50%;
+                            margin: 0 auto;
+                        }
+
+                        .meta {
+                            margin-left: 12px;
+                            line-height: 1.1;
+
+                            > span {
+                                display: block;
+                                font-family: $font;
+                                font-size: .8rem;
+                                text-transform: uppercase;
+                                color: $light-text;
+                                padding: 8px 0 0 0;
+                            }
+
+                            > p {
+                                font-family: $font;
+                                margin-bottom: 0;
+                                font-weight: 500;
+                                color: $dark-text;
+                            }
+                        }
+
+                        .actions {
+                            margin-left: auto;
+                            display: flex;
+                            align-items: center;
+
+                            .permissions {
+                                margin-right: 30px;
+                                width: 180px;
+
+                                .permission-levels {
+                                    position: relative;
+                                    display: flex;
+                                    justify-content: space-between;
+
+                                    .permission-level {
+                                        position: relative;
+                                        cursor: pointer;
+                                        z-index: 1;
+
+                                        .permission-level-inner {
+                                            height: 11px;
+                                            width: 11px;
+                                            border-radius: 50%;
+                                            background: $placeholder;
+                                            transition: all .3s;
+
+                                            &.is-active {
+                                                background: $primary;
+                                                transform: scale(1.1);
+                                            }
+                                        }
+                                    }
+
+                                    .permissions-progress {
+                                        position: absolute;
+                                        top: 50%;
+                                        transform: translateY(-50%);
+                                        margin-bottom: 0;
+                                        z-index: 0;
+
+                                        &::-webkit-progress-value {
+                                            transition: width 0.5s ease;
+                                        }
+
+                                        &::-moz-progress-bar {
+                                            transition: width 0.5s ease;
+                                        }
+
+                                        &::-ms-fill {
+                                            transition: width 0.5s ease;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .cancel-button {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                height: 34px;
+                                width: 34px;
+                                border: 1px solid darken($fade-grey, 3%);
+                                box-shadow: $light-box-shadow;
+                                background: $white;
+                                padding: 0;
+                                transition: all .3s;
+
+                                i {
+                                    font-size: 12px;
+                                    color: $light-text;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.wizard-v1-wrapper {
+    .step-content {
+        .tools-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+
+            .tool-card {
+                position: relative;
+
+                input {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    opacity: 0;
+                    cursor: pointer;
+
+                    &:checked + .tool-card-inner {
+                        border-color: $primary;
+
+                        .flex-end {
+                            .checkmark {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+
+                .tool-card-inner {
+                    padding: 12px;
+                    background: $white;
+                    border: 1px solid darken($fade-grey, 3%);
+                    border-radius: 10px;
+
+                    .media-flex-center {
+                        .flex-end {
+                            .checkmark {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                height: 28px;
+                                width: 28px;
+                                border: 1px solid darken($fade-grey, 3%);
+                                border-radius: 50%;
+                                box-shadow: $light-box-shadow;
+                                opacity: 0;
+                                color: $primary;
+                                transition: all .3s;
+
+                                svg {
+                                    height: 14px;
+                                    width: 14px;
+                                    stroke-width: 3px;
+                                }
+                            }
                         }
                     }
                 }

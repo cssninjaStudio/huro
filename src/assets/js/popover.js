@@ -19,7 +19,7 @@ $(document).ready(function () {
 
 
             $.ajax({
-                url: 'assets/data//user.json',
+                url: 'assets/data/user.json',
                 dataType: 'json',
                 success: function (data) {
                     e.webuiPopover({
