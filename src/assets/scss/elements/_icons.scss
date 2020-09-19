@@ -127,6 +127,18 @@
         }
     }
 
+    &.is-secondary {
+        background: lighten($secondary, 42%);
+
+        &.is-bordered {
+            border-color: $secondary;
+        }
+
+        i {
+            color: $secondary;
+        }
+    }
+
     &.is-accent {
         background: lighten($accent, 36%);
 
@@ -184,6 +196,78 @@
 
         i {
             color: $danger;
+        }
+    }
+
+    &.is-purple {
+        background: lighten($h-purple, 36%);
+
+        &.is-bordered {
+            border-color: $h-purple;
+        }
+
+        i {
+            color: $h-purple;
+        }
+    }
+
+    &.is-blue {
+        background: lighten($h-blue, 34%);
+
+        &.is-bordered {
+            border-color: $h-blue;
+        }
+
+        i {
+            color: $h-blue;
+        }
+    }
+
+    &.is-yellow {
+        background: lighten($h-yellow, 22%);
+
+        &.is-bordered {
+            border-color: $h-yellow;
+        }
+
+        i {
+            color: $h-yellow;
+        }
+    }
+
+    &.is-orange {
+        background: lighten($h-orange, 20%);
+
+        &.is-bordered {
+            border-color: $h-orange;
+        }
+
+        i {
+            color: $h-orange;
+        }
+    }
+
+    &.is-green {
+        background: lighten($h-green, 23%);
+
+        &.is-bordered {
+            border-color: $h-green;
+        }
+
+        i {
+            color: $h-green;
+        }
+    }
+
+    &.is-red {
+        background: lighten($h-red, 38%);
+
+        &.is-bordered {
+            border-color: $h-red;
+        }
+
+        i {
+            color: $h-red;
         }
     }
 
@@ -276,6 +360,78 @@ body {
 
                 &.is-bordered {
                     border-color: $danger;
+                }
+
+                i {
+                    color: $white;
+                }
+            }
+
+            &.is-purple {
+                background: $h-purple;
+
+                &.is-bordered {
+                    border-color: $h-purple;
+                }
+
+                i {
+                    color: $white;
+                }
+            }
+
+            &.is-blue {
+                background: $h-blue;
+
+                &.is-bordered {
+                    border-color: $h-blue;
+                }
+
+                i {
+                    color: $white;
+                }
+            }
+
+            &.is-yellow {
+                background: $h-yellow;
+
+                &.is-bordered {
+                    border-color: $h-yellow;
+                }
+
+                i {
+                    color: $white;
+                }
+            }
+
+            &.is-orange {
+                background: $h-orange;
+
+                &.is-bordered {
+                    border-color: $h-orange;
+                }
+
+                i {
+                    color: $white;
+                }
+            }
+
+            &.is-green {
+                background: $h-green;
+
+                &.is-bordered {
+                    border-color: $h-green;
+                }
+
+                i {
+                    color: $white;
+                }
+            }
+
+            &.is-red {
+                background: $h-red;
+
+                &.is-bordered {
+                    border-color: $h-red;
                 }
 
                 i {

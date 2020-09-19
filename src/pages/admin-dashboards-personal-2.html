@@ -1,0 +1,388 @@
+---
+layout: default
+title: Master Layout
+---
+
+{{> generic-sidebar}}
+{{> elements-mobile-subsidebar}}
+
+<!-- Content Wrapper -->
+<div id="app-home" class="view-wrapper" data-naver-offset="150" data-menu-item="#home-sidebar-menu"
+    data-mobile-item="#home-sidebar-menu-mobile">
+
+    <div class="page-content-wrapper">
+        <div class="page-content is-relative">
+
+            <div class="page-title has-text-centered">
+                <!-- Sidebar Trigger -->
+                <div class="huro-hamburger nav-trigger push-resize" data-sidebar="home-sidebar">
+                    <span class="menu-toggle has-chevron">
+                        <span class="icon-box-toggle">
+                            <span class="rotate">
+                                <i class="icon-line-top"></i>
+                                <i class="icon-line-center"></i>
+                                <i class="icon-line-bottom"></i>
+                            </span>
+                        </span>
+                    </span>
+                </div>
+
+                <div class="title-wrap">
+                    <h1 class="title is-4">Home</h1>
+                </div>
+
+                {{> toolbar}}
+            </div>
+
+            <div class="page-content-inner home-dashboard">
+                <div class="columns is-multiline">
+
+                    <div class="column is-12">
+                        <div class="home-header">
+                            <div class="h-avatar is-xl">
+                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                    data-demo-src="assets/img/avatars/svg/1.gif" alt="">
+                                <img class="badge" src="assets/img/icons/flags/united-states-of-america.svg">
+                            </div>
+                            <div class="user-meta">
+                                <h3 class="title is-4 is-narrow">Welcome back, Jimmy</h3>
+                                <p class="light-text">It's really nice to see you again</p>
+                            </div>
+                            <div class="user-action">
+                                <h3 class="title is-2 is-narrow">3</h3>
+                                <p class="light-text">Tasks are pending review</p>
+                                <a class="action-link">View Tasks</a>
+                            </div>
+                            <div class="cta">
+                                <div class="media-flex inverted-text">
+                                    <i class="lnil lnil-crown-alt-1"></i>
+                                    <p class="white-text">Start using our team and project management tools</p>
+                                </div>
+                                <a class="link inverted-text">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column is-7">
+                        <div class="s-card has-margin-bottom">
+                            <div class="card-head">
+                                <div class="left">
+                                    <h3 class="title light-text">Active Projects</h3>
+                                </div>
+                                <div class="right">
+                                    <a class="action-link">View All</a>
+                                </div>
+                            </div>
+                            <div class="card-inner">
+                                <div class="active-projects">
+                                    <!--Project-->
+                                    <div class="media-flex-center">
+                                        <div class="h-icon is-info is-rounded">
+                                            <i class="lnil lnil-chef-hat"></i>
+                                        </div>
+                                        <div class="flex-meta">
+                                            <span class="dark-text dark-inverted">Restaurant webapp design</span>
+                                            <span class="light-text">Updated 30 minutes ago</span>
+                                        </div>
+                                        <div class="flex-end">
+                                            <div class="avatar-stack">
+                                                <div class="h-avatar is-small">
+                                                    <div class="avatar is-fake is-info">
+                                                        <span>KC</span>
+                                                    </div>
+                                                </div>
+                                                <div class="h-avatar is-small">
+                                                    <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                        data-demo-src="assets/img/avatars/photos/7.jpg" alt="">
+                                                </div>
+                                                <div class="h-avatar is-small">
+                                                    <div class="avatar is-fake is-danger">
+                                                        <span>JD</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {{> project-widget-dropdown}}
+                                        </div>
+                                    </div>
+                                    <!--Project-->
+                                    <div class="media-flex-center">
+                                        <div class="h-icon is-warning is-rounded">
+                                            <i class="lnil lnil-apartment"></i>
+                                        </div>
+                                        <div class="flex-meta">
+                                            <span class="dark-text dark-inverted">Corporate website redesign</span>
+                                            <span class="light-text">Updated 5 hours ago</span>
+                                        </div>
+                                        <div class="flex-end">
+                                            <div class="avatar-stack">
+                                                <div class="h-avatar is-small">
+                                                    <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                        data-demo-src="assets/img/avatars/photos/5.jpg" alt="">
+                                                </div>
+                                                <div class="h-avatar is-small">
+                                                    <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                        data-demo-src="assets/img/avatars/photos/13.jpg" alt="">
+                                                </div>
+                                            </div>
+
+                                            {{> project-widget-dropdown}}
+                                        </div>
+                                    </div>
+                                    <!--Project-->
+                                    <div class="media-flex-center">
+                                        <div class="h-icon is-info is-rounded">
+                                            <i class="lnil lnil-pie-chart-alt"></i>
+                                        </div>
+                                        <div class="flex-meta">
+                                            <span class="dark-text dark-inverted">BI mobile app</span>
+                                            <span class="light-text">Updated 7 hours ago</span>
+                                        </div>
+                                        <div class="flex-end">
+                                            <div class="avatar-stack">
+                                                <div class="h-avatar is-small">
+                                                    <div class="avatar is-fake is-success">
+                                                        <span>NL</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {{> project-widget-dropdown}}
+                                        </div>
+                                    </div>
+                                    <!--Project-->
+                                    <div class="media-flex-center">
+                                        <div class="h-icon is-warning is-rounded">
+                                            <i class="lnil lnil-vector-pen"></i>
+                                        </div>
+                                        <div class="flex-meta">
+                                            <span class="dark-text dark-inverted">Business icon set design</span>
+                                            <span class="light-text">Updated 10 hours ago</span>
+                                        </div>
+                                        <div class="flex-end">
+                                            <div class="avatar-stack">
+                                                <div class="h-avatar is-small">
+                                                    <div class="avatar is-fake is-info">
+                                                        <span>KC</span>
+                                                    </div>
+                                                </div>
+                                                <div class="h-avatar is-small">
+                                                    <div class="avatar is-fake is-warning">
+                                                        <span>LB</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {{> project-widget-dropdown}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="s-card">
+                            <div class="card-head">
+                                <div class="left">
+                                    <h3 class="title light-text">Todo Today</h3>
+                                </div>
+                                <div class="right">
+                                    <a class="action-link">View All</a>
+                                </div>
+                            </div>
+                            <div class="card-inner">
+                                <div class="checkboxes-list">
+                                    <!-- List item -->
+                                    <div class="list-item">
+                                        <!-- Animated checkbox-->
+                                        <div class="animated-checkbox">
+                                            <input type="checkbox">
+                                            <div class="checkmark-wrap">
+                                                <div class="shadow-circle"></div>
+                                                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 52 52">
+                                                    <circle class="checkmark-circle" cx="26" cy="26" r="25"
+                                                        fill="none" />
+                                                    <path class="checkmark-check" fill="none"
+                                                        d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="item-meta">
+                                            <span class="dark-inverted">Call Mr. Markstrom</span>
+                                            <span>Review the project initial wireframes</span>
+                                        </div>
+                                    </div>
+                                    <!-- List item -->
+                                    <div class="list-item">
+                                        <!-- Animated checkbox-->
+                                        <div class="animated-checkbox is-checked">
+                                            <input type="checkbox">
+                                            <div class="checkmark-wrap">
+                                                <div class="shadow-circle"></div>
+                                                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 52 52">
+                                                    <circle class="checkmark-circle" cx="26" cy="26" r="25"
+                                                        fill="none" />
+                                                    <path class="checkmark-check" fill="none"
+                                                        d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="item-meta">
+                                            <span class="dark-inverted">Finish wireframes</span>
+                                            <span>Make all requested changes and publish</span>
+                                        </div>
+                                    </div>
+                                    <!-- List item -->
+                                    <div class="list-item">
+                                        <!-- Animated checkbox-->
+                                        <div class="animated-checkbox">
+                                            <input type="checkbox">
+                                            <div class="checkmark-wrap">
+                                                <div class="shadow-circle"></div>
+                                                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 52 52">
+                                                    <circle class="checkmark-circle" cx="26" cy="26" r="25"
+                                                        fill="none" />
+                                                    <path class="checkmark-check" fill="none"
+                                                        d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="item-meta">
+                                            <span class="dark-inverted">Update timesheets</span>
+                                            <span>Update all the team timesheets</span>
+                                        </div>
+                                    </div>
+                                    <!-- List item -->
+                                    <div class="list-item">
+                                        <!-- Animated checkbox-->
+                                        <div class="animated-checkbox">
+                                            <input type="checkbox">
+                                            <div class="checkmark-wrap">
+                                                <div class="shadow-circle"></div>
+                                                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 52 52">
+                                                    <circle class="checkmark-circle" cx="26" cy="26" r="25"
+                                                        fill="none" />
+                                                    <path class="checkmark-check" fill="none"
+                                                        d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="item-meta">
+                                            <span class="dark-inverted">Request payout</span>
+                                            <span>send project invoice to client</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="column is-5">
+                        <div class="s-card has-margin-bottom">
+                            <div class="section-placeholder">
+                                <div class="placeholder-content">
+                                    <img src="assets/img/placeholders/huro-1.svg" alt="">
+                                    <h3 class="dark-inverted">Go Premium</h3>
+                                    <p>Unlock more features and business tools by going premium</p>
+                                    <a class="button h-action is-rounded is-hoverable">Go Premium</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="s-card">
+                            <div class="card-head">
+                                <div class="left">
+                                    <h3 class="title light-text">My Team</h3>
+                                </div>
+                                <div class="right">
+                                    <a class="action-link">Manage</a>
+                                </div>
+                            </div>
+                            <div class="card-inner">
+                                <ul class="user-list">
+                                    <li>
+                                        <div class="h-avatar">
+                                            <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/18.jpg" alt="">
+                                        </div>
+                                        <div class="user-list-info">
+                                            <div class="name dark-inverted">Esteban C.</div>
+                                            <div class="position">UI/UX Designer</div>
+                                        </div>
+                                        <div class="user-list-icons">
+                                            <a><i class="fas fa-phone"></i></a>
+                                            <a><i class="fas fa-video"></i></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="h-avatar">
+                                            <div class="avatar is-fake is-info">
+                                                <span>KC</span>
+                                            </div>
+                                        </div>
+                                        <div class="user-list-info">
+                                            <div class="name dark-inverted">Kacy Chapman</div>
+                                            <div class="position">Project manager</div>
+                                        </div>
+                                        <div class="user-list-icons">
+                                            <a><i class="fas fa-phone"></i></a>
+                                            <a><i class="fas fa-video"></i></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="h-avatar">
+                                            <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/13.jpg" alt="">
+                                        </div>
+                                        <div class="user-list-info">
+                                            <div class="name dark-inverted">Tara S.</div>
+                                            <div class="position">UI/UX Designer</div>
+                                        </div>
+                                        <div class="user-list-icons">
+                                            <a><i class="fas fa-phone"></i></a>
+                                            <a><i class="fas fa-video"></i></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="h-avatar">
+                                            <div class="avatar is-fake is-success">
+                                                <span>NL</span>
+                                            </div>
+                                        </div>
+                                        <div class="user-list-info">
+                                            <div class="name dark-inverted">Naomi Liversky</div>
+                                            <div class="position">Frontend developer</div>
+                                        </div>
+                                        <div class="user-list-icons">
+                                            <a><i class="fas fa-phone"></i></a>
+                                            <a><i class="fas fa-video"></i></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="h-avatar">
+                                            <div class="avatar is-fake is-danger">
+                                                <span>JD</span>
+                                            </div>
+                                        </div>
+                                        <div class="user-list-info">
+                                            <div class="name dark-inverted">Joshua Davenport</div>
+                                            <div class="position">Product Manager</div>
+                                        </div>
+                                        <div class="user-list-icons">
+                                            <a><i class="fas fa-phone"></i></a>
+                                            <a><i class="fas fa-video"></i></a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1030,22 +1030,31 @@ body {
 ========================================================================== */
 
 .webapp-subnavbar {
+    //
     position: fixed;
-    top: 80px;
-    left: 0;
+    //top: 80px;
+    //left: 0;
     width: 100%;
     height: 0;
-    background: #fafafa;
+    background: $white;
     opacity: 0;
     pointer-events: none;
     z-index: 99;
     transform: translateY(10px);
-    border-top: 1px solid $fade-grey;
-    border-bottom: 1px solid darken($fade-grey, 3%);
+    //border-top: 1px solid $fade-grey;
+    border: 1px solid darken($fade-grey, 3%);
+    box-shadow: $light-box-shadow;
     transition: all .3s;
+    //@extend
+    max-width: 800px;
+    top: 85px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 6px;
 
     &.is-active {
-        height: 250px;
+        height: 320px;
         opacity: 1;
         pointer-events: all;
         transform: translateY(0);
@@ -1121,7 +1130,8 @@ body {
         }
 
         .tab-content {
-            padding: 0 40px;
+            //padding: 0 40px;
+            padding: 0 20px;
 
             .tab-content-inner {
                 display: flex;
@@ -1131,7 +1141,7 @@ body {
                 .center {
                     flex-grow: 2;
                     max-width: 940px;
-                    max-height: 155px;
+                    max-height: 220px;
                     margin: 0 auto;
                     padding: 10px 20px 0 20px;
 

@@ -10,6 +10,19 @@ Wizard Styles
     3. Wizard V1 Title
     4. Wizard V1 Step 1
     5. Wizard V1 Step 1 Dark mode
+    6. Wizard V1 Step 2
+    7. Wizard V1 Step 2 Dark mode
+    8. Wizard V1 Step 3
+    9. Wizard V1 Step 3 Dark mode
+    10. Wizard V1 Step 4
+    11. Wizard V1 Step 4 Dark mode
+    12. Wizard V1 Step 5
+    13. Wizard V1 Step 5 Dark mode
+    14. Wizard V1 Step 6
+    15. Wizard V1 Step 6 Dark mode
+    16. Wizard V1 Step 7
+    17. Wizard V1 Step 7 Dark mode
+    18. Media Queries
 */
 
 /* ==========================================================================
@@ -73,6 +86,20 @@ Wizard Styles
                 stroke: $light-text;
             }
         }
+
+        .dropdown-menu {
+            border: 1px solid darken($fade-grey, 3%);
+            box-shadow: $light-box-shadow;
+            border-radius: 8px;
+            padding-top: 0;
+            overflow: hidden;
+
+            .dropdown-content {
+                .dropdown-item {
+                    font-family: $font;
+                }
+            }
+        }
     }
 
     .is-dark-mode {
@@ -127,42 +154,36 @@ Wizard Styles
 
             svg {
                 margin-left: 3px;
-                width: 22px;
-                height: 22px;
+                width: 18px;
+                height: 18px;
                 stroke: $light-text;
                 transition: all .3s;
             }
         }
 
-        .dropdown {
+        .dropdown-menu {
+            top: 52px;
+            border: 1px solid darken($fade-grey, 3%);
+            box-shadow: $light-box-shadow;
+            border-radius: 8px;
+            padding-top: 0;
+            width: 180px;
+            overflow: hidden;
+
             .dropdown-item {
+                display: flex;
+                align-items: center;
+                font-family: $font;
                 font-size: .9rem;
-            }
-        }
+                padding: 8px 12px;
+                color: $light-text;
 
-        &.is-active {
-            svg {
-                stroke: $muted-grey;
-            }
-        }
-
-        .flex-item {
-            display: flex !important;
-            justify-content: space-between;
-            align-items: center;
-            margin: 0 15px;
-
-            .toggle-title {
-                font-size: .8rem;
-                color: $muted-grey;
-
-                &:hover {
-                    background: transparent !important;
+                svg {
+                    margin-right: 8px;
+                    height: 16px;
+                    width: 16px;
+                    stroke: $light-text;
                 }
-            }
-
-            &:hover {
-                background: transparent !important;
             }
         }
     }
@@ -264,6 +285,12 @@ body {
                     }
                 }
             }
+
+            .wizard-dropdown, .user-dropdown {
+                .dropdown-menu {
+                    border-color: lighten($dark-sidebar, 12%);
+                }
+            }
         }
 
         .wizard-buttons {
@@ -282,10 +309,6 @@ body {
                     }
                 }
             }
-        }
-
-        .project-preview-loader {
-            background: lighten($dark-sidebar, 10%);
         }
     }
 }
@@ -1430,7 +1453,7 @@ body {
 }
 
 /* ==========================================================================
-13. Wizard V1 Step 6 Dark mode
+15. Wizard V1 Step 6 Dark mode
 ========================================================================== */
 
 body {
@@ -1465,7 +1488,7 @@ body {
 }
 
 /* ==========================================================================
-14. Wizard V1 Step 7
+16. Wizard V1 Step 7
 ========================================================================== */
 
 .wizard-v1-wrapper {
@@ -1628,6 +1651,10 @@ body {
                         margin-bottom: 12px;
                     }
 
+                    > .media-flex-center {
+                        margin-bottom: 0;
+                    }
+
                     .estimated-budget, .estimated-due-date, .attachments-count {
                         height: 130px;
                         display: flex;
@@ -1693,7 +1720,7 @@ body {
 }
 
 /* ==========================================================================
-15. Wizard V1 Step 7 Dark mode
+17. Wizard V1 Step 7 Dark mode
 ========================================================================== */
 
 body {
@@ -1701,6 +1728,11 @@ body {
         .wizard-v1-wrapper {
             .step-content {
                 .project-preview-wrapper {
+
+                    .project-preview-loader {
+                        background: lighten($dark-sidebar, 10%);
+                    }
+
                     .project-preview-header {
                         .h-avatar {
                             .edit-icon {
@@ -1739,7 +1771,7 @@ body {
 }
 
 /* ==========================================================================
-16. Media Queries
+18. Media Queries
 ========================================================================== */
 
 @media only screen and (max-width: 767px) {

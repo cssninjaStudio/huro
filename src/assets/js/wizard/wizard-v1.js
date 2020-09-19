@@ -9,7 +9,7 @@ var project = {
     tools: []
 };
 var currentStep = 0;
-var delay = 100; //1200
+var delay = 1200; //1200
 
 function buildProjectPreview(object) {
     //1. Handle Project Type

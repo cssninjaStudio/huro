@@ -15,6 +15,18 @@
 <script src="{{ root }}assets/js/tour.js"></script>
 
 <!-- Dashboards js -->
+{{#ifpage 'admin-dashboards-personal-1'}}
+<script src="{{ root }}assets/js/personal-1.js"></script>
+{{/ifpage}}
+
+{{#ifpage 'admin-dashboards-personal-2'}}
+<script src="{{ root }}assets/js/personal-2.js"></script>
+{{/ifpage}}
+
+{{#ifpage 'admin-dashboards-food' 'webapp-dashboards-food'}}
+<script src="{{ root }}assets/js/food.js"></script>
+{{/ifpage}}
+
 {{#ifpage 'admin-dashboards-flights'}}
 <script src="{{ root }}assets/js/flights.js"></script>
 {{/ifpage}}

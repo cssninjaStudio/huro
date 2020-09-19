@@ -215,8 +215,10 @@ body {
 }
 
 .toolbar {
+    position: relative;
     display: flex;
     align-items: center;
+    z-index: 1;
 
     .control {
         min-width: 280px;
