@@ -16,7 +16,7 @@ $(document).ready(function () {
             data: [78, 53, 36, 10, 14, 5, 2]
         }],
         chart: {
-            height: 308,
+            height: 295,
             type: 'area',
             toolbar: {
                 show: false

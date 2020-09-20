@@ -388,6 +388,10 @@ body {
     background: $lighter-grey;
     transition: all .3s;
 
+    &.light {
+        background: $white;
+    }
+
     &.lighter {
         background: $smoke-white;
     }

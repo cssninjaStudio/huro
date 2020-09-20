@@ -231,7 +231,7 @@ body {
                 width: 50%;
 
                 a {
-                    color: $muted-grey;
+                    color: $light-text;
                     font-family: $font;
                     height: 40px;
                     border-bottom: none;
@@ -341,7 +341,7 @@ body {
                 width: 33.3%;
 
                 a {
-                    color: $muted-grey;
+                    color: $light-text;
                     font-family: $font;
                     font-weight: 400;
                     height: 40px;
@@ -443,6 +443,93 @@ body {
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+
+/* ==========================================================================
+4. Vertical tabs
+========================================================================== */
+
+@media only screen and (max-width: 767px) {
+    .vertical-tabs-wrapper {
+        .tabs {
+            ul {
+                li {
+                    &.is-active {
+                        a {
+                            color: $primary;
+                            border-bottom-color: $primary;
+                        }
+                    }
+
+                    a {
+                        color: $light-text;
+                    }
+                }
+            }
+        }
+
+        .content-wrap {
+            .tab-content {
+                padding-top: 12px;
+                display: none;
+                animation: fadeInLeft .5s;
+
+                &.is-active {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .vertical-tabs-wrapper {
+        display: flex;
+
+        .tabs {
+            min-width: 25%;
+            max-width: 25%;
+            margin-right: 30px;
+
+            ul {
+                display: block;
+                text-align: left;
+                border-bottom-color: transparent !important;
+
+                li {
+                    display: block;
+
+                    &.is-active {
+                        a {
+                            color: $primary;
+                            border-right-color: $primary;
+                        }
+                    }
+
+                    a {
+                        display: block;
+                        border-bottom-color: transparent !important;
+                        border-right: 2px solid #dbdbdb;
+                        color: $light-text;
+                    }
+                }
+            }
+        }
+
+        .content-wrap {
+            flex-grow: 2;
+
+            .tab-content {
+                display: none;
+                animation: fadeInLeft .5s;
+
+                &.is-active {
+                    display: block;
                 }
             }
         }
