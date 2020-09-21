@@ -18,7 +18,8 @@ $dayBtn: #ffb62e;
     
     input {
         display: none;
-        & + div {
+        & + span {
+            display: block;
             border-radius: 50%;
             width: 36px;
             height: 36px;
@@ -51,7 +52,7 @@ $dayBtn: #ffb62e;
                 transition: all .3s ease;
             }
         }
-        &:checked + div {
+        &:checked + span {
             box-shadow: inset 32px -32px 0 0 $nightBtn;
             transform: scale(.5) rotate(0deg);
             transition: transform .3s ease .1s, box-shadow .2s ease 0s;

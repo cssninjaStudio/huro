@@ -56,7 +56,7 @@ $(document).ready(function () {
     var rowActionDropdown = `
         <div class="row-action">
             <div class="dropdown is-spaced is-dots is-right dropdown-trigger">
-                <div class="is-trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+                <div class="is-trigger" aria-haspopup="true" >
                     ${moreIcon}
                 </div>
                 <div class="dropdown-menu" role="menu">
@@ -107,7 +107,7 @@ $(document).ready(function () {
     var rowFileDropdown = `
         <div class="row-action">
             <div class="dropdown is-spaced is-dots is-right dropdown-trigger">
-                <div class="is-trigger" aria-haspopup="true" aria-controls="dropdown-menu">
+                <div class="is-trigger" aria-haspopup="true" >
                     ${moreIcon}
                 </div>
                 <div class="dropdown-menu" role="menu">
