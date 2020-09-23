@@ -133,7 +133,7 @@ window.onload = function () {
 
     //Mask the security code
     var securitycode_mask = new IMask(securitycode, {
-        mask: '0000',
+        mask: '000',
     });
 
     // SVGICONS

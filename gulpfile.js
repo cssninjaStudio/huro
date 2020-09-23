@@ -98,6 +98,7 @@ function compileJS() {
   return src([
     'src/assets/js/functions.js',
     'src/assets/js/main.js',
+    'src/assets/js/landing.js',
     'src/assets/js/auth.js',
     'src/assets/js/theme.js',
     'src/assets/js/touch.js',
