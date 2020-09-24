@@ -394,7 +394,7 @@ $(document).ready(function () {
             lang: 'en'
         });
     }
-    
+
 
     //Choices js
     if ($('#choices-text-remove-button').length) {
@@ -527,8 +527,163 @@ $(document).ready(function () {
         $("#autocomplete-demo-advanced").easyAutocomplete(demoAdvancedOptions);
     }
 
+    //NoUI Slider
+    if ($('.noui-base-slider').length) {
+        var sliders = document.getElementsByClassName('noui-base-slider');
+
+        for (var i = 0; i < sliders.length; i++) {
+
+            noUiSlider.create(sliders[i], {
+                start: [10, 90],
+                connect: true,
+                orientation: "horizontal",
+                range: {
+                    'min': 0,
+                    'max': 100
+                },
+            });
+        }
+    }
+
+    if ($('.noui-vertical-slider').length) {
+        var sliders2 = document.getElementsByClassName('noui-vertical-slider');
+
+        for (var i = 0; i < sliders2.length; i++) {
+
+            noUiSlider.create(sliders2[i], {
+                start: [10, 90],
+                connect: true,
+                orientation: "vertical",
+                range: {
+                    'min': 0,
+                    'max': 100
+                },
+            });
+        }
+    }
+
+    if ($('#noui-range-slider').length) {
+        var sliderRange = document.getElementById('noui-range-slider');
+
+        noUiSlider.create(sliderRange, {
+            start: [20],
+            connect: [true, false],
+            range: {
+                'min': 0,
+                'max': 100
+            }
+        });
+    }
+
+    if ($('.noui-tooltip-slider').length) {
+        var tooltipSliders = document.getElementsByClassName('noui-tooltip-slider');
+
+        for (var i = 0; i < tooltipSliders.length; i++) {
+
+            var randomStart = (Math.floor(Math.random() * 101));
+
+            noUiSlider.create(tooltipSliders[i], {
+                start: [randomStart],
+                connect: [true, false],
+                tooltips: [true],
+                range: {
+                    'min': 0,
+                    'max': 100
+                }
+            });
+        }
+    }
+
+    //Summernote Editor
+    if ($('#summernote').length) {
+
+        $('#summernote').summernote({
+            placeholder: 'Hello stand alone ui',
+            tabsize: 2,
+            height: 250,                 // set editor height
+            minHeight: null,             // set minimum height of editor
+            maxHeight: null,             // set maximum height of editor
+            focus: true,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['view', ['codeview', 'help']]
+            ]
+        });
+
+    }
+
+    //Sun Editor
+    if ($('#sun-editor').length) {
+
+        const editor = SUNEDITOR.create((document.getElementById('sun-editor') || 'sun-editor'), {
+            width: '100%',
+            height: 250,
+            placeholder: 'Write your text here...'
+            //mode: 'balloon-always'
+        });
+
+    }
+
+    if ($('#sun-editor-balloon').length) {
+
+        const editor = SUNEDITOR.create((document.getElementById('sun-editor-balloon') || 'sun-editor-balloon'), {
+            width: '100%',
+            height: 250,
+            placeholder: 'Write your text here...',
+            mode: 'balloon-always'
+        });
+
+    }
+
+    //Video Player
+    if ($('#video-player').length) {
+
+        // get target from media with controls
+        const $target = document.querySelector('audio[controls], video[controls]');
+
+        // assign media player from target (all these options represent the defaults)
+        const player = new MediaPlayer(
+            $target,
+            {
+                prefix: 'media',
+                lang: {
+                    play: 'play',
+                    pause: 'pause',
+                    mute: 'mute',
+                    unmute: 'unmute',
+                    volume: 'volume',
+                    currentTime: 'current time',
+                    remainingTime: 'remaining time',
+                    enterFullscreen: 'enter fullscreen',
+                    leaveFullscreen: 'leave fullscreen',
+                    download: 'download'
+                },
+                svgs: {
+                    play: '#symbol-play',
+                    pause: '#symbol-pause',
+                    mute: '#symbol-mute',
+                    unmute: '#symbol-unmute',
+                    volume: '#symbol-volume',
+                    currentTime: '#symbol-currentTime',
+                    remainingTime: '#symbol-remainingTime',
+                    enterFullscreen: '#symbol-enterFullscreen',
+                    leaveFullscreen: '#symbol-leaveFullscreen',
+                    download: '#symbol-download'
+                },
+                timeDir: 'ltr',
+                volumeDir: 'ltr'
+            }
+        );
+
+    }
+
+    //Svg Circke Chart
     if ($('.circle-chart-wrapper').length) {
-        $('.circle-chart-wrapper').each(function(){
+        $('.circle-chart-wrapper').each(function () {
             var $this = $(this)
             var completion = $this.attr('data-completion');
             $this.find('.circle-chart__circle').attr('stroke-dasharray', completion + ',100');

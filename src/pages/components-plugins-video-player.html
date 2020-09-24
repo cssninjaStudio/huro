@@ -1,0 +1,179 @@
+---
+layout: default
+title: Video Player
+---
+
+{{> components-sidebar}}
+{{> components-mobile-subsidebar}}
+
+<!-- Content Wrapper -->
+<div id="huro-demo" class="view-wrapper" data-sidebar-open data-naver-offset="342"
+    data-menu-item="#components-sidebar-menu" data-mobile-item="#components-sidebar-menu-mobile">
+
+    <div class="page-content-wrapper">
+        <div class="page-content is-relative">
+
+            <div class="page-title has-text-centered">
+                <!-- Sidebar Trigger -->
+                <div class="huro-hamburger nav-trigger push-resize" data-sidebar="components-sidebar">
+                    <span class="menu-toggle has-chevron">
+                        <span class="icon-box-toggle">
+                            <span class="rotate">
+                                <i class="icon-line-top"></i>
+                                <i class="icon-line-center"></i>
+                                <i class="icon-line-bottom"></i>
+                            </span>
+                        </span>
+                    </span>
+                </div>
+
+                <div class="title-wrap">
+                    <h1 class="title is-4">Video Player</h1>
+                </div>
+
+                {{> toolbar}}
+            </div>
+
+            <div class="page-content-inner">
+
+                <nav class="breadcrumb has-bullet-separator" aria-label="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="/">
+                                <span class="icon is-small is-solo">
+                                    <i data-feather="home"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/elements-hub.html">
+                                <span>Components</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <span>Plugins</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <span>Video Player</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="columns is-multiline">
+                    <div class="column is-12">
+
+                        <!--Video Player-->
+                        <div class="demo-card">
+                            <div class="demo-title">
+                                <h3 class="title is-thin is-5">Video Player</h3>
+                                <p>Huro ships with Summernote Editor, a nice and easily customizable jQuery rich text
+                                    editor <a href="https://summernote.org/getting-started/#without-bootstrap"
+                                        target="_blank">here</a>. If you need a vanilla js editor, please consider
+                                    looking at our other.
+                                </p>
+                                <a class="code-trigger">
+                                    <i class="open" data-feather="code"></i>
+                                    <i class="close" data-feather="x"></i>
+                                </a>
+                            </div>
+                            <div class="card-inner no-padding">
+
+                                <div class="highlight highlight-block">
+                                    <pre><code class="code-highlight">
+//JS CODE
+$('#summernote').summernote({
+    placeholder: 'Hello stand alone ui',
+    tabsize: 2,
+    height: 250,                 // set editor height
+    minHeight: null,             // set minimum height of editor
+    maxHeight: null,             // set maximum height of editor
+    focus: true, 
+    toolbar: [
+        ['style', ['style']],
+        ['font', ['bold', 'underline', 'clear']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['table', ['table']],
+        ['insert', ['link', 'picture', 'video']],
+        ['view', ['codeview', 'help']]
+    ]
+});
+
+//MARKUP
+&#x3C;div id=&#x22;summernote&#x22;&#x3E;&#x3C;/div&#x3E;
+</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-t-20 p-b-20">
+
+                            <div class="demo-video-container">
+                                <video id="video-player" class="media-player" src="https://diveinto.org/media/uscenes_h-264_hd_test.mp4"
+                                    poster="https://diveinto.org/media/uscenes_h-264_hd_test.jpg" controls loop
+                                    data-options='{}'></video>
+                            </div>
+
+                            <svg style="display:none">
+                                <!--symbol id="symbol-play" viewBox="0 0 32 32">
+                                    <path d="M4 0l24 16L4 32" />
+                                </symbol-->
+                                <symbol id="symbol-play" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                </symbol>
+                                <symbol id="symbol-pause" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                    <rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect>
+                                </symbol>
+                                <!--symbol id="symbol-pause" viewBox="0 0 32 32">
+                                    <path d="M4 0h9v32H4M28 0h-9v32h9" />
+                                </symbol-->
+                                <symbol id="symbol-mute" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                                </symbol>
+                                <symbol id="symbol-unmute" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                    <line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line>
+                                </symbol>
+                                <!--symbol id="symbol-mute" viewBox="0 0 32 32">
+                                    <path d="M0 11h6l10-8.5v27L6 21H0M22 6l10 10-10 10" />
+                                </symbol-->
+                                <!--symbol id="symbol-unmute" viewBox="0 0 32 32">
+                                    <path d="M0 11h6l10-8.5v27L6 21H0" />
+                                </symbol-->
+                                <symbol id="symbol-download" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </symbol>
+                                <!--symbol id="symbol-download" viewBox="0 0 32 32">
+                                    <path d="M20 2v12h4l-8 10-8-10h4V2M0 21h5v6h22v-6h5v11H0" />
+                                </symbol-->
+                                <symbol id="symbol-enterFullscreen" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                    <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                                </symbol>
+                                <!--symbol id="symbol-enterFullscreen" viewBox="0 0 32 32">
+                                    <path
+                                        d="M0 0h12L8 4l6 6-4 4-6-6-4 4M32 0H20l4 4-6 6 4 4 6-6 4 4M0 32V20l4 4 6-6 4 4-6 6 4 4m20 0V20l-4 4-6-6-4 4 6 6-4 4" />
+                                </symbol-->
+                                <symbol id="symbol-leaveFullscreen" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                    <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"></path>
+                                </symbol>
+                                <!--symbol id="symbol-leaveFullscreen" viewBox="0 0 32 32">
+                                    <path
+                                        d="M0 4l4-4 6 6 4-4v12H2l4-4m26-6l-4-4-6 6-4-4v12h12l-4-4M0 28l4 4 6-6 4 4V18H2l4 4m26 6l-4 4-6-6-4 4V18h12l-4 4" />
+                                </symbol-->
+                            </svg>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

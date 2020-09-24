@@ -41,6 +41,12 @@
         .lnil, .lnir {
             font-size: 1.2rem;
         }
+
+        svg {
+            height: 16px;
+            width: 16px;
+            stroke-width: 1.4px;
+        }
     }
 
     &.is-medium {
@@ -57,6 +63,12 @@
 
         .lnil, .lnir {
             font-size: 1.7rem;
+        }
+
+        svg {
+            height: 25px;
+            width: 25px;
+            stroke-width: 1.4px;
         }
     }
 
@@ -75,6 +87,12 @@
         .lnil, .lnir {
             font-size: 2.2rem;
         }
+
+        svg {
+            height: 34px;
+            width: 34px;
+            stroke-width: 2px;
+        }
     }
 
     &.is-big {
@@ -91,6 +109,12 @@
 
         .lnil, .lnir {
             font-size: 2.6rem;
+        }
+
+        svg {
+            height: 40px;
+            width: 40px;
+            stroke-width: 3px;
         }
     }
 
@@ -109,6 +133,12 @@
         .lnil, .lnir {
             font-size: 3.4rem;
         }
+
+        svg {
+            height: 50px;
+            width: 50px;
+            stroke-width: 3px;
+        }
     }
 
     &.is-rounded {
@@ -125,6 +155,10 @@
         i {
             color: $primary;
         }
+
+        svg {
+            stroke: $primary;
+        }
     }
 
     &.is-secondary {
@@ -136,6 +170,10 @@
 
         i {
             color: $secondary;
+        }
+
+        svg {
+            stroke: $secondary;
         }
     }
 
@@ -149,6 +187,10 @@
         i {
             color: $accent;
         }
+
+        svg {
+            stroke: $accent;
+        }
     }
 
     &.is-success {
@@ -160,6 +202,10 @@
 
         i {
             color: $success;
+        }
+
+        svg {
+            stroke: $success;
         }
     }
 
@@ -173,6 +219,10 @@
         i {
             color: $info;
         }
+
+        svg {
+            stroke: $info;
+        }
     }
 
     &.is-warning {
@@ -184,6 +234,10 @@
 
         i {
             color: $warning;
+        }
+
+        svg {
+            stroke: $warning;
         }
     }
 
@@ -197,6 +251,10 @@
         i {
             color: $danger;
         }
+
+        svg {
+            stroke: $danger;
+        }
     }
 
     &.is-purple {
@@ -208,6 +266,10 @@
 
         i {
             color: $h-purple;
+        }
+
+        svg {
+            stroke: $h-purple;
         }
     }
 
@@ -221,6 +283,10 @@
         i {
             color: $h-blue;
         }
+
+        svg {
+            stroke: $h-blue;
+        }
     }
 
     &.is-yellow {
@@ -232,6 +298,10 @@
 
         i {
             color: $h-yellow;
+        }
+
+        svg {
+            stroke: $h-yellow;
         }
     }
 
@@ -245,6 +315,10 @@
         i {
             color: $h-orange;
         }
+
+        svg {
+            stroke: $h-orange;
+        }
     }
 
     &.is-green {
@@ -257,6 +331,10 @@
         i {
             color: $h-green;
         }
+
+        svg {
+            stroke: $h-green;
+        }
     }
 
     &.is-red {
@@ -268,6 +346,10 @@
 
         i {
             color: $h-red;
+        }
+
+        svg {
+            stroke: $h-red;
         }
     }
 
@@ -285,6 +367,12 @@
         font-size: 1.4rem;
         color: $muted-grey;
         transition: color .3s;
+    }
+
+    svg {
+        height: 20px;
+        width: 20px;
+        stroke-width: 1.4px;
     }
 }
 
