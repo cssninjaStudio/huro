@@ -4,27 +4,19 @@
     1. labels
     2. Inputs and textareas
     3. Radios
-    4. Control
-    5. H Select
+    4. Fieldset | Field | Control
+    5. Fieldset | Field | Control Dark mode
     6. Custom select
-    7. Combo Box
-    8. Autocomplete
-    9. Chosen select box
-    10. Chosen single
-    11. Chosen Dropdown
-    12. Chosen multiple
-    13. Chosen Sortbox
-    14. Switch Toggle
-    15. Range input
-    16. Inputs and textareas dark-mode
-    17. File inputs
-    18. File inputs Dark mode
-    19. Filepond
-    20. Filepond Dark mode
-    21. Choices
-    22. Choices Dark mode
-    23. Autocomplete
-    24. Autocomplete Dark mode
+    7. Autocomplete
+    8. Autocomplete Dark mode
+    9. Switch
+    10. Range input
+    11. File inputs
+    12. File inputs Dark mode
+    13. Filepond
+    14. Filepond Dark mode
+    15. Choices
+    16. Choices Dark mode
 */
 
 /* ==========================================================================
@@ -121,6 +113,55 @@
     }
 }
 
+
+/* ==========================================================================
+3. Inputs and textareas dark-mode
+========================================================================== */
+
+body {
+    &.is-dark {
+        .input, .textarea {
+            background-color: lighten($dark-sidebar, 2%);
+            border-color: lighten($dark-sidebar, 4%);
+            color: $dark-dark-text;
+
+            &:hover {
+                border-color: lighten($dark-sidebar, 12%);
+            }
+
+            &:focus {
+                border-color: lighten($dark-sidebar, 8%);
+
+                + .form-icon svg {
+                    stroke: $accent !important;
+                }
+            }
+
+            &::-webkit-input-placeholder {
+                color: darken($accent-grey, 30%) !important;
+            }
+
+            &::-moz-placeholder {
+                color: darken($accent-grey, 30%) !important;
+            }
+
+            &:-ms-input-placeholder {
+                color: darken($accent-grey, 30%) !important;
+            }
+
+            &:-moz-placeholder {
+                color: darken($accent-grey, 30%) !important;
+            }
+
+            &.is-primary-focus {
+                &:focus {
+                    border-color: $accent !important;
+                }
+            }
+        }
+    }
+}
+
 /* ==========================================================================
 3. Radios
 ========================================================================== */
@@ -199,7 +240,7 @@
 }
 
 /* ==========================================================================
-4. Controls
+4. Fieldset | Field | Controls
 ========================================================================== */
 
 .form-fieldset {
@@ -296,8 +337,6 @@ select {
             display: flex;
             justify-content: space-between;
             align-items: center;
-
-            //height: 50px;
             width: 100%;
             padding: 12px 8px;
             background: $white;
@@ -459,6 +498,81 @@ select {
             &.error {
                 display: none;
                 color: $danger;
+            }
+        }
+    }
+}
+
+
+/* ==========================================================================
+5. Fieldset | Field | Controls Dark mode
+========================================================================== */
+
+body {
+    &.is-dark {
+
+        .form-fieldset {
+            .fieldset-heading {
+                h4 {
+                    color: $dark-dark-text;
+                }
+            }
+        }
+
+        .field {
+            &.has-textarea-addon {
+                .textarea {
+                    border-color: lighten($dark-sidebar, 4%) !important;
+                }
+
+                .is-textarea-addon {
+                    background-color: lighten($dark-sidebar, 2%);
+                    border-color: lighten($dark-sidebar, 4%);
+                }
+            }
+        }
+
+        .control {
+            &.has-icon {
+                .input {
+                    &:focus {
+                        ~ .form-icon {
+                            svg {
+                                stroke: $accent;
+                            }
+
+                            .fas, .fal, .far, .fab, .lnir, .lnil {
+                                color: $accent;
+                            }
+                        }
+                    }
+                }
+
+                .form-icon {
+                    svg {
+                        stroke: darken($light-text, 5%);
+                    }
+
+                    .fas, .fal, .far, .fab, .lnir, .lnil {
+                        color: darken($light-text, 5%);
+                    }
+                }
+            }
+        }
+
+        .select {
+            &:not(.is-multiple):not(.is-loading) {
+                &:hover {
+                    &:after {
+                        border-color: $dark-dark-text !important;
+                    }
+                }
+            }
+
+            select {
+                background-color: lighten($dark-sidebar, 10%);
+                border-color: lighten($dark-sidebar, 12%) !important;
+                color: $dark-dark-text;
             }
         }
     }
@@ -629,7 +743,7 @@ select {
 }
 
 /* ==========================================================================
-8. Autocomplete
+7. Autocomplete
 ========================================================================== */
 
 .h-autocomplete {
@@ -703,8 +817,134 @@ select {
     }
 }
 
+.is-autocomplete {
+    .control {
+        .easy-autocomplete {
+            width: 100% !important;
+
+            input {
+                box-shadow: none;
+
+                &:focus {
+                    box-shadow: $light-box-shadow;
+
+                    + .icon {
+                        color: $primary;
+                    }
+                }
+            }
+
+            .template-wrapper {
+                display: flex !important;
+                align-items: center;
+
+                .avatar-wrapper {
+                    position: relative;
+                    margin-right: 10px;
+
+                    .autocpl-avatar {
+                        width: 32px !important;
+                        height: 32px !important;
+                        border-radius: 50% !important;
+                    }
+
+                    .avatar-badge {
+                        position: absolute;
+                        bottom: 0;
+                        right: -2px;
+                        width: 16px;
+                        height: 16px;
+                        border: 1px solid $white;
+                        border-radius: 50%;
+                    }
+                }
+
+                .entry-text {
+                    color: $dark-text;
+                    line-height: 1.2;
+
+                    span {
+                        font-family: $font;
+                        display: block;
+
+                        &:first-child {
+                            font-family: $font;
+                            font-size: .9rem;
+                            font-weight: 500;
+                            color: $dark-text;
+                        }
+
+                        &:nth-child(2) {
+                            font-size: .85rem;
+                            color: $light-text;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    li {
+        height: auto !important;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        border-left: none !important;
+        border-right: none !important;
+    }
+
+    .easy-autocomplete-container {
+        top: 120% !important;
+        border: none !important;
+
+        ul {
+            border-radius: 4px !important;
+            box-shadow: -1px 3px 10px 0 rgba(0, 0, 0, 0.06) !important;
+        }
+    }
+}
+
 /* ==========================================================================
-14. Switch
+8. Autocomplete Dark mode
+========================================================================== */
+
+body {
+    &.is-dark {
+        .is-autocomplete {
+            .easy-autocomplete-container {
+                > ul {
+                    background: $dark-sidebar;
+                    border-color: lighten($dark-sidebar, 8%);
+
+                    li {
+                        border-color: lighten($dark-sidebar, 8%);
+
+                        &.selected {
+                            background-color: lighten($dark-sidebar, 3%);
+                        }
+
+                        .eac-item {
+                            .template-wrapper {
+                                .entry-text {
+                                    color: $dark-text;
+
+                                    span {
+                                        &:first-child {
+                                            color: $dark-dark-text;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* ==========================================================================
+9. Switch
 ========================================================================== */
 
 .form-switch {
@@ -1138,7 +1378,7 @@ body {
 }
 
 /* ==========================================================================
-15. Range input
+10. Range input
 ========================================================================== */
 
 .range-slider {
@@ -1226,126 +1466,9 @@ body {
     }
 }
 
-/* ==========================================================================
-16. Inputs and textareas dark-mode
-========================================================================== */
-
-body {
-    &.is-dark {
-        .input, .textarea {
-            background-color: lighten($dark-sidebar, 2%);
-            border-color: lighten($dark-sidebar, 4%);
-            color: $dark-dark-text;
-
-            &:hover {
-                border-color: lighten($dark-sidebar, 12%);
-            }
-
-            &:focus {
-                border-color: lighten($dark-sidebar, 8%);
-
-                + .form-icon svg {
-                    stroke: $accent !important;
-                }
-            }
-
-            &::-webkit-input-placeholder {
-                color: darken($accent-grey, 30%) !important;
-            }
-
-            &::-moz-placeholder {
-                color: darken($accent-grey, 30%) !important;
-            }
-
-            &:-ms-input-placeholder {
-                color: darken($accent-grey, 30%) !important;
-            }
-
-            &:-moz-placeholder {
-                color: darken($accent-grey, 30%) !important;
-            }
-
-            &.is-primary-focus {
-                &:focus {
-                    border-color: $accent !important;
-                }
-            }
-        }
-    }
-}
-
-body {
-    &.is-dark {
-
-        .form-fieldset {
-            .fieldset-heading {
-                h4 {
-                    color: $dark-dark-text;
-                }
-            }
-        }
-
-        .field {
-            &.has-textarea-addon {
-                .textarea {
-                    border-color: lighten($dark-sidebar, 4%) !important;
-                }
-
-                .is-textarea-addon {
-                    background-color: lighten($dark-sidebar, 2%);
-                    border-color: lighten($dark-sidebar, 4%);
-                }
-            }
-        }
-
-        .control {
-            &.has-icon {
-                .input {
-                    &:focus {
-                        ~ .form-icon {
-                            svg {
-                                stroke: $accent;
-                            }
-
-                            .fas, .fal, .far, .fab, .lnir, .lnil {
-                                color: $accent;
-                            }
-                        }
-                    }
-                }
-
-                .form-icon {
-                    svg {
-                        stroke: darken($light-text, 5%);
-                    }
-
-                    .fas, .fal, .far, .fab, .lnir, .lnil {
-                        color: darken($light-text, 5%);
-                    }
-                }
-            }
-        }
-
-        .select {
-            &:not(.is-multiple):not(.is-loading) {
-                &:hover {
-                    &:after {
-                        border-color: $dark-dark-text !important;
-                    }
-                }
-            }
-
-            select {
-                background-color: lighten($dark-sidebar, 10%);
-                border-color: lighten($dark-sidebar, 12%) !important;
-                color: $dark-dark-text;
-            }
-        }
-    }
-}
 
 /* ==========================================================================
-17. File inputs
+11. File inputs
 ========================================================================== */
 
 .file {
@@ -1365,7 +1488,7 @@ body {
 }
 
 /* ==========================================================================
-18. File inputs Dark mode
+12. File inputs Dark mode
 ========================================================================== */
 
 body {
@@ -1388,7 +1511,7 @@ body {
 }
 
 /* ==========================================================================
-19. Filepond
+13. Filepond
 ========================================================================== */
 
 .filepond-uploader {
@@ -1473,7 +1596,7 @@ body {
 }
 
 /* ==========================================================================
-20. Filepond Dark mode
+14. Filepond Dark mode
 ========================================================================== */
 
 body {
@@ -1501,7 +1624,7 @@ body {
 }
 
 /* ==========================================================================
-21. Choices
+15. Choices
 ========================================================================== */
 
 .choices {
@@ -1556,7 +1679,7 @@ body {
 }
 
 /* ==========================================================================
-22. Choices Dark mode
+16. Choices Dark mode
 ========================================================================== */
 
 body {
@@ -1600,133 +1723,3 @@ body {
     }
 }
 
-/* ==========================================================================
-23. Autocomplete
-========================================================================== */
-
-.is-autocomplete {
-    .control {
-        .easy-autocomplete {
-            width: 100% !important;
-
-            input {
-                box-shadow: none;
-
-                &:focus {
-                    box-shadow: $light-box-shadow;
-
-                    + .icon {
-                        color: $primary;
-                    }
-                }
-            }
-
-            .template-wrapper {
-                display: flex !important;
-                align-items: center;
-
-                .avatar-wrapper {
-                    position: relative;
-                    //width: 32px !important;
-                    //height: 32px !important;
-                    margin-right: 10px;
-
-                    .autocpl-avatar {
-                        width: 32px !important;
-                        height: 32px !important;
-                        border-radius: 50% !important;
-                    }
-
-                    .avatar-badge {
-                        position: absolute;
-                        bottom: 0;
-                        right: -2px;
-                        width: 16px;
-                        height: 16px;
-                        border: 1px solid $white;
-                        border-radius: 50%;
-                    }
-                }
-
-                .entry-text {
-                    color: $dark-text;
-                    line-height: 1.2;
-
-                    span {
-                        font-family: $font;
-                        display: block;
-
-                        &:first-child {
-                            font-family: $font;
-                            font-size: .9rem;
-                            font-weight: 500;
-                            color: $dark-text;
-                        }
-
-                        &:nth-child(2) {
-                            font-size: .85rem;
-                            color: $light-text;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    li {
-        height: auto !important;
-        padding-top: 8px;
-        padding-bottom: 8px;
-        border-left: none !important;
-        border-right: none !important;
-    }
-
-    .easy-autocomplete-container {
-        top: 120% !important;
-        border: none !important;
-
-        ul {
-            border-radius: 4px !important;
-            box-shadow: -1px 3px 10px 0 rgba(0, 0, 0, 0.06) !important;
-        }
-    }
-}
-
-/* ==========================================================================
-24. Autocomplete Dark mode
-========================================================================== */
-
-body {
-    &.is-dark {
-        .is-autocomplete {
-            .easy-autocomplete-container {
-                > ul {
-                    background: $dark-sidebar;
-                    border-color: lighten($dark-sidebar, 8%);
-
-                    li {
-                        border-color: lighten($dark-sidebar, 8%);
-
-                        &.selected {
-                            background-color: lighten($dark-sidebar, 3%);
-                        }
-
-                        .eac-item {
-                            .template-wrapper {
-                                .entry-text {
-                                    color: $dark-text;
-
-                                    span {
-                                        &:first-child {
-                                            color: $dark-dark-text;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}

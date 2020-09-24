@@ -240,22 +240,22 @@ function addMember(MemberId, MemberPhoto, MemberName) {
             <div class="actions">
                 <div class="permissions">
                     <div class="permission-levels">
-                        <div class="permission-level hint--bubble hint--top" aria-label="Reader">
+                        <div class="permission-level hint--bubble hint--primary hint--top" aria-label="Reader">
                             <div class="permission-level-inner is-active" data-progress="20"></div>
                         </div>
-                        <div class="permission-level hint--bubble hint--top" aria-label="Collaborator">
+                        <div class="permission-level hint--bubble hint--primary hint--top" aria-label="Collaborator">
                             <div class="permission-level-inner" data-progress="50"></div>
                         </div>
-                        <div class="permission-level hint--bubble hint--top" aria-label="Manager">
+                        <div class="permission-level hint--bubble hint--primary hint--top" aria-label="Manager">
                             <div class="permission-level-inner" data-progress="68"></div>
                         </div>
-                        <div class="permission-level hint--bubble hint--top" aria-label="Owner">
+                        <div class="permission-level hint--bubble hint--primary hint--top" aria-label="Owner">
                             <div class="permission-level-inner" data-progress="100"></div>
                         </div>
                         <progress class="progress permissions-progress is-primary is-tiny" value="20" max="100">20%</progress>
                     </div>
                 </div>
-                <button class="button is-circle cancel-button hint--top hint--bubble" aria-label="Cancel Invite">
+                <button class="button is-circle cancel-button hint--top hint--bubble hint--primary" aria-label="Cancel Invite">
                     <i class="fas fa-times"></i>
                 </button>
             </div>

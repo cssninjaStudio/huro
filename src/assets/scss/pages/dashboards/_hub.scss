@@ -139,7 +139,6 @@
 body {
     &.is-dark {
         .card-hub {
-
             .hub-header {
                 .h-avatar {
                     .badge {
@@ -162,6 +161,23 @@ body {
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+3. Media Queries
+========================================================================== */
+
+@media only screen and (max-width: 767px) {
+    .card-hub {
+        .hub-body {
+            .body-inner {
+                .hub-card {
+                    width: calc(100% - 20px);
+                    max-width: calc(100% - 20px);
                 }
             }
         }

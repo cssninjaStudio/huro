@@ -12,6 +12,11 @@
 ========================================================================== */
 
 .personal-dashboard {
+
+    &.is-webapp {
+        margin-top: 30px;
+    }
+
     &.personal-dashboard-v1 {
         .dashboard-header {
             display: flex;

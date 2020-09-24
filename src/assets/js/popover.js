@@ -8,6 +8,61 @@ Ajax User Popovers
 
 $(document).ready(function () {
 
+    function initTextPopovers() {
+        $('*[data-toggle="popover"]').each(function () {
+            var mode = $(this).attr('data-pop-mode');
+            var title = $(this).attr('data-pop-title');
+            var content = $(this).attr('data-pop-content');
+            var position = $(this).attr('data-pop-position');
+            var width = $(this).attr('data-pop-width');
+            var avatar = $(this).attr('data-pop-avatar');
+            var icon = $(this).attr('data-pop-icon');
+            var iconColor = $(this).attr('data-pop-iconbg');
+            var avatarHtml = '';
+            var iconHtml = '';
+
+            if (avatar != null && avatar != undefined) {
+                avatarHtml = `
+                    <div class="h-avatar is-small">
+                        <img class="avatar" src="${avatar}" alt="">
+                    </div>
+                `;
+            }
+
+            else if (icon != null && icon != undefined) {
+                iconHtml = `
+                    <div class="h-icon is-small is-${iconColor}">
+                        <i class="${icon}"></i>
+                    </div>
+                `;
+            }
+
+            $(this).webuiPopover({
+                trigger: mode,
+                width: width,
+                animation: 'pop',
+                placement: position,
+                style: 'default',
+                content: function () {
+                    var template = `
+                        <div class="popover-head">
+                            ${avatarHtml}
+                            ${iconHtml}
+                            <h4 class="dark-inverted">${title}</h4>
+                        </div>
+                        <div class="popover-body">
+                            <p>${content}</p>
+                        </div>
+                    `;
+
+                    return template;
+                }
+            });
+        })
+    }
+
+    initTextPopovers();
+
     function initUserPopovers() {
         $('*[data-user-popover]').each(function () {
             var e = $(this);
@@ -30,6 +85,7 @@ $(document).ready(function () {
                         offsetLeft: 0,
                         offsetTop: 20,
                         animation: 'pop',
+                        style: 'profile',
                         cache: false,
                         content: function () {
 
@@ -75,7 +131,7 @@ $(document).ready(function () {
                             } else {
                                 var classes = new Array('is-danger', 'is-info', 'is-primary', 'is-success', 'is-warning', 'is-h-purple', 'is-h-blue', 'is-h-green', 'is-h-orange', 'is-h-red', 'is-h-green');
                                 var length = classes.length;
-                                var randomClass = classes[ Math.floor ( Math.random() * length )];
+                                var randomClass = classes[Math.floor(Math.random() * length)];
 
                                 var html = `
 
