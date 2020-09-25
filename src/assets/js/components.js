@@ -681,6 +681,25 @@ $(document).ready(function () {
 
     }
 
+    //Alertify
+    if ($('#alertify-demo-1').length) {
+
+        $('#alertify-demo-1').on('click', function () {
+            initConfirm('Standard Alert', 'Are you sure you want to perfom this action? You won\'t be able to recover or to revert it.', false, false, 'Delete', 'Cancel');
+        })
+
+    }
+
+    if ($('#alertify-demo-2').length) {
+
+        $('#alertify-demo-2').on('click', function () {
+            initConfirm('Custom Alert', 'You can pass a callback function as a callback parameter to define what happens after the confirm button is clicked.', false, false, 'Callback', 'Cancel', function (closeEvent) {
+                alert('The callback was executed!')
+            })
+        })
+
+    }
+
     //Svg Circke Chart
     if ($('.circle-chart-wrapper').length) {
         $('.circle-chart-wrapper').each(function () {

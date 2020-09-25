@@ -419,6 +419,24 @@ function adjustDropdowns() {
     })
 }
 
+//Launch an alert dialog
+function initConfirm(title, message, maximizable, closableByDimmer, okLabel, cancelLabel, callback) {
+    alertify.confirm('confirm').set({
+        transition: 'fade',
+        title: title,
+        message: message,
+        movable: false,
+        maximizable: maximizable,
+        closableByDimmer: closableByDimmer,
+        labels: {
+            ok: okLabel,
+            cancel: cancelLabel
+        },
+        reverseButtons: true,
+        'onok': callback
+    }).show();
+}
+
 //Chosen Selects
 function initChosenSelects() {
     if ($('.chosen-select-no-single').length) {

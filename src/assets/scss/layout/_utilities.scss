@@ -16,9 +16,8 @@
     13. Background images
     14. Dark mode images
     15. Demo spacer
-    16. Flex Blocks
-    17. Simplebar
-    18. Back to top button
+    16. Simplebar
+    17. Back to top button
 */
 
 /* ==========================================================================
@@ -341,13 +340,7 @@ var {
 5. Tooltips
 ========================================================================== */
 
-.ggtooltip.top .ggtooltip-arrow, .ggtooltip.top .ggtooltip-arrow-shadow {
-    bottom: 1px;
-    left: 50%;
-    margin-left: -5px;
-    border-top-color: #000000;
-    border-width: 5px 5px 0;
-}
+
 
 /* ==========================================================================
 6. Alertify js
@@ -361,20 +354,24 @@ var {
 }
 
 .ajs-dimmer {
-    background-color: $primary !important;
+    background-color: $dark-sidebar !important;
 }
 
 .ajs-header {
     font-weight: 500 !important;
+    font-family: $font !important;
     border-radius: 8px 8px 0 0 !important;
 }
 
 .ajs-footer {
     border-radius: 0 0 6px 6px !important;
+    border: none !important;
+    background: transparent !important;
 }
 
 .ajs-content {
     padding: 16px 0 !important;
+    font-family: $font !important;
 
     b {
         font-weight: 500 !important;
@@ -403,7 +400,7 @@ var {
     background: $primary !important;
     color: $white !important;
     border: 1px solid $primary;
-    border-radius: 100px;
+    border-radius: 6px;
     transition: all .3s;
     cursor: pointer;
     outline: none !important;
@@ -426,7 +423,7 @@ var {
     background: $white !important;
     color: $primary !important;
     border: 1px solid $primary !important;
-    border-radius: 100px;
+    border-radius: 6px;
     transition: all .3s;
     cursor: pointer;
     outline: none !important;
@@ -449,11 +446,15 @@ body {
             color: $accent-grey !important;
         }
 
-        .ajs-content span {
-            color: $accent-grey !important;
-
-            b {
-                color: $accent !important;
+        .ajs-content {
+            color: $dark-dark-text !important;
+            
+            span {
+                color: $dark-dark-text !important;
+    
+                b {
+                    color: $accent !important;
+                }
             }
         }
 
@@ -698,106 +699,7 @@ body {
 }
 
 /* ==========================================================================
-16. Flex Blocks
-========================================================================== */
-
-.media-flex {
-    display: flex;
-    margin-bottom: 1rem;
-
-    &:last-child, &.no-margin {
-        margin-bottom: 0;
-    }
-
-    .flex-meta {
-        margin-left: 12px;
-        line-height: 1.3;
-
-        span {
-            display: block;
-            font-family: $font;
-
-            &:first-child {
-                color: $dark-text;
-                font-weight: 600;
-            }
-
-            &:nth-child(2) {
-                color: $light-text;
-                font-size: .9rem;
-            }
-        }
-    }
-
-    .flex-end {
-        margin-left: auto;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-
-        .end-action {
-            margin-left: 1rem;
-        }
-    }
-}
-
-.media-flex-center {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-
-    &:last-child, &.no-margin {
-        margin-bottom: 0;
-    }
-
-    .flex-meta {
-        margin-left: 12px;
-        line-height: 1.3;
-
-        span {
-            display: block;
-            font-family: $font;
-
-            &:first-child {
-                color: $dark-text;
-                font-weight: 600;
-            }
-
-            &:nth-child(2) {
-                color: $light-text;
-                font-size: .9rem;
-            }
-        }
-    }
-
-    .flex-end {
-        margin-left: auto;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-
-        .end-action {
-            margin-left: 1rem;
-        }
-    }
-}
-
-body {
-    &.is-dark {
-        .media-flex-center, .media-flex {
-            .flex-meta {
-                span {
-                    &:first-child {
-                        color: $dark-dark-text;
-                    }
-                }
-            }
-        }
-    }
-}
-
-/* ==========================================================================
-17. Simplebar
+16. Simplebar
 ========================================================================== */
 
 .simplebar-scrollbar:before {
@@ -805,7 +707,7 @@ body {
 }
 
 /* ==========================================================================
-18. Back to top button
+17. Back to top button
 ========================================================================== */
 
 #backtotop {

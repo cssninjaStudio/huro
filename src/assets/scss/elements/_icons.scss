@@ -26,6 +26,7 @@
     align-items: center;
     height: 40px;
     width: 40px;
+    min-width: 40px;
     border-radius: 8px;
     background: $fade-grey;
     transition: all .3s;
@@ -33,6 +34,7 @@
     &.is-small {
         height: 32px;
         width: 32px;
+        min-width: 32px;
 
         .fas, .fab, .far, .fal {
             font-size: 1rem;
@@ -52,6 +54,7 @@
     &.is-medium {
         height: 50px;
         width: 50px;
+        min-width: 50px;
 
         &.is-bordered {
             border-width: 1.6px;
@@ -75,6 +78,7 @@
     &.is-large {
         height: 68px;
         width: 68px;
+        min-width: 68px;
 
         &.is-bordered {
             border-width: 2px;
@@ -98,6 +102,7 @@
     &.is-big {
         height: 80px;
         width: 80px;
+        min-width: 80px;
 
         &.is-bordered {
             border-width: 2px;
@@ -121,6 +126,7 @@
     &.is-xl {
         height: 100px;
         width: 100px;
+        min-width: 100px;
 
         &.is-bordered {
             border-width: 2px;
@@ -393,6 +399,10 @@ body {
                 i {
                     color: $white;
                 }
+
+                svg {
+                    stroke: $smoke-white;
+                }
             }
 
             &.is-accent {
@@ -404,6 +414,10 @@ body {
 
                 i {
                     color: $white;
+                }
+
+                svg {
+                    stroke: $smoke-white;
                 }
             }
 
@@ -417,6 +431,10 @@ body {
                 i {
                     color: $white;
                 }
+
+                svg {
+                    stroke: $smoke-white;
+                }
             }
 
             &.is-info {
@@ -428,6 +446,10 @@ body {
 
                 i {
                     color: $white;
+                }
+
+                svg {
+                    stroke: $smoke-white;
                 }
             }
 
@@ -441,6 +463,10 @@ body {
                 i {
                     color: $white;
                 }
+
+                svg {
+                    stroke: $smoke-white;
+                }
             }
 
             &.is-danger {
@@ -452,6 +478,10 @@ body {
 
                 i {
                     color: $white;
+                }
+
+                svg {
+                    stroke: $smoke-white;
                 }
             }
 
@@ -465,6 +495,10 @@ body {
                 i {
                     color: $white;
                 }
+
+                svg {
+                    stroke: $smoke-white;
+                }
             }
 
             &.is-blue {
@@ -476,6 +510,10 @@ body {
 
                 i {
                     color: $white;
+                }
+
+                svg {
+                    stroke: $smoke-white;
                 }
             }
 
@@ -489,6 +527,10 @@ body {
                 i {
                     color: $white;
                 }
+
+                svg {
+                    stroke: $smoke-white;
+                }
             }
 
             &.is-orange {
@@ -500,6 +542,10 @@ body {
 
                 i {
                     color: $white;
+                }
+
+                svg {
+                    stroke: $smoke-white;
                 }
             }
 
@@ -513,6 +559,10 @@ body {
                 i {
                     color: $white;
                 }
+
+                svg {
+                    stroke: $smoke-white;
+                }
             }
 
             &.is-red {
@@ -524,6 +574,10 @@ body {
 
                 i {
                     color: $white;
+                }
+
+                svg {
+                    stroke: $smoke-white;
                 }
             }
         }
