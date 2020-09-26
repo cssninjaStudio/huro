@@ -32,19 +32,7 @@ title: Messaging
             <!-- Chat Card -->
             <div class="is-chat animated preFadeInUp fadeInUp">
                 <!-- Header -->
-                <div class="chat-header is-hidden">
-                    <!-- Chat sidebar trigger -->
-                    <div class="huro-hamburger nav-trigger push-resize is-hidden" data-sidebar="messages-sidebar">
-                        <span class="menu-toggle has-chevron">
-                            <span class="icon-box-toggle">
-                                <span class="rotate">
-                                    <i class="icon-line-top"></i>
-                                    <i class="icon-line-center"></i>
-                                    <i class="icon-line-bottom"></i>
-                                </span>
-                            </span>
-                        </span>
-                    </div>
+                <div class="chat-header">
                     <div class="is-autocomplete is-hidden">
                         <div class="control">
                             <input id="users-autocpl" type="text" class="input" placeholder="Start typing a name"
@@ -65,7 +53,9 @@ title: Messaging
                     <ol id="chat-body" class="chat-body" data-conversation-body="conversation1">
 
                         <div class="no-messages is-hidden">
-                            <img src="assets/img/illustrations/messages/empty-square.svg">
+                            <img class="light-image" src="assets/img/illustrations/placeholders/search-4.svg" alt="" />
+                            <img class="dark-image" src="assets/img/illustrations/placeholders/search-4-dark.svg"
+                                alt="" />
                             <div class="text">
                                 <h3>No messages yet</h3>
                                 <p>Start the conversation by typing a message</p>
@@ -119,18 +109,30 @@ title: Messaging
                                     Shared photos
                                 </div>
                                 <div class="detail-photo-grid">
-                                    <img src="https://via.placeholder.com/1600x900" data-demo-src="assets/img/photo/apps/1.jpg" alt="">
-                                    <img src="https://via.placeholder.com/1600x900" data-demo-src="assets/img/photo/apps/2.jpg" alt="">
-                                    <img src="https://via.placeholder.com/1600x900" data-demo-src="assets/img/photo/apps/3.jpg" alt="">
-                                    <img src="https://via.placeholder.com/1600x900" data-demo-src="assets/img/photo/apps/4.jpg" alt="">
-                                    <img src="https://via.placeholder.com/1600x900" data-demo-src="assets/img/photo/apps/5.jpg" alt="">
-                                    <img src="https://via.placeholder.com/1600x900" data-demo-src="assets/img/photo/apps/6.jpg" alt="">
-                                    <img src="https://via.placeholder.com/1600x900" data-demo-src="assets/img/photo/apps/7.jpg" alt="">
-                                    <img src="https://via.placeholder.com/1600x900" data-demo-src="assets/img/photo/apps/8.jpg" alt="">
-                                    <img src="https://via.placeholder.com/1600x900" data-demo-src="assets/img/photo/apps/9.jpg" alt="">
-                                    <img src="https://via.placeholder.com/1600x900" data-demo-src="assets/img/photo/apps/10.jpg" alt="">
-                                    <img src="https://via.placeholder.com/1600x900" data-demo-src="assets/img/photo/apps/11.jpg" alt="">
-                                    <img src="https://via.placeholder.com/1600x900" data-demo-src="assets/img/photo/apps/12.jpg" alt="">
+                                    <img src="https://via.placeholder.com/1600x900"
+                                        data-demo-src="assets/img/photo/apps/1.jpg" alt="">
+                                    <img src="https://via.placeholder.com/1600x900"
+                                        data-demo-src="assets/img/photo/apps/2.jpg" alt="">
+                                    <img src="https://via.placeholder.com/1600x900"
+                                        data-demo-src="assets/img/photo/apps/3.jpg" alt="">
+                                    <img src="https://via.placeholder.com/1600x900"
+                                        data-demo-src="assets/img/photo/apps/4.jpg" alt="">
+                                    <img src="https://via.placeholder.com/1600x900"
+                                        data-demo-src="assets/img/photo/apps/5.jpg" alt="">
+                                    <img src="https://via.placeholder.com/1600x900"
+                                        data-demo-src="assets/img/photo/apps/6.jpg" alt="">
+                                    <img src="https://via.placeholder.com/1600x900"
+                                        data-demo-src="assets/img/photo/apps/7.jpg" alt="">
+                                    <img src="https://via.placeholder.com/1600x900"
+                                        data-demo-src="assets/img/photo/apps/8.jpg" alt="">
+                                    <img src="https://via.placeholder.com/1600x900"
+                                        data-demo-src="assets/img/photo/apps/9.jpg" alt="">
+                                    <img src="https://via.placeholder.com/1600x900"
+                                        data-demo-src="assets/img/photo/apps/10.jpg" alt="">
+                                    <img src="https://via.placeholder.com/1600x900"
+                                        data-demo-src="assets/img/photo/apps/11.jpg" alt="">
+                                    <img src="https://via.placeholder.com/1600x900"
+                                        data-demo-src="assets/img/photo/apps/12.jpg" alt="">
                                 </div>
                                 <a class="view-more">View More</a>
                             </div>
@@ -204,7 +206,7 @@ title: Messaging
 
             </div>
 
-            <div class="koder-layout-card is-container is-chat-placeholder animated preFadeInUp fadeInUp is-hidden">
+            <div class="is-chat-placeholder animated preFadeInUp fadeInUp is-hidden">
                 <div class="caption">
                     <img src="assets/img/illustrations/messages/empty-placeholder.svg">
                     <div class="text">

@@ -70,16 +70,11 @@ Messaging
         right: 0px;
         width: 100%;
         padding: 5px 10px;
-        border-bottom: 1px solid $fade-grey;
-        z-index: 97;
+        z-index: 2;
         -webkit-touch-callout: none;
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
-
-        .huro-hamburger {
-            transform: scale(0.8);
-        }
 
         .is-autocomplete {
             flex-grow: 2;
@@ -95,8 +90,8 @@ Messaging
 
                 .icon {
                     position: absolute;
-                    top: 6px;
-                    left: 6px;
+                    top: 9px;
+                    left: 9px;
                     color: $placeholder;
 
                     span {
@@ -275,10 +270,12 @@ Messaging
 }
 
 .chat-side {
+    position: relative;
     width: 320px;
     height: 100%;
     border-left: 1px solid $fade-grey;
     background: $white;
+    z-index: 3;
     transition: all .3s;
 
     .chat-side-header {
@@ -636,17 +633,17 @@ Messaging
         right: 0;
         bottom: 0;
         margin: 0 auto;
+        text-align: center;
         transform: translateY(-50%);
 
         img {
             display: block;
             margin: 0 auto;
-            height: 90px;
+            height: 190px;
         }
 
         .text {
             text-align: center;
-            margin-top: 20px;
 
             h3 {
                 font-size: 1.4rem;
@@ -670,7 +667,7 @@ Messaging
         width: 100%;
         height: 100%;
         background: rgba(255, 255, 255, 1);
-        z-index: 0;
+        z-index: 9;
         opacity: 0;
         pointer-events: none;
         transition: all .4s;
@@ -678,7 +675,7 @@ Messaging
         &.is-active {
             opacity: 1;
             pointer-events: all;
-            z-index: 3 !important;
+            z-index: 9 !important;
         }
 
         .loader {
@@ -1163,7 +1160,6 @@ Messaging
 
 body {
     &.is-dark {
-
         .chat-side-fab {
             background: lighten($dark-sidebar, 2%) !important;
             border-color: lighten($dark-sidebar, 12%) !important;
@@ -1187,8 +1183,8 @@ body {
             }
 
             .chat-header {
-                background: lighten($dark-sidebar, 2%);
-                border-color: lighten($dark-sidebar, 2%);
+                //background: lighten($dark-sidebar, 2%);
+                //border-color: lighten($dark-sidebar, 2%);
 
                 .is-badge {
                     border-color: $dark-sidebar !important;
@@ -1452,7 +1448,7 @@ body {
         top: 75px;
         right: 16px;
         transform: translateX(0) rotate(0);
-    
+
         &.is-active {
             transform: translateX(0) rotate(0);
         }
@@ -1524,13 +1520,12 @@ body {
     }
 }
 
-
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
     .chat-side-fab {
         top: 75px;
         right: 16px;
         transform: translateX(0) rotate(0);
-    
+
         &.is-active {
             transform: translateX(0) rotate(0);
         }

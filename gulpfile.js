@@ -128,6 +128,7 @@ function compileJS() {
     'src/assets/js/layouts/projects/board.js',
     'src/assets/js/layouts/generic/saas-billing.js',
     'src/assets/js/messaging.js',
+    'src/assets/js/messaging-webapp.js',
   ])
     .pipe(babel())
     .pipe(dest('dist/assets/js/'))

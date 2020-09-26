@@ -87,10 +87,6 @@
                         svg {
                             stroke: $primary;
                         }
-
-                        .koder-svg-icon .st0 {
-                            stroke: $primary !important;
-                        }
                     }
                 }
 
@@ -474,14 +470,6 @@
                 background: lighten($primary, 51%);
                 border-left-color: $primary;
 
-                &.is-koder {
-                    .wallet-meta {
-                        small {
-                            color: $primary;
-                        }
-                    }
-                }
-
                 &.is-eth {
                     .wallet-meta {
                         small {
@@ -544,11 +532,6 @@
                 width: 32px;
                 padding: 0;
                 border-radius: 4px;
-
-                .koder-qr-icon {
-                    height: 24px;
-                    width: 24px;
-                }
             }
         }
 

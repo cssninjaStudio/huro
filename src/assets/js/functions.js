@@ -783,6 +783,10 @@ function initPanels() {
         $('.right-panel-trigger').on('click', function () {
             panelId = $(this).attr('data-panel');
             $('#' + panelId).addClass('is-active');
+
+            if (panelId == 'search-panel') {
+                $('.right-panel .search-input').focus();
+            }
         })
 
         $('.panel-overlay, .right-panel .close-panel').on('click', function () {
@@ -1105,5 +1109,85 @@ function initBackToTop() {
             scrollTop: 0
         }, scrollSpeed);
         return false;
+    });
+}
+
+
+//Fake json search demo
+function initSearch() {
+    $('.search-input').each(function () {
+        $(this).on('keyup', function () {
+            var $container = $(this).closest('.control');
+            var searchQuery = $(this).val();
+            var expression = new RegExp(searchQuery, "i");
+            $.getJSON('assets/data/search.json', function (data) {
+                $container.find('.search-results .search-result, .search-results .placeholder-wrap').remove();
+                $.each(data, function (key, value) {
+                    if (value.name.search(expression) != -1 || value.position.search(expression) != -1) {
+
+                        if (value.pic != null) {
+                            var template = `
+                                    <a class="search-result">
+                                        <div class="h-avatar is-small">
+                                            <img class="${value.type === 'user' ? 'avatar' : 'article'}" src="${value.pic}" alt="">
+                                        </div>
+                                        <div class="meta">
+                                            <span>${value.name}</span>
+                                            <span>${value.position}</span>
+                                        </div>
+                                    </a>
+                                `
+
+                            $container.find('.search-results').append(template);
+                        }
+
+                        else {
+
+                            var classes = new Array('is-danger', 'is-info', 'is-primary', 'is-success', 'is-warning', 'is-h-purple', 'is-h-blue', 'is-h-green', 'is-h-orange', 'is-h-red', 'is-h-green');
+                            var length = classes.length;
+                            var randomClass = classes[Math.floor(Math.random() * length)];
+
+                            var template = `
+                                    <a class="search-result">
+                                        <div class="h-avatar is-small">
+                                            <span class="avatar is-fake ${randomClass}">
+                                                <span>${value.initials}</span>
+                                            </span>
+                                        </div>
+                                        <div class="meta">
+                                            <span>${value.name}</span>
+                                            <span>${value.position}</span>
+                                        </div>
+                                    </a>
+                                `
+
+                            $container.find('.search-results').append(template);
+                        }
+
+                    }
+                })
+
+                if ($('.search-result').length === 0) {
+                    var placeholder = `
+                            <div class="placeholder-wrap">
+                                <div class="placeholder-content has-text-centered">
+                                    <img class="light-image" src="assets/img/illustrations/placeholders/search-4.svg" alt="" />
+                                    <img class="dark-image" src="assets/img/illustrations/placeholders/search-4-dark.svg" alt="" />
+                                    <h3 class="dark-inverted">No Matching Results</h3>
+                                    <p>Sorry, we couldn't find any matching records. Please try different search terms.</p>
+                                </div>
+                            </div>
+                        `
+
+                    $container.find('.search-results').append(placeholder);
+                }
+            })
+
+            if (searchQuery === '') {
+                $container.find('.search-results').removeClass('is-active');
+            } else {
+                $container.find('.search-results').addClass('is-active');
+            }
+        });
     });
 }

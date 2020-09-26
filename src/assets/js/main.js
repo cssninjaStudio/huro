@@ -142,6 +142,9 @@ $(document).ready(function () {
     //Collapse
     initCollapse()
 
+    //Search
+    initSearch();
+
     //Dark Mode
     initDarkMode();
 

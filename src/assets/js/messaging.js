@@ -26,7 +26,7 @@ $(document).ready(function () {
     $('#messages-sidebar li, .collapsed-messaging li, #mobile-conversations-list li').on('click', function () {
 
         //Hide new conversation autocomplete if relevant
-        //$('.chat-header .is-autocomplete').addClass('is-hidden');
+        $('.chat-header .is-autocomplete').addClass('is-hidden');
 
         //Variables declaration
         var $this = $(this);
@@ -168,7 +168,6 @@ $(document).ready(function () {
 
                             //Update user details (chat body right side)
                             $('#user-details-image').attr('src', userPic);
-                            $('#user-details-badge').attr('src', userBadge);
                             $('#user-details-name').html(userName);
                             $('#user-details-title').html(userPosition);
 
@@ -201,81 +200,12 @@ $(document).ready(function () {
             });
         }, 1000)
 
-    })
-
-    //Toggle between the sidebar normal state and new conversation state
-    $('#show-new, #show-list').on('click', function () {
-        $('#conversations-list, #new-conversation, .is-new-conversation').toggleClass('is-hidden');
-    })
-
-    //Make a typing indicator appear when the user is writing
-    $('#chat-input').on('input', function () {
-        $('.typing-indicator').addClass('is-active');
-        if (!$(this).val()) {
-            $('.typing-indicator').removeClass('is-active');
-        }
-    })
-
-    //Fake chat messages simulation on Keypress
-    $('#chat-input').on('keypress', function (e) {
-        var key = e.which;
-        if (key == 13)  // the enter key code
-        {
-            //Post new chat message
-            var text = $('#chat-input').val();
-            $('.chat-body').append('<li class="self animated preFadeInUp fadeInUp"><div class="avatar"><img src="assets/img/avatars/people/michiko_osada.jpg" draggable="false"/></div><div class="msg"><p> ' + text + ' </p><time><i data-feather="clock"></i>20:18</time></div></li>');
-
-            feather.replace();
-            //code to empty textarea after submit
-            var empty = "";
-            $("#chat-input").val(empty);
-            $('.typing-indicator').removeClass('is-active');
-
-            //Remove empty state
-            if (!$('.no-messages').hasClass('is-hidden')) {
-                $('.no-messages').addClass('is-hidden');
-            }
-
-            //Scroll chat to bottom
-            var scrollChat = $('.chat-body');
-            scrollChat.scrollTop(scrollChat.prop("scrollHeight"));
-
-            //prevents the keypress event to trigger a line jump
-            return false;
-        }
-    });
-
-    //Fake chat messages simulation on button press
-    $('.send-message .button').on('click', function () {
-        {
-            //Post new chat message
-            var text = $('#chat-input').val();
-            $('.chat-body').append('<li class="self animated preFadeInUp fadeInUp"><div class="avatar"><img src="assets/img/avatars/people/michiko_osada.jpg" draggable="false"/></div><div class="msg"><p> ' + text + ' </p><time><i data-feather="clock"></i>20:18</time></div></li>');
-
-            feather.replace();
-            //code to empty textarea after submit
-            var empty = "";
-            $("#chat-input").val(empty);
-            $('.typing-indicator').removeClass('is-active');
-
-            //Remove empty state
-            if (!$('.no-messages').hasClass('is-hidden')) {
-                $('.no-messages').addClass('is-hidden');
-            }
-
-            //Scroll chat to bottom
-            var scrollChat = $('.chat-body');
-            scrollChat.scrollTop(scrollChat.prop("scrollHeight"));
-
-            //prevents the keypress event to trigger a line jump
-            return false;
-        }
     });
 
     //Sidebar user autocomplete
     if ($('#users-autocpl').length) {
         var usersOptions = {
-            url: "assets/data/users.json",
+            url: "assets/data/user.json",
             getValue: "name",
             template: {
                 type: "custom",
@@ -300,8 +230,7 @@ $(document).ready(function () {
                     //empty the input for next use
                     $('#users-autocpl').val('');
                     console.log(newRecipient);
-                    //Revert sidebar to initial state
-                    //$('#conversations-list, #new-conversation, .is-new-conversation').toggleClass('is-hidden');
+
                     //Check if main chat window is hidden and display it
                     if ($('.is-chat').hasClass('is-hidden')) {
                         $('.is-chat, .is-chat-placeholder').toggleClass('is-hidden');
@@ -311,80 +240,6 @@ $(document).ready(function () {
 
                     //Close autocomplete
                     $('.chat-header .is-autocomplete').addClass('is-hidden');
-
-                    //Ajax
-                    $.ajax({
-                        url: 'assets/data/users.json',
-                        dataType: 'json',
-                        success: function (data) {
-                            console.log(data);
-
-                            var html = "";
-
-
-                            for (var i in data) {
-                                console.log(data[i]);
-
-                                var conversationId = 'conversation' + data[i].user_id
-
-                                if (data[i].name == newRecipient) {
-                                    html = `
-                                        <li class="is-active" data-conversation-menu="${conversationId}">
-                                            <div class="recent-user">
-                                                <div class="user-container">
-                                                    <img src="${data[i].pic}" data-user-load="${data[i].user_id}">
-                                                    <img class="is-badge" src="${data[i].badge}" data-skill-load="${data[i].skill_id}">
-                                                </div>
-                                                <div class="recipient-meta">
-                                                    <span>${data[i].name}</span>
-                                                    <span>${data[i].position}</span>
-                                                    <time></time>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    `;
-                                } else {
-                                    //break;
-                                    continue;
-                                }
-
-                                //Update user details (chat body right side)
-                                $('#user-details-image').attr('src', data[i].pic);
-                                $('#user-details-badge').attr('src', data[i].badge);
-                                $('#user-details-name').html(data[i].name);
-                                $('#user-details-title').html(data[i].position);
-                                $('#user-details-location').html('From ' + data[i].location);
-                                $('#user-details-joined').html('Joined on ' + data[i].joined);
-                                $('.chat-side-content.is-single').removeClass('is-hidden');
-
-                                $('#messages-sidebar li.is-active').removeClass('is-active');
-                                $('#conversations-list').prepend(html);
-                                //$().getUserPopovers();
-                                //$().getSkillPopovers();
-                                //Update chat header
-                                var newHeader = `
-
-                                        <div class="user-container">
-                                            <img class="is-user" src="${data[i].pic}" data-user-load="${data[i].user_id}">
-                                            <img class="is-badge" src="${data[i].badge}" data-skill-load="${data[i].skill_id}">
-                                        </div>
-                                        <div class="recipient-meta">
-                                            <span>${data[i].name}</span>
-                                            <span>${data[i].position}</span>
-                                        </div>
-
-                                `
-                                //Disable chat loader
-                                setTimeout(function () {
-                                    $('.chat-loader').removeClass('is-active');
-                                }, 200);
-                                $('.chat-header .current-user').html(newHeader);
-                                $('.no-messages').removeClass('is-hidden');
-                                $('#chat-input').attr('autofocus');
-
-                            }
-                        }
-                    });
                 }
             },
         };
@@ -401,24 +256,11 @@ $(document).ready(function () {
     $('#start-conversation').on('click', function () {
         $('.chat-header .is-autocomplete').removeClass('is-hidden');
         $('#users-autocpl').focus();
-        //
         $('.chat-body li').remove();
         $('.chat-body .no-messages').removeClass('is-hidden');
         $('#messages-sidebar ul li').removeClass('is-active');
         $('.chat-side #user-details-image').attr('src', 'assets/img/avatars/people/placeholder.jpg');
-        $('.chat-side #user-details-badge').attr('src', 'assets/img/logos/koder/koder-square.svg');
         $('.chat-side').find('.user-name, .info, .user-skills, .user-job-title').empty();
-    })
-
-    //New conversation from placeholder
-    $('#new-chat').on('click', function () {
-        $('.is-chat, .is-chat-placeholder').toggleClass('is-hidden');
-        $('#chat-body li').remove();
-        $('.chat-side-content').addClass('is-hidden');
-        $('.current-user').empty();
-        $('.no-messages').removeClass('is-hidden');
-        $('.chat-header .is-autocomplete').removeClass('is-hidden');
-        $('#users-autocpl').focus();
     })
 
     //Cancel new conversation

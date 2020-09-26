@@ -76,7 +76,7 @@ var tour = {
         },
         {
             title: "Mobile App",
-            content: "Don't forget to download the Koder IOS app. As a developer, you will need it to take code challenges to determine your primary skill.",
+            content: "Don't forget to download the Huro app. As a developer, you will need it to take code challenges to determine your primary skill.",
             target: document.querySelector("#some-element6"),
             placement: "bottom",
             xOffset: "-160px",

@@ -90,6 +90,15 @@ $(document).ready(function () {
                 $('.huro-hamburger .icon-box-toggle').addClass('active');
             })
         });
+
+        $('.conversation-area .conversation').each(function () {
+            var $this = $(this);
+            var h = new Hammer(this);
+            h.on("swipeleft", function () {
+                console.log("Swipe left detected.");
+                $this.closest('.conversation-area').removeClass('is-active');
+            })
+        });
     }
 
     //Mobile sidebars
