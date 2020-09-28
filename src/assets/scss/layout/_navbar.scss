@@ -631,18 +631,14 @@ body {
                 margin: 0 20px 0 16px;
             }
 
-            .company-dropdown {
+            .project-dropdown {
                 margin-right: 12px;
+                cursor: pointer !important;
 
                 > img {
                     height: 32px;
                     width: 32px;
                     border-radius: 50%;
-                    cursor: pointer;
-                }
-
-                .h-avatar {
-                    cursor: pointer;
                 }
 
                 .dropdown-menu {
@@ -652,12 +648,14 @@ body {
                         padding-top: 0;
                         overflow: hidden;
 
-                        .dropdown-head {
+                        .dropdown-block {
                             display: flex;
                             align-items: center;
-                            padding: 20px 16px 20px 16px;
-                            margin-bottom: 12px;
-                            background: #fafafa;
+                            padding: 16px;
+
+                            &:hover {
+                                background: lighten($fade-grey, 4%);
+                            }
 
                             .meta {
                                 margin-left: 12px;
@@ -667,16 +665,20 @@ body {
                                     display: block;
 
                                     &:first-child {
-                                        font-size: 1.1rem;
+                                        font-size: .95rem;
                                         font-weight: 500;
                                         color: $dark-text;
                                         line-height: 1.2;
+                                        max-width: 140px;
+                                        white-space: nowrap;
+                                        text-overflow: ellipsis;
+                                        overflow: hidden;
                                     }
 
                                     &:nth-child(2) {
-                                        text-transform: uppercase;
+                                        //text-transform: uppercase;
                                         color: $light-text;
-                                        font-size: .7rem;
+                                        font-size: .85rem;
                                     }
                                 }
                             }
@@ -859,10 +861,10 @@ body {
                         border-color: lighten($dark-sidebar, 12%);
                     }
 
-                    .company-dropdown {
+                    .company-dropdown, .project-dropdown {
                         .dropdown-menu {
                             .dropdown-content {
-                                .dropdown-head {
+                                .dropdown-head, .dropdown-block {
                                     background: lighten($dark-sidebar, 2%) !important;
 
                                     &:hover {
