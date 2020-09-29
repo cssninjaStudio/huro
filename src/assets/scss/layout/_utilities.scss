@@ -677,6 +677,14 @@ body {
         .dark-image {
             display: inline-block !important;
         }
+
+        .light-image-block {
+            display: none !important;
+        }
+
+        .dark-image-block {
+            display: block !important;
+        }
     }
 
     .light-image {
@@ -685,6 +693,14 @@ body {
 
     .dark-image {
         display: none !important;
+    }
+
+    .light-image-block {
+        display: block;
+    }
+
+    .dark-image-block {
+        display: none;
     }
 }
 

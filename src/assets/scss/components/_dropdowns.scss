@@ -399,7 +399,7 @@ body {
                         background: lighten($dark-sidebar, 5%);
                     }
 
-                    a:hover, div:hover {
+                    a:hover {
                         background: lighten($dark-sidebar, 5%) !important;
                     }
                 }

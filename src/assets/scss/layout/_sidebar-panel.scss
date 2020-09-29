@@ -104,6 +104,7 @@ body {
 
                     .dropdown-content {
                         padding-top: 0;
+                        padding-bottom: 0;
                         overflow: hidden;
 
                         .dropdown-block {
@@ -363,6 +364,31 @@ body {
     &.is-dark {
         .sidebar-panel {
             &.is-generic {
+
+                .subpanel-header {
+                    .project-dropdown {
+                        .dropdown-menu {
+                            .dropdown-content {
+                                .dropdown-block {
+                                    background: lighten($dark-sidebar, 2%);
+
+                                    &:hover {
+                                        background: lighten($dark-sidebar, 5%) !important;
+                                    }
+
+                                    .meta {
+                                        span {
+                                            &:first-child {
+                                                color: $dark-dark-text !important;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
                 .inner {
                     ul {
                         li {

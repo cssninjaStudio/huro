@@ -93,20 +93,6 @@ body {
         width: calc(100% - 160px) !important;
     }
 
-    /*&.is-pushed-search {
-        margin-left: 380px;
-        width: calc(100% - 380px);
-    }
-
-    &.is-pushed-search-full {
-        margin-left: 380px;
-    }
-
-    &.is-pushed-invites {
-        margin-right: 340px;
-        width: calc(100% - 340px);
-    }*/
-
     &.is-webapp {
         padding-top: 80px;
         margin-left: 0 !important;
@@ -151,7 +137,6 @@ body {
     margin: 0 auto;
 
     .page-content {
-        //padding: 0 60px;
         padding: 0 40px;
 
         //Modifiers

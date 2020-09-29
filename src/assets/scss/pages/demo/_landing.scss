@@ -35,22 +35,38 @@ $landing-dark-2: #191c2b;
         max-width: 1140px;
     }
 
-    .light-image {
-        display: block;
+    .light-image-l {
+        display: inline-block !important;
     }
 
-    .dark-image {
-        display: none;
+    .dark-image-l {
+        display: none !important;
+    }
+
+    .light-image-block-l {
+        display: block !important;
+    }
+
+    .dark-image-block-l {
+        display: none !important;
     }
 
     &.is-dark {
         background: $landing-dark-1;
 
-        .light-image {
+        .light-image-l {
             display: none !important;
         }
 
-        .dark-image {
+        .dark-image-l {
+            display: inline-block !important;
+        }
+
+        .light-image-block-l {
+            display: none !important;
+        }
+
+        .dark-image-block-l {
             display: block !important;
         }
 
@@ -852,7 +868,9 @@ $landing-dark-2: #191c2b;
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: $light-box-shadow;
+
+    //box-shadow: $light-box-shadow;
+    border: 1px solid darken($fade-grey, 5%);
 
     &:hover {
         .circle-overlay {
@@ -875,7 +893,7 @@ $landing-dark-2: #191c2b;
 
     img {
         border-radius: 10px;
-        display: block;
+        max-width: 100%;
     }
 
     .circle-overlay {
@@ -1052,6 +1070,8 @@ $landing-dark-2: #191c2b;
             }
 
             .huro-demo-wrapper {
+                border-color: lighten($dark-sidebar, 12%);
+
                 .circle-overlay {
                     background: $accent;
                 }
@@ -1880,15 +1900,12 @@ $landing-dark-2: #191c2b;
     }
 }
 
-
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    .landing-page-wrapper { 
-
+    .landing-page-wrapper {
         .navbar {
-            width: calc(100% - 40px) ;
+            width: calc(100% - 40px);
             margin: 0 20px;
         }
-
     }
 
     .huro-footer {

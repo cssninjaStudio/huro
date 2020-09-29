@@ -40,17 +40,45 @@
         }
     }
 
+    &.is-colored {
+        background: $primary;
+        border-color: darken($primary, 2%);
+
+        .sidebar-inner {
+            .naver {
+                background: $white;
+            }
+
+            .icon-menu, .bottom-menu {
+                li {
+                    a {
+                        &:hover, &.is-active {
+                            .sidebar-svg {
+                                stroke: $smoke-white;
+                            }
+                        }
+
+                        .sidebar-svg {
+                            stroke: lighten($primary, 25%);
+                        }
+                    }
+                }
+
+                .profile-dropdown {
+                    .status-indicator {
+                        border-color: $primary;
+                    }
+                }
+            }
+        }
+    }
+
     .sidebar-brand {
         width: 80px;
         height: 60px;
         display: flex;
         align-items: center;
         justify-content: center;
-        //background: $light-white;
-
-        &.is-bordered {
-            //border-right: 1px solid $fade-grey;
-        }
 
         img {
             margin-top: 5px;
@@ -136,7 +164,7 @@
                         transition: all .3s;
                     }
 
-                    .sidebar-icon {
+                    /*.sidebar-icon {
                         height: 28px;
                         width: 28px;
                         transition: all .3s;
@@ -151,7 +179,7 @@
                                 fill: $primary;
                             }
                         }
-                    }
+                    }*/
 
                     &:hover svg, &.is-active svg {
                         stroke: $primary;
@@ -167,14 +195,14 @@
                         opacity: 0;
                     }
 
-                    &.is-selected {
+                    /*&.is-selected {
                         svg .path {
                             fill: $primary;
                         }
-                    }
+                    }*/
                 }
 
-                #open-filters {
+                /*#open-filters {
                     svg {
                         transform: rotate(0);
                         transition: all .3s;
@@ -185,7 +213,7 @@
                             transform: rotate(145deg);
                         }
                     }
-                }
+                }*/
             }
         }
 
@@ -329,7 +357,7 @@
 
 body {
     &.is-dark {
-        .main-sidebar {
+        .main-sidebar:not(.is-colored) {
             background: $dark-sidebar;
 
             &.is-bordered {
@@ -340,16 +368,6 @@ body {
                 &:not(.is-bordered) {
                     border-color: lighten($dark-sidebar, 16%) !important;
                 }
-            }
-
-            .sidebar-brand {
-                //background: $dark-sidebar;
-
-                &.is-bordered {
-                    //border-right: 1px solid $dark-sidebar !important;
-                }
-
-                
             }
 
             .naver {
@@ -445,6 +463,67 @@ body {
                             &.is-active {
                                 svg {
                                     stroke: $accent !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .main-sidebar {
+            &.is-colored {
+                background: darken($accent, 2%);
+                border-color: darken($accent, 2%) !important;
+
+                .sidebar-inner {
+                    .naver {
+                        opacity: .8;
+                    }
+
+                    .icon-menu, .bottom-menu {
+                        li {
+                            a {
+                                &:hover, &.is-active {
+                                    .sidebar-svg {
+                                        stroke: $smoke-white;
+                                        opacity: 1;
+                                    }
+                                }
+
+                                .sidebar-svg {
+                                    stroke: lighten($smoke-white, 2%);
+                                    opacity: .5;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .profile-dropdown {
+                    .status-indicator {
+                        border-color: darken($accent, 2%) !important;
+                    }
+
+                    .dropdown-menu {
+                        .dropdown-content {
+                            .dropdown-head {
+                                background: lighten($dark-sidebar, 2%) !important;
+
+                                &:hover {
+                                    background: lighten($dark-sidebar, 2%) !important;
+                                }
+
+                                .meta {
+                                    &:hover {
+                                        background: lighten($dark-sidebar, 2%) !important;
+                                    }
+
+                                    span {
+                                        &:first-child {
+                                            color: $dark-dark-text !important;
+                                        }
+                                    }
                                 }
                             }
                         }

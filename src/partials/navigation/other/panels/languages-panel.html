@@ -1,0 +1,92 @@
+<div id="languages-panel" class="right-panel-wrapper is-languages">
+    <div class="panel-overlay"></div>
+
+    <div class="right-panel">
+        <div class="right-panel-head">
+            <h3>Select Language</h3>
+            <a class="close-panel">
+                <i data-feather="chevron-right"></i>
+            </a>
+        </div>
+        <div class="right-panel-body has-slimscroll">
+            <div class="languages-boxes">
+                <div class="language-box">
+                    <div class="language-option">
+                        <input type="radio" name="language_selection" checked>
+                        <div class="language-option-inner">
+                            <img src="assets/img/icons/flags/united-states-of-america.svg" alt="">
+                            <div class="indicator">
+                                <i data-feather="check"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="language-box">
+                    <div class="language-option">
+                        <input type="radio" name="language_selection">
+                        <div class="language-option-inner">
+                            <img src="assets/img/icons/flags/france.svg" alt="">
+                            <div class="indicator">
+                                <i data-feather="check"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="language-box">
+                    <div class="language-option">
+                        <input type="radio" name="language_selection">
+                        <div class="language-option-inner">
+                            <img src="assets/img/icons/flags/spain.svg" alt="">
+                            <div class="indicator">
+                                <i data-feather="check"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="language-box">
+                    <div class="language-option">
+                        <input type="radio" name="language_selection">
+                        <div class="language-option-inner">
+                            <img src="assets/img/icons/flags/germany.svg" alt="">
+                            <div class="indicator">
+                                <i data-feather="check"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="language-box">
+                    <div class="language-option">
+                        <input type="radio" name="language_selection">
+                        <div class="language-option-inner">
+                            <img src="assets/img/icons/flags/mexico.svg" alt="">
+                            <div class="indicator">
+                                <i data-feather="check"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="language-box">
+                    <div class="language-option">
+                        <input type="radio" name="language_selection">
+                        <div class="language-option-inner">
+                            <img src="assets/img/icons/flags/china.svg" alt="">
+                            <div class="indicator">
+                                <i data-feather="check"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="img-wrap has-text-centered">
+                <img class="light-image" src="assets/img/illustrations/right-panel/languages.svg" alt="">
+                <img class="dark-image" src="assets/img/illustrations/right-panel/languages-dark.svg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
