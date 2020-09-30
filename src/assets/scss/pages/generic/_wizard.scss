@@ -1039,6 +1039,12 @@ body {
                             margin-left: auto;
                             margin-right: 30px;
                             min-width: 120px;
+
+                            .progress {
+                                .progress-bar {
+                                    width: 0%;
+                                }
+                            }
                         }
 
                         .list-item-actions {

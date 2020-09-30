@@ -584,3 +584,20 @@ body {
         }
     }
 }
+
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .card-grid {
+        &.card-grid-v4 {
+
+            .columns {
+                display: flex;
+            }
+
+            .column {
+                width: 33.3%;
+                min-width: 33.3%;
+            }
+        }
+    }
+}
