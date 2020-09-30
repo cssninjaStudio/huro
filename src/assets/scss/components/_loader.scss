@@ -2,7 +2,7 @@
 
 /*
     1. Infinite Srcoll Loader
-    2. Infinite Srcoll Loader Dark mode
+    2. H Loader
 */
 
 /* ==========================================================================
@@ -37,6 +37,69 @@
             span {
                 font-family: $font;
                 color: $light-text;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+2. H Loader
+========================================================================== */
+
+.has-loader {
+    position: relative;
+
+    &.has-loader-active {
+        overflow: hidden;
+
+        .h-loader-wrapper {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+
+    .h-loader-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        background: $white;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .3s;
+        z-index: 5;
+
+        .loader {
+            height: 3rem;
+            width: 3rem;
+
+            &.is-small {
+                height: 2rem;
+                width: 2rem;
+            }
+
+            &.is-large {
+                height: 5rem;
+                width: 5rem;
+            }
+
+            &.is-xl {
+                height: 7rem;
+                width: 7rem;
+            }
+        }
+    }
+}
+
+body {
+    &.is-dark {
+        .has-loader {
+            .h-loader-wrapper {
+                background: lighten($dark-sidebar, 6%);
             }
         }
     }

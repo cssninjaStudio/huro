@@ -709,4 +709,17 @@ $(document).ready(function () {
         })
     }
 
+    //Demo Loaders
+    if ($('#show-demo-loaders').length) {
+        $('#show-demo-loaders').on('click', function(){
+            var $this = $(this);
+            $this.addClass('is-loading no-click');
+            $('.has-loader').addClass('has-loader-active');
+            setTimeout(function(){
+                $('.has-loader').removeClass('has-loader-active');
+                $this.removeClass('is-loading no-click');
+            }, 3000);
+        });
+    }
+
 })

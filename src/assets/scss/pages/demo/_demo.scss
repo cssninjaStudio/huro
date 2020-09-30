@@ -298,7 +298,19 @@
     margin: 0 auto;
 }
 
+.helper-table {
+    .category {
+        width: 25%;
+    }
 
+    .name {
+        width: 25%;
+    }
+
+    .description {
+        width: 50%;
+    }
+}
 
 /* ==========================================================================
 2. Demo Card Dark mode
