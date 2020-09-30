@@ -647,6 +647,49 @@ body {
                     }
                 }
 
+                .centered-drops {
+                    .centered-drop {
+                        .dropdown {
+                            &:hover {
+                                .is-trigger {
+                                    .button {
+                                        background: darken($primary, 6%);
+                                        color: $smoke-white;
+                                    }
+                                }
+                            }
+
+                            &.is-active {
+                                .is-trigger {
+                                    .button {
+                                        background: darken($primary, 12%);
+                                        border-color: lighten($primary, 6%);
+                                    }
+                                }
+                            }
+
+                            .is-trigger {
+                                .button {
+                                    background: $primary;
+                                    color: lighten($primary, 45%);
+                                }
+                            }
+                        }
+                    }
+
+                    .centered-button {
+                        .button {
+                            background: $primary;
+                            color: lighten($primary, 45%);
+
+                            &:hover {
+                                background: darken($primary, 6%);
+                                color: $smoke-white;
+                            }
+                        }
+                    }
+                }
+
                 .centered-search {
                     .field {
                         .control {
@@ -1015,7 +1058,7 @@ body {
                                                 span {
                                                     display: block;
                                                     text-transform: uppercase;
-                                                    font-size: .8rem;
+                                                    font-size: .75rem;
                                                     font-weight: 500;
                                                     color: $dark-text;
                                                 }
@@ -1437,8 +1480,6 @@ body {
                                     }
                                 }
                             }
-
-                            
                         }
                     }
 
@@ -1541,6 +1582,109 @@ body {
                             }
                         }
 
+                        .centered-drops {
+                            .centered-drop {
+                                .dropdown {
+                                    &:hover {
+                                        .is-trigger {
+                                            .button {
+                                                background: darken($accent, 8%);
+                                                border-color: darken($accent, 4%);
+                                                color: $smoke-white;
+                                            }
+                                        }
+                                    }
+
+                                    &.is-active {
+                                        .is-trigger {
+                                            .button {
+                                                background: darken($accent, 8%);
+                                                border-color: darken($accent, 6%);
+                                                color: $smoke-white;
+                                            }
+                                        }
+                                    }
+
+                                    &.has-mega-dropdown {
+                                        .dropdown-menu {
+                                            .dropdown-content {
+                                                .category-selector {
+                                                    .title-wrap {
+                                                        h4 {
+                                                            color: $dark-dark-text;
+                                                        }
+                                                    }
+    
+                                                    .category-selector-inner {
+                                                        .category-item {
+                                                            background: lighten($dark-sidebar, 4%);
+                                                            border-color: lighten($dark-sidebar, 12%);
+    
+                                                            &:hover {
+                                                                i, span {
+                                                                    color: $accent;
+                                                                }
+                                                            }
+    
+                                                            span {
+                                                                color: $dark-dark-text;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+    
+                                                .mega-menus {
+                                                    .dropdown-item-group {
+                                                        .column-heading {
+                                                            color: $dark-dark-text;
+                                                            border-color: lighten($dark-sidebar, 12%);
+                                                        }
+    
+                                                        .column-content {
+                                                            .is-media {
+                                                                &:hover {
+                                                                    .meta {
+                                                                        span:first-child {
+                                                                            color: $smoke-white;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .is-trigger {
+                                        .button {
+                                            background: darken($accent, 2%);
+                                            border-color: darken($accent, 2%);
+                                            color: lighten($accent, 22%);
+
+                                            svg {
+                                                stroke: lighten($accent, 24%);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .centered-button {
+                                .button {
+                                    background: darken($accent, 2%) !important;
+                                    border-color: darken($accent, 2%) !important;
+                                    color: lighten($accent, 22%) !important;
+
+                                    &:hover {
+                                        background: darken($accent, 8%) !important;
+                                        color: $smoke-white !important;
+                                    }
+                                }
+                            }
+                        }
+
                         .centered-search {
                             .field {
                                 .control {
@@ -1550,11 +1694,11 @@ body {
                                         color: $smoke-white;
 
                                         &::placeholder {
-                                            color: lighten($accent, 2%);
+                                            color: lighten($accent, 4%) !important;
                                         }
 
                                         &:focus ~ .form-icon svg {
-                                            stroke: $smoke-white;
+                                            stroke: $smoke-white !important;
                                         }
                                     }
 

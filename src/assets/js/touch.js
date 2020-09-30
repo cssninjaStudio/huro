@@ -101,13 +101,4 @@ $(document).ready(function () {
         });
     }
 
-    //Mobile sidebars
-    /*$('.mobile-subsidebar.is-wallet .wallet-item, .mobile-subsidebar.is-wallet .button').on('click', function(){
-        $('.mobile-main-sidebar, .mobile-subsidebar.is-wallet, .navbar-burger').removeClass('is-active');
-    })
-
-    $('.mobile-subsidebar.is-profile-edit li a, .mobile-subsidebar.is-settings li a').on('click', function () {
-        $('.mobile-main-sidebar, .mobile-subsidebar, .navbar-burger').removeClass('is-active');
-    })*/
-
 })

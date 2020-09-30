@@ -98,14 +98,12 @@ function compileJS() {
   return src([
     'src/assets/js/functions.js',
     'src/assets/js/main.js',
-    'src/assets/js/landing.js',
-    'src/assets/js/auth.js',
-    'src/assets/js/theme.js',
-    'src/assets/js/touch.js',
-    'src/assets/js/tour.js',
-    'src/assets/js/components.js',
     'src/assets/js/popover.js',
-    'src/assets/js/syntax.js',
+    'src/assets/js/touch.js',
+    'src/assets/js/_demo/landing.js',
+    'src/assets/js/_demo/components.js',
+    'src/assets/js/_demo/syntax.js',
+    'src/assets/js/layouts/auth/auth.js',
     'src/assets/js/dashboards/personal-1.js',
     'src/assets/js/dashboards/personal-2.js',
     'src/assets/js/dashboards/food.js',
@@ -125,10 +123,11 @@ function compileJS() {
     'src/assets/js/layouts/card-grids/card-grid.js',
     'src/assets/js/layouts/tile-grids/tile-grid.js',
     'src/assets/js/layouts/user-pages/profile.js',
+    'src/assets/js/layouts/projects/project.js',
     'src/assets/js/layouts/projects/board.js',
     'src/assets/js/layouts/generic/saas-billing.js',
-    'src/assets/js/messaging.js',
-    'src/assets/js/messaging-webapp.js',
+    'src/assets/js/layouts/messaging/messaging.js',
+    'src/assets/js/layouts/messaging/messaging-webapp.js',
   ])
     .pipe(babel())
     .pipe(dest('dist/assets/js/'))

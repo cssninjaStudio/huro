@@ -1,4 +1,4 @@
-# NEPHOS 2
+# HURO - Multipurpose Admin and Webapp UI Kit
 
 ### Note
 

@@ -1,7 +1,7 @@
 {
   "name": "huro",
   "version": "1.0.0",
-  "description": "Admin Template",
+  "description": "Multipurpose Admin and Webapp UI Kit",
   "main": "index.js",
   "scripts": {
     "preinstall": "npx npm-force-resolutions"
