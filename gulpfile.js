@@ -106,6 +106,7 @@ function compileJS() {
     'src/assets/js/layouts/auth/auth.js',
     'src/assets/js/dashboards/personal-1.js',
     'src/assets/js/dashboards/personal-2.js',
+    'src/assets/js/dashboards/banking-1.js',
     'src/assets/js/dashboards/food.js',
     'src/assets/js/dashboards/flights.js',
     'src/assets/js/dashboards/stocks.js',

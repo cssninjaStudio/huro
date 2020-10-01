@@ -4,7 +4,7 @@
 
 $(document).ready(function () {
 
-    var options6 = {
+    var customersOptions = {
         series: [{
             name: 'Returning',
             data: [31, 40, 28, 51, 42, 109, 100]
@@ -24,7 +24,7 @@ $(document).ready(function () {
         },
         colors: [themeColors.accent, themeColors.info, themeColors.orange],
         title: {
-            text: 'Multiple Area',
+            text: 'Customers',
             align: 'left'
         },
         legend: {
@@ -48,10 +48,10 @@ $(document).ready(function () {
         },
     };
 
-    var chart6 = new ApexCharts(document.querySelector("#apex-chart-6"), options6);
-    chart6.render();
+    var customersChart = new ApexCharts(document.querySelector("#customers-chart"), customersOptions);
+    customersChart.render();
     
-    var options22 = {
+    var teamGaugeOptions = {
         series: [76],
         title: {
             text: 'Team Efficiency'
@@ -114,10 +114,10 @@ $(document).ready(function () {
         labels: ['Average Results'],
     };
 
-    var chart22 = new ApexCharts(document.querySelector("#apex-chart-22"), options22);
-    chart22.render();
+    var teamGauge = new ApexCharts(document.querySelector("#team-gauge"), teamGaugeOptions);
+    teamGauge.render();
 
-    var options8 = {
+    var profitChartOptions = {
         series: [{
             name: 'Ratio',
             data: [2.3, 3.1, 4.0, 10.1, 4.0]
@@ -194,7 +194,7 @@ $(document).ready(function () {
         },
     };
 
-    var chart8 = new ApexCharts(document.querySelector("#apex-chart-8"), options8);
-    chart8.render();
+    var profitChart = new ApexCharts(document.querySelector("#profit-chart"), profitChartOptions);
+    profitChart.render();
 
 })

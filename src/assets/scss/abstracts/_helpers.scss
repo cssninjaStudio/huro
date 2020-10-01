@@ -95,12 +95,16 @@ body {
     &.is-dark {
 
         //Card border helper
-        .is-dark-card-bordered {
+        .is-dark-card-bordered, .is-dark-bordered-12 {
             border-color: lighten($dark-sidebar, 12%) !important;
         }
 
         //Primary Helper
         .is-dark-primary {
+            color: $accent !important;
+        }
+
+        .is-dark-primary-hover:hover {
             color: $accent !important;
         }
 

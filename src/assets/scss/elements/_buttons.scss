@@ -13,6 +13,7 @@
 
 .button {
     font-family: $font;
+    transition: all .3s;
     
     &.h-action {
         padding: 16px 22px 18px 22px;
@@ -310,6 +311,17 @@ body {
                 background: lighten($dark-sidebar, 6%) !important;
                 border-color: $muted-grey !important;
                 color: $muted-grey !important;
+            }
+
+            &.is-dark-outlined {
+                background: lighten($dark-sidebar, 10%);
+                border-color: lighten($dark-sidebar, 12%);
+                color: $dark-dark-text;
+                
+                &:hover {
+                    border-color: $accent !important;
+                    color: $accent !important;
+                }
             }
         }
     }
