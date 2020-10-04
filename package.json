@@ -57,7 +57,7 @@
   "dependencies": {
     "alertifyjs": "^1.11.2",
     "apexcharts": "^3.19.0",
-    "billboard.js": "^2.0.3",
+    "billboard.js": "^2.1.1",
     "bulma": "^0.9.0",
     "chart.js": "^2.9.3",
     "choices.js": "^9.0.1",

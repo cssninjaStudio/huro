@@ -108,6 +108,8 @@ function compileJS() {
     'src/assets/js/dashboards/personal-2.js',
     'src/assets/js/dashboards/personal-3.js',
     'src/assets/js/dashboards/banking-1.js',
+    'src/assets/js/dashboards/banking-2.js',
+    'src/assets/js/dashboards/banking-3.js',
     'src/assets/js/dashboards/food.js',
     'src/assets/js/dashboards/flights.js',
     'src/assets/js/dashboards/stocks.js',
@@ -283,8 +285,8 @@ function concatPlugins() {
 function concatCssPlugins() {
   console.log('---------------CONCATENATE CSS PLUGINS---------------');
   return src([
-    nodepath + 'slick-carousel/slick/slick.css',
-    nodepath + 'slick-carousel/slick/slick-theme.css',
+    //nodepath + 'slick-carousel/slick/slick.css',
+    //nodepath + 'slick-carousel/slick/slick-theme.css',
     nodepath + 'webui-popover/dist/jquery.webui-popover.min.css',
     nodepath + 'easy-autocomplete/dist/easy-autocomplete.min.css',
     nodepath + 'dragula/dist/dragula.min.css',
