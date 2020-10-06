@@ -228,6 +228,11 @@ body {
             stroke: lighten($dark-sidebar, 12%) !important;
         }
 
+        .bb-chart-arcs .bb-chart-arcs-background {
+            stroke: lighten($dark-sidebar, 10%) !important;
+            fill: darken($dark-sidebar, 2%) !important;
+        }
+
         .bb-chart-arcs-title, .bb-gauge-value, .bb-axis text {
             fill: $dark-dark-text;
         }

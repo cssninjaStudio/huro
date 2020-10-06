@@ -217,54 +217,84 @@ body {
 3. Personal Dashboard V2
 ========================================================================== */
 
-.home-dashboard {
-    .home-header {
-        @extend .s-card;
+.personal-dashboard {
+    &.personal-dashboard-v2 {
+        .dashboard-header {
+            @extend .s-card;
 
-        display: flex;
-        align-items: center;
-        padding: 30px;
+            display: flex;
+            align-items: center;
+            padding: 30px;
 
-        .user-meta {
-            padding: 0 3rem;
-            border-right: 1px solid darken($fade-grey, 3%);
+            .user-meta {
+                padding: 0 3rem;
+                border-right: 1px solid darken($fade-grey, 3%);
 
-            h3 {
-                max-width: 180px;
-            }
-        }
-
-        .user-action {
-            padding: 0 3rem;
-        }
-
-        .cta {
-            position: relative;
-            flex-grow: 2;
-            max-width: 275px;
-            margin-left: auto;
-            background: lighten($primary, 8%);
-            padding: 20px;
-            border-radius: 6px;
-            box-shadow: $primary-box-shadow;
-
-            .lnil, .lnir {
-                position: absolute;
-                bottom: 1rem;
-                right: 1rem;
-                font-size: 4rem;
-                opacity: .3;
-            }
-
-            .link {
-                display: block;
-                font-weight: 500;
-                margin-top: .5rem;
-
-                &:hover {
-                    color: $smoke-white;
-                    opacity: .6;
+                h3 {
+                    max-width: 180px;
                 }
+            }
+
+            .user-action {
+                padding: 0 3rem;
+            }
+
+            .cta {
+                position: relative;
+                flex-grow: 2;
+                max-width: 275px;
+                margin-left: auto;
+                background: lighten($primary, 8%);
+                padding: 20px;
+                border-radius: 6px;
+                box-shadow: $primary-box-shadow;
+
+                .lnil, .lnir {
+                    position: absolute;
+                    bottom: 1rem;
+                    right: 1rem;
+                    font-size: 4rem;
+                    opacity: .3;
+                }
+
+                .link {
+                    display: block;
+                    font-weight: 500;
+                    margin-top: .5rem;
+
+                    &:hover {
+                        color: $smoke-white;
+                        opacity: .6;
+                    }
+                }
+            }
+        }
+
+        .dashboard-card {
+            @extend .s-card;
+
+            padding: 30px;
+
+            &:not(:last-child) {
+                margin-bottom: 1.5rem;
+            }
+
+            .card-head {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 20px;
+
+                h3 {
+                    color: $dark-text;
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    margin-bottom: 0;
+                }
+            }
+
+            .active-projects, .active-team, .active-list {
+                padding: 10px 0;
             }
         }
     }
@@ -276,18 +306,18 @@ body {
 
 body {
     &.is-dark {
-        .home-dashboard {
-            .home-header {
-                .cta {
-                    background: lighten($accent, 2%);
-                    box-shadow: $accent-box-shadow;
+        .personal-dashboard {
+            &.personal-dashboard-v2 {
+                .home-header {
+                    .cta {
+                        background: lighten($accent, 2%);
+                        box-shadow: $accent-box-shadow;
+                    }
                 }
             }
         }
     }
 }
-
-
 
 /* ==========================================================================
 5. Personal Dashboard V3
@@ -295,7 +325,6 @@ body {
 
 .personal-dashboard {
     &.personal-dashboard-v3 {
-
         .columns {
             &.is-flex-tablet-p {
                 .column {
@@ -415,15 +444,11 @@ body {
                     }
                 }
 
-                .right {
-
-                }
+                .right {}
             }
         }
     }
 }
-
-
 
 @media only screen and (max-width: 767px) {
     .personal-dashboard {
@@ -458,6 +483,41 @@ body {
                                     }
                                 }
                             }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.personal-dashboard-v2 {
+            .dashboard-header {
+                flex-direction: column;
+                text-align: center;
+
+                .h-avatar {
+                    margin-bottom: 10px;
+                }
+
+                .user-meta {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    border: none;
+                }
+
+                .user-action {
+                    padding-bottom: 30px;
+                }
+
+                .cta {
+                    margin-left: 0;
+                }
+            }
+
+            .active-projects {
+                .media-flex-center {
+                    .flex-end {
+                        .avatar-stack {
+                            display: none;
                         }
                     }
                 }

@@ -851,14 +851,7 @@ body {
             }
 
             .right {
-                .h-action {
-                    &.is-active {
-                        background: $primary;
-                        border-color: $primary;
-                        color: $smoke-white;
-                        box-shadow: $primary-box-shadow;
-                    }
-                }
+                .h-action {}
             }
         }
 
@@ -913,13 +906,23 @@ body {
                 }
             }
 
-            .subheading {
-                font-family: $font;
-                font-weight: 600;
-                font-size: .8rem;
-                text-transform: uppercase;
-                color: $dark-text;
-                margin-bottom: 16px;
+            .subheading-wrap {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 30px;
+
+                .subheading {
+                    font-family: $font;
+                    font-weight: 600;
+                    font-size: .8rem;
+                    text-transform: uppercase;
+                    color: $dark-text;
+                }
+
+                .action-link {
+                    font-size: .9rem;
+                }
             }
 
             .currency-description {
@@ -987,6 +990,25 @@ Media Queries
                 }
             }
         }
+
+        &.banking-dashboard-v3 {
+            .dashboard-header {
+                flex-direction: column;
+
+                .left {
+                    margin-bottom: 1.5rem;
+                }
+            }
+
+            .dashboard-tiles {
+                flex-wrap: wrap;
+
+                .dashboard-tile {
+                    width: calc(100% - 16px) !important;
+                    min-width: calc(100% - 16px) !important;
+                }
+            }
+        }
     }
 }
 
@@ -1020,6 +1042,18 @@ Media Queries
                 }
             }
         }
+
+        &.banking-dashboard-v3 {
+            .dashboard-tiles {
+                .dashboard-tile {
+                    span {
+                        &:nth-child(2) {
+                            font-size: 1.1rem;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -1047,6 +1081,18 @@ Media Queries
                             .card-balance {
                                 margin-bottom: 20px;
                             }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.banking-dashboard-v3 {
+            .dashboard-tiles {
+                .dashboard-tile {
+                    span {
+                        &:nth-child(2) {
+                            font-size: 1rem;
                         }
                     }
                 }

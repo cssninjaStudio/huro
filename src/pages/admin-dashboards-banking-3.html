@@ -44,7 +44,7 @@ title: Banking Dashboard
                         <div class="left">
                             <span>Latest Bitcoin (BTC) Price Chart</span>
                             <div class="currency">
-                                <span class="amount is-positive">$10584.30</span>
+                                <span class="amount is-positive dark-inverted">$10584.30</span>
                             </div>
                         </div>
                         <div class="right">
@@ -68,17 +68,17 @@ title: Banking Dashboard
                                 <!--Tile-->
                                 <div class="dashboard-tile">
                                     <span>Market Cap</span>
-                                    <span>$129,992,260,090</span>
+                                    <span class="dark-inverted">$129,992,260,090</span>
                                 </div>
                                 <!--Tile-->
                                 <div class="dashboard-tile">
                                     <span>Volume 24h</span>
-                                    <span>$129,992,260,090</span>
+                                    <span class="dark-inverted">$453,178 K</span>
                                 </div>
                                 <!--Tile-->
                                 <div class="dashboard-tile">
                                     <span>Low/high 24h</span>
-                                    <span>$129,992,260,090</span>
+                                    <span class="dark-inverted">$10,212 - $10,584</span>
                                 </div>
                             </div>
 
@@ -89,11 +89,13 @@ title: Banking Dashboard
 
                             <div class="columns is-multiline">
                                 <div class="column is-6">
-                                    <div class="dashboard-card"></div>
+                                    <div class="dashboard-card">
+                                        <div id="radial-chart"></div>
+                                    </div>
                                 </div>
                                 <div class="column is-6">
-                                    <div class="dashboard-card is-wallet">
-                                        <img src="assets/img/illustrations/dashboards/banking/wallet.svg" alt="">
+                                    <div class="dashboard-card">
+                                        <div id="radial-gauge"></div>
                                     </div>
                                 </div>
                             </div>
@@ -104,8 +106,8 @@ title: Banking Dashboard
                             <div class="dashboard-card is-side">
                                 <div class="media-flex-center is-responsive-mobile">
                                     <div class="h-avatar">
-                                        <img class="avatar"
-                                            src="https://volumeoftech.files.wordpress.com/2017/06/bitcoin.png" alt="">
+                                        <img class="avatar" src="https://via.placeholder.com/150x150"
+                                            data-demo-src="assets/img/icons/cryptocurrencies/btc.svg" alt="">
                                     </div>
                                     <div class="flex-meta">
                                         <span>Bitcoin</span>
@@ -129,7 +131,10 @@ title: Banking Dashboard
                             </div>
 
                             <div class="dashboard-card is-side">
-                                <h4 class="subheading">Followers</h4>
+                                <div class="subheading-wrap">
+                                    <h4 class="subheading dark-inverted">Followers</h4>
+                                    <a href="#" class="action-link">View All</a>
+                                </div>
 
                                 <div class="people">
                                     <div class="h-avatar">
@@ -166,76 +171,87 @@ title: Banking Dashboard
                             </div>
 
                             <div class="dashboard-card is-side">
-                                <h4 class="subheading">Popular Coins</h4>
+                                <div class="subheading-wrap">
+                                    <h4 class="subheading dark-inverted">Popular Coins</h4>
+                                    <a href="#" class="action-link">View All</a>
+                                </div>
 
                                 <div class="media-flex-center">
-                                    <div class="h-avatar">
-                                        <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="https://upload.wikimedia.org/wikipedia/commons/b/b7/ETHEREUM-YOUTUBE-PROFILE-PIC.png" alt="">
+                                    <div class="h-avatar is-small">
+                                        <img class="avatar" src="https://via.placeholder.com/150x150"
+                                            data-demo-src="assets/img/icons/cryptocurrencies/xmr.svg"
+                                            alt="">
                                     </div>
                                     <div class="flex-meta">
-                                        <span>Ethereum</span>
-                                        <span>ETH</span>
+                                        <span>Monero</span>
+                                        <span>XMR</span>
                                     </div>
                                     <div class="flex-end">
                                         <button class="button is-circle is-dark-outlined">
                                             <span class="icon is-small">
                                                 <i data-feather="plus"></i>
                                             </span>
-                                        </button>                                        
+                                        </button>
                                     </div>
                                 </div>
 
                                 <div class="media-flex-center">
-                                    <div class="h-avatar">
-                                        <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRiIw7uatGTG12ZayRSpKl2Vlp0xBMdAEIeHQ&usqp=CAU" alt="">
+                                    <div class="h-avatar is-small">
+                                        <img class="avatar" src="https://via.placeholder.com/150x150"
+                                            data-demo-src="assets/img/icons/cryptocurrencies/ltc.svg"
+                                            alt="">
                                     </div>
                                     <div class="flex-meta">
-                                        <span>Ethereum</span>
-                                        <span>ETH</span>
+                                        <span>Litecoin</span>
+                                        <span>LTC</span>
                                     </div>
                                     <div class="flex-end">
                                         <button class="button is-circle is-dark-outlined">
                                             <span class="icon is-small">
                                                 <i data-feather="plus"></i>
                                             </span>
-                                        </button>                                        
+                                        </button>
                                     </div>
                                 </div>
 
                                 <div class="media-flex-center">
-                                    <div class="h-avatar">
-                                        <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="https://upload.wikimedia.org/wikipedia/commons/b/b7/ETHEREUM-YOUTUBE-PROFILE-PIC.png" alt="">
+                                    <div class="h-avatar is-small">
+                                        <img class="avatar" src="https://via.placeholder.com/150x150"
+                                            data-demo-src="assets/img/icons/cryptocurrencies/link.svg"
+                                            alt="">
                                     </div>
                                     <div class="flex-meta">
-                                        <span>Ethereum</span>
-                                        <span>ETH</span>
+                                        <span>ChainLink</span>
+                                        <span>LINK</span>
                                     </div>
                                     <div class="flex-end">
                                         <button class="button is-circle is-dark-outlined">
                                             <span class="icon is-small">
                                                 <i data-feather="plus"></i>
                                             </span>
-                                        </button>                                        
+                                        </button>
                                     </div>
                                 </div>
 
                                 <div class="media-flex-center">
-                                    <div class="h-avatar">
-                                        <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRiIw7uatGTG12ZayRSpKl2Vlp0xBMdAEIeHQ&usqp=CAU" alt="">
+                                    <div class="h-avatar is-small">
+                                        <img class="avatar" src="https://via.placeholder.com/150x150"
+                                            data-demo-src="assets/img/icons/cryptocurrencies/bnb.svg"
+                                            alt="">
                                     </div>
                                     <div class="flex-meta">
-                                        <span>Ethereum</span>
-                                        <span>ETH</span>
+                                        <span>Binance Coin</span>
+                                        <span>BNB</span>
                                     </div>
                                     <div class="flex-end">
                                         <button class="button is-circle is-dark-outlined">
                                             <span class="icon is-small">
                                                 <i data-feather="plus"></i>
                                             </span>
-                                        </button>                                        
+                                        </button>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
 

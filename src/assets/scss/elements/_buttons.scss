@@ -45,6 +45,13 @@
             border-color: lighten($fade-grey, 2%);
             color: $muted-grey;
         }
+
+        &.is-active {
+            background: $primary;
+            border-color: $primary;
+            color: $smoke-white;
+            box-shadow: $primary-box-shadow;
+        }
     }
 }
 
@@ -321,6 +328,15 @@ body {
                 &:hover {
                     border-color: $accent !important;
                     color: $accent !important;
+                }
+            }
+
+            &.h-action {
+                &.is-active {
+                    background: $accent !important;
+                    border-color: $accent !important;
+                    box-shadow: $accent-box-shadow !important;
+                    color: $smoke-white !important;
                 }
             }
         }

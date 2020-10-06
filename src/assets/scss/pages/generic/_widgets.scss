@@ -142,6 +142,10 @@ body {
 .gauge-widget {
     @extend .l-card;
 
+    &.is-straight {
+        @extend .s-card;
+    }
+
     text-align: center;
 
     .gauge-wrap {
@@ -155,6 +159,10 @@ body {
 
 .icon-toolbar-widget {
     @extend .l-card;
+
+    &.is-straight {
+        @extend .s-card;
+    }
 
     padding: 16px;
 
@@ -226,6 +234,10 @@ body {
 .text-widget {
     @extend .l-card;
 
+    &.is-straight {
+        @extend .s-card;
+    }
+
     .widget-content {
         p {
             font-size: .9rem;
@@ -274,6 +286,10 @@ body {
 
 .tags-widget {
     @extend .l-card;
+
+    &.is-straight {
+        @extend .s-card;
+    }
 
     .widget-content {
         .tags {}
@@ -348,6 +364,10 @@ body {
 .image-widget {
     @extend .l-card;
 
+    &.is-straight {
+        @extend .s-card;
+    }
+
     position: relative;
     padding: 10px;
     height: 310px;
@@ -393,6 +413,10 @@ body {
 .list-widget {
     @extend .l-card;
 
+    &.is-straight {
+        @extend .s-card;
+    }
+
     ul {
         li {
             &:not(:last-child) {
@@ -435,6 +459,10 @@ body {
 
 .picker-widget {
     @extend .l-card;
+
+    &.is-straight {
+        @extend .s-card;
+    }
 
     .calendar {
         color: $dark-text;
@@ -508,6 +536,10 @@ body {
 .stats-widget {
     @extend .l-card;
 
+    &.is-straight {
+        @extend .s-card;
+    }
+
     padding: 20px 0 0 0;
 
     .widget-toolbar {
@@ -563,6 +595,10 @@ body {
 
 .search-widget {
     @extend .l-card;
+
+    &.is-straight {
+        @extend .s-card;
+    }
 
     .field {
         .control {
@@ -654,6 +690,10 @@ body {
 .icon-list-widget {
     @extend .l-card;
 
+    &.is-straight {
+        @extend .s-card;
+    }
+
     .icon-list {
         .icon-list-item {
             display: flex;
@@ -744,6 +784,10 @@ body {
 .video-widget {
     @extend .l-card;
 
+    &.is-straight {
+        @extend .s-card;
+    }
+
     padding: 10px;
 
     .widget-content {
@@ -820,6 +864,10 @@ body {
 
 .inbox-widget {
     @extend .l-card;
+
+    &.is-straight {
+        @extend .s-card;
+    }
 
     .sender-block {
         h4 {
@@ -915,6 +963,10 @@ body {
     &.illustration-widget-v1 {
         @extend .l-card;
 
+        &.is-straight {
+            @extend .s-card;
+        }
+
         padding: 40px 30px;
         text-align: center;
         font-family: $font;
@@ -961,6 +1013,10 @@ body {
     &.illustration-widget-v2 {
         @extend .l-card;
 
+        &.is-straight {
+            @extend .s-card;
+        }
+
         padding: 16px;
 
         img {
@@ -980,6 +1036,10 @@ body {
 
     &.illustration-widget-v3 {
         @extend .l-card;
+
+        &.is-straight {
+            @extend .s-card;
+        }
 
         padding: 24px;
 
@@ -1018,6 +1078,10 @@ body {
 
 .creative-list-widget {
     @extend .l-card;
+
+    &.is-straight {
+        @extend .s-card;
+    }
 
     .creative-list {
         .creative-list-item {
@@ -1074,6 +1138,10 @@ body {
 
 .social-buttons-widget {
     @extend .l-card;
+
+    &.is-straight {
+        @extend .s-card;
+    }
 
     padding: 16px;
 
@@ -1190,6 +1258,10 @@ body {
 .call-widget {
     @extend .l-card;
 
+    &.is-straight {
+        @extend .s-card;
+    }
+
     padding: 40px 30px;
     text-align: center;
     font-family: $font;
@@ -1296,6 +1368,10 @@ body {
 
 .avatar-list-widget {
     @extend .l-card;
+
+    &.is-straight {
+        @extend .s-card;
+    }
 
     padding: 14px;
 
@@ -1408,6 +1484,10 @@ body {
 .contact-widget {
     @extend .l-card;
 
+    &.is-straight {
+        @extend .s-card;
+    }
+
     &.is-reversed {
         .widget-content {
             flex-direction: row-reverse;
@@ -1516,6 +1596,10 @@ body {
 .followers-widget {
     @extend .l-card;
 
+    &.is-straight {
+        @extend .s-card;
+    }
+
     .channels {
         display: flex;
         margin-left: -8px;
@@ -1579,6 +1663,10 @@ body {
 
 .cart-widget {
     @extend .l-card;
+
+    &.is-straight {
+        @extend .s-card;
+    }
 
     .cart-items {
         .cart-item {

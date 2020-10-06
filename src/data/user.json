@@ -378,5 +378,15 @@
         "badge":"assets/img/icons/flags/united-states-of-america.svg",
         "position": "Software Engineer",
         "bio": "This is a nice user description that we can use as demo content"
+    },
+    {
+        "id":"38",
+        "name":"Naomi L.",
+        "initials": "NL",
+        "location":"San Francisco, CA",
+        "pic": null,
+        "badge":"assets/img/icons/flags/united-states-of-america.svg",
+        "position": "Frontend Developer",
+        "bio": "This is a nice user description that we can use as demo content"
     }
 ]
