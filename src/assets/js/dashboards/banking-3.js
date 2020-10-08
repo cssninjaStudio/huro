@@ -4,6 +4,7 @@
 
 $(document).ready(function () {
 
+    //Currency Chart
     var options = {
         chart: {
             type: "area",
@@ -117,7 +118,7 @@ $(document).ready(function () {
         return series;
     }
 
-
+    //Evolution Chart
     var radialOptions = {
         series: [54],
         chart: {
@@ -157,7 +158,7 @@ $(document).ready(function () {
     var radialChart = new ApexCharts(document.querySelector("#radial-chart"), radialOptions);
     radialChart.render();
 
-
+    //Gauge Chart
     var gaugeOptions = {
         series: [67],
         title: {

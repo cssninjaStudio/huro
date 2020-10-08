@@ -34,8 +34,12 @@
 <script src="{{ root }}assets/js/apps-1.js"></script>
 {{/ifpage}}
 
-{{#ifpage 'admin-dashboards-business-1'}}
+{{#ifpage 'admin-dashboards-business-1' 'webapp-dashboards-business-1'}}
 <script src="{{ root }}assets/js/business-1.js"></script>
+{{/ifpage}}
+
+{{#ifpage 'admin-dashboards-business-2' 'webapp-dashboards-business-2'}}
+<script src="{{ root }}assets/js/business-2.js"></script>
 {{/ifpage}}
 
 {{#ifpage 'admin-dashboards-finance-1' 'webapp-dashboards-finance-1'}}

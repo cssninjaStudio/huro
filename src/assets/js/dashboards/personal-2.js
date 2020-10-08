@@ -4,7 +4,8 @@
 
 $(document).ready(function () {
 
-    var customersOptions = {
+    //task completion chart
+    var completionOptions = {
         series: [{
             name: 'Pending',
             data: [31, 40, 28, 51, 42, 109, 100]
@@ -44,10 +45,11 @@ $(document).ready(function () {
         },
     };
 
-    var customersChart = new ApexCharts(document.querySelector("#customers-chart"), customersOptions);
-    customersChart.render();
+    var completionChart = new ApexCharts(document.querySelector("#completion-chart"), completionOptions);
+    completionChart.render();
 
 
+    //Team efficiency chart
     var series = [{
         name: 'Design',
         data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
@@ -120,7 +122,7 @@ $(document).ready(function () {
     }
 
     var barChart = new ApexCharts(
-        document.querySelector("#profit-chart"),
+        document.querySelector("#efficiency-chart"),
         barOptions
     );
 

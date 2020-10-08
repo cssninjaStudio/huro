@@ -91,6 +91,8 @@ $(document).ready(function () {
     //Tabs
     initTabs();
 
+    initTabbedWidgets();
+
     //H Select
     initHSelect();
 

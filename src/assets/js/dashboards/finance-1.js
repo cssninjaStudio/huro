@@ -52,7 +52,8 @@ $(document).ready(function () {
     );
 
     revenueChart.render();
-
+    
+    //Gauge goal chart
     var gaugeOptions = {
         series: [57, 86],
         chart: {
@@ -107,6 +108,7 @@ $(document).ready(function () {
     var goalChart = new ApexCharts(document.querySelector("#goal-gauge"), gaugeOptions);
     goalChart.render();
 
+    //Profit bar chart
     var series = [{
         name: 'Net Profit',
         data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
@@ -185,6 +187,7 @@ $(document).ready(function () {
 
     barChart.render();
 
+    //Growth radial chart
     var optionsCircle = {
         series: [65],
         chart: {

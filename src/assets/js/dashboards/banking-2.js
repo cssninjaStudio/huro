@@ -4,6 +4,7 @@
 
 $(document).ready(function () {
 
+    //Credit Card carousel
     $('.cards-carousel-inner').slick({
         dots: true,
         arrows: false,
@@ -14,6 +15,7 @@ $(document).ready(function () {
         slidesToShow: 2,
     });
 
+    //Timeline Chart
     var options = {
         chart: {
             type: "area",

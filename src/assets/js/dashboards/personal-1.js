@@ -4,6 +4,7 @@
 
 $(document).ready(function () {
 
+    //customers chart
     var customersOptions = {
         series: [{
             name: 'Returning',
@@ -51,6 +52,7 @@ $(document).ready(function () {
     var customersChart = new ApexCharts(document.querySelector("#customers-chart"), customersOptions);
     customersChart.render();
     
+    //gauge chart
     var teamGaugeOptions = {
         series: [76],
         title: {
@@ -117,6 +119,7 @@ $(document).ready(function () {
     var teamGauge = new ApexCharts(document.querySelector("#team-gauge"), teamGaugeOptions);
     teamGauge.render();
 
+    //Profit Chart
     var profitChartOptions = {
         series: [{
             name: 'Ratio',

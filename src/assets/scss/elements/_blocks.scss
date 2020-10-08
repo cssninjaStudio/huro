@@ -24,7 +24,7 @@
         line-height: 1.3;
 
         &.is-lighter {
-            span {
+            span, a {
                 &:first-child {
                     font-weight: 400;
                 }
@@ -32,14 +32,14 @@
         }
 
         &.is-light {
-            span {
+            span, a {
                 &:first-child {
                     font-weight: 500;
                 }
             }
         }
 
-        span {
+        span, a {
             display: block;
             font-family: $font;
 
@@ -52,6 +52,10 @@
                 color: $light-text;
                 font-size: .9rem;
             }
+        }
+
+        a:hover {
+            color: $primary;
         }
     }
 
@@ -84,7 +88,7 @@
         line-height: 1.3;
 
         &.is-lighter {
-            span {
+            span, a {
                 &:first-child {
                     font-weight: 400;
                 }
@@ -92,14 +96,14 @@
         }
 
         &.is-light {
-            span {
+            span, a {
                 &:first-child {
                     font-weight: 500;
                 }
             }
         }
 
-        span {
+        span, a {
             display: block;
             font-family: $font;
 
@@ -112,6 +116,10 @@
                 color: $light-text;
                 font-size: .9rem;
             }
+        }
+
+        a:hover {
+            color: $primary;
         }
     }
 
@@ -135,10 +143,14 @@ body {
     &.is-dark {
         .media-flex-center, .media-flex {
             .flex-meta {
-                span {
+                span, a {
                     &:first-child {
                         color: $dark-dark-text;
                     }
+                }
+
+                a:hover {
+                    color: $accent;
                 }
             }
         }
@@ -155,6 +167,11 @@ body {
             flex-direction: column;
             text-align: center;
 
+            .h-avatar, .h-icon {
+                display: block;
+                margin: 0 auto;
+            }
+
             .flex-meta {
                 margin: 10px auto 16px auto;
             }
@@ -167,7 +184,7 @@ body {
                 }
 
                 .button {
-                    min-width: 110px;
+                    min-width: 140px;
                 }
             }
         }
@@ -179,6 +196,11 @@ body {
         &.is-responsive-tablet-p {
             flex-direction: column;
             text-align: center;
+            
+            .h-avatar, .h-icon {
+                display: block;
+                margin: 0 auto;
+            }
 
             .flex-meta {
                 margin: 10px auto 16px auto;
@@ -192,7 +214,7 @@ body {
                 }
 
                 .button {
-                    min-width: 110px;
+                    min-width: 140px;
                 }
             }
         }
@@ -205,6 +227,11 @@ body {
             flex-direction: column;
             text-align: center;
 
+            .h-avatar, .h-icon {
+                display: block;
+                margin: 0 auto;
+            }
+
             .flex-meta {
                 margin: 10px auto 16px auto;
             }
@@ -217,7 +244,7 @@ body {
                 }
 
                 .button {
-                    min-width: 110px;
+                    min-width: 140px;
                 }
             }
         }

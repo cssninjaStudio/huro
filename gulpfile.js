@@ -114,6 +114,7 @@ function compileJS() {
     'src/assets/js/dashboards/banking-2.js',
     'src/assets/js/dashboards/banking-3.js',
     'src/assets/js/dashboards/business-1.js',
+    'src/assets/js/dashboards/business-2.js',
     'src/assets/js/dashboards/apps-1.js',
     'src/assets/js/dashboards/charts/apex.js',
     'src/assets/js/dashboards/charts/billboardjs.js',

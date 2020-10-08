@@ -4,6 +4,7 @@
 
 $(document).ready(function () {
 
+    //Defaults
     Apex.grid = {
         padding: {
             right: 0,
@@ -15,6 +16,7 @@ $(document).ready(function () {
         enabled: false
     }
 
+    //Array Utility
     var randomizeArray = function (arg) {
         var array = arg.slice();
         var currentIndex = array.length, temporaryValue, randomIndex;

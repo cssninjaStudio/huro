@@ -2,53 +2,6 @@
 
 "use strict";
 
-function customizeDatatable() {
-    $('.datatable-filter-cell').find('.input').wrap("<div class='control has-icon'></div>");
-    var searchIcon = `
-        <div class="form-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        </div>
-    `;
-    $('.datatable-filter-cell').find('.control.has-icon').append(searchIcon);
-
-    $('.datatable-filter-cell').find('select').wrap("<div class='field'><div class='control has-icons-left'><div class='select'></div></div></div>");
-    var selectIcon = `
-        <div class="icon is-small is-left">
-            <i class="lnil lnil-menu-circle"></i>
-        </div>
-    `;
-    $('.datatable-filter-cell').find('.control.has-icons-left').append(selectIcon);
-    $('.datatable-filter-cell').find('select option:first-child').html('Filter by');
-
-    $('.is-datatable tbody td .checkbox input').on('change', function () {
-        $(this).closest('tr').toggleClass('is-selected');
-
-        if ($('.is-datatable td .checkbox input:checked').length > 0) {
-            $('.field.has-addons').removeClass('is-disabled');
-        }
-
-        else {
-            $('.field.has-addons').addClass('is-disabled');
-        }
-    });
-
-    $('.is-datatable th .checkbox input').on('change', function () {
-        if ($(this).prop('checked') === true) {
-            $('.is-datatable td .checkbox input').prop('checked', true).trigger('change');
-            $('.field.has-addons').removeClass('is-disabled');
-        }
-        else {
-            $('.is-datatable td .checkbox input').prop('checked', false).trigger('change');
-            $('.field.has-addons').addClass('is-disabled');
-        }
-    });
-
-    $('.pagination li').click(function () {
-        $('.pagination li.is-selected').removeClass('is-selected');
-        $(this).addClass('is-selected');
-    })
-}
-
 $(document).ready(function () {
 
     var moreIcon = feather.icons['more-horizontal'].toSvg();

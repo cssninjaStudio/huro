@@ -3,7 +3,11 @@
 /*
     1. Dashboards Flights
     2. Dashboards Flights Dark mode
-    3. Media Queries
+    3. Company Dashboard
+    4. Company Dashboard Dark mode
+    5. CRM Dashboard
+    6. CRM Dashboard Dark mode
+    7. Media Queries
 */
 
 /* ==========================================================================
@@ -404,7 +408,213 @@ body {
 }
 
 /* ==========================================================================
-3. Media Queries
+3. Company Dashboard
+========================================================================== */
+
+.business-dashboard {
+    &.company-dashboard {
+        .company-header {
+            display: flex;
+            padding: 20px;
+            background: $white;
+            border: 1px solid darken($fade-grey, 3%);
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+
+            .header-item {
+                width: 25%;
+                border-right: 1px solid darken($fade-grey, 3%);
+
+                &:last-child {
+                    border-right: none;
+                }
+
+                .item-inner {
+                    text-align: center;
+
+                    .lnil, .lnir {
+                        font-size: 1.8rem;
+                        margin-bottom: 6px;
+                        color: $primary;
+                    }
+
+                    span {
+                        display: block;
+                        font-family: $font;
+                        font-weight: 600;
+                        font-size: 1.2rem;
+                        color: $dark-text;
+                    }
+                }
+            }
+        }
+
+        .widget {
+            height: 100%;
+        }
+
+        .dashboard-card {
+            @extend .s-card;
+
+            height: 100%;
+
+            &.is-company {
+                text-align: center;
+                padding: 30px;
+
+                .h-avatar {
+                    display: block;
+                    margin: 0 auto 10px auto;
+
+                    .button {
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        max-width: 35px;
+                    }
+                }
+
+                > h3 {
+                    color: $dark-text;
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                }
+
+                .description {
+                    padding: 10px 0 0 0;
+                }
+
+                .company-stats {
+                    display: flex;
+                    padding-top: 20px;
+                    margin-top: 20px;
+                    border-top: 1px solid darken($fade-grey, 3%);
+
+                    .company-stat {
+                        width: 33.3%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        text-align: center;
+
+                        span {
+                            display: block;
+                            font-family: $font;
+
+                            &:first-child {
+                                text-transform: uppercase;
+                                font-size: .8rem;
+                                color: $light-text;
+                            }
+
+                            &:nth-child(2) {
+                                color: $dark-text;
+                                font-size: 1.2rem;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.is-base-chart {
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+
+                .content-box {
+                    padding: 30px;
+
+                    .revenue-stats {
+                        display: flex;
+                        padding-bottom: 20px;
+                        border-bottom: 1px solid darken($fade-grey, 3%);
+
+                        .revenue-stat {
+                            margin-right: 30px;
+                            font-family: $font;
+
+                            span {
+                                display: block;
+
+                                &:first-child {
+                                    color: $light-text;
+                                    font-size: .9rem;
+                                }
+
+                                &:nth-child(2) {
+                                    color: $dark-text;
+                                    font-size: 1.6rem;
+                                    font-weight: 600;
+                                }
+
+                                &.current {
+                                    color: $accent;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .chart-container {
+                    margin-top: auto;
+                }
+            }
+
+            &.is-tickets {
+                padding: 30px;
+
+                .ticket-list {
+                    padding: 10px 0;
+
+                    .media-flex {
+                        + .media-flex {
+                            margin-top: 20px;
+                            padding-top: 20px;
+                            border-top: 1px solid darken($fade-grey, 3%);
+                        }
+
+                        .flex-meta {
+                            span {
+                                &:nth-child(2) {
+                                    font-size: 1rem;
+                                    margin: 4px 0;
+                                    color: darken($light-text, 20%);
+                                    max-width: 430px;
+                                }
+
+                                &:nth-child(3) {
+                                    font-size: .9rem;
+                                    color: $light-text;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .card-head {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 20px;
+
+                h3 {
+                    color: $dark-text;
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .table-wrapper {
+            min-height: 0;
+        }
+    }
+}
+
+/* ==========================================================================
+7. Media Queries
 ========================================================================== */
 
 @media only screen and (max-width: 767px) {
@@ -470,6 +680,27 @@ body {
                 }
             }
         }
+
+        &.company-dashboard {
+            .company-header {
+                flex-wrap: wrap;
+
+                .header-item {
+                    width: 50%;
+                    border-right: none;
+                    border: none;
+                    padding: 16px 0;
+                }
+            }
+
+            .dashboard-card {
+                &.is-tickets {
+                    .ticket-list {
+
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -494,6 +725,8 @@ body {
                 }
             }
         }
+
+        
     }
 }
 
@@ -507,7 +740,7 @@ body {
                     max-width: 200px;
                 }
             }
-    
+
             .flights-summary-wrapper {
                 .flight-summary {
                     .flight-price {

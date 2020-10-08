@@ -4,6 +4,7 @@
 
 $(document).ready(function () {
 
+    //Income Chart
     var incomeOptions = {
         series: [{
             name: 'Expenses',

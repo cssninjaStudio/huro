@@ -4,6 +4,7 @@
 
 $(document).ready(function () {
 
+    //Gauge chart
     var welcomeGauge = bb.generate({
         data: {
             columns: [
@@ -68,6 +69,7 @@ $(document).ready(function () {
         });
     }, 2000);
 
+    //Interviews Chart
     var interviewsOptions = {
         series: [{
             name: 'Interviews',
