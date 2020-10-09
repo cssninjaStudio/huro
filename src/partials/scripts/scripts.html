@@ -7,6 +7,7 @@
 <script src="{{ root }}assets/js/main.js"></script>
 <script src="{{ root }}assets/js/components.js"></script>
 <script src="{{ root }}assets/js/popover.js"></script>
+<script src="{{ root }}assets/js/widgets.js"></script>
 
 
 <!-- Additional Features -->
@@ -66,6 +67,10 @@
 <script src="{{ root }}assets/js/banking-3.js"></script>
 {{/ifpage}}
 
+{{#ifpage 'admin-dashboards-lifestyle-1' 'webapp-dashboards-lifestyle-1'}}
+<script src="{{ root }}assets/js/lifestyle-1.js"></script>
+{{/ifpage}}
+
 <!-- Charts js -->
 {{#ifpage 'admin-dashboards-charts-apex' 'webapp-dashboards-charts-apex'}}
 <script src="{{ root }}assets/js/apex-data.js"></script>
@@ -74,11 +79,6 @@
 
 {{#ifpage 'admin-dashboards-charts-billboardjs' 'webapp-dashboards-charts-billboardjs'}}
 <script src="{{ root }}assets/js/billboardjs.js"></script>
-{{/ifpage}}
-
-<!-- Widgets js -->
-{{#ifpage 'admin-dashboards-widgets-ui' 'admin-dashboards-widgets-creative' 'webapp-dashboards-widgets-ui' 'webapp-dashboards-widgets-creative'}}
-<script src="{{ root }}assets/js/widgets.js"></script>
 {{/ifpage}}
 
 <!--Forms-->

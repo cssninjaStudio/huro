@@ -24,7 +24,6 @@ List Widgets Styles
     }
 
     &.tabbed-widget {
-
         .widget-head {
             .tabbed-controls {
                 position: relative;
@@ -112,6 +111,23 @@ List Widgets Styles
     }
 }
 
+body {
+    &.is-dark {
+        .list-widget {
+            &.tabbed-widget {
+                .widget-head {
+                    .tabbed-controls {
+                        background: lighten($dark-sidebar, 3%);
+
+                        .tabbed-naver {
+                            background: $accent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 /* ==========================================================================
 2. List Widget V1
@@ -154,7 +170,7 @@ List Widgets Styles
                     color: $h-red;
                 }
             }
-            
+
             svg {
                 height: 16px;
                 width: 16px;
@@ -164,6 +180,18 @@ List Widgets Styles
     }
 }
 
+body {
+    &.is-dark {
+        .list-widget {
+            &.list-widget-v1 {
+                .go-icon {
+                    background: lighten($dark-sidebar, 3%);
+                    border: 1px solid lighten($dark-sidebar, 12%);
+                }
+            }
+        }
+    }
+}
 
 /* ==========================================================================
 2. List Widget V2
@@ -178,6 +206,13 @@ List Widgets Styles
     }
 }
 
+body {
+    &.is-dark {
+        .list-widget {
+            &.list-widget-v2 {}
+        }
+    }
+}
 
 /* ==========================================================================
 2. List Widget V3
@@ -190,7 +225,7 @@ List Widgets Styles
                 position: relative;
                 display: flex;
                 padding-bottom: 30px;
-        
+
                 &:after {
                     content: '';
                     position: absolute;
@@ -200,7 +235,7 @@ List Widgets Styles
                     height: calc(100% - 36px);
                     border-left: 1px solid darken($fade-grey, 3%);
                 }
-        
+
                 .timeline-icon {
                     position: relative;
                     height: 36px;
@@ -213,7 +248,7 @@ List Widgets Styles
                     border-radius: 50%;
                     color: $light-text;
                     box-shadow: $light-box-shadow;
-        
+
                     &:after {
                         content: '';
                         position: absolute;
@@ -280,28 +315,32 @@ List Widgets Styles
                             stroke: $smoke-white;
                         }
                     }
-        
+
                     img {
                         display: block;
                         height: 28px;
                         width: 28px;
                         border-radius: 50%;
                     }
-        
+
                     svg {
                         height: 16px;
                         width: 16px;
                         stroke-width: 1.6px;
                     }
                 }
-        
+
                 .timeline-content {
                     margin-left: 34px;
                     line-height: 1.2;
-        
+
                     span {
                         font-size: .85rem;
                         color: $light-text;
+                    }
+
+                    p {
+                        color: $dark-text;
                     }
                 }
             }
@@ -309,3 +348,45 @@ List Widgets Styles
     }
 }
 
+body {
+    &.is-dark {
+        .list-widget {
+            &.list-widget-v3 {
+                .icon-timeline {
+                    .timeline-item {
+                        &:after {
+                            border-color: lighten($dark-sidebar, 12%) !important;
+                        }
+
+                        .timeline-icon:not(.is-primary):not(.is-info):not(.is-success):not(.is-orange):not(.is-yellow) {
+                            background: lighten($dark-sidebar, 3%) !important;
+                            border-color: lighten($dark-sidebar, 12%) !important;
+                        }
+
+                        .timeline-icon {
+                            &:after {
+                                border-color: lighten($dark-sidebar, 12%) !important;
+                            }
+
+                            &.is-primary {
+                                background: $accent;
+                                border-color: $accent;
+                                box-shadow: $accent-box-shadow;
+
+                                svg {
+                                    stroke: $smoke-white;
+                                }
+                            }
+                        }
+
+                        .timeline-content {
+                            p {
+                                color: $dark-dark-text;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

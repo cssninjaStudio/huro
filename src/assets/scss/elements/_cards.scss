@@ -284,6 +284,12 @@ body {
             }
         }
 
+        .card-image {
+            img {
+                object-fit: cover;
+            }
+        }
+
         .card-footer {
             a {
                 font-family: $font;
