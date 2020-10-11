@@ -2,3 +2,266 @@
 layout: minimal
 title: Inbox
 ---
+
+<div class="inbox-wrapper">
+    <div class="wrapper-inner">
+        <!--Inbox sidebar-->
+        <div class="inbox-sidebar">
+            <!-- Header -->
+            <div class="header-area">
+                <div class="inbox-title">
+                    <a href="/" class="inbox-brand">
+                        <img class="light-image" src="assets/img/logos/logo/logo.svg" alt="" />
+                        <img class="dark-image" src="assets/img/logos/logo/logo-light.svg" alt="" />
+                    </a>
+                    <span>Inbox</span>
+
+                    <label class="dark-mode">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </label>
+                </div>
+                <div class="dropdown inbox-dropdown dropdown-trigger is-right">
+                    <div>
+                        <button class="button">
+                            <span class="icon is-small">
+                                <i data-feather="more-vertical"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-content">
+                            <a class="dropdown-item">
+                                <i data-feather="refresh-cw"></i>
+                                <span>Refresh</span>
+                            </a>
+                            <a class="dropdown-item">
+                                <i data-feather="bell"></i>
+                                <span>Notifications</span>
+                            </a>
+                            <a class="dropdown-item">
+                                <i data-feather="user-plus"></i>
+                                <span>Invite People</span>
+                            </a>
+                            <a class="dropdown-item">
+                                <i data-feather="settings"></i>
+                                <span>Settings</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a class="inbox-action inbox-close-sidebar-mobile">
+                    <i data-feather="x"></i>
+                </a>
+            </div>
+            <!--Inner-->
+            <div class="sidebar-inner">
+                <!--Inner menu-->
+                <div class="inner-menu">
+                    <a class="button compose-button is-fullwidth">Compose</a>
+                    <div class="inbox-menu">
+                        <ul>
+                            <li>
+                                <a class="is-active">
+                                    <i data-feather="mail"></i>
+                                    <span>Inbox</span>
+                                    <span class="tag">24</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <i data-feather="file-text"></i>
+                                    <span>Drafts</span>
+                                    <span class="tag">2</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <i data-feather="send"></i>
+                                    <span>Sent</span>
+                                    <span class="tag">7</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <i data-feather="trash-2"></i>
+                                    <span>Trash</span>
+                                    <span class="tag">18</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <i data-feather="alert-octagon"></i>
+                                    <span>Spam</span>
+                                    <span class="tag">29</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--Scroll menu-->
+                <div class="scroll-menu">
+                    <div class="title-wrap">
+                        <h3>Contacts</h3>
+                        <div class="control has-icon is-hidden">
+                            <input type="text" class="input" placeholder="Search Contacts...">
+                            <div class="form-icon">
+                                <i data-feather="search"></i>
+                            </div>
+                        </div>
+                        <a class="button search-button">
+                            <span class="icon is-small">
+                                <i data-feather="search"></i>
+                            </span>
+                        </a>
+                        <a class="button cancel-search-button is-hidden">
+                            <span class="icon is-small">
+                                <i data-feather="x"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="contact-list has-slimscroll">
+                        <!--Contact-->
+                        <div class="contact-block">
+                            <img src="https://via.placeholder.com/150x150"
+                                data-demo-src="assets/img/avatars/photos/7.jpg" alt="">
+                            <div class="contact-meta">
+                                <span>Alice Carasca</span>
+                                <span>alice@huro.io</span>
+                            </div>
+                        </div>
+                        <!--Contact-->
+                        <div class="contact-block">
+                            <img src="https://via.placeholder.com/150x150"
+                                data-demo-src="assets/img/avatars/photos/25.jpg" alt="">
+                            <div class="contact-meta">
+                                <span>Melany Wallace</span>
+                                <span>melany@huro.io</span>
+                            </div>
+                        </div>
+                        <!--Contact-->
+                        <div class="contact-block">
+                            <img src="https://via.placeholder.com/150x150"
+                                data-demo-src="assets/img/avatars/photos/18.jpg" alt="">
+                            <div class="contact-meta">
+                                <span>Esteban Castellanos</span>
+                                <span>esteban@huro.io</span>
+                            </div>
+                        </div>
+                        <!--Contact-->
+                        <div class="contact-block">
+                            <img src="https://via.placeholder.com/150x150"
+                                data-demo-src="assets/img/avatars/photos/32.jpg" alt="">
+                            <div class="contact-meta">
+                                <span>Jonathan Krugger</span>
+                                <span>jonathan@huro.io</span>
+                            </div>
+                        </div>
+                        <!--Contact-->
+                        <div class="contact-block">
+                            <img src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/38.jpg"
+                                alt="">
+                            <div class="contact-meta">
+                                <span>Christie Dallas</span>
+                                <span>christie@huro.io</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Messages list-->
+        <div class="inbox-messages">
+            <div class="header-area">
+                <div class="actions">
+                    <a class="inbox-action mobile-menu-action">
+                        <i data-feather="chevron-right"></i>
+                    </a>
+                    <a class="inbox-action check-all-action">
+                        <i data-feather="check"></i>
+                    </a>
+                </div>
+                <div class="actions">
+                    <div class="control inbox-search has-icon">
+                        <input type="text" class="input is-rounded" placeholder="Search Inbox...">
+                        <div class="form-icon">
+                            <i data-feather="search"></i>
+                        </div>
+                    </div>
+
+                    <div class="dropdown inbox-dropdown dropdown-trigger is-right">
+                        <div>
+                            <button class="button">
+                                <span class="icon is-small">
+                                    <i data-feather="more-vertical"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-content">
+                                <a class="dropdown-item">
+                                    <i data-feather="check"></i>
+                                    <span>Mark all as read</span>
+                                </a>
+                                <a class="dropdown-item">
+                                    <i data-feather="eye-off"></i>
+                                    <span>Hide read</span>
+                                </a>
+                                <hr class="dropdown-divider">
+                                <a class="dropdown-item">
+                                    <i data-feather="calendar"></i>
+                                    <span>Sort by date</span>
+                                </a>
+                                <a class="dropdown-item">
+                                    <i data-feather="user"></i>
+                                    <span>Sort by user</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Messages-->
+            <div class="messages-list has-slimscroll">
+                <!--messages list partial-->
+                {{> inbox-messages-list}}
+            </div>
+        </div>
+
+        <!--Loader-->
+        <div class="inbox-message-overlay">
+            <div class="loader is-loading"></div>
+        </div>
+
+        <!--Message details 1-->
+        {{> message-1}}
+
+        <!--Message details 2-->
+        {{> message-2}}
+
+        <!--Message details 3-->
+        {{> message-3}}
+
+        <!--Message details 4-->
+        {{> message-4}}
+
+        <!--Message details 5-->
+        {{> message-5}}
+
+        <!--Message details 6-->
+        {{> message-6}}
+
+        <!--Message details 7-->
+        {{> message-7}}
+
+        <!--Message details 8-->
+        {{> message-8}}
+
+        <!--Message details 9-->
+        {{> message-9}}
+
+        <!--Message details 10-->
+        {{> message-10}}
+    </div>
+</div>

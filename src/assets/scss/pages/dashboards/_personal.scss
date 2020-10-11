@@ -5,6 +5,7 @@
     2. Personal Dashboard V1 Dark mode
     3. Personal Dashboard V2
     4. Personal Dashboard V2 Dark mode
+    5. Media Queries
 */
 
 /* ==========================================================================
@@ -444,11 +445,14 @@ body {
                     }
                 }
 
-                .right {}
             }
         }
     }
 }
+
+/* ==========================================================================
+6. Media Queries
+========================================================================== */
 
 @media only screen and (max-width: 767px) {
     .personal-dashboard {

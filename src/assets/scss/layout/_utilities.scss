@@ -653,7 +653,7 @@ body {
 .has-background-image {
     background-size: cover !important;
     background-repeat: no-repeat !important;
-    background-position: center;
+    background-position: center !important;
 
     &.is-top {
         background-position: top !important;
