@@ -259,7 +259,12 @@ $(document).ready(function () {
         $('.chat-body li:not(.no-messages):not(.chat-loader)').remove();
         $('.chat-body .no-messages').removeClass('is-hidden');
         $('#messages-sidebar ul li').removeClass('is-active');
-        $('.chat-side #user-details-image').attr('src', 'assets/img/avatars/placeholder.jpg');
+        if (env == 'development') {
+            $('.chat-side #user-details-image').attr('src', 'assets/img/avatars/placeholder.jpg');
+        }
+        else {
+            $('.chat-side #user-details-image').attr('src', 'https://via.placeholder.com/150x150');
+        }
         $('.chat-side').find('.user-name, .info, .user-skills, .user-job-title').empty();
     })
 
