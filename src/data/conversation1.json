@@ -60,7 +60,7 @@
                     "text": "Manage projects like you never did before with this new app",
                     "subtext": "gettrueprojects.com",
                     "time": null,
-                    "link_image": "assets/img/photo/apps/1.jpg",
+                    "link_image": "assets/img/photo/demo/demo-apps/1.jpg",
                     "link_badge": "assets/img/icons/logos/slicer.svg"
                 }
             },
@@ -102,7 +102,7 @@
                 "avatar": "assets/img/avatars/photos/8.jpg",
                 "content": {
                     "time": null,
-                    "image_url": "assets/img/photo/apps/2.jpg"
+                    "image_url": "assets/img/photo/demo/demo-apps/2.jpg"
                 }
             },
             {
