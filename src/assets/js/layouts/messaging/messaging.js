@@ -50,7 +50,7 @@ $(document).ready(function () {
         $('.chat-loader').addClass('is-active');
 
         //Remove current conversation
-        $('#chat-body li:not(.no-messages)').remove();
+        $('#chat-body li:not(.no-messages):not(.chat-loader)').remove();
 
         //Load Conversation
         setTimeout(function () {
@@ -236,7 +236,7 @@ $(document).ready(function () {
                         $('.is-chat, .is-chat-placeholder').toggleClass('is-hidden');
                     }
                     //Remove messages from chat body
-                    $('#chat-body li:not(.no-messages)').remove();
+                    $('#chat-body li:not(.no-messages):not(.chat-loader)').remove();
 
                     //Close autocomplete
                     $('.chat-header .is-autocomplete').addClass('is-hidden');
@@ -256,10 +256,10 @@ $(document).ready(function () {
     $('#start-conversation').on('click', function () {
         $('.chat-header .is-autocomplete').removeClass('is-hidden');
         $('#users-autocpl').focus();
-        $('.chat-body li:not(.no-messages)').remove();
+        $('.chat-body li:not(.no-messages):not(.chat-loader)').remove();
         $('.chat-body .no-messages').removeClass('is-hidden');
         $('#messages-sidebar ul li').removeClass('is-active');
-        $('.chat-side #user-details-image').attr('src', 'assets/img/avatars/people/placeholder.jpg');
+        $('.chat-side #user-details-image').attr('src', 'assets/img/avatars/placeholder.jpg');
         $('.chat-side').find('.user-name, .info, .user-skills, .user-job-title').empty();
     })
 

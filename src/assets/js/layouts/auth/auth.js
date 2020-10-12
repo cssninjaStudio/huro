@@ -7,31 +7,19 @@ Auth pages js
 "use strict";
 
 
-$(window).on('load', function () {
-    var pageloaderTimeout = setTimeout(function () {
-        $('.pageloader').toggleClass('is-active');
-        $('.infraloader').toggleClass('is-active')
-        clearTimeout(pageloaderTimeout);
-    }, 700);
-})
+//Init Pageloader
+initPageLoader();
 
 $(document).ready(function () {
 
-    feather.replace();
-
-    $('.pageloader').toggleClass('is-active');
-
-    //Attribute background images
-    if ($('.has-background-image').length) {
-        $(".has-background-image").each(function () {
-            var bgImage = $(this).attr('data-background');
-            if (bgImage !== undefined) {
-                $(this).css('background-image', 'url(' + bgImage + ')');
-            }
-        }
-        )
+    if (env === 'development') {
+        //Change demo images
+        changeDemoImages();
     }
 
+    feather.replace();
+
+    //Login submission
     $('#login-submit').on('click', function () {
         var $this = $(this);
         $this.addClass('is-loading');
@@ -77,9 +65,6 @@ $(document).ready(function () {
                 $this.removeClass('is-loading');
                 $('.card-bg').addClass('faded');
                 $('.signup-steps').removeClass('is-hidden');
-
-                //Activate step
-                //$('.step-icon:nth-child(2)').removeClass('is-inactive').trigger('click');
                 $('#signup-step-1, #signup-step-2').toggleClass('is-hidden');
                 $('.avatar-carousel').slick('setPosition');
             }, 1000);
@@ -119,79 +104,6 @@ $(document).ready(function () {
                 }
             });
 
-            //Picture cropper
-            if ($('#upload-demo').length) {
-
-                /*function readFile(input) {
-                    if (input.files && input.files[0]) {
-                        var reader = new FileReader();
-
-                        reader.onload = function (e) {
-                            $('.upload-demo').addClass('ready');
-                            $uploadCrop.croppie('bind', {
-                                url: e.target.result
-                            }).then(function () {
-                                console.log('jQuery bind complete');
-                            });
-
-                        }
-
-                        reader.readAsDataURL(input.files[0]);
-                    }
-                    else {
-                        swal("Sorry - you're browser doesn't support the FileReader API");
-                    }
-                }
-
-                var $uploadCrop = $('#upload-demo').croppie({
-                    enableExif: true,
-                    url: 'assets/img/placeholders/placeholder.png',
-                    viewport: {
-                        width: 130,
-                        height: 130,
-                        type: 'circle'
-                    },
-                    boundary: {
-                        width: '100%',
-                        height: 300
-                    }
-                });
-
-                function popupResult(result) {
-                    var html;
-                    if (result.html) {
-                        html = result.html;
-                    }
-                    if (result.src) {
-                        html = '<img src="' + result.src + '" />';
-                        $('#upload-modal .modal-content').removeClass('scaleIn');
-                        $('#upload-modal .modal-background').removeClass('scaleInCircle');
-                        $('.picture-selector .image-container img').attr('src', result.src);
-                        $('#confirm-step-2').removeClass('is-disabled');
-                        setTimeout(function () {
-                            $('body').removeClass('is-fixed');
-                            $('#upload-modal').removeClass('is-active');
-                        }, 500);
-                    }
-
-                }
-
-                $('#upload').on('change', function () { readFile(this); });
-                $('.upload-result').on('click', function (ev) {
-                    $uploadCrop.croppie('result', {
-                        type: 'canvas',
-                        size: 'viewport'
-                    }).then(function (resp) {
-                        popupResult({
-                            src: resp
-                        });
-                    });
-                });
-
-                $('#upload').on('change', function () {
-                    $('.upload-result.is-disabled').removeClass('is-disabled');
-                })*/
-            }
         }
 
         //Step 2 confirmation
@@ -212,30 +124,9 @@ $(document).ready(function () {
             $('.step-icon.is-inactive').removeClass('is-inactive').trigger('click');
             setTimeout(function () {
                 $this.removeClass('is-loading');
-                window.location.href = '/webapp-welcome.html';
+                window.location.href = '/admin-dashboards-personal-1.html';
             }, 1400);
         })
-
-        //Go to onboarding
-        /*$('#go-to-ob2').on('click', function () {
-            $('.signup-columns').addClass('is-hidden');
-            $('#signup-step-5').removeClass('is-hidden');
-            $('.onboarding-navigation').find('.dot:nth-child(2)').addClass('is-active');
-        })
-
-        //Go to onboarding
-        $('#go-to-ob3').on('click', function () {
-            $('.signup-columns').addClass('is-hidden');
-            $('#signup-step-6').removeClass('is-hidden');
-            $('.onboarding-navigation').find('.dot:nth-child(3)').addClass('is-active');
-        })
-
-        //Go to onboarding
-        $('#go-to-ob4').on('click', function () {
-            $('.signup-columns').addClass('is-hidden');
-            $('#signup-step-7').removeClass('is-hidden');
-            $('.onboarding-navigation').find('.dot:nth-child(4)').addClass('is-active');
-        })*/
     }
 
 })

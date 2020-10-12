@@ -245,6 +245,7 @@ function concatPlugins() {
   console.log('---------------CONCATENATE JS PLUGINS---------------');
   return src([
     nodepath + 'jquery/dist/jquery.min.js',
+    nodepath + 'd3/dist/d3.min.js',
     nodepath + 'feather-icons/dist/feather.min.js',
     nodepath + 'slick-carousel/slick/slick.min.js',
     nodepath + 'webui-popover/dist/jquery.webui-popover.min.js',

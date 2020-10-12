@@ -2,6 +2,16 @@
 
 "use strict";
 
+//Set environment variable (Used for development and demo)
+/* 
+    Possible values:
+    1. development
+    2. customization
+*/
+
+var env = 'development';
+
+//Theme colors to be used from JS
 var themeColors = {
     primary: '#671cc9',
     primaryMedium: '#d4b3ff',
@@ -21,7 +31,7 @@ var themeColors = {
     fadeGrey: '#ededed',
 }
 
-//Switch Layouts
+//Switch Layouts (DEMO ONLY)
 function switchLayouts() {
     var url = window.location.pathname;
     var newUrl = '';
@@ -166,8 +176,6 @@ function initSidebar() {
 
     })
 
-
-
     //Close sidebar
     $('.panel-close').on('click', function () {
         $(this).closest('.sidebar-panel').removeClass('is-active');
@@ -175,13 +183,6 @@ function initSidebar() {
         $('.main-sidebar, .sidebar-brand').toggleClass('is-bordered');
         $('body').toggleClass('opened');
     })
-
-
-    /*$(window).on('resize', function(){
-        if (window.matchMedia('(min-width: 768px)').matches && window.matchMedia('(max-width: 1024px)').matches && window.matchMedia('(orientation: landscape)').matches) {
-            $('.panel-close').trigger('click');
-        }
-    })*/
 
     //Sidebar links default behaviour
     $('.main-sidebar ul li a').on('click', function () {
@@ -222,6 +223,7 @@ function initSidebar() {
     });
 }
 
+//Close sidebar
 function closeSidebarPanel() {
     $('.sidebar-panel.is-active').removeClass('is-active');
     $('.huro-hamburger .icon-box-toggle').removeClass('active');
@@ -924,6 +926,7 @@ function initDarkMode() {
     })
 }
 
+//Animated chackboxes
 function initAnimatedCheckboxes() {
     $('.animated-checkbox input').each(function () {
         var $this = $(this);
@@ -957,6 +960,7 @@ function initAnimatedCheckboxes() {
     });
 }
 
+//Init single textfilter
 function initTextFilter() {
     if ($('.textFilter-input').length) {
         (function () {
@@ -994,7 +998,7 @@ function initTextFilter() {
     }
 }
 
-
+//Init reusable search filter used in layout views
 function initCustomTextFilter() {
     if ($('.custom-text-filter').length) {
         $('.custom-text-filter').each(function () {
@@ -1186,7 +1190,7 @@ function initSearch() {
     });
 }
 
-
+//Customize Datatable
 function customizeDatatable() {
     $('.datatable-filter-cell').find('.input').wrap("<div class='control has-icon'></div>");
     var searchIcon = `

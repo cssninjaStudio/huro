@@ -55,7 +55,6 @@ To use this template, your computer needs:
 - [gulp-concat](https://www.npmjs.com/package/gulp-concat)
 - [gulp-html-replace](https://www.npmjs.com/package/gulp-html-replace)
 - [gulp-htmllint](https://www.npmjs.com/package/gulp-htmllint)
-- [gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin)
 - [gulp-pretty-html](https://www.npmjs.com/package/gulp-pretty-html)
 - [gulp-remove-code](https://www.npmjs.com/package/gulp-remove-code)
 - [gulp-remove-logging](https://www.npmjs.com/package/gulp-remove-logging)
