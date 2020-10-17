@@ -147,8 +147,9 @@ body {
             }
 
             h3 {
-                color: $muted-grey;
-                font-size: 1.4rem;
+                font-family: $font-alt;
+                color: $light-text;
+                font-size: 1.3rem;
             }
 
             .panel-close {
@@ -182,6 +183,10 @@ body {
                         font-weight: 500;
                         color: $primary;
                     }
+
+                    > a {
+                        font-weight: 600;
+                    }
                 }
 
                 &.divider {
@@ -199,12 +204,19 @@ body {
                     margin-bottom: 4px;
 
                     &.active {
-                        .collapse-wrap a {
-                            //color: darken($primary, 8%);
+                        .collapse-wrap > a {
+                            color: $dark-text;
+                            font-weight: 600;
 
                             svg {
                                 transform: rotate(90deg);
                             }
+                        }
+                    }
+
+                    &:hover {
+                        .collapse-wrap > a {
+                            color: $dark-text;
                         }
                     }
 
@@ -231,9 +243,11 @@ body {
                         min-height: 36px;
 
                         > a {
+                            font-family: $font-alt;
                             display: flex;
                             align-items: center;
-                            font-size: .95rem;
+                            font-size: .9rem;
+                            font-weight: 500;
                             color: $light-text;
 
                             svg {
@@ -243,6 +257,7 @@ body {
                                 width: 18px;
                                 margin-left: auto;
                                 transform: rotate(0);
+                                stroke: $light-text;
                                 transition: all .3s;
                             }
                         }
@@ -258,6 +273,8 @@ body {
 
                             &.is-active {
                                 .is-submenu {
+                                    font-weight: 500;
+
                                     svg {
                                         display: block;
                                     }
@@ -266,11 +283,13 @@ body {
 
                             .is-submenu {
                                 display: flex;
+                                font-weight: 400;
+                                font-family: $font;
                                 align-items: center;
                                 padding-left: 32px;
                                 font-size: .9rem;
 
-                                &.is-active, &:hover {
+                                &.is-active {
                                     font-weight: 500;
                                     color: $primary;
                                 }
@@ -309,7 +328,7 @@ body {
                 }
 
                 a {
-                    font-family: 'Roboto', sans-serif;
+                    font-family: $font;
                     display: block;
                     width: 100%;
                     padding: 0 20px;
@@ -319,6 +338,13 @@ body {
                     &:hover {
                         color: $dark-text;
                     }
+                }
+
+                > a {
+                    font-family: $font-alt;
+                    font-size: .9rem;
+                    font-weight: 500;
+                    color: $light-text;
                 }
             }
 
@@ -364,7 +390,6 @@ body {
     &.is-dark {
         .sidebar-panel {
             &.is-generic {
-
                 .subpanel-header {
                     .project-dropdown {
                         .dropdown-menu {
@@ -395,6 +420,20 @@ body {
                             &.is-active {
                                 a {
                                     color: $accent !important;
+                                }
+                            }
+
+                            &.has-children {
+                                &.active {
+                                    .collapse-wrap > a {
+                                        color: $smoke-white;
+                                    }
+                                }
+
+                                &:hover {
+                                    .collapse-wrap > a {
+                                        color: lighten($dark-dark-text, 14%);
+                                    }
                                 }
                             }
 

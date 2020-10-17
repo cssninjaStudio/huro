@@ -28,8 +28,9 @@
                 margin-left: 12px;
 
                 h3 {
-                    font-weight: 500;
-                    font-size: 1.2rem;
+                    font-family: $font-alt;
+                    font-weight: 600;
+                    font-size: 1.3rem;
                     color: $dark-text;
                 }
             }
@@ -51,17 +52,12 @@
 
                 font-family: $font;
 
-                > h4 {
-                    font-size: 1.1rem;
-                    font-weight: 400;
-                    color: $light-text;
+                > h4, .apexcharts-title-text {
+                    font-family: $font-alt;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    color: $dark-text;
                     margin-bottom: 12px;
-                }
-
-                .apexcharts-title-text {
-                    font-size: 1.1rem;
-                    font-weight: 400;
-                    color: $light-text;
                 }
 
                 .quick-stats {
@@ -120,7 +116,7 @@
                         text-align: center;
 
                         h4 {
-                            font-family: $font;
+                            font-family: $font-alt;
                             font-weight: 600;
                             font-size: 1.2rem;
                             color: $smoke-white;
@@ -130,6 +126,7 @@
 
                     .link {
                         display: block;
+                        font-family: $font-alt;
                         font-weight: 500;
                         margin-top: .5rem;
 
@@ -259,6 +256,7 @@ body {
                 }
 
                 .link {
+                    font-family: $font-alt;
                     display: block;
                     font-weight: 500;
                     margin-top: .5rem;
@@ -287,9 +285,10 @@ body {
                 margin-bottom: 20px;
 
                 h3 {
+                    font-family: $font-alt;
+                    font-size: 1rem;
+                    font-weight: 600;
                     color: $dark-text;
-                    font-size: 1.1rem;
-                    font-weight: 500;
                     margin-bottom: 0;
                 }
             }
@@ -352,6 +351,7 @@ body {
 
                 .welcome-title {
                     h3 {
+                        font-family: $font-alt;
                         font-weight: 700;
                         font-size: 2rem;
                         color: $dark-text;
@@ -375,7 +375,8 @@ body {
                             }
 
                             &:nth-child(2) {
-                                font-size: 1.2rem;
+                                font-family: $font-alt;
+                                font-size: 1.1rem;
                                 font-weight: 600;
                                 color: $dark-text;
                             }
@@ -429,8 +430,9 @@ body {
                         font-family: $font;
 
                         &:first-child {
+                            font-family: $font-alt;
+                            font-weight: 600;
                             color: $dark-text;
-                            font-weight: 500;
                         }
 
                         &:nth-child(2) {

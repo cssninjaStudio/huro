@@ -224,6 +224,8 @@
             animation: fadeInLeft .5s;
 
             h2 {
+                font-family: $font-alt;
+                font-weight: 400;
                 font-size: 2rem;
                 color: $primary;
             }
@@ -691,14 +693,14 @@
     }
 
     .signup-title {
-        font-family: $font;
+        font-family: $font-alt;
         color: $dark-text;
     }
 
     .signup-subtitle {
         font-family: $font;
         color: $muted-grey;
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .hero {
@@ -1016,8 +1018,17 @@
     padding: 80px 60px 10px 60px;
 
     .title, .subtitle {
-        font-family: $font;
         text-align: center;
+    }
+
+    .title {
+        font-family: $font-alt;
+        font-size: 1.4rem;
+    }
+
+    .subtitle {
+        font-family: $font;
+        font-size: 1rem;
     }
 
     .picture-selector, .skill-picture-selector {

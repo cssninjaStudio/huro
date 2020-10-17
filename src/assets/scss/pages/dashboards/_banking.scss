@@ -290,9 +290,10 @@
                 font-family: $font;
 
                 h3 {
-                    font-size: 1.1rem;
-                    font-weight: 400;
-                    color: $light-text;
+                    font-family: $font-alt;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    color: $dark-text;
                 }
 
                 .title-meta {
@@ -391,8 +392,8 @@
                         margin-bottom: 20px;
 
                         h3 {
-                            font-family: $font;
-                            font-size: 1.2rem;
+                            font-family: $font-alt;
+                            font-size: 1.1rem;
                             font-weight: 600;
                             color: $dark-text;
                         }
@@ -849,10 +850,6 @@ body {
                     }
                 }
             }
-
-            .right {
-                .h-action {}
-            }
         }
 
         .dashboard-tiles {
@@ -913,7 +910,7 @@ body {
                 margin-bottom: 30px;
 
                 .subheading {
-                    font-family: $font;
+                    font-family: $font-alt;
                     font-weight: 600;
                     font-size: .8rem;
                     text-transform: uppercase;

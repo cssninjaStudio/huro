@@ -247,6 +247,7 @@ function concatPlugins() {
     nodepath + 'jquery/dist/jquery.min.js',
     nodepath + 'd3/dist/d3.min.js',
     nodepath + 'feather-icons/dist/feather.min.js',
+    nodepath + 'lozad/dist/lozad.min.js',
     nodepath + 'slick-carousel/slick/slick.min.js',
     nodepath + 'webui-popover/dist/jquery.webui-popover.min.js',
     nodepath + 'easy-autocomplete/dist/jquery.easy-autocomplete.min.js',

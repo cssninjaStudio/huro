@@ -374,7 +374,8 @@ $(document).ready(function () {
                     offsetX: 5,
                     style: {
                         fontSize: '24px',
-                        cssClass: 'apexcharts-yaxis-title'
+                        cssClass: 'apexcharts-yaxis-title',
+                        color: themeColors.lightText
                     }
                 },
                 subtitle: {
@@ -427,7 +428,8 @@ $(document).ready(function () {
                     offsetX: 5,
                     style: {
                         fontSize: '24px',
-                        cssClass: 'apexcharts-yaxis-title'
+                        cssClass: 'apexcharts-yaxis-title',
+                        color: themeColors.lightText
                     }
                 },
                 subtitle: {
@@ -480,7 +482,8 @@ $(document).ready(function () {
                     offsetX: 5,
                     style: {
                         fontSize: '24px',
-                        cssClass: 'apexcharts-yaxis-title'
+                        cssClass: 'apexcharts-yaxis-title',
+                        color: themeColors.lightText
                     }
                 },
                 subtitle: {
@@ -533,7 +536,9 @@ $(document).ready(function () {
                     offsetX: 5,
                     style: {
                         fontSize: '24px',
-                        cssClass: 'apexcharts-yaxis-title'
+                        fontWeight: '500',
+                        cssClass: 'apexcharts-yaxis-title',
+                        color: themeColors.lightText
                     }
                 },
                 subtitle: {

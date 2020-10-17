@@ -33,9 +33,9 @@ Subpages UI Elements
 
             .inner-wrap {
                 > h3 {
-                    font-family: $font;
+                    font-family: $font-alt;
                     font-size: 1.1rem;
-                    font-weight: 500;
+                    font-weight: 600;
                     color: $dark-text;
                     margin-bottom: 10px;
                 }
@@ -107,13 +107,15 @@ Subpages UI Elements
                                 font-family: $font;
 
                                 &:first-child {
-                                    font-weight: 500;
+                                    font-family: $font-alt;
+                                    font-size: .95rem;
+                                    font-weight: 600;
                                     color: $dark-text;
                                 }
 
                                 &:nth-child(2) {
                                     color: $light-text;
-                                    font-size: .9rem;
+                                    font-size: .85rem;
                                 }
                             }
                         }
@@ -149,8 +151,6 @@ Subpages UI Elements
             margin-left: auto;
 
             .plan-details {
-                //max-width: 390px;
-
                 > h3 {
                     font-family: $font;
                     font-size: 1.1rem;
@@ -189,6 +189,7 @@ Subpages UI Elements
                                     font-size: .9rem;
                                     font-weight: 500;
                                     color: $primary;
+                                    font-family: $font-alt;
 
                                     &:first-child {
                                         color: $dark-text;
@@ -196,6 +197,7 @@ Subpages UI Elements
 
                                     b {
                                         font-size: 2rem;
+                                        font-family: $font;
                                     }
                                 }
                             }
@@ -211,7 +213,8 @@ Subpages UI Elements
                     .plan-summary {
                         .plan-features {
                             ul {
-                                font-family: $font;
+                                font-family: $font-alt;
+                                font-size: .95rem;
                                 color: $dark-text;
                             }
                         }
@@ -240,9 +243,9 @@ Subpages UI Elements
                     margin-bottom: 16px;
 
                     h3 {
-                        font-family: $font;
-                        font-size: 1.1rem;
-                        font-weight: 500;
+                        font-family: $font-alt;
+                        font-size: 1rem;
+                        font-weight: 600;
                         color: $dark-text;
                     }
 
@@ -318,9 +321,9 @@ Subpages UI Elements
                     justify-content: space-between;
 
                     h3 {
-                        font-family: $font;
-                        font-size: 1.1rem;
-                        font-weight: 500;
+                        font-family: $font-alt;
+                        font-size: 1rem;
+                        font-weight: 600;
                         color: $dark-text;
                     }
 
@@ -894,7 +897,8 @@ body {
                     }
 
                     h3 {
-                        font-weight: 500;
+                        font-family: $font-alt;
+                        font-weight: 600;
                         max-width: 320px;
                         margin: 0 auto 16px auto;
 
@@ -913,10 +917,12 @@ body {
                         box-shadow: $light-box-shadow;
 
                         h4 {
+                            font-family: $font-alt;
                             font-size: .7rem;
                             font-weight: 500;
                             color: $dark-text;
                             text-transform: uppercase;
+                            margin-bottom: 6px;
                         }
 
                         p {
@@ -992,7 +998,8 @@ body {
                         margin-bottom: 16px;
 
                         h3 {
-                            font-weight: 500;
+                            font-family: $font-alt;
+                            font-weight: 600;
                             color: $dark-text;
                         }
 

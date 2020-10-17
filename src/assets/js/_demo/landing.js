@@ -8,6 +8,15 @@ Landing page js
 
 $(document).ready(function(){
 
+    const el = document.querySelectorAll('[data-lazy-load]');
+    const observer = lozad(el, {
+        loaded: function(el) {
+            // Custom implementation on a loaded element
+            el.parentNode.classList.add('loaded');
+        }
+    });
+    observer.observe();
+
     $(window).on('scroll', function () {
         var height = $(window).scrollTop();
         if (height > 60) {

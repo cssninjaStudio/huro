@@ -55,6 +55,7 @@
 
 .input {
     height: 38px;
+
     //padding-bottom: 8px;
     transition: all .3s;
 
@@ -112,7 +113,6 @@
         }
     }
 }
-
 
 /* ==========================================================================
 3. Inputs and textareas dark-mode
@@ -252,7 +252,12 @@ body {
         margin-bottom: 20px;
 
         h4 {
-            font-family: $font;
+            font-family: $font-alt;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: .9rem;
         }
     }
 
@@ -316,6 +321,13 @@ select {
 
             .select {
                 height: 38px;
+
+                &.currency-select {
+                    select {
+                        font-family: $font;
+                        font-weight: 600;
+                    }
+                }
 
                 select {
                     height: 38px;
@@ -599,14 +611,12 @@ select {
     }
 }
 
-
 /* ==========================================================================
 5. Fieldset | Field | Controls Dark mode
 ========================================================================== */
 
 body {
     &.is-dark {
-
         .form-fieldset {
             .fieldset-heading {
                 h4 {
@@ -677,7 +687,6 @@ body {
             border-color: lighten($dark-sidebar, 4%) !important;
 
             .search-result {
-
                 &:hover {
                     background: lighten($dark-sidebar, 2%);
                 }
@@ -977,21 +986,21 @@ body {
 
                 .entry-text {
                     color: $dark-text;
-                    line-height: 1.2;
+                    line-height: 1.3;
 
                     span {
                         font-family: $font;
                         display: block;
 
                         &:first-child {
-                            font-family: $font;
+                            font-family: $font-alt;
                             font-size: .9rem;
                             font-weight: 500;
                             color: $dark-text;
                         }
 
                         &:nth-child(2) {
-                            font-size: .85rem;
+                            font-size: .9rem;
                             color: $light-text;
                         }
                     }
@@ -1057,7 +1066,6 @@ body {
         }
     }
 }
-
 
 /* ==========================================================================
 9. Switch
@@ -1582,7 +1590,6 @@ body {
     }
 }
 
-
 /* ==========================================================================
 11. File inputs
 ========================================================================== */
@@ -1838,4 +1845,3 @@ body {
         }
     }
 }
-

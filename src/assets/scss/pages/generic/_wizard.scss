@@ -60,8 +60,9 @@ Wizard Styles
             .title-wrap {
                 position: relative;
                 display: block;
-                font-size: 1.3rem;
-                font-weight: 500;
+                font-family: $font-alt;
+                font-size: 1.2rem;
+                font-weight: 600;
 
                 span {
                     font-weight: 400;
@@ -177,6 +178,13 @@ Wizard Styles
                 font-size: .9rem;
                 padding: 8px 12px;
                 color: $light-text;
+
+                p {
+                    font-family: $font-alt;
+                    font-weight: 600;
+                    font-size: .95rem;
+                    color: $dark-text;
+                }
 
                 svg {
                     margin-right: 8px;
@@ -329,14 +337,15 @@ body {
             text-align: center;
 
             h2 {
-                font-family: $font;
-                font-size: 1.4rem;
-                font-weight: 500;
+                font-family: $font-alt;
+                font-size: 1.3rem;
+                font-weight: 600;
                 color: $dark-text;
                 text-align: center;
             }
 
             p {
+                font-family: $font;
                 font-size: 1.2rem;
             }
         }
@@ -380,14 +389,13 @@ body {
                     max-width: 100%;
                     margin: 0 auto;
                     border-radius: 14px;
-
-                    //max-height: 170px;
                
                 }
 
                 h3 {
-                    font-family: $font;
-                    font-weight: 400;
+                    font-family: $font-alt;
+                    font-weight: 600;
+                    font-size: 1.1rem;
                     color: $dark-text;
                     text-align: center;
                     margin: 16px 0 0 0;

@@ -7,6 +7,11 @@ Utility Pages
 /*
     1. Confirm Account
     2. Promotion Page
+    3. Status Page
+    4. Invoice
+    5. Invoice Dark mode
+    6. Error page
+    7. Media Queries
 */
 
 /* ==========================================================================
@@ -44,7 +49,9 @@ Utility Pages
                 }
 
                 h3 {
-                    font-weight: 500;
+                    font-size: 1.1rem;
+                    font-family: $font-alt;
+                    font-weight: 600;
                     max-width: 320px;
                     margin: 0 auto 8px auto;
 
@@ -136,7 +143,8 @@ Utility Pages
                     margin-bottom: 16px;
 
                     h3 {
-                        font-weight: 500;
+                        font-family: $font-alt;
+                        font-weight: 600;
                         color: $dark-text;
                     }
 
@@ -228,8 +236,8 @@ Utility Pages
 
             .title {
                 display: inline-block;
-                font-family: $font;
-                font-weight: 500;
+                font-family: $font-alt;
+                font-weight: 600;
                 color: $dark-text;
             }
 
@@ -249,6 +257,7 @@ Utility Pages
             .title {
                 display: inline-block;
                 font-size: 14px;
+                font-family: $font-alt;
                 margin-bottom: 0;
                 font-weight: 500;
                 color: $light-text;
@@ -302,15 +311,15 @@ Utility Pages
             }
 
             .label {
-                font-family: $font;
-                font-size: 16px;
-                font-weight: bold;
+                font-family: $font-alt;
+                font-size: .95rem;
+                font-weight: 600;
                 margin-bottom: 0;
-                line-height: 1;
+                line-height: 1.2;
             }
 
             p {
-                font-size: .95rem;
+                font-size: .9rem;
                 font-family: $font;
             }
 
@@ -352,7 +361,8 @@ Utility Pages
 
         .username {
             margin-left: 10px;
-            font-family: $font;
+            font-family: $font-alt;
+            font-size: .95rem;
             font-weight: 600;
             color: $dark-text;
         }
@@ -436,7 +446,7 @@ Utility Pages
 
         .left {
             h3 {
-                font-family: $font;
+                font-family: $font-alt;
                 font-size: 1.2rem;
                 font-weight: 600;
                 color: $dark-text;
@@ -492,8 +502,9 @@ Utility Pages
                         font-family: $font;
 
                         h3 {
-                            font-size: 1.2rem;
-                            font-weight: 500;
+                            font-family: $font-alt;
+                            font-size: 1.1rem;
+                            font-weight: 600;
                             line-height: 1;
                         }
 
@@ -521,8 +532,9 @@ Utility Pages
                         }
 
                         h3 {
+                            font-family: $font-alt;
                             font-size: 1.1rem;
-                            font-weight: 500;
+                            font-weight: 600;
                             line-height: 1;
                         }
 
@@ -648,7 +660,7 @@ body {
 }
 
 /* ==========================================================================
-Error page
+6. Error page
 ========================================================================== */
 
 .error-container {
@@ -687,11 +699,11 @@ Error page
             }
 
             h3 {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
+                font-family: $font-alt;
                 color: $dark-text;
                 font-weight: 600;
                 margin-top: 10px;
-                font-family: $font;
             }
 
             p {
@@ -711,7 +723,7 @@ Error page
 }
 
 /* ==========================================================================
-6. Media Queries
+7. Media Queries
 ========================================================================== */
 
 @media only screen and (max-width: 767px) {

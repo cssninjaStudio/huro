@@ -340,6 +340,9 @@ body {
                     }
 
                     p {
+                        font-family: $font-alt;
+                        font-size: .95rem;
+                        font-weight: 500;
                         color: $dark-text;
                     }
                 }

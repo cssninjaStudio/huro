@@ -24,8 +24,9 @@
         border-bottom: 1px solid #DDE0E7;
         color: $dark-text;
         cursor: pointer;
-        font-weight: 500;
-        font-family: $font;
+        font-weight: 600;
+        font-size: .95rem;
+        font-family: $font-alt;
         padding: 1.5rem;
 
         &:hover {
@@ -143,8 +144,9 @@ body {
         cursor: pointer;
 
         h3 {
-            font-family: $font;
-            font-weight: 500;
+            font-family: $font-alt;
+            font-size: .9rem;
+            font-weight: 600;
             color: $dark-text;
         }
 
@@ -275,10 +277,10 @@ $text-offset: $a-height - 90;
                     }
 
                     h2 {
-                        font-family: $font;
+                        font-family: $font-alt;
                         font-weight: 300;
                         text-overflow: clip;
-                        font-size: 24px;
+                        font-size: 1.4rem;
                         text-transform: uppercase;
                         margin-bottom: 0;
                         top: $text-offset;

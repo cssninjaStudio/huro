@@ -45,8 +45,9 @@ Inbox Layouts
                 .inbox-title {
                     display: flex;
                     align-items: center;
-                    font-family: $font;
+                    font-family: $font-alt;
                     font-size: 1.4rem;
+                    font-weight: 600;
                     color: $dark-text;
                     width: 100%;
                     max-width: 100%;
@@ -92,6 +93,7 @@ Inbox Layouts
                         border-color: $primary;
                         color: $smoke-white;
                         font-weight: 500;
+                        font-family: $font;
 
                         &:hover {
                             opacity: .8;
@@ -105,6 +107,7 @@ Inbox Layouts
                         ul {
                             li {
                                 a {
+                                    font-family: $font;
                                     display: flex;
                                     align-items: center;
                                     padding: 8px 12px;
@@ -178,6 +181,7 @@ Inbox Layouts
                         padding: 0 20px;
 
                         h3 {
+                            font-family: $font-alt;
                             font-weight: 600;
                             color: $dark-text;
                         }
@@ -270,11 +274,13 @@ Inbox Layouts
                                     font-size: .9rem;
 
                                     &:first-child {
-                                        font-weight: 500;
+                                        font-family: $font-alt;
+                                        font-weight: 600;
                                         color: $dark-text;
                                     }
 
                                     &:nth-child(2) {
+                                        font-family: $font;
                                         color: $muted-grey;
                                     }
                                 }
@@ -363,7 +369,7 @@ Inbox Layouts
 
                     &.is-unread {
                         b {
-                            font-weight: bold;
+                            font-weight: 600;
                         }
                     }
 
@@ -378,15 +384,20 @@ Inbox Layouts
                             display: block;
 
                             &.name {
+                                font-family: $font-alt;
                                 font-weight: 500;
                                 color: $dark-text;
                             }
 
                             &.email {
-                                color: $muted-grey;
+                                font-family: $font;
+                                font-size: .9rem;
+                                color: $light-text;
                             }
 
                             &.subject {
+                                font-family: $font;
+                                font-size: .95rem;
                                 white-space: nowrap;
                                 overflow: hidden;
                                 max-width: 280px;
@@ -464,13 +475,15 @@ Inbox Layouts
                     }
 
                     .message-title {
+                        font-family: $font-alt;
                         font-weight: 600;
                         font-size: 1.2rem;
                         color: $dark-text;
                     }
 
                     .sender-email {
-                        color: $muted-grey;
+                        font-family: $font;
+                        color: $light-text;
                         font-size: .95rem;
                     }
                 }
@@ -494,6 +507,8 @@ Inbox Layouts
                     }
 
                     span {
+                        font-family: $font;
+                        font-weight: 600;
                         display: block;
                         margin-left: 4px;
                     }
@@ -527,13 +542,16 @@ Inbox Layouts
                                 display: block;
 
                                 &:first-child {
-                                    font-weight: 500;
+                                    font-family: $font-alt;
+                                    font-size: .95rem;
+                                    font-weight: 600;
                                     color: $dark-text;
                                 }
 
                                 &:nth-child(2) {
+                                    font-family: $font;
                                     font-size: .9rem;
-                                    color: $muted-grey;
+                                    color: $light-text;
                                 }
                             }
                         }
@@ -676,11 +694,13 @@ Inbox Layouts
 
                                     &:first-child {
                                         color: $dark-text;
-                                        font-weight: 500;
+                                        font-family: $font-alt;
+                                        font-weight: 600;
                                     }
 
                                     &:nth-child(2) {
-                                        color: $muted-grey;
+                                        font-family: $font;
+                                        color: $light-text;
                                     }
                                 }
                             }
@@ -1039,6 +1059,7 @@ body {
             display: flex;
             align-items: center;
             font-size: 1rem;
+            font-family: $font;
             margin-bottom: 4px;
             padding-top: 8px;
             padding-bottom: 8px;

@@ -104,3 +104,35 @@ body {
         }
     }
 }
+
+
+
+$grey-lighter: hsl(0, 0%, 86%) !default;
+$radius-rounded: 290486px !default;
+
+@keyframes spinAroundLoader {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+@mixin loader {
+    animation: spinAroundLoader 500ms infinite linear;
+    border: 2px solid $grey-lighter;
+    border-radius: $radius-rounded;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    content: "";
+    display: block;
+    height: 1em;
+    position: relative;
+    width: 1em;
+}
+
+%loader {
+    @include loader;
+}

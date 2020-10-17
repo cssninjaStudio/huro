@@ -78,7 +78,8 @@
 
             h3 {
                 color: $muted-grey;
-                font-size: 1.3rem;
+                font-family: $font-alt;
+                font-size: 1.2rem;
             }
 
             > img {
@@ -391,10 +392,13 @@ body {
 
                                 &:first-child {
                                     color: $dark-text;
-                                    font-weight: 500;
+                                    font-family: $font-alt;
+                                    font-size: .9rem;
+                                    font-weight: 600;
                                 }
 
                                 &:nth-child(2) {
+                                    font-family: $font;
                                     color: $light-text;
                                     font-size: .9rem;
                                 }
@@ -444,6 +448,7 @@ body {
                             justify-content: space-between;
 
                             span {
+                                font-family: $font;
                                 color: $light-text;
                             }
                         }
@@ -508,6 +513,11 @@ body {
                         .timeline-content {
                             margin-left: 34px;
                             line-height: 1.2;
+
+                            p {
+                                font-size: .95rem;
+                                font-family: $font-alt;
+                            }
 
                             span {
                                 font-size: .85rem;
@@ -614,7 +624,7 @@ body {
 
                     h3 {
                         text-transform: uppercase;
-                        font-family: $font;
+                        font-family: $font-alt;
                         font-size: .8rem;
                         font-weight: 600;
                         color: $primary;
@@ -622,8 +632,9 @@ body {
                     }
 
                     h4 {
-                        font-family: $font;
-                        font-size: .95rem;
+                        font-family: $font-alt;
+                        font-size: 1rem;
+                        font-weight: 600;
                         color: $dark-text;
                         margin-bottom: 5px;
                     }
@@ -763,7 +774,7 @@ body {
                                     display: block;
 
                                     &:first-child {
-                                        font-family: $font;
+                                        font-family: $font-alt;
                                         font-size: .9rem;
                                         font-weight: 600;
                                         color: $dark-text;

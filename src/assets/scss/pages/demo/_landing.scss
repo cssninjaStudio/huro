@@ -174,8 +174,8 @@ $landing-dark-2: #191c2b;
 
                 .nav-link {
                     position: relative;
-                    font-family: $font;
-                    font-size: 14px;
+                    font-family: $font-alt;
+                    font-size: .9rem;
                     color: $light-text;
                     text-transform: capitalize;
 
@@ -415,7 +415,7 @@ $landing-dark-2: #191c2b;
     .hero {
         &.rounded-hero {
             position: relative;
-            z-index: 3;
+            z-index: 10;
 
             &.is-active {
                 .absolute-header {
@@ -615,10 +615,13 @@ $landing-dark-2: #191c2b;
             i {
                 font-size: 2.2rem;
                 color: $primary;
+                margin-bottom: 6px;
             }
 
             h3 {
-                font-weight: 500;
+                font-family: $font-alt;
+                font-weight: 600;
+                font-size: .95rem;
                 color: $dark-text;
             }
 
@@ -678,15 +681,16 @@ $landing-dark-2: #191c2b;
     }
 
     .section-title {
-        font-family: $font;
         padding: 40px 0;
 
         h2 {
+            font-family: $font-alt;
             margin-bottom: 6px;
             font-weight: 300;
         }
 
         h4 {
+            font-family: $font;
             color: $light-text;
             font-size: 1.4rem;
             font-weight: 300;
@@ -758,14 +762,14 @@ $landing-dark-2: #191c2b;
     }
 
     .head-text {
-        font-family: $font;
-
         h3 {
+            font-family: $font-alt;
             font-size: 1.8rem;
             color: $dark-text;
         }
 
         p {
+            font-family: $font;
             font-size: 1.1rem;
             color: $light-text;
         }
@@ -845,17 +849,18 @@ $landing-dark-2: #191c2b;
             }
 
             .title-meta {
-                font-family: $font;
                 margin-left: 12px;
                 line-height: 1.2;
 
                 h3 {
+                    font-family: $font-alt;
                     font-weight: 500;
                     font-size: 1.3rem;
                     color: $dark-text;
                 }
 
                 p {
+                    font-family: $font;
                     font-size: 1.1rem;
                     color: $light-text;
                 }
@@ -868,9 +873,8 @@ $landing-dark-2: #191c2b;
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-
-    //box-shadow: $light-box-shadow;
     border: 1px solid darken($fade-grey, 5%);
+    min-height: 205px;
 
     &:hover {
         .circle-overlay {
@@ -888,6 +892,24 @@ $landing-dark-2: #191c2b;
             opacity: 1;
             transform: translateY(0);
             transition-delay: 0 !important;
+        }
+    }
+
+    &:after {
+        @extend %loader;
+
+        position: absolute !important;
+        top: 40%;
+        left: 42%;
+        height: 3.5rem;
+        width: 3.5rem;
+        transform: translate(-50%, -50%);
+        z-index: 4;
+    }
+
+    &.loaded {
+        &:after {
+            display: none !important;
         }
     }
 
@@ -990,15 +1012,15 @@ $landing-dark-2: #191c2b;
         }
 
         .flex-meta {
-            font-family: $font;
-
             h4 {
+                font-family: $font-alt;
                 font-size: 1.2rem;
                 font-weight: 500;
                 margin-bottom: 4px;
             }
 
             p {
+                font-family: $font;
                 line-height: 1.4;
             }
         }
@@ -1196,7 +1218,7 @@ $landing-dark-2: #191c2b;
             padding-top: 20px;
 
             .column-header {
-                font-family: $font;
+                font-family: $font-alt;
                 text-transform: uppercase;
                 color: $dark-text;
                 font-size: 1rem;
@@ -1208,6 +1230,7 @@ $landing-dark-2: #191c2b;
                 padding-bottom: 10px;
 
                 a {
+                    font-family: $font;
                     color: $light-text;
 
                     &:hover {
@@ -1246,6 +1269,7 @@ $landing-dark-2: #191c2b;
     }
 
     .footer-copyright {
+        font-family: $font;
         color: $light-text;
         padding: 4rem 0 2rem 0;
 
@@ -1546,9 +1570,9 @@ $landing-dark-2: #191c2b;
         text-align: center;
 
         h3 {
-            font-family: $font;
+            font-family: $font-alt;
             font-weight: 300;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             color: $light-text;
             margin-bottom: 20px;
         }
@@ -1718,6 +1742,10 @@ $landing-dark-2: #191c2b;
         }
     }
 
+    .huro-demo-wrapper {
+        min-height: 184px;
+    }
+
     .side-feature {
         margin-bottom: 60px !important;
     }
@@ -1852,6 +1880,10 @@ $landing-dark-2: #191c2b;
             .demo-section {
                 .columns {
                     display: flex;
+
+                    .column.is-4 {
+                        min-width: 50% !important;
+                    }
                 }
             }
         }
@@ -1906,6 +1938,10 @@ $landing-dark-2: #191c2b;
             width: calc(100% - 40px);
             margin: 0 20px;
         }
+    }
+
+    .huro-demo-wrapper {
+        min-height: 174px;
     }
 
     .huro-footer {

@@ -12,6 +12,7 @@
 .content {
     ol, ul {
         color: $dark-text;
+        font-family: $font;
 
         &.is-light {
             color: $light-text;
@@ -45,6 +46,7 @@
     table {
         th {
             color: $dark-text;
+            font-family: $font-alt;
         }
 
         td {

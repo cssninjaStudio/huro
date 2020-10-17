@@ -280,7 +280,8 @@ body {
             box-shadow: none;
 
             .card-header-title {
-                font-family: $font;
+                font-family: $font-alt;
+                font-weight: 600;
             }
         }
 

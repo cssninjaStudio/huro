@@ -269,14 +269,15 @@
 
         span {
             display: block;
-            font-family: $font;
+            font-family: $font-alt;
 
             &:first-child {
                 color: $dark-text;
-                font-weight: 500;
+                font-weight: 600;
             }
 
             &:nth-child(2) {
+                font-size: .9rem;
                 color: $light-text;
             }
         }
@@ -299,8 +300,11 @@
 }
 
 .helper-table {
-    .category {
+    .category, th {
         width: 25%;
+        font-family: $font-alt;
+        font-weight: 600;
+        font-size: 1.05rem;
     }
 
     .name {
@@ -309,6 +313,16 @@
 
     .description {
         width: 50%;
+    }
+}
+
+.demo-table {
+    .table {
+        th {
+            font-family: $font-alt;
+            font-weight: 600;
+            font-size: .9rem;
+        }
     }
 }
 

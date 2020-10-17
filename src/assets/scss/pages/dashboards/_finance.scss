@@ -25,8 +25,9 @@
                 justify-content: space-between;
 
                 h3 {
+                    font-family: $font-alt;
                     color: $dark-text;
-                    font-weight: 500;
+                    font-weight: 600;
                 }
             }
 
@@ -74,9 +75,10 @@
                 margin-bottom: 20px;
 
                 h3 {
+                    font-family: $font-alt;
+                    font-size: 1rem;
+                    font-weight: 600;
                     color: $dark-text;
-                    font-size: 1.1rem;
-                    font-weight: 500;
                 }
             }
 
@@ -271,10 +273,14 @@
                 line-height: 1.2;
 
                 .stock-name {
+                    font-family: $font-alt;
+                    font-weight: 600;
+                    font-size: .9rem;
                     color: $dark-text;
                 }
 
                 .stock-fullname {
+                    font-family: $font;
                     color: $light-text;
                 }
             }
@@ -344,6 +350,10 @@
                             }
                         }
                     }
+
+                    .asset-name {
+                        color: $primary;
+                    }
                 }
 
                 .asset {
@@ -383,7 +393,11 @@
                 }
 
                 .asset-name {
-                    color: $light-text;
+                    color: $dark-text;
+                    font-size: .9rem;
+                    font-family: $font-alt;
+                    font-weight: 600;
+                    transition: color .3s;
                 }
             }
         }
@@ -395,10 +409,13 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                margin-bottom: 1rem;
+                margin-bottom: 20px;
 
-                .subtitle {
-                    font-weight: 500;
+                h3 {
+                    font-family: $font-alt;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    color: $dark-text;
                 }
             }
 
@@ -453,6 +470,10 @@ body {
                                     }
                                 }
                             }
+
+                            .asset-name {
+                                color: $accent;
+                            }
                         }
 
                         .asset {
@@ -463,12 +484,16 @@ body {
                                 }
                             }
                         }
+
+                        .asset-name {
+                            color: $dark-dark-text;
+                        }
                     }
                 }
 
                 .stock-card {
                     .action-bar {
-                        .subtitle {
+                        h3 {
                             color: $dark-dark-text;
                         }
                     }
@@ -494,8 +519,9 @@ body {
                 margin-left: 12px;
 
                 h3 {
-                    font-weight: 500;
-                    font-size: 1.2rem;
+                    font-family: $font-alt;
+                    font-weight: 600;
+                    font-size: 1.3rem;
                     color: $dark-text;
                 }
             }
@@ -537,9 +563,10 @@ body {
                 margin-bottom: 20px;
 
                 h3 {
+                    font-family: $font-alt;
+                    font-size: 1rem;
+                    font-weight: 600;
                     color: $dark-text;
-                    font-size: 1.1rem;
-                    font-weight: 500;
                 }
             }
 
@@ -583,9 +610,10 @@ body {
                     font-family: $font;
 
                     h4 {
+                        font-family: $font-alt;
+                        font-size: 1rem;
+                        font-weight: 600;
                         color: $dark-text;
-                        font-size: 1.1rem;
-                        font-weight: 500;
                     }
 
                     span {

@@ -52,8 +52,8 @@ Search UI Elements
             margin-bottom: 16px;
 
             h4 {
-                font-family: $font;
-                font-weight: 500;
+                font-family: $font-alt;
+                font-weight: 600;
                 color: $dark-text;
                 margin-bottom: 10px;
             }
@@ -107,8 +107,8 @@ Search UI Elements
                 }
 
                 h4 {
-                    font-family: $font;
-                    font-size: .9rem;
+                    font-family: $font-alt;
+                    font-size: .8rem;
                     font-weight: 500;
                     text-transform: uppercase;
                     color: $light-text;

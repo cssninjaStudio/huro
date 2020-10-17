@@ -379,13 +379,15 @@ body {
 
                         .username, .skill-name {
                             display: block;
+                            font-family: $font-alt;
+                            line-height: 1.2;
                             font-size: .9rem;
-                            font-weight: 500;
+                            font-weight: 600;
                         }
 
                         .location {
                             font-size: .75rem;
-                            color: $muted-grey;
+                            color: $light-text;
                         }
                     }
 
@@ -397,7 +399,7 @@ body {
 
                     &.bio, &.skill-description {
                         font-size: .8rem;
-                        color: $muted-grey;
+                        color: $light-text;
                     }
                 }
             }
@@ -527,9 +529,9 @@ body {
                 }
     
                 h4 {
-                    font-family: $font;
-                    font-weight: 500;
-                    font-size: .95rem;
+                    font-family: $font-alt;
+                    font-weight: 600;
+                    font-size: .9rem;
                     color: $dark;
                     margin-bottom: 0;
                 }
@@ -551,30 +553,3 @@ body {
         }
     }
 }
-
-
-/*.webui-popover-is-simple-popover {
-    max-height: 26px !important;
-
-    .webui-popover-content {
-        position: relative;
-        top: 2px;
-        padding: 4px 16px !important;
-        font-weight: 500;
-    }
-}*/
-
-/* ==========================================================================
-6. GG Tooltip
-========================================================================== */
-
-/*.ggtooltip {
-    &.in {
-        opacity: 1 !important;
-    }
-
-    .ggtooltip-inner {
-        box-shadow: none !important;
-        padding: 4px 10px 6px 10px !important;
-    }
-}*/

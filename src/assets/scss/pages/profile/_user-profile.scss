@@ -142,7 +142,7 @@
                     margin-bottom: 12px;
 
                     h4 {
-                        font-family: $font;
+                        font-family: $font-alt;
                         font-weight: 600;
                         font-size: .8rem;
                         text-transform: uppercase;
@@ -205,9 +205,10 @@
                                     display: block;
 
                                     &:first-child {
-                                        font-weight: 500;
+                                        font-family: $font-alt;
+                                        font-weight: 600;
                                         color: $dark-text;
-                                        font-size: .9rem;
+                                        font-size: .85rem;
                                     }
 
                                     &:nth-child(2), &:nth-child(3) {
@@ -220,6 +221,10 @@
                                             font-size: 4px;
                                             margin: 0 6px;
                                         }
+                                    }
+
+                                    &:nth-child(3) {
+                                        color: $primary;
                                     }
 
                                     span {
@@ -273,7 +278,8 @@
                                     font-family: $font;
 
                                     &:first-child {
-                                        font-weight: 500;
+                                        font-family: $font-alt;
+                                        font-weight: 600;
                                         color: $dark-text;
                                         font-size: .9rem;
                                     }
@@ -360,9 +366,10 @@
                                     display: block;
 
                                     &:first-child {
-                                        font-weight: 500;
+                                        font-family: $font-alt;
+                                        font-weight: 600;
                                         color: $dark-text;
-                                        font-size: 1rem;
+                                        font-size: .9rem;
                                     }
 
                                     &:nth-child(2) {
@@ -400,12 +407,13 @@
 
                             > .h-avatar {
                                 display: block;
-                                margin: 0 auto 4px auto;
+                                margin: 0 auto 8px auto;
                             }
 
                             h3 {
-                                font-size: 1.1rem;
-                                font-weight: 500;
+                                font-size: 1rem;
+                                font-family: $font-alt;
+                                font-weight: 600;
                                 color: $dark-text;
                                 margin-bottom: 8px;
                             }
@@ -420,9 +428,10 @@
                                     display: block;
 
                                     &:first-child {
-                                        font-weight: 500;
+                                        font-weight: 600;
+                                        font-family: $font-alt;
                                         color: $dark-text;
-                                        font-size: 1rem;
+                                        font-size: .95rem;
                                         color: $primary;
                                     }
 
@@ -437,6 +446,8 @@
 
                     .network-notifications {
                         h3 {
+                            font-family: $font-alt;
+                            font-size: .9rem;
                             margin-bottom: 6px;
                         }
 
@@ -489,7 +500,8 @@
                                     font-family: $font;
 
                                     &:first-child {
-                                        font-weight: 500;
+                                        font-family: $font-alt;
+                                        font-weight: 600;
                                         color: $dark-text;
                                         font-size: .9rem;
                                     }
@@ -527,7 +539,8 @@
                                     font-family: $font;
 
                                     &:first-child {
-                                        font-weight: 500;
+                                        font-family: $font-alt;
+                                        font-weight: 600;
                                         color: $dark-text;
                                         font-size: .9rem;
                                     }
@@ -626,6 +639,14 @@ body {
                                 .experience-item {
                                     > img {
                                         border-color: lighten($dark-sidebar, 12%);
+                                    }
+
+                                    .meta {
+                                        > span {
+                                            &:nth-child(3) {
+                                                color: $accent;
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -750,8 +771,8 @@ body {
                     }
 
                     span {
-                        font-family: $font;
-                        font-size: 1rem;
+                        font-family: $font-alt;
+                        font-size: .95rem;
                         color: $dark-text;
                     }
 
@@ -792,7 +813,8 @@ body {
 
                 .left {
                     h3 {
-                        font-size: 1.3rem;
+                        font-family: $font-alt;
+                        font-size: 1.2rem;
                         line-height: 1.3;
                     }
 
@@ -818,7 +840,13 @@ body {
                         margin-bottom: 20px;
 
                         h4 {
-                            font-family: $font;
+                            font-family: $font-alt;
+                            font-weight: 600;
+                            font-size: 1rem;
+                        }
+
+                        p {
+                            font-size: .9rem;
                         }
                     }
 
@@ -893,7 +921,8 @@ body {
                                     display: block;
 
                                     &:first-child {
-                                        font-weight: 500;
+                                        font-family: $font-alt;
+                                        font-weight: 600;
                                         color: $dark-text;
                                         font-size: .9rem;
                                     }
@@ -908,6 +937,10 @@ body {
                                             font-size: 4px;
                                             margin: 0 6px;
                                         }
+                                    }
+
+                                    &:nth-child(3) {
+                                        color: $primary;
                                     }
 
                                     span {
@@ -994,6 +1027,14 @@ body {
 
                                     > .icon-wrap {
                                         background: lighten($dark-sidebar, 2%);
+                                    }
+
+                                    .meta {
+                                        > span {
+                                            &:nth-child(3) {
+                                                color: $accent;
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -1107,6 +1148,7 @@ body {
                     display: block;
                     text-transform: uppercase;
                     color: $light-text;
+                    font-family: $font-alt;
                     font-size: .7rem;
                     letter-spacing: 1px;
                 }

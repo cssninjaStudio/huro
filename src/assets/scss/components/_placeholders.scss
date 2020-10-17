@@ -22,7 +22,7 @@
         > img {
             display: block;
             max-width: 280px;
-            margin: 0 auto;
+            margin: 0 auto 10px auto;
         }
 
         .h-avatar {
@@ -30,13 +30,14 @@
         }
 
         h3 {
-            font-family: $font;
-            font-size: 1.2rem;
-            font-weight: 500;
+            font-family: $font-alt;
+            font-size: 1.1rem;
+            font-weight: 600;
             color: $dark-text;
         }
 
         p {
+            font-family: $font;
             font-size: 1rem;
             color: $light-text;
             max-width: 280px;
@@ -85,10 +86,10 @@
         }
 
         h3 {
-            font-size: 1.4rem;
-            font-weight: 300;
-            font-family: $font;
-            color: $primary;
+            font-size: 1.3rem;
+            font-weight: 600;
+            font-family: $font-alt;
+            color: $dark-text;
         }
 
         p {
@@ -113,7 +114,7 @@ body {
         .page-placeholder {
             .placeholder-content {
                 h3 {
-                    color: $accent;
+                    color: $dark-dark-text;
                 }
             }
         }

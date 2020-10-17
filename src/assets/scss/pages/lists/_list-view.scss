@@ -90,9 +90,10 @@
                     margin-left: 16px;
 
                     h3 {
-                        font-family: $font;
+                        font-family: $font-alt;
                         color: $dark-text;
-                        font-size: 1.2rem;
+                        font-weight: 600;
+                        font-size: 1rem;
                         line-height: 1;
                     }
 
@@ -146,7 +147,8 @@
 
                                 &:nth-child(2) {
                                     text-transform: uppercase;
-                                    font-size: .8rem;
+                                    font-family: $font-alt;
+                                    font-size: .75rem;
                                 }
                             }
 
@@ -264,10 +266,10 @@ body {
                     margin-left: 16px;
 
                     h3 {
-                        font-family: $font;
+                        font-family: $font-alt;
                         color: $dark-text;
-                        font-weight: 500;
-                        font-size: 1.2rem;
+                        font-weight: 600;
+                        font-size: 1.1rem;
                         line-height: 1.5;
 
                         .rating {
@@ -302,7 +304,7 @@ body {
                         margin-top: 10px;
                         font-family: $font;
                         font-size: .9rem;
-                        color: $light-text;
+                        color: $primary;
 
                         .icon-separator {
                             font-size: 5px;
@@ -321,8 +323,8 @@ body {
                             margin-right: 15px;
 
                             span {
-                                font-size: .95rem;
-                                font-family: $font;
+                                font-size: .85rem;
+                                font-family: $font-alt;
                                 color: $dark-text;
                             }
 
@@ -370,6 +372,10 @@ body {
                                         color: darken($dark-sidebar, 2%);
                                     }
                                 }
+                            }
+
+                            > span {
+                                color: $accent;
                             }
 
                             .icon-list {
@@ -429,9 +435,10 @@ body {
                     margin-left: 16px;
 
                     h3 {
-                        font-family: $font;
+                        font-family: $font-alt;
                         color: $dark-text;
-                        font-size: 1.2rem;
+                        font-weight: 500;
+                        font-size: 1.1rem;
                         line-height: 1;
                     }
 
@@ -537,10 +544,10 @@ body {
                     width: 160px;
 
                     h3 {
-                        font-family: $font;
+                        font-family: $font-alt;
                         color: $dark-text;
                         font-size: 1rem;
-                        font-weight: 500;
+                        font-weight: 600;
                         max-width: 150px;
                         overflow: hidden;
                         white-space: nowrap;
@@ -564,9 +571,10 @@ body {
                     h3 {
                         display: flex;
                         align-items: center;
-                        font-family: $font;
+                        font-family: $font-alt;
+                        font-weight: 600;
                         color: $dark-text;
-                        font-size: .8rem;
+                        font-size: .75rem;
                         line-height: 1;
 
                         .avatar {
@@ -655,7 +663,6 @@ body {
             &.list-view-v4 {
                 .list-view-item {
                     .list-view-item-inner {
-
                         .pre-meta {
                             h3 {
                                 color: $dark-dark-text;
@@ -1224,6 +1231,7 @@ body {
 
                             .button {
                                 width: 100%;
+
                                 //margin: 10px 0;
 
                                 &:first-child {

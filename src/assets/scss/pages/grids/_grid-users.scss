@@ -103,8 +103,9 @@
             }
 
             h3 {
-                font-size: 1.2rem;
-                font-weight: 500;
+                font-family: $font-alt;
+                font-size: 1.1rem;
+                font-weight: 600;
                 color: $dark-text;
             }
 
@@ -168,7 +169,9 @@
                             display: flex;
 
                             &:first-child {
-                                font-weight: 500;
+                                font-family: $font-alt;
+                                font-weight: 600;
+                                font-size: .95rem;
                                 color: $dark-text;
                             }
 
@@ -288,8 +291,9 @@ body {
             }
 
             h3 {
+                font-family: $font-alt;
                 font-size: 1.1rem;
-                font-weight: 500;
+                font-weight: 600;
                 color: $dark-text;
             }
 
@@ -396,6 +400,7 @@ body {
                             display: block;
 
                             &:first-child {
+                                font-family: $font;
                                 font-size: 1.8rem;
                                 color: $dark-text;
                                 font-weight: 700;
@@ -403,6 +408,7 @@ body {
                             }
 
                             &:nth-child(2) {
+                                font-family: $font-alt;
                                 color: $light-text;
                             }
                         }
@@ -512,8 +518,9 @@ body {
             }
 
             h3 {
-                font-size: 1.2rem;
-                font-weight: 500;
+                font-family: $font-alt;
+                font-size: 1.1rem;
+                font-weight: 600;
                 color: $dark-text;
             }
 

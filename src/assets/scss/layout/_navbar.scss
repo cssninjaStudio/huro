@@ -326,7 +326,7 @@
 
                         .notification-item {
                             display: flex;
-                            align-items: flex-start;
+                            align-items: center;
                             padding: 0.65rem 0;
 
                             .img-left {
@@ -1014,7 +1014,7 @@ body {
                                             margin-bottom: 12px;
 
                                             h4 {
-                                                font-family: $font;
+                                                font-family: $font-alt;
                                                 font-weight: 600;
                                                 color: $dark-text;
                                             }
@@ -1093,12 +1093,10 @@ body {
                                             display: flex;
                                             align-items: center;
                                             font-family: $font;
-                                            font-size: .75rem;
-                                            font-weight: 500;
+                                            font-size: .85rem;
+                                            font-weight: 600;
                                             color: $dark-text;
-                                            text-transform: uppercase;
-
-                                            //margin-bottom: 12px;
+                                            text-transform: uppercase; 
                                             padding: 20px;
                                             border-bottom: 1px solid darken($fade-grey, 3%);
 
@@ -1179,7 +1177,8 @@ body {
                                     .dropdown-item {
                                         border: 1px solid transparent;
                                         border-radius: 10px;
-                                        font-family: $font;
+                                        font-family: $font-alt;
+                                        font-size: .9rem;
 
                                         &.is-media {
                                             &:hover, &.is-active {
@@ -1200,6 +1199,8 @@ body {
                                                 margin-left: 6px;
 
                                                 span {
+                                                    font-weight: 500;
+                                                    font-size: .85rem;
                                                     color: $light-text;
                                                 }
                                             }
@@ -1211,7 +1212,7 @@ body {
 
                         .is-trigger {
                             .button {
-                                font-family: $font;
+                                font-family: $font-alt;
                                 font-size: .9rem;
                                 color: $dark-text;
                                 min-height: 40px;
@@ -1614,32 +1615,32 @@ body {
                                                             color: $dark-dark-text;
                                                         }
                                                     }
-    
+
                                                     .category-selector-inner {
                                                         .category-item {
                                                             background: lighten($dark-sidebar, 4%);
                                                             border-color: lighten($dark-sidebar, 12%);
-    
+
                                                             &:hover {
                                                                 i, span {
                                                                     color: $accent;
                                                                 }
                                                             }
-    
+
                                                             span {
                                                                 color: $dark-dark-text;
                                                             }
                                                         }
                                                     }
                                                 }
-    
+
                                                 .mega-menus {
                                                     .dropdown-item-group {
                                                         .column-heading {
                                                             color: $dark-dark-text;
                                                             border-color: lighten($dark-sidebar, 12%);
                                                         }
-    
+
                                                         .column-content {
                                                             .is-media {
                                                                 &:hover {
@@ -1944,7 +1945,8 @@ body {
 
                     a {
                         text-transform: uppercase;
-                        font-size: .7rem;
+                        font-family: $font-alt;
+                        font-size: .65rem;
                         letter-spacing: 1px;
                         padding: 10px 16px;
                         border: 1px solid transparent;
@@ -1988,9 +1990,9 @@ body {
                     }
 
                     .column-heading {
-                        font-family: $font;
-                        font-size: .75rem;
-                        font-weight: 500;
+                        font-family: $font-alt;
+                        font-size: .7rem;
+                        font-weight: 600;
                         color: $dark-text;
                         text-transform: uppercase;
                         margin-bottom: 12px;
@@ -2021,9 +2023,9 @@ body {
                         }
 
                         h3 {
-                            font-family: $font;
-                            font-size: .95rem;
-                            font-weight: 500;
+                            font-family: $font-alt;
+                            font-size: .85rem;
+                            font-weight: 600;
                             color: $dark-text;
                             transition: color .3s;
                         }

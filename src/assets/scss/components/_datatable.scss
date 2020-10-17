@@ -298,7 +298,7 @@ body {
 
             th {
                 padding: 16px 20px;
-                font-family: $font;
+                font-family: $font-alt;
                 font-size: .8rem;
                 color: $dark-text;
                 text-transform: uppercase;
@@ -402,6 +402,11 @@ body {
                         font-size: .8rem;
                         color: $light-text;
                         font-family: $font;
+
+                        &:first-child {
+                            font-family: $font-alt;
+                            color: $dark-text;
+                        }
                     }
                 }
             }
@@ -467,6 +472,16 @@ body {
                             &:hover {
                                 border-color: $accent !important;
                                 color: $accent !important;
+                            }
+                        }
+                    }
+
+                    .flex-media {
+                        .meta {
+                            span {
+                                &:first-child {
+                                    color: $dark-dark-text;
+                                }
                             }
                         }
                     }

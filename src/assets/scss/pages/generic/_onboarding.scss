@@ -25,7 +25,7 @@ Onboarding Layouts
         text-align: center;
 
         h2 {
-            font-family: $font;
+            font-family: $font-alt;
             font-weight: 600;
             font-size: 1.4rem;
             color: $dark-text;
@@ -61,7 +61,7 @@ Onboarding Layouts
                 }
 
                 h3 {
-                    font-family: $font;
+                    font-family: $font-alt;
                     font-size: 1.1rem;
                     font-weight: 600;
                     color: $dark-text;
@@ -126,7 +126,7 @@ body {
         text-align: center;
 
         h2 {
-            font-family: $font;
+            font-family: $font-alt;
             font-weight: 600;
             font-size: 1.4rem;
             color: $dark-text;
@@ -160,7 +160,6 @@ body {
                     > img {
                         display: block;
                         width: 100%;
-                        //max-width: 140px;
                         margin: 0 auto;
                     }
 
@@ -168,7 +167,7 @@ body {
                         padding: 0 20px 30px 20px;
 
                         h3 {
-                            font-family: $font;
+                            font-family: $font-alt;
                             font-size: 1.1rem;
                             font-weight: 600;
                             color: $dark-text;
@@ -221,7 +220,6 @@ body {
                     > img {
                         display: block;
                         width: 100%;
-                        //max-width: 140px;
                         margin: 0 auto;
                     }
 
@@ -229,7 +227,7 @@ body {
                         padding: 0 20px 30px 20px;
 
                         h3 {
-                            font-family: $font;
+                            font-family: $font-alt;
                             font-size: 1.1rem;
                             font-weight: 600;
                             color: $dark-text;

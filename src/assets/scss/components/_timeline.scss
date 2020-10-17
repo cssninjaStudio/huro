@@ -124,8 +124,9 @@
                                     color: darken($light-text, 10%);
 
                                     span {
+                                        font-family: $font-alt;
                                         color: $dark-text;
-                                        font-weight: 500;
+                                        font-weight: 600;
                                     }
 
                                     a {

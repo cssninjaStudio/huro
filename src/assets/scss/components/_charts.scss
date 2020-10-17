@@ -9,14 +9,39 @@
 ========================================================================== */
 
 .apexcharts-title-text {
-    font-family: $font !important;
-    font-weight: 400;
-    font-size: 1rem;
-    fill: $light-text !important;
+    font-family: $font-alt !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: $dark-text;
+}
+
+.apexcharts-legend {
+    .apexcharts-legend-text {
+        font-family: $font !important;
+    }
+}
+
+.apexcharts-xaxis, .apexcharts-yaxis {
+    .apexcharts-xaxis-texts-g, .apexcharts-yaxis-texts-g {
+        .apexcharts-text {
+            font-family: $font !important;
+        }
+    }
+}
+
+.apexcharts-datalabels-group {
+    .apexcharts-text {
+        font-family: $font !important;
+        font-weight: 600;
+    }
 }
 
 body {
     &.is-dark {
+        .apexcharts-title-text {
+            fill: $dark-dark-text !important;
+        }
+
         .apexcharts-subtitle-text {
             fill: $accent;
         }
@@ -187,8 +212,10 @@ body {
 ========================================================================== */
 
 .bb-title {
-    fill: $dark-text;
-    font-family: $font;
+    font-family: $font-alt !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: $dark-text;
 }
 
 .bb-axis line, .bb-axis .domain {

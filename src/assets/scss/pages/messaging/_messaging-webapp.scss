@@ -277,6 +277,7 @@ body {
                     font-family: $font;
 
                     .conversation-username {
+                        font-family: $font-alt;
                         color: $dark-text;
                         font-weight: 500;
                         font-size: .95rem;
@@ -454,10 +455,10 @@ body {
                 }
 
                 .chat-area-title {
-                    font-size: 18px;
-                    font-family: $font;
+                    font-size: 1.1rem;
+                    font-family: $font-alt;
                     color: $dark-text;
-                    font-weight: 600;
+                    font-weight: 700;
                 }
             }
 
@@ -853,13 +854,15 @@ body {
 
                 .user-name {
                     margin-top: 10px;
+                    font-family: $font-alt;
                     font-size: 1.2rem;
                     font-weight: 700;
                     color: $dark-text;
                 }
 
                 .user-job-title {
-                    color: $muted-grey;
+                    font-family: $font;
+                    color: $light-text;
                 }
 
                 .side-actions {

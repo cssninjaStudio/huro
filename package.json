@@ -84,6 +84,7 @@
     "lg-video.js": "^1.2.0",
     "lg-zoom.js": "^1.2.0",
     "lightgallery.js": "^1.2.0",
+    "lozad": "^1.16.0",
     "mediaplayer": "^2.0.1",
     "moment": "^2.22.2",
     "notyf": "^3.7.0",

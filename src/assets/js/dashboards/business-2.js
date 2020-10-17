@@ -418,7 +418,7 @@ $(document).ready(function () {
                         <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/8.jpg" alt="">
                     </div>
                 `,
-                name: '<span class="has-dark-text dark-inverted">Erik Kovalsky</span>',
+                name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Erik Kovalsky</span>',
                 location: 'Los Angeles, CA',
                 type: `
                     <span class="tag is-rounded is-solid">Customer</span>
@@ -431,7 +431,7 @@ $(document).ready(function () {
                         <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/7.jpg" alt="">
                     </div>
                 `,
-                name: '<span class="has-dark-text dark-inverted">Alice Carasca</span>',
+                name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Alice Carasca</span>',
                 location: 'San Diego, CA',
                 type: `
                     <span class="tag is-rounded is-solid">Customer</span>
@@ -444,7 +444,7 @@ $(document).ready(function () {
                         <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/13.jpg" alt="">
                     </div>
                 `,
-                name: '<span class="has-dark-text dark-inverted">Tara Svenson</span>',
+                name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Tara Svenson</span>',
                 location: 'New York, NY',
                 type: `
                     <span class="tag is-rounded is-solid">Supplier</span>
@@ -457,7 +457,7 @@ $(document).ready(function () {
                         <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/5.jpg" alt="">
                     </div>
                 `,
-                name: '<span class="has-dark-text dark-inverted">Mary Lebowski</span>',
+                name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Mary Lebowski</span>',
                 location: 'Houston, TX',
                 type: `
                     <span class="tag is-rounded is-solid">Customer</span>
@@ -472,7 +472,7 @@ $(document).ready(function () {
                         </span>
                     </div>
                 `,
-                name: '<span class="has-dark-text dark-inverted">Kaylee Jennings</span>',
+                name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Kaylee Jennings</span>',
                 location: 'Los Angeles, CA',
                 type: `
                     <span class="tag is-rounded is-solid">Customer</span>

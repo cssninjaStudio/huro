@@ -41,9 +41,9 @@
 
                 .title-wrap {
                     h3 {
-                        font-family: $font;
-                        font-size: 1.7rem;
-                        font-weight: 600;
+                        font-family: $font-alt;
+                        font-size: 1.5rem;
+                        font-weight: 700;
                         color: $dark-text;
                         line-height: 1.2;
                         transition: all .3s;
@@ -79,9 +79,9 @@
                     }
 
                     h4 {
-                        font-family: $font;
-                        font-size: .9rem;
-                        font-weight: 500;
+                        font-family: $font-alt;
+                        font-size: .85rem;
+                        font-weight: 600;
                         color: $dark;
                     }
 
@@ -98,7 +98,7 @@
                 padding: 20px 0;
 
                 h4 {
-                    font-family: $font;
+                    font-family: $font-alt;
                     font-weight: 600;
                     font-size: .8rem;
                     text-transform: uppercase;
@@ -136,7 +136,7 @@
                             display: block;
 
                             &:first-child {
-                                font-family: $font;
+                                font-family: $font-alt;
                                 font-size: .9rem;
                                 font-weight: 600;
                                 color: $dark-text;
@@ -171,7 +171,7 @@
             margin-bottom: 1.5rem;
 
             h4 {
-                font-family: $font;
+                font-family: $font-alt;
                 font-weight: 600;
                 font-size: .8rem;
                 text-transform: uppercase;
@@ -209,9 +209,9 @@
                 margin-bottom: 20px;
 
                 h3 {
-                    font-family: $font;
-                    font-size: 1.7rem;
-                    font-weight: 600;
+                    font-family: $font-alt;
+                    font-size: 1.5rem;
+                    font-weight: 700;
                     color: $dark-text;
                     line-height: 1.2;
                 }
@@ -224,8 +224,8 @@
                     border-radius: 100px;
 
                     > span {
-                        font-family: $font;
-                        font-size: .9rem;
+                        font-family: $font-alt;
+                        font-size: .85rem;
                         font-weight: 600;
                         color: $dark-text;
                         margin-right: 30px;
@@ -259,9 +259,9 @@
 
                 .title-wrap {
                     h3 {
-                        font-size: 1.2rem;
-                        font-family: $font;
-                        font-weight: 500;
+                        font-size: 1.1rem;
+                        font-family: $font-alt;
+                        font-weight: 600;
                         color: $dark-text;
                         line-height: 1.2;
                         margin-bottom: 4px;
@@ -302,7 +302,6 @@
                         }
                     }
 
-                    .right {}
                 }
             }
         }
