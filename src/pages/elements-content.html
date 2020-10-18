@@ -1,14 +1,14 @@
 ---
 layout: default
-title: Buttons
+title: Content
 ---
 
 {{> elements-sidebar}}
 {{> elements-mobile-subsidebar}}
 
 <!-- Content Wrapper -->
-<div id="huro-demo" class="view-wrapper" data-sidebar-open data-naver-offset="278" data-menu-item="#elements-sidebar-menu"
-    data-mobile-item="#elements-sidebar-menu-mobile">
+<div id="huro-demo" class="view-wrapper" data-sidebar-open data-naver-offset="278"
+    data-menu-item="#elements-sidebar-menu" data-mobile-item="#elements-sidebar-menu-mobile">
 
     <div class="page-content-wrapper">
         <div class="page-content is-relative">
@@ -65,7 +65,10 @@ title: Buttons
                         <div class="demo-card">
                             <div class="demo-title">
                                 <h3 class="title is-thin is-5">Unordered Lists</h3>
-                                <p>By default, using an unordered <code>ul</code> list won't generate an html list. This is part of the Bulma specification. To generate you unordered list, wrap it inside a <code>div</code> with the <code>content</code> class. Lists can also have the <code>is-light</code> modifier to change the text color.
+                                <p>By default, using an unordered <code>ul</code> list won't generate an html list. This
+                                    is part of the Bulma specification. To generate you unordered list, wrap it inside a
+                                    <code>div</code> with the <code>content</code> class. Lists can also have the
+                                    <code>is-light</code> modifier to change the text color.
                                 </p>
                                 <a class="code-trigger">
                                     <i class="open" data-feather="code"></i>
@@ -117,7 +120,11 @@ title: Buttons
                         <div class="demo-card">
                             <div class="demo-title">
                                 <h3 class="title is-thin is-5">Ordered Lists</h3>
-                                <p>Ordered lists <code>ol</code> are also genrated using a <code>div</code> with the <code>content</code> class. Ordered list bullets can be controlled with the <code>type</code> attribute. Available types are <code>type="1"</code>, <code>type="A"</code>, <code>type="a"</code>, <code>type="I"</code>, <code>type="i"</code>. 
+                                <p>Ordered lists <code>ol</code> are also genrated using a <code>div</code> with the
+                                    <code>content</code> class. Ordered list bullets can be controlled with the
+                                    <code>type</code> attribute. Available types are <code>type="1"</code>,
+                                    <code>type="A"</code>, <code>type="a"</code>, <code>type="I"</code>,
+                                    <code>type="i"</code>.
                                 </p>
                                 <a class="code-trigger">
                                     <i class="open" data-feather="code"></i>
@@ -211,7 +218,11 @@ title: Buttons
                         <div class="demo-card">
                             <div class="demo-title">
                                 <h3 class="title is-thin is-5">Title</h3>
-                                <p>To create a title, you can add the <code>title</code> class to any html element. Title sizes can be controlled with numbered modifiers using the patter <code>is-*</code> where <code>*</code> represents a number between 1 and 6. Titles can also be thinner using the <code>is-thin</code> modifier class.
+                                <p>To create a title, you can add the <code>title</code> class to any html element.
+                                    Title sizes can be controlled with numbered modifiers using the patter
+                                    <code>is-*</code> where <code>*</code> represents a number between 3 and 6. Titles
+                                    can also be thinner using the <code>is-thin</code>, bold using the
+                                    <code>is-bold</code> or bolder using the <code>is-bolder</code> modifier classes.
                                 </p>
                                 <a class="code-trigger">
                                     <i class="open" data-feather="code"></i>
@@ -219,35 +230,141 @@ title: Buttons
                                 </a>
                             </div>
                             <div class="card-inner">
-                                <div class="columns">
+                                <div class="columns is-multiline">
                                     <div class="column is-3">
-                                        <h1 class="title is-1 is-narrow">This is a title</h1>
-                                        <h2 class="title is-2 is-narrow">This is a title</h2>
-                                        
+                                        <h1 class="title is-3 is-narrow">This is a title</h1>
+                                        <p>This is a huge title</p>
                                     </div>
                                     <div class="column is-3">
-                                        <h1 class="title is-1 is-thin is-narrow">This is a title</h1>
-                                        <h2 class="title is-2 is-thin is-narrow">This is a title</h2>
-                                        
+                                        <h2 class="title is-4 is-narrow">This is a title</h2>
+                                        <p>This is a big title</p>
                                     </div>
                                     <div class="column is-3">
-                                        <h3 class="title is-3 is-narrow">This is a title</h3>
-                                        <h4 class="title is-4 is-narrow">This is a title</h4>
-                                        <h5 class="title is-5 is-narrow">This is a title</h5>
-                                        <h6 class="title is-6 is-narrow">This is a title</h6>
+                                        <h2 class="title is-5 is-narrow">This is a title</h2>
+                                        <p>This is a medium title</p>
                                     </div>
                                     <div class="column is-3">
-                                        <h3 class="title is-3 is-thin is-narrow">This is a title</h3>
-                                        <h4 class="title is-4 is-thin is-narrow">This is a title</h4>
-                                        <h5 class="title is-5 is-thin is-narrow">This is a title</h5>
-                                        <h6 class="title is-6 is-thin is-narrow">This is a title</h6>
+                                        <h2 class="title is-6 is-narrow">This is a title</h2>
+                                        <p>This is a smaller title</p>
+                                    </div>
+                                    <div class="column is-3">
+                                        <h1 class="title is-3 is-narrow is-bold">This is a title</h1>
+                                        <p>This is a huge bold title</p>
+                                    </div>
+                                    <div class="column is-3">
+                                        <h2 class="title is-4 is-narrow is-bold">This is a title</h2>
+                                        <p>This is a big bold title</p>
+                                    </div>
+                                    <div class="column is-3">
+                                        <h2 class="title is-5 is-narrow is-bold">This is a title</h2>
+                                        <p>This is a medium bold title</p>
+                                    </div>
+                                    <div class="column is-3">
+                                        <h2 class="title is-6 is-narrow is-bold">This is a title</h2>
+                                        <p>This is a smaller bold title</p>
+                                    </div>
+                                    <div class="column is-3">
+                                        <h1 class="title is-3 is-narrow is-bolder">This is a title</h1>
+                                        <p>This is a huge bolder title</p>
+                                    </div>
+                                    <div class="column is-3">
+                                        <h2 class="title is-4 is-narrow is-bolder">This is a title</h2>
+                                        <p>This is a big bolder title</p>
+                                    </div>
+                                    <div class="column is-3">
+                                        <h2 class="title is-5 is-narrow is-bolder">This is a title</h2>
+                                        <p>This is a medium bolder title</p>
+                                    </div>
+                                    <div class="column is-3">
+                                        <h2 class="title is-6 is-narrow is-bolder">This is a title</h2>
+                                        <p>This is a smaller bolder title</p>
+                                    </div>
+                                    <div class="column is-3">
+                                        <h1 class="title is-3 is-narrow is-thin">This is a title</h1>
+                                        <p>This is a huge thin title</p>
+                                    </div>
+                                    <div class="column is-3">
+                                        <h2 class="title is-4 is-narrow is-thin">This is a title</h2>
+                                        <p>This is a big thin title</p>
+                                    </div>
+                                    <div class="column is-3">
+                                        <h2 class="title is-5 is-narrow is-thin">This is a title</h2>
+                                        <p>This is a medium thin title</p>
+                                    </div>
+                                    <div class="column is-3">
+                                        <h2 class="title is-6 is-narrow is-thin">This is a title</h2>
+                                        <p>This is a smaller thin title</p>
                                     </div>
                                 </div>
 
                                 <div class="highlight highlight-block">
                                     <pre><code class="code-highlight">
-&#x3C;h1 class=&#x22;title is-1&#x22;&#x3E;This is a title&#x3C;/h1&#x3E;
-&#x3C;h1 class=&#x22;title is-1 is-thin&#x22;&#x3E;This is a title&#x3C;/h1&#x3E;
+&#x3C;div class=&#x22;columns is-multiline&#x22;&#x3E;
+    &#x3C;div class=&#x22;column is-3&#x22;&#x3E;
+        &#x3C;h1 class=&#x22;title is-3 is-narrow&#x22;&#x3E;This is a title&#x3C;/h1&#x3E;
+        &#x3C;p&#x3E;This is a huge title&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;column is-3&#x22;&#x3E;
+        &#x3C;h2 class=&#x22;title is-4 is-narrow&#x22;&#x3E;This is a title&#x3C;/h2&#x3E;
+        &#x3C;p&#x3E;This is a big title&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;column is-3&#x22;&#x3E;
+        &#x3C;h2 class=&#x22;title is-5 is-narrow&#x22;&#x3E;This is a title&#x3C;/h2&#x3E;
+        &#x3C;p&#x3E;This is a medium title&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;column is-3&#x22;&#x3E;
+        &#x3C;h2 class=&#x22;title is-6 is-narrow&#x22;&#x3E;This is a title&#x3C;/h2&#x3E;
+        &#x3C;p&#x3E;This is a smaller title&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;column is-3&#x22;&#x3E;
+        &#x3C;h1 class=&#x22;title is-3 is-narrow is-bold&#x22;&#x3E;This is a title&#x3C;/h1&#x3E;
+        &#x3C;p&#x3E;This is a huge bold title&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;column is-3&#x22;&#x3E;
+        &#x3C;h2 class=&#x22;title is-4 is-narrow is-bold&#x22;&#x3E;This is a title&#x3C;/h2&#x3E;
+        &#x3C;p&#x3E;This is a big bold title&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;column is-3&#x22;&#x3E;
+        &#x3C;h2 class=&#x22;title is-5 is-narrow is-bold&#x22;&#x3E;This is a title&#x3C;/h2&#x3E;
+        &#x3C;p&#x3E;This is a medium bold title&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;column is-3&#x22;&#x3E;
+        &#x3C;h2 class=&#x22;title is-6 is-narrow is-bold&#x22;&#x3E;This is a title&#x3C;/h2&#x3E;
+        &#x3C;p&#x3E;This is a smaller bold title&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;column is-3&#x22;&#x3E;
+        &#x3C;h1 class=&#x22;title is-3 is-narrow is-bolder&#x22;&#x3E;This is a title&#x3C;/h1&#x3E;
+        &#x3C;p&#x3E;This is a huge bolder title&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;column is-3&#x22;&#x3E;
+        &#x3C;h2 class=&#x22;title is-4 is-narrow is-bolder&#x22;&#x3E;This is a title&#x3C;/h2&#x3E;
+        &#x3C;p&#x3E;This is a big bolder title&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;column is-3&#x22;&#x3E;
+        &#x3C;h2 class=&#x22;title is-5 is-narrow is-bolder&#x22;&#x3E;This is a title&#x3C;/h2&#x3E;
+        &#x3C;p&#x3E;This is a medium bolder title&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;column is-3&#x22;&#x3E;
+        &#x3C;h2 class=&#x22;title is-6 is-narrow is-bolder&#x22;&#x3E;This is a title&#x3C;/h2&#x3E;
+        &#x3C;p&#x3E;This is a smaller bolder title&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;column is-3&#x22;&#x3E;
+        &#x3C;h1 class=&#x22;title is-3 is-narrow is-thin&#x22;&#x3E;This is a title&#x3C;/h1&#x3E;
+        &#x3C;p&#x3E;This is a huge thin title&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;column is-3&#x22;&#x3E;
+        &#x3C;h2 class=&#x22;title is-4 is-narrow is-thin&#x22;&#x3E;This is a title&#x3C;/h2&#x3E;
+        &#x3C;p&#x3E;This is a big thin title&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;column is-3&#x22;&#x3E;
+        &#x3C;h2 class=&#x22;title is-5 is-narrow is-thin&#x22;&#x3E;This is a title&#x3C;/h2&#x3E;
+        &#x3C;p&#x3E;This is a medium thin title&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;column is-3&#x22;&#x3E;
+        &#x3C;h2 class=&#x22;title is-6 is-narrow is-thin&#x22;&#x3E;This is a title&#x3C;/h2&#x3E;
+        &#x3C;p&#x3E;This is a smaller thin title&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
 </code></pre>
                                 </div>
                             </div>
@@ -257,7 +374,9 @@ title: Buttons
                         <div class="demo-card">
                             <div class="demo-title">
                                 <h3 class="title is-thin is-5">Subtitle</h3>
-                                <p>To create a subtitle, you can add the <code>title</code> class to any html element. Subtitle sizes can be controlled with numbered modifiers using the patter <code>is-*</code> where <code>*</code> represents a number between 1 and 6.
+                                <p>To create a subtitle, you can add the <code>subtitle</code> class to any html
+                                    element. Subtitle sizes can be controlled with numbered modifiers using the patter
+                                    <code>is-*</code> where <code>*</code> represents a number between 4 and 6.
                                 </p>
                                 <a class="code-trigger">
                                     <i class="open" data-feather="code"></i>
@@ -266,25 +385,44 @@ title: Buttons
                             </div>
                             <div class="card-inner">
                                 <div class="columns">
-                                    <div class="column is-4">
-                                        <h1 class="subtitle is-1 is-narrow">This is a subtitle</h1>
-                                        <h2 class="subtitle is-2 is-narrow">This is a subtitle</h2>
-                                        
+                                    <div class="column is-3">
+                                        <h1 class="title is-3">This is a title</h1>
+                                        <p class="subtitle is-4">This is a huge subtitle</p>
                                     </div>
-                                    <div class="column is-4">
-                                        <h3 class="subtitle is-3 is-narrow">This is a subtitle</h3>
-                                        <h4 class="subtitle is-4 is-narrow">This is a subtitle</h4>
-                                        
+                                    <div class="column is-3">
+                                        <h2 class="title is-4">This is a title</h2>
+                                        <p class="subtitle is-4">This is a big subtitle</p>
                                     </div>
-                                    <div class="column is-4">
-                                        <h5 class="subtitle is-5 is-narrow">This is a subtitle</h5>
-                                        <h6 class="subtitle is-6 is-narrow">This is a subtitle</h6>
+                                    <div class="column is-3">
+                                        <h2 class="title is-5">This is a title</h2>
+                                        <p class="subtitle is-5">This is a medium subtitle</p>
+                                    </div>
+                                    <div class="column is-3">
+                                        <h2 class="title is-6">This is a title</h2>
+                                        <p class="subtitle is-6">This is a smaller subtitle</p>
                                     </div>
                                 </div>
 
                                 <div class="highlight highlight-block">
                                     <pre><code class="code-highlight">
-&#x3C;h1 class=&#x22;subtitle is-1&#x22;&#x3E;This is a subtitle&#x3C;/h1&#x3E;
+&#x3C;div class=&#x22;columns&#x22;&#x3E;
+    &#x3C;div class=&#x22;column is-3&#x22;&#x3E;
+        &#x3C;h1 class=&#x22;title is-3&#x22;&#x3E;This is a title&#x3C;/h1&#x3E;
+        &#x3C;p class=&#x22;subtitle is-4&#x22;&#x3E;This is a huge subtitle&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;column is-3&#x22;&#x3E;
+        &#x3C;h2 class=&#x22;title is-4&#x22;&#x3E;This is a title&#x3C;/h2&#x3E;
+        &#x3C;p class=&#x22;subtitle is-4&#x22;&#x3E;This is a big subtitle&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;column is-3&#x22;&#x3E;
+        &#x3C;h2 class=&#x22;title is-5&#x22;&#x3E;This is a title&#x3C;/h2&#x3E;
+        &#x3C;p class=&#x22;subtitle is-5&#x22;&#x3E;This is a medium subtitle&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;column is-3&#x22;&#x3E;
+        &#x3C;h2 class=&#x22;title is-6&#x22;&#x3E;This is a title&#x3C;/h2&#x3E;
+        &#x3C;p class=&#x22;subtitle is-6&#x22;&#x3E;This is a smaller subtitle&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
 </code></pre>
                                 </div>
                             </div>
@@ -295,7 +433,11 @@ title: Buttons
                         <div class="demo-card">
                             <div class="demo-title">
                                 <h3 class="title is-thin is-5">Blockquote</h3>
-                                <p>Huro provides <code>blockquote</code> html element styling. Wrap your <code>blockquote</code> element inside a <code>div</code> with the <code>content</code> class. Blockquotes can have different colors. Available color modifier classes are  <code>is-primary</code>,  <code>is-success</code>,  <code>is-info</code>,  <code>is-warning</code>,  <code>is-danger</code>.
+                                <p>Huro provides <code>blockquote</code> html element styling. Wrap your
+                                    <code>blockquote</code> element inside a <code>div</code> with the
+                                    <code>content</code> class. Blockquotes can have different colors. Available color
+                                    modifier classes are <code>is-primary</code>, <code>is-success</code>,
+                                    <code>is-info</code>, <code>is-warning</code>, <code>is-danger</code>.
                                 </p>
                                 <a class="code-trigger">
                                     <i class="open" data-feather="code"></i>
@@ -305,13 +447,22 @@ title: Buttons
                             <div class="card-inner">
                                 <div class="content">
                                     <blockquote>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo, inquit, tibi Q. Est enim effectrix multarum et magnarum voluptatum. Equidem, sed audistine modo de Carneade? Dici enim nihil potest verius. Praeteritis, inquit, gaudeo. Aliter autem vobis placet.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo, inquit, tibi
+                                            Q. Est enim effectrix multarum et magnarum voluptatum. Equidem, sed
+                                            audistine modo de Carneade? Dici enim nihil potest verius. Praeteritis,
+                                            inquit, gaudeo. Aliter autem vobis placet.</p>
                                     </blockquote>
                                     <blockquote class="is-primary">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo, inquit, tibi Q. Est enim effectrix multarum et magnarum voluptatum. Equidem, sed audistine modo de Carneade? Dici enim nihil potest verius. Praeteritis, inquit, gaudeo. Aliter autem vobis placet.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo, inquit, tibi
+                                            Q. Est enim effectrix multarum et magnarum voluptatum. Equidem, sed
+                                            audistine modo de Carneade? Dici enim nihil potest verius. Praeteritis,
+                                            inquit, gaudeo. Aliter autem vobis placet.</p>
                                     </blockquote>
                                     <blockquote class="is-success">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo, inquit, tibi Q. Est enim effectrix multarum et magnarum voluptatum. Equidem, sed audistine modo de Carneade? Dici enim nihil potest verius. Praeteritis, inquit, gaudeo. Aliter autem vobis placet.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo, inquit, tibi
+                                            Q. Est enim effectrix multarum et magnarum voluptatum. Equidem, sed
+                                            audistine modo de Carneade? Dici enim nihil potest verius. Praeteritis,
+                                            inquit, gaudeo. Aliter autem vobis placet.</p>
                                     </blockquote>
                                 </div>
 
@@ -337,7 +488,9 @@ title: Buttons
                         <div class="demo-card">
                             <div class="demo-title">
                                 <h3 class="title is-thin is-5">Divider</h3>
-                                <p>Huro provides dividers for your textual content. You can use horizontal and vertical dividers by passing the divider text as a <code>data-content</code> html attribute. See the code example for more details about usage.
+                                <p>Huro provides dividers for your textual content. You can use horizontal and vertical
+                                    dividers by passing the divider text as a <code>data-content</code> html attribute.
+                                    See the code example for more details about usage.
                                 </p>
                                 <a class="code-trigger">
                                     <i class="open" data-feather="code"></i>
@@ -348,22 +501,26 @@ title: Buttons
                                 <div class="columns">
                                     <div class="column is-5">
                                         <div class="content">
-                                            <p>Ut venenatis, nisl scelerisque sollicitudin fermentum, quam libero hendrerit ipsum, ut blandit
+                                            <p>Ut venenatis, nisl scelerisque sollicitudin fermentum, quam libero
+                                                hendrerit ipsum, ut blandit
                                                 est tellus sit amet turpis.</p>
                                             <div class="is-divider" data-content="OR"></div>
-                                            <p>Ut venenatis, nisl scelerisque sollicitudin fermentum, quam libero hendrerit ipsum, ut blandit
+                                            <p>Ut venenatis, nisl scelerisque sollicitudin fermentum, quam libero
+                                                hendrerit ipsum, ut blandit
                                                 est tellus sit amet turpis.</p>
                                         </div>
                                     </div>
                                     <div class="column is-5 is-offset-1">
                                         <div class="columns">
                                             <div class="column">
-                                                <p>Ut venenatis, nisl scelerisque sollicitudin fermentum, quam libero hendrerit ipsum, ut
+                                                <p>Ut venenatis, nisl scelerisque sollicitudin fermentum, quam libero
+                                                    hendrerit ipsum, ut
                                                     blandit est tellus sit amet turpis.</p>
                                             </div>
                                             <div class="is-divider-vertical" data-content="OR"></div>
                                             <div class="column">
-                                                <p>Ut venenatis, nisl scelerisque sollicitudin fermentum, quam libero hendrerit ipsum, ut
+                                                <p>Ut venenatis, nisl scelerisque sollicitudin fermentum, quam libero
+                                                    hendrerit ipsum, ut
                                                     blandit est tellus sit amet turpis.</p>
                                             </div>
                                         </div>
@@ -400,7 +557,9 @@ title: Buttons
                         <div class="demo-card">
                             <div class="demo-title">
                                 <h3 class="title is-thin is-5">Content Table</h3>
-                                <p>You can also use the <code>content</code> class to wrap an html <code>table</code> element to apply minimum styles to your table UI. Please refer to the Huro components section to find more advanced table examples and layouts.
+                                <p>You can also use the <code>content</code> class to wrap an html <code>table</code>
+                                    element to apply minimum styles to your table UI. Please refer to the Huro
+                                    components section to find more advanced table examples and layouts.
                                 </p>
                                 <a class="code-trigger">
                                     <i class="open" data-feather="code"></i>
