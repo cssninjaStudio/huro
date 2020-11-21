@@ -2,9 +2,15 @@
 
 /*
     1. Login page
-    2. Remember me toggle
-    3. Signup page
-    4. Media Queries
+    2. Login page Dark mode
+    3. Remember me toggle
+    4. Remember me toggle Dark mode
+    5. Signup page
+    6. Login / Signup v2
+    7. Login / Signup v2 Dark mode
+    8. Login / Signup v3
+    9. Login / Signup v3 Dark mode
+    10. Media Queries
 */
 
 /* ==========================================================================
@@ -48,41 +54,12 @@
         z-index: 0;
     }
 
-    .shape {
-        display: block;
+    .dark-mode {
         position: absolute;
-
-        &.is-first {
-            bottom: 0;
-            left: 5%;
-            width: 400px;
-            height: auto;
-            z-index: 1;
-        }
-
-        &.is-second {
-            right: 15%;
-            top: 5%;
-            width: 180px;
-            height: auto;
-            z-index: 1;
-        }
-
-        &.is-third {
-            left: 25%;
-            top: 25%;
-            width: 100px;
-            height: auto;
-            z-index: 1;
-        }
-
-        &.is-fourth {
-            right: 5%;
-            bottom: 10%;
-            width: 80px;
-            height: auto;
-            z-index: 1;
-        }
+        top: -64px;
+        right: 38px;
+        transform: scale(0.6);
+        z-index: 2;
     }
 
     .top-logo {
@@ -91,6 +68,9 @@
         left: 0;
         right: 0;
         margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         z-index: 1;
 
         img {
@@ -113,107 +93,12 @@
             max-width: 60%;
             width: 60%;
         }
-
-        .bubbles {
-            .bubble {
-                position: absolute;
-                z-index: 1;
-
-                &.is-js {
-                    top: 14%;
-                    left: 16%;
-                    height: 65px;
-                    width: 65px;
-
-                    img {
-                        border-radius: 50%;
-                        box-shadow: $js-box-shadow;
-                    }
-                }
-
-                &.is-angular {
-                    top: 23%;
-                    right: -12px;
-                    height: 54px;
-                    width: 54px;
-                    animation-delay: 1.2s;
-
-                    img {
-                        border-radius: 50%;
-                        box-shadow: $angular-box-shadow;
-                    }
-                }
-
-                &.is-csharp {
-                    bottom: 24%;
-                    right: 12%;
-                    height: 48px;
-                    width: 48px;
-                    animation-delay: .8s;
-
-                    img {
-                        border-radius: 50%;
-                        box-shadow: $csharp-box-shadow;
-                    }
-                }
-
-                &.is-android {
-                    top: 7%;
-                    left: 24%;
-                    height: 46px;
-                    width: 46px;
-                    animation-delay: 1.5s;
-
-                    img {
-                        border-radius: 50%;
-                        box-shadow: $android-box-shadow;
-                    }
-                }
-
-                &.is-swift {
-                    bottom: 13%;
-                    left: 38%;
-                    height: 52px;
-                    width: 52px;
-                    animation-delay: .1s;
-
-                    img {
-                        border-radius: 50%;
-                        box-shadow: $swift-box-shadow;
-                    }
-                }
-
-                &.is-python {
-                    top: 32%;
-                    right: 7%;
-                    height: 42px;
-                    width: 42px;
-                    animation-delay: 1.6s;
-
-                    img {
-                        border-radius: 50%;
-                        box-shadow: 0px 5px 43px rgba(0, 0, 0, 0.18) !important;
-                    }
-                }
-
-                &.is-wp {
-                    bottom: 8%;
-                    left: 27%;
-                    height: 36px;
-                    width: 36px;
-                    animation-delay: 2.1s;
-
-                    img {
-                        border-radius: 50%;
-                        box-shadow: $wordpress-box-shadow;
-                    }
-                }
-            }
-        }
     }
 
     .is-form {
         position: relative;
+        max-width: 420px;
+        margin: 0 auto;
 
         form {
             animation: fadeInLeft .5s;
@@ -405,11 +290,11 @@
                 &.has-help {
                     display: flex;
                     align-items: center;
-    
+
                     > span {
                         margin-left: 12px;
                         font-family: $font;
-    
+
                         a {
                             color: $primary;
                             font-weight: 500;
@@ -440,7 +325,75 @@
 }
 
 /* ==========================================================================
-2. Remember me toggle
+2. Login page Dark mode
+========================================================================== */
+
+body {
+    &.is-dark {
+        .modern-login {
+            background: $dark-sidebar;
+
+            .underlay {
+                background: lighten($dark-sidebar, 10%);
+            }
+
+            .is-image {
+                border-color: lighten($dark-sidebar, 10%);
+            }
+
+            .is-form {
+                .form-text {
+                    h2 {
+                        color: $accent;
+                    }
+                }
+
+                .login-wrapper {
+                    .control {
+                        &.is-flex {
+                            a:hover {
+                                color: $accent;
+                            }
+                        }
+
+                        .input {
+                            background: lighten($dark-sidebar, 4%);
+
+                            &:focus {
+                                border-color: $accent;
+
+                                ~ .auth-icon {
+                                    i {
+                                        color: $accent;
+                                    }
+                                }
+                            }
+                        }
+
+                        .auth-label {
+                            color: $light-text;
+                        }
+                    }
+
+                    .button-wrap {
+                        &.has-help {
+                            span {
+                                color: $light-text;
+
+                                a {
+                                    color: $accent;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+3. Remember me toggle
 ========================================================================== */
 
 .remember-toggle {
@@ -524,8 +477,48 @@
     }
 }
 
+@media only screen and (max-width: 767px) {
+    .modern-login {
+        .top-logo {
+            top: 30px;
+        }
+
+        .is-form {
+            padding-top: 100px;
+        }
+    }
+}
+
 /* ==========================================================================
-3. Sign up
+3. Remember me toggle Dark mode
+========================================================================== */
+
+body {
+    &.is-dark {
+        .remember-toggle {
+            input {
+                &:checked + .toggler {
+                    border-color: $accent;
+
+                    > span {
+                        background: $accent;
+                    }
+                }
+            }
+
+            .toggler {
+                border-color: lighten($dark-sidebar, 12%);
+
+                > span {
+                    background: lighten($dark-sidebar, 12%);
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+4. Sign up
 ========================================================================== */
 
 .signup-nav {
@@ -1198,9 +1191,305 @@
     padding-top: 80px;
 }
 
+/* ==========================================================================
+6. Login / Signup v2
+========================================================================== */
+
+.auth-wrapper-inner {
+    overflow: hidden !important;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+
+    &.is-gapless:not(:last-child) {
+        margin-bottom: 0 !important;
+    }
+
+    &.is-single {
+        background: $widget-grey;
+        min-height: 100vh;
+    }
+
+    .hero-banner {
+        background: $widget-grey;
+    }
+
+    .hero-heading {
+        position: relative;
+        max-width: 360px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px 0 0 0;
+
+        .dark-mode {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            transform: scale(0.6);
+            z-index: 2;
+        }
+
+        .auth-logo {
+            display: flex;
+            justify-content: center;
+
+            .top-logo {
+                height: 42px;
+            }
+        }
+    }
+
+    .hero {
+        &.is-white {
+            background: $white;
+        }
+
+        .hero-body {
+            .login {
+                padding: 10px 0;
+            }
+
+            .auth-content {
+                max-width: 320px;
+                width: 100%;
+                margin: 0 auto;
+                margin-top: -40px;
+                margin-bottom: 40px;
+
+                h2 {
+                    font-size: 2rem;
+                    font-family: $font;
+                    line-height: 1;
+                }
+
+                p {
+                    font-size: 1rem;
+                    margin-bottom: 8px;
+                    color: $muted-grey;
+                }
+
+                a {
+                    font-size: .9rem;
+                    font-family: $font-alt;
+                    font-weight: 500;
+                    color: $primary;
+                }
+            }
+
+            .auth-form-wrapper {
+                max-width: 320px;
+                width: 100%;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .forgot-link {
+        margin-top: 10px;
+
+        a {
+            font-family: $font-alt;
+            font-size: .9rem;
+            color: $light-text;
+            transition: color .3s;
+
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+
+    .setting-item {
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+
+        .setting-meta {
+            font-family: $font;
+            color: $light-text;
+            margin-left: 8px;
+        }
+    }
+
+    .h-button {
+        min-height: 44px;
+    }
+}
 
 /* ==========================================================================
-4. Media Queries
+7. Login / Signup v2 Dark mode
+========================================================================== */
+
+body {
+    &.is-dark {
+        .auth-wrapper-inner {
+            .hero-banner {
+                background: lighten($dark-sidebar, 4%);
+            }
+
+            .hero {
+                &.is-white {
+                    background: darken($dark-sidebar, 4%);
+                }
+
+                .hero-body {
+                    .auth-content {
+                        h2 {
+                            color: $dark-dark-text;
+                        }
+
+                        a {
+                            color: $accent;
+                        }
+                    }
+                }
+            }
+
+            .forgot-link {
+                a:hover {
+                    color: $accent;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+8. Login / Signup v3
+========================================================================== */
+
+.auth-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+
+    .left, .right {
+        display: flex;
+        align-items: center;
+        width: 20%;
+    }
+
+    .right {
+        justify-content: flex-end;
+
+        .dark-mode {
+            transform: scale(0.7);
+        }
+    }
+
+    .center {
+        flex-grow: 2;
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                display: block;
+                width: 100%;
+                max-width: 50px;
+            }
+        }
+    }
+}
+
+.auth-wrapper-inner {
+    .single-form-wrap {
+        min-height: 690px;
+        padding: 0 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .inner-wrap {
+            width: 100%;
+            max-width: 400px;
+            margin: 40px auto 0 auto;
+
+            .auth-head {
+                max-width: 320px;
+                width: 100%;
+                margin: 0 auto;
+                margin-bottom: 20px;
+                text-align: center;
+
+                h2 {
+                    font-size: 2rem;
+                    font-family: $font;
+                    line-height: 1;
+                }
+
+                p {
+                    font-size: 1rem;
+                    margin-bottom: 8px;
+                    color: $muted-grey;
+                }
+
+                a {
+                    font-size: .9rem;
+                    font-family: $font-alt;
+                    font-weight: 500;
+                    color: $primary;
+                }
+            }
+
+            .form-card {
+                background: $white;
+                border: 1px solid darken($fade-grey, 3%);
+                border-radius: 10px;
+                padding: 50px;
+                margin-bottom: 16px;
+
+                .h-button {
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+9. Login / Signup v3 Dark mode
+========================================================================== */
+
+body {
+    &.is-dark {
+        .auth-wrapper-inner {
+            &.is-single {
+                background: lighten($dark-sidebar, 4%);
+
+                .single-form-wrap {
+                    .inner-wrap {
+                        .auth-head {
+                            h2 {
+                                color: $dark-dark-text;
+                            }
+
+                            a {
+                                color: $accent;
+                            }
+                        }
+
+                        .form-card {
+                            background: darken($dark-sidebar, 4%);
+                            border-color: lighten($dark-sidebar, 1%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+10. Media Queries
 ========================================================================== */
 
 @media only screen and (max-width: 767px) {
@@ -1217,4 +1506,36 @@
             height: auto;
         }
     }
+
+    .auth-wrapper-inner {
+        .hero {
+            .hero-body {
+                .auth-content {
+                    text-align: center !important;
+                }
+            }
+        }
+
+        .single-form-wrap {
+            .inner-wrap {
+                .form-card {
+                    padding: 40px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+
+    .auth-wrapper-inner {
+        .hero {
+            .hero-body {
+                .auth-content {
+                    text-align: center !important;
+                }
+            }
+        }
+    }
+
 }

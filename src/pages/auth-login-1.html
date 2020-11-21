@@ -8,7 +8,7 @@ title: Login
     <div class="underlay is-hidden-mobile"></div>
 
     <div class="columns is-gapless is-vcentered">
-        <div class="column is-relative is-8 is-hidden-mobile">
+        <div class="column is-relative is-8 h-hidden-mobile">
             <div class="hero is-fullheight is-image">
                 <div class="hero-body">
                     <div class="container">
@@ -19,35 +19,17 @@ title: Login
                         </div>
                     </div>
                 </div>
-                <div class="bubbles is-hidden">
-                    <div class="bubble is-js levitate">
-                        <img src="assets/img/icons/stacks/js.svg" alt="">
-                    </div>
-                    <div class="bubble is-angular levitate">
-                        <img src="assets/img/icons/stacks/angular.svg" alt="">
-                    </div>
-                    <div class="bubble is-csharp levitate">
-                        <img src="assets/img/icons/stacks/csharp.svg" alt="">
-                    </div>
-                    <div class="bubble is-android levitate">
-                        <img src="assets/img/icons/stacks/android.svg" alt="">
-                    </div>
-                    <div class="bubble is-swift levitate">
-                        <img src="assets/img/icons/stacks/swift.svg" alt="">
-                    </div>
-                    <div class="bubble is-python levitate">
-                        <img src="assets/img/icons/stacks/python.svg" alt="">
-                    </div>
-                    <div class="bubble is-wp levitate">
-                        <img src="assets/img/icons/stacks/cplus.svg" alt="">
-                    </div>
-                </div>
             </div>
         </div>
         <div class="column is-4 is-relative">
             <a class="top-logo" href="/">
-                <img src="assets/img/logos/logo/logo.svg" alt="">
+                <img class="light-image" src="assets/img/logos/logo/logo.svg" alt="">
+                <img class="dark-image" src="assets/img/logos/logo/logo-light.svg" alt="">
             </a>
+            <label class="dark-mode ml-auto">
+                <input type="checkbox" checked>
+                <span></span>
+            </label>
             <div class="is-form">
                 <div class="hero-body">
                     <div class="form-text">
@@ -60,7 +42,7 @@ title: Login
                     </div>
                     <form id="login-form" class="login-wrapper" action="activity-main.html">
                         <div class="control has-validation">
-                            <input type="text" class="input" placeholder="johndoe@mail.com">
+                            <input type="text" class="input" placeholder="">
                             <small class="error-text">This is a required field</small>
                             <div class="auth-label">Email Address</div>
                             <div class="auth-icon">

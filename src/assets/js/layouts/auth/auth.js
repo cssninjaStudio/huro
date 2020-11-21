@@ -19,6 +19,9 @@ $(document).ready(function () {
 
     feather.replace();
 
+    //Dark Mode
+    initDarkMode();
+
     //Login submission
     $('#login-submit').on('click', function () {
         var $this = $(this);
