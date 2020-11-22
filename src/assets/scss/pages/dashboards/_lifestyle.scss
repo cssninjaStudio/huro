@@ -5,7 +5,9 @@
     2. Lifestyle Dashboard V1 Dark mode
     3. Lifestyle Dashboard V2
     4. Lifestyle Dashboard V3
-    5. Media Queries
+    5. Lifestyle Dashboard V4
+    6. Lifestyle Dashboard V4 Dark mode
+    7. Media Queries
 */
 
 /* ==========================================================================
@@ -970,7 +972,342 @@ body {
 }
 
 /* ==========================================================================
-5. Media Queries
+5. Lifestyle Dashboard V4
+========================================================================== */
+
+.lifestyle-dashboard {
+    &.lifestyle-dashboard-v4 {
+        .illustration-header-2 {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-radius: 16px;
+            background: $primary;
+            font-family: $font;
+            box-shadow: $primary-box-shadow;
+
+            .header-image {
+                position: relative;
+                height: 175px;
+                width: 320px;
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: -40px;
+                    display: block;
+                    pointer-events: none;
+                }
+            }
+
+            .header-meta {
+                margin-left: 0px;
+                padding-right: 30px;
+
+                h3 {
+                    color: $smoke-white;
+                    font-family: $font-alt;
+                    font-weight: 700;
+                    font-size: 1.3rem;
+                    max-width: 280px;
+                }
+
+                p {
+                    font-weight: 400;
+                    color: darken($smoke-white, 2%);
+                    margin-bottom: 16px;
+                    max-width: 320px;
+                }
+
+                .action-link {
+                    span {
+                        font-size: .8rem;
+                        text-transform: uppercase;
+                        margin-right: 6px;
+                    }
+
+                    i {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+        .writing-stats {
+            display: flex;
+            margin-bottom: 1rem;
+            margin-left: -8px;
+            margin-right: -8px;
+
+            .writing-stat {
+                @extend .l-card;
+                margin: 8px;
+                width: calc(33.3% - 16px);
+                padding: 12px;
+
+                span {
+                    display: block;
+
+                    &:first-child {
+                        font-family: $font-alt;
+                        font-size: .8rem;
+                        font-weight: 500;
+                        text-transform: uppercase;
+                        margin-bottom: 5px;
+                        color: $light-text;
+                    }
+
+                    &:nth-child(2) {
+                        font-family: $font;
+                        font-weight: 700;
+                        font-size: 1.8rem;
+                        color: $dark-text;
+                    }
+                }
+            }
+        }
+
+        .featured-authors {
+            @extend .l-card;
+            padding: 20px;
+
+            .featured-authors-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 30px;
+
+                h3 {
+                    font-family: $font-alt;
+                    font-weight: 600;
+                    font-size: 1.1rem;
+                    color: $dark-text;
+                }
+
+                .action-link {
+                    font-size: .9rem;
+                }
+            }
+
+            .featured-authors-list {
+                .featured-authors-item {
+                    &:not(:last-child) {
+                        margin-bottom: 20px;
+                    }
+
+                    .media-flex-center {
+                        .flex-end {
+                            span {
+                                font-family: $font-alt;
+                                font-weight: 600;
+                                color: $dark-text;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .updates {
+            @extend .l-card;
+            padding: 20px;
+            margin-top: 8px;
+
+            .updates-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 20px;
+
+                h3 {
+                    font-family: $font-alt;
+                    font-weight: 600;
+                    font-size: 1.1rem;
+                    color: $dark-text;
+                }
+
+                .action-link {
+                    font-size: .9rem;
+                }
+            }
+
+            .updates-list {
+                .update-item {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 16px;
+                    padding-bottom: 16px;
+                    border-bottom: 1px solid darken($fade-grey, 3%);
+
+                    &:last-child {
+                        margin-bottom: 0;
+                        border-bottom: none;
+                    }
+
+                    p {
+                        font-size: .9rem;
+                    }
+
+                    span {
+                        display: block;
+                        min-width: 60px;
+                        text-align: right;
+                        font-family: $font;
+                        font-weight: 600;
+                        font-size: .8rem;
+                        color: $dark-text;
+                    }
+                }
+            }
+        }
+
+        .articles-feed {
+            background: $widget-grey;
+            padding: 30px;
+            border-radius: 12px;
+
+            .articles-feed-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 20px;
+
+                h3 {
+                    font-family: $font-alt;
+                    font-weight: 600;
+                    font-size: 1.1rem;
+                    color: $dark-text;
+                }
+
+                .action-link {
+                    font-size: .9rem;
+                }
+            }
+
+            .articles-feed-subheader {
+                margin-bottom: 20px;
+
+                .selector {
+                    .button {
+                        font-size: .8rem;
+                        border-radius: 50px;
+                        margin-right: 4px;
+
+                        &.is-selected {
+                            background: $primary;
+                            color: $white;
+                            border-color: $primary;
+                            box-shadow: $primary-box-shadow;
+                        }
+                    }
+                }
+            }
+
+            .articles-feed-list {
+                .articles-feed-list-inner {
+                    .articles-feed-item {
+                        display: block;
+
+                        &:not(:last-child) {
+                            margin-bottom: 20px;
+                        }
+
+                        .featured-image {
+                            height: 180px;
+                            overflow: hidden;
+                            border-top-left-radius: 18px;
+                            border-top-right-radius: 18px;
+
+                            img {
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+
+                        .featured-content {
+                            position: relative;
+                            padding: 25px;
+                            border-radius: 18px;
+                            background: $white;
+                            margin-top: -40px;
+                            z-index: 1;
+
+                            h4, p {
+                                margin-bottom: 10px;
+                            }
+
+                            h4 {
+                                font-family: $font-alt;
+                                font-size: 1rem;
+                                font-weight: 600;
+                                color: $dark-text;
+                            }
+
+                            .media-flex-center {
+                                .flex-meta {
+                                    span {
+                                        font-size: .8rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+6. Lifestyle Dashboard V4 Dark mode
+========================================================================== */
+
+body {
+    &.is-dark {
+        .lifestyle-dashboard {
+            &.lifestyle-dashboard-v4 {
+                .illustration-header-2 {
+                    background: $dark-sidebar;
+                    box-shadow: none;
+                }
+
+                .articles-feed {
+                    background: lighten($dark-sidebar, 8%);
+
+                    .articles-feed-subheader {
+                        .selector {
+                            .button {
+                                &.is-selected {
+                                    background: $accent !important;
+                                    border-color: $accent !important;
+                                    box-shadow: $accent-box-shadow !important;
+                                    color: $white !important;
+                                }
+                            }
+                        }
+                    }
+
+                    .articles-feed-list {
+                        .articles-feed-list-inner {
+                            .articles-feed-item {
+                                .featured-content {
+                                    background: $dark-sidebar;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* ==========================================================================
+7. Media Queries
 ========================================================================== */
 
 @media only screen and (max-width: 767px) {
@@ -1108,6 +1445,44 @@ body {
                 border-radius: 10px;
             }
         }
+
+        &.lifestyle-dashboard-v4 {
+            .illustration-header-2 {
+                flex-direction: column;
+                text-align: center;
+
+                .header-image {
+                    height: auto;
+                    width: 100%;
+
+                    img {
+                        position: relative;
+                        width: 100%;
+                        max-width: 260px;
+                        margin: 0 auto;
+                        top: 0px;
+                        left: 0;
+                        margin-top: -34px;
+                    }
+                }
+
+                .header-meta {
+                    padding: 20px;
+
+                    > p {
+                        max-width: 280px;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                }
+            }
+
+            .writing-stats {
+                .writing-stat {
+                    text-align: center;
+                }
+            }
+        }
     }
 
     body {
@@ -1219,6 +1594,24 @@ body {
                 }
             }
         }
+
+        &.lifestyle-dashboard-v4 {
+            .articles-feed {
+                .articles-feed-list {
+                    .articles-feed-list-inner {
+                        display: flex;
+                        flex-wrap: wrap;
+                        margin-left: -12px;
+                        margin-right: -12px;
+
+                        .articles-feed-item {
+                            width: calc(50% - 24px);
+                            margin: 12px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -1297,6 +1690,23 @@ body {
                         }
                     }
                 }
+            }
+        }
+
+        &.lifestyle-dashboard-v4 {
+
+            .updates {
+                .updates-list {
+                    .update-item {
+                        > span {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .articles-feed {
+                padding: 20px;
             }
         }
     }

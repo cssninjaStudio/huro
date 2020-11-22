@@ -19,6 +19,10 @@ List Widgets Styles
 
     padding: 30px;
 
+    &:not(:last-child) {
+        margin-bottom: 1.5rem;
+    }
+
     &.is-straight {
         @extend .s-card;
     }
