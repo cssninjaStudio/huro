@@ -1056,36 +1056,36 @@ body {
                 }
             }
         }
-    }
 
-    &.hr-dashboard {
-        .block-header {
-            padding: 40px;
-
-            .left {
-                .current-user {
-                    h3 {
-                        font-size: 1.5rem;
+        &.hr-dashboard {
+            .block-header {
+                padding: 40px;
+    
+                .left {
+                    .current-user {
+                        h3 {
+                            font-size: 1.5rem;
+                        }
                     }
                 }
-            }
-
-            .center {
-                .candidates {
-                    .h-avatar {
-                        &:nth-child(3) {
-                            display: none;
+    
+                .center {
+                    .candidates {
+                        .h-avatar {
+                            &:nth-child(3) {
+                                display: none;
+                            }
                         }
                     }
                 }
             }
-        }
-
-        .column {
-            &.is-7 {
-                &.is-offset-1 {
-                    margin-left: 2% !important;
-                    width: 64.33333% !important;
+    
+            .column {
+                &.is-7 {
+                    &.is-offset-1 {
+                        margin-left: 2% !important;
+                        width: 64.33333% !important;
+                    }
                 }
             }
         }
