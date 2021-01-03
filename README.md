@@ -1,4 +1,4 @@
-# HURO - Multipurpose Admin and Webapp UI Kit
+# HURO 1.1 - Multipurpose Admin and Webapp UI Kit
 
 ### Note
 
