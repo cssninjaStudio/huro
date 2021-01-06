@@ -1,9 +1,11 @@
 {
   "name": "huro",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Multipurpose Admin and Webapp UI Kit",
   "main": "index.js",
   "scripts": {
+    "dev": "gulp dev",
+    "build": "gulp build",
     "preinstall": "npx npm-force-resolutions"
   },
   "author": "Css Ninja",
