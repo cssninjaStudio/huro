@@ -412,7 +412,7 @@ function initMobileDropdowns() {
 
 //Adjust dropdowns
 function adjustDropdowns() {
-    $('.dropdown').each(function () {
+    $('.dropdown:not(.user-dropdown)').each(function () {
         var $this = $(this);
 
         if (($(this).offset().top + $(this).height()) >= ($(window).height() - 250)) {
@@ -424,7 +424,7 @@ function adjustDropdowns() {
     })
 
     $(window).on('scroll', function () {
-        $('.dropdown').each(function () {
+        $('.dropdown:not(.user-dropdown)').each(function () {
             var $this = $(this);
 
             if (($(this).offset().top + $(this).height()) >= ($(window).height() - 250)) {
@@ -907,21 +907,46 @@ function launchToast(title, message, position, timeout) {
     });
 }
 
+//Get Theme
+function setThemeToLocalStorage(value) {
+    window.localStorage.setItem('theme', value);
+    if (value === 'dark') {
+        $('body').addClass('is-dark');
+    } else {
+        $('body').removeClass('is-dark');
+    }
+}
+
 //Dark Mode
 function initDarkMode() {
+    var theme = window.localStorage.getItem('theme');
+
+    if (!$('.landing-page-wrapper').length) {
+        if (theme != null && theme != undefined) {
+            setThemeToLocalStorage(theme);
+    
+            if (theme === 'dark') {
+                $('.dark-mode input').prop('checked', false);
+            }
+        }
+    }
+    
     $('.dark-mode input').on('change', function () {
+        
         if ($(this).prop('checked') === true) {
             $('html, body').removeClass('is-dark');
             $('.theme-image').each(function () {
                 var imageUrl = $(this).attr('data-light');
                 $(this).attr('src', imageUrl);
             });
+            setThemeToLocalStorage('light');
         } else {
             $('html, body').addClass('is-dark');
             $('.theme-image').each(function () {
                 var imageUrl = $(this).attr('data-dark');
                 $(this).attr('src', imageUrl);
             });
+            setThemeToLocalStorage('dark');
         }
     })
 }

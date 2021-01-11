@@ -6,7 +6,9 @@
     3. Company Dashboard
     4. HR Dashboard
     5. HR Dashboard Dark mode
-    6. Media Queries
+    6. Course Dashboard
+    7. Course Dashboard Dark mode
+    8. Media Queries
 */
 
 /* ==========================================================================
@@ -890,7 +892,168 @@ body {
 }
 
 /* ==========================================================================
-6. Media Queries
+6. Course Dashboard
+========================================================================== */
+
+.business-dashboard {
+    &.course-dashboard {
+        .dashboard-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-family: $font;
+
+            &.is-main {
+                margin-bottom: 30px;
+
+                h2 {
+                    font-size: 1.8rem;
+                }
+            }
+
+            h2 {
+                font-family: $font-alt;
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: $dark-text;
+            }
+        }
+
+        .course-grid {
+            margin-bottom: 2rem;
+
+            .course-card {
+                @extend .l-card;
+
+                .tag {
+                    height: 2.75em;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    border-radius: .5rem;
+                    line-height: 2.7;
+                    margin-bottom: 2rem;
+                }
+
+                h3 {
+                    font-family: $font-alt;
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    color: $dark-text;
+                    margin-bottom: 1rem;
+                }
+
+                .students {
+                    display: flex;
+                    align-items: center;
+                    padding: 2rem 0;
+                    
+                    .h-avatar {
+                        margin: 0 .25rem;
+
+                        .avatar {
+                            &.is-fake {
+                                span {
+                                    position: relative;
+                                    left: -2px;
+                                }
+                            }
+                        }
+                    }
+
+                    .link {
+                        font-family: $font;
+                        font-weight: 500;
+                        color: $primary;
+                        margin-left: 1rem;
+                    }
+                }
+
+                .attached-block {
+
+                    + .attached-block {
+                        margin-top: 1.5rem;
+                    }   
+
+                    > a {
+                        font-family: $font;
+                        font-weight: 500;
+                        color: $primary;
+                        margin-bottom: .5rem;
+                    }
+
+                    .block-stats {
+                        display: flex;
+                        color: $light-text;
+
+                        + .block-stats {
+                            margin-top: .25rem;
+                        }
+
+                        span {
+                            font-family: $font;
+                            display: flex;
+                            align-items: center;
+                            margin-right: .75rem;
+
+                            svg {
+                                height: 15px;
+                                width: 15px;
+                                stroke-width: 1px;
+                                margin-right: .25rem;
+                            }
+                        }
+                    }
+                }
+
+                .action-block {
+                    margin-top: 2.5rem;
+
+                    .button {
+                        height: 46px;
+                        border-radius: .75rem;
+                    }
+                }
+            }
+        }
+
+        .tile-grid {
+            .tile-grid-item {
+                margin-bottom: 1rem;
+            }
+        }
+
+        .flex-table {
+            .flex-table-item {
+                border-radius: 1rem;
+                padding: 1rem;
+                margin-bottom: 1rem;
+
+                .tag {
+                    height: 2.75em;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    border-radius: .5rem;
+                    line-height: 2.7;
+                }
+
+                .action-button {
+                    border-radius: .75rem;
+
+                    &:hover {
+                        background: $primary;
+                        border-color: $primary;
+                        color: $white;
+                        box-shadow: $primary-box-shadow;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+8. Media Queries
 ========================================================================== */
 
 @media only screen and (max-width: 767px) {
@@ -997,6 +1160,16 @@ body {
 
                 h3 {
                     margin-bottom: 16px;
+                }
+            }
+        }
+
+        &.course-dashboard {
+            .dashboard-title {
+                flex-direction: column;
+
+                .left {
+                    margin-bottom: 1rem;
                 }
             }
         }

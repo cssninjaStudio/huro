@@ -186,6 +186,7 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    z-index: 6;
 
     &.is-webapp {
         display: none;

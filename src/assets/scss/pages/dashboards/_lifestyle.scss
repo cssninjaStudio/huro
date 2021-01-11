@@ -7,7 +7,9 @@
     4. Lifestyle Dashboard V3
     5. Lifestyle Dashboard V4
     6. Lifestyle Dashboard V4 Dark mode
-    7. Media Queries
+    7. Lifestyle Dashboard V5
+    8. Lifestyle Dashboard V5 Dark mode
+    9. Media Queries
 */
 
 /* ==========================================================================
@@ -1307,6 +1309,305 @@ body {
 
 
 /* ==========================================================================
+7. Lifestyle Dashboard V5
+========================================================================== */
+
+.lifestyle-dashboard {
+    &.lifestyle-dashboard-v5 {
+        .dashboard-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-family: $font;
+
+            &.is-main {
+                margin-bottom: 30px;
+
+                h2 {
+                    font-size: 1.8rem;
+                }
+            }
+
+            h2 {
+                font-family: $font-alt;
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: $dark-text;
+            }
+
+            .members {
+                h4 {
+                    font-family: $font;
+                    color: $light-text;
+                    padding: 0 .35rem;
+                    margin-bottom: .75rem;
+                }
+
+                .members-list {
+                    display: flex;
+                    
+                    .h-avatar {
+                        margin: 0 .35rem;
+
+                        button {
+                            outline: none;
+                            border: none;
+                            background: $primary;
+                            box-shadow: $primary-box-shadow;
+                            color: $white;
+                            cursor: pointer;
+
+                            svg {
+                                stroke: $white;
+                                height: 16px;
+                                width: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .media-feed {
+            .feed-group {
+
+                + .feed-group {
+                    margin-top: 3.5rem;
+                }
+
+                .group-title {
+                    font-family: $font;
+                    font-size: .85rem;
+                    font-weight: 500;
+                    color: $light-text;
+                    text-transform: uppercase;
+                    margin-bottom: 1rem;
+                }
+
+                .group-content {
+                    .media-feed-item {
+                        position: relative;
+                        @extend .r-card;
+                        
+                        padding: 1.5rem;
+                        min-height: 220px;
+                        overflow: hidden;
+
+                        &.is-big {
+                            min-height: 380px;
+
+                            .item-duration {
+                                top: 40px;
+                                right: 40px;
+                            }
+
+                            .play-button {
+                                top: 40px;
+                                left: 40px;
+                                height: 60px;
+                                width: 60px;
+                                border-radius: 1rem;
+
+                                svg {
+                                    height: 26px;
+                                    width: 26px;
+                                }
+                            }
+
+                            .overlay-layer {
+                                .overlay-content {
+                                    .inner-content {
+                                        padding: 40px;
+                                        .media-title {
+                                            font-size: 2.5rem;
+                                            line-height: 43px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .play-button {
+                            position: absolute;
+                            top: 20px;
+                            left: 20px;
+                            background: $white;
+                            height: 40px;
+                            width: 40px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border: none;
+                            outline: none;
+                            border-radius: .75rem;
+                            z-index: 3;
+                            cursor: pointer;
+                            box-shadow: $light-box-shadow;
+
+                            &:hover {
+                                svg {
+                                    stroke: $primary;
+                                    fill: $primary;
+                                }
+                            }
+
+                            svg {
+                                position: relative;
+                                left: 2px;
+                                height: 15px;
+                                width: 15px;
+                                fill: $dark-text;
+                                stroke: $dark-text;
+                                transition: all .3s;
+                            }
+                        }
+
+                        .item-duration {
+                            position: absolute;
+                            top: 20px;
+                            right: 20px;
+                            background: $primary;
+                            box-shadow: $primary-box-shadow;
+                            font-family: $font;
+                            font-weight: 500;
+                            color: $white;
+                            height: 2.75em;
+                            padding-left: 1rem;
+                            padding-right: 1rem;
+                            border-radius: .5rem;
+                            line-height: 2.7;
+                            z-index: 3;
+                        }
+
+                        .overlay-layer {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 100%;
+                            width: 100%;
+                            z-index: 2;
+                
+                            .overlay-content {
+                                position: relative;
+                                height: 100%;
+                                width: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: flex-end;
+                
+                                .inner-content {
+                                    padding: 20px;
+                                    color: $white;
+                
+                                    .media-title {
+                                        font-family: $font-alt;
+                                        font-size: 1.3rem;
+                                        font-weight: bolder;
+                                        line-height: 24px;
+                                        color: $smoke-white;
+                                        margin-bottom: 6px;
+                                    }
+                
+                                    .media-meta {
+                                        display: flex;
+                                        align-items: center;
+                
+                                        img {
+                                            display: block;
+                                            height: 30px;
+                                            width: 30px;
+                                            min-width: 30px;
+                                            border-radius: 50%;
+                                            margin-right: 6px;
+                                        }
+                
+                                        .meta-item {
+                                            display: block;
+                                            font-size: .82rem;
+                                            font-weight: 500;
+                                            color: darken($smoke-white, 8%);
+                                            transition: color .3s;
+                
+                                            &.is-hoverable:hover {
+                                                color: $primary;
+                                            }
+                                        }
+                
+                                        .separator {
+                                            padding: 0 10px;
+                                            font-size: .8rem;
+                                            color: darken($smoke-white, 10%);
+                                            opacity: .6;
+                                            text-align: center;
+                                            color: $smoke-white;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .item-overlay {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 100%;
+                            width: 100%;
+                            background: linear-gradient(to top, #161616, rgba(255, 0, 0, 0));
+                            z-index: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+8. Lifestyle Dashboard V5 Dark mode
+========================================================================== */
+
+body {
+    &.is-dark {
+        .lifestyle-dashboard {
+            &.lifestyle-dashboard-v5 {
+                .dashboard-title {
+                    .members {
+                        .members-list {
+                            .h-avatar {
+                                button {
+                                    background: $accent !important;
+                                }
+
+                                .avatar {
+                                    &.is-fake {
+                                        background: lighten($dark-sidebar, 2%);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .media-feed {
+                    .feed-group {
+                        .group-content {
+                            .media-feed-item {
+                                .item-duration {
+                                    background: $accent !important;
+                                    color: $white !important;
+                                    box-shadow: $accent-box-shadow !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
 7. Media Queries
 ========================================================================== */
 
@@ -1483,6 +1784,16 @@ body {
                 }
             }
         }
+
+        &.lifestyle-dashboard-v5 {
+            .dashboard-title {
+                flex-direction: column;
+
+                .right {
+                    text-align: center;
+                }
+            }
+        }
     }
 
     body {
@@ -1612,6 +1923,22 @@ body {
                 }
             }
         }
+
+        &.lifestyle-dashboard-v5 {
+            .media-feed {
+                .feed-group {
+                    .group-content {
+                        > .columns {
+                            display: flex;
+
+                            .column {
+                                min-width: 50%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -1709,5 +2036,40 @@ body {
                 padding: 20px;
             }
         }
+
+        &.lifestyle-dashboard-v5 {
+            .media-feed {
+                .feed-group {
+                    .group-content {
+                        .media-feed-item {
+                            .overlay-layer {
+                                .overlay-content {
+                                    .inner-content {
+
+                                        .media-title {
+                                            font-size: 1.1rem;
+                                        }
+
+                                        .media-meta {
+                                            img {
+                                                height: 24px;
+                                                width: 24px;
+                                                min-width: 24px;
+                                            }
+
+                                            .separator {
+                                                padding: 0 5px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
+
+

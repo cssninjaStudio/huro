@@ -62,6 +62,10 @@ Responsive styles
         left: 60px;
     }
 
+    .mobile-main-sidebar, .mobile-subsidebar {
+        display: none !important;
+    }
+
     //Layout
     .view-wrapper {
         width: calc(100% - 60px) !important;
@@ -404,6 +408,10 @@ Responsive styles
 
 @media only screen and (min-device-width: 1025px) and (orientation: landscape) {
     .panel-close {
+        display: none !important;
+    }
+
+    .mobile-main-sidebar, .mobile-subsidebar {
         display: none !important;
     }
 }
