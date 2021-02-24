@@ -1,4 +1,4 @@
-/*! touch.js | Huro | Css Ninja 2020-2021 */
+/* ! touch.js | Huro | Css Ninja 2020-2021 */
 
 /* ==========================================================================
 Touch functions using Hammer.js

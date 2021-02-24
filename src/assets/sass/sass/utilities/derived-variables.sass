@@ -1,26 +1,29 @@
+@import "initial-variables"
+@import "functions"
+
 $primary: $turquoise !default
 
 $info: $cyan !default
-$success: $success !default
+$success: $green !default
 $warning: $yellow !default
-$danger: $danger !default
+$danger: $red !default
 
 $light: $white-ter !default
 $dark: $grey-darker !default
 
 // Invert colors
 
-$warning-invert: findColorInvert($warning) !default
+$orange-invert: findColorInvert($orange) !default
 $yellow-invert: findColorInvert($yellow) !default
-$success-invert: findColorInvert($success) !default
+$green-invert: findColorInvert($green) !default
 $turquoise-invert: findColorInvert($turquoise) !default
 $cyan-invert: findColorInvert($cyan) !default
-$info-invert: findColorInvert($info) !default
-$primary-invert: findColorInvert($primary) !default
-$danger-invert: findColorInvert($danger) !default
+$blue-invert: findColorInvert($blue) !default
+$purple-invert: findColorInvert($purple) !default
+$red-invert: findColorInvert($red) !default
 
 $primary-invert: findColorInvert($primary) !default
-$accent: findLightColor($primary) !default
+$primary-light: findLightColor($primary) !default
 $primary-dark: findDarkColor($primary) !default
 $info-invert: findColorInvert($info) !default
 $info-light: findLightColor($info) !default
@@ -62,7 +65,7 @@ $text-strong: $grey-darker !default
 
 // Code colors
 
-$code: $danger !default
+$code: darken($red, 15%) !default
 $code-background: $background !default
 
 $pre: $text !default
@@ -70,17 +73,17 @@ $pre-background: $background !default
 
 // Link colors
 
-$link: $info !default
+$link: $blue !default
 $link-invert: findColorInvert($link) !default
 $link-light: findLightColor($link) !default
 $link-dark: findDarkColor($link) !default
-$link-visited: $primary !default
+$link-visited: $purple !default
 
 $link-hover: $grey-darker !default
 $link-hover-border: $grey-light !default
 
 $link-focus: $grey-darker !default
-$link-focus-border: $info !default
+$link-focus-border: $blue !default
 
 $link-active: $grey-darker !default
 $link-active-border: $grey-dark !default
@@ -100,7 +103,8 @@ $size-large: $size-4 !default
 $custom-colors: null !default
 $custom-shades: null !default
 
-$colors: mergeColorMaps(("white": ($white, $black), "black": ($black, $white), "light": ($light, $light-invert), "dark": ($dark, $dark-invert), "primary": ($primary, $primary-invert, $accent, $primary-dark), "link": ($link, $link-invert, $link-light, $link-dark), "info": ($info, $info-invert, $info-light, $info-dark), "success": ($success, $success-invert, $success-light, $success-dark), "warning": ($warning, $warning-invert, $warning-light, $warning-dark), "danger": ($danger, $danger-invert, $danger-light, $danger-dark)), $custom-colors) !default
+$colors: mergeColorMaps(("white": ($white, $black), "black": ($black, $white), "light": ($light, $light-invert), "dark": ($dark, $dark-invert), "primary": ($primary, $primary-invert, $primary-light, $primary-dark), "link": ($link, $link-invert, $link-light, $link-dark), "info": ($info, $info-invert, $info-light, $info-dark), "success": ($success, $success-invert, $success-light, $success-dark), "warning": ($warning, $warning-invert, $warning-light, $warning-dark), "danger": ($danger, $danger-invert, $danger-light, $danger-dark)), $custom-colors) !default
+
 $shades: mergeColorMaps(("black-bis": $black-bis, "black-ter": $black-ter, "grey-darker": $grey-darker, "grey-dark": $grey-dark, "grey": $grey, "grey-light": $grey-light, "grey-lighter": $grey-lighter, "white-ter": $white-ter, "white-bis": $white-bis), $custom-shades) !default
 
 $sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 $size-7 !default

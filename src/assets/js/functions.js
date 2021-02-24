@@ -146,7 +146,11 @@ function initSidebar() {
             $('.nav-trigger .menu-toggle .icon-box-toggle').toggleClass('active');
             $('#' + sidebar).toggleClass('is-active');
             $('.view-wrapper').toggleClass('is-pushed');
-            $('.main-sidebar, .sidebar-brand').toggleClass('is-bordered');
+            if ($('.main-sidebar, .sidebar-brand').hasClass('is-bordered')) {
+                $('.main-sidebar, .sidebar-brand').removeClass('is-bordered');
+            } else {
+                $('.main-sidebar, .sidebar-brand').addClass('is-bordered');
+            }
             $('body').toggleClass('opened');
         }
 
@@ -155,7 +159,11 @@ function initSidebar() {
             $('.nav-trigger .menu-toggle .icon-box-toggle').toggleClass('active');
             $('#' + sidebar).toggleClass('is-active');
             $('.view-wrapper').toggleClass('is-pushed-full');
-            $('.main-sidebar, .sidebar-brand').toggleClass('is-bordered');
+            if ($('.main-sidebar, .sidebar-brand').hasClass('is-bordered')) {
+                $('.main-sidebar, .sidebar-brand').removeClass('is-bordered');
+            } else {
+                $('.main-sidebar, .sidebar-brand').addClass('is-bordered');
+            }
             $('body').toggleClass('opened');
 
             if ($(this).hasClass('messages-push')) {
@@ -170,7 +178,11 @@ function initSidebar() {
             $('.nav-trigger .menu-toggle .icon-box-toggle').toggleClass('active');
             $('#' + sidebar).toggleClass('is-active');
             $('.view-wrapper').toggleClass('is-pushed-search');
-            $('.main-sidebar, .sidebar-brand').toggleClass('is-bordered');
+            if ($('.main-sidebar, .sidebar-brand').hasClass('is-bordered')) {
+                $('.main-sidebar, .sidebar-brand').removeClass('is-bordered');
+            } else {
+                $('.main-sidebar, .sidebar-brand').addClass('is-bordered');
+            }
             $('body').toggleClass('opened');
         }
 
@@ -180,7 +192,11 @@ function initSidebar() {
     $('.panel-close').on('click', function () {
         $(this).closest('.sidebar-panel').removeClass('is-active');
         $('.huro-hamburger .icon-box-toggle').removeClass('active');
-        $('.main-sidebar, .sidebar-brand').toggleClass('is-bordered');
+        if ($('.main-sidebar, .sidebar-brand').hasClass('is-bordered')) {
+            $('.main-sidebar, .sidebar-brand').removeClass('is-bordered');
+        } else {
+            $('.main-sidebar, .sidebar-brand').addClass('is-bordered');
+        }
         $('body').toggleClass('opened');
     })
 
@@ -228,7 +244,11 @@ function closeSidebarPanel() {
     $('.sidebar-panel.is-active').removeClass('is-active');
     $('.huro-hamburger .icon-box-toggle').removeClass('active');
     $('.view-wrapper').removeClass('is-pushed-full');
-    $('.main-sidebar, .sidebar-brand').toggleClass('is-bordered');
+    if ($('.main-sidebar, .sidebar-brand').hasClass('is-bordered')) {
+        $('.main-sidebar, .sidebar-brand').removeClass('is-bordered');
+    } else {
+        $('.main-sidebar, .sidebar-brand').addClass('is-bordered');
+    }
     $('body').toggleClass('opened');
 }
 
@@ -266,9 +286,9 @@ function initWebapp() {
     $(window).on('scroll', function () {
         var height = $(window).scrollTop();
         if (height > 10) {
-            $(".webapp-navbar.is-transparent").addClass('is-scrolled');
+            $(".webapp-navbar.is-transparent, .webapp-navbar-clean.is-transparent").addClass('is-scrolled');
         } else {
-            $(".webapp-navbar.is-transparent").removeClass('is-scrolled');
+            $(".webapp-navbar.is-transparent, .webapp-navbar-clean.is-transparent").removeClass('is-scrolled');
         }
     });
 
@@ -1138,10 +1158,21 @@ function initBackToTop() {
 
 //Fake json search demo
 function initSearch() {
+    $('#webapp-navbar-search-empty').on('click', function(){
+        $('.search-input').val('');
+        $('.search-results').removeClass('is-active');
+    });
+
     $('.search-input').each(function () {
         $(this).on('keyup', function () {
             var $container = $(this).closest('.control');
             var searchQuery = $(this).val();
+            if (searchQuery.length > 0) {
+                $('#webapp-navbar-search-empty').removeClass('is-hidden');
+            }
+            else {
+                $('#webapp-navbar-search-empty').addClass('is-hidden');
+            }
             var expression = new RegExp(searchQuery, "i");
             $.getJSON('assets/data/search.json', function (data) {
                 $container.find('.search-results .search-result, .search-results .placeholder-wrap').remove();

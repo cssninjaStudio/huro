@@ -42,7 +42,19 @@ $(document).ready(function(){
                 $('#night-toggle--daynight').prop('checked', true);
             }
         }
-    })
+    });
+
+    // if mobile menu (navbar-menu) is open on resize (bigger) then close it
+    if ("matchMedia" in window) {
+        var mql = window.matchMedia('(min-width: 1024px)');
+        mql.addEventListener("change", function (e) {
+            if (e.matches) {
+                if ($('.landing-page-wrapper .navbar-menu').hasClass("is-active")) {
+                    $('.landing-page-wrapper .navbar-burger').trigger("click");
+                }
+            }
+        });
+    }
 
     $(".landing-page-wrapper .navbar .nav-link").on("click", function () {
         $('.landing-page-wrapper .navbar .nav-link').removeClass('is-active');
@@ -66,7 +78,9 @@ $(document).ready(function(){
 
             }
         }
-
+        if ($('.landing-page-wrapper .navbar-menu').hasClass("is-active")) {
+            $('.landing-page-wrapper .navbar-burger').trigger("click");
+        }
     });
 
     $('.landing-page-wrapper .navbar-burger').on('click', function(){

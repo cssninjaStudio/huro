@@ -563,7 +563,7 @@ body {
 ========================================================================== */
 
 .app-wrapper {
-    transition: all .3s;
+    transition: transform .3s;
 
     &.is-pushed-bottom {
         transform: translateY(50px);

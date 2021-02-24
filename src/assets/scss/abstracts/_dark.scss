@@ -43,6 +43,10 @@ html, body {
             border-color: lighten($dark-sidebar, 10%);
         }
 
+        .app-wrapper {
+            background: lighten($dark-sidebar, 10%) !important;
+        }
+
         .zoom-overlay {
             background: lighten($dark-sidebar, 10%);
             border-color: lighten($dark-sidebar, 10%);

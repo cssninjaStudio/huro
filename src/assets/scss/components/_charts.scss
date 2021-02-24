@@ -191,12 +191,20 @@ body {
             background: lighten($dark-sidebar, 2%);
             color: $dark-dark-text !important;
 
-            &.apexcharts-xaxistooltip-bottom:after {
+            &.apexcharts-xaxistooltip-bottom::after {
                 border-bottom-color: lighten($dark-sidebar, 2%);
             }
-
-            &.apexcharts-xaxistooltip-bottom:before {
-                border-bottom-color: lighten($dark-sidebar, 12%);
+        
+            &.apexcharts-xaxistooltip-bottom::before {
+            border-bottom-color: lighten($dark-sidebar, 12%);
+            }
+        
+            &.apexcharts-xaxistooltip-top::after {
+            border-top-color: lighten($dark-sidebar, 2%);
+            }
+        
+            &.apexcharts-xaxistooltip-top::before {
+            border-top-color: lighten($dark-sidebar, 12%);
             }
 
             * {

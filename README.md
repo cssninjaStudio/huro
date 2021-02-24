@@ -1,4 +1,4 @@
-# HURO 0.1.0 - Multipurpose Admin and Webapp UI Kit
+# HURO 1.3.0 - Multipurpose Admin and Webapp UI Kit
 
 ### Note
 
@@ -81,11 +81,4 @@ To use this template, your computer needs:
 - [Panini](https://github.com/zurb/panini)
 - [Gulp](https://gulpjs.org/getting-started)
 
-# Bulma source modifications
 
-1. Revert new variables from Bulma 8.0 to:
-   $control-height: 2.25em !default
-$control-padding-vertical: calc(0.375em - #{$control-border-width}) !default
-$control-padding-horizontal: calc(0.625em - #{$control-border-width}) !default
-$button-padding-vertical: calc(0.375em - #{$button-border-width}) !default
-$button-padding-horizontal: 0.75em !default
