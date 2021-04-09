@@ -13,7 +13,7 @@
 <script src="{{ root }}assets/js/touch.js"></script>
 
 <!-- Landing page js -->
-{{#ifpage 'index'}}
+{{#ifpage 'index' 'marketing-1' 'marketing-2' 'marketing-3'}}
 <script src="{{ root }}assets/js/landing.js"></script>
 {{/ifpage}}
 
@@ -97,7 +97,12 @@
 {{/ifpage}}
 
 <!--Forms-->
-{{#ifpage 'admin-form-layouts-4'}}
+{{#ifpage 
+    'admin-form-layouts-4' 
+    'webapp-form-layouts-4'
+    'admin-form-layouts-5' 
+    'webapp-form-layouts-5'
+}}
 <script src="{{ root }}assets/js/forms.js"></script>
 {{/ifpage}}
 

@@ -26,6 +26,8 @@ const babel = require('gulp-babel');
 const nodepath = 'node_modules/';
 const assetspath = 'assets/';
 
+sass.compiler = require('sass');
+
 // File paths
 const files = {
   scssPath: 'app/scss/**/*.scss',
@@ -192,7 +194,7 @@ function jsLint() {
 // WATCH FILES
 function watchFiles() {
   watch('src/**/*.html', compileHTML);
-  watch(['src/assets/scss/**/*', 'src/assets/scss/*'], compileSCSS);
+  watch('src/assets/scss/**/*.scss', compileSCSS);
   watch('src/assets/js/**/*.js', compileJS);
   watch('src/assets/img/**/*', copyImages);
 }
@@ -212,7 +214,7 @@ function browserSyncInit(done) {
 // COPIES AND MINIFY IMAGE TO DIST
 function copyImages() {
   console.log('---------------OPTIMIZING IMAGES---------------');
-  return src('src/assets/img/**/*.+(png|jpg|jpeg|gif|svg)')
+  return src('src/assets/img/**/*.+(png|jpg|jpeg|gif|svg|mp4|webm|ogg)')
     .pipe(newer('dist/assets/img/'))
     //.pipe(imagemin())
     .pipe(dest('dist/assets/img/'))
@@ -264,6 +266,7 @@ function concatPlugins() {
     nodepath + 'simplebar/dist/simplebar.min.js',
     nodepath + 'nouislider/distribute/nouislider.min.js',
     nodepath + 'suneditor/dist/suneditor.min.js',
+    nodepath + 'plyr/dist/plyr.min.js',
     nodepath + 'mediaplayer/browser.js',
     nodepath + 'choices.js/public/assets/scripts/choices.min.js',
     nodepath + 'lightgallery.js/dist/js/lightgallery.min.js',
@@ -307,6 +310,7 @@ function concatCssPlugins() {
     nodepath + 'simplebar/dist/simplebar.min.css',
     nodepath + 'nouislider/distribute/nouislider.min.css',
     nodepath + 'suneditor/dist/css/suneditor.min.css',
+    nodepath + 'plyr/dist/plyr.css',
     nodepath + 'mediaplayer/browser.css',
     nodepath + 'choices.js/public/assets/styles/choices.min.css',
     nodepath + 'lightgallery.js/dist/css/lightgallery.min.css',

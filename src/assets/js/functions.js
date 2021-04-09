@@ -1092,6 +1092,23 @@ function initCustomTextFilter() {
     }
 }
 
+//Custom Plyr Players
+function initPlayers() {
+    if ($('.video-player').length) {
+        if (env === 'development') {
+            $('[data-demo-poster]').each(function () {
+                var poster = $(this).attr('data-demo-poster');
+                if (poster !== undefined) {
+                    $(this).attr('data-poster', poster);
+                }
+            });
+            const players = Array.from(document.querySelectorAll('.bulkit-player')).map(p => new Plyr(p));
+        } else {
+            const players = Array.from(document.querySelectorAll('.bulkit-player')).map(p => new Plyr(p));
+        }
+
+    }
+}
 
 //Flex Table
 function initAdvancedFlexTable() {

@@ -56,6 +56,22 @@ $(document).ready(function(){
         });
     }
 
+    //Video
+    if ($('.video-player').length) {
+        if (env === 'development') {
+            $('[data-demo-poster]').each(function () {
+                var poster = $(this).attr('data-demo-poster');
+                if (poster !== undefined) {
+                    $(this).attr('data-poster', poster);
+                }
+            });
+            const players = Array.from(document.querySelectorAll('.video-player')).map(p => new Plyr(p));
+        } else {
+            const players = Array.from(document.querySelectorAll('.video-player')).map(p => new Plyr(p));
+        }
+
+    }
+
     $(".landing-page-wrapper .navbar .nav-link").on("click", function () {
         $('.landing-page-wrapper .navbar .nav-link').removeClass('is-active');
         $(this).addClass('is-active');

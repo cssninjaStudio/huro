@@ -31,6 +31,8 @@ $landing-dark-1: #0c0e14;
 $landing-dark-2: #191c2b;
 
 .landing-page-wrapper {
+    overflow-x: hidden;
+
     .container {
         max-width: 1140px;
     }

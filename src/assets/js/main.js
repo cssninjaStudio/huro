@@ -129,13 +129,16 @@ $(document).ready(function () {
     initTextFilter();
 
     //Advanced flex table
-    initAdvancedFlexTable()
+    initAdvancedFlexTable();
 
     //Accordion
-    initSingleAccordion()
+    initSingleAccordion();
 
     //Collapse
-    initCollapse()
+    initCollapse();
+
+    //PLyr players
+    initPlayers();
 
     //Search
     initSearch();

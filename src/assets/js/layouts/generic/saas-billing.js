@@ -109,27 +109,53 @@ window.onload = function () {
         }
     });*/
 
-    var expirationdate_mask = IMask(expirationdate, {
-        mask: Date,  // enable date mask
+    
 
-        // other options are optional
-        pattern: 'MM{/}YY',  // Pattern mask with defined blocks, default is 'd{.}`m{.}`Y'
-        // you can provide your own blocks definitions, default blocks for date mask are:
+    var creditcardMaskDate = {
+        mask: Date, // enable date mask
+        pattern: 'MM{/}`YY',
+        min: new Date(2021, 0, 1),
+        max: new Date(2099, 0, 1),
         blocks: {
-            YY: {
-                mask: IMask.MaskedRange,
-                from: 0,
-                to: 99,
-                maxLength: 2,
-            },
-            MM: {
-                mask: IMask.MaskedRange,
-                from: 1,
-                to: 12,
-                maxLength: 2,
-            }
+          YY: {
+            mask: IMask.MaskedRange,
+            from: 21,
+            to: 35,
+            maxLength: 2,
+          },
+          MM: {
+            mask: IMask.MaskedRange,
+            from: 1,
+            to: 12,
+            maxLength: 2,
+          },
         },
-    });
+        // define date -> value convertion
+        format: (date) => {
+          const day = date.getDate()
+          const month = date.getMonth() + 1
+          const year = date.getFullYear()
+    
+          return [
+            month < 10 ? `0${month}` : month,
+            year.toString().substr(2, 2),
+          ].join('/')
+        },
+        // define value -> date convertion
+        parse: (value) => {
+          const monthYear = value.split('/')
+          if (monthYear.length === 2) {
+            return new Date(
+              parseInt(monthYear[1]) + 2000,
+              parseInt(monthYear[0]) - 1,
+              1
+            )
+          }
+          return new Date()
+        },
+      }
+
+    var expirationdate_mask = IMask(expirationdate, creditcardMaskDate);
 
     //Mask the security code
     var securitycode_mask = new IMask(securitycode, {
