@@ -22,6 +22,9 @@ $(document).ready(function () {
     //Dark Mode
     initDarkMode();
 
+    //Regular Modals
+    initAnimatedModals();
+
     //Login submission
     $('#login-submit').on('click', function () {
         var $this = $(this);
@@ -108,6 +111,37 @@ $(document).ready(function () {
             });
 
         }
+
+        //Uploader
+        FilePond.registerPlugin(
+            FilePondPluginImagePreview,
+            FilePondPluginImageExifOrientation,
+            FilePondPluginFileValidateSize,
+            FilePondPluginImageEdit
+        );
+
+        FilePond.create(
+            document.querySelector('.signup-filepond'),
+            {
+                labelIdle: `<i class="lnil lnil-cloud-upload"></>`,
+                imagePreviewHeight: 140,
+                imageCropAspectRatio: '1:1',
+                imageResizeTargetWidth: 140,
+                imageResizeTargetHeight: 140,
+                stylePanelLayout: 'compact circle',
+                styleLoadIndicatorPosition: 'center bottom',
+                styleProgressIndicatorPosition: 'right bottom',
+                styleButtonRemoveItemPosition: 'left bottom',
+                styleButtonProcessItemPosition: 'right bottom',
+            }
+        );
+
+        const pond = document.querySelector('.signup-filepond');
+        pond.addEventListener('FilePond:addfile', e => {
+            console.log('File added', e.detail);
+            const button = document.getElementById('signup-profile-upload');
+            button.classList.remove('is-disabled');
+        });
 
         //Step 2 confirmation
         $('#confirm-step-2').on('click', function () {

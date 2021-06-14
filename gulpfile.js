@@ -124,6 +124,7 @@ function compileJS() {
     'src/assets/js/dashboards/ecommerce-1.js',
     'src/assets/js/dashboards/apps-1.js',
     'src/assets/js/dashboards/apps-2.js',
+    'src/assets/js/dashboards/map-1.js',
     'src/assets/js/dashboards/charts/apex.js',
     'src/assets/js/dashboards/charts/billboardjs.js',
     'src/assets/js/dashboards/charts/apex-data.js',

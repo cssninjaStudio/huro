@@ -1,0 +1,573 @@
+---
+layout: webapp
+title: Map
+---
+
+{{> layouts-mobile-subsidebar}}
+
+<!-- Content Wrapper -->
+<div
+  id="webapp-map"
+  class="view-wrapper is-webapp"
+  data-page-title="Map View"
+  data-naver-offset="214"
+  data-menu-item="#dashboards-navbar-menu"
+  data-mobile-item="#home-sidebar-menu-mobile"
+>
+  <div class="page-content-wrapper">
+    <!-- Content -->
+    <div class="dashboard-map-wrapper">
+      <div class="dashboard-map-wrapper-inner">
+        <div id="mapbox-1" class="map-section">
+          <div id="geocoder" class="geocoder"></div>
+        </div>
+        <div class="content-section">
+          <div class="content-section-header">
+            <h2 class="title is-4 is-narrow">Locations</h2>
+            <div class="toolbar ml-auto">
+              <div class="toolbar-link">
+                <label class="dark-mode ml-auto">
+                  <input type="checkbox" checked />
+                  <span></span>
+                </label>
+              </div>
+
+              <a
+                class="toolbar-link right-panel-trigger"
+                data-panel="languages-panel"
+              >
+                <img
+                  src="assets/img/icons/flags/united-states-of-america.svg"
+                  alt=""
+                />
+              </a>
+
+              <div class="toolbar-notifications is-hidden-mobile">
+                <div
+                  class="dropdown is-spaced is-dots is-right dropdown-trigger"
+                >
+                  <div class="is-trigger" aria-haspopup="true">
+                    <i data-feather="bell"></i>
+                    <span class="new-indicator pulsate"></span>
+                  </div>
+                  <div class="dropdown-menu" role="menu">
+                    <div class="dropdown-content">
+                      <div class="heading">
+                        <div class="heading-left">
+                          <h6 class="heading-title">Notifications</h6>
+                        </div>
+                        <div class="heading-right">
+                          <a
+                            class="notification-link"
+                            href="/admin-profile-notifications.html"
+                            >See all</a
+                          >
+                        </div>
+                      </div>
+                      <ul class="notification-list">
+                        <li>
+                          <a class="notification-item">
+                            <div class="img-left">
+                              <img
+                                class="user-photo"
+                                alt=""
+                                src="https://via.placeholder.com/150x150"
+                                data-demo-src="assets/img/avatars/photos/7.jpg"
+                              />
+                            </div>
+                            <div class="user-content">
+                              <p class="user-info">
+                                <span class="name">Alice C.</span> left a
+                                comment.
+                              </p>
+                              <p class="time">1 hour ago</p>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="notification-item">
+                            <div class="img-left">
+                              <img
+                                class="user-photo"
+                                alt=""
+                                src="https://via.placeholder.com/150x150"
+                                data-demo-src="assets/img/avatars/photos/12.jpg"
+                              />
+                            </div>
+                            <div class="user-content">
+                              <p class="user-info">
+                                <span class="name">Joshua S.</span> uploaded a
+                                file.
+                              </p>
+                              <p class="time">2 hours ago</p>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="notification-item">
+                            <div class="img-left">
+                              <img
+                                class="user-photo"
+                                alt=""
+                                src="https://via.placeholder.com/150x150"
+                                data-demo-src="assets/img/avatars/photos/13.jpg"
+                              />
+                            </div>
+                            <div class="user-content">
+                              <p class="user-info">
+                                <span class="name">Tara S.</span> sent you a
+                                message.
+                              </p>
+                              <p class="time">2 hours ago</p>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="notification-item">
+                            <div class="img-left">
+                              <img
+                                class="user-photo"
+                                alt=""
+                                src="https://via.placeholder.com/150x150"
+                                data-demo-src="assets/img/avatars/photos/25.jpg"
+                              />
+                            </div>
+                            <div class="user-content">
+                              <p class="user-info">
+                                <span class="name">Melany W.</span> left a
+                                comment.
+                              </p>
+                              <p class="time">3 hours ago</p>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content-section-body" data-simplebar>
+            <!--Title-->
+            <h4 class="content-section-title">Recent Locations</h4>
+            <!--Map Box-->
+            <div
+              class="box map-box"
+              data-lat="-77.038659"
+              data-long="38.931567"
+              data-feature="0"
+            >
+              <div class="map-box-place">
+                <div class="map-box-header">
+                  <div class="media-flex-center">
+                    <div class="h-avatar is-small">
+                      <img
+                        class="avatar"
+                        src="assets/img/icons/logos/fastpizza.svg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="flex-meta">
+                      <span>Fast Pizza</span>
+                      <span>Open until 6pm</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="map-box-body">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Memini me adesse meam.
+                  </p>
+                </div>
+                <div class="map-box-actions">
+                  <div class="rating">
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                  </div>
+                  <div class="actions">
+                    <div class="action">
+                      <i data-feather="flag"></i>
+                      <span class="dark-inverted">0.3 mile</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Map Box-->
+            <div
+              class="box map-box"
+              data-lat="-77.003168"
+              data-long="38.894651"
+              data-feature="1"
+            >
+              <div class="map-box-place">
+                <div class="map-box-header">
+                  <div class="media-flex-center">
+                    <div class="h-avatar is-small">
+                      <img
+                        class="avatar"
+                        src="assets/img/icons/logos/envato.svg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="flex-meta">
+                      <span>Envato</span>
+                      <span>Open until 5pm</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="map-box-body">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Memini me adesse P.
+                  </p>
+                </div>
+                <div class="map-box-actions">
+                  <div class="rating">
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                  </div>
+                  <div class="actions">
+                    <div class="action">
+                      <i data-feather="flag"></i>
+                      <span class="dark-inverted">0.8 mile</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Map Box-->
+            <div
+              class="box map-box"
+              data-lat="-77.090372"
+              data-long="38.881189"
+              data-feature="2"
+            >
+              <div class="map-box-place">
+                <div class="map-box-header">
+                  <div class="media-flex-center">
+                    <div class="h-avatar is-small">
+                      <img
+                        class="avatar"
+                        src="assets/img/icons/logos/lipflow.svg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="flex-meta">
+                      <span>Lipflow</span>
+                      <span class="dark-inverted">Open until 8pm</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="map-box-body">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Memini me adesse P.
+                  </p>
+                </div>
+                <div class="map-box-actions">
+                  <div class="rating">
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                  </div>
+                  <div class="actions">
+                    <div class="action">
+                      <i data-feather="flag"></i>
+                      <span class="dark-inverted">1.2 mile</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Map Box-->
+            <div
+              class="box map-box"
+              data-lat="-77.111561"
+              data-long="38.882342"
+              data-feature="3"
+            >
+              <div class="map-box-place">
+                <div class="map-box-header">
+                  <div class="media-flex-center">
+                    <div class="h-avatar is-small">
+                      <img
+                        class="avatar"
+                        src="assets/img/icons/logos/metamovies.svg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="flex-meta">
+                      <span>Metamovies</span>
+                      <span class="dark-inverted">Open until 11pm</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="map-box-body">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Memini me adesse P.
+                  </p>
+                </div>
+                <div class="map-box-actions">
+                  <div class="rating">
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                  </div>
+                  <div class="actions">
+                    <div class="action">
+                      <i data-feather="flag"></i>
+                      <span class="dark-inverted">0.5 mile</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Map Box-->
+            <div
+              class="box map-box"
+              data-lat="-77.052477"
+              data-long="38.943951"
+              data-feature="4"
+            >
+              <div class="map-box-place">
+                <div class="map-box-header">
+                  <div class="media-flex-center">
+                    <div class="h-avatar is-small">
+                      <img
+                        class="avatar"
+                        src="assets/img/icons/logos/slicer.svg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="flex-meta">
+                      <span>Slicer</span>
+                      <span class="dark-inverted">Open until 4:30pm</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="map-box-body">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Memini me adesse P.
+                  </p>
+                </div>
+                <div class="map-box-actions">
+                  <div class="rating">
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                  </div>
+                  <div class="actions">
+                    <div class="action">
+                      <i data-feather="flag"></i>
+                      <span class="dark-inverted">0.2 mile</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Map Box-->
+            <div
+              class="box map-box"
+              data-lat="-77.043444"
+              data-long="38.909664"
+              data-feature="5"
+            >
+              <div class="map-box-place">
+                <div class="map-box-header">
+                  <div class="media-flex-center">
+                    <div class="h-avatar is-small">
+                      <img
+                        class="avatar"
+                        src="assets/img/icons/logos/drop.svg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="flex-meta">
+                      <span>Drop</span>
+                      <span class="dark-inverted">Open until 7pm</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="map-box-body">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Memini me adesse P.
+                  </p>
+                </div>
+                <div class="map-box-actions">
+                  <div class="rating">
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                  </div>
+                  <div class="actions">
+                    <div class="action">
+                      <i data-feather="flag"></i>
+                      <span class="dark-inverted">2.1 mile</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Map Box-->
+            <div
+              class="box map-box"
+              data-lat="-77.031706"
+              data-long="38.914581"
+              data-feature="6"
+            >
+              <div class="map-box-place">
+                <div class="map-box-header">
+                  <div class="media-flex-center">
+                    <div class="h-avatar is-small">
+                      <img
+                        class="avatar"
+                        src="assets/img/icons/logos/fresco.svg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="flex-meta">
+                      <span>Fresco</span>
+                      <span>Open until 6pm</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="map-box-body">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Memini me adesse P.
+                  </p>
+                </div>
+                <div class="map-box-actions">
+                  <div class="rating">
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                  </div>
+                  <div class="actions">
+                    <div class="action">
+                      <i data-feather="flag"></i>
+                      <span class="dark-inverted">0.6 mile</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Map Box-->
+            <div
+              class="box map-box"
+              data-lat="-77.020945"
+              data-long="38.878241"
+              data-feature="7"
+            >
+              <div class="map-box-place">
+                <div class="map-box-header">
+                  <div class="media-flex-center">
+                    <div class="h-avatar is-small">
+                      <img
+                        class="avatar"
+                        src="assets/img/icons/logos/hairz.svg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="flex-meta">
+                      <span>Hairz</span>
+                      <span>Open until 6pm</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="map-box-body">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Memini me adesse P.
+                  </p>
+                </div>
+                <div class="map-box-actions">
+                  <div class="rating">
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                  </div>
+                  <div class="actions">
+                    <div class="action">
+                      <i data-feather="flag"></i>
+                      <span class="dark-inverted">0.3 mile</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Map Box-->
+            <div
+              class="box map-box"
+              data-lat="-77.007481"
+              data-long="38.876516"
+              data-feature="8"
+            >
+              <div class="map-box-place">
+                <div class="map-box-header">
+                  <div class="media-flex-center">
+                    <div class="h-avatar is-small">
+                      <img
+                        class="avatar"
+                        src="assets/img/icons/logos/vego.svg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="flex-meta">
+                      <span>Vego</span>
+                      <span>Open until 9pm</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="map-box-body">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Memini me adesse P.
+                  </p>
+                </div>
+                <div class="map-box-actions">
+                  <div class="rating">
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                    <i class="fas fa-star highlighted"></i>
+                  </div>
+                  <div class="actions">
+                    <div class="action">
+                      <i data-feather="flag"></i>
+                      <span class="dark-inverted">0.3 mile</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

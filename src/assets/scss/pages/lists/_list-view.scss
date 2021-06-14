@@ -991,9 +991,16 @@ body {
             display: flex;
             flex-wrap: wrap;
 
+            .list-view-inner {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
             .list-view-item {
                 margin: 10px;
                 width: calc(50% - 20px);
+                min-width: calc(50% - 20px);
+                max-width: calc(50% - 20px);
 
                 .list-view-item-inner {
                     position: relative;

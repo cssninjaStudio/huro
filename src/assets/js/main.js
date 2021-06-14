@@ -63,6 +63,9 @@ $(document).ready(function () {
         initWebapp();
     }
 
+    //Collapsible menus
+    initCollapsibleMenu();
+
     //Stuck form header
     initStuckHeader();
 

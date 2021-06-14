@@ -206,20 +206,7 @@ function initSidebar() {
         $(this).addClass('is-selected');
     })
 
-    //Collapsible submenu items
-    $(".has-children .parent-link").on("click", function (i) {
-        i.preventDefault();
-        if (!$(this).closest('.has-children').hasClass("active")) {
-            $(".sidebar-panel .has-children ul, .mobile-subsidebar .has-children ul").slideUp();
-            $(this).closest('.has-children').find('ul').slideToggle();
-            $(".sidebar-panel .has-children, .mobile-subsidebar .has-children").removeClass("active");
-            $(this).closest('.has-children').addClass("active");
-        }
-        else {
-            $(this).closest('.has-children').find('ul').slideToggle();
-            $(".sidebar-panel li, .mobile-subsidebar li").removeClass("active");
-        }
-    });
+    
 
     //User menu naver position
     $('#user-menu').on('click', function () {
@@ -273,6 +260,23 @@ function updateSidebarNaver() {
             'margin-bottom': naverOffsetBottom,
         });
     }
+}
+
+//Collapsible submenu items
+function initCollapsibleMenu() {
+    $(".has-children .parent-link").on("click", function (e) {
+        e.preventDefault();
+        if (!$(this).closest('.has-children').hasClass("active")) {
+            $(".sidebar-panel .has-children ul, .mobile-subsidebar .has-children ul").slideUp();
+            $(this).closest('.has-children').find('ul').slideToggle();
+            $(".sidebar-panel .has-children, .mobile-subsidebar .has-children").removeClass("active");
+            $(this).closest('.has-children').addClass("active");
+        }
+        else {
+            $(this).closest('.has-children').find('ul').slideToggle();
+            $(".sidebar-panel li, .mobile-subsidebar li").removeClass("active");
+        }
+    });
 }
 
 //Webapp Navigation
@@ -947,7 +951,10 @@ function initDarkMode() {
     
             if (theme === 'dark') {
                 $('.dark-mode input').prop('checked', false);
+                
             }
+
+            $(document).trigger('themeChange', theme);
         }
     }
     
@@ -960,6 +967,7 @@ function initDarkMode() {
                 $(this).attr('src', imageUrl);
             });
             setThemeToLocalStorage('light');
+            $(document).trigger('themeChange', 'light');
         } else {
             $('html, body').addClass('is-dark');
             $('.theme-image').each(function () {
@@ -967,6 +975,7 @@ function initDarkMode() {
                 $(this).attr('src', imageUrl);
             });
             setThemeToLocalStorage('dark');
+            $(document).trigger('themeChange', 'dark');
         }
     })
 }

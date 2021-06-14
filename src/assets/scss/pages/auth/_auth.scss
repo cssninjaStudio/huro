@@ -548,6 +548,15 @@ body {
     }
 }
 
+.upload-signup-modal {
+    .upload-demo-wrap {
+        .filepond-profile-wrap {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}
+
 .signup-steps {
     position: absolute;
     top: 80px;
