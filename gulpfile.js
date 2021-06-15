@@ -1,5 +1,5 @@
 'use strict';
-const { src, dest, watch, series, parallel } = require('gulp');
+const { src, dest, watch, series } = require('gulp');
 const log = require('fancy-log');
 const colors = require('ansi-colors');
 const browserSync = require('browser-sync').create();
@@ -12,27 +12,17 @@ const panini = require('panini');
 const uglify = require('gulp-uglify-es').default;
 const sourcemaps = require('gulp-sourcemaps');
 const imagemin = require('gulp-imagemin');
-const removeCode = require('gulp-remove-code');
-const removeLog = require('gulp-remove-logging');
 const prettyHtml = require('gulp-pretty-html');
 const sassLint = require('gulp-sass-lint');
 const htmllint = require('gulp-htmllint');
 const jshint = require('gulp-jshint');
-const htmlreplace = require('gulp-html-replace');
 const newer = require('gulp-newer');
 const autoprefixer = require('gulp-autoprefixer');
 const accessibility = require('gulp-accessibility');
 const babel = require('gulp-babel');
 const nodepath = 'node_modules/';
-const assetspath = 'assets/';
 
 sass.compiler = require('sass');
-
-// File paths
-const files = {
-  scssPath: 'app/scss/**/*.scss',
-  jsPath: 'app/js/**/*.js'
-}
 
 // ------------ SETUP TASKS -------------
 // Copy Bulma filed into Bulma development folder
@@ -44,29 +34,14 @@ function setupBulma() {
 
 // ------------ DEVELOPMENT TASKS -------------
 
-// COMPILE BULMA SASS INTO CSS
-function compileSASS() {
-  console.log('---------------COMPILING BULMA SASS---------------');
-  return src(['src/assets/sass/bulma.sass'])
-    .pipe(sass({
-      outputStyle: 'compressed',
-      sourceComments: 'map',
-      sourceMap: 'sass',
-      includePaths: bourbon
-    }).on('error', sass.logError))
-    .pipe(autoprefixer('last 2 versions'))
-    .pipe(dest('dist/assets/css'))
-    .pipe(browserSync.stream());
-}
-
 // COMPILE SCSS INTO CSS
 function compileSCSS() {
   console.log('---------------COMPILING SCSS---------------');
   return src(['src/assets/scss/main.scss'])
     .pipe(sass({
       outputStyle: 'compressed',
-      sourceComments: 'map',
-      sourceMap: 'scss',
+      sourceComments: true,
+      sourceMap: true,
       includePaths: bourbon
     }).on('error', sass.logError))
     .pipe(autoprefixer('last 2 versions'))
@@ -145,6 +120,7 @@ function compileJS() {
     'src/assets/js/layouts/messaging/messaging-webapp.js',
   ])
     .pipe(babel())
+    .pipe(uglify())
     .pipe(dest('dist/assets/js/'))
     .pipe(browserSync.stream());
 }
@@ -176,7 +152,7 @@ function htmlLint() {
 
 function htmllintReporter(filepath, issues) {
   if (issues.length > 0) {
-    issues.forEach(function (issue) {
+    issues.forEach((issue) => {
       log(colors.cyan('[gulp-htmllint] ') + colors.white(filepath + ' [' + issue.line + ']: ') + colors.red('(' + issue.code + ') ' + issue.msg));
     });
     process.exitCode = 1;
@@ -213,11 +189,26 @@ function browserSyncInit(done) {
 // ------------ OPTIMIZATION TASKS -------------
 
 // COPIES AND MINIFY IMAGE TO DIST
-function copyImages() {
+function minifyImages() {
   console.log('---------------OPTIMIZING IMAGES---------------');
   return src('src/assets/img/**/*.+(png|jpg|jpeg|gif|svg|mp4|webm|ogg)')
     .pipe(newer('dist/assets/img/'))
-    //.pipe(imagemin())
+    .pipe(imagemin([
+      imagemin.gifsicle({ optimizationLevel: 3, interlaced: true }),
+      imagemin.mozjpeg({ quality: 85 }),
+      imagemin.optipng({ optimizationLevel: 3 }),
+      imagemin.svgo()
+    ], {
+      verbose: true
+    }))
+    .pipe(dest('dist/assets/img/'))
+    .pipe(browserSync.stream());
+}
+
+function copyImages() {
+  console.log('---------------COPY IMAGES---------------');
+  return src('src/assets/img/**/*.+(png|jpg|jpeg|gif|svg|mp4|webm|ogg)')
+    .pipe(newer('dist/assets/img/'))
     .pipe(dest('dist/assets/img/'))
     .pipe(browserSync.stream());
 }
@@ -265,7 +256,7 @@ function concatPlugins() {
     nodepath + 'notyf/notyf.min.js',
     nodepath + 'pikaday/pikaday.js',
     nodepath + 'simplebar/dist/simplebar.min.js',
-    nodepath + 'nouislider/distribute/nouislider.min.js',
+    nodepath + 'nouislider/dist/nouislider.min.js',
     nodepath + 'suneditor/dist/suneditor.min.js',
     nodepath + 'plyr/dist/plyr.min.js',
     nodepath + 'mediaplayer/browser.js',
@@ -288,8 +279,9 @@ function concatPlugins() {
     nodepath + 'hopscotch/dist/js/hopscotch.min.js',
     'src/assets/vendor/js/*',
   ])
-    .pipe(sourcemaps.init())
     .pipe(concat('app.js'))
+    .pipe(sourcemaps.init())
+    .pipe(uglify())
     .pipe(sourcemaps.write('./'))
     .pipe(dest('dist/assets/js'))
     .pipe(browserSync.stream());
@@ -309,7 +301,7 @@ function concatCssPlugins() {
     nodepath + 'notyf/notyf.min.css',
     nodepath + 'pikaday/css/pikaday.css',
     nodepath + 'simplebar/dist/simplebar.min.css',
-    nodepath + 'nouislider/distribute/nouislider.min.css',
+    nodepath + 'nouislider/dist/nouislider.min.css',
     nodepath + 'suneditor/dist/css/suneditor.min.css',
     nodepath + 'plyr/dist/plyr.css',
     nodepath + 'mediaplayer/browser.css',
@@ -395,8 +387,38 @@ exports.accessibility = HTMLAccessibility;
 exports.setup = series(setupBulma);
 
 // DEV
-exports.dev = series(cleanDist, copyFont, copyData, jsVendor, cssVendor, copyImages, compileHTML, concatPlugins, concatCssPlugins, compileJS, resetPages, prettyHTML, compileSCSS, browserSyncInit, watchFiles);
+exports.dev = series(
+  cleanDist,
+  copyFont,
+  copyData,
+  jsVendor,
+  cssVendor,
+  compileHTML,
+  concatPlugins,
+  concatCssPlugins,
+  compileJS,
+  copyImages,
+  resetPages,
+  prettyHTML,
+  compileSCSS,
+  browserSyncInit,
+  watchFiles
+);
 
 // BUILD
-exports.build = series(cleanDist, copyFont, copyData, jsVendor, cssVendor, copyImages, compileHTML, concatPlugins, concatCssPlugins, compileJS, resetPages, prettyHTML, compileSCSS);
+exports.build = series(
+  cleanDist,
+  copyFont,
+  copyData,
+  jsVendor,
+  cssVendor,
+  compileHTML,
+  concatPlugins,
+  concatCssPlugins,
+  compileJS,
+  minifyImages,
+  resetPages,
+  prettyHTML,
+  compileSCSS,
+);
 
