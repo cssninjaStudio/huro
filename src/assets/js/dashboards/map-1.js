@@ -163,33 +163,77 @@ var locations = {
   ],
 };
 
+function displayPopup(place) {
+  var popup = document.getElementsByClassName("mapboxgl-popup");
+  if (popup.length) {
+    popup[0].remove();
+  }
+
+  map.flyTo({
+    center: place.coordinates,
+    zoom: 15,
+    bearing: 0,
+    essential: true, // this animation is considered essential with respect to prefers-reduced-motion
+  });
+
+  var template = `<div class="map-box-location">
+    <div class="map-box-header">
+      <div class="media-flex-center">
+        <div class="h-avatar is-small">
+          <img
+            class="avatar"
+            src="${place.logo}"
+            alt=""
+          />
+        </div>
+        <div class="flex-meta">
+          <span>${place.name}</span>
+          <span>Open until ${place.openingCount}</span>
+        </div>
+      </div>
+    </div>
+    <div class="map-box-body">
+      <p>${place.description}</p>
+    </div>
+  </div>`
+
+  new mapboxgl.Popup()
+    .setLngLat(place.coordinates)
+    .setHTML(template)
+    .addTo(map);
+}
+
 function loadLayers() {
+  // Do nothing if source already added
+  if (map.getSource('places')) {
+    return
+  }
+  var storageTheme = window.localStorage.getItem("theme");
+
   map.addSource("places", {
     type: "geojson",
     data: locations,
   });
+
   // Add a layer showing the places.
   map.addLayer({
     id: "places",
     type: "circle",
     source: "places",
     paint: {
-      "circle-color": themeColors.primary,
+      "circle-color": storageTheme === "dark" ? themeColors.accent : themeColors.primary,
       "circle-radius": 6,
       "circle-stroke-width": 2,
-      "circle-stroke-color": "#ffffff",
+      "circle-stroke-color": storageTheme === "dark" ? '#ddd' : "#fff",
     },
   });
-
-  // Create a popup, but don't add it to the map yet.
-  var popup = new mapboxgl.Popup({
-    closeButton: false,
-    closeOnClick: false,
-  }); //.setHTML('<p>' + properties.description + '</p>')
 
   map.on("click", "places", function (e) {
     var coordinates = e.features[0].geometry.coordinates.slice();
     var description = e.features[0].properties.description;
+    var logo = e.features[0].properties.logo;
+    var name = e.features[0].properties.name;
+    var openingCount = e.features[0].properties.openingCount;
 
     // Ensure that if the map is zoomed out such that multiple
     // copies of the feature are visible, the popup appears
@@ -198,7 +242,13 @@ function loadLayers() {
       coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
     }
 
-    new mapboxgl.Popup().setLngLat(coordinates).setHTML(description).addTo(map);
+    displayPopup({
+      coordinates,
+      name,
+      description,
+      logo,
+      openingCount
+    })
   });
 
   // Change the cursor to a pointer when the mouse is over the places layer.
@@ -213,18 +263,13 @@ function loadLayers() {
 }
 
 function initMapBox() {
-  var mapStyle = "";
+  var mapStyle = "mapbox://styles/mapbox/light-v10";
   var storageTheme = window.localStorage.getItem("theme");
   var token =
     "pk.eyJ1IjoiY3NzbmluamEiLCJhIjoiY2toZW1nYm0zMDAxODJycXFzZ3g4cnZ6diJ9.9ebfrGREuwkauRr_afDTgA";
-  var markerOptions = {
-    color: "red",
-  };
 
   if (storageTheme === "dark") {
     mapStyle = "mapbox://styles/mapbox/dark-v10";
-  } else {
-    mapStyle = "mapbox://styles/mapbox/light-v10";
   }
 
   if ($("#mapbox-1").length) {
@@ -236,149 +281,57 @@ function initMapBox() {
       zoom: 12,
     });
 
-    map.on("load", function () {
-      loadLayers();
-    });
-
-    /*var marker = new mapboxgl.Marker(markerOptions)
-      .setLngLat([-77.04, 38.907])
-      .addTo(map);*/
+    map.on('styledata', () => {
+      var loadingStyles = () => {
+        if (!map.isStyleLoaded()) {
+          setTimeout(loadingStyles, 1500)
+          return
+        }
+  
+        loadLayers()
+      }
+      loadingStyles()
+    })
 
     // Add the control to the map.
     var geocoder = new MapboxGeocoder({
       accessToken: mapboxgl.accessToken,
       mapboxgl: mapboxgl,
-      marker: {
-        color: themeColors.primary,
-      },
+      marker: true,
     });
 
     document.getElementById("geocoder").appendChild(geocoder.onAdd(map));
   }
 }
 
-$(document).ready(function () {
+$(function() {
   initMapBox();
 
   $(".map-box").on("click", function () {
     $(".map-box").removeClass("is-active");
     $(this).addClass("is-active");
-    var lat = $(this).attr("data-lat");
-    var long = $(this).attr("data-long");
     var index = parseInt($(this).attr("data-feature"));
 
-    const popup = document.getElementsByClassName("mapboxgl-popup");
-    if (popup.length) {
-      popup[0].remove();
-    }
-
-    map.flyTo({
-      center: [lat, long],
-      zoom: 15,
-      bearing: 0,
-      essential: true, // this animation is considered essential with respect to prefers-reduced-motion
-    });
-
+    var coordinates = locations.features[index].geometry.coordinates;
     var name = locations.features[index].properties.name;
     var logo = locations.features[index].properties.logo;
     var openingCount = locations.features[index].properties.openingCount;
     var description = locations.features[index].properties.description;
 
-    var quickPopup = new mapboxgl.Popup({ closeOnClick: false })
-      .setLngLat([lat, long])
-      .setHTML(
-        `
-          <div class="map-box-location">
-            <div class="map-box-header">
-              <div class="media-flex-center">
-                <div class="h-avatar is-small">
-                  <img
-                    class="avatar"
-                    src="${logo}"
-                    alt=""
-                  />
-                </div>
-                <div class="flex-meta">
-                  <span>${name}</span>
-                  <span>Open until ${openingCount}</span>
-                </div>
-              </div>
-            </div>
-            <div class="map-box-body">
-              <p>${description}</p>
-            </div>
-          </div>
-        `
-      )
-      .addTo(map);
+    displayPopup({
+      coordinates,
+      name,
+      description,
+      logo,
+      openingCount
+    })
   });
 
   $(document).on("themeChange", function (e, selectedTheme) {
-    console.log(selectedTheme);
-    map.removeLayer("places");
-    map.removeSource("places");
     if (selectedTheme === "dark") {
       map.setStyle("mapbox://styles/mapbox/dark-v10");
     } else {
       map.setStyle("mapbox://styles/mapbox/light-v10");
     }
-    map.on("style.load", () => {
-      const waiting = () => {
-        if (!map.isStyleLoaded()) {
-          setTimeout(waiting, 1500);
-        } else {
-          map.addSource("places", {
-            type: "geojson",
-            data: locations,
-          });
-          // Add a layer showing the places.
-          map.addLayer({
-            id: "places",
-            type: "circle",
-            source: "places",
-            paint: {
-              "circle-color": selectedTheme === "dark" ? themeColors.accent : themeColors.primary,
-              "circle-radius": 6,
-              "circle-stroke-width": 2,
-              "circle-stroke-color": "#ffffff",
-            },
-          });
-
-          // Create a popup, but don't add it to the map yet.
-          var popup = new mapboxgl.Popup({
-            closeButton: false,
-            closeOnClick: false,
-          }); //.setHTML('<p>' + properties.description + '</p>')
-
-          map.on("click", "places", function (e) {
-            var coordinates = e.features[0].geometry.coordinates.slice();
-            var description = e.features[0].properties.description;
-
-            // Ensure that if the map is zoomed out such that multiple
-            // copies of the feature are visible, the popup appears
-            // over the copy being pointed to.
-            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-              coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-            }
-
-            new mapboxgl.Popup()
-              .setLngLat(coordinates)
-              .setHTML(description)
-              .addTo(map);
-          });
-
-          // Change the cursor to a pointer when the mouse is over the places layer.
-          map.on("mouseenter", "places", function () {
-            map.getCanvas().style.cursor = "pointer";
-          });
-
-          // Change it back to a pointer when it leaves.
-          map.on("mouseleave", "places", function () {
-            map.getCanvas().style.cursor = "";
-          });
-        }
-      };
-      waiting();
-    });
   });
 });
