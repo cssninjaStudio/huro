@@ -66,11 +66,13 @@ jobs:
     steps:
       - name: Deploy to cssninja.io
         uses: appleboy/ssh-action@master
+        timeout-minutes: 30
         with:
           host: cssninja.io
           username: ci
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script_stop: true
+          command_timeout: '30m'
           script: |
             cd ${{ secrets.HOST_DIRECTORY }}
             git pull
