@@ -195,7 +195,7 @@ function minifyImages() {
     .pipe(newer('dist/assets/img/'))
     .pipe(imagemin([
       imagemin.gifsicle({ optimizationLevel: 3, interlaced: true }),
-      imagemin.jpegtran({ quality: 85 }),
+      imagemin.mozjpeg({ quality: 85 }),
       imagemin.optipng({ optimizationLevel: 3 }),
       imagemin.svgo()
     ], {
