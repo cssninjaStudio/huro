@@ -195,7 +195,7 @@ function minifyImages() {
     .pipe(newer('dist/assets/img/'))
     .pipe(imagemin([
       imagemin.gifsicle({ optimizationLevel: 3, interlaced: true }),
-      imagemin.jpegtran({ quality: 85 }),
+      imagemin.mozjpeg({ quality: 85 }),
       imagemin.optipng({ optimizationLevel: 3 }),
       imagemin.svgo()
     ], {
@@ -256,7 +256,7 @@ function concatPlugins() {
     nodepath + 'notyf/notyf.min.js',
     nodepath + 'pikaday/pikaday.js',
     nodepath + 'simplebar/dist/simplebar.min.js',
-    nodepath + 'nouislider/distribute/nouislider.min.js',
+    nodepath + 'nouislider/dist/nouislider.min.js',
     nodepath + 'suneditor/dist/suneditor.min.js',
     nodepath + 'plyr/dist/plyr.min.js',
     nodepath + 'mediaplayer/browser.js',
@@ -301,7 +301,7 @@ function concatCssPlugins() {
     nodepath + 'notyf/notyf.min.css',
     nodepath + 'pikaday/css/pikaday.css',
     nodepath + 'simplebar/dist/simplebar.min.css',
-    nodepath + 'nouislider/distribute/nouislider.min.css',
+    nodepath + 'nouislider/dist/nouislider.min.css',
     nodepath + 'suneditor/dist/css/suneditor.min.css',
     nodepath + 'plyr/dist/plyr.css',
     nodepath + 'mediaplayer/browser.css',
