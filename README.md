@@ -1,4 +1,4 @@
-# HURO 1.6.0 - Multipurpose Admin and Webapp UI Kit
+# HURO 1.5.6 - Multipurpose Admin and Webapp UI Kit
 
 ### Note
 
