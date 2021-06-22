@@ -1,6 +1,6 @@
 {
   "name": "huro",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "description": "Multipurpose Admin and Webapp UI Kit",
   "main": "index.js",
   "scripts": {
