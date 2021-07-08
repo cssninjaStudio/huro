@@ -25,17 +25,11 @@ jobs:
 
       - run: npm install
 
-      - name: Build dist/ folder
-        run: NODE_ENV=production npm run build
-
       - name: Build release zip archive
         run: |
           sudo apt-get install zip
-          cp .release/documentation.pdf .
-          zip -r template-${{ steps.get_meta.outputs.project }}-${{ steps.get_meta.outputs.tag }}.zip . -x "*.zip" -x "node_modules/*" -x ".release/*" -x ".git/*" -x ".github/*" -x ".gitignore" -x "src/img/photo/*" -x "dist/img/photo/*" -x "src/img/avatars/*" -x "dist/img/avatars/*" -x "docker-compose.yml"
-          zip -j ${{ steps.get_meta.outputs.project }}-preview.zip .release/${{ steps.get_meta.outputs.project }}-preview.png
-          zip -j release-${{ steps.get_meta.outputs.project }}-${{ steps.get_meta.outputs.tag }}.zip template-${{ steps.get_meta.outputs.project }}-${{ steps.get_meta.outputs.tag }}.zip ${{ steps.get_meta.outputs.project }}-preview.zip .release/${{ steps.get_meta.outputs.project }}-thumb.png
-
+          ./.release/build-envato-archive.sh ${{ steps.get_meta.outputs.project }} ${{ steps.get_meta.outputs.tag }}
+          
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -54,7 +48,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./release-${{ steps.get_meta.outputs.project }}-${{ steps.get_meta.outputs.tag }}.zip
+          asset_path: ./.release/release-${{ steps.get_meta.outputs.project }}-${{ steps.get_meta.outputs.tag }}.zip
           asset_name: release-${{ steps.get_meta.outputs.project }}-${{ steps.get_meta.outputs.tag }}.zip
           asset_content_type: application/zip
 

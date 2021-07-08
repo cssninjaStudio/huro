@@ -32,7 +32,7 @@ rm -rf ./src/assets/img/photo/demo
 rm -rf ./src/assets/img/avatars/svg/*.gif
 
 # build without demo artifacts
-yarn build
+NODE_ENV=production npm run build
 
 # zip sources template-${PROJECT}-${TAG}.zip
 zip -r .release/template-${PROJECT}-${TAG}.zip . \
@@ -51,8 +51,7 @@ zip -j .release/${PROJECT}-preview.zip \
 zip -j .release/release-${PROJECT}-${TAG}.zip \
   .release/template-${PROJECT}-${TAG}.zip \
   .release/${PROJECT}-preview.zip \
-  .release/${PROJECT}-thumb.png \
-  .release/documentation.html
+  .release/${PROJECT}-thumb.png
 
 # remove zip sources template-${PROJECT}-${TAG}.zip
 rm -rf .release/${PROJECT}-preview.zip .release/template-${PROJECT}-${TAG}.zip
