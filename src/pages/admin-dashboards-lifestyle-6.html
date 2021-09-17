@@ -1,0 +1,514 @@
+---
+layout: default
+title: Soccer Dashboard
+---
+
+{{> generic-sidebar}}
+{{> generic-mobile-subsidebar}}
+
+<!-- Content Wrapper -->
+<div id="app-jobs" class="view-wrapper" data-naver-offset="150" data-menu-item="#home-sidebar-menu"
+    data-mobile-item="#home-sidebar-menu-mobile">
+
+    <div class="page-content-wrapper">
+        <div class="page-content is-relative">
+
+            <div class="page-title has-text-centered">
+                <!-- Sidebar Trigger -->
+                <div class="huro-hamburger nav-trigger push-resize" data-sidebar="home-sidebar">
+                    <span class="menu-toggle has-chevron">
+                        <span class="icon-box-toggle">
+                            <span class="rotate">
+                                <i class="icon-line-top"></i>
+                                <i class="icon-line-center"></i>
+                                <i class="icon-line-bottom"></i>
+                            </span>
+                        </span>
+                    </span>
+                </div>
+
+                <div class="title-wrap">
+                    <h1 class="title is-4">Soccer</h1>
+                </div>
+
+                {{> toolbar}}
+            </div>
+
+            <div class="page-content-inner">
+
+                <!--Lifestyle Dashboard V6-->
+                <div class="lifestyle-dashboard soccer-dashboard">
+                  <div class="soccer-dashboard-inner">
+                    <div class="columns">
+                      <div class="column is-4">
+                        <!--Live match card-->
+                        <div class="live-match">
+                          <div class="head">
+                            <h3 class="title is-5">UEFA Champions League</h3>
+                            <div class="league">
+                              <div class="left">
+                                <span>Group C</span>
+                                <span>Match 3 of 6</span>
+                              </div>
+                              <div class="right">
+                                <div class="live-block">
+                                  <i data-feather="video"></i>
+                                  <span>Live Now</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="match">
+                            <div class="left">
+                              <img
+                                class="team-logo"
+                                src="assets/img/icons/soccer/teams/barcelona.svg"
+                                alt=""
+                              />
+                              <span class="team-name">Barcelona</span>
+                            </div>
+                            <div class="center">
+                              <span class="score">4</span>
+                              <span class="separator">:</span>
+                              <span class="score">0</span>
+                            </div>
+                            <div class="right">
+                              <img
+                                class="team-logo"
+                                src="assets/img/icons/soccer/teams/psg.svg"
+                                alt=""
+                              />
+                              <span class="team-name">PSG</span>
+                            </div>
+                          </div>
+                          <div class="action">
+                            <button class="button h-button is-primary is-fullwidth is-raised">Watch Now</button>
+                          </div>
+                        </div>
+              
+                        <!--Leagues-->
+                        <div class="leagues">
+                          <div class="head">
+                            <h3 class="title is-5">Available leagues</h3>
+                          </div>
+                          <div class="leagues-list">
+                            <a
+                              href="#"
+                              class="league-item"
+                            >
+                              <img
+                                class="league-logo"
+                                src="assets/img/icons/soccer/leagues/ligue-1.svg"
+                                alt=""
+                              />
+                              <div class="meta">
+                                <span class="league-name">Ligue 1</span>
+                                <span class="league-country">France</span>
+                              </div>
+                              <div class="end">
+                                <span>8 matches</span>
+                              </div>
+                            </a>
+                            <a
+                              href="#"
+                              class="league-item"
+                            >
+                              <img
+                                class="league-logo"
+                                src="assets/img/icons/soccer/leagues/laliga.svg"
+                                alt=""
+                              />
+                              <div class="meta">
+                                <span class="league-name">La Liga</span>
+                                <span class="league-country">Spain</span>
+                              </div>
+                              <div class="end">
+                                <span>8 matches</span>
+                              </div>
+                            </a>
+                            <a
+                              href="#"
+                              class="league-item"
+                            >
+                              <img
+                                class="league-logo"
+                                src="assets/img/icons/soccer/leagues/liga.svg"
+                                alt=""
+                              />
+                              <div class="meta">
+                                <span class="league-name">Liga</span>
+                                <span class="league-country">Portugal</span>
+                              </div>
+                              <div class="end">
+                                <span>8 matches</span>
+                              </div>
+                            </a>
+                            <a
+                              href="#"
+                              class="league-item"
+                            >
+                              <img
+                                class="league-logo"
+                                src="assets/img/icons/soccer/leagues/bundesliga.svg"
+                                alt=""
+                              />
+                              <div class="meta">
+                                <span class="league-name">Bundesliga</span>
+                                <span class="league-country">Germany</span>
+                              </div>
+                              <div class="end">
+                                <span>8 matches</span>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+              
+                      <!--Right side-->
+                      <div class="column is-8">
+                        <!--Colored CTA-->
+                        <div class="dashboard-cta">
+                          <div class="dashboard-cta-img">
+                            <img alt="" src="https://via.placeholder.com/275x553"
+                            data-demo-src="assets/img/photo/demo/soccer/player.png" />
+                          </div>
+                          <h2 class="dashboard-cta-title">
+                            Win awesome prizes in our contest
+                          </h2>
+                          <p class="dashboard-cta-text">
+                            Predict who will win and how a match will end and get a chance to
+                            win incredible cash prizes.
+                          </p>
+                          <button class="button h-button is-light raised">Learn More</button>
+                        </div>
+              
+                        <!--Matches table-->
+                        <div class="matches-card">
+                          <!--Header-->
+                          <div class="matches-card-header">
+                            <!--Tabs-->
+                            <ul class="header-nav">
+                              <li class="nav-item">
+                                <a class="nav-link is-active">All</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link">Live</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link">Finished</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link">Scheduled</a>
+                              </li>
+                            </ul>
+                          </div>
+              
+                          <!--Table-->
+                          <div class="matches-card-body">
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th>Time</th>
+                                  <th>Match</th>
+                                  <th>Stadium</th>
+                                  <th>Details</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <div class="match-time-row">
+                                      <span class="match-time">-- : --</span>
+                                      <span class="tag is-live">
+                                        <svg width="6" height="6" viewBox="0 0 8 8">
+                                          <circle fill="currentColor" cx="4" cy="4" r="4" />
+                                        </svg>
+                                        Live
+                                      </span>
+                                    </div>
+                                  </td>
+                                  <td class="score-cell">
+                                    <div class="score score-vertical">
+                                      <div class="score-team score-team-vertical">
+                                        <span>Barcelona</span
+                                        ><img
+                                          alt=""
+                                          src="assets/img/icons/soccer/teams/barcelona.svg"
+                                        />
+                                      </div>
+                                      <p class="score-result score-result-vertical">
+                                        <span class="score-goals">4</span
+                                        ><span class="score-separator">:</span
+                                        ><span class="score-goals">0</span>
+                                      </p>
+                                      <div class="score-team score-team-vertical">
+                                        <img
+                                          alt=""
+                                          src="assets/img/icons/soccer/teams/psg.svg"
+                                        /><span>PSG</span>
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <span class="stadium">Camp Nou</span>
+                                  </td>
+                                  <td>
+                                    <a class="table-action">
+                                      <i data-feather="align-right"></i>
+                                    </a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="match-time-row">
+                                      <span class="match-time">10:30</span>
+                                      <span class="tag">
+                                        <svg width="6" height="6" viewBox="0 0 8 8">
+                                          <circle fill="currentColor" cx="4" cy="4" r="4" />
+                                        </svg>
+                                        Scheduled
+                                      </span>
+                                    </div>
+                                  </td>
+                                  <td class="score-cell">
+                                    <div class="score score-vertical">
+                                      <div class="score-team score-team-vertical">
+                                        <span>Real Madrid</span
+                                        ><img
+                                          alt=""
+                                          src="assets/img/icons/soccer/teams/madrid.svg"
+                                        />
+                                      </div>
+                                      <p class="score-result score-result-vertical">
+                                        <span class="score-goals">1</span
+                                        ><span class="score-separator">:</span
+                                        ><span class="score-goals">0</span>
+                                      </p>
+                                      <div class="score-team score-team-vertical">
+                                        <img
+                                          alt=""
+                                          src="assets/img/icons/soccer/teams/liverpool.svg"
+                                        /><span>Liverpool</span>
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <span class="stadium">Bernabeu</span>
+                                  </td>
+                                  <td>
+                                    <a class="table-action">
+                                      <i data-feather="align-right"></i>
+                                    </a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="match-time-row">
+                                      <span class="match-time">12:00</span>
+                                      <span class="tag">
+                                        <svg width="6" height="6" viewBox="0 0 8 8">
+                                          <circle fill="currentColor" cx="4" cy="4" r="4" />
+                                        </svg>
+                                        Scheduled
+                                      </span>
+                                    </div>
+                                  </td>
+                                  <td class="score-cell">
+                                    <div class="score score-vertical">
+                                      <div class="score-team score-team-vertical">
+                                        <span>Arsenal</span
+                                        ><img
+                                          alt=""
+                                          src="assets/img/icons/soccer/teams/arsenal.svg"
+                                        />
+                                      </div>
+                                      <p
+                                        class="
+                                          score__result
+                                          score__result--vertical
+                                          score__result--not-started
+                                        "
+                                      >
+                                        <span class="score-goals">-</span
+                                        ><span class="score-separator">:</span
+                                        ><span class="score-goals">-</span>
+                                      </p>
+                                      <div class="score-team score-team-vertical">
+                                        <img
+                                          alt=""
+                                          src="assets/img/icons/soccer/teams/chelsea.svg"
+                                        /><span>Chelsea</span>
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <span class="stadium">Arsenal</span>
+                                  </td>
+                                  <td>
+                                    <a class="table-action">
+                                      <i data-feather="align-right"></i>
+                                    </a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="match-time-row">
+                                      <span class="match-time">14:00</span>
+                                      <span class="tag">
+                                        <svg width="6" height="6" viewBox="0 0 8 8">
+                                          <circle fill="currentColor" cx="4" cy="4" r="4" />
+                                        </svg>
+                                        Scheduled
+                                      </span>
+                                    </div>
+                                  </td>
+                                  <td class="score-cell">
+                                    <div class="score score-vertical">
+                                      <div class="score-team score-team-vertical">
+                                        <span>Everton</span
+                                        ><img
+                                          alt=""
+                                          src="assets/img/icons/soccer/teams/everton.svg"
+                                        />
+                                      </div>
+                                      <p
+                                        class="
+                                          score__result
+                                          score__result--vertical
+                                          score__result--not-started
+                                        "
+                                      >
+                                        <span class="score-goals">-</span
+                                        ><span class="score-separator">:</span
+                                        ><span class="score-goals">-</span>
+                                      </p>
+                                      <div class="score-team score-team-vertical">
+                                        <img
+                                          alt=""
+                                          src="assets/img/icons/soccer/teams/liverpool.svg"
+                                        /><span>Liverpool</span>
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <span class="stadium">Goodison Park</span>
+                                  </td>
+                                  <td>
+                                    <a class="table-action">
+                                      <i data-feather="align-right"></i>
+                                    </a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="match-time-row">
+                                      <span class="match-time">16:00</span>
+                                      <span class="tag">
+                                        <svg width="6" height="6" viewBox="0 0 8 8">
+                                          <circle fill="currentColor" cx="4" cy="4" r="4" />
+                                        </svg>
+                                        Scheduled
+                                      </span>
+                                    </div>
+                                  </td>
+                                  <td class="score-cell">
+                                    <div class="score score-vertical">
+                                      <div class="score-team score-team-vertical">
+                                        <span>Valladolid</span
+                                        ><img
+                                          alt=""
+                                          src="assets/img/icons/soccer/teams/valladolid.svg"
+                                        />
+                                      </div>
+                                      <p
+                                        class="
+                                          score__result
+                                          score__result--vertical
+                                          score__result--not-started
+                                        "
+                                      >
+                                        <span class="score-goals">-</span
+                                        ><span class="score-separator">:</span
+                                        ><span class="score-goals">-</span>
+                                      </p>
+                                      <div class="score-team score-team-vertical">
+                                        <img
+                                          alt=""
+                                          src="assets/img/icons/soccer/teams/zagreb.svg"
+                                        /><span>Zagreb</span>
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <span class="stadium">José-Zorrilla</span>
+                                  </td>
+                                  <td>
+                                    <a class="table-action">
+                                      <i data-feather="align-right"></i>
+                                    </a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="match-time-row">
+                                      <span class="match-time">18:00</span>
+                                      <span class="tag">
+                                        <svg width="6" height="6" viewBox="0 0 8 8">
+                                          <circle fill="currentColor" cx="4" cy="4" r="4" />
+                                        </svg>
+                                        Scheduled
+                                      </span>
+                                    </div>
+                                  </td>
+                                  <td class="score-cell">
+                                    <div class="score score-vertical">
+                                      <div class="score-team score-team-vertical">
+                                        <span>PSG</span
+                                        ><img
+                                          alt=""
+                                          src="assets/img/icons/soccer/teams/psg.svg"
+                                        />
+                                      </div>
+                                      <p
+                                        class="
+                                          score__result
+                                          score__result--vertical
+                                          score__result--not-started
+                                        "
+                                      >
+                                        <span class="score-goals">-</span
+                                        ><span class="score-separator">:</span
+                                        ><span class="score-goals">-</span>
+                                      </p>
+                                      <div class="score-team score-team-vertical">
+                                        <img
+                                          alt=""
+                                          src="assets/img/icons/soccer/teams/chelsea.svg"
+                                        /><span>Chelsea</span>
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <span class="stadium">Parc des Princes</span>
+                                  </td>
+                                  <td>
+                                    <a class="table-action">
+                                      <i data-feather="align-right"></i>
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+
+        </div>
+      </div>
+
+    </div>

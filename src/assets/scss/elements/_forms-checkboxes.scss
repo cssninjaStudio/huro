@@ -338,6 +338,10 @@ body {
         color: $light-text;
     }
 
+    &.is-paddingless {
+        padding: 0;
+    }
+
     &.is-circle {
         input + span {
             border-radius: 50%;
@@ -496,6 +500,10 @@ body {
 
     &:hover {
         color: $light-text;
+    }
+
+    &.is-paddingless {
+        padding: 0;
     }
 
     &.is-square {

@@ -675,9 +675,15 @@ $(document).ready(function () {
                     download: '#symbol-download'
                 },
                 timeDir: 'ltr',
-                volumeDir: 'ltr'
+                volumeDir: 'ltr',
             }
         );
+
+        // uncomment this if you want to remove the download button
+        /*$target.addEventListener('canplaystart', function () {
+            var element = document.querySelector('.media-control.media-download');
+            element.parentNode.removeChild(element);
+        });*/
 
     }
 

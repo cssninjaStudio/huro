@@ -2,6 +2,7 @@
   "attr-name-style": "dash",
   "attr-quote-style": "double",
   "id-class-style": "dash",
+  "href-style": false,
   "indent-style": false,
   "indent-width": false,
   "line-end-style": false,
@@ -10,14 +11,15 @@
   "title-max-len": 120,
   "img-req-src": true,
   "tag-bans": ["!style"],
+  "tag-req-attr": false,
   "attr-no-dup": true,
-  "attr-validate": true,
+  "attr-validate": false,
   "class-no-dup": true,
   "doctype-first": true,
   "doctype-html5": true,
   "id-no-dup": true,
   "img-req-alt": true,
   "input-radio-req-name": true,
-  "label-req-for": true,
-  "input-req-label": true
+  "label-req-for": false,
+  "input-req-label": false
 }

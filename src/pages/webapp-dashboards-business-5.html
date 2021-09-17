@@ -1,0 +1,597 @@
+---
+layout: webapp
+title: Business Dashboard
+---
+
+{{> generic-mobile-subsidebar}}
+
+<!-- Content Wrapper -->
+<div
+  class="view-wrapper is-webapp"
+  data-page-title="Jobs"
+  data-naver-offset="150"
+  data-menu-item="#dashboards-navbar-menu"
+  data-mobile-item="#home-sidebar-menu-mobile"
+>
+  <div class="page-content-wrapper">
+    <div class="page-content is-relative">
+      <div class="page-title has-text-centered is-webapp">
+        <div class="title-wrap">
+          <h1 class="title is-4">Jobs</h1>
+        </div>
+
+        {{> toolbar}}
+      </div>
+
+      <div class="page-content-inner">
+
+        <!--Business Dashboard V5-->
+        <div class="business-dashboard jobs-dashboard">
+          <div class="jobs-dashboard-wrapper">
+            <!--Search toolbar -->
+            <div class="search-menu">
+              <div class="search-bar">
+                <div class="field">
+                  <div class="control is-combo">
+                    <div class="stacked-combo-box has-rounded-images">
+                      <div class="box-inner">
+                        <div class="combo-item">
+                          <img
+                            id="skill-placeholder"
+                            src="https://via.placeholder.com/150x150"
+                            data-demo-src="assets/img/photo/demo/misc/code.png"
+                            alt=""
+                          />
+                          <span class="selected-item">Select languages</span>
+                        </div>
+                      </div>
+                      <div class="box-chevron">
+                        <i data-feather="chevron-down"></i>
+                      </div>
+                      <div class="box-dropdown">
+                        <div class="dropdown-inner has-slimscroll">
+                          <ul>
+                            <li data-skill="javascript-skill">
+                              <span class="item-icon">
+                                <img
+                                  src="https://via.placeholder.com/150x150"
+                                  data-demo-src="assets/img/icons/stacks/js.svg"
+                                  alt=""
+                                />
+                              </span>
+                              <span class="item-name">Javascript</span>
+                              <span class="checkmark">
+                                <i data-feather="check"></i>
+                              </span>
+                            </li>
+                            <li data-skill="angular-skill">
+                              <span class="item-icon">
+                                <img
+                                  src="https://via.placeholder.com/150x150"
+                                  data-demo-src="assets/img/icons/stacks/angular.svg"
+                                  alt=""
+                                />
+                              </span>
+                              <span class="item-name">Angular</span>
+                              <span class="checkmark">
+                                <i data-feather="check"></i>
+                              </span>
+                            </li>
+                            <li data-skill="reactjs-skill">
+                              <span class="item-icon">
+                                <img
+                                  src="https://via.placeholder.com/150x150"
+                                  data-demo-src="assets/img/icons/stacks/reactjs.svg"
+                                  alt=""
+                                />
+                              </span>
+                              <span class="item-name">Reactjs</span>
+                              <span class="checkmark">
+                                <i data-feather="check"></i>
+                              </span>
+                            </li>
+                            <li data-skill="vuejs-skill">
+                              <span class="item-icon">
+                                <img
+                                  src="https://via.placeholder.com/150x150"
+                                  data-demo-src="assets/img/icons/stacks/vuejs.svg"
+                                  alt=""
+                                />
+                              </span>
+                              <span class="item-name">Vuejs</span>
+                              <span class="checkmark">
+                                <i data-feather="check"></i>
+                              </span>
+                            </li>
+                            <li data-skill="nodejs-skill">
+                              <span class="item-icon">
+                                <img
+                                  src="https://via.placeholder.com/150x150"
+                                  data-demo-src="assets/img/icons/stacks/nodejs.svg"
+                                  alt=""
+                                />
+                              </span>
+                              <span class="item-name">Nodejs</span>
+                              <span class="checkmark">
+                                <i data-feather="check"></i>
+                              </span>
+                            </li>
+                            <li data-skill="android-skill">
+                              <span class="item-icon">
+                                <img
+                                  src="https://via.placeholder.com/150x150"
+                                  data-demo-src="assets/img/icons/stacks/vuejs.svg"
+                                  alt=""
+                                />
+                              </span>
+                              <span class="item-name">Android</span>
+                              <span class="checkmark">
+                                <i data-feather="check"></i>
+                              </span>
+                            </li>
+                            <li data-skill="swift-skill">
+                              <span class="item-icon">
+                                <img
+                                  src="https://via.placeholder.com/150x150"
+                                  data-demo-src="assets/img/icons/stacks/android.svg"
+                                  alt=""
+                                />
+                              </span>
+                              <span class="item-name">Swift</span>
+                              <span class="checkmark">
+                                <i data-feather="check"></i>
+                              </span>
+                            </li>
+                            <li data-skill="wordpress-skill">
+                              <span class="item-icon">
+                                <img
+                                  src="https://via.placeholder.com/150x150"
+                                  data-demo-src="assets/img/icons/stacks/swift.svg"
+                                  alt=""
+                                />
+                              </span>
+                              <span class="item-name">WordPress</span>
+                              <span class="checkmark">
+                                <i data-feather="check"></i>
+                              </span>
+                            </li>
+                            <li data-skill="laravel-skill">
+                              <span class="item-icon">
+                                <img
+                                  src="https://via.placeholder.com/150x150"
+                                  data-demo-src="assets/img/icons/stacks/laravel.svg"
+                                  alt=""
+                                />
+                              </span>
+                              <span class="item-name">Laravel</span>
+                              <span class="checkmark">
+                                <i data-feather="check"></i>
+                              </span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="search-location">
+                <i data-feather="map-pin"></i>
+                Los Angeles, CA
+              </div>
+              <div class="search-job">
+                <i data-feather="briefcase"></i>
+                <input type="text" placeholder="Job Type" />
+              </div>
+              <div class="search-salary">
+                <i data-feather="dollar-sign"></i>
+                <input type="text" placeholder="Salary Range" />
+              </div>
+              <button class="search-button">Search</button>
+            </div>
+
+            <!--Dashboard content -->
+            <div class="main-container">
+              <!--Left Alert -->
+              <div class="search-type">
+                <div class="alert">
+                  <div class="alert-title">Create Job Alert</div>
+                  <div class="alert-subtitle">
+                    Create a job alert now and never miss a job
+                  </div>
+                  <div class="field">
+                    <div class="control has-icon">
+                      <input
+                        type="text"
+                        class="input"
+                        placeholder="Keywords..."
+                      />
+                      <div class="form-icon">
+                        <i data-feather="briefcase"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    class="button h-button is-primary is-fullwidth is-raised"
+                  >
+                    Create Job Alert
+                  </button>
+                </div>
+
+                <!--Left filters block -->
+                <div class="job-time">
+                  <div class="job-time-title">Type of Employment</div>
+                  <div class="job-wrapper">
+                    <div class="type-container">
+                      <label class="checkbox is-outlined is-primary is-paddingless">
+                        <input type="checkbox" />
+                        <span></span>
+                        Full Time Jobs
+                      </label>
+                      <span class="job-number">56</span>
+                    </div>
+                    <div class="type-container">
+                      <label class="checkbox is-outlined is-primary is-paddingless">
+                        <input type="checkbox" checked />
+                        <span></span>
+                        Part Time Jobs
+                      </label>
+                      <span class="job-number">43</span>
+                    </div>
+                    <div class="type-container">
+                      <label class="checkbox is-outlined is-primary is-paddingless">
+                        <input type="checkbox" checked />
+                        <span></span>
+                        Remote Jobs
+                      </label>
+                      <span class="job-number">24</span>
+                    </div>
+                    <div class="type-container">
+                      <label class="checkbox is-outlined is-primary is-paddingless">
+                        <input type="checkbox" />
+                        <span></span>
+                        Internship Jobs
+                      </label>
+                      <span class="job-number">27</span>
+                    </div>
+                    <div class="type-container">
+                      <label class="checkbox is-outlined is-primary is-paddingless">
+                        <input type="checkbox" />
+                        <span></span>
+                        Contract
+                      </label>
+                      <span class="job-number">76</span>
+                    </div>
+                    <div class="type-container">
+                      <label class="checkbox is-outlined is-primary is-paddingless">
+                        <input type="checkbox" />
+                        <span></span>
+                        Training Jobs
+                      </label>
+                      <span class="job-number">28</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!--Left filters block -->
+                <div class="job-time">
+                  <div class="job-time-title">Seniority Level</div>
+                  <div class="job-wrapper">
+                    <div class="type-container">
+                      <label class="checkbox is-outlined is-primary is-paddingless">
+                        <input type="checkbox" />
+                        <span></span>
+                        Student Level
+                      </label>
+                      <span class="job-number">98</span>
+                    </div>
+                    <div class="type-container">
+                      <label class="checkbox is-outlined is-primary is-paddingless">
+                        <input type="checkbox" />
+                        <span></span>
+                        Entry Level
+                      </label>
+                      <span class="job-number">44</span>
+                    </div>
+                    <div class="type-container">
+                      <label class="checkbox is-outlined is-primary is-paddingless">
+                        <input type="checkbox" checked />
+                        <span></span>
+                        Mid Level
+                      </label>
+                      <span class="job-number">35</span>
+                    </div>
+                    <div class="type-container">
+                      <label class="checkbox is-outlined is-primary is-paddingless">
+                        <input type="checkbox" checked />
+                        <span></span>
+                        Senior Level
+                      </label>
+                      <span class="job-number">29</span>
+                    </div>
+                    <div class="type-container">
+                      <label class="checkbox is-outlined is-primary is-paddingless">
+                        <input type="checkbox" />
+                        <span></span>
+                        Directors
+                      </label>
+                      <span class="job-number">26</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!--Left filters block -->
+                <div class="job-time">
+                  <div class="job-time-title">Salary Range</div>
+                  <div class="job-wrapper">
+                    <div class="type-container">
+                      <label class="checkbox is-outlined is-primary is-paddingless">
+                        <input type="checkbox" />
+                        <span></span>
+                        $700 - $1000
+                      </label>
+                      <span class="job-number">49</span>
+                    </div>
+                    <div class="type-container">
+                      <label class="checkbox is-outlined is-primary is-paddingless">
+                        <input type="checkbox" />
+                        <span></span>
+                        $1000 - $1200
+                      </label>
+                      <span class="job-number">67</span>
+                    </div>
+                    <div class="type-container">
+                      <label class="checkbox is-outlined is-primary is-paddingless">
+                        <input type="checkbox" />
+                        <span></span>
+                        $1200 - $1400
+                      </label>
+                      <span class="job-number">24</span>
+                    </div>
+                    <div class="type-container">
+                      <label class="checkbox is-outlined is-primary is-paddingless">
+                        <input type="checkbox" />
+                        <span></span>
+                        $1500 - $1800
+                      </label>
+                      <span class="job-number">27</span>
+                    </div>
+                    <div class="type-container">
+                      <label class="checkbox is-outlined is-primary is-paddingless">
+                        <input type="checkbox" />
+                        <span></span>
+                        $2000 - $3000
+                      </label>
+                      <span class="job-number">76</span>
+                    </div>
+                    <div class="type-container">
+                      <label class="checkbox is-outlined is-primary is-paddingless">
+                        <input type="checkbox" />
+                        <span></span>
+                        $3000 - $4000
+                      </label>
+                      <span class="job-number">22</span>
+                    </div>
+                    <div class="type-container">
+                      <label class="checkbox is-outlined is-primary is-paddingless">
+                        <input type="checkbox" />
+                        <span></span>
+                        $4000 - $5000
+                      </label>
+                      <span class="job-number">18</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--Results-->
+              <div class="searched-jobs">
+                <!--Results toolbar-->
+                <div class="searched-bar">
+                  <div class="searched-count">Showing 46 Jobs</div>
+                  <div class="searched-link">
+                    <a class="action-link">View All</a>
+                  </div>
+                </div>
+
+                <!--Results content-->
+                <div class="job-cards">
+                  <!--Card-->
+                  <div class="job-card">
+                    <div class="job-card-header">
+                      <img class="job-card-logo" src="assets/img/photo/demo/brands/airbnb.svg" alt="" />
+                    </div>
+                    <div class="job-card-title">UI / UX Designer</div>
+                    <div class="job-card-subtitle">The User Experience Designer position exists to create compelling and digital user experience through excellent design...</div>
+                    <div class="job-detail-buttons">
+                      <div class="tags">
+                        <span class="tag is-solid is-curved">Full Time</span>
+                        <span class="tag is-solid is-curved">Min. 1 Year</span>
+                        <span class="tag is-solid is-curved">Senior Level</span>
+                      </div>
+                    </div>
+                    <div class="job-card-buttons">
+                      <div class="buttons">
+                        <button class="button h-button is-primary is-raised">Appply Now</button>
+                        <button class="button h-button is-dark-outlined">Messages</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!--Card-->
+                  <div class="job-card">
+                    <div class="job-card-header">
+                      <img class="job-card-logo" src="assets/img/photo/demo/brands/slack.svg" alt="" />
+                    </div>
+                    <div class="job-card-title">Sr. Product Designer</div>
+                    <div class="job-card-subtitle">The Senior Product Designer position exists to create compelling and digital user experience through excellent design...</div>
+                    <div class="job-detail-buttons">
+                      <div class="tags">
+                        <span class="tag is-solid is-curved">Full Time</span>
+                        <span class="tag is-solid is-curved">Min. 1 Year</span>
+                        <span class="tag is-solid is-curved">Senior Level</span>
+                      </div>
+                    </div>
+                    <div class="job-card-buttons">
+                      <div class="buttons">
+                        <button class="button h-button is-primary is-raised">Appply Now</button>
+                        <button class="button h-button is-dark-outlined">Messages</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!--Card-->
+                  <div class="job-card">
+                    <div class="job-card-header">
+                      <img class="job-card-logo" src="assets/img/photo/demo/brands/github.svg" alt="" />
+                    </div>
+                    <div class="job-card-title">UI / UX Designer</div>
+                    <div class="job-card-subtitle">The User Experience Designer position exists to create compelling and digital user experience through excellent design...</div>
+                    <div class="job-detail-buttons">
+                      <div class="tags">
+                        <span class="tag is-solid is-curved">Full Time</span>
+                        <span class="tag is-solid is-curved">Min. 1 Year</span>
+                        <span class="tag is-solid is-curved">Senior Level</span>
+                      </div>
+                    </div>
+                    <div class="job-card-buttons">
+                      <div class="buttons">
+                        <button class="button h-button is-primary is-raised">Appply Now</button>
+                        <button class="button h-button is-dark-outlined">Messages</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!--Card-->
+                  <div class="job-card">
+                    <div class="job-card-header">
+                      <img class="job-card-logo" src="assets/img/photo/demo/brands/google.svg" alt="" />
+                    </div>
+                    <div class="job-card-title">Product Designer</div>
+                    <div class="job-card-subtitle">The Product Designer position exists to create compelling and digital user experience through excellent design...</div>
+                    <div class="job-detail-buttons">
+                      <div class="tags">
+                        <span class="tag is-solid is-curved">Full Time</span>
+                        <span class="tag is-solid is-curved">Min. 1 Year</span>
+                        <span class="tag is-solid is-curved">Senior Level</span>
+                      </div>
+                    </div>
+                    <div class="job-card-buttons">
+                      <div class="buttons">
+                        <button class="button h-button is-primary is-raised">Appply Now</button>
+                        <button class="button h-button is-dark-outlined">Messages</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!--Card-->
+                  <div class="job-card">
+                    <div class="job-card-header">
+                      <img class="job-card-logo" src="assets/img/photo/demo/brands/facebook.svg" alt="" />
+                    </div>
+                    <div class="job-card-title">UI / UX Designer</div>
+                    <div class="job-card-subtitle">The User Experience Designer position exists to create compelling and digital user experience through excellent design...</div>
+                    <div class="job-detail-buttons">
+                      <div class="tags">
+                        <span class="tag is-solid is-curved">Full Time</span>
+                        <span class="tag is-solid is-curved">Min. 1 Year</span>
+                        <span class="tag is-solid is-curved">Senior Level</span>
+                      </div>
+                    </div>
+                    <div class="job-card-buttons">
+                      <div class="buttons">
+                        <button class="button h-button is-primary is-raised">Appply Now</button>
+                        <button class="button h-button is-dark-outlined">Messages</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!--Card-->
+                  <div class="job-card">
+                    <div class="job-card-header">
+                      <img class="job-card-logo" src="assets/img/photo/demo/brands/tnw.svg" alt="" />
+                    </div>
+                    <div class="job-card-title">Web Developer</div>
+                    <div class="job-card-subtitle">The Web Developer position exists to create compelling and digital user experience through excellent design...</div>
+                    <div class="job-detail-buttons">
+                      <div class="tags">
+                        <span class="tag is-solid is-curved">Full Time</span>
+                        <span class="tag is-solid is-curved">Min. 1 Year</span>
+                        <span class="tag is-solid is-curved">Senior Level</span>
+                      </div>
+                    </div>
+                    <div class="job-card-buttons">
+                      <div class="buttons">
+                        <button class="button h-button is-primary is-raised">Appply Now</button>
+                        <button class="button h-button is-dark-outlined">Messages</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!--Card-->
+                  <div class="job-card">
+                    <div class="job-card-header">
+                      <img class="job-card-logo" src="assets/img/photo/demo/brands/dribbble.svg" alt="" />
+                    </div>
+                    <div class="job-card-title">UI Designer</div>
+                    <div class="job-card-subtitle">The Interface Designer position exists to create compelling and digital user experience through excellent design...</div>
+                    <div class="job-detail-buttons">
+                      <div class="tags">
+                        <span class="tag is-solid is-curved">Full Time</span>
+                        <span class="tag is-solid is-curved">Min. 1 Year</span>
+                        <span class="tag is-solid is-curved">Senior Level</span>
+                      </div>
+                    </div>
+                    <div class="job-card-buttons">
+                      <div class="buttons">
+                        <button class="button h-button is-primary is-raised">Appply Now</button>
+                        <button class="button h-button is-dark-outlined">Messages</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!--Card-->
+                  <div class="job-card">
+                    <div class="job-card-header">
+                      <img class="job-card-logo" src="assets/img/photo/demo/brands/atlassian.svg" alt="" />
+                    </div>
+                    <div class="job-card-title">UI / UX Designer</div>
+                    <div class="job-card-subtitle">The User Experience Designer position exists to create compelling and digital user experience through excellent design...</div>
+                    <div class="job-detail-buttons">
+                      <div class="tags">
+                        <span class="tag is-solid is-curved">Full Time</span>
+                        <span class="tag is-solid is-curved">Min. 1 Year</span>
+                        <span class="tag is-solid is-curved">Senior Level</span>
+                      </div>
+                    </div>
+                    <div class="job-card-buttons">
+                      <div class="buttons">
+                        <button class="button h-button is-primary is-raised">Appply Now</button>
+                        <button class="button h-button is-dark-outlined">Messages</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!--Card-->
+                  <div class="job-card">
+                    <div class="job-card-header">
+                      <img class="job-card-logo" src="assets/img/photo/demo/brands/gitlab.svg" alt="" />
+                    </div>
+                    <div class="job-card-title">UI / UX Designer</div>
+                    <div class="job-card-subtitle">The User Experience Designer position exists to create compelling and digital user experience through excellent design...</div>
+                    <div class="job-detail-buttons">
+                      <div class="tags">
+                        <span class="tag is-solid is-curved">Full Time</span>
+                        <span class="tag is-solid is-curved">Min. 1 Year</span>
+                        <span class="tag is-solid is-curved">Senior Level</span>
+                      </div>
+                    </div>
+                    <div class="job-card-buttons">
+                      <div class="buttons">
+                        <button class="button h-button is-primary is-raised">Appply Now</button>
+                        <button class="button h-button is-dark-outlined">Messages</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
