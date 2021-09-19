@@ -195,7 +195,7 @@ function displayPopup(place) {
     <div class="map-box-body">
       <p>${place.description}</p>
     </div>
-  </div>`
+  </div>`;
 
   new mapboxgl.Popup()
     .setLngLat(place.coordinates)
@@ -205,8 +205,8 @@ function displayPopup(place) {
 
 function loadLayers() {
   // Do nothing if source already added
-  if (map.getSource('places')) {
-    return
+  if (map.getSource("places")) {
+    return;
   }
   var storageTheme = window.localStorage.getItem("theme");
 
@@ -221,10 +221,11 @@ function loadLayers() {
     type: "circle",
     source: "places",
     paint: {
-      "circle-color": storageTheme === "dark" ? themeColors.accent : themeColors.primary,
+      "circle-color":
+        storageTheme === "dark" ? themeColors.accent : themeColors.primary,
       "circle-radius": 6,
       "circle-stroke-width": 2,
-      "circle-stroke-color": storageTheme === "dark" ? '#ddd' : "#fff",
+      "circle-stroke-color": storageTheme === "dark" ? "#ddd" : "#fff",
     },
   });
 
@@ -247,8 +248,8 @@ function loadLayers() {
       name,
       description,
       logo,
-      openingCount
-    })
+      openingCount,
+    });
   });
 
   // Change the cursor to a pointer when the mouse is over the places layer.
@@ -281,17 +282,17 @@ function initMapBox() {
       zoom: 12,
     });
 
-    map.on('styledata', () => {
+    map.on("styledata", () => {
       var loadingStyles = () => {
         if (!map.isStyleLoaded()) {
-          setTimeout(loadingStyles, 1500)
-          return
+          setTimeout(loadingStyles, 1500);
+          return;
         }
-  
-        loadLayers()
-      }
-      loadingStyles()
-    })
+
+        loadLayers();
+      };
+      loadingStyles();
+    });
 
     // Add the control to the map.
     var geocoder = new MapboxGeocoder({
@@ -304,7 +305,7 @@ function initMapBox() {
   }
 }
 
-$(function() {
+$(function () {
   initMapBox();
 
   $(".map-box").on("click", function () {
@@ -323,8 +324,8 @@ $(function() {
       name,
       description,
       logo,
-      openingCount
-    })
+      openingCount,
+    });
   });
 
   $(document).on("themeChange", function (e, selectedTheme) {

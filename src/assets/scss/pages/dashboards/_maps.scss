@@ -345,7 +345,6 @@ body {
 }
 
 @media only screen and (max-width: 767px) {
-
   .is-webapp {
     .dashboard-map-wrapper {
       top: 0;
@@ -379,14 +378,14 @@ body {
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait)  {
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   .is-webapp {
     .dashboard-map-wrapper {
       top: 0;
       height: 100%;
     }
   }
-  
+
   .dashboard-map-wrapper {
     overflow-x: hidden;
 

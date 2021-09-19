@@ -1,0 +1,62 @@
+/*! main.scss | Huro | Css ninja 2020-2021 */
+
+/* ==========================================================================
+SCSS Imports
+========================================================================== */
+
+@import "abstracts/variables";
+@import "abstracts/brands";
+
+@import "../sass/bulma";
+
+@import "abstracts/shadows";
+@import "abstracts/typography";
+@import "abstracts/animations";
+@import "abstracts/helpers";
+
+@import "layout/pageloader";
+@import "layout/layout";
+@import "layout/navbar";
+@import "layout/sidebar";
+@import "layout/sidebar-panel";
+@import "layout/sidebar-mobile";
+@import "layout/right-panel";
+@import "layout/utilities";
+
+@import "elements/buttons";
+@import "elements/blocks";
+@import "elements/cards";
+@import "elements/content";
+@import "elements/forms-general";
+//@import "elements/forms-combos";
+@import "elements/forms-checkboxes";
+@import "elements/icons";
+@import "elements/links";
+@import "elements/tags";
+
+@import "components/breadcrumbs";
+@import "components/dropdowns";
+@import "components/modals";
+//@import "components/media";
+@import "components/charts";
+@import "components/loader";
+@import "components/toggles";
+@import "components/placeholders";
+@import "components/theme-switch";
+@import "components/avatar";
+@import "components/tabs";
+@import "components/toasts";
+@import "components/circle-chart";
+
+@import "pages/dashboards/personal";
+@import "pages/auth/auth";
+
+@import "layout/responsive";
+
+@import "abstracts/dark";
+
+$slick-font-path: "/assets/fonts/";
+$slick-loader-path: "/assets/fonts/";
+
+@import "../../../node_modules/slick-carousel/slick/slick.scss";
+@import "../../../node_modules/slick-carousel/slick/slick-theme.scss";

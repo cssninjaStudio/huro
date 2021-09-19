@@ -10,143 +10,149 @@ Main initialization file
 initPageLoader();
 
 $(document).ready(function () {
+  //Swicth to Admin / Webapp
+  switchLayouts();
 
-    //Swicth to Admin / Webapp
-    switchLayouts();
+  if (env === "development") {
+    //Change demo images
+    changeDemoImages();
+  }
 
-    if (env === 'development') {
-        //Change demo images
-        changeDemoImages();
+  //JS background images
+  initBgImages();
+
+  //Feather icons
+  feather.replace();
+
+  //Active Link
+  setActivelink();
+
+  //Update Sidebar Naver
+  updateSidebarNaver();
+
+  //Mobile Navbar
+  initMobileNavbar();
+
+  //Mobile Navbar Hamburger
+  initMobileNavbarHamburger();
+
+  //Init sidebar (Admin Layout)
+  if ($(".main-sidebar").length) {
+    initSidebar();
+
+    if ($("[data-sidebar-open]").length) {
+      openSidebar();
     }
 
-    //JS background images
-    initBgImages()
-
-    //Feather icons
-    feather.replace();
-
-    //Active Link
-    setActivelink();
-
-    //Update Sidebar Naver
-    updateSidebarNaver();
-
-    //Mobile Navbar
-    initMobileNavbar();
-
-    //Mobile Navbar Hamburger
-    initMobileNavbarHamburger();
-
-    //Init sidebar (Admin Layout)
-    if ($('.main-sidebar').length) {
-        initSidebar();
-
-        if ($('[data-sidebar-open]').length) {
-            openSidebar();
-        }   
-
-        if (window.matchMedia('(min-width: 768px)').matches && window.matchMedia('(max-width: 1024px)').matches && window.matchMedia('(orientation: landscape)').matches) {
-            closeSidebarPanel();
-            $('.main-sidebar, .sidebar-brand').removeClass('is-bordered');
-        }
-
-        $(window).on('resize', function () {
-            if (window.matchMedia('(min-width: 768px)').matches && window.matchMedia('(max-width: 1024px)').matches && window.matchMedia('(orientation: landscape)').matches) {
-                closeSidebarPanel();
-                $('.main-sidebar, .sidebar-brand').removeClass('is-bordered');
-            }
-        })
+    if (
+      window.matchMedia("(min-width: 768px)").matches &&
+      window.matchMedia("(max-width: 1024px)").matches &&
+      window.matchMedia("(orientation: landscape)").matches
+    ) {
+      closeSidebarPanel();
+      $(".main-sidebar, .sidebar-brand").removeClass("is-bordered");
     }
 
-    //Init navbar (Webapp Layout)
-    if ($('.view-wrapper').hasClass('is-webapp')) {
-        initWebapp();
-    }
+    $(window).on("resize", function () {
+      if (
+        window.matchMedia("(min-width: 768px)").matches &&
+        window.matchMedia("(max-width: 1024px)").matches &&
+        window.matchMedia("(orientation: landscape)").matches
+      ) {
+        closeSidebarPanel();
+        $(".main-sidebar, .sidebar-brand").removeClass("is-bordered");
+      }
+    });
+  }
 
-    //Collapsible menus
-    initCollapsibleMenu();
+  //Init navbar (Webapp Layout)
+  if ($(".view-wrapper").hasClass("is-webapp")) {
+    initWebapp();
+  }
 
-    //Stuck form header
-    initStuckHeader();
+  //Collapsible menus
+  initCollapsibleMenu();
 
-    //Navbar Dropdowns
-    initNavbarDropdowns();
+  //Stuck form header
+  initStuckHeader();
 
-    //Regular Dropdowns
-    initDropdowns();
+  //Navbar Dropdowns
+  initNavbarDropdowns();
 
-    //Mobile Dropdowns
-    initMobileDropdowns();
+  //Regular Dropdowns
+  initDropdowns();
 
-    //Adjust Dropdowns
-    adjustDropdowns()
+  //Mobile Dropdowns
+  initMobileDropdowns();
 
-    //Chosen Selects
-    initChosenSelects();
+  //Adjust Dropdowns
+  adjustDropdowns();
 
-    //Tabs
-    initTabs();
+  //Chosen Selects
+  initChosenSelects();
 
-    initTabbedWidgets();
+  //Tabs
+  initTabs();
 
-    //H Select
-    initHSelect();
+  initTabbedWidgets();
 
-    //Combo Box
-    initComboBox();
+  //H Select
+  initHSelect();
 
-    //Image Combo Box
-    initImageComboBox();
+  //Combo Box
+  initComboBox();
 
-    //User Combo Box
-    initUserComboBox();
+  //Image Combo Box
+  initImageComboBox();
 
-    //Stacked Combo Box
-    initStackedComboBox();
+  //User Combo Box
+  initUserComboBox();
 
-    //Big Combo Box
-    initBigComboBox();
+  //Stacked Combo Box
+  initStackedComboBox();
 
-    //Accordion
-    initAccordion();
+  //Big Combo Box
+  initBigComboBox();
 
-    //Animated Modals
-    initAnimatedModals();
+  //Accordion
+  initAccordion();
 
-    //Regular Modals
-    initHModals();
+  //Animated Modals
+  initAnimatedModals();
 
-    //Right Panels
-    initPanels();
+  //Regular Modals
+  initHModals();
 
-    //Text Tips
-    initSmallTextTip();
-    initTextTip();
-    initMediumTextTip();
+  //Right Panels
+  initPanels();
 
-    //Animated checkbox
-    initAnimatedCheckboxes();
+  //Text Tips
+  initSmallTextTip();
+  initTextTip();
+  initMediumTextTip();
 
-    //Text Filter
-    initCustomTextFilter();
-    initTextFilter();
+  //Animated checkbox
+  initAnimatedCheckboxes();
 
-    //Advanced flex table
-    initAdvancedFlexTable();
+  //Text Filter
+  initCustomTextFilter();
+  initTextFilter();
 
-    //Accordion
-    initSingleAccordion();
+  //Advanced flex table
+  initAdvancedFlexTable();
 
-    //Collapse
-    initCollapse();
+  //Accordion
+  initSingleAccordion();
 
-    //PLyr players
-    initPlayers();
+  //Collapse
+  initCollapse();
 
-    //Search
-    initSearch();
+  //PLyr players
+  initPlayers();
 
-    //Dark Mode
-    initDarkMode();
+  //Search
+  initSearch();
 
-})
+  //Dark Mode
+  initDarkMode();
+});

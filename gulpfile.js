@@ -291,8 +291,6 @@ function concatPlugins() {
 function concatCssPlugins() {
   console.log('---------------CONCATENATE CSS PLUGINS---------------');
   return src([
-    //nodepath + 'slick-carousel/slick/slick.css',
-    //nodepath + 'slick-carousel/slick/slick-theme.css',
     nodepath + 'webui-popover/dist/jquery.webui-popover.min.css',
     nodepath + 'easy-autocomplete/dist/easy-autocomplete.min.css',
     nodepath + 'dragula/dist/dragula.min.css',
