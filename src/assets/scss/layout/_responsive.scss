@@ -476,6 +476,8 @@ Responsive styles
   }
 }
 
+
+
 /* ==========================================================================
 4. Custom
 ========================================================================== */
@@ -489,6 +491,18 @@ Responsive styles
   .mobile-subsidebar {
     display: none !important;
   }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait) {
+    .webapp-navbar, .webapp-navbar-clean {
+      display: block !important;
+    }
+
+    .page-title {
+      &.is-webapp {
+        display: none !important;
+      }
+    }
 }
 
 /* ==========================================================================
