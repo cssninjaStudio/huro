@@ -112,6 +112,21 @@ function initSidebar() {
             }
         }
 
+        if ($(this).hasClass('push-block')) {
+            var sidebar = $(this).attr('data-sidebar');
+            $('.nav-trigger .menu-toggle .icon-box-toggle').toggleClass('active');
+            $('#' + sidebar).toggleClass('is-active');
+            $('.view-wrapper').toggleClass('is-pushed-block');
+            $('.sidebar-block').toggleClass('is-bordered');
+            $('body').toggleClass('opened');
+
+            if ($(this).hasClass('messages-push')) {
+                $('.view-wrapper').toggleClass('is-pushed-messages');
+                $('.collapsed-messaging').toggleClass('is-active');
+                $('body').toggleClass('is-chat-side-collapsed');
+            }
+        }
+
         if ($(this).hasClass('push-search')) {
             var sidebar = $(this).attr('data-sidebar');
             $('.nav-trigger .menu-toggle .icon-box-toggle').toggleClass('active');
@@ -230,11 +245,21 @@ function initMobileNavbarHamburger() {
 
 //Init Sidebar on page load
 function openSidebar() {
-    $('.nav-trigger .menu-toggle .icon-box-toggle').toggleClass('active');
-    $('.sidebar-panel').addClass('is-active');
-    $('.view-wrapper').addClass('is-pushed-full');
-    $('body').addClass('opened');
-    $('.main-sidebar, .sidebar-brand').addClass('is-bordered');
+    if ($('.main-sidebar').length) {
+        $('.nav-trigger .menu-toggle .icon-box-toggle').toggleClass('active');
+        $('.sidebar-panel').addClass('is-active');
+        $('.view-wrapper').addClass('is-pushed-full');
+        $('body').addClass('opened');
+        $('.main-sidebar, .sidebar-brand').addClass('is-bordered');
+    }   
+    
+    if ($('.sidebar-block').length) {
+        $('.nav-trigger .menu-toggle .icon-box-toggle').toggleClass('active');
+        $('.sidebar-block').addClass('is-active');
+        $('.view-wrapper').addClass('is-pushed-block');
+        $('body').addClass('opened');
+        $('.sidebar-block').addClass('is-bordered');
+    }
 }
 
 //Navbar Dropdowns
