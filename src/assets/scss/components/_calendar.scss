@@ -288,6 +288,11 @@
     color: $white !important;
   }
 
+  .meeting,
+  .meeting:before {
+    background: $accent !important;
+  }
+
   @media (max-width: 767px) {
     .event-calendar {
       .date-cell {
