@@ -88,13 +88,18 @@ body {
     }
   }
 
-  &.is-pushed-block {
-    margin-left: 280px;
-    width: calc(100% - 280px);
+  &.view-wrapper-full {
+    width: 100%;
+    margin-left: 0;
 
-    .is-stuck {
+    &.is-pushed-block {
       margin-left: 280px;
       width: calc(100% - 280px);
+  
+      .is-stuck {
+        margin-left: 280px;
+        width: calc(100% - 280px);
+      }
     }
   }
 

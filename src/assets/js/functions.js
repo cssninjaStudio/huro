@@ -101,7 +101,7 @@ function initPageLoader() {
 function setActivelink() {
   var url = window.location.href;
   var activePage = url;
-  $(".sidebar-panel .inner ul li a, .mobile-subsidebar ul li a").each(
+  $(".sidebar-panel .inner ul li a, .sidebar-block ul li a, .mobile-subsidebar ul li a").each(
     function () {
       var linkPage = this.href;
 

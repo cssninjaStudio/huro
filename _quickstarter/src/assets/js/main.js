@@ -27,7 +27,7 @@ $(document).ready(function () {
     initMobileNavbarHamburger();
 
     //Init sidebar (Admin Layout)
-    if ($('.main-sidebar').length) {
+    if ($('.main-sidebar, .sidebar-block').length) {
         initSidebar();
 
         if ($('[data-sidebar-open ]').length) {

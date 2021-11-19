@@ -54,7 +54,7 @@ function initPageLoader() {
 function setActivelink() {
     var url = window.location.href;
     var activePage = url;
-    $('.sidebar-panel .inner ul li a, .mobile-subsidebar ul li a').each(function () {
+    $(".sidebar-panel .inner ul li a, .sidebar-block ul li a, .mobile-subsidebar ul li a").each(function () {
         var linkPage = this.href;
 
         if (activePage == linkPage) {
@@ -119,7 +119,7 @@ function initSidebar() {
             $('.view-wrapper').toggleClass('is-pushed-block');
             $('.sidebar-block').toggleClass('is-bordered');
             $('body').toggleClass('opened');
-
+    
             if ($(this).hasClass('messages-push')) {
                 $('.view-wrapper').toggleClass('is-pushed-messages');
                 $('.collapsed-messaging').toggleClass('is-active');

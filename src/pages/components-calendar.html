@@ -1,0 +1,582 @@
+---
+layout: default
+title: Event Calendar
+---
+
+{{> components-sidebar}} {{> components-mobile-subsidebar}}
+
+<!-- Content Wrapper -->
+<div
+  id="huro-demo"
+  class="view-wrapper"
+  data-sidebar-open
+  data-naver-offset="342"
+  data-menu-item="#components-sidebar-menu"
+  data-mobile-item="#components-sidebar-menu-mobile"
+>
+  <div class="page-content-wrapper">
+    <div class="page-content is-relative">
+      <div class="page-title has-text-centered">
+        <!-- Sidebar Trigger -->
+        <div
+          class="huro-hamburger nav-trigger push-resize"
+          data-sidebar="components-sidebar"
+        >
+          <span class="menu-toggle has-chevron">
+            <span class="icon-box-toggle">
+              <span class="rotate">
+                <i class="icon-line-top"></i>
+                <i class="icon-line-center"></i>
+                <i class="icon-line-bottom"></i>
+              </span>
+            </span>
+          </span>
+        </div>
+
+        <div class="title-wrap">
+          <h1 class="title is-4">Event Calendar</h1>
+        </div>
+
+        {{> toolbar}}
+      </div>
+
+      <div class="page-content-inner">
+        <nav class="breadcrumb has-bullet-separator" aria-label="breadcrumbs">
+          <ul>
+            <li>
+              <a href="/">
+                <span class="icon is-small is-solo">
+                  <i data-feather="home"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="/elements-hub.html">
+                <span>Components</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <span>Calendar</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="columns is-multiline">
+          <div class="column is-12">
+            <!--Event Calendar-->
+            <div class="demo-card">
+              <div class="demo-title">
+                <h3 class="title is-thin is-5">Event Calendar</h3>
+                <p>
+                  Huro ships with this nice and modern calendar UI. Only the
+                  markup and the CSS are provided. Therefore we do not make
+                  choices for you regarding the implementation and the
+                  technology you'd like to use it with.
+                </p>
+                <a class="code-trigger">
+                  <i class="open" data-feather="code"></i>
+                  <i class="close" data-feather="x"></i>
+                </a>
+              </div>
+              <div class="card-inner no-padding">
+                <div class="highlight highlight-block">
+                  <pre><code class="code-highlight">
+&#x3C;div class=&#x22;event-calendar&#x22;&#x3E;
+  &#x3C;div class=&#x22;columns&#x22;&#x3E;
+    &#x3C;!--Calendar--&#x3E;
+    &#x3C;div class=&#x22;column is-12&#x22;&#x3E;
+      &#x3C;div&#x3E;
+        &#x3C;div class=&#x22;calendar-toolbar&#x22;&#x3E;
+          &#x3C;h3 class=&#x22;title is-4 is-inverted is-narrow title-desktop&#x22;&#x3E;
+            December 2021
+          &#x3C;/h3&#x3E;
+
+          &#x3C;h3 class=&#x22;title is-4 is-inverted is-narrow title-mobile&#x22;&#x3E;
+            Today
+          &#x3C;/h3&#x3E;
+
+          &#x3C;div class=&#x22;field has-addons&#x22;&#x3E;
+            &#x3C;p class=&#x22;control&#x22;&#x3E;
+              &#x3C;button class=&#x22;button h-button&#x22;&#x3E;
+                &#x3C;span class=&#x22;icon is-small&#x22;&#x3E;
+                  &#x3C;i class=&#x22;fas fa-angle-left&#x22;&#x3E;&#x3C;/i&#x3E;
+                &#x3C;/span&#x3E;
+                &#x3C;span&#x3E;Prev&#x3C;/span&#x3E;
+              &#x3C;/button&#x3E;
+            &#x3C;/p&#x3E;
+            &#x3C;p class=&#x22;control&#x22;&#x3E;
+              &#x3C;button class=&#x22;button h-button&#x22;&#x3E;
+                &#x3C;span&#x3E;Next&#x3C;/span&#x3E;
+                &#x3C;span class=&#x22;icon is-small&#x22;&#x3E;
+                  &#x3C;i class=&#x22;fas fa-angle-right&#x22;&#x3E;&#x3C;/i&#x3E;
+                &#x3C;/span&#x3E;
+              &#x3C;/button&#x3E;
+            &#x3C;/p&#x3E;
+            &#x3C;p class=&#x22;control&#x22;&#x3E;
+              &#x3C;button class=&#x22;button h-button is-primary raised&#x22;&#x3E;
+                &#x3C;span class=&#x22;icon is-small&#x22;&#x3E;
+                  &#x3C;i class=&#x22;fas fa-plus&#x22;&#x3E;&#x3C;/i&#x3E;
+                &#x3C;/span&#x3E;
+                &#x3C;span&#x3E;New&#x3C;/span&#x3E;
+              &#x3C;/button&#x3E;
+            &#x3C;/p&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+
+        &#x3C;div class=&#x22;calendar-box&#x22;&#x3E;
+          &#x3C;ul class=&#x22;days&#x22;&#x3E;
+            &#x3C;li&#x3E;Sun&#x3C;/li&#x3E;
+            &#x3C;li&#x3E;Mon&#x3C;/li&#x3E;
+            &#x3C;li&#x3E;Tue&#x3C;/li&#x3E;
+            &#x3C;li&#x3E;Wed&#x3C;/li&#x3E;
+            &#x3C;li&#x3E;Thu&#x3C;/li&#x3E;
+            &#x3C;li&#x3E;Fri&#x3C;/li&#x3E;
+            &#x3C;li&#x3E;Sat&#x3C;/li&#x3E;
+          &#x3C;/ul&#x3E;
+          &#x3C;ul class=&#x22;dates&#x22;&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell fade&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;29&#x3C;/span&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell fade&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;30&#x3C;/span&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;1&#x3C;/span&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;2&#x3C;/span&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;3&#x3C;/span&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;4&#x3C;/span&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;4&#x3C;/span&#x3E;
+              &#x3C;a class=&#x22;calendar-event personal-event&#x22;&#x3E;
+                &#x3C;b&#x3E;7:30 pm&#x3C;/b&#x3E; Dinner with Eva and friends
+              &#x3C;/a&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;5&#x3C;/span&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;6&#x3C;/span&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;7&#x3C;/span&#x3E;
+              &#x3C;a class=&#x22;calendar-event meeting&#x22;&#x3E;
+                &#x3C;b&#x3E;11:30 am&#x3C;/b&#x3E; Project review with the team
+              &#x3C;/a&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;8&#x3C;/span&#x3E;
+              &#x3C;a class=&#x22;calendar-event meeting&#x22;&#x3E;
+                &#x3C;b&#x3E;10:30 am&#x3C;/b&#x3E; Meeting with John Winsford
+              &#x3C;/a&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;9&#x3C;/span&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell current today&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;10&#x3C;/span&#x3E;
+              &#x3C;a class=&#x22;calendar-event meeting&#x22;&#x3E;
+                &#x3C;b&#x3E;8:30 am&#x3C;/b&#x3E; Sprint prototypes review
+              &#x3C;/a&#x3E;
+              &#x3C;a class=&#x22;calendar-event meeting&#x22;&#x3E;
+                &#x3C;b&#x3E;10:30 am&#x3C;/b&#x3E; Planning poker with the devs
+              &#x3C;/a&#x3E;
+              &#x3C;a class=&#x22;calendar-event meeting&#x22;&#x3E;
+                &#x3C;b&#x3E;11:30 am&#x3C;/b&#x3E; Call Abby in the central office
+              &#x3C;/a&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;11&#x3C;/span&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;12&#x3C;/span&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;13&#x3C;/span&#x3E;
+              &#x3C;a class=&#x22;calendar-event personal-event&#x22;&#x3E;
+                &#x3C;b&#x3E;12:30 pm&#x3C;/b&#x3E; Lunch with Alexander and William
+              &#x3C;/a&#x3E;
+              &#x3C;a class=&#x22;calendar-event meeting&#x22;&#x3E;
+                &#x3C;b&#x3E;3:45 pm&#x3C;/b&#x3E; Marketing plan review with George
+              &#x3C;/a&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;14&#x3C;/span&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;15&#x3C;/span&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;16&#x3C;/span&#x3E;
+              &#x3C;a class=&#x22;calendar-event meeting&#x22;&#x3E;
+                &#x3C;b&#x3E;11:00 am&#x3C;/b&#x3E; Review the latest prototypes with
+                Mike
+              &#x3C;/a&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;17&#x3C;/span&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;18&#x3C;/span&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;19&#x3C;/span&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;20&#x3C;/span&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;21&#x3C;/span&#x3E;
+              &#x3C;a class=&#x22;calendar-event generic-event&#x22;&#x3E;
+                &#x3C;b&#x3E;5:30 pm&#x3C;/b&#x3E; Help Stella with her science project
+              &#x3C;/a&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;22&#x3C;/span&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;23&#x3C;/span&#x3E;
+              &#x3C;a class=&#x22;calendar-event generic-event&#x22;&#x3E;
+                &#x3C;b&#x3E;7:30 pm&#x3C;/b&#x3E; Grab groceries that Anna ordered
+              &#x3C;/a&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;24&#x3C;/span&#x3E;
+              &#x3C;a class=&#x22;calendar-event meeting&#x22;&#x3E;
+                &#x3C;b&#x3E;9:30 am&#x3C;/b&#x3E; Meeting a new lead from New York
+              &#x3C;/a&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;25&#x3C;/span&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;26&#x3C;/span&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;27&#x3C;/span&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;28&#x3C;/span&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;29&#x3C;/span&#x3E;
+              &#x3C;a class=&#x22;calendar-event generic-event&#x22;&#x3E;
+                &#x3C;b&#x3E;5:30 pm&#x3C;/b&#x3E; Help Stella with her science project
+              &#x3C;/a&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;30&#x3C;/span&#x3E;
+              &#x3C;a class=&#x22;calendar-event generic-event&#x22;&#x3E;
+                &#x3C;b&#x3E;5:30 pm&#x3C;/b&#x3E; Help Stella with her science project
+              &#x3C;/a&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;31&#x3C;/span&#x3E;
+            &#x3C;/li&#x3E;
+            &#x3C;!--Cell--&#x3E;
+            &#x3C;li class=&#x22;date-cell fade&#x22;&#x3E;
+              &#x3C;span class=&#x22;date&#x22;&#x3E;1&#x3C;/span&#x3E;
+            &#x3C;/li&#x3E;
+          &#x3C;/ul&#x3E;
+        &#x3C;/div&#x3E;
+      &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+</code></pre>
+                </div>
+              </div>
+            </div>
+
+            <div class="event-calendar mt-4">
+              <div class="columns">
+                <!--Calendar-->
+                <div class="column is-12">
+                  <div>
+                    <div class="calendar-toolbar">
+                      <h3
+                        class="title is-4 is-inverted is-narrow title-desktop"
+                      >
+                        December 2021
+                      </h3>
+
+                      <h3 class="title is-4 is-inverted is-narrow title-mobile">
+                        Today
+                      </h3>
+
+                      <div class="field has-addons">
+                        <p class="control">
+                          <button class="button h-button">
+                            <span class="icon is-small">
+                              <i class="fas fa-angle-left"></i>
+                            </span>
+                            <span>Prev</span>
+                          </button>
+                        </p>
+                        <p class="control">
+                          <button class="button h-button">
+                            <span>Next</span>
+                            <span class="icon is-small">
+                              <i class="fas fa-angle-right"></i>
+                            </span>
+                          </button>
+                        </p>
+                        <p class="control">
+                          <button class="button h-button is-primary raised">
+                            <span class="icon is-small">
+                              <i class="fas fa-plus"></i>
+                            </span>
+                            <span>New</span>
+                          </button>
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="calendar-box">
+                      <ul class="days">
+                        <li>Sun</li>
+                        <li>Mon</li>
+                        <li>Tue</li>
+                        <li>Wed</li>
+                        <li>Thu</li>
+                        <li>Fri</li>
+                        <li>Sat</li>
+                      </ul>
+                      <ul class="dates">
+                        <!--Cell-->
+                        <li class="date-cell fade">
+                          <span class="date">29</span>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell fade">
+                          <span class="date">30</span>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">1</span>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">2</span>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">3</span>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">4</span>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">4</span>
+                          <a class="calendar-event personal-event">
+                            <b>7:30 pm</b> Dinner with Eva and friends
+                          </a>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">5</span>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">6</span>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">7</span>
+                          <a class="calendar-event meeting">
+                            <b>11:30 am</b> Project review with the team
+                          </a>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">8</span>
+                          <a class="calendar-event meeting">
+                            <b>10:30 am</b> Meeting with John Winsford
+                          </a>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">9</span>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell current today">
+                          <span class="date">10</span>
+                          <a class="calendar-event meeting">
+                            <b>8:30 am</b> Sprint prototypes review
+                          </a>
+                          <a class="calendar-event meeting">
+                            <b>10:30 am</b> Planning poker with the devs
+                          </a>
+                          <a class="calendar-event meeting">
+                            <b>11:30 am</b> Call Abby in the central office
+                          </a>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">11</span>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">12</span>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">13</span>
+                          <a class="calendar-event personal-event">
+                            <b>12:30 pm</b> Lunch with Alexander and William
+                          </a>
+                          <a class="calendar-event meeting">
+                            <b>3:45 pm</b> Marketing plan review with George
+                          </a>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">14</span>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">15</span>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">16</span>
+                          <a class="calendar-event meeting">
+                            <b>11:00 am</b> Review the latest prototypes with
+                            Mike
+                          </a>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">17</span>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">18</span>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">19</span>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">20</span>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">21</span>
+                          <a class="calendar-event generic-event">
+                            <b>5:30 pm</b> Help Stella with her science project
+                          </a>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">22</span>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">23</span>
+                          <a class="calendar-event generic-event">
+                            <b>7:30 pm</b> Grab groceries that Anna ordered
+                          </a>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">24</span>
+                          <a class="calendar-event meeting">
+                            <b>9:30 am</b> Meeting a new lead from New York
+                          </a>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">25</span>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">26</span>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">27</span>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">28</span>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">29</span>
+                          <a class="calendar-event generic-event">
+                            <b>5:30 pm</b> Help Stella with her science project
+                          </a>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">30</span>
+                          <a class="calendar-event generic-event">
+                            <b>5:30 pm</b> Help Stella with her science project
+                          </a>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell">
+                          <span class="date">31</span>
+                        </li>
+                        <!--Cell-->
+                        <li class="date-cell fade">
+                          <span class="date">1</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
