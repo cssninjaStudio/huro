@@ -19,6 +19,8 @@
     16. Choices Dark mode
 */
 
+@use "sass:math";
+
 /* ==========================================================================
 1. Labels
 ========================================================================== */
@@ -1403,7 +1405,7 @@ body {
       background: #eeeeee;
       position: absolute;
       left: -8px;
-      top: (7px - 24px) / 2;
+      top: math.div(-17px, 2);
       display: block;
       width: 24px;
       height: 24px;

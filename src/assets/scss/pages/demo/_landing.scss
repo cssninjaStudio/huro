@@ -23,6 +23,8 @@
     20. Media Queries
 */
 
+@use "sass:math";
+
 /* ==========================================================================
 1. Defaults
 ========================================================================== */
@@ -1477,8 +1479,8 @@ $landing-dark-2: #191c2b;
         top: 62%;
         left: $toggleWidth - $toggleBtnRadius - $borderWidth * 2 - 20px;
         z-index: 10;
-        width: $toggleBtnRadius / 5;
-        height: $toggleBtnRadius / 5;
+        width: math.div($toggleBtnRadius, 5);
+        height: math.div($toggleBtnRadius, 5);
         opacity: 0;
         background-color: $cloud-bgColor;
         border-radius: 50%;

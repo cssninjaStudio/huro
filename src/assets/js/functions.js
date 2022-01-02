@@ -486,7 +486,7 @@ function initMobileDropdowns() {
 
 //Adjust dropdowns
 function adjustDropdowns() {
-  $(".dropdown:not(.user-dropdown)").each(function () {
+  $(".dropdown:not(.user-dropdown):not(.profile-dropdown)").each(function () {
     var $this = $(this);
 
     if ($(this).offset().top + $(this).height() >= $(window).height() - 250) {
@@ -497,7 +497,7 @@ function adjustDropdowns() {
   });
 
   $(window).on("scroll", function () {
-    $(".dropdown:not(.user-dropdown)").each(function () {
+    $(".dropdown:not(.user-dropdown):not(.profile-dropdown)").each(function () {
       var $this = $(this);
 
       if ($(this).offset().top + $(this).height() >= $(window).height() - 250) {
