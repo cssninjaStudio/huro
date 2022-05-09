@@ -1,4 +1,4 @@
-# HURO 1.7.0 - Multipurpose Admin and Webapp UI Kit
+# HURO 1.8.0 - Multipurpose Admin and Webapp UI Kit
 
 [![cssninja-discord](https://img.shields.io/discord/785473098069311510?label=join%20us%20on%20discord&color=6944EC)](https://discord.cssninja.io/)
 
