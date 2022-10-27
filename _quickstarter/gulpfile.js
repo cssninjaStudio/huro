@@ -7,6 +7,7 @@ const sass = require('gulp-sass')(require('sass'));
 const bourbon = require('node-bourbon').includePaths;
 const rename = require('gulp-rename');
 const concat = require('gulp-concat');
+const replace = require('gulp-replace');
 const del = require('del');
 const panini = require('panini');
 const uglify = require('gulp-uglify-es').default;
@@ -21,6 +22,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const accessibility = require('gulp-accessibility');
 const babel = require('gulp-babel');
 const nodepath = 'node_modules/';
+const packageJson = require('./package.json')
 
 sass.compiler = require('sass');
 
@@ -54,6 +56,7 @@ function compileHTML() {
   console.log('---------------COMPILING HTML WITH PANINI---------------');
   panini.refresh();
   return src('src/pages/**/*.html')
+    .pipe(replace('{{PACKAGE_VERSION}}', packageJson.version))
     .pipe(panini({
       root: 'src/pages/',
       layouts: 'src/layouts/',
@@ -75,9 +78,49 @@ function compileJS() {
   return src([
     'src/assets/js/functions.js',
     'src/assets/js/main.js',
-    'src/assets/js/auth.js',
+    'src/assets/js/popover.js',
     'src/assets/js/touch.js',
+    'src/assets/js/widgets.js',
+    'src/assets/js/_demo/landing.js',
+    'src/assets/js/_demo/components.js',
+    'src/assets/js/_demo/syntax.js',
+    'src/assets/js/layouts/auth/auth.js',
     'src/assets/js/dashboards/personal-1.js',
+    'src/assets/js/dashboards/personal-2.js',
+    'src/assets/js/dashboards/personal-3.js',
+    'src/assets/js/dashboards/finance-1.js',
+    'src/assets/js/dashboards/finance-2.js',
+    'src/assets/js/dashboards/finance-3.js',
+    'src/assets/js/dashboards/banking-1.js',
+    'src/assets/js/dashboards/banking-2.js',
+    'src/assets/js/dashboards/banking-3.js',
+    'src/assets/js/dashboards/business-1.js',
+    'src/assets/js/dashboards/business-2.js',
+    'src/assets/js/dashboards/lifestyle-1.js',
+    'src/assets/js/dashboards/lifestyle-2.js',
+    'src/assets/js/dashboards/lifestyle-3.js',
+    'src/assets/js/dashboards/ecommerce-1.js',
+    'src/assets/js/dashboards/apps-1.js',
+    'src/assets/js/dashboards/apps-2.js',
+    'src/assets/js/dashboards/map-1.js',
+    'src/assets/js/dashboards/charts/apex.js',
+    'src/assets/js/dashboards/charts/billboardjs.js',
+    'src/assets/js/dashboards/charts/apex-data.js',
+    'src/assets/js/forms/forms.js',
+    'src/assets/js/wizard/wizard-v1.js',
+    'src/assets/js/wizard/wizard-dropzone.js',
+    'src/assets/js/layouts/list-views/list-view.js',
+    'src/assets/js/layouts/flex-lists/flex-list.js',
+    'src/assets/js/layouts/datatables/datatables.js',
+    'src/assets/js/layouts/user-grids/user-grid.js',
+    'src/assets/js/layouts/card-grids/card-grid.js',
+    'src/assets/js/layouts/tile-grids/tile-grid.js',
+    'src/assets/js/layouts/user-pages/profile.js',
+    'src/assets/js/layouts/projects/project.js',
+    'src/assets/js/layouts/projects/board.js',
+    'src/assets/js/layouts/generic/saas-billing.js',
+    'src/assets/js/layouts/messaging/messaging.js',
+    'src/assets/js/layouts/messaging/messaging-webapp.js',
   ])
     .pipe(babel())
     .pipe(uglify())
@@ -202,12 +245,41 @@ function concatPlugins() {
     nodepath + 'd3/dist/d3.min.js',
     nodepath + 'feather-icons/dist/feather.min.js',
     nodepath + 'lozad/dist/lozad.min.js',
+    nodepath + 'slick-carousel/slick/slick.min.js',
+    nodepath + 'webui-popover/dist/jquery.webui-popover.min.js',
+    nodepath + 'easy-autocomplete/dist/jquery.easy-autocomplete.min.js',
+    nodepath + 'dragula/dist/dragula.min.js',
+    nodepath + 'vivus/dist/vivus.min.js',
+    nodepath + 'imask/dist/imask.min.js',
+    nodepath + 'numeral/min/numeral.min.js',
+    nodepath + 'moment/min/moment.min.js',
     nodepath + 'peity/jquery.peity.min.js',
     nodepath + 'hammerjs/hammer.min.js',
+    nodepath + 'alertifyjs/build/alertify.min.js',
     nodepath + 'notyf/notyf.min.js',
+    nodepath + 'pikaday/pikaday.js',
     nodepath + 'simplebar/dist/simplebar.min.js',
+    nodepath + 'nouislider/dist/nouislider.min.js',
+    nodepath + 'suneditor/dist/suneditor.min.js',
+    nodepath + 'plyr/dist/plyr.min.js',
+    nodepath + 'mediaplayer/browser.js',
+    nodepath + 'choices.js/public/assets/scripts/choices.min.js',
+    nodepath + 'lightgallery.js/dist/js/lightgallery.min.js',
+    nodepath + 'lg-thumbnail.js/dist/lg-thumbnail.min.js',
+    nodepath + 'lg-video.js/dist/lg-video.min.js',
+    nodepath + 'lg-zoom.js/dist/lg-zoom.min.js',
+    nodepath + 'filepond/dist/filepond.min.js',
+    nodepath + 'filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.min.js',
+    nodepath + 'filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.min.js',
+    nodepath + 'filepond-plugin-image-exif-orientation/dist/filepond-plugin-image-exif-orientation.min.js',
+    nodepath + 'filepond-plugin-image-crop/dist/filepond-plugin-image-crop.min.js',
+    nodepath + 'filepond-plugin-image-edit/dist/filepond-plugin-image-edit.min.js',
+    nodepath + 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.js',
+    nodepath + 'filepond-plugin-image-resize/dist/filepond-plugin-image-resize.min.js',
+    nodepath + 'filepond-plugin-image-transform/dist/filepond-plugin-image-transform.min.js',
     nodepath + 'apexcharts/dist/apexcharts.min.js',
     nodepath + 'billboard.js/dist/billboard.min.js',
+    nodepath + 'hopscotch/dist/js/hopscotch.min.js',
     'src/assets/vendor/js/*',
   ])
     .pipe(concat('app.js'))
@@ -222,8 +294,24 @@ function concatPlugins() {
 function concatCssPlugins() {
   console.log('---------------CONCATENATE CSS PLUGINS---------------');
   return src([
+    nodepath + 'webui-popover/dist/jquery.webui-popover.min.css',
+    nodepath + 'easy-autocomplete/dist/easy-autocomplete.min.css',
+    nodepath + 'dragula/dist/dragula.min.css',
+    nodepath + 'alertifyjs/build/css/alertify.min.css',
+    nodepath + 'alertifyjs/build/css/themes/default.min.css',
     nodepath + 'notyf/notyf.min.css',
+    nodepath + 'pikaday/css/pikaday.css',
     nodepath + 'simplebar/dist/simplebar.min.css',
+    nodepath + 'nouislider/dist/nouislider.min.css',
+    nodepath + 'suneditor/dist/css/suneditor.min.css',
+    nodepath + 'plyr/dist/plyr.css',
+    nodepath + 'mediaplayer/browser.css',
+    nodepath + 'choices.js/public/assets/styles/choices.min.css',
+    nodepath + 'lightgallery.js/dist/css/lightgallery.min.css',
+    nodepath + 'filepond/dist/filepond.min.css',
+    nodepath + 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css',
+    nodepath + 'filepond-plugin-image-edit/dist/filepond-plugin-image-edit.min.css',
+    nodepath + 'hopscotch/dist/css/hopscotch.min.css',
     nodepath + 'billboard.js/dist/billboard.min.css',
     'src/assets/vendor/css/*',
   ])
