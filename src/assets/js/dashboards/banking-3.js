@@ -1,14 +1,14 @@
 /*! banking-3.js | Huro | Css ninja 2020-2021 */
 
-"use strict";
+'use strict'
 
 $(document).ready(function () {
   //Currency Chart
   var options = {
     chart: {
-      type: "area",
+      type: 'area',
       height: 350,
-      foreColor: "#999",
+      foreColor: '#999',
       stacked: true,
       toolbar: {
         show: false,
@@ -24,29 +24,29 @@ $(document).ready(function () {
     },
     colors: [themeColors.accent, themeColors.orange, themeColors.orange],
     stroke: {
-      curve: "smooth",
+      curve: 'smooth',
       width: 3,
     },
     title: {
-      text: "Bitcoin (BTC) Price Chart",
-      align: "left",
+      text: 'Bitcoin (BTC) Price Chart',
+      align: 'left',
     },
     dataLabels: {
       enabled: false,
     },
     series: [
       {
-        name: "Expected",
+        name: 'Expected',
         data: generateDayWiseTimeSeries(0, 18),
       },
       {
-        name: "Real",
+        name: 'Real',
         data: generateDayWiseTimeSeries(1, 18),
       },
     ],
     markers: {
       size: 0,
-      strokeColor: "#fff",
+      strokeColor: '#fff',
       strokeWidth: 3,
       strokeOpacity: 1,
       fillOpacity: 1,
@@ -55,7 +55,7 @@ $(document).ready(function () {
       },
     },
     xaxis: {
-      type: "datetime",
+      type: 'datetime',
       axisBorder: {
         show: false,
       },
@@ -81,30 +81,27 @@ $(document).ready(function () {
     },
     tooltip: {
       x: {
-        format: "dd MMM yyyy",
+        format: 'dd MMM yyyy',
       },
       y: {
         formatter: function (val) {
-          return val + "%";
+          return val + '%'
         },
       },
     },
     legend: {
-      position: "top",
-      horizontalAlign: "center",
+      position: 'top',
+      horizontalAlign: 'center',
     },
     fill: {
-      type: "solid",
+      type: 'solid',
       fillOpacity: 0.7,
     },
-  };
+  }
 
-  var chart = new ApexCharts(
-    document.querySelector("#currency-chart"),
-    options
-  );
+  var chart = new ApexCharts(document.querySelector('#currency-chart'), options)
 
-  chart.render();
+  chart.render()
 
   function generateDayWiseTimeSeries(s, count) {
     var values = [
@@ -116,16 +113,16 @@ $(document).ready(function () {
         0.2, 0.3, 0.8, 0.7, 2.2, 1.6, 2.3, 0.7, 1.1, 0.5, 1.2, 0.5, 1, 0.4, 1.5,
         0.2, 0.6, 2,
       ],
-    ];
-    var i = 0;
-    var series = [];
-    var x = new Date("11 Nov 2020").getTime();
+    ]
+    var i = 0
+    var series = []
+    var x = new Date('11 Nov 2020').getTime()
     while (i < count) {
-      series.push([x, values[s][i]]);
-      x += 86400000;
-      i++;
+      series.push([x, values[s][i]])
+      x += 86400000
+      i++
     }
-    return series;
+    return series
   }
 
   //Evolution Chart
@@ -133,53 +130,53 @@ $(document).ready(function () {
     series: [54],
     chart: {
       height: 220,
-      type: "radialBar",
+      type: 'radialBar',
     },
     colors: [themeColors.accent, themeColors.orange, themeColors.orange],
     title: {
-      text: "Bitcoin (BTC) Evolution",
-      align: "left",
+      text: 'Bitcoin (BTC) Evolution',
+      align: 'left',
     },
     plotOptions: {
       radialBar: {
         dataLabels: {
           name: {
             offsetY: 15,
-            fontSize: "13px",
-            fontFamily: "Roboto, sans-serif",
+            fontSize: '13px',
+            fontFamily: 'Roboto, sans-serif',
             color: themeColors.lightText,
             formatter: function () {
-              return ["(30 days)"];
+              return ['(30 days)']
             },
           },
           value: {
             color: themeColors.accent,
             offsetY: -20,
-            fontSize: "16px",
-            fontFamily: "Roboto, sans-serif",
-            fontWeight: "500",
+            fontSize: '16px',
+            fontFamily: 'Roboto, sans-serif',
+            fontWeight: '500',
           },
         },
       },
     },
-    labels: ["Median Ratio"],
-  };
+    labels: ['Median Ratio'],
+  }
 
   var radialChart = new ApexCharts(
-    document.querySelector("#radial-chart"),
-    radialOptions
-  );
-  radialChart.render();
+    document.querySelector('#radial-chart'),
+    radialOptions,
+  )
+  radialChart.render()
 
   //Gauge Chart
   var gaugeOptions = {
     series: [67],
     title: {
-      text: "Bitcoin (BTC) Popularity",
+      text: 'Bitcoin (BTC) Popularity',
     },
     chart: {
       height: 225,
-      type: "radialBar",
+      type: 'radialBar',
       toolbar: {
         show: false,
       },
@@ -191,28 +188,28 @@ $(document).ready(function () {
         endAngle: 135,
         dataLabels: {
           name: {
-            fontSize: "13px",
-            fontWeight: "600",
+            fontSize: '13px',
+            fontWeight: '600',
             color: themeColors.lightText,
             offsetY: 80,
           },
           value: {
             offsetY: 40,
-            fontSize: "18px",
-            fontFamily: "Roboto, sans-serif",
-            fontWeight: "500",
+            fontSize: '18px',
+            fontFamily: 'Roboto, sans-serif',
+            fontWeight: '500',
             color: undefined,
             formatter: function (val) {
-              return val + "%";
+              return val + '%'
             },
           },
         },
       },
     },
     fill: {
-      type: "gradient",
+      type: 'gradient',
       gradient: {
-        shade: "dark",
+        shade: 'dark',
         shadeIntensity: 0.15,
         inverseColors: false,
         opacityFrom: 1,
@@ -223,12 +220,12 @@ $(document).ready(function () {
     stroke: {
       dashArray: 4,
     },
-    labels: ["(30 days)"],
-  };
+    labels: ['(30 days)'],
+  }
 
   var gaugeChart = new ApexCharts(
-    document.querySelector("#radial-gauge"),
-    gaugeOptions
-  );
-  gaugeChart.render();
-});
+    document.querySelector('#radial-gauge'),
+    gaugeOptions,
+  )
+  gaugeChart.render()
+})

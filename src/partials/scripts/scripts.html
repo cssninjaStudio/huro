@@ -1,5 +1,6 @@
 <!--Load Mapbox-->
-{{#ifpage 'webapp-dashboards-map-1' 'webapp-dashboards-map-2' 'admin-dashboards-map-1' 'admin-dashboards-map-2'}}
+{{#ifpage 'webapp-dashboards-map-1' 'webapp-dashboards-map-2'
+'admin-dashboards-map-1' 'admin-dashboards-map-2'}}
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js"></script>
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
 <!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
@@ -17,7 +18,6 @@
 <script src="{{ root }}assets/js/popover.js" async></script>
 <script src="{{ root }}assets/js/widgets.js" async></script>
 
-
 <!-- Additional Features -->
 <script src="{{ root }}assets/js/touch.js" async></script>
 
@@ -29,69 +29,51 @@
 <!-- Dashboards js -->
 {{#ifpage 'admin-dashboards-personal-1' 'webapp-dashboards-personal-1'}}
 <script src="{{ root }}assets/js/personal-1.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-dashboards-personal-2' 'webapp-dashboards-personal-2'}}
+{{/ifpage}} {{#ifpage 'admin-dashboards-personal-2'
+'webapp-dashboards-personal-2'}}
 <script src="{{ root }}assets/js/personal-2.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-dashboards-personal-3' 'webapp-dashboards-personal-3'}}
+{{/ifpage}} {{#ifpage 'admin-dashboards-personal-3'
+'webapp-dashboards-personal-3'}}
 <script src="{{ root }}assets/js/personal-3.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-dashboards-apps-1' 'webapp-dashboards-apps-1'}}
+{{/ifpage}} {{#ifpage 'admin-dashboards-apps-1' 'webapp-dashboards-apps-1'}}
 <script src="{{ root }}assets/js/apps-1.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-dashboards-apps-2'}}
+{{/ifpage}} {{#ifpage 'admin-dashboards-apps-2'}}
 <script src="{{ root }}assets/js/apps-2.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-dashboards-business-1' 'webapp-dashboards-business-1'}}
+{{/ifpage}} {{#ifpage 'admin-dashboards-business-1'
+'webapp-dashboards-business-1'}}
 <script src="{{ root }}assets/js/business-1.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-dashboards-business-2' 'webapp-dashboards-business-2'}}
+{{/ifpage}} {{#ifpage 'admin-dashboards-business-2'
+'webapp-dashboards-business-2'}}
 <script src="{{ root }}assets/js/business-2.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-dashboards-finance-1' 'webapp-dashboards-finance-1'}}
+{{/ifpage}} {{#ifpage 'admin-dashboards-finance-1'
+'webapp-dashboards-finance-1'}}
 <script src="{{ root }}assets/js/finance-1.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-dashboards-finance-2' 'webapp-dashboards-finance-2'}}
+{{/ifpage}} {{#ifpage 'admin-dashboards-finance-2'
+'webapp-dashboards-finance-2'}}
 <script src="{{ root }}assets/js/finance-2.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-dashboards-finance-3' 'webapp-dashboards-finance-3'}}
+{{/ifpage}} {{#ifpage 'admin-dashboards-finance-3'
+'webapp-dashboards-finance-3'}}
 <script src="{{ root }}assets/js/finance-3.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-dashboards-banking-1' 'webapp-dashboards-banking-1'}}
+{{/ifpage}} {{#ifpage 'admin-dashboards-banking-1'
+'webapp-dashboards-banking-1'}}
 <script src="{{ root }}assets/js/banking-1.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-dashboards-banking-2' 'webapp-dashboards-banking-2'}}
+{{/ifpage}} {{#ifpage 'admin-dashboards-banking-2'
+'webapp-dashboards-banking-2'}}
 <script src="{{ root }}assets/js/banking-2.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-dashboards-banking-3' 'webapp-dashboards-banking-3'}}
+{{/ifpage}} {{#ifpage 'admin-dashboards-banking-3'
+'webapp-dashboards-banking-3'}}
 <script src="{{ root }}assets/js/banking-3.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-dashboards-lifestyle-1' 'webapp-dashboards-lifestyle-1'}}
+{{/ifpage}} {{#ifpage 'admin-dashboards-lifestyle-1'
+'webapp-dashboards-lifestyle-1'}}
 <script src="{{ root }}assets/js/lifestyle-1.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-dashboards-lifestyle-2' 'webapp-dashboards-lifestyle-2'}}
+{{/ifpage}} {{#ifpage 'admin-dashboards-lifestyle-2'
+'webapp-dashboards-lifestyle-2'}}
 <script src="{{ root }}assets/js/lifestyle-2.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-dashboards-lifestyle-3' 'webapp-dashboards-lifestyle-3'}}
+{{/ifpage}} {{#ifpage 'admin-dashboards-lifestyle-3'
+'webapp-dashboards-lifestyle-3'}}
 <script src="{{ root }}assets/js/lifestyle-3.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-dashboards-ecommerce-1' 'webapp-dashboards-ecommerce-1'}}
+{{/ifpage}} {{#ifpage 'admin-dashboards-ecommerce-1'
+'webapp-dashboards-ecommerce-1'}}
 <script src="{{ root }}assets/js/ecommerce-1.js" async></script>
 {{/ifpage}}
 
@@ -99,23 +81,17 @@
 {{#ifpage 'admin-dashboards-charts-apex' 'webapp-dashboards-charts-apex'}}
 <script src="{{ root }}assets/js/apex-data.js" async></script>
 <script src="{{ root }}assets/js/apex.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-dashboards-charts-billboardjs' 'webapp-dashboards-charts-billboardjs'}}
+{{/ifpage}} {{#ifpage 'admin-dashboards-charts-billboardjs'
+'webapp-dashboards-charts-billboardjs'}}
 <script src="{{ root }}assets/js/billboardjs.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-dashboards-map-1' 'admin-dashboards-map-2' 'webapp-dashboards-map-1' 'webapp-dashboards-map-2'}}
+{{/ifpage}} {{#ifpage 'admin-dashboards-map-1' 'admin-dashboards-map-2'
+'webapp-dashboards-map-1' 'webapp-dashboards-map-2'}}
 <script src="{{ root }}assets/js/map-1.js" async></script>
 {{/ifpage}}
 
 <!--Forms-->
-{{#ifpage 
-    'admin-form-layouts-4' 
-    'webapp-form-layouts-4'
-    'admin-form-layouts-5' 
-    'webapp-form-layouts-5'
-}}
+{{#ifpage 'admin-form-layouts-4' 'webapp-form-layouts-4' 'admin-form-layouts-5'
+'webapp-form-layouts-5' }}
 <script src="{{ root }}assets/js/forms.js" async></script>
 {{/ifpage}}
 
@@ -126,47 +102,42 @@
 {{/ifpage}}
 
 <!-- Layouts js -->
-{{#ifpage 'admin-list-view-1' 'admin-list-view-2' 'admin-list-view-3' 'admin-list-view-4' 'webapp-list-view-1' 'webapp-list-view-2' 'webapp-list-view-3' 'webapp-list-view-4'}}
+{{#ifpage 'admin-list-view-1' 'admin-list-view-2' 'admin-list-view-3'
+'admin-list-view-4' 'webapp-list-view-1' 'webapp-list-view-2'
+'webapp-list-view-3' 'webapp-list-view-4'}}
 <script src="{{ root }}assets/js/list-view.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-list-flex-1' 'admin-list-flex-2' 'admin-list-flex-3' 'webapp-list-flex-1' 'webapp-list-flex-2' 'webapp-list-flex-3'}}
+{{/ifpage}} {{#ifpage 'admin-list-flex-1' 'admin-list-flex-2'
+'admin-list-flex-3' 'webapp-list-flex-1' 'webapp-list-flex-2'
+'webapp-list-flex-3'}}
 <script src="{{ root }}assets/js/flex-list.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-list-datatable-1' 'admin-list-datatable-2' 'admin-list-datatable-3' 'admin-list-datatable-4' 'webapp-list-datatable-1' 'webapp-list-datatable-2' 'webapp-list-datatable-3' 'webapp-list-datatable-4'}}
+{{/ifpage}} {{#ifpage 'admin-list-datatable-1' 'admin-list-datatable-2'
+'admin-list-datatable-3' 'admin-list-datatable-4' 'webapp-list-datatable-1'
+'webapp-list-datatable-2' 'webapp-list-datatable-3' 'webapp-list-datatable-4'}}
 <script src="{{ root }}assets/js/datatables.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-grid-users-1' 'admin-grid-users-2' 'admin-grid-users-3' 'admin-grid-users-4' 'webapp-grid-users-1' 'webapp-grid-users-2' 'webapp-grid-users-3' 'webapp-grid-users-4'}}
+{{/ifpage}} {{#ifpage 'admin-grid-users-1' 'admin-grid-users-2'
+'admin-grid-users-3' 'admin-grid-users-4' 'webapp-grid-users-1'
+'webapp-grid-users-2' 'webapp-grid-users-3' 'webapp-grid-users-4'}}
 <script src="{{ root }}assets/js/user-grid.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-grid-cards-1' 'admin-grid-cards-2' 'admin-grid-cards-3' 'admin-grid-cards-4' 'webapp-grid-cards-1' 'webapp-grid-cards-2' 'webapp-grid-cards-3' 'webapp-grid-cards-4'}}
+{{/ifpage}} {{#ifpage 'admin-grid-cards-1' 'admin-grid-cards-2'
+'admin-grid-cards-3' 'admin-grid-cards-4' 'webapp-grid-cards-1'
+'webapp-grid-cards-2' 'webapp-grid-cards-3' 'webapp-grid-cards-4'}}
 <script src="{{ root }}assets/js/card-grid.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-grid-tiles-1' 'admin-grid-tiles-2' 'admin-grid-tiles-3' 'webapp-grid-tiles-1' 'webapp-grid-tiles-2' 'webapp-grid-tiles-3'}}
+{{/ifpage}} {{#ifpage 'admin-grid-tiles-1' 'admin-grid-tiles-2'
+'admin-grid-tiles-3' 'webapp-grid-tiles-1' 'webapp-grid-tiles-2'
+'webapp-grid-tiles-3'}}
 <script src="{{ root }}assets/js/tile-grid.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-profile-view' 'admin-profile-edit-1' 'admin-profile-edit-2' 'admin-profile-edit-3' 'admin-profile-edit-4' 'webapp-profile-view' 'webapp-profile-edit-1' 'webapp-profile-edit-2' 'webapp-profile-edit-3' 'webapp-profile-edit-4'}}
+{{/ifpage}} {{#ifpage 'admin-profile-view' 'admin-profile-edit-1'
+'admin-profile-edit-2' 'admin-profile-edit-3' 'admin-profile-edit-4'
+'webapp-profile-view' 'webapp-profile-edit-1' 'webapp-profile-edit-2'
+'webapp-profile-edit-3' 'webapp-profile-edit-4'}}
 <script src="{{ root }}assets/js/profile.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-kanban-board' 'webapp-kanban-board'}}
+{{/ifpage}} {{#ifpage 'admin-kanban-board' 'webapp-kanban-board'}}
 <script src="{{ root }}assets/js/board.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-saas-billing' 'webapp-saas-billing'}}
+{{/ifpage}} {{#ifpage 'admin-saas-billing' 'webapp-saas-billing'}}
 <script src="{{ root }}assets/js/saas-billing.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'admin-messaging-chat'}}
+{{/ifpage}} {{#ifpage 'admin-messaging-chat'}}
 <script src="{{ root }}assets/js/messaging.js" async></script>
-{{/ifpage}}
-
-{{#ifpage 'webapp-messaging-chat'}}
+{{/ifpage}} {{#ifpage 'webapp-messaging-chat'}}
 <script src="{{ root }}assets/js/messaging-webapp.js" async></script>
 {{/ifpage}}
 

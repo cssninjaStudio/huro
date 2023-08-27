@@ -4,80 +4,86 @@
 Main initialization file
 ========================================================================== */
 
-"use strict";
+'use strict'
 
 //Init Pageloader
-initPageLoader();
+initPageLoader()
 
 $(document).ready(function () {
+  //Feather icons
+  feather.replace()
 
-    //Feather icons
-    feather.replace();
+  //Active Link
+  setActivelink()
 
-    //Active Link
-    setActivelink();
+  //Update Sidebar Naver
+  updateSidebarNaver()
 
-    //Update Sidebar Naver
-    updateSidebarNaver();
+  //Mobile Navbar
+  initMobileNavbar()
 
-    //Mobile Navbar
-    initMobileNavbar();
+  //Mobile Navbar Hamburger
+  initMobileNavbarHamburger()
 
-    //Mobile Navbar Hamburger
-    initMobileNavbarHamburger();
+  //Init sidebar (Admin Layout)
+  if ($('.main-sidebar, .sidebar-block').length) {
+    initSidebar()
 
-    //Init sidebar (Admin Layout)
-    if ($('.main-sidebar, .sidebar-block').length) {
-        initSidebar();
-
-        if ($('[data-sidebar-open ]').length) {
-            openSidebar();
-        }   
-
-        if (window.matchMedia('(min-width: 768px)').matches && window.matchMedia('(max-width: 1024px)').matches && window.matchMedia('(orientation: landscape)').matches) {
-            closeSidebarPanel()
-        }
-
-        $(window).on('resize', function () {
-            if (window.matchMedia('(min-width: 768px)').matches && window.matchMedia('(max-width: 1024px)').matches && window.matchMedia('(orientation: landscape)').matches) {
-                closeSidebarPanel()
-            }
-        })
+    if ($('[data-sidebar-open ]').length) {
+      openSidebar()
     }
 
-    //Navbar Dropdowns
-    initNavbarDropdowns();
+    if (
+      window.matchMedia('(min-width: 768px)').matches &&
+      window.matchMedia('(max-width: 1024px)').matches &&
+      window.matchMedia('(orientation: landscape)').matches
+    ) {
+      closeSidebarPanel()
+    }
 
-    //Regular Dropdowns
-    initDropdowns();
+    $(window).on('resize', function () {
+      if (
+        window.matchMedia('(min-width: 768px)').matches &&
+        window.matchMedia('(max-width: 1024px)').matches &&
+        window.matchMedia('(orientation: landscape)').matches
+      ) {
+        closeSidebarPanel()
+      }
+    })
+  }
 
-    //Mobile Dropdowns
-    initMobileDropdowns();
+  //Navbar Dropdowns
+  initNavbarDropdowns()
 
-    //Adjust Dropdowns
-    adjustDropdowns()
+  //Regular Dropdowns
+  initDropdowns()
 
-    //Tabs
-    initTabs();
+  //Mobile Dropdowns
+  initMobileDropdowns()
 
-    initTabbedWidgets();
+  //Adjust Dropdowns
+  adjustDropdowns()
 
-    //H Select
-    initHSelect();
+  //Tabs
+  initTabs()
 
-    //Regular Modals
-    initHModals();
+  initTabbedWidgets()
 
-    //Right Panels
-    initPanels();
+  //H Select
+  initHSelect()
 
-    //Animated checkbox
-    initAnimatedCheckboxes();
+  //Regular Modals
+  initHModals()
 
-    //Search
-    initSearch();
+  //Right Panels
+  initPanels()
 
-    //Dark Mode
-    initDarkMode();
+  //Animated checkbox
+  initAnimatedCheckboxes()
 
+  //Search
+  initSearch()
+
+  //Dark Mode
+  initDarkMode()
 })

@@ -73,7 +73,9 @@ body {
       blockquote {
         background: lighten($dark-sidebar, 10%);
 
-        &:not(.is-primary):not(.is-success):not(.is-info):not(.is-warning):not(.is-danger) {
+        &:not(.is-primary):not(.is-success):not(.is-info):not(.is-warning):not(
+            .is-danger
+          ) {
           border-color: lighten($dark-sidebar, 2%);
         }
 

@@ -4,155 +4,155 @@
 Main initialization file
 ========================================================================== */
 
-"use strict";
+'use strict'
 
 //Init Pageloader
-initPageLoader();
+initPageLoader()
 
 $(document).ready(function () {
   //Swicth to Admin / Webapp
-  switchLayouts();
+  switchLayouts()
 
-  if (env === "development") {
+  if (env === 'development') {
     //Change demo images
-    changeDemoImages();
+    changeDemoImages()
   }
 
   //JS background images
-  initBgImages();
+  initBgImages()
 
   //Feather icons
-  feather.replace();
+  feather.replace()
 
   //Active Link
-  setActivelink();
+  setActivelink()
 
   //Update Sidebar Naver
-  updateSidebarNaver();
+  updateSidebarNaver()
 
   //Mobile Navbar
-  initMobileNavbar();
+  initMobileNavbar()
 
   //Mobile Navbar Hamburger
-  initMobileNavbarHamburger();
+  initMobileNavbarHamburger()
 
   //Init sidebar (Admin Layout)
   if ($('.main-sidebar, .sidebar-block').length) {
-    initSidebar();
+    initSidebar()
 
-    if ($("[data-sidebar-open]").length) {
-      openSidebar();
+    if ($('[data-sidebar-open]').length) {
+      openSidebar()
     }
 
     if (
-      window.matchMedia("(min-width: 768px)").matches &&
-      window.matchMedia("(max-width: 1024px)").matches &&
-      window.matchMedia("(orientation: landscape)").matches
+      window.matchMedia('(min-width: 768px)').matches &&
+      window.matchMedia('(max-width: 1024px)').matches &&
+      window.matchMedia('(orientation: landscape)').matches
     ) {
-      closeSidebarPanel();
-      $(".main-sidebar, .sidebar-brand").removeClass("is-bordered");
+      closeSidebarPanel()
+      $('.main-sidebar, .sidebar-brand').removeClass('is-bordered')
     }
 
-    $(window).on("resize", function () {
+    $(window).on('resize', function () {
       if (
-        window.matchMedia("(min-width: 768px)").matches &&
-        window.matchMedia("(max-width: 1024px)").matches &&
-        window.matchMedia("(orientation: landscape)").matches
+        window.matchMedia('(min-width: 768px)').matches &&
+        window.matchMedia('(max-width: 1024px)').matches &&
+        window.matchMedia('(orientation: landscape)').matches
       ) {
-        closeSidebarPanel();
-        $(".main-sidebar, .sidebar-brand").removeClass("is-bordered");
+        closeSidebarPanel()
+        $('.main-sidebar, .sidebar-brand').removeClass('is-bordered')
       }
-    });
+    })
   }
 
   //Init navbar (Webapp Layout)
-  if ($(".view-wrapper").hasClass("is-webapp")) {
-    initWebapp();
+  if ($('.view-wrapper').hasClass('is-webapp')) {
+    initWebapp()
   }
 
   //Collapsible menus
-  initCollapsibleMenu();
+  initCollapsibleMenu()
 
   //Stuck form header
-  initStuckHeader();
+  initStuckHeader()
 
   //Navbar Dropdowns
-  initNavbarDropdowns();
+  initNavbarDropdowns()
 
   //Regular Dropdowns
-  initDropdowns();
+  initDropdowns()
 
   //Mobile Dropdowns
-  initMobileDropdowns();
+  initMobileDropdowns()
 
   //Adjust Dropdowns
-  adjustDropdowns();
+  adjustDropdowns()
 
   //Chosen Selects
-  initChosenSelects();
+  initChosenSelects()
 
   //Tabs
-  initTabs();
+  initTabs()
 
-  initTabbedWidgets();
+  initTabbedWidgets()
 
   //H Select
-  initHSelect();
+  initHSelect()
 
   //Combo Box
-  initComboBox();
+  initComboBox()
 
   //Image Combo Box
-  initImageComboBox();
+  initImageComboBox()
 
   //User Combo Box
-  initUserComboBox();
+  initUserComboBox()
 
   //Stacked Combo Box
-  initStackedComboBox();
+  initStackedComboBox()
 
   //Big Combo Box
-  initBigComboBox();
+  initBigComboBox()
 
   //Accordion
-  initAccordion();
+  initAccordion()
 
   //Animated Modals
-  initAnimatedModals();
+  initAnimatedModals()
 
   //Regular Modals
-  initHModals();
+  initHModals()
 
   //Right Panels
-  initPanels();
+  initPanels()
 
   //Text Tips
-  initSmallTextTip();
-  initTextTip();
-  initMediumTextTip();
+  initSmallTextTip()
+  initTextTip()
+  initMediumTextTip()
 
   //Animated checkbox
-  initAnimatedCheckboxes();
+  initAnimatedCheckboxes()
 
   //Text Filter
-  initCustomTextFilter();
-  initTextFilter();
+  initCustomTextFilter()
+  initTextFilter()
 
   //Advanced flex table
-  initAdvancedFlexTable();
+  initAdvancedFlexTable()
 
   //Accordion
-  initSingleAccordion();
+  initSingleAccordion()
 
   //Collapse
-  initCollapse();
+  initCollapse()
 
   //PLyr players
-  initPlayers();
+  initPlayers()
 
   //Search
-  initSearch();
+  initSearch()
 
   //Dark Mode
-  initDarkMode();
-});
+  initDarkMode()
+})

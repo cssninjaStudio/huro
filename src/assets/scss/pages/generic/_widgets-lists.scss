@@ -232,7 +232,7 @@ body {
         padding-bottom: 30px;
 
         &:after {
-          content: "";
+          content: '';
           position: absolute;
           top: 36px;
           left: 18px;
@@ -255,7 +255,7 @@ body {
           box-shadow: $light-box-shadow;
 
           &:after {
-            content: "";
+            content: '';
             position: absolute;
             top: 17px;
             left: 40px;
@@ -366,7 +366,9 @@ body {
               border-color: lighten($dark-sidebar, 12%) !important;
             }
 
-            .timeline-icon:not(.is-primary):not(.is-info):not(.is-success):not(.is-orange):not(.is-yellow) {
+            .timeline-icon:not(.is-primary):not(.is-info):not(.is-success):not(
+                .is-orange
+              ):not(.is-yellow) {
               background: lighten($dark-sidebar, 3%) !important;
               border-color: lighten($dark-sidebar, 12%) !important;
             }

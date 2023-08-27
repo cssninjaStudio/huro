@@ -99,7 +99,9 @@
 body {
   &.is-dark {
     .message {
-      &:not(.is-primary):not(.is-info):not(.is-success):not(.is-warning):not(.is-danger) {
+      &:not(.is-primary):not(.is-info):not(.is-success):not(.is-warning):not(
+          .is-danger
+        ) {
         background-color: $dark-sidebar;
         border-color: lighten($dark-sidebar, 3%);
 

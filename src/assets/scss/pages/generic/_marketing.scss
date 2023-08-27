@@ -362,13 +362,13 @@ Marketing Layouts
         position: absolute;
         left: 0;
         top: 0;
-        content: "";
+        content: '';
       }
 
       &::after {
-        font-family: "Font Awesome 5 Free";
+        font-family: 'Font Awesome 5 Free';
         font-weight: 900;
-        content: "\f00c";
+        content: '\f00c';
         color: $white;
         position: absolute;
         left: 11px;
@@ -396,7 +396,7 @@ Marketing Layouts
       font-weight: bold;
 
       &::after {
-        content: " /per month";
+        content: ' /per month';
         font-size: 1rem;
         font-weight: normal;
         color: $light-text;
@@ -431,9 +431,9 @@ Marketing Layouts
       margin-bottom: 15px;
 
       &:before {
-        font-family: "Font Awesome 5 Free";
+        font-family: 'Font Awesome 5 Free';
         font-weight: 900;
-        content: "\f00c";
+        content: '\f00c';
         font-size: 0.9rem;
         color: $success;
         margin-right: 6px;
@@ -532,7 +532,9 @@ Marketing Layouts
   background-image: radial-gradient(circle, #f0f4ff 10%, transparent 15%),
     radial-gradient(circle, #f0f4ff 10%, transparent 15%);
   background-size: 50px 50px;
-  background-position: 0 0, 0 0;
+  background-position:
+    0 0,
+    0 0;
 }
 
 .landing-page-wrapper {
@@ -549,7 +551,9 @@ Marketing Layouts
           transparent 15%
         );
       background-size: 50px 50px;
-      background-position: 0 0, 0 0;
+      background-position:
+        0 0,
+        0 0;
     }
   }
 }

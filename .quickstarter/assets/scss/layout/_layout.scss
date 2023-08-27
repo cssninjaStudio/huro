@@ -95,7 +95,7 @@ body {
     &.is-pushed-block {
       margin-left: 280px;
       width: calc(100% - 280px);
-  
+
       .is-stuck {
         margin-left: 280px;
         width: calc(100% - 280px);
@@ -508,7 +508,7 @@ body {
 
   &:after {
     display: block;
-    content: " ";
+    content: ' ';
     width: 3.5em;
     height: 3.5em;
     border-radius: 50%;
@@ -569,7 +569,9 @@ body {
     text-align: center;
     line-height: 3;
     background-color: hsla(0, 0%, 0%, 0.2);
-    transition: transform 0.3s ease, background-color 0.2s ease;
+    transition:
+      transform 0.3s ease,
+      background-color 0.2s ease;
 
     &:hover {
       background-color: hsla(0, 0%, 0%, 0.3);

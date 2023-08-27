@@ -136,7 +136,7 @@
           color: $primary;
 
           &:before {
-            content: "$";
+            content: '$';
             position: relative;
             right: -4px;
             font-size: 1.2rem;
@@ -259,7 +259,7 @@
             }
 
             &:before {
-              content: "";
+              content: '';
               position: absolute;
               top: -14px;
               left: 50%;
@@ -307,7 +307,7 @@
           color: $light-text;
 
           &:before {
-            content: "$";
+            content: '$';
             position: relative;
             top: -8px;
             right: -6px;

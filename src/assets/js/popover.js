@@ -4,42 +4,42 @@
 Ajax User Popovers
 ========================================================================== */
 
-"use strict";
+'use strict'
 
 $(document).ready(function () {
   function initTextPopovers() {
     $('*[data-toggle="popover"]').each(function () {
-      var mode = $(this).attr("data-pop-mode");
-      var title = $(this).attr("data-pop-title");
-      var content = $(this).attr("data-pop-content");
-      var position = $(this).attr("data-pop-position");
-      var width = $(this).attr("data-pop-width");
-      var avatar = $(this).attr("data-pop-avatar");
-      var icon = $(this).attr("data-pop-icon");
-      var iconColor = $(this).attr("data-pop-iconbg");
-      var avatarHtml = "";
-      var iconHtml = "";
+      var mode = $(this).attr('data-pop-mode')
+      var title = $(this).attr('data-pop-title')
+      var content = $(this).attr('data-pop-content')
+      var position = $(this).attr('data-pop-position')
+      var width = $(this).attr('data-pop-width')
+      var avatar = $(this).attr('data-pop-avatar')
+      var icon = $(this).attr('data-pop-icon')
+      var iconColor = $(this).attr('data-pop-iconbg')
+      var avatarHtml = ''
+      var iconHtml = ''
 
       if (avatar != null && avatar != undefined) {
         avatarHtml = `
                     <div class="h-avatar is-small">
                         <img class="avatar" src="${avatar}" alt="">
                     </div>
-                `;
+                `
       } else if (icon != null && icon != undefined) {
         iconHtml = `
                     <div class="h-icon is-small is-${iconColor}">
                         <i class="${icon}"></i>
                     </div>
-                `;
+                `
       }
 
       $(this).webuiPopover({
         trigger: mode,
         width: width,
-        animation: "pop",
+        animation: 'pop',
         placement: position,
-        style: "default",
+        style: 'default',
         content: function () {
           var template = `
                         <div class="popover-head">
@@ -50,43 +50,43 @@ $(document).ready(function () {
                         <div class="popover-body">
                             <p>${content}</p>
                         </div>
-                    `;
+                    `
 
-          return template;
+          return template
         },
-      });
-    });
+      })
+    })
   }
 
-  initTextPopovers();
+  initTextPopovers()
 
   function initUserPopovers() {
-    $("*[data-user-popover]").each(function () {
-      var e = $(this);
-      var userRef = $(this).attr("data-user-popover");
+    $('*[data-user-popover]').each(function () {
+      var e = $(this)
+      var userRef = $(this).attr('data-user-popover')
 
-      var mailIcon = feather.icons.mail.toSvg();
-      var phoneIcon = feather.icons.phone.toSvg();
-      var profileIcon = feather.icons["more-horizontal"].toSvg();
+      var mailIcon = feather.icons.mail.toSvg()
+      var phoneIcon = feather.icons.phone.toSvg()
+      var profileIcon = feather.icons['more-horizontal'].toSvg()
 
       $.ajax({
-        url: "assets/data/user.json",
-        dataType: "json",
+        url: 'assets/data/user.json',
+        dataType: 'json',
         success: function (data) {
           e.webuiPopover({
-            trigger: "hover",
-            placement: "auto",
+            trigger: 'hover',
+            placement: 'auto',
             width: 300,
             padding: false,
             offsetLeft: 0,
             offsetTop: 20,
-            animation: "pop",
-            style: "profile",
+            animation: 'pop',
+            style: 'profile',
             cache: false,
             content: function () {
               var destroyLoader = setTimeout(function () {
-                $(".loader-overlay").removeClass("is-active");
-              }, 500);
+                $('.loader-overlay').removeClass('is-active')
+              }, 500)
 
               if (data[userRef].pic != null) {
                 var html = `
@@ -122,23 +122,23 @@ $(document).ready(function () {
                                             </a>
                                         </div>
                                     </div>
-                                `;
+                                `
               } else {
                 var classes = new Array(
-                  "is-danger",
-                  "is-info",
-                  "is-primary",
-                  "is-success",
-                  "is-warning",
-                  "is-h-purple",
-                  "is-h-blue",
-                  "is-h-green",
-                  "is-h-orange",
-                  "is-h-red",
-                  "is-h-green"
-                );
-                var length = classes.length;
-                var randomClass = classes[Math.floor(Math.random() * length)];
+                  'is-danger',
+                  'is-info',
+                  'is-primary',
+                  'is-success',
+                  'is-warning',
+                  'is-h-purple',
+                  'is-h-blue',
+                  'is-h-green',
+                  'is-h-orange',
+                  'is-h-red',
+                  'is-h-green',
+                )
+                var length = classes.length
+                var randomClass = classes[Math.floor(Math.random() * length)]
 
                 var html = `
 
@@ -177,18 +177,18 @@ $(document).ready(function () {
                                         </div>
 
                                     </div>
-                                `;
+                                `
               }
-              return html;
-              return destroyLoader;
+              return html
+              return destroyLoader
             },
-          });
+          })
         },
-      });
-    });
+      })
+    })
   }
 
-  initUserPopovers();
+  initUserPopovers()
 
   /* Users
 
@@ -306,4 +306,4 @@ $(document).ready(function () {
         38. Naomi Liversky(no pic)
         data-user-popover="38"
     */
-});
+})

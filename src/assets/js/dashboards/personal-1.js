@@ -1,80 +1,80 @@
 /*! personal-1.js | Huro | Css ninja 2020-2021 */
 
-"use strict";
+'use strict'
 
 $(document).ready(function () {
   //customers chart
   var customersOptions = {
     series: [
       {
-        name: "Returning",
+        name: 'Returning',
         data: [31, 40, 28, 51, 42, 109, 100],
       },
       {
-        name: "Newcomers",
+        name: 'Newcomers',
         data: [11, 32, 45, 32, 34, 52, 41],
       },
       {
-        name: "Abandonned",
+        name: 'Abandonned',
         data: [78, 53, 36, 10, 14, 5, 2],
       },
     ],
     chart: {
       height: 295,
-      type: "area",
+      type: 'area',
       toolbar: {
         show: false,
       },
     },
     colors: [themeColors.accent, themeColors.info, themeColors.orange],
     title: {
-      text: "Customers",
-      align: "left",
+      text: 'Customers',
+      align: 'left',
     },
     legend: {
-      position: "top",
+      position: 'top',
     },
     dataLabels: {
       enabled: false,
     },
     stroke: {
       width: [2, 2, 2],
-      curve: "smooth",
+      curve: 'smooth',
     },
     xaxis: {
-      type: "datetime",
+      type: 'datetime',
       categories: [
-        "2020-09-19T00:00:00.000Z",
-        "2020-09-20T01:30:00.000Z",
-        "2020-09-21T02:30:00.000Z",
-        "2020-09-22T03:30:00.000Z",
-        "2020-09-23T04:30:00.000Z",
-        "2020-09-24T05:30:00.000Z",
-        "2020-09-25T06:30:00.000Z",
+        '2020-09-19T00:00:00.000Z',
+        '2020-09-20T01:30:00.000Z',
+        '2020-09-21T02:30:00.000Z',
+        '2020-09-22T03:30:00.000Z',
+        '2020-09-23T04:30:00.000Z',
+        '2020-09-24T05:30:00.000Z',
+        '2020-09-25T06:30:00.000Z',
       ],
     },
     tooltip: {
       x: {
-        format: "dd/MM/yy HH:mm",
+        format: 'dd/MM/yy HH:mm',
       },
     },
-  };
+  }
 
   var customersChart = new ApexCharts(
-    document.querySelector("#customers-chart"),
-    customersOptions
-  );
-  customersChart.render();
+    document.querySelector('#customers-chart'),
+    customersOptions,
+  )
+  customersChart.render()
 
   //gauge chart
   var teamGaugeOptions = {
     series: [76],
     title: {
-      text: "Team Efficiency",
+      text: 'Team Efficiency',
     },
     chart: {
       height: 345,
-      type: "radialBar",
+      type: 'radialBar',
       sparkline: {
         enabled: true,
       },
@@ -94,14 +94,14 @@ $(document).ready(function () {
         startAngle: -90,
         endAngle: 90,
         track: {
-          background: "#e7e7e7",
-          strokeWidth: "97%",
+          background: '#e7e7e7',
+          strokeWidth: '97%',
           margin: 5, // margin is in pixels
           dropShadow: {
             enabled: false,
             top: 2,
             left: 0,
-            color: "#999",
+            color: '#999',
             opacity: 1,
             blur: 2,
           },
@@ -112,7 +112,7 @@ $(document).ready(function () {
           },
           value: {
             offsetY: -2,
-            fontSize: "22px",
+            fontSize: '22px',
           },
         },
       },
@@ -123,9 +123,9 @@ $(document).ready(function () {
       },
     },
     fill: {
-      type: "gradient",
+      type: 'gradient',
       gradient: {
-        shade: "light",
+        shade: 'light',
         shadeIntensity: 0.1,
         inverseColors: false,
         opacityFrom: 1,
@@ -133,26 +133,26 @@ $(document).ready(function () {
         stops: [0, 50, 53, 91],
       },
     },
-    labels: ["Average Results"],
-  };
+    labels: ['Average Results'],
+  }
 
   var teamGauge = new ApexCharts(
-    document.querySelector("#team-gauge"),
-    teamGaugeOptions
-  );
-  teamGauge.render();
+    document.querySelector('#team-gauge'),
+    teamGaugeOptions,
+  )
+  teamGauge.render()
 
   //Profit Chart
   var profitChartOptions = {
     series: [
       {
-        name: "Ratio",
+        name: 'Ratio',
         data: [2.3, 3.1, 4.0, 10.1, 4.0],
       },
     ],
     chart: {
       height: 262,
-      type: "bar",
+      type: 'bar',
       toolbar: {
         show: false,
       },
@@ -160,24 +160,24 @@ $(document).ready(function () {
     plotOptions: {
       bar: {
         dataLabels: {
-          position: "top", // top, center, bottom
+          position: 'top', // top, center, bottom
         },
       },
     },
     dataLabels: {
       enabled: true,
       formatter: function (val) {
-        return val + "%";
+        return val + '%'
       },
       offsetY: -20,
       style: {
-        fontSize: "12px",
-        colors: ["#304758"],
+        fontSize: '12px',
+        colors: ['#304758'],
       },
     },
     xaxis: {
-      categories: ["May", "Jun", "Jul", "Aug", "Sep"],
-      position: "top",
+      categories: ['May', 'Jun', 'Jul', 'Aug', 'Sep'],
+      position: 'top',
       axisBorder: {
         show: false,
       },
@@ -186,10 +186,10 @@ $(document).ready(function () {
       },
       crosshairs: {
         fill: {
-          type: "gradient",
+          type: 'gradient',
           gradient: {
-            colorFrom: "#D8E3F0",
-            colorTo: "#BED1E6",
+            colorFrom: '#D8E3F0',
+            colorTo: '#BED1E6',
             stops: [0, 100],
             opacityFrom: 0.4,
             opacityTo: 0.5,
@@ -210,20 +210,20 @@ $(document).ready(function () {
       labels: {
         show: false,
         formatter: function (val) {
-          return val + "%";
+          return val + '%'
         },
       },
     },
     colors: [themeColors.green, themeColors.secondary, themeColors.orange],
     title: {
-      text: "Profit Evolution",
-      align: "left",
+      text: 'Profit Evolution',
+      align: 'left',
     },
-  };
+  }
 
   var profitChart = new ApexCharts(
-    document.querySelector("#profit-chart"),
-    profitChartOptions
-  );
-  profitChart.render();
-});
+    document.querySelector('#profit-chart'),
+    profitChartOptions,
+  )
+  profitChart.render()
+})

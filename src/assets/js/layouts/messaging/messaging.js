@@ -4,76 +4,76 @@
 Messaging page functions
 ========================================================================== */
 
-"use strict";
+'use strict'
 
 $(document).ready(function () {
   //Hide chat side
-  $("#hide-chat-side").on("click", function () {
-    $(".chat-body-wrap, .message-field-wrapper").addClass("side-collapsed");
-    $(".chat-side-fab").addClass("is-active").removeClass("is-mobile-active");
-    $(".chat-side").removeClass("is-mobile-active");
-  });
+  $('#hide-chat-side').on('click', function () {
+    $('.chat-body-wrap, .message-field-wrapper').addClass('side-collapsed')
+    $('.chat-side-fab').addClass('is-active').removeClass('is-mobile-active')
+    $('.chat-side').removeClass('is-mobile-active')
+  })
 
   //Show chat side
-  $(".chat-side-fab").on("click", function () {
-    $(this).removeClass("is-active").addClass("is-mobile-active");
-    $(".chat-body-wrap, .message-field-wrapper").removeClass("side-collapsed");
-    $(".chat-side").addClass("is-mobile-active");
-  });
+  $('.chat-side-fab').on('click', function () {
+    $(this).removeClass('is-active').addClass('is-mobile-active')
+    $('.chat-body-wrap, .message-field-wrapper').removeClass('side-collapsed')
+    $('.chat-side').addClass('is-mobile-active')
+  })
 
   //Highlight selected sidebar link and get the right conversation
   $(
-    "#messages-sidebar li, .collapsed-messaging li, #mobile-conversations-list li"
-  ).on("click", function () {
+    '#messages-sidebar li, .collapsed-messaging li, #mobile-conversations-list li',
+  ).on('click', function () {
     //Hide new conversation autocomplete if relevant
-    $(".chat-header .is-autocomplete").addClass("is-hidden");
+    $('.chat-header .is-autocomplete').addClass('is-hidden')
 
     //Variables declaration
-    var $this = $(this);
-    var conversationRef = $(this).attr("data-conversation-menu");
-    var userPic = $(this).find(".is-user").attr("src");
-    var userBadge = $(this).find(".is-badge").attr("src");
+    var $this = $(this)
+    var conversationRef = $(this).attr('data-conversation-menu')
+    var userPic = $(this).find('.is-user').attr('src')
+    var userBadge = $(this).find('.is-badge').attr('src')
     var userName =
-      $(this).find(".recipient-meta span:first-child").html() ||
-      $(this).attr("data-username");
-    var userPosition = $(this).attr("data-position");
+      $(this).find('.recipient-meta span:first-child').html() ||
+      $(this).attr('data-username')
+    var userPosition = $(this).attr('data-position')
 
     $(
-      "#messages-sidebar li, .collapsed-messaging li, #mobile-conversations-list li"
-    ).removeClass("is-active");
+      '#messages-sidebar li, .collapsed-messaging li, #mobile-conversations-list li',
+    ).removeClass('is-active')
     //$(this).addClass('is-active');
 
     $('li[data-conversation-menu="' + conversationRef + '"]').addClass(
-      "is-active"
-    );
+      'is-active',
+    )
 
     //Check if main chat window is hidden and display it
-    if ($(".is-chat").hasClass("is-hidden")) {
-      $(".is-chat, .is-chat-placeholder").toggleClass("is-hidden");
+    if ($('.is-chat').hasClass('is-hidden')) {
+      $('.is-chat, .is-chat-placeholder').toggleClass('is-hidden')
     }
 
     //Activate chat loader
-    $(".chat-loader").addClass("is-active");
+    $('.chat-loader').addClass('is-active')
 
     //Remove current conversation
-    $("#chat-body li:not(.no-messages):not(.chat-loader)").remove();
+    $('#chat-body li:not(.no-messages):not(.chat-loader)').remove()
 
     //Load Conversation
     setTimeout(function () {
       $.ajax({
-        url: "assets/data/" + conversationRef + ".json",
-        dataType: "json",
+        url: 'assets/data/' + conversationRef + '.json',
+        dataType: 'json',
         success: function (data) {
-          var html = "";
-          var linkIcon = feather.icons.link.toSvg();
-          var maximizeIcon = feather.icons.maximize.toSvg();
-          var downloadIcon = feather.icons["download-cloud"].toSvg();
+          var html = ''
+          var linkIcon = feather.icons.link.toSvg()
+          var maximizeIcon = feather.icons.maximize.toSvg()
+          var downloadIcon = feather.icons['download-cloud'].toSvg()
 
           for (var i in data.messages) {
-            var obj = data.messages[i];
+            var obj = data.messages[i]
 
             for (var prop in obj) {
-              if (obj[prop].type == "msg") {
+              if (obj[prop].type == 'msg') {
                 html = `
                                     <li class="${obj[prop].sender}">
                                         <div class="avatar">
@@ -88,16 +88,16 @@ $(document).ready(function () {
                                         </time>
                                     </div>
                                     </li>
-                                `;
-              } else if (obj[prop].type == "system") {
+                                `
+              } else if (obj[prop].type == 'system') {
                 html = `
                                     <li class="divider-container">
                                         <div class="divider">
                                             <span>${obj[prop].content.text}</span>
                                         </div>
                                     </li>
-                                `;
-              } else if (obj[prop].type == "imagelink") {
+                                `
+              } else if (obj[prop].type == 'imagelink') {
                 html = `
                                     <li class="${obj[prop].sender}">
                                         <div class="avatar">
@@ -116,8 +116,8 @@ $(document).ready(function () {
                                             </div>
                                         </div>
                                     </li>
-                                `;
-              } else if (obj[prop].type == "image") {
+                                `
+              } else if (obj[prop].type == 'image') {
                 html = `
                                     <li class="${obj[prop].sender}">
                                         <div class="avatar is-online">
@@ -140,8 +140,8 @@ $(document).ready(function () {
                                             </div>
                                         </div>
                                     </li>
-                                `;
-              } else if (obj[prop].type == "link") {
+                                `
+              } else if (obj[prop].type == 'link') {
                 html = `
                                     <li class="${obj[prop].sender}">
                                         <div class="avatar is-online">
@@ -157,82 +157,82 @@ $(document).ready(function () {
                                             </p>
                                         </div>
                                     </li>
-                                `;
+                                `
               } else {
               }
               //Render conversation markup
-              $("#chat-body").append(html);
+              $('#chat-body').append(html)
 
               //Update user details (chat body right side)
-              $("#user-details-image").attr("src", userPic);
-              $("#user-details-name").html(userName);
-              $("#user-details-title").html(userPosition);
+              $('#user-details-image').attr('src', userPic)
+              $('#user-details-name').html(userName)
+              $('#user-details-title').html(userPosition)
 
               //Scroll chat to bottom on load
-              var scrollChat = $(".chat-body");
+              var scrollChat = $('.chat-body')
 
-              scrollChat.scrollTop(scrollChat.prop("scrollHeight"));
+              scrollChat.scrollTop(scrollChat.prop('scrollHeight'))
               //$().getUserPopovers();
 
-              var liCount = $(".chat-body li").length;
+              var liCount = $('.chat-body li').length
 
               if (liCount == 0) {
-                $(".no-messages").removeClass("is-hidden");
+                $('.no-messages').removeClass('is-hidden')
               } else {
-                $(".no-messages").addClass("is-hidden");
+                $('.no-messages').addClass('is-hidden')
               }
 
               //Inject the right conversation ref for the hide function
-              $("#chat-body").attr("data-conversation-body", conversationRef);
+              $('#chat-body').attr('data-conversation-body', conversationRef)
 
               //Disable chat loader
               setTimeout(function () {
-                $(".chat-loader").removeClass("is-active");
-              }, 500);
+                $('.chat-loader').removeClass('is-active')
+              }, 500)
             }
           }
         },
-      });
-    }, 1000);
-  });
+      })
+    }, 1000)
+  })
 
   //Sidebar user autocomplete
-  if ($("#users-autocpl").length) {
+  if ($('#users-autocpl').length) {
     var usersOptions = {
-      url: "assets/data/user.json",
-      getValue: "name",
+      url: 'assets/data/user.json',
+      getValue: 'name',
       template: {
-        type: "custom",
+        type: 'custom',
         method: function (value, item) {
           return (
-            "<div class=" +
-            "template-wrapper" +
-            "><div class=" +
-            "avatar-wrapper" +
-            ">" +
-            "<img class=" +
-            "autocpl-avatar" +
+            '<div class=' +
+            'template-wrapper' +
+            '><div class=' +
+            'avatar-wrapper' +
+            '>' +
+            '<img class=' +
+            'autocpl-avatar' +
             " src='" +
             item.pic +
             "' /><img class=" +
-            "avatar-badge" +
+            'avatar-badge' +
             " src='" +
             item.badge +
             "' /></div><div class=" +
-            "entry-text" +
-            ">" +
+            'entry-text' +
+            '>' +
             value +
-            "<br><span>" +
+            '<br><span>' +
             item.location +
-            "</span></div></div> "
-          );
+            '</span></div></div> '
+          )
         },
       },
       highlightPhrase: false,
       list: {
         maxNumberOfElements: 5,
         showAnimation: {
-          type: "fade", //normal|slide|fade
+          type: 'fade', //normal|slide|fade
           time: 400,
           callback: function () {},
         },
@@ -241,77 +241,77 @@ $(document).ready(function () {
         },
         onChooseEvent: function () {
           //Get the user name from the autocomplete
-          var newRecipient = $("#users-autocpl").val();
+          var newRecipient = $('#users-autocpl').val()
           //empty the input for next use
-          $("#users-autocpl").val("");
-          console.log(newRecipient);
+          $('#users-autocpl').val('')
+          console.log(newRecipient)
 
           //Check if main chat window is hidden and display it
-          if ($(".is-chat").hasClass("is-hidden")) {
-            $(".is-chat, .is-chat-placeholder").toggleClass("is-hidden");
+          if ($('.is-chat').hasClass('is-hidden')) {
+            $('.is-chat, .is-chat-placeholder').toggleClass('is-hidden')
           }
           //Remove messages from chat body
-          $("#chat-body li:not(.no-messages):not(.chat-loader)").remove();
+          $('#chat-body li:not(.no-messages):not(.chat-loader)').remove()
 
           //Close autocomplete
-          $(".chat-header .is-autocomplete").addClass("is-hidden");
+          $('.chat-header .is-autocomplete').addClass('is-hidden')
         },
       },
-    };
+    }
 
-    $("#users-autocpl").easyAutocomplete(usersOptions);
+    $('#users-autocpl').easyAutocomplete(usersOptions)
   }
 
   //Enable the message button when the autocomplete has a value
-  $("#users-autocpl").on("change", function () {
-    $(".start-conversation").removeClass("is-disabled");
-  });
+  $('#users-autocpl').on('change', function () {
+    $('.start-conversation').removeClass('is-disabled')
+  })
 
   //Start new conversation
-  $("#start-conversation").on("click", function () {
-    $(".chat-header .is-autocomplete").removeClass("is-hidden");
-    $("#users-autocpl").focus();
-    $(".chat-body li:not(.no-messages):not(.chat-loader)").remove();
-    $(".chat-body .no-messages").removeClass("is-hidden");
-    $("#messages-sidebar ul li").removeClass("is-active");
-    if (env == "development") {
-      $(".chat-side #user-details-image").attr(
-        "src",
-        "assets/img/avatars/placeholder.jpg"
-      );
+  $('#start-conversation').on('click', function () {
+    $('.chat-header .is-autocomplete').removeClass('is-hidden')
+    $('#users-autocpl').focus()
+    $('.chat-body li:not(.no-messages):not(.chat-loader)').remove()
+    $('.chat-body .no-messages').removeClass('is-hidden')
+    $('#messages-sidebar ul li').removeClass('is-active')
+    if (env == 'development') {
+      $('.chat-side #user-details-image').attr(
+        'src',
+        'assets/img/avatars/placeholder.jpg',
+      )
     } else {
-      $(".chat-side #user-details-image").attr(
-        "src",
-        "https://via.placeholder.com/150x150"
-      );
+      $('.chat-side #user-details-image').attr(
+        'src',
+        'https://via.placeholder.com/150x150',
+      )
     }
-    $(".chat-side")
-      .find(".user-name, .info, .user-skills, .user-job-title")
-      .empty();
-  });
+    $('.chat-side')
+      .find('.user-name, .info, .user-skills, .user-job-title')
+      .empty()
+  })
 
   //Cancel new conversation
-  $(".chat-header .hide").on("click", function () {
-    $(".chat-header .is-autocomplete input").val("");
-    $(".chat-header .is-autocomplete").addClass("is-hidden");
-  });
+  $('.chat-header .hide').on('click', function () {
+    $('.chat-header .is-autocomplete input').val('')
+    $('.chat-header .is-autocomplete').addClass('is-hidden')
+  })
 
   //Ajax request to load first conversation on page load
   $.ajax({
-    url: "assets/data/conversation1.json",
-    dataType: "json",
+    url: 'assets/data/conversation1.json',
+    dataType: 'json',
     success: function (data) {
-      var html = "";
-      var timeIcon = feather.icons.clock.toSvg();
-      var linkIcon = feather.icons.link.toSvg();
-      var maximizeIcon = feather.icons.maximize.toSvg();
-      var downloadIcon = feather.icons["download-cloud"].toSvg();
+      var html = ''
+      var timeIcon = feather.icons.clock.toSvg()
+      var linkIcon = feather.icons.link.toSvg()
+      var maximizeIcon = feather.icons.maximize.toSvg()
+      var downloadIcon = feather.icons['download-cloud'].toSvg()
 
       for (var i in data.messages) {
-        var obj = data.messages[i];
+        var obj = data.messages[i]
 
         for (var prop in obj) {
-          if (obj[prop].type == "msg") {
+          if (obj[prop].type == 'msg') {
             html = `
                             <li class="${obj[prop].sender}">
                                 <div class="avatar">
@@ -327,16 +327,16 @@ $(document).ready(function () {
                                     </time>
                                 </div>
                             </li>
-                        `;
-          } else if (obj[prop].type == "system") {
+                        `
+          } else if (obj[prop].type == 'system') {
             html = `
                             <li class="divider-container">
                                 <div class="divider">
                                     <span>${obj[prop].content.text}</span>
                                 </div>
                             </li>
-                        `;
-          } else if (obj[prop].type == "imagelink") {
+                        `
+          } else if (obj[prop].type == 'imagelink') {
             html = `
                             <li class="${obj[prop].sender}">
                                 <div class="avatar">
@@ -355,8 +355,8 @@ $(document).ready(function () {
                                     </div>
                                 </div>
                             </li>
-                        `;
-          } else if (obj[prop].type == "image") {
+                        `
+          } else if (obj[prop].type == 'image') {
             html = `
                                 <li class="${obj[prop].sender}">
                                     <div class="avatar is-online">
@@ -379,8 +379,8 @@ $(document).ready(function () {
                                         </div>
                                     </div>
                                 </li>
-                            `;
-          } else if (obj[prop].type == "link") {
+                            `
+          } else if (obj[prop].type == 'link') {
             html = `
                             <li class="${obj[prop].sender}">
                                 <div class="avatar is-online">
@@ -396,16 +396,16 @@ $(document).ready(function () {
                                     </p>
                                 </div>
                             </li>
-                        `;
+                        `
           } else {
           }
-          $("#chat-body").append(html);
+          $('#chat-body').append(html)
 
           //Scroll chat to bottom on load
-          var scrollChat = $(".chat-body");
-          scrollChat.scrollTop(scrollChat.prop("scrollHeight"));
+          var scrollChat = $('.chat-body')
+          scrollChat.scrollTop(scrollChat.prop('scrollHeight'))
         }
       }
     },
-  });
-});
+  })
+})

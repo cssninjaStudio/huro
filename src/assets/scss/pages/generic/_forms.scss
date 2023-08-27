@@ -208,7 +208,7 @@ Form Layouts
 
                     span {
                       &:after {
-                        content: "$";
+                        content: '$';
                         position: relative;
                         top: -10px;
                         font-size: 1.5rem;
@@ -906,7 +906,10 @@ body {
         padding-bottom: 0;
         color: $dark-text;
         cursor: pointer;
-        transition: color 0.3s, background-color 0.3s, border 0.3s,
+        transition:
+          color 0.3s,
+          background-color 0.3s,
+          border 0.3s,
           box-shadow 0.3s;
 
         &:hover {
@@ -991,7 +994,9 @@ body {
             background: $white;
             border: 1px solid $border;
             border-radius: 0.5rem;
-            transition: border 0.3s, box-shadow 0.3s;
+            transition:
+              border 0.3s,
+              box-shadow 0.3s;
 
             h4 {
               color: $dark-text;
@@ -1018,7 +1023,9 @@ body {
         background: $white;
         border: 1px solid $border;
         border-radius: 0.5rem;
-        transition: border 0.3s, box-shadow 0.3s;
+        transition:
+          border 0.3s,
+          box-shadow 0.3s;
 
         .box-content {
           h3 {
@@ -1064,7 +1071,10 @@ body {
           padding-bottom: 0;
           color: $dark-text;
           cursor: pointer;
-          transition: color 0.3s, background-color 0.3s, border 0.3s,
+          transition:
+            color 0.3s,
+            background-color 0.3s,
+            border 0.3s,
             box-shadow 0.3s;
 
           &:not(:last-child) {

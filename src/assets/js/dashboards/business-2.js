@@ -1,26 +1,26 @@
 /*! business-2.js | Huro | Css ninja 2020-2021 */
 
-"use strict";
+'use strict'
 
 $(document).ready(function () {
   var usersOptions = {
     series: [
       {
-        name: "New Users",
+        name: 'New Users',
         data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
       },
       {
-        name: "Renewals",
+        name: 'Renewals',
         data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
       },
       {
-        name: "Resigns",
+        name: 'Resigns',
         data: [35, 41, 36, 26, 45, 48, 52, 53, 41],
       },
     ],
     chart: {
       height: 180,
-      type: "area",
+      type: 'area',
       toolbar: {
         show: false,
       },
@@ -41,10 +41,10 @@ $(document).ready(function () {
     },
     stroke: {
       width: [2],
-      curve: "smooth",
+      curve: 'smooth',
     },
     xaxis: {
-      type: "numeric",
+      type: 'numeric',
       lines: {
         show: false,
       },
@@ -72,16 +72,16 @@ $(document).ready(function () {
     tooltip: {
       x: {
         show: false,
-        format: "dd/MM/yy HH:mm",
+        format: 'dd/MM/yy HH:mm',
       },
     },
-  };
+  }
 
   var usersChart = new ApexCharts(
-    document.querySelector("#users-chart"),
-    usersOptions
-  );
-  usersChart.render();
+    document.querySelector('#users-chart'),
+    usersOptions,
+  )
+  usersChart.render()
 
   var sharingOptions = {
     series: [
@@ -91,7 +91,7 @@ $(document).ready(function () {
     ],
     chart: {
       height: 180,
-      type: "bar",
+      type: 'bar',
       toolbar: {
         show: false,
       },
@@ -105,9 +105,9 @@ $(document).ready(function () {
     colors: [themeColors.accent, themeColors.orange, themeColors.purple],
     plotOptions: {
       bar: {
-        columnWidth: "30px",
+        columnWidth: '30px',
         distributed: true,
-        endingShape: "rounded",
+        endingShape: 'rounded',
       },
     },
     dataLabels: {
@@ -117,7 +117,7 @@ $(document).ready(function () {
       show: false,
     },
     xaxis: {
-      type: "numeric",
+      type: 'numeric',
       lines: {
         show: false,
       },
@@ -142,27 +142,27 @@ $(document).ready(function () {
         },
       },
     ],
-  };
+  }
 
   var sharingChart = new ApexCharts(
-    document.querySelector("#shares-chart"),
-    sharingOptions
-  );
-  sharingChart.render();
+    document.querySelector('#shares-chart'),
+    sharingOptions,
+  )
+  sharingChart.render()
 
   //Personal Score
   var gaugeWidgetChart = bb.generate({
     data: {
-      columns: [["data", 91.4]],
-      type: "gauge",
+      columns: [['data', 91.4]],
+      type: 'gauge',
       onclick: function (d, i) {
-        console.log("onclick", d, i);
+        console.log('onclick', d, i)
       },
       onover: function (d, i) {
-        console.log("onover", d, i);
+        console.log('onover', d, i)
       },
       onout: function (d, i) {
-        console.log("onout", d, i);
+        console.log('onout', d, i)
       },
     },
     gauge: {},
@@ -185,149 +185,149 @@ $(document).ready(function () {
     },
     legend: {
       show: false,
-      position: "inset",
+      position: 'inset',
     },
-    bindto: "#gauge-holder",
-  });
+    bindto: '#gauge-holder',
+  })
 
   setTimeout(function () {
     gaugeWidgetChart.load({
-      columns: [["data", 10]],
-    });
-  }, 1000);
+      columns: [['data', 10]],
+    })
+  }, 1000)
 
   setTimeout(function () {
     gaugeWidgetChart.load({
-      columns: [["data", 50]],
-    });
-  }, 2000);
+      columns: [['data', 50]],
+    })
+  }, 2000)
 
   setTimeout(function () {
     gaugeWidgetChart.load({
-      columns: [["data", 70]],
-    });
-  }, 3000);
+      columns: [['data', 70]],
+    })
+  }, 3000)
 
   setTimeout(function () {
     gaugeWidgetChart.load({
-      columns: [["data", 0]],
-    });
-  }, 4000);
+      columns: [['data', 0]],
+    })
+  }, 4000)
 
   setTimeout(function () {
     gaugeWidgetChart.load({
-      columns: [["data", 100]],
-    });
-  }, 5000);
+      columns: [['data', 100]],
+    })
+  }, 5000)
 
   //Bar Chart
   var barData = [
     {
-      x: "Jan",
+      x: 'Jan',
       y: 322,
     },
     {
-      x: "Feb",
+      x: 'Feb',
       y: 459,
     },
     {
-      x: "Mar",
+      x: 'Mar',
       y: 212,
     },
     {
-      x: "Apr",
+      x: 'Apr',
       y: 345,
     },
     {
-      x: "May",
+      x: 'May',
       y: 111,
     },
     {
-      x: "Jun",
+      x: 'Jun',
       y: 189,
     },
     {
-      x: "Jul",
+      x: 'Jul',
       y: 498,
     },
     {
-      x: "Aug",
+      x: 'Aug',
       y: 612,
     },
     {
-      x: "Sep",
+      x: 'Sep',
       y: 451,
     },
     {
-      x: "Oct",
+      x: 'Oct',
       y: 248,
     },
     {
-      x: "Nov",
+      x: 'Nov',
       y: 306,
     },
     {
-      x: "Dec",
+      x: 'Dec',
       y: 366,
     },
-  ];
+  ]
 
   var barData2 = [
     {
-      x: "Jan",
+      x: 'Jan',
       y: 25,
     },
     {
-      x: "Feb",
+      x: 'Feb',
       y: 49,
     },
     {
-      x: "Mar",
+      x: 'Mar',
       y: 36,
     },
     {
-      x: "Apr",
+      x: 'Apr',
       y: 84,
     },
     {
-      x: "May",
+      x: 'May',
       y: 64,
     },
     {
-      x: "Jun",
+      x: 'Jun',
       y: 131,
     },
     {
-      x: "Jul",
+      x: 'Jul',
       y: 48,
     },
     {
-      x: "Aug",
+      x: 'Aug',
       y: 144,
     },
     {
-      x: "Sep",
+      x: 'Sep',
       y: 96,
     },
     {
-      x: "Oct",
+      x: 'Oct',
       y: 11,
     },
     {
-      x: "Nov",
+      x: 'Nov',
       y: 31,
     },
     {
-      x: "Dec",
+      x: 'Dec',
       y: 8,
     },
-  ];
+  ]
 
   var barOptions = {
     series: [],
     chart: {
       height: 235,
-      type: "bar",
+      type: 'bar',
       toolbar: {
         show: false,
       },
@@ -337,56 +337,56 @@ $(document).ready(function () {
       enabled: false,
     },
     noData: {
-      text: "Loading...",
+      text: 'Loading...',
     },
     xaxis: {
-      type: "category",
-      tickPlacement: "on",
+      type: 'category',
+      tickPlacement: 'on',
       labels: {
         rotate: -45,
         rotateAlways: true,
       },
     },
-  };
+  }
 
   var barChart = new ApexCharts(
-    document.querySelector("#bar-chart"),
-    barOptions
-  );
-  barChart.render();
+    document.querySelector('#bar-chart'),
+    barOptions,
+  )
+  barChart.render()
 
   $.getJSON(
-    "https://my-json-server.typicode.com/apexcharts/apexcharts.js/yearly",
+    'https://my-json-server.typicode.com/apexcharts/apexcharts.js/yearly',
     function (response) {
       barChart.updateSeries([
         {
-          name: "Renewals",
+          name: 'Renewals',
           data: barData,
         },
-      ]);
+      ])
 
       $.getJSON(
-        "https://my-json-server.typicode.com/apexcharts/apexcharts.js/yearly2",
+        'https://my-json-server.typicode.com/apexcharts/apexcharts.js/yearly2',
         function (response) {
           barChart.appendSeries({
-            name: "subscriptions",
+            name: 'subscriptions',
             data: barData2,
-          });
-        }
-      );
-    }
-  );
+          })
+        },
+      )
+    },
+  )
 
   //Datatable
-  var moreIcon = feather.icons["more-horizontal"].toSvg();
+  var moreIcon = feather.icons['more-horizontal'].toSvg()
 
   var rowAction = `
         <div class="row-action">
             <button class="button h-button is-dark-outlined">Profile</button>
         </div>
-    `;
+    `
 
-  var datatable = new DataTable(document.querySelector("#users-datatable"), {
+  var datatable = new DataTable(document.querySelector('#users-datatable'), {
     pageSize: 10,
     sort: {
       picture: false,
@@ -402,31 +402,31 @@ $(document).ready(function () {
       type: false,
       action: false,
     },
-    filterText: "Type to Filter... ",
-    filterInputClass: "input",
+    filterText: 'Type to Filter... ',
+    filterInputClass: 'input',
 
     counterText: function (
       currentPage,
       totalPage,
       firstRow,
       lastRow,
-      totalRow
+      totalRow,
     ) {
       return (
-        "Showing " + firstRow + " to " + lastRow + " of " + totalRow + " items."
-      );
+        'Showing ' + firstRow + ' to ' + lastRow + ' of ' + totalRow + ' items.'
+      )
     },
-    counterDivSelector: ".datatable-info span",
-    pagingDivSelector: "#paging-first-datatable",
+    counterDivSelector: '.datatable-info span',
+    pagingDivSelector: '#paging-first-datatable',
     firstPage: false,
     lastPage: false,
     nextPage: '<i class="fas fa-angle-right"></i>',
     prevPage: '<i class="fas fa-angle-left"></i>',
     afterRefresh: function () {
-      if (env === "development") {
-        changeDemoImages();
+      if (env === 'development') {
+        changeDemoImages()
       }
-      initDropdowns();
+      initDropdowns()
     },
     data: [
       {
@@ -436,7 +436,7 @@ $(document).ready(function () {
                     </div>
                 `,
         name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Erik Kovalsky</span>',
-        location: "Los Angeles, CA",
+        location: 'Los Angeles, CA',
         type: `
                     <span class="tag is-rounded is-solid">Customer</span>
                 `,
@@ -449,7 +449,7 @@ $(document).ready(function () {
                     </div>
                 `,
         name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Alice Carasca</span>',
-        location: "San Diego, CA",
+        location: 'San Diego, CA',
         type: `
                     <span class="tag is-rounded is-solid">Customer</span>
                 `,
@@ -462,7 +462,7 @@ $(document).ready(function () {
                     </div>
                 `,
         name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Tara Svenson</span>',
-        location: "New York, NY",
+        location: 'New York, NY',
         type: `
                     <span class="tag is-rounded is-solid">Supplier</span>
                 `,
@@ -475,7 +475,7 @@ $(document).ready(function () {
                     </div>
                 `,
         name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Mary Lebowski</span>',
-        location: "Houston, TX",
+        location: 'Houston, TX',
         type: `
                     <span class="tag is-rounded is-solid">Customer</span>
                 `,
@@ -490,24 +490,24 @@ $(document).ready(function () {
                     </div>
                 `,
         name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Kaylee Jennings</span>',
-        location: "Los Angeles, CA",
+        location: 'Los Angeles, CA',
         type: `
                     <span class="tag is-rounded is-solid">Customer</span>
                 `,
         action: `${rowAction}`,
       },
     ],
-  });
+  })
 
   setTimeout(function () {
     //Change demo images
-    if (env === "development") {
-      changeDemoImages();
+    if (env === 'development') {
+      changeDemoImages()
     }
 
     //initUserPopovers();
-    adjustDropdowns();
+    adjustDropdowns()
 
-    customizeDatatable();
-  }, 1000);
-});
+    customizeDatatable()
+  }, 1000)
+})

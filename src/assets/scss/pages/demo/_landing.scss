@@ -23,7 +23,7 @@
     20. Media Queries
 */
 
-@use "sass:math";
+@use 'sass:math';
 
 /* ==========================================================================
 1. Defaults
@@ -184,7 +184,7 @@ $landing-dark-2: #191c2b;
           text-transform: capitalize;
 
           &:before {
-            content: "";
+            content: '';
             position: absolute;
             top: -4px;
             left: 2px;
@@ -202,7 +202,8 @@ $landing-dark-2: #191c2b;
               cubic-bezier(0.4, 0, 0.2, 1);
             transition: -webkit-transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+            transition:
+              transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
               -webkit-transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           }
 
@@ -1420,7 +1421,7 @@ $landing-dark-2: #191c2b;
 
     &:before,
     &:after {
-      content: "";
+      content: '';
       display: block;
     }
   }
@@ -1486,14 +1487,24 @@ $landing-dark-2: #191c2b;
         border-radius: 50%;
 
         //crazy ass box-shadow to make the cloud
-        box-shadow: $cloud-bgColor 0 0, $cloud-bgColor 3px 0,
-          $cloud-bgColor 6px 0, $cloud-bgColor 9px 0, $cloud-bgColor 11px 0,
-          $cloud-bgColor 14px 0, $cloud-bgColor 16px 0,
-          $cloud-bgColor 21px -1px 0 1px, $cloud-bgColor 16px -7px 0 -2px,
-          $cloud-bgColor 7px -7px 0 1px, $cloud-borderColor 0 0 0 4px,
-          $cloud-borderColor 6px 0 0 4px, $cloud-borderColor 11px 0 0 4px,
-          $cloud-borderColor 16px 0 0 4px, $cloud-borderColor 21px -1px 0 5px,
-          $cloud-borderColor 16px -7px 0 1px, $cloud-borderColor 7px -7px 0 5px;
+        box-shadow:
+          $cloud-bgColor 0 0,
+          $cloud-bgColor 3px 0,
+          $cloud-bgColor 6px 0,
+          $cloud-bgColor 9px 0,
+          $cloud-bgColor 11px 0,
+          $cloud-bgColor 14px 0,
+          $cloud-bgColor 16px 0,
+          $cloud-bgColor 21px -1px 0 1px,
+          $cloud-bgColor 16px -7px 0 -2px,
+          $cloud-bgColor 7px -7px 0 1px,
+          $cloud-borderColor 0 0 0 4px,
+          $cloud-borderColor 6px 0 0 4px,
+          $cloud-borderColor 11px 0 0 4px,
+          $cloud-borderColor 16px 0 0 4px,
+          $cloud-borderColor 21px -1px 0 5px,
+          $cloud-borderColor 16px -7px 0 1px,
+          $cloud-borderColor 7px -7px 0 5px;
         transition: opacity 100ms ease-in;
       }
     }
@@ -1501,9 +1512,13 @@ $landing-dark-2: #191c2b;
     @keyframes starry_star {
       50% {
         background-color: rgba(255, 255, 255, 0.1);
-        box-shadow: #fff 30px -3px 0 0, #fff 12px 10px 0 -1px,
-          rgba(255, 255, 255, 0.1) 38px 18px 0 1px, #fff 32px 34px 0 0,
-          rgba(255, 255, 255, 0.1) 20px 24px 0 -1.5px, #fff 5px 38px 0 1px;
+        box-shadow:
+          #fff 30px -3px 0 0,
+          #fff 12px 10px 0 -1px,
+          rgba(255, 255, 255, 0.1) 38px 18px 0 1px,
+          #fff 32px 34px 0 0,
+          rgba(255, 255, 255, 0.1) 20px 24px 0 -1.5px,
+          #fff 5px 38px 0 1px;
       }
     }
 
@@ -1543,9 +1558,12 @@ $landing-dark-2: #191c2b;
       height: 4px;
       border-radius: 50%;
       background-color: #fff;
-      box-shadow: rgba(255, 255, 255, 0.1) 30px -3px 0 0,
-        rgba(255, 255, 255, 0.1) 12px 10px 0 -1px, #fff 38px 18px 0 1px,
-        rgba(255, 255, 255, 0.1) 32px 34px 0 0, #fff 20px 24px 0 -1.5px,
+      box-shadow:
+        rgba(255, 255, 255, 0.1) 30px -3px 0 0,
+        rgba(255, 255, 255, 0.1) 12px 10px 0 -1px,
+        #fff 38px 18px 0 1px,
+        rgba(255, 255, 255, 0.1) 32px 34px 0 0,
+        #fff 20px 24px 0 -1.5px,
         rgba(255, 255, 255, 0.1) 5px 38px 0 1px;
       animation: starry_star 5s ease-in-out infinite;
 
@@ -1558,7 +1576,8 @@ $landing-dark-2: #191c2b;
         background-color: $toggleBtn-bgColor--night;
         border-radius: 50%;
         border: 5px solid $toggleBtn-borderColor--night;
-        box-shadow: $toggleBtn-borderColor--night -28px 0 0 -3px,
+        box-shadow:
+          $toggleBtn-borderColor--night -28px 0 0 -3px,
           $toggleBtn-borderColor--night -8px 24px 0 -2px;
         transform-origin: -6px 130%;
       }
@@ -1587,9 +1606,12 @@ $landing-dark-2: #191c2b;
 
         > .night-toggle--feature {
           opacity: 0;
-          box-shadow: rgba(255, 255, 255, 0.1) 30px -3px 0 -4px,
-            rgba(255, 255, 255, 0.1) 12px 10px 0 -5px, #fff 38px 18px 0 -3px,
-            rgba(255, 255, 255, 0.1) 32px 34px 0 -4px, #fff 20px 24px 0 -5.5px,
+          box-shadow:
+            rgba(255, 255, 255, 0.1) 30px -3px 0 -4px,
+            rgba(255, 255, 255, 0.1) 12px 10px 0 -5px,
+            #fff 38px 18px 0 -3px,
+            rgba(255, 255, 255, 0.1) 32px 34px 0 -4px,
+            #fff 20px 24px 0 -5.5px,
             rgba(255, 255, 255, 0.1) 5px 38px 0 -3px;
           animation: none;
 

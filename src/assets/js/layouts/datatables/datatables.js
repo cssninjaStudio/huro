@@ -1,7 +1,7 @@
-"use strict";
+'use strict'
 
 $(document).ready(function () {
-  var moreIcon = feather.icons["more-horizontal"].toSvg();
+  var moreIcon = feather.icons['more-horizontal'].toSvg()
 
   var rowActionDropdown = `
         <div class="row-action">
@@ -52,7 +52,7 @@ $(document).ready(function () {
                 </div>
             </div>
         </div>
-    `;
+    `
 
   var rowFileDropdown = `
         <div class="row-action">
@@ -94,10 +94,10 @@ $(document).ready(function () {
                 </div>
             </div>
         </div>
-    `;
+    `
 
-  if ($("#users-datatable").length) {
-    var datatable = new DataTable(document.querySelector("#users-datatable"), {
+  if ($('#users-datatable').length) {
+    var datatable = new DataTable(document.querySelector('#users-datatable'), {
       pageSize: 10,
       sort: {
         checkbox: false,
@@ -111,41 +111,41 @@ $(document).ready(function () {
         checkbox: false,
         picture: false,
         name: true,
-        position: "select",
-        status: "select",
+        position: 'select',
+        status: 'select',
         action: false,
       },
-      filterText: "Type to Filter... ",
-      filterInputClass: "input",
+      filterText: 'Type to Filter... ',
+      filterInputClass: 'input',
 
       counterText: function (
         currentPage,
         totalPage,
         firstRow,
         lastRow,
-        totalRow
+        totalRow,
       ) {
         return (
-          "Showing " +
+          'Showing ' +
           firstRow +
-          " to " +
+          ' to ' +
           lastRow +
-          " of " +
+          ' of ' +
           totalRow +
-          " items."
-        );
+          ' items.'
+        )
       },
-      counterDivSelector: ".datatable-info span",
-      pagingDivSelector: "#paging-first-datatable",
+      counterDivSelector: '.datatable-info span',
+      pagingDivSelector: '#paging-first-datatable',
       firstPage: false,
       lastPage: false,
       nextPage: '<i class="fas fa-angle-right"></i>',
       prevPage: '<i class="fas fa-angle-left"></i>',
       afterRefresh: function () {
-        if (env === "development") {
-          changeDemoImages();
+        if (env === 'development') {
+          changeDemoImages()
         }
-        initDropdowns();
+        initDropdowns()
       },
       data: [
         {
@@ -163,7 +163,7 @@ $(document).ready(function () {
                         </div>
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Erik Kovalsky</span>',
-          position: "Product Manager",
+          position: 'Product Manager',
           status: `
                         <div class="status is-busy">
                             <i class="fas fa-circle"></i>
@@ -187,7 +187,7 @@ $(document).ready(function () {
                         </div>
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Alice Carasca</span>',
-          position: "Software Engineer",
+          position: 'Software Engineer',
           status: `
                         <div class="status is-offline">
                             <i class="fas fa-circle"></i>
@@ -211,7 +211,7 @@ $(document).ready(function () {
                         </div>
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Tara Svenson</span>',
-          position: "UI/UX Designer",
+          position: 'UI/UX Designer',
           status: `
                         <div class="status is-offline">
                             <i class="fas fa-circle"></i>
@@ -235,7 +235,7 @@ $(document).ready(function () {
                         </div>
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Mary Lebowski</span>',
-          position: "Project Manager",
+          position: 'Project Manager',
           status: `
                         <div class="status is-available">
                             <i class="fas fa-circle"></i>
@@ -261,7 +261,7 @@ $(document).ready(function () {
                         </div>
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Kaylee Jennings</span>',
-          position: "Web Developer",
+          position: 'Web Developer',
           status: `
                         <div class="status is-available">
                             <i class="fas fa-circle"></i>
@@ -285,7 +285,7 @@ $(document).ready(function () {
                         </div>
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Carmen Escudero</span>',
-          position: "HR Manager",
+          position: 'HR Manager',
           status: `
                         <div class="status is-offline">
                             <i class="fas fa-circle"></i>
@@ -309,7 +309,7 @@ $(document).ready(function () {
                         </div>
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Dwayne Hicks</span>',
-          position: "Product Manager",
+          position: 'Product Manager',
           status: `
                         <div class="status is-offline">
                             <i class="fas fa-circle"></i>
@@ -335,7 +335,7 @@ $(document).ready(function () {
                         </div>
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Paul Morris</span>',
-          position: "Backend Developer",
+          position: 'Backend Developer',
           status: `
                         <div class="status is-available">
                             <i class="fas fa-circle"></i>
@@ -359,7 +359,7 @@ $(document).ready(function () {
                         </div>
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Irina Vierbovsky</span>',
-          position: "Project Manager",
+          position: 'Project Manager',
           status: `
                         <div class="status is-available">
                             <i class="fas fa-circle"></i>
@@ -383,7 +383,7 @@ $(document).ready(function () {
                         </div>
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Edouard Falant</span>',
-          position: "Web Developer",
+          position: 'Web Developer',
           status: `
                         <div class="status is-busy">
                             <i class="fas fa-circle"></i>
@@ -409,7 +409,7 @@ $(document).ready(function () {
                         </div>
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Shana Williams</span>',
-          position: "Sales Manager",
+          position: 'Sales Manager',
           status: `
                         <div class="status is-offline">
                             <i class="fas fa-circle"></i>
@@ -435,7 +435,7 @@ $(document).ready(function () {
                         </div>
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Benjamin Hoffman</span>',
-          position: "Product Manager",
+          position: 'Product Manager',
           status: `
                         <div class="status is-offline">
                             <i class="fas fa-circle"></i>
@@ -459,7 +459,7 @@ $(document).ready(function () {
                         </div>
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Alejandro Badajoz</span>',
-          position: "Business Analyst",
+          position: 'Business Analyst',
           status: `
                         <div class="status is-busy">
                             <i class="fas fa-circle"></i>
@@ -483,7 +483,7 @@ $(document).ready(function () {
                         </div>
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Elizabeth Fisher</span>',
-          position: "Mobile Developer",
+          position: 'Mobile Developer',
           status: `
                         <div class="status is-available">
                             <i class="fas fa-circle"></i>
@@ -507,7 +507,7 @@ $(document).ready(function () {
                         </div>
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Helmut Fritz</span>',
-          position: "Product Manager",
+          position: 'Product Manager',
           status: `
                         <div class="status is-available">
                             <i class="fas fa-circle"></i>
@@ -531,7 +531,7 @@ $(document).ready(function () {
                         </div>
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Yasseen Amzi</span>',
-          position: "Business Analyst",
+          position: 'Business Analyst',
           status: `
                         <div class="status is-offline">
                             <i class="fas fa-circle"></i>
@@ -541,24 +541,24 @@ $(document).ready(function () {
           action: `${rowActionDropdown}`,
         },
       ],
-    });
+    })
 
     setTimeout(function () {
       //Change demo images
-      if (env === "development") {
-        changeDemoImages();
+      if (env === 'development') {
+        changeDemoImages()
       }
 
       //initUserPopovers();
-      adjustDropdowns();
+      adjustDropdowns()
 
-      customizeDatatable();
-    }, 1000);
+      customizeDatatable()
+    }, 1000)
   }
 
-  if ($("#products-datatable").length) {
+  if ($('#products-datatable').length) {
     var datatable = new DataTable(
-      document.querySelector("#products-datatable"),
+      document.querySelector('#products-datatable'),
       {
         pageSize: 10,
         sort: {
@@ -578,40 +578,40 @@ $(document).ready(function () {
           sku: true,
           unitPrice: false,
           stock: false,
-          category: "select",
+          category: 'select',
           action: false,
         },
-        filterText: "Type to Filter... ",
-        filterInputClass: "input",
+        filterText: 'Type to Filter... ',
+        filterInputClass: 'input',
 
         counterText: function (
           currentPage,
           totalPage,
           firstRow,
           lastRow,
-          totalRow
+          totalRow,
         ) {
           return (
-            "Showing " +
+            'Showing ' +
             firstRow +
-            " to " +
+            ' to ' +
             lastRow +
-            " of " +
+            ' of ' +
             totalRow +
-            " items."
-          );
+            ' items.'
+          )
         },
-        counterDivSelector: ".datatable-info span",
-        pagingDivSelector: "#paging-first-datatable",
+        counterDivSelector: '.datatable-info span',
+        pagingDivSelector: '#paging-first-datatable',
         firstPage: false,
         lastPage: false,
         nextPage: '<i class="fas fa-angle-right"></i>',
         prevPage: '<i class="fas fa-angle-left"></i>',
         afterRefresh: function () {
-          if (env === "development") {
-            changeDemoImages();
+          if (env === 'development') {
+            changeDemoImages()
           }
-          initDropdowns();
+          initDropdowns()
         },
         data: [
           {
@@ -627,7 +627,7 @@ $(document).ready(function () {
                         <img class="product-photo" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/photo/demo/products/1.png" alt="">
                     `,
             name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Yellow Couch</span>',
-            sku: "FC-58-5564",
+            sku: 'FC-58-5564',
             unitPrice: `
                         <div class="price has-text-centered light-text">
                             <span>$190.00</span>
@@ -665,7 +665,7 @@ $(document).ready(function () {
                         <img class="product-photo" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/photo/demo/products/2.png" alt="">
                     `,
             name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Green Couch</span>',
-            sku: "FC-58-1565",
+            sku: 'FC-58-1565',
             unitPrice: `
                         <div class="price has-text-centered light-text">
                             <span>$170.00</span>
@@ -703,7 +703,7 @@ $(document).ready(function () {
                         <img class="product-photo" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/photo/demo/products/4.png" alt="">
                     `,
             name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Turquoise Seat</span>',
-            sku: "FS-12-4854",
+            sku: 'FS-12-4854',
             unitPrice: `
                         <div class="price has-text-centered light-text">
                             <span>$90.00</span>
@@ -741,7 +741,7 @@ $(document).ready(function () {
                         <img class="product-photo" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/photo/demo/products/3.png" alt="">
                     `,
             name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Cyan Couch</span>',
-            sku: "FC-58-6723",
+            sku: 'FC-58-6723',
             unitPrice: `
                         <div class="price has-text-centered light-text">
                             <span>$180.00</span>
@@ -779,7 +779,7 @@ $(document).ready(function () {
                         <img class="product-photo" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/photo/demo/products/7.png" alt="">
                     `,
             name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Coffee Table</span>',
-            sku: "FT-45-4684",
+            sku: 'FT-45-4684',
             unitPrice: `
                         <div class="price has-text-centered light-text">
                             <span>$280.00</span>
@@ -817,7 +817,7 @@ $(document).ready(function () {
                         <img class="product-photo" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/photo/demo/products/5.png" alt="">
                     `,
             name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Red Couch</span>',
-            sku: "FC-58-7565",
+            sku: 'FC-58-7565',
             unitPrice: `
                         <div class="price has-text-centered light-text">
                             <span>$190.00</span>
@@ -855,7 +855,7 @@ $(document).ready(function () {
                         <img class="product-photo" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/photo/demo/products/6.png" alt="">
                     `,
             name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Mustard Seat</span>',
-            sku: "FS-11-1861",
+            sku: 'FS-11-1861',
             unitPrice: `
                         <div class="price has-text-centered light-text">
                             <span>$70.00</span>
@@ -893,7 +893,7 @@ $(document).ready(function () {
                         <img class="product-photo" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/photo/demo/products/8.png" alt="">
                     `,
             name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Modern Sofa</span>',
-            sku: "FC-58-3971",
+            sku: 'FC-58-3971',
             unitPrice: `
                         <div class="price has-text-centered light-text">
                             <span>$190.00</span>
@@ -931,7 +931,7 @@ $(document).ready(function () {
                         <img class="product-photo" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/photo/demo/products/9.png" alt="">
                     `,
             name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Table Triplets</span>',
-            sku: "FT-22-2875",
+            sku: 'FT-22-2875',
             unitPrice: `
                         <div class="price has-text-centered light-text">
                             <span>$340.00</span>
@@ -969,7 +969,7 @@ $(document).ready(function () {
                         <img class="product-photo" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/photo/demo/products/10.png" alt="">
                     `,
             name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Wood Chair</span>',
-            sku: "FS-11-2876",
+            sku: 'FS-11-2876',
             unitPrice: `
                         <div class="price has-text-centered light-text">
                             <span>$80.00</span>
@@ -1007,7 +1007,7 @@ $(document).ready(function () {
                         <img class="product-photo" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/photo/demo/products/11.png" alt="">
                     `,
             name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Modern Table</span>',
-            sku: "FT-14-6543",
+            sku: 'FT-14-6543',
             unitPrice: `
                         <div class="price has-text-centered light-text">
                             <span>$150.00</span>
@@ -1045,7 +1045,7 @@ $(document).ready(function () {
                         <img class="product-photo" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/photo/demo/products/12.png" alt="">
                     `,
             name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Hippie Sofa</span>',
-            sku: "FC-58-7241",
+            sku: 'FC-58-7241',
             unitPrice: `
                         <div class="price has-text-centered light-text">
                             <span>$380.00</span>
@@ -1083,7 +1083,7 @@ $(document).ready(function () {
                         <img class="product-photo" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/photo/demo/products/13.png" alt="">
                     `,
             name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Wood Dresser</span>',
-            sku: "FD-98-4654",
+            sku: 'FD-98-4654',
             unitPrice: `
                         <div class="price has-text-centered light-text">
                             <span>$270.00</span>
@@ -1121,7 +1121,7 @@ $(document).ready(function () {
                         <img class="product-photo" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/photo/demo/products/14.png" alt="">
                     `,
             name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Walnut Chair</span>',
-            sku: "FS-11-5873",
+            sku: 'FS-11-5873',
             unitPrice: `
                         <div class="price has-text-centered light-text">
                             <span>$110.00</span>
@@ -1159,7 +1159,7 @@ $(document).ready(function () {
                         <img class="product-photo" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/photo/demo/products/15.png" alt="">
                     `,
             name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Purple Armchair</span>',
-            sku: "FS-10-1948",
+            sku: 'FS-10-1948',
             unitPrice: `
                         <div class="price has-text-centered light-text">
                             <span>$130.00</span>
@@ -1197,7 +1197,7 @@ $(document).ready(function () {
                         <img class="product-photo" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/photo/demo/products/16.png" alt="">
                     `,
             name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Round Chair</span>',
-            sku: "FS-11-2857",
+            sku: 'FS-11-2857',
             unitPrice: `
                         <div class="price has-text-centered light-text">
                             <span>$60.00</span>
@@ -1235,7 +1235,7 @@ $(document).ready(function () {
                         <img class="product-photo" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/photo/demo/products/17.png" alt="">
                     `,
             name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Modern Cabinet</span>',
-            sku: "FB-58-25253",
+            sku: 'FB-58-25253',
             unitPrice: `
                         <div class="price has-text-centered light-text">
                             <span>$240.00</span>
@@ -1273,7 +1273,7 @@ $(document).ready(function () {
                         <img class="product-photo" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/photo/demo/products/18.png" alt="">
                     `,
             name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Chromed Cabinet</span>',
-            sku: "FB-58-5673",
+            sku: 'FB-58-5673',
             unitPrice: `
                         <div class="price has-text-centered light-text">
                             <span>$350.00</span>
@@ -1311,7 +1311,7 @@ $(document).ready(function () {
                         <img class="product-photo" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/photo/demo/products/19.png" alt="">
                     `,
             name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Modern Lamp</span>',
-            sku: "FL-19-7354",
+            sku: 'FL-19-7354',
             unitPrice: `
                         <div class="price has-text-centered light-text">
                             <span>$50.00</span>
@@ -1349,7 +1349,7 @@ $(document).ready(function () {
                         <img class="product-photo" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/photo/demo/products/20.png" alt="">
                     `,
             name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Lamp Triplets</span>',
-            sku: "FL-18-2846",
+            sku: 'FL-18-2846',
             unitPrice: `
                         <div class="price has-text-centered light-text">
                             <span>$180.00</span>
@@ -1387,7 +1387,7 @@ $(document).ready(function () {
                         <img class="product-photo" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/photo/demo/products/21.png" alt="">
                     `,
             name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Wood Lamp</span>',
-            sku: "FL-19-1947",
+            sku: 'FL-19-1947',
             unitPrice: `
                         <div class="price has-text-centered light-text">
                             <span>$60.00</span>
@@ -1425,7 +1425,7 @@ $(document).ready(function () {
                         <img class="product-photo" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/photo/demo/products/22.png" alt="">
                     `,
             name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Carbone Fiber Lamp</span>',
-            sku: "FL-19-3658",
+            sku: 'FL-19-3658',
             unitPrice: `
                         <div class="price has-text-centered light-text">
                             <span>$220.00</span>
@@ -1463,7 +1463,7 @@ $(document).ready(function () {
                         <img class="product-photo" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/photo/demo/products/23.png" alt="">
                     `,
             name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Multidirectional Spots</span>',
-            sku: "FL-19-1731",
+            sku: 'FL-19-1731',
             unitPrice: `
                         <div class="price has-text-centered light-text">
                             <span>$160.00</span>
@@ -1489,24 +1489,24 @@ $(document).ready(function () {
                     `,
           },
         ],
-      }
-    );
+      },
+    )
 
     setTimeout(function () {
       //Change demo images
-      if (env === "development") {
-        changeDemoImages();
+      if (env === 'development') {
+        changeDemoImages()
       }
 
       //initUserPopovers();
-      adjustDropdowns();
+      adjustDropdowns()
 
-      customizeDatatable();
-    }, 1000);
+      customizeDatatable()
+    }, 1000)
   }
 
-  if ($("#files-datatable").length) {
-    var datatable = new DataTable(document.querySelector("#files-datatable"), {
+  if ($('#files-datatable').length) {
+    var datatable = new DataTable(document.querySelector('#files-datatable'), {
       pageSize: 10,
       sort: {
         checkbox: false,
@@ -1526,37 +1526,37 @@ $(document).ready(function () {
         updated: false,
         action: false,
       },
-      filterText: "Type to Filter... ",
-      filterInputClass: "input",
+      filterText: 'Type to Filter... ',
+      filterInputClass: 'input',
 
       counterText: function (
         currentPage,
         totalPage,
         firstRow,
         lastRow,
-        totalRow
+        totalRow,
       ) {
         return (
-          "Showing " +
+          'Showing ' +
           firstRow +
-          " to " +
+          ' to ' +
           lastRow +
-          " of " +
+          ' of ' +
           totalRow +
-          " items."
-        );
+          ' items.'
+        )
       },
-      counterDivSelector: ".datatable-info span",
-      pagingDivSelector: "#paging-first-datatable",
+      counterDivSelector: '.datatable-info span',
+      pagingDivSelector: '#paging-first-datatable',
       firstPage: false,
       lastPage: false,
       nextPage: '<i class="fas fa-angle-right"></i>',
       prevPage: '<i class="fas fa-angle-left"></i>',
       afterRefresh: function () {
-        if (env === "development") {
-          changeDemoImages();
+        if (env === 'development') {
+          changeDemoImages()
         }
-        initDropdowns();
+        initDropdowns()
       },
       data: [
         {
@@ -1572,7 +1572,7 @@ $(document).ready(function () {
                         <img class="file-icon" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/files/pdf.svg" alt="">
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Company UX Guide</span>',
-          size: "4.7 mb",
+          size: '4.7 mb',
           version: `
                         <div class="verion has-text-centered light-text">
                             <span>1.5.2</span>
@@ -1604,7 +1604,7 @@ $(document).ready(function () {
                         <img class="file-icon" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/files/sheet.svg" alt="">
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Tech Summit Expenses</span>',
-          size: "34 kb",
+          size: '34 kb',
           version: `
                         <div class="verion has-text-centered light-text">
                             <span>1.1.3</span>
@@ -1636,7 +1636,7 @@ $(document).ready(function () {
                         <img class="file-icon" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/files/doc-2.svg" alt="">
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Project Outline</span>',
-          size: "77 kb",
+          size: '77 kb',
           version: `
                         <div class="verion has-text-centered light-text">
                             <span>1.0.0</span>
@@ -1668,7 +1668,7 @@ $(document).ready(function () {
                         <img class="file-icon" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/files/ppt.svg" alt="">
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">UX Presentation</span>',
-          size: "2.3 mb",
+          size: '2.3 mb',
           version: `
                         <div class="verion has-text-centered light-text">
                             <span>1.0.0</span>
@@ -1700,7 +1700,7 @@ $(document).ready(function () {
                         <img class="file-icon" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/files/ai.svg" alt="">
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Website Homepage Redesign</span>',
-          size: "4.8 mb",
+          size: '4.8 mb',
           version: `
                         <div class="verion has-text-centered light-text">
                             <span>1.0.0</span>
@@ -1732,7 +1732,7 @@ $(document).ready(function () {
                         <img class="file-icon" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/files/doc-2.svg" alt="">
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">UX Ramp Up for Interns</span>',
-          size: "1.8 mb",
+          size: '1.8 mb',
           version: `
                         <div class="verion has-text-centered light-text">
                             <span>1.2.0</span>
@@ -1764,7 +1764,7 @@ $(document).ready(function () {
                         <img class="file-icon" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/files/pdf.svg" alt="">
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">2020 Projects Digest</span>',
-          size: "8.9 mb",
+          size: '8.9 mb',
           version: `
                         <div class="verion has-text-centered light-text">
                             <span>1.3.4</span>
@@ -1796,7 +1796,7 @@ $(document).ready(function () {
                         <img class="file-icon" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/files/doc-2.svg" alt="">
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Financial Report - 2020</span>',
-          size: "1.2 mb",
+          size: '1.2 mb',
           version: `
                         <div class="verion has-text-centered light-text">
                             <span>1.0.4</span>
@@ -1828,7 +1828,7 @@ $(document).ready(function () {
                         <img class="file-icon" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/files/sheet.svg" alt="">
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">2020 Supplier Expenses</span>',
-          size: "250 kb",
+          size: '250 kb',
           version: `
                         <div class="verion has-text-centered light-text">
                             <span>1.0.0</span>
@@ -1860,7 +1860,7 @@ $(document).ready(function () {
                         <img class="file-icon" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/files/ai.svg" alt="">
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Website About Page Redesign</span>',
-          size: "3.9 mb",
+          size: '3.9 mb',
           version: `
                         <div class="verion has-text-centered light-text">
                             <span>1.2.1</span>
@@ -1892,7 +1892,7 @@ $(document).ready(function () {
                         <img class="file-icon" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/files/ai.svg" alt="">
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Website Pricing Page Redesign</span>',
-          size: "2.6 mb",
+          size: '2.6 mb',
           version: `
                         <div class="verion has-text-centered light-text">
                             <span>1.1.0</span>
@@ -1924,7 +1924,7 @@ $(document).ready(function () {
                         <img class="file-icon" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/files/doc-2.svg" alt="">
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Financial Report - 2019</span>',
-          size: "1.1 mb",
+          size: '1.1 mb',
           version: `
                         <div class="verion has-text-centered light-text">
                             <span>1.3.2</span>
@@ -1956,7 +1956,7 @@ $(document).ready(function () {
                         <img class="file-icon" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/files/sheet.svg" alt="">
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">2019 Supplier Expenses</span>',
-          size: "34 kb",
+          size: '34 kb',
           version: `
                         <div class="verion has-text-centered light-text">
                             <span>1.2.1</span>
@@ -1988,7 +1988,7 @@ $(document).ready(function () {
                         <img class="file-icon" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/files/ai.svg" alt="">
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Website Contact Page Redesign</span>',
-          size: "5.8 mb",
+          size: '5.8 mb',
           version: `
                         <div class="verion has-text-centered light-text">
                             <span>1.4.1</span>
@@ -2020,7 +2020,7 @@ $(document).ready(function () {
                         <img class="file-icon" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/files/pdf.svg" alt="">
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">Company Brand Book</span>',
-          size: "5.3 mb",
+          size: '5.3 mb',
           version: `
                         <div class="verion has-text-centered light-text">
                             <span>1.6.3</span>
@@ -2052,7 +2052,7 @@ $(document).ready(function () {
                         <img class="file-icon" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/files/pdf.svg" alt="">
                     `,
           name: '<span class="has-dark-text dark-inverted is-font-alt is-weight-600 rem-90">2019 Projects Digest</span>',
-          size: "4.7 mb",
+          size: '4.7 mb',
           version: `
                         <div class="verion has-text-centered light-text">
                             <span>1.2.1</span>
@@ -2072,23 +2072,23 @@ $(document).ready(function () {
           action: `${rowFileDropdown}`,
         },
       ],
-    });
+    })
 
     setTimeout(function () {
       //Change demo images
-      if (env === "development") {
-        changeDemoImages();
+      if (env === 'development') {
+        changeDemoImages()
       }
 
       //initUserPopovers();
-      adjustDropdowns();
+      adjustDropdowns()
 
-      customizeDatatable();
-    }, 1000);
+      customizeDatatable()
+    }, 1000)
   }
 
-  if ($("#empty-datatable").length) {
-    var datatable = new DataTable(document.querySelector("#empty-datatable"), {
+  if ($('#empty-datatable').length) {
+    var datatable = new DataTable(document.querySelector('#empty-datatable'), {
       pageSize: 10,
       sort: {
         checkbox: false,
@@ -2108,50 +2108,50 @@ $(document).ready(function () {
         updated: false,
         action: false,
       },
-      filterText: "Type to Filter... ",
-      filterInputClass: "input",
+      filterText: 'Type to Filter... ',
+      filterInputClass: 'input',
 
       counterText: function (
         currentPage,
         totalPage,
         firstRow,
         lastRow,
-        totalRow
+        totalRow,
       ) {
         return (
-          "Showing " +
+          'Showing ' +
           firstRow +
-          " to " +
+          ' to ' +
           lastRow +
-          " of " +
+          ' of ' +
           totalRow +
-          " items."
-        );
+          ' items.'
+        )
       },
-      counterDivSelector: ".datatable-info span",
-      pagingDivSelector: "#paging-first-datatable",
+      counterDivSelector: '.datatable-info span',
+      pagingDivSelector: '#paging-first-datatable',
       firstPage: false,
       lastPage: false,
       nextPage: '<i class="fas fa-angle-right"></i>',
       prevPage: '<i class="fas fa-angle-left"></i>',
       afterRefresh: function () {
-        if (env === "development") {
-          changeDemoImages();
+        if (env === 'development') {
+          changeDemoImages()
         }
-        initDropdowns();
+        initDropdowns()
       },
       data: [],
-    });
+    })
 
     setTimeout(function () {
       //Change demo images
-      if (env === "development") {
-        changeDemoImages();
+      if (env === 'development') {
+        changeDemoImages()
       }
 
-      adjustDropdowns();
+      adjustDropdowns()
 
-      customizeDatatable();
-    }, 1000);
+      customizeDatatable()
+    }, 1000)
   }
-});
+})

@@ -1,10 +1,10 @@
 /*! banking-2.js | Huro | Css ninja 2020-2021 */
 
-"use strict";
+'use strict'
 
 $(document).ready(function () {
   //Credit Card carousel
-  $(".cards-carousel-inner").slick({
+  $('.cards-carousel-inner').slick({
     dots: true,
     arrows: false,
     infinite: true,
@@ -14,14 +14,14 @@ $(document).ready(function () {
     nextArrow:
       "<div class='slick-custom is-next'><i class='fas fa-angle-right'></i></div>",
     slidesToShow: 2,
-  });
+  })
 
   //Timeline Chart
   var options = {
     chart: {
-      type: "area",
+      type: 'area',
       height: 220,
-      foreColor: "#999",
+      foreColor: '#999',
       stacked: true,
       toolbar: {
         show: false,
@@ -37,32 +37,32 @@ $(document).ready(function () {
     },
     colors: [themeColors.accent, themeColors.orange, themeColors.orange],
     stroke: {
-      curve: "smooth",
+      curve: 'smooth',
       width: 3,
     },
     title: {
-      text: "",
-      align: "left",
+      text: '',
+      align: 'left',
     },
     legend: {
-      position: "top",
+      position: 'top',
     },
     dataLabels: {
       enabled: false,
     },
     series: [
       {
-        name: "Cash Expenses",
+        name: 'Cash Expenses',
         data: generateDayWiseTimeSeries(0, 18),
       },
       {
-        name: "Card Expenses",
+        name: 'Card Expenses',
         data: generateDayWiseTimeSeries(1, 18),
       },
     ],
     markers: {
       size: 0,
-      strokeColor: "#fff",
+      strokeColor: '#fff',
       strokeWidth: 3,
       strokeOpacity: 1,
       fillOpacity: 1,
@@ -71,7 +71,7 @@ $(document).ready(function () {
       },
     },
     xaxis: {
-      type: "datetime",
+      type: 'datetime',
       axisBorder: {
         show: false,
       },
@@ -97,39 +97,36 @@ $(document).ready(function () {
     },
     tooltip: {
       x: {
-        format: "dd MMM yyyy",
+        format: 'dd MMM yyyy',
       },
     },
     legend: {
-      position: "top",
-      horizontalAlign: "left",
+      position: 'top',
+      horizontalAlign: 'left',
     },
     fill: {
-      type: "solid",
+      type: 'solid',
       fillOpacity: 0.7,
     },
-  };
+  }
 
-  var chart = new ApexCharts(
-    document.querySelector("#timeline-chart"),
-    options
-  );
+  var chart = new ApexCharts(document.querySelector('#timeline-chart'), options)
 
-  chart.render();
+  chart.render()
 
   function generateDayWiseTimeSeries(s, count) {
     var values = [
       [4, 3, 10, 9, 29, 19, 25, 9, 12, 7, 19, 5, 13, 9, 17, 2, 7, 5],
       [2, 3, 8, 7, 22, 16, 23, 7, 11, 5, 12, 5, 10, 4, 15, 2, 6, 2],
-    ];
-    var i = 0;
-    var series = [];
-    var x = new Date("11 Nov 2020").getTime();
+    ]
+    var i = 0
+    var series = []
+    var x = new Date('11 Nov 2020').getTime()
     while (i < count) {
-      series.push([x, values[s][i]]);
-      x += 86400000;
-      i++;
+      series.push([x, values[s][i]])
+      x += 86400000
+      i++
     }
-    return series;
+    return series
   }
-});
+})

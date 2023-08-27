@@ -284,7 +284,7 @@ body {
     position: relative;
     top: -1px;
     background: $white;
-    content: "";
+    content: '';
     display: inline-block;
     margin: 0 0.5em 0 0;
     padding: 0;
@@ -296,7 +296,7 @@ body {
     backface-visibility: hidden;
 
     &::after {
-      content: "";
+      content: '';
       display: block;
       transform: scale(0);
       transition: transform 0.2s;
@@ -481,8 +481,8 @@ body {
       top: 48%;
       left: 50%;
       transform: translate(-50%, -50%) scale(0);
-      content: "\f00c";
-      font-family: "Font Awesome\ 5 Free";
+      content: '\f00c';
+      font-family: 'Font Awesome\ 5 Free';
       font-weight: 900;
       font-size: 0.7rem;
     }
@@ -644,8 +644,8 @@ body {
       top: 49%;
       left: 50%;
       transform: translate(-50%, -50%) scale(0);
-      content: "\f111";
-      font-family: "Font Awesome\ 5 Free";
+      content: '\f111';
+      font-family: 'Font Awesome\ 5 Free';
       font-weight: 900;
       font-size: 0.6rem;
     }

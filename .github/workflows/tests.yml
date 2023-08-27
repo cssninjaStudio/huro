@@ -20,3 +20,6 @@ jobs:
 
       - name: Prettier
         run: pnpm test:lint
+
+      - name: Prettier (quickstarter)
+        run: pnpm test:lint:quickstarter

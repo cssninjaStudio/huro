@@ -239,7 +239,8 @@ Responsive styles
         background: $white;
         border-radius: 6px;
         border: 1px solid $fade-grey;
-        box-shadow: 0 8px 8px rgba(10, 10, 10, 0.1),
+        box-shadow:
+          0 8px 8px rgba(10, 10, 10, 0.1),
           0 0 0 1px rgba(10, 10, 10, 0.1);
       }
     }
@@ -390,7 +391,8 @@ Responsive styles
         background: $white;
         border-radius: 6px;
         border: 1px solid $fade-grey;
-        box-shadow: 0 8px 8px rgba(10, 10, 10, 0.1),
+        box-shadow:
+          0 8px 8px rgba(10, 10, 10, 0.1),
           0 0 0 1px rgba(10, 10, 10, 0.1);
       }
     }
@@ -476,8 +478,6 @@ Responsive styles
   }
 }
 
-
-
 /* ==========================================================================
 4. Custom
 ========================================================================== */
@@ -493,16 +493,17 @@ Responsive styles
   }
 }
 
-@media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait) {
-    .webapp-navbar, .webapp-navbar-clean {
-      display: block !important;
-    }
+@media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .webapp-navbar,
+  .webapp-navbar-clean {
+    display: block !important;
+  }
 
-    .page-title {
-      &.is-webapp {
-        display: none !important;
-      }
+  .page-title {
+    &.is-webapp {
+      display: none !important;
     }
+  }
 }
 
 /* ==========================================================================

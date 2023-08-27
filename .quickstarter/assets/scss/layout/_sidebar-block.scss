@@ -19,7 +19,9 @@
   box-shadow: none;
   z-index: 35;
   transform: translateX(-100%);
-  transition: border-radius 0.3s, transform 0.3s;
+  transition:
+    border-radius 0.3s,
+    transform 0.3s;
 
   &.is-active {
     transform: translateX(0);

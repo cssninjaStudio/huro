@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags  -->
@@ -13,13 +13,20 @@
     <link rel="icon" type="image/png" href="assets/img/favicon.png" />
 
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-N8ZNRQ9');</script>
+    <script>
+      ;(function (w, d, s, l, i) {
+        w[l] = w[l] || []
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : ''
+        j.async = true
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+        f.parentNode.insertBefore(j, f)
+      })(window, document, 'script', 'dataLayer', 'GTM-N8ZNRQ9')
+    </script>
     <!-- End Google Tag Manager -->
-    
+
     <!--Core CSS -->
     <link rel="stylesheet" href="{{root}}assets/css/app.css" />
     <link rel="stylesheet" href="{{root}}assets/css/main.css" />
@@ -34,10 +41,7 @@
       rel="stylesheet"
     />
 
-    {{#ifpage 
-      'admin-dashboards-map-1' 
-      'admin-dashboards-map-2'
-    }}
+    {{#ifpage 'admin-dashboards-map-1' 'admin-dashboards-map-2' }}
     <link
       href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css"
       rel="stylesheet"
@@ -51,39 +55,45 @@
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8ZNRQ9"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-N8ZNRQ9"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    
+
     <div id="huro-app" class="app-wrapper">
       <div class="app-overlay"></div>
       <!--Pageloader-->
-      {{> full-pageloader}} 
+      {{> full-pageloader}}
 
       <!--Mobile navbar-->
-      {{> mobile-navbar}} 
+      {{> mobile-navbar}}
 
       <!--Mobile sidebar-->
-      {{> mobile-sidebar-main}} 
+      {{> mobile-sidebar-main}}
 
       <!--Circular menu-->
-      {{> circular-menu}} 
-      
+      {{> circular-menu}}
+
       <!--Sidebar-->
-      {{> sidebar-block-curved}} 
-      
+      {{> sidebar-block-curved}}
+
       <!--Languages panel-->
-      {{> languages-panel}} 
-      
+      {{> languages-panel}}
+
       <!--Activity panel-->
       {{> activity-panel}}
 
       <!--Search panel-->
-      {{> search-panel}} 
-      
+      {{> search-panel}}
+
       <!--Page body-->
-      {{> body}} 
-      
+      {{> body}}
+
       <!--Huro Scripts-->
       {{> scripts}}
     </div>

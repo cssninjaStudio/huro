@@ -9,14 +9,14 @@
 1. CSS Tooltips
 ========================================================================== */
 
-[class*="hint--"] {
+[class*='hint--'] {
   position: relative;
   display: inline-block;
   cursor: pointer;
 }
 
-[class*="hint--"]:before,
-[class*="hint--"]:after {
+[class*='hint--']:before,
+[class*='hint--']:after {
   position: absolute;
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
@@ -33,49 +33,49 @@
   transition-delay: 0ms;
 }
 
-[class*="hint--"]:hover:before,
-[class*="hint--"]:hover:after {
+[class*='hint--']:hover:before,
+[class*='hint--']:hover:after {
   visibility: visible;
   opacity: 1;
 }
 
-[class*="hint--"]:hover:before,
-[class*="hint--"]:hover:after {
+[class*='hint--']:hover:before,
+[class*='hint--']:hover:after {
   -webkit-transition-delay: 100ms;
   -moz-transition-delay: 100ms;
   transition-delay: 100ms;
 }
 
-[class*="hint--"]:before {
-  content: "";
+[class*='hint--']:before {
+  content: '';
   position: absolute;
   background: transparent;
   border: 6px solid transparent;
   z-index: 1000001;
 }
 
-[class*="hint--"]:after {
+[class*='hint--']:after {
   background: #383838;
   color: white;
   padding: 8px 10px;
   font-size: 12px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 12px;
   white-space: nowrap;
 }
 
-[class*="hint--"][aria-label]:after {
+[class*='hint--'][aria-label]:after {
   content: attr(aria-label);
 }
 
-[class*="hint--"][data-hint]:after {
+[class*='hint--'][data-hint]:after {
   content: attr(data-hint);
 }
 
-[aria-label=""]:before,
-[aria-label=""]:after,
-[data-hint=""]:before,
-[data-hint=""]:after {
+[aria-label='']:before,
+[aria-label='']:after,
+[data-hint='']:before,
+[data-hint='']:after {
   display: none !important;
 }
 
@@ -404,13 +404,13 @@
 }
 
 //Defines a basic theme.
-[class*="hint--"] {
+[class*='hint--'] {
   /**
 	 * tooltip body
 	 */
 }
 
-[class*="hint--"]:after {
+[class*='hint--']:after {
   box-shadow: $light-box-shadow;
 }
 
@@ -796,11 +796,17 @@
 
 .hint--bounce:before,
 .hint--bounce:after {
-  -webkit-transition: opacity 0.3s ease, visibility 0.3s ease,
+  -webkit-transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
     -webkit-transform 0.3s cubic-bezier(0.71, 1.7, 0.77, 1.24);
-  -moz-transition: opacity 0.3s ease, visibility 0.3s ease,
+  -moz-transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
     -moz-transform 0.3s cubic-bezier(0.71, 1.7, 0.77, 1.24);
-  transition: opacity 0.3s ease, visibility 0.3s ease,
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
     transform 0.3s cubic-bezier(0.71, 1.7, 0.77, 1.24);
 }
 
@@ -816,7 +822,9 @@
 
 body {
   &.is-dark {
-    .hint--top-left:not(.hint--light):not(.hint--info):not(.hint--success):not(.hint--warning):not(.hint--error):not(.hint--bubble):not(.hint--primary) {
+    .hint--top-left:not(.hint--light):not(.hint--info):not(.hint--success):not(
+        .hint--warning
+      ):not(.hint--error):not(.hint--bubble):not(.hint--primary) {
       &:after {
         background: darken($dark-sidebar, 4%) !important;
       }
@@ -826,7 +834,9 @@ body {
       }
     }
 
-    .hint--top-right:not(.hint--light):not(.hint--info):not(.hint--success):not(.hint--warning):not(.hint--error):not(.hint--bubble):not(.hint--primary) {
+    .hint--top-right:not(.hint--light):not(.hint--info):not(.hint--success):not(
+        .hint--warning
+      ):not(.hint--error):not(.hint--bubble):not(.hint--primary) {
       &:after {
         background: darken($dark-sidebar, 4%) !important;
       }
@@ -836,7 +846,9 @@ body {
       }
     }
 
-    .hint--top:not(.hint--light):not(.hint--info):not(.hint--success):not(.hint--warning):not(.hint--error):not(.hint--bubble):not(.hint--primary) {
+    .hint--top:not(.hint--light):not(.hint--info):not(.hint--success):not(
+        .hint--warning
+      ):not(.hint--error):not(.hint--bubble):not(.hint--primary) {
       &:after {
         background: darken($dark-sidebar, 4%) !important;
       }
@@ -846,7 +858,11 @@ body {
       }
     }
 
-    .hint--bottom-left:not(.hint--light):not(.hint--info):not(.hint--success):not(.hint--warning):not(.hint--error):not(.hint--bubble):not(.hint--primary) {
+    .hint--bottom-left:not(.hint--light):not(.hint--info):not(
+        .hint--success
+      ):not(.hint--warning):not(.hint--error):not(.hint--bubble):not(
+        .hint--primary
+      ) {
       &:after {
         background: darken($dark-sidebar, 4%) !important;
       }
@@ -856,7 +872,11 @@ body {
       }
     }
 
-    .hint--bottom-right:not(.hint--light):not(.hint--info):not(.hint--success):not(.hint--warning):not(.hint--error):not(.hint--bubble):not(.hint--primary) {
+    .hint--bottom-right:not(.hint--light):not(.hint--info):not(
+        .hint--success
+      ):not(.hint--warning):not(.hint--error):not(.hint--bubble):not(
+        .hint--primary
+      ) {
       &:after {
         background: darken($dark-sidebar, 4%) !important;
       }
@@ -866,7 +886,9 @@ body {
       }
     }
 
-    .hint--bottom:not(.hint--light):not(.hint--info):not(.hint--success):not(.hint--warning):not(.hint--error):not(.hint--bubble):not(.hint--primary) {
+    .hint--bottom:not(.hint--light):not(.hint--info):not(.hint--success):not(
+        .hint--warning
+      ):not(.hint--error):not(.hint--bubble):not(.hint--primary) {
       &:after {
         background: darken($dark-sidebar, 4%) !important;
       }
@@ -876,7 +898,9 @@ body {
       }
     }
 
-    .hint--left:not(.hint--light):not(.hint--info):not(.hint--success):not(.hint--warning):not(.hint--error):not(.hint--bubble):not(.hint--primary) {
+    .hint--left:not(.hint--light):not(.hint--info):not(.hint--success):not(
+        .hint--warning
+      ):not(.hint--error):not(.hint--bubble):not(.hint--primary) {
       &:after {
         background: darken($dark-sidebar, 4%) !important;
       }
@@ -886,7 +910,9 @@ body {
       }
     }
 
-    .hint--right:not(.hint--light):not(.hint--info):not(.hint--success):not(.hint--warning):not(.hint--error):not(.hint--bubble):not(.hint--primary) {
+    .hint--right:not(.hint--light):not(.hint--info):not(.hint--success):not(
+        .hint--warning
+      ):not(.hint--error):not(.hint--bubble):not(.hint--primary) {
       &:after {
         background: darken($dark-sidebar, 4%) !important;
       }

@@ -70,7 +70,9 @@
           border-radius: 0.75rem;
           box-shadow: none;
           cursor: pointer;
-          transition: border 0.3s, box-shadow 0.3s;
+          transition:
+            border 0.3s,
+            box-shadow 0.3s;
 
           &.is-active {
             border-color: $primary;

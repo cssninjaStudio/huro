@@ -88,7 +88,7 @@ var {
         left: 0;
         top: 0.9em;
         height: 1px;
-        content: " ";
+        content: ' ';
         border-top: 1px solid $accent-grey;
       }
 
@@ -489,7 +489,7 @@ body {
 
   &:before,
   &:after {
-    content: "";
+    content: '';
     flex: 1;
   }
 

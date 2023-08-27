@@ -7,57 +7,74 @@ title: Wizard
 {{> wizard-v1-navigation}}
 
 <!--Wizard Progress Bar-->
-<progress id="wizard-progress" class="progress is-smaller is-primary wizard-progress" value="10" max="100"></progress>
+<progress
+  id="wizard-progress"
+  class="progress is-smaller is-primary wizard-progress"
+  value="10"
+  max="100"
+></progress>
 
 <!--Main Wrapper-->
 <div class="wizard-v1-wrapper">
+  <div
+    id="wizard-step-0"
+    class="inner-wrapper is-active"
+    data-step-title="Project Type"
+  >
+    <!--src/partials/pages/wizard/wizard-v1/-->
+    {{> wizard-v1-step-0}}
+  </div>
 
-    <div id="wizard-step-0" class="inner-wrapper is-active" data-step-title="Project Type">
-        <!--src/partials/pages/wizard/wizard-v1/-->
-        {{> wizard-v1-step-0}}
+  <div id="wizard-step-1" class="inner-wrapper" data-step-title="Project Info">
+    <!--src/partials/pages/wizard/wizard-v1/-->
+    {{> wizard-v1-step-1}}
+  </div>
+
+  <div
+    id="wizard-step-2"
+    class="inner-wrapper"
+    data-step-title="Project Details"
+  >
+    <!--src/partials/pages/wizard/wizard-v1/-->
+    {{> wizard-v1-step-2}}
+  </div>
+
+  <div id="wizard-step-3" class="inner-wrapper" data-step-title="Project Files">
+    <!--src/partials/pages/wizard/wizard-v1/-->
+    {{> wizard-v1-step-3}}
+  </div>
+
+  <div id="wizard-step-4" class="inner-wrapper" data-step-title="Team Members">
+    <!--src/partials/pages/wizard/wizard-v1/-->
+    {{> wizard-v1-step-4}}
+  </div>
+
+  <div id="wizard-step-5" class="inner-wrapper" data-step-title="Project Tools">
+    <!--src/partials/pages/wizard/wizard-v1/-->
+    {{> wizard-v1-step-5}}
+  </div>
+
+  <div id="wizard-step-6" class="inner-wrapper" data-step-title="Preview">
+    <!--src/partials/pages/wizard/wizard-v1/-->
+    {{> wizard-v1-step-6}}
+  </div>
+
+  <div id="wizard-step-7" class="inner-wrapper" data-step-title="Finish">
+    <!--src/partials/pages/wizard/wizard-v1/-->
+    {{> wizard-v1-step-7}}
+  </div>
+
+  <!--Wizard Navigation Buttons-->
+  <div class="wizard-buttons">
+    <div class="wizard-buttons-inner">
+      <button class="button h-button is-light is-bold wizard-button-previous">
+        Previous
+      </button>
+      <button
+        class="button h-button is-primary is-bold is-elevated wizard-button-next"
+      >
+        Next
+      </button>
     </div>
-
-    <div id="wizard-step-1" class="inner-wrapper" data-step-title="Project Info">
-         <!--src/partials/pages/wizard/wizard-v1/-->
-        {{> wizard-v1-step-1}}
-    </div>
-
-    <div id="wizard-step-2" class="inner-wrapper" data-step-title="Project Details">
-         <!--src/partials/pages/wizard/wizard-v1/-->
-        {{> wizard-v1-step-2}}
-    </div>
-
-    <div id="wizard-step-3" class="inner-wrapper" data-step-title="Project Files">
-         <!--src/partials/pages/wizard/wizard-v1/-->
-        {{> wizard-v1-step-3}}
-    </div>
-
-    <div id="wizard-step-4" class="inner-wrapper" data-step-title="Team Members">
-         <!--src/partials/pages/wizard/wizard-v1/-->
-        {{> wizard-v1-step-4}}
-    </div>
-
-    <div id="wizard-step-5" class="inner-wrapper" data-step-title="Project Tools">
-         <!--src/partials/pages/wizard/wizard-v1/-->
-        {{> wizard-v1-step-5}}
-    </div>
-
-    <div id="wizard-step-6" class="inner-wrapper" data-step-title="Preview">
-         <!--src/partials/pages/wizard/wizard-v1/-->
-        {{> wizard-v1-step-6}}
-    </div>
-
-    <div id="wizard-step-7" class="inner-wrapper" data-step-title="Finish">
-        <!--src/partials/pages/wizard/wizard-v1/-->
-       {{> wizard-v1-step-7}}
-   </div>
-
-    <!--Wizard Navigation Buttons-->
-    <div class="wizard-buttons">
-        <div class="wizard-buttons-inner">
-            <button class="button h-button is-light is-bold wizard-button-previous">Previous</button>
-            <button class="button h-button is-primary is-bold is-elevated wizard-button-next">Next</button>
-        </div>
-    </div>
-
+  </div>
 </div>

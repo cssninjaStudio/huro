@@ -1,18 +1,18 @@
 /*! lifestyle-3.js | Huro | Css ninja 2020-2021 */
 
-"use strict";
+'use strict'
 
 $(document).ready(function () {
   //Overall Condition Chart
   var overallChartOptions = {
     series: [
       {
-        name: "Condition (pt)",
+        name: 'Condition (pt)',
         data: [31, 40, 28, 51, 42, 109, 100],
       },
     ],
     chart: {
-      type: "area",
+      type: 'area',
       height: 280,
       offsetX: 20,
       zoom: {
@@ -30,80 +30,80 @@ $(document).ready(function () {
     },
     stroke: {
       width: [2, 2, 2],
-      curve: "straight",
+      curve: 'straight',
     },
     colors: [themeColors.accent],
-    labels: ["Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    labels: ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     yaxis: {
       opposite: true,
     },
     legend: {
-      horizontalAlign: "left",
+      horizontalAlign: 'left',
     },
-  };
+  }
 
   var overallChart = new ApexCharts(
-    document.querySelector("#overall-chart"),
-    overallChartOptions
-  );
-  overallChart.render();
+    document.querySelector('#overall-chart'),
+    overallChartOptions,
+  )
+  overallChart.render()
 
   //Energy Chart
   function generateDayWiseTimeSeries(baseval, count, yrange) {
-    var i = 0;
-    var series = [];
+    var i = 0
+    var series = []
     while (i < count) {
       var y =
-        Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
+        Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min
 
-      series.push([baseval, y]);
-      baseval += 86400000;
-      i++;
+      series.push([baseval, y])
+      baseval += 86400000
+      i++
     }
-    return series;
+    return series
   }
 
   var energyChartOptions = {
     series: [
       {
-        name: "Tonic",
+        name: 'Tonic',
         data: generateDayWiseTimeSeries(
-          new Date("Oct 11 2020 GMT").getTime(),
+          new Date('Oct 11 2020 GMT').getTime(),
           20,
           {
             min: 10,
             max: 60,
-          }
+          },
         ),
       },
       {
-        name: "Tantra",
+        name: 'Tantra',
         data: generateDayWiseTimeSeries(
-          new Date("Oct 11 2020 GMT").getTime(),
+          new Date('Oct 11 2020 GMT').getTime(),
           20,
           {
             min: 10,
             max: 60,
-          }
+          },
         ),
       },
       {
-        name: "Vital",
+        name: 'Vital',
         data: generateDayWiseTimeSeries(
-          new Date("Oct 11 2020 GMT").getTime(),
+          new Date('Oct 11 2020 GMT').getTime(),
           30,
           {
             min: 10,
             max: 60,
-          }
+          },
         ),
       },
     ],
     chart: {
       height: 280,
-      type: "scatter",
+      type: 'scatter',
       zoom: {
-        type: "xy",
+        type: 'xy',
       },
       toolbar: {
         show: false,
@@ -129,7 +129,7 @@ $(document).ready(function () {
     },
     xaxis: {
       show: false,
-      type: "datetime",
+      type: 'datetime',
     },
     yaxis: {
       show: false,
@@ -137,28 +137,28 @@ $(document).ready(function () {
     },
     legend: {
       show: false,
-      position: "top",
-      horizontalAlign: "center",
+      position: 'top',
+      horizontalAlign: 'center',
     },
-  };
+  }
 
   var energyChart = new ApexCharts(
-    document.querySelector("#energy-chart"),
-    energyChartOptions
-  );
-  energyChart.render();
+    document.querySelector('#energy-chart'),
+    energyChartOptions,
+  )
+  energyChart.render()
 
   //Oxygenation Chart
   var oxygenChartOptions = {
     series: [
       {
-        name: "Variation (pt)",
+        name: 'Variation (pt)',
         data: [23, 26, 10, 7, 11, 18, 16],
       },
     ],
     chart: {
       height: 280,
-      type: "bar",
+      type: 'bar',
       toolbar: {
         show: false,
       },
@@ -166,27 +166,27 @@ $(document).ready(function () {
     plotOptions: {
       bar: {
         dataLabels: {
-          position: "top", // top, center, bottom
+          position: 'top', // top, center, bottom
         },
       },
     },
     dataLabels: {
       enabled: true,
       formatter: function (val) {
-        return val + "%";
+        return val + '%'
       },
       offsetY: -20,
       style: {
-        fontSize: "12px",
-        colors: ["#304758"],
+        fontSize: '12px',
+        colors: ['#304758'],
       },
     },
     grid: {
       show: false,
     },
     xaxis: {
-      categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-      position: "top",
+      categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      position: 'top',
       axisBorder: {
         show: false,
       },
@@ -195,10 +195,10 @@ $(document).ready(function () {
       },
       crosshairs: {
         fill: {
-          type: "gradient",
+          type: 'gradient',
           gradient: {
-            colorFrom: "#D8E3F0",
-            colorTo: "#BED1E6",
+            colorFrom: '#D8E3F0',
+            colorTo: '#BED1E6',
             stops: [0, 100],
             opacityFrom: 0.4,
             opacityTo: 0.5,
@@ -219,29 +219,29 @@ $(document).ready(function () {
       labels: {
         show: false,
         formatter: function (val) {
-          return val + "%";
+          return val + '%'
         },
       },
     },
     colors: [themeColors.accent],
-  };
+  }
 
   var oxygenChart = new ApexCharts(
-    document.querySelector("#oxygen-chart"),
-    oxygenChartOptions
-  );
-  oxygenChart.render();
+    document.querySelector('#oxygen-chart'),
+    oxygenChartOptions,
+  )
+  oxygenChart.render()
 
   //Overall Progress Chart
   var progressChartOptions = {
     series: [
       {
-        name: "Progress (pt)",
+        name: 'Progress (pt)',
         data: [31, 40, 28, 51, 42, 109, 100],
       },
     ],
     chart: {
-      type: "area",
+      type: 'area',
       height: 280,
       offsetX: 20,
       zoom: {
@@ -259,21 +259,21 @@ $(document).ready(function () {
     },
     stroke: {
       width: [2, 2, 2],
-      curve: "smooth",
+      curve: 'smooth',
     },
     colors: [themeColors.accent],
-    labels: ["Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    labels: ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     yaxis: {
       opposite: true,
     },
     legend: {
-      horizontalAlign: "left",
+      horizontalAlign: 'left',
     },
-  };
+  }
 
   var progressChart = new ApexCharts(
-    document.querySelector("#progress-chart"),
-    progressChartOptions
-  );
-  progressChart.render();
-});
+    document.querySelector('#progress-chart'),
+    progressChartOptions,
+  )
+  progressChart.render()
+})

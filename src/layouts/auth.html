@@ -1,49 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <!-- Required meta tags  -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <head>
+    <!-- Required meta tags  -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-        <title> Huro :: {{title}}</title>
-        <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+    <title>Huro :: {{title}}</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" />
 
-        <!-- Google Tag Manager -->
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-N8ZNRQ9');</script>
-        <!-- End Google Tag Manager -->
+    <!-- Google Tag Manager -->
+    <script>
+      ;(function (w, d, s, l, i) {
+        w[l] = w[l] || []
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : ''
+        j.async = true
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+        f.parentNode.insertBefore(j, f)
+      })(window, document, 'script', 'dataLayer', 'GTM-N8ZNRQ9')
+    </script>
+    <!-- End Google Tag Manager -->
 
-        <!--Core CSS -->
-        <link rel="stylesheet" href="{{root}}assets/css/app.css">
-        <link rel="stylesheet" href="{{root}}assets/css/main.css">
+    <!--Core CSS -->
+    <link rel="stylesheet" href="{{root}}assets/css/app.css" />
+    <link rel="stylesheet" href="{{root}}assets/css/main.css" />
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,700"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-N8ZNRQ9"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-    </head>
-    <body>
-        <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8ZNRQ9"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
+    <div id="huro-app" class="app-wrapper">
+      <!--Full pageloader-->
+      {{> full-pageloader}}
 
-        <div id="huro-app" class="app-wrapper">
+      <div class="auth-wrapper">
+        <!--Page body-->
+        {{> body}}
+      </div>
 
-            <!--Full pageloader-->
-            {{> full-pageloader}}
-
-            <div class="auth-wrapper">
-                <!--Page body-->
-                {{> body}}
-            </div>
-
-            <!--Huro Scripts-->
-            {{> auth-scripts}}
-        </div>
-    </body>
+      <!--Huro Scripts-->
+      {{> auth-scripts}}
+    </div>
+  </body>
 </html>

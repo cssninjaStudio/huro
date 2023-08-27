@@ -124,11 +124,11 @@ $colors: (
 }
 
 .text {
-  @include color-modifiers($attribute: "color", $prefix: "-");
+  @include color-modifiers($attribute: 'color', $prefix: '-');
 }
 
 .bg {
-  @include color-modifiers($attribute: "background", $prefix: "-");
+  @include color-modifiers($attribute: 'background', $prefix: '-');
 }
 
 /* ==========================================================================
