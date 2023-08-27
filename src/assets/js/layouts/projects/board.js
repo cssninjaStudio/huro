@@ -6,7 +6,7 @@ Project Board JS
 
 'use strict'
 
-$(document).ready(function () {
+$(function () {
   if ($('#project-board').length) {
     /* ============================================================================
             1. Drag and Drop

@@ -2,7 +2,7 @@
 
 'use strict'
 
-$(document).ready(function () {
+$(function () {
   //task completion chart
   var completionOptions = {
     series: [

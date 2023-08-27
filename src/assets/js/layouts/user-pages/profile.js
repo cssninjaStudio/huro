@@ -6,7 +6,7 @@ Tile Grids JS
 
 'use strict'
 
-$(document).ready(function () {
+$(function () {
   //User profile
   if ($('#user-profile').length) {
     $('.languages-donut').peity('donut', {

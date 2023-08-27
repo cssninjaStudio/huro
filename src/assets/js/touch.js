@@ -6,7 +6,7 @@ Touch functions using Hammer.js
 
 'use strict'
 
-$(document).ready(function () {
+$(function () {
   ;(function (factory) {
     if (typeof define === 'function' && define.amd) {
       define(['jquery', 'hammerjs'], factory)

@@ -2,7 +2,7 @@
 
 'use strict'
 
-$(document).ready(function () {
+$(function () {
   //Credit Card carousel
   $('.cards-carousel-inner').slick({
     dots: true,

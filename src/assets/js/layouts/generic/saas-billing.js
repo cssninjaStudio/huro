@@ -324,7 +324,7 @@ window.onload = function () {
   })
 }
 
-$(document).ready(function () {
+$(function () {
   //SaaS Billing
   if ($('#app-billing').length) {
     $('.plans .plan input').on('change', function () {

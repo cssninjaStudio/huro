@@ -2,7 +2,7 @@
 
 'use strict'
 
-$(document).ready(function () {
+$(function () {
   //DEMO SYNTAX HIGHLIGHTING
   $.when(
     $('pre code').each(function (i, block) {

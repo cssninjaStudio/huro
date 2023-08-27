@@ -8,7 +8,7 @@ Demo Components initialization file
 
 var notyf
 
-$(document).ready(function () {
+$(function () {
   //Notyf Toasts Configuration
   notyf = new Notyf({
     duration: 2000,

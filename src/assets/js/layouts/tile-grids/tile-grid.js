@@ -6,7 +6,7 @@ Tile Grids JS
 
 'use strict'
 
-$(document).ready(function () {
+$(function () {
   //Tile Grid V1
   if ($('.tile-grid-v1').length) {
     //Webapp Infinite scroll demo implementation

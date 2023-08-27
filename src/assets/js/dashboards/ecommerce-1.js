@@ -2,7 +2,7 @@
 
 'use strict'
 
-$(document).ready(function () {
+$(function () {
   window.Apex = {
     dataLabels: {
       enabled: false,

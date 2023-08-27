@@ -21,7 +21,7 @@ function disableSearchWhenTableEmpty() {
   })
 }
 
-$(document).ready(function () {
+$(function () {
   //Flex List V1
   if ($('.flex-list-v1').length) {
     //Webapp Infinite scroll demo implementation

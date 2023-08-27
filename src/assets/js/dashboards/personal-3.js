@@ -2,7 +2,7 @@
 
 'use strict'
 
-$(document).ready(function () {
+$(function () {
   //Gauge chart
   var welcomeGauge = bb.generate({
     data: {

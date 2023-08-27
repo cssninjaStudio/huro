@@ -6,7 +6,7 @@ User Grids JS
 
 'use strict'
 
-$(document).ready(function () {
+$(function () {
   //User Grid V1 and V2
   if ($('.user-grid-v1, .user-grid-v2').length) {
     //Webapp Infinite scroll demo implementation

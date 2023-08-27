@@ -2,7 +2,7 @@
 
 'use strict'
 
-$(document).ready(function () {
+$(function () {
   //Sidebar menu
   $('.inbox-sidebar .inbox-menu li a').on('click', function () {
     $('.inbox-sidebar .inbox-menu li a').removeClass('is-active')

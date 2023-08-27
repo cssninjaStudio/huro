@@ -2,7 +2,7 @@
 
 'use strict'
 
-$(document).ready(function () {
+$(function () {
   if ($('#apex-chart-1').length) {
     var options = {
       series: [

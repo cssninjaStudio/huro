@@ -2,7 +2,7 @@
 
 'use strict'
 
-$(document).ready(function () {
+$(function () {
   //Revenue Chart
   var revenueOptions = {
     series: [

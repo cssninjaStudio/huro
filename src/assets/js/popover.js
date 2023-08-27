@@ -6,7 +6,7 @@ Ajax User Popovers
 
 'use strict'
 
-$(document).ready(function () {
+$(function () {
   function initTextPopovers() {
     $('*[data-toggle="popover"]').each(function () {
       var mode = $(this).attr('data-pop-mode')

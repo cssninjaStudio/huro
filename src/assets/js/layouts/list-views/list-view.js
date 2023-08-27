@@ -21,7 +21,7 @@ function disableSearchWhentListEmpty() {
   })
 }
 
-$(document).ready(function () {
+$(function () {
   //List View V1
   if ($('.list-view-v1').length) {
     //Webapp Infinite scroll demo implementation

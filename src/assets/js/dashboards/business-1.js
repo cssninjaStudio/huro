@@ -2,7 +2,7 @@
 
 'use strict'
 
-$(document).ready(function () {
+$(function () {
   if ($('#app-flights').length) {
     //Datepickers
     var datepickers = document.querySelectorAll('.flight-datepicker')

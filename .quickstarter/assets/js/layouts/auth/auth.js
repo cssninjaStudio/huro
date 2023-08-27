@@ -9,7 +9,7 @@ Auth pages js
 //Init Pageloader
 initPageLoader()
 
-$(document).ready(function () {
+$(function () {
   if (env === 'development') {
     //Change demo images
     changeDemoImages()

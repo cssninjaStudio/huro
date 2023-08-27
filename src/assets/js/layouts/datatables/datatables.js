@@ -1,6 +1,6 @@
 'use strict'
 
-$(document).ready(function () {
+$(function () {
   var moreIcon = feather.icons['more-horizontal'].toSvg()
 
   var rowActionDropdown = `

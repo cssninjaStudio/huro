@@ -6,7 +6,7 @@ Landing page js
 
 'use strict'
 
-$(document).ready(function () {
+$(function () {
   const el = document.querySelectorAll('[data-lazy-load]')
   const observer = lozad(el, {
     loaded: function (el) {

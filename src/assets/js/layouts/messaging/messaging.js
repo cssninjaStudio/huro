@@ -6,7 +6,7 @@ Messaging page functions
 
 'use strict'
 
-$(document).ready(function () {
+$(function () {
   //Hide chat side
   $('#hide-chat-side').on('click', function () {
     $('.chat-body-wrap, .message-field-wrapper').addClass('side-collapsed')

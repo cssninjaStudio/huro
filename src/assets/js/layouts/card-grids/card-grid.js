@@ -6,7 +6,7 @@ Card Grids JS
 
 'use strict'
 
-$(document).ready(function () {
+$(function () {
   //Card Grid V1
   if ($('.card-grid-v1, .card-grid-v2, .card-grid-v3, .card-grid-v4').length) {
     //Webapp Infinite scroll demo implementation

@@ -18,7 +18,7 @@ function initCharts() {
   })
 }
 
-$(document).ready(function () {
+$(function () {
   if ($('#app-home')) {
     //Init charts
     initCharts()

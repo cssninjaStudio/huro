@@ -2,7 +2,7 @@
 
 'use strict'
 
-$(document).ready(function () {
+$(function () {
   if ($('#form-layout-4').length) {
     //Init datepickers
     var datepickers = document.querySelectorAll('.form-datepicker')

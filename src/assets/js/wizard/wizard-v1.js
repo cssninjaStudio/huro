@@ -267,7 +267,7 @@ function addMember(MemberId, MemberPhoto, MemberName) {
   }
 }
 
-$(document).ready(function () {
+$(function () {
   //Step 1 card buttons
   $('.type-select-button').on('click', function () {
     var $this = $(this)

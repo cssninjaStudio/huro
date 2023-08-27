@@ -2,7 +2,7 @@
 
 'use strict'
 
-$(document).ready(function () {
+$(function () {
   var parentwidth = $('.fixed-parent').width()
   $('.fixed-child').width(parentwidth)
   $(window).on('resize', function () {

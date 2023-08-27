@@ -2,7 +2,7 @@
 
 'use strict'
 
-$(document).ready(function () {
+$(function () {
   //Line chart
   if ($('#billboardjs-chart-1').length) {
     var chart = bb.generate({

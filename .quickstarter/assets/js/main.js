@@ -9,7 +9,7 @@ Main initialization file
 //Init Pageloader
 initPageLoader()
 
-$(document).ready(function () {
+$(function () {
   //Feather icons
   feather.replace()
 

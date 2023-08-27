@@ -2,7 +2,7 @@
 
 'use strict'
 
-$(document).ready(function () {
+$(function () {
   //Overall Condition Chart
   var overallChartOptions = {
     series: [

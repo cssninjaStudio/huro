@@ -6,7 +6,7 @@ Messaging Webapp functions
 
 'use strict'
 
-$(document).ready(function () {
+$(function () {
   //Scroll chat to bottom on load
   var scrollChat = $('.chat-area .simplebar-content-wrapper')
 
