@@ -11,7 +11,7 @@ import { deleteSync } from 'del'
 import panini from 'panini'
 import uglify from 'gulp-uglify-es'
 import sourcemaps from 'gulp-sourcemaps'
-import imagemin from 'gulp-imagemin'
+import imagemin, { gifsicle, mozjpeg, optipng, svgo } from 'gulp-imagemin'
 import prettyHtml from 'gulp-pretty-html'
 import newer from 'gulp-newer'
 import autoprefixer from 'gulp-autoprefixer'
@@ -167,10 +167,10 @@ function minifyImages() {
   return src(`${srcDir}assets/img/**/*.+(png|jpg|jpeg|gif|svg|mp4|webm|ogg)`)
     .pipe(newer('dist/assets/img/'))
     .pipe(imagemin([
-      imagemin.gifsicle({ optimizationLevel: 3, interlaced: true }),
-      imagemin.mozjpeg({ quality: 85 }),
-      imagemin.optipng({ optimizationLevel: 3 }),
-      imagemin.svgo()
+      gifsicle({ optimizationLevel: 3, interlaced: true }),
+      mozjpeg({ quality: 85 }),
+      optipng({ optimizationLevel: 3 }),
+      svgo()
     ], {
       verbose: true
     }))
