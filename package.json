@@ -15,9 +15,9 @@
   "scripts": {
     "dev": "gulp dev",
     "build": "gulp build",
+    "preview": "serve -p 5000 dist",
     "lint": "prettier --write \"./src/**/*.(js|html|scss|md)\"",
     "test:lint": "prettier --check \"./src/**/*.(js|html|scss|md)\"",
-    
     "dev:quickstarter": "SRC_DIR=.quickstarter/ gulp dev",
     "build:quickstarter": "SRC_DIR=.quickstarter/ gulp build",
     "lint:quickstarter": "prettier --write \"./.quickstarter/**/*.(js|html|scss|md)\"",
@@ -52,7 +52,8 @@
     "panini": "1.7.2",
     "prettier": "3.0.2",
     "run-sequence": "2.2.1",
-    "sass": "1.66.1"
+    "sass": "1.66.1",
+    "serve": "14.2.1"
   },
   "dependencies": {
     "alertifyjs": "1.13.1",
