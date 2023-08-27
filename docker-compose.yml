@@ -17,6 +17,8 @@ services:
       traefik.http.routers.huro-demo-https.tls: true
       traefik.http.routers.huro-demo-https.entrypoints: "https"
       traefik.http.routers.huro-demo-https.tls.certresolver: "http"
+      traefik.http.routers.huro-demo-https.middlewares: huro-demo-middleware@docker
+      traefik.http.middlewares.huro-demo-middleware.compress: true
 
 networks:
   cssninja-services:
