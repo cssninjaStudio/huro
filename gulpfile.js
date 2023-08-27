@@ -1,37 +1,39 @@
-'use strict';
-const { src, dest, watch, series } = require('gulp');
-const log = require('fancy-log');
-const colors = require('ansi-colors');
-const browserSync = require('browser-sync').create();
-const sass = require('gulp-sass')(require('sass'));
-const bourbon = require('node-bourbon').includePaths;
-const rename = require('gulp-rename');
-const concat = require('gulp-concat');
-const replace = require('gulp-replace');
-const del = require('del');
-const panini = require('panini');
-const uglify = require('gulp-uglify-es').default;
-const sourcemaps = require('gulp-sourcemaps');
-const imagemin = require('gulp-imagemin');
-const prettyHtml = require('gulp-pretty-html');
-const sassLint = require('gulp-sass-lint');
-const htmllint = require('gulp-htmllint');
-const jshint = require('gulp-jshint');
-const newer = require('gulp-newer');
-const autoprefixer = require('gulp-autoprefixer');
-const accessibility = require('gulp-accessibility');
-const babel = require('gulp-babel');
-const nodepath = 'node_modules/';
-const packageJson = require('./package.json')
+import gulp from 'gulp'
 
-sass.compiler = require('sass');
+import sassCompiler from 'sass'
+import gulpSass from 'gulp-sass'
+import bc from 'browser-sync'
+import bourbon from 'node-bourbon'
+import rename from 'gulp-rename'
+import concat from 'gulp-concat'
+import replace from 'gulp-replace'
+import { deleteSync } from 'del'
+import panini from 'panini'
+import uglify from 'gulp-uglify-es'
+import sourcemaps from 'gulp-sourcemaps'
+import imagemin from 'gulp-imagemin'
+import prettyHtml from 'gulp-pretty-html'
+import newer from 'gulp-newer'
+import autoprefixer from 'gulp-autoprefixer'
+import gulpAccessibility from 'gulp-accessibility'
+import babel from 'gulp-babel'
+import packageJson from './package.json' assert { type: 'json' }
+
+const { src, dest, watch, series } = gulp
+const browserSync = bc.create()
+const sass = gulpSass(sassCompiler)
+sass.compiler = sassCompiler
+
+const nodepath = 'node_modules/'
+
+const srcDir = process.env.SRC_DIR || "src/"
 
 // ------------ SETUP TASKS -------------
 // Copy Bulma filed into Bulma development folder
 function setupBulma() {
   console.log('---------------COPYING BULMA FILES---------------');
   return src([nodepath + 'bulma/*.sass', nodepath + 'bulma/**/*.sass'])
-    .pipe(dest('src/assets/sass/'));
+    .pipe(dest(`${srcDir}assets/sass/`));
 }
 
 // ------------ DEVELOPMENT TASKS -------------
@@ -39,12 +41,12 @@ function setupBulma() {
 // COMPILE SCSS INTO CSS
 function compileSCSS() {
   console.log('---------------COMPILING SCSS---------------');
-  return src(['src/assets/scss/main.scss'])
+  return src([`${srcDir}assets/scss/main.scss`])
     .pipe(sass({
       outputStyle: 'compressed',
       sourceComments: true,
       sourceMap: true,
-      includePaths: bourbon
+      includePaths: bourbon.includePaths
     }).on('error', sass.logError))
     .pipe(autoprefixer('last 2 versions'))
     .pipe(dest('dist/assets/css'))
@@ -55,18 +57,18 @@ function compileSCSS() {
 function compileHTML() {
   console.log('---------------COMPILING HTML WITH PANINI---------------');
   panini.refresh();
-  return src('src/pages/**/*.html')
+  return src(`${srcDir}pages/**/*.html`)
     .pipe(replace('{{PACKAGE_VERSION}}', packageJson.version))
     .pipe(panini({
-      root: 'src/pages/',
-      layouts: 'src/layouts/',
+      root: `${srcDir}pages/`,
+      layouts: `${srcDir}layouts/`,
       /*pageLayouts: {
         //All pages inside src/pages/blog will use the blog.html layout
         'blog': 'blog'
       }*/
-      partials: 'src/partials/',
-      helpers: 'src/helpers/',
-      data: 'src/data/'
+      partials: `${srcDir}partials/`,
+      helpers: `${srcDir}helpers/`,
+      data: `${srcDir}data/`,
     }))
     .pipe(dest('dist'))
     .pipe(browserSync.stream());
@@ -76,54 +78,56 @@ function compileHTML() {
 function compileJS() {
   console.log('---------------COMPILE CUSTOM JS---------------');
   return src([
-    'src/assets/js/functions.js',
-    'src/assets/js/main.js',
-    'src/assets/js/popover.js',
-    'src/assets/js/touch.js',
-    'src/assets/js/widgets.js',
-    'src/assets/js/_demo/landing.js',
-    'src/assets/js/_demo/components.js',
-    'src/assets/js/_demo/syntax.js',
-    'src/assets/js/layouts/auth/auth.js',
-    'src/assets/js/dashboards/personal-1.js',
-    'src/assets/js/dashboards/personal-2.js',
-    'src/assets/js/dashboards/personal-3.js',
-    'src/assets/js/dashboards/finance-1.js',
-    'src/assets/js/dashboards/finance-2.js',
-    'src/assets/js/dashboards/finance-3.js',
-    'src/assets/js/dashboards/banking-1.js',
-    'src/assets/js/dashboards/banking-2.js',
-    'src/assets/js/dashboards/banking-3.js',
-    'src/assets/js/dashboards/business-1.js',
-    'src/assets/js/dashboards/business-2.js',
-    'src/assets/js/dashboards/lifestyle-1.js',
-    'src/assets/js/dashboards/lifestyle-2.js',
-    'src/assets/js/dashboards/lifestyle-3.js',
-    'src/assets/js/dashboards/ecommerce-1.js',
-    'src/assets/js/dashboards/apps-1.js',
-    'src/assets/js/dashboards/apps-2.js',
-    'src/assets/js/dashboards/map-1.js',
-    'src/assets/js/dashboards/charts/apex.js',
-    'src/assets/js/dashboards/charts/billboardjs.js',
-    'src/assets/js/dashboards/charts/apex-data.js',
-    'src/assets/js/forms/forms.js',
-    'src/assets/js/wizard/wizard-v1.js',
-    'src/assets/js/wizard/wizard-dropzone.js',
-    'src/assets/js/layouts/list-views/list-view.js',
-    'src/assets/js/layouts/flex-lists/flex-list.js',
-    'src/assets/js/layouts/datatables/datatables.js',
-    'src/assets/js/layouts/user-grids/user-grid.js',
-    'src/assets/js/layouts/card-grids/card-grid.js',
-    'src/assets/js/layouts/tile-grids/tile-grid.js',
-    'src/assets/js/layouts/user-pages/profile.js',
-    'src/assets/js/layouts/projects/project.js',
-    'src/assets/js/layouts/projects/board.js',
-    'src/assets/js/layouts/generic/saas-billing.js',
-    'src/assets/js/layouts/messaging/messaging.js',
-    'src/assets/js/layouts/messaging/messaging-webapp.js',
-  ])
+    `${srcDir}assets/js/functions.js`,
+    `${srcDir}assets/js/main.js`,
+    `${srcDir}assets/js/popover.js`,
+    `${srcDir}assets/js/touch.js`,
+    `${srcDir}assets/js/widgets.js`,
+    `${srcDir}assets/js/_demo/landing.js`,
+    `${srcDir}assets/js/_demo/components.js`,
+    `${srcDir}assets/js/_demo/syntax.js`,
+    `${srcDir}assets/js/layouts/auth/auth.js`,
+    `${srcDir}assets/js/dashboards/personal-1.js`,
+    `${srcDir}assets/js/dashboards/personal-2.js`,
+    `${srcDir}assets/js/dashboards/personal-3.js`,
+    `${srcDir}assets/js/dashboards/finance-1.js`,
+    `${srcDir}assets/js/dashboards/finance-2.js`,
+    `${srcDir}assets/js/dashboards/finance-3.js`,
+    `${srcDir}assets/js/dashboards/banking-1.js`,
+    `${srcDir}assets/js/dashboards/banking-2.js`,
+    `${srcDir}assets/js/dashboards/banking-3.js`,
+    `${srcDir}assets/js/dashboards/business-1.js`,
+    `${srcDir}assets/js/dashboards/business-2.js`,
+    `${srcDir}assets/js/dashboards/lifestyle-1.js`,
+    `${srcDir}assets/js/dashboards/lifestyle-2.js`,
+    `${srcDir}assets/js/dashboards/lifestyle-3.js`,
+    `${srcDir}assets/js/dashboards/ecommerce-1.js`,
+    `${srcDir}assets/js/dashboards/apps-1.js`,
+    `${srcDir}assets/js/dashboards/apps-2.js`,
+    `${srcDir}assets/js/dashboards/map-1.js`,
+    `${srcDir}assets/js/dashboards/charts/apex.js`,
+    `${srcDir}assets/js/dashboards/charts/billboardjs.js`,
+    `${srcDir}assets/js/dashboards/charts/apex-data.js`,
+    `${srcDir}assets/js/forms/forms.js`,
+    `${srcDir}assets/js/wizard/wizard-v1.js`,
+    `${srcDir}assets/js/wizard/wizard-dropzone.js`,
+    `${srcDir}assets/js/layouts/list-views/list-view.js`,
+    `${srcDir}assets/js/layouts/flex-lists/flex-list.js`,
+    `${srcDir}assets/js/layouts/datatables/datatables.js`,
+    `${srcDir}assets/js/layouts/user-grids/user-grid.js`,
+    `${srcDir}assets/js/layouts/card-grids/card-grid.js`,
+    `${srcDir}assets/js/layouts/tile-grids/tile-grid.js`,
+    `${srcDir}assets/js/layouts/user-pages/profile.js`,
+    `${srcDir}assets/js/layouts/projects/project.js`,
+    `${srcDir}assets/js/layouts/projects/board.js`,
+    `${srcDir}assets/js/layouts/generic/saas-billing.js`,
+    `${srcDir}assets/js/layouts/messaging/messaging.js`,
+    `${srcDir}assets/js/layouts/messaging/messaging-webapp.js`,
+  ], { 
+    allowEmpty: true,
+  })
     .pipe(babel())
-    .pipe(uglify())
+    .pipe(uglify.default())
     .pipe(dest('dist/assets/js/'))
     .pipe(browserSync.stream());
 }
@@ -135,48 +139,12 @@ function resetPages(done) {
   done();
 }
 
-// SASS LINT
-function scssLint() {
-  console.log('---------------SASS LINTING---------------');
-  return src('src/assets/scss/**/*.scss')
-    .pipe(sassLint({
-      configFile: '.scss-lint.yml'
-    }))
-    .pipe(sassLint.format())
-    .pipe(sassLint.failOnError());
-}
-
-// HTML LINTER
-function htmlLint() {
-  console.log('---------------HTML LINTING---------------');
-  return src('dist/*.html')
-    .pipe(htmllint({}, htmllintReporter));
-}
-
-function htmllintReporter(filepath, issues) {
-  if (issues.length > 0) {
-    issues.forEach((issue) => {
-      log(colors.cyan('[gulp-htmllint] ') + colors.white(filepath + ' [' + issue.line + ']: ') + colors.red('(' + issue.code + ') ' + issue.msg));
-    });
-    process.exitCode = 1;
-  } else {
-    console.log('---------------NO HTML LINT ERROR---------------');
-  }
-}
-
-// JS LINTER
-function jsLint() {
-  return src('src/assets/js/*.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'));
-}
-
 // WATCH FILES
 function watchFiles() {
-  watch('src/**/*.html', compileHTML);
-  watch('src/assets/scss/**/*.scss', compileSCSS);
-  watch('src/assets/js/**/*.js', compileJS);
-  watch('src/assets/img/**/*', copyImages);
+  watch(`${srcDir}**/*.html`, compileHTML);
+  watch(`${srcDir}assets/scss/**/*.scss`, compileSCSS);
+  watch(`${srcDir}assets/js/**/*.js`, compileJS);
+  watch(`${srcDir}assets/img/**/*`, copyImages);
 }
 
 
@@ -184,7 +152,9 @@ function watchFiles() {
 function browserSyncInit(done) {
   console.log('---------------BROWSER SYNC---------------');
   browserSync.init({
-    server: './dist'
+    server: './dist',
+    ui: false,
+    open: false,
   });
   return done();
 }
@@ -194,7 +164,7 @@ function browserSyncInit(done) {
 // COPIES AND MINIFY IMAGE TO DIST
 function minifyImages() {
   console.log('---------------OPTIMIZING IMAGES---------------');
-  return src('src/assets/img/**/*.+(png|jpg|jpeg|gif|svg|mp4|webm|ogg)')
+  return src(`${srcDir}assets/img/**/*.+(png|jpg|jpeg|gif|svg|mp4|webm|ogg)`)
     .pipe(newer('dist/assets/img/'))
     .pipe(imagemin([
       imagemin.gifsicle({ optimizationLevel: 3, interlaced: true }),
@@ -210,7 +180,7 @@ function minifyImages() {
 
 function copyImages() {
   console.log('---------------COPY IMAGES---------------');
-  return src('src/assets/img/**/*.+(png|jpg|jpeg|gif|svg|mp4|webm|ogg)')
+  return src(`${srcDir}assets/img/**/*.+(png|jpg|jpeg|gif|svg|mp4|webm|ogg)`)
     .pipe(newer('dist/assets/img/'))
     .pipe(dest('dist/assets/img/'))
     .pipe(browserSync.stream());
@@ -221,7 +191,7 @@ function copyImages() {
 function copyFont() {
   console.log('---------------COPYING FONTS INTO DIST FOLDER---------------');
   return src([
-    'src/assets/font/*',
+    `${srcDir}assets/font/*`,
   ])
     .pipe(dest('dist/assets/fonts'))
     .pipe(browserSync.stream());
@@ -231,7 +201,7 @@ function copyFont() {
 function copyData() {
   console.log('---------------COPYING DATA INTO DIST FOLDER---------------');
   return src([
-    'src/data/**/*',
+    `${srcDir}data/**/*`,
   ])
     .pipe(dest('dist/assets/data'))
     .pipe(browserSync.stream());
@@ -280,11 +250,11 @@ function concatPlugins() {
     nodepath + 'apexcharts/dist/apexcharts.min.js',
     nodepath + 'billboard.js/dist/billboard.min.js',
     nodepath + 'hopscotch/dist/js/hopscotch.min.js',
-    'src/assets/vendor/js/*',
+    `${srcDir}assets/vendor/js/*`,
   ])
     .pipe(concat('app.js'))
     .pipe(sourcemaps.init())
-    .pipe(uglify())
+    .pipe(uglify.default())
     .pipe(sourcemaps.write('./'))
     .pipe(dest('dist/assets/js'))
     .pipe(browserSync.stream());
@@ -313,7 +283,7 @@ function concatCssPlugins() {
     nodepath + 'filepond-plugin-image-edit/dist/filepond-plugin-image-edit.min.css',
     nodepath + 'hopscotch/dist/css/hopscotch.min.css',
     nodepath + 'billboard.js/dist/billboard.min.css',
-    'src/assets/vendor/css/*',
+    `${srcDir}assets/vendor/css/*`,
   ])
     .pipe(sourcemaps.init())
     .pipe(concat('app.css'))
@@ -326,7 +296,7 @@ function concatCssPlugins() {
 function jsVendor() {
   console.log('---------------COPY JAVASCRIPT VENDOR FILES INTO DIST---------------');
   return src([
-    'src/assets/vendor/js/*',
+    `${srcDir}assets/vendor/js/*`,
   ])
     .pipe(dest('dist/assets/vendor/js'))
     .pipe(browserSync.stream());
@@ -336,7 +306,7 @@ function jsVendor() {
 function cssVendor() {
   console.log('---------------COPY CSS VENDOR FILES INTO DIST---------------');
   return src([
-    'src/assets/vendor/css/*',
+    `${srcDir}assets/vendor/css/*`,
 
   ])
     .pipe(dest('dist/assets/vendor/css'))
@@ -358,18 +328,18 @@ function prettyHTML() {
 // DELETE DIST FOLDER
 function cleanDist(done) {
   console.log('---------------REMOVING OLD FILES FROM DIST---------------');
-  del.sync('dist');
+  deleteSync('dist');
   return done();
 }
 
 // ACCESSIBILITY CHECK
 function HTMLAccessibility() {
   return src('dist/*.html')
-    .pipe(accessibility({
+    .pipe(gulpAccessibility({
       force: true
     }))
     .on('error', console.log)
-    .pipe(accessibility.report({
+    .pipe(gulpAccessibility.report({
       reportType: 'txt'
     }))
     .pipe(rename({
@@ -378,17 +348,14 @@ function HTMLAccessibility() {
     .pipe(dest('accessibility-reports'));
 }
 
-// RUN ALL LINTERS
-exports.linters = series(htmlLint, scssLint, jsLint);
-
 // RUN ACCESSIILITY CHECK
-exports.accessibility = HTMLAccessibility;
+export const accessibility = HTMLAccessibility;
 
 //SETUP
-exports.setup = series(setupBulma);
+export const setup = series(setupBulma);
 
 // DEV
-exports.dev = series(
+export const dev = series(
   cleanDist,
   copyFont,
   copyData,
@@ -407,7 +374,7 @@ exports.dev = series(
 );
 
 // BUILD
-exports.build = series(
+export const build = series(
   cleanDist,
   copyFont,
   copyData,

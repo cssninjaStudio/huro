@@ -24,7 +24,7 @@ echo "::group::building ${ARCHIVE}"
 echo "::debug::${ARCHIVE}"
 
 # remove "development" in constants.js
-sed -i 's/env = "development"/env = ""/g' src/assets/js/functions.js
+sed -i 's/env = 'development'/env = ''/g' src/assets/js/functions.js
 
 # # remove photos
 # rm -rf ./src/assets/img/avatars
