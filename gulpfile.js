@@ -4,7 +4,6 @@ import sassCompiler from 'sass'
 import gulpSass from 'gulp-sass'
 import bc from 'browser-sync'
 import bourbon from 'node-bourbon'
-import rename from 'gulp-rename'
 import concat from 'gulp-concat'
 import replace from 'gulp-replace'
 import { deleteSync } from 'del'
@@ -15,7 +14,6 @@ import imagemin, { gifsicle, mozjpeg, optipng, svgo } from 'gulp-imagemin'
 import prettyHtml from 'gulp-pretty-html'
 import newer from 'gulp-newer'
 import autoprefixer from 'gulp-autoprefixer'
-import gulpAccessibility from 'gulp-accessibility'
 import babel from 'gulp-babel'
 import packageJson from './package.json' assert { type: 'json' }
 
@@ -331,25 +329,6 @@ function cleanDist(done) {
   deleteSync('dist');
   return done();
 }
-
-// ACCESSIBILITY CHECK
-function HTMLAccessibility() {
-  return src('dist/*.html')
-    .pipe(gulpAccessibility({
-      force: true
-    }))
-    .on('error', console.log)
-    .pipe(gulpAccessibility.report({
-      reportType: 'txt'
-    }))
-    .pipe(rename({
-      extname: '.txt'
-    }))
-    .pipe(dest('accessibility-reports'));
-}
-
-// RUN ACCESSIILITY CHECK
-export const accessibility = HTMLAccessibility;
 
 //SETUP
 export const setup = series(setupBulma);
