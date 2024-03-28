@@ -1,4 +1,6 @@
-version: "3.7"
+networks:
+  cssninja-services:
+    external: true
 
 services:
   huro-demo:
@@ -20,6 +22,3 @@ services:
       traefik.http.routers.huro-demo-https.middlewares: huro-demo-middleware@docker
       traefik.http.middlewares.huro-demo-middleware.compress: true
 
-networks:
-  cssninja-services:
-    external: true
