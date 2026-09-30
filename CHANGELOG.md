@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/cssninjaStudio/huro/compare/v1.9.0...v1.10.0) (2026-09-30)
+
+
+### ⚖️ License
+
+* relicense under MIT ([cc039df](https://github.com/cssninjaStudio/huro/commit/cc039df35a220cc69f1b6cbb9ccfa2cf014d35ae))
+
 ## [1.9.0](https://github.com/cssninjaStudio/huro/compare/v1.8.3...v1.9.0) (2023-08-27)
 
 
